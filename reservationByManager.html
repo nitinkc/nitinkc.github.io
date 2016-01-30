@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <!-- CDN LINK : Font Awesome CSS for the icons in the footer-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this Project -->
+    <link href="css/myCustomCSS.css" rel="stylesheet" type="text/css">
+
+    <!-- Google Web Font Embed -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,
+    700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery minified  -->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core Java Script minified (To be loaded in the end) -->
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!--HTML5Shiv polyfill -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Title on top of the Web Browser-->
+    <title> Restaurant Reservation </title>
+
+    <!--Icon to be displayed on the Address Bar and on top of The Web Browser-->
+    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="icon" type="img/png" href="img/logo.png">
+
+</head>
+
+<body>
+<!-- navbar-fixed-top is not needed as page is not long, else, if not navbar-fixed-top-->
+<nav class="navbar navbar-default top-nav-collapse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!----------- My LOGO HERE ------------>
+            <a class="navbar-brand" href="index.html">
+                My Restaurant <span> <img class="myLogo" src="img/logo.png" width="40" alt=""></span>
+            </a>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right" style="padding-right: 10%"><!--Inline styling to keep the button positioned -->
+                <li class="active"><a href="managerDashboard.html" class="btn-info"><span class="fa fa-step-backward fa-2x"></span> Go Back</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h2>
+                    Book a Reservation
+                    <small>Fill in the Details to book a reservation.</small>
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------- Reservation Form ------------->
+<div class="section" id="guest-form">
+    <div class="container">
+        <h2 class="text-primary" style="padding-left: 20%">Please fill out the form to Book a reservation</h2>
+        <!--Inline styling to match padding of panel-->
+        <div class="guest-form-body">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Make a Reservation</div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="reserveDate">Date</label>
+                                    <input type="date" class="form-control" id="reserveDate" placeholder="MM/DD/YYYY">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="reserveTime">Time</label>
+                                    <input type="time" class="form-control" id="reserveTime" placeholder="HH:MM">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reserveName">Name</label>
+                            <input type="text" class="form-control" id="reserveName" placeholder="Enter Your Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reservePhone">Phone</label>
+                            <input type="tel" class="form-control" id="reservePhone" placeholder="Enter Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="reserveEmail">Email</label>
+                            <input type="email" class="form-control" id="reserveEmail" placeholder="example@domain.com">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="reserveSize">Party Size</label>
+                                    <input type="number" class="form-control" id="reserveSize" placeholder="# Guests">
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <label for="reserveSpecial">Special Need</label>
+                                    <input type="email" class="form-control" id="reserveSpecial"
+                                           placeholder="e.g. Birthday, Anniversary etc.">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn large-btn btn-success">Reserve</button>
+                            <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#changeReservation">
+                                <span class="glyphicon glyphicon-edit"> </span> Modify Reservation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="panel-footer"> Thank you for using our Online Reservation System</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------- Modal for the taking confirmation id -------->
+<div id="changeReservation" class="modal fade" role="dialog">
+    <div class="modal-dialog ">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Enter Conformation #</h4>
+            </div>
+            <div class="modal-body">
+                <!--Take confirmation number and navigate to modify reservation Page-->
+                <form role="form">
+                    <div class="row">
+                        <div class="modalForm">
+                            <div class="form-group">
+                                <label for="confirmation#">Confirmation#</label>
+                                <input type="email" class="form-control" id="confirmation#"
+                                       placeholder="Enter confirmation #">
+                                <div class="clearfix" style="padding-top: 10%">
+                                 <a type="submit" class="btn large-btn btn-primary" href="reservationDetails.html">Modify
+                                Booking</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
