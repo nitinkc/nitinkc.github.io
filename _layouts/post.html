@@ -1,9 +1,30 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
 
-<div class="post">
-{{ content }}
+{% include header.html %}
+
+<head>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+      <h2>{{ page.title }}</h2>
+      <p class="meta">{{ page.date | date_to_string }}</p>
+
+      <div class="post">
+      {{ content }}
+      </div>
+		</div>
+    <div class="col-md-1">
+		</div>
+	</div>
+
+  {% include footer.html %}
+
 </div>
