@@ -117,6 +117,8 @@ import java.io.PrintWriter;
 output.println("Nitin"); output.println("Chaurasia");
 //To avoid erasing files that already exist
  PrintWriter pw = new PrintWriter(new FileWriter("nitin.txt", true));
+ {% endhighlight %}
+
 
 #### Appending Text to file
 {% highlight java linenos %}
