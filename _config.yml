@@ -1,6 +1,7 @@
 name: Nitin Chaurasia
 markdown: kramdown
 highlighter: rouge # or rouge or null
+gems: [jekyll-gist]
 exclude: ["node_modules", "gulpfile.js", "package.json", "README.md"]
 
 
