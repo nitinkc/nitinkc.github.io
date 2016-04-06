@@ -1,11 +1,25 @@
-name: Nitin Chaurasia
-markdown: kramdown
-highlighter: rouge # or rouge or null
-gems: [jekyll-gist]
-exclude: ["node_modules", "gulpfile.js", "package.json", "README.md"]
+# Setup
+  title:              #Learn & Enjoy
+  tagline:            'A Jekyll theme by mark Otto'
+  description:
+  baseurl:            /
+  paginate:           5
+  markdown:           kramdown
+  highlighter:        rouge # or rouge or null
+  gems:               [jekyll-gist, jekyll-paginate]
+  exclude:            ["node_modules", "gulpfile.js", "package.json", "README.md"]
 
+# About/contact
+  author:             Nitin Chaurasia
+  url:                http://nitinkc.github.io # the base hostname & protocol for your site
+  email:              gs.nitin@gmail.com
+  linkedIn:           https://www.linkedin.com/in/nitinchaurasia
+  github:             https://github.com/nitinkc
+  bgsuBlog:           http://blogs.bgsu.edu/nitinc/
+  version:             0.0.1
 
-url: "http://nitinkc.github.io" # the base hostname & protocol for your site
-#url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: gs_nitin
-github_username: nitinkc
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+  permalink:           pretty
+relative_permalinks: true

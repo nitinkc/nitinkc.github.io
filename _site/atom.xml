@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title></title>
+ <link href="http://nitinkc.github.io/atom.xml" rel="self"/>
+ <link href="http://nitinkc.github.io/"/>
+ <updated>2016-04-06T19:18:27-04:00</updated>
+ <id>http://nitinkc.github.io</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Chrome Extension</title>
+   <link href="http://nitinkc.github.io/2016/04/06/chrome-extention/"/>
+   <updated>2016-04-06T01:14:00-04:00</updated>
+   <id>http://nitinkc.github.io/2016/04/06/chrome-extention</id>
+   <content type="html">&lt;h2 id=&quot;building-the-chrome-extension&quot;&gt;Building the Chrome Extension&lt;/h2&gt;
+
+&lt;h5 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;html5&lt;/li&gt;
+  &lt;li&gt;css3&lt;/li&gt;
+  &lt;li&gt;javascript&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Tools used for making Personal Website</title>
+   <link href="http://nitinkc.github.io/2016/04/04/tools-used/"/>
+   <updated>2016-04-04T14:31:00-04:00</updated>
+   <id>http://nitinkc.github.io/2016/04/04/tools-used</id>
+   <content type="html">&lt;h3 id=&quot;making-a-personal-website-using-githubs-free-hosting-for-the-jekyll-sites&quot;&gt;Making a personal website using GitHubs free Hosting for the Jekyll Sites&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ruby (Pre requisites for Jekyll) : https://jekyllrb.com/docs/installation/&lt;/li&gt;
+  &lt;li&gt;Jekyll - for static site and blogging&lt;/li&gt;
+  &lt;li&gt;Jade - no html&lt;/li&gt;
+  &lt;li&gt;SASS&lt;/li&gt;
+  &lt;li&gt;Autoprefixer - different permutations for the files&lt;/li&gt;
+  &lt;li&gt;Browser Sync - JIT effects of changes&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Npm install gulp
+Gulp&lt;/p&gt;
+
+&lt;p&gt;gulp - jeykll
+Download from git@github.com:shakyShane/jekyll-gulp-sass-browser-sync.git
+Unzip in, goto that directory
+And do
+Npm install&lt;/p&gt;
+
+&lt;p&gt;Goto that dorectory&lt;/p&gt;
+
+&lt;p&gt;Gulp jade&lt;/p&gt;
+
+&lt;p&gt;gulp&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building a Jekyll Blog and Hosting on GitHub!</title>
+   <link href="http://nitinkc.github.io/jekyll/update/2016/04/04/building-the-jekyll-blog/"/>
+   <updated>2016-04-04T14:31:00-04:00</updated>
+   <id>http://nitinkc.github.io/jekyll/update/2016/04/04/building-the-jekyll-blog</id>
+   <content type="html">&lt;h1 id=&quot;making-a-personal-website-using-githubs-free-hosting-for-the-jekyll-sites&quot;&gt;Making a personal website using GitHubs free Hosting for the Jekyll Sites&lt;/h1&gt;
+</content>
+ </entry>
+ 
+
+</feed>
