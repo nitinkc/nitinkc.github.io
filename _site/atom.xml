@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title></title>
+ <title>{ni[T]in}</title>
  <link href="http://nitinkc.github.io/atom.xml" rel="self"/>
  <link href="http://nitinkc.github.io/"/>
- <updated>2016-04-06T19:24:48-04:00</updated>
+ <updated>2016-04-06T20:51:55-04:00</updated>
  <id>http://nitinkc.github.io</id>
  <author>
    <name></name>

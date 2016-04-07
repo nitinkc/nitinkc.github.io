@@ -1,7 +1,9 @@
 ---
-layout: page
-title: Nitin Kumar Chaurasia
+layout: default
+title: Nitin Chaurasia
 ---
+# Nitin Kumar Chaurasia
+
 ###### BE (Computer Engineering) - SGSITS, Indore (MP) INDIA
 
 ###### MS (Computer Science) - BGSU (OH) USA

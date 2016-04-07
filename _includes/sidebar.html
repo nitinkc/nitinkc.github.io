@@ -1,12 +1,14 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <h1>
+      <h1 class="logo">
         <a href="{{ site.baseurl }}">
           {{ site.title }}
         </a>
       </h1>
       <p class="lead">{{ site.description }}</p>
+      <!-- Hiding  -->
+      <!-- <a href="/index.html"><img src="/public/logo.png" alt="NITIN"/></a> -->
     </div>
 
     <nav class="sidebar-nav">
@@ -26,6 +28,10 @@
         {% endif %}
       {% endfor %}
 
+      <a class="sidebar-nav-item" href="{{ site.baseurl }}about">About</a>
+      <a class="sidebar-nav-item" href="{{ site.baseurl }}static/java_revisions">Coding</a>
+      <i> -- Connect -- </i>
+
       <a class="sidebar-nav-item" href="{{ site.github }}">GitHub</a>
       <a class="sidebar-nav-item" href="{{ site.linkedIn }}" > LinkedIn </a>
       <a class="sidebar-nav-item" href="{{ site.bgsuBlog }}" > BGSU Blog </a>
@@ -33,7 +39,7 @@
     </nav>
 
     <div class="acknowledgement"
-    <p> Thanks to <cite>Hyde</cite> by  <a href="http://hyde.getpoole.com/"> Mark Otto</a></p>
+    <p> Thanks to Mark Otto for <cite><a href="http://hyde.getpoole.com/">Hyde </a></cite> </p>
   </div>
 
 

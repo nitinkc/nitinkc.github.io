@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Coding &middot; {ni[T]in}
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1 class="logo">
+        <a href="/">
+          {ni[T]in}
+        </a>
+      </h1>
+      <p class="lead"></p>
+      <!-- Hiding  -->
+      <!-- <a href="/index.html"><img src="/public/logo.png" alt="NITIN"/></a> -->
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/static/java_revisions">Coding</a>
+      <i> -- Connect -- </i>
+
+      <a class="sidebar-nav-item" href="https://github.com/nitinkc">GitHub</a>
+      <a class="sidebar-nav-item" href="https://www.linkedin.com/in/nitinchaurasia" > LinkedIn </a>
+      <a class="sidebar-nav-item" href="http://blogs.bgsu.edu/nitinc/" > BGSU Blog </a>
+      <!-- <span class="sidebar-nav-item">Currently v0.0.1</span> -->
+    </nav>
+
+    <div class="acknowledgement"
+    <p> Thanks to Mark Otto for <cite><a href="http://hyde.getpoole.com/">Hyde </a></cite> </p>
+  </div>
+
+
+  </div>
+</div>
+
+
+    <div class="content container">
+      <h1 id="reference-for-coding-interviews">Reference for Coding Interviews</h1>
+
+<h4 id="inserting-gist">Inserting Gist</h4>
+<noscript><pre>Not Found</pre></noscript>
+<script src="https://gist.github.com/nitinkc/bbf28d84627c186972e3f34b903e9698.js"> </script>
+
+<h1 id="hghjghvjhghjghj">hghjghvjhghjghj</h1>
+
+<p>int[] nums =&gt; nums.length;
+String str =&gt; str.length();
+ArrayList<integer> a =&gt; a.size();</integer></p>
+
+<h1 id="boolean-logic-if-statement-switch">Boolean Logic (if statement, switch)</h1>
+<p><code class="highlighter-rouge">java
+return (a &gt; b &amp;&amp; (a-b) &gt;= 2);
+         is equivalent to
+if (a &gt; b &amp;&amp; (a-b) &gt;= 2){
+    return true;
+}</code></p>
+
+<h3 id="for-loop-traps">For Loop Traps</h3>
+
+<p>for (int i = 0; i &lt; arr.length; i = i+2){ …} // if lenght = 9, loop will run 0,2,4,6.. 8 is never included.
+for (int i = 1; i &lt; num.length; i++) if (num[i-1] == num[i]) return true;
+for (int i = 0; i &lt; num.length - 1; i++) if (num[i] == num[i+1]) return true;
+for (char i = ‘a’; i &lt;= ‘z’; i++){ sout(i); //Prints alphabets from ‘a’ to ‘z’ }
+Arrays</p>
+
+<p>int[] a;
+a = new int[3]; //notice []. NOT () to be used
+int[] a = new int[3]; //single line declaration
+a.length ; //Length is a “field” in Array, while a method in Strings
+int[] a = new int[] {1,2,3};
+int[] b = {1,2,3};
+sysout(Arrays.toString(num));
+###The Arrays Class</p>
+
+<p>Import java.util.ArrayList;</p>
+
+<p>ArrayList<integer> b = new ArrayList<integer>;
+Arrays.toString(a);//o/p [1,2,3]
+Arrays.asList(a);
+Arrays.asList.contains("a");//boolean true/false</integer></integer></p>
+
+<h3 id="string-functions-most-important">String Functions (Most Important)</h3>
+
+<ul>
+  <li>⇒ concatenation
+str.chatAt(i);
+str.length(); //Method in String, Field in Arrays;
+str.substring(i,j);//j not included
+str.substring(i);//from i till end str.substring(i,str.length());String Index begins from ZERO, thus lenght = max Index + 1
+For Equality str.equals();//DO NOT USE == (will compare objects)
+str.indexOf(“er”);//2 if “er” begins from index 1, -1 if not Found
+str.indexOf(“er”, 2); //start the search from index 2
+str.lastIndexOf(“ew”);//searches right to left
+str.lastIndexOf(“ew”, 5);//right to left, from index 5
+str.toLowerCase() / str.toUpperCase()
+str.compareTo(“”);
+str.replace(“old”,”new”);
+String[] ransomWords = ransom.split(“ “);//Cut the Strings from spaces into a words</li>
+</ul>
+
+<h2 id="java-input">Java Input</h2>
+
+<h4 id="key-board-input">Key Board Input</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+<span class="n">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+ <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+ <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span> <span class="c1">//To avoid INPUT Problem</span>
+ <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+<span class="cm">/* Input Problem occurs when a mix of int and strings are given
+ The extra invocation is done to get rid of previous \n
+
+16\n 1000\n Joe\n
+/n Extra in.nextLine()
+ in.nextInt; //reads next integer
+ in.nextDouble();
+ in.nextLine();//reads entire line of in
+ in.next();//next character upto but not including space
+/* NO METHOD TO READ A SINGLE CHARACTER */</span>
+ <span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+ <span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h4 id="file-input">File Input</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="c1">//Open the File</span>
+<span class="n">File</span> <span class="n">myFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"/nitin/a.txt"</span><span class="o">);</span>
+ <span class="n">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">myFile</span><span class="o">;</span> <span class="c1">//Instead of System.in, take the file to read</span>
+<span class="c1">//Read from the File</span>
+ <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+<span class="c1">//OR</span>
+ <span class="k">while</span> <span class="o">(</span><span class="n">in</span><span class="o">.</span><span class="na">hasNext</span><span class="o">());</span>
+ <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
+ <span class="c1">//Close the File</span>
+ <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="output-file-handling">Output File Handling</h2>
+
+<h4 id="writing-text-to-file">Writing text to File</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
+ <span class="kd">final</span> <span class="n">String</span> <span class="n">FILENAME</span> <span class="o">=</span> <span class="s">"nitin.txt"</span><span class="o">;</span>
+<span class="c1">//Surrounding with try catch!! OR</span>
+ <span class="n">PrintWriter</span> <span class="n">output</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="n">FILENAME</span><span class="o">);</span>
+ <span class="n">PrintWriter</span> <span class="n">output</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="s">"nitin.txt"</span><span class="o">);</span>
+<span class="n">output</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Nitin"</span><span class="o">);</span> <span class="n">output</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Chaurasia"</span><span class="o">);</span>
+<span class="c1">//To avoid erasing files that already exist</span>
+ <span class="n">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">"nitin.txt"</span><span class="o">,</span> <span class="kc">true</span><span class="o">));</span>
+ <span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h4 id="appending-text-to-file">Appending Text to file</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="n">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">"Names.txt"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="n">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="n">fw</span><span class="o">);</span>
+
+<span class="n">OR</span>
+
+<span class="n">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">"Names.txt, true"</span><span class="o">));</span>
+<span class="n">Reading</span> <span class="n">Data</span> <span class="n">from</span> <span class="n">a</span> <span class="n">file</span>
+
+<span class="n">File</span> <span class="n">myFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"customer.txt"</span><span class="o">);</span>
+<span class="n">Scanner</span> <span class="n">ipFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">myFile</span><span class="o">);</span> <span class="c1">//instead of System.in</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="reading-parsing-and-type-checking-command-line-inputs">Reading, Parsing and Type Checking Command Line Inputs.</h2>
+
+<p>/<em>Assuming 2 command line arguments &lt;Nitin 29&gt;</em>/</p>
+
+<p>if (args.length == 0 || args.length &gt; 2) {
+     System.err.println(“Incorrect Number of arguments passed”);
+     System.exit(-1);
+  }
+String name = args[0];
+  int age = Integer.parseInt(args[1]);
+Running time of a method</p>
+
+<p>System.currentTimeMillis();//type long , from Jan 1 1970
+System.nanoTime();</p>
+
+<h2 id="random">Random</h2>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.Random</span>
+
+<span class="n">Random</span> <span class="n">generator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span> <span class="c1">//or new Random(123), 123 being the seed</span>
+<span class="n">generator</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span><span class="c1">//range 0 to 5, add 1 to get range 1 to 6 (dices)</span>
+<span class="n">generator</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span> <span class="c1">// 2^31 to 2^31 -1</span>
+<span class="n">generator</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span><span class="c1">//Range: 0.0 to 1.1</span>
+<span class="nl">Eg:</span> <span class="kt">int</span> <span class="k">throw</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">6</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="array-and-linked-list">Array and Linked List</h2>
+
+<p>Capture</p>
+
+<p>for (int i = 0; i &lt; arr.length; i++){
+      System.out.prinln(arr[i]);
+ }
+ for (ListNode runner = head; runner != null; runner = runner.next){
+      System.out.println(runner.data);
+ }
+Linked List</p>
+
+<p>LinkNode runner = front;//head
+ while (runner.next != null){//Runner stops at the last node, else runner will end up pointing null!!
+ runner = runner.next;
+Add in the List</p>
+
+<p>Add in the front
+front = new ListNode(value, front);</p>
+
+<p>Add at ‘index’
+if (index == 0)
+front = new ListNode(value, front);
+else{
+ListNode runner = front;
+for (int i = 0; i &lt; index - 1; i++)//Stop at an index one before the desired
+current = current.next;
+}
+current.next = new ListNode(value, current.next); //old current.next is assigned to the new node which in turn is assigned to current.next
+Add in the end</p>
+
+<p>if (front == null)
+  front = new ListNode(value, front);
+else{
+  ListNode runner = front;
+  while (runner.next != null) // Go till the last node
+      runner = runner.next;
+  runner.next = new ListNode(value); //this constructor has .next as null
+}
+For Each Loop (Read Only Loop)</p>
+
+<p>for (type name : collection){
+ }
+Eg: Set<double> grades = new HashSet<double>();
+for (double g: grades){
+   System.out.println(g);
+ }
+Iterator itr (for some collection)</double></double></p>
+
+<p>Iterator itr = c.iterator();
+ itr.remove(i);
+ itr.hasNext();
+ itr.next();
+The XOR Trick</p>
+
+<p>Same variables cancels the effect of each other if the bitwise XOR is used.</p>
+
+<p>a = a^b;
+b = a^b; //a^b^b yields a
+a = a^b;//a^b^a = b(b is recently converted to a)
+(Works only with integer, in its native form, for others change it into its equivalent binary representation)
+The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake)</p>
+
+<p>Use of XOR (both flags are boolean)</p>
+
+<p>if (flag2 ^ flag4)
+is equivalent to
+(flag2 &amp;&amp; !flag4) || (!flag2 &amp;&amp; flag4);</p>
+
+<p>HashMap</p>
+
+<p>Map&lt;String, Integer&gt; ret = new HashMap&lt;String, Integer&gt;();
+for (int key : map.keySet()){
+ret.put(map.get(key),key);
+}</p>
+
+<p>ArrayList</p>
+
+<p>Declaration (Child of List Interface)</p>
+
+<p>ArrayList<integer> list = new ArrayList<integer>();
+List<integer> list = new ArrayList<integer>();</integer></integer></integer></integer></p>
+
+<p>Insert element
+for (int i = 0; i &lt; list.size(); i++){
+list.add(i);
+list.get(i);
+}</p>
+
+<p>Common methods
+add(value), add(index, value)
+set(index. value)
+clear()
+indexOf(value)
+lastIndexOf()
+toString(), toArray();</p>
+
+<p>HASHMAP (IMPLEMENTATION OF HASHTABLE)</p>
+
+<p>Map&lt;String, Integer&gt; ret = new HashMap&lt;String, Integer&gt;();
+for (int key : map.keySet()){
+ret.put(map.get(key),key);</p>
+
+    </div>
+
+  </body>
+</html>

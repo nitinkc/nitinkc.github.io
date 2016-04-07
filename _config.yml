@@ -1,6 +1,6 @@
 # Setup
-  title:              #Learn & Enjoy
-  tagline:            'A Jekyll theme by mark Otto'
+  title:              "{ni[T]in}"
+  tagline:            'Nitin Kumar Chaurasia'
   description:
   baseurl:            /
   paginate:           5
@@ -16,10 +16,10 @@
   linkedIn:           https://www.linkedin.com/in/nitinchaurasia
   github:             https://github.com/nitinkc
   bgsuBlog:           http://blogs.bgsu.edu/nitinc/
-  version:             0.0.1
+  version:            0.0.1
 
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
   permalink:           pretty
-relative_permalinks: true
+  #relative_permalinks: true
