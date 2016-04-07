@@ -10,6 +10,7 @@ title:  "Coding"
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 ---
+
 ### Points to keep in Mind
 
 ```java
