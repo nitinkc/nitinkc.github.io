@@ -6,6 +6,7 @@ title:  "Coding Hints"
 # 7 Step Process
 
 Before jumping into the Coding  
+
  1. Method Signature (Understand the problem statement)
  2. Some examples (test cases) to understand the edge cases
  3. Brainstorming 
@@ -107,24 +108,30 @@ return xor;
 Push on opener and pop on closers.
 
 ```java
-Stack<Character> stack = new Stack<Integer>(); 
-for (int i = 0; i < str.length(); i++){
-    char curr = str.charAt(i);
+/* If the String is odd lenght, the return false*/
+  Stack<Character> stack = new Stack<>();
+    for (int i = 0; i < str.length(); i++) {
+        char curr = str.charAt(i);
 
-    // Push on Openers
-    if ( curr == '(' || curr = '[' || curr = '{' ){
-        temp.push();
-    } else { // pop on SIMILAR closers
-        // ALSO CHECK IF SIMIAR IS COMING OUT
-        char top = stack.peek();//top element of stack 
-        if ( (curr == '(' && top == ')') || 
-             (curr == '{' && top == '}') ||
-             (curr == '[' && top == ']')
-            ){
+        // Push on Openers
+        if (curr == '(' || curr == '[' || curr == '{') {
+            stack.push(curr);
+        } else { // pop on similar CLOSURES
+            // ALSO CHECK IF SIMIAR IS COMING OUT
+            char top = stack.peek();//top element of stack
+            //System.out.println(top);
+            if (    ((top == '(') && (curr == ')')) ||
+                    ((top == '{') && (curr == '}')) ||
+                    ((top == '[') && (curr == ']'))
+                    ) {
                 stack.pop();
+            } else {
+                return false;
             }
+        }
     }
-}
+        // return (stack.empty());
+        return true;
 ```
 
 
@@ -166,3 +173,34 @@ while (left < right){
 }
 return count;
 ```
+
+##### Find minimum in a Stack
+
+Maintain 2 Stacks, One internally for keeping track of the Max/Min Stack
+
+## Recursion based 
+
+##### Find BST Height
+
+```java
+int getHeight(BSTNode root){
+
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
