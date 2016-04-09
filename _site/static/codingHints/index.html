@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Coding Hints &middot; {ni[T]in}
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1 class="logo">
+        <a href="/">
+          {ni[T]in}
+        </a>
+      </h1>
+      <p class="lead"></p>
+      <!-- Hiding  -->
+      <!-- <a href="/index.html"><img src="/public/logo.png" alt="NITIN"/></a> -->
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <!-- Putting the Page explicitly -->
+      <a class="sidebar-nav-item" href="/about">About</a>
+
+
+<!--  <a class="sidebar-nav-item" href="/static/java_revisions">Coding</a>
+      <a class="sidebar-nav-item" href="/static/projects">Projects</a> -->
+       
+
+      <i> -- Tools -- </i>
+      <!-- Generte the Links dynamically for the STATIC Pages -->
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+           
+            <a class="sidebar-nav-item active" href="/static/codingHints/">Coding Hints</a>
+          
+        
+      
+        
+          
+        
+      
+        
+           
+            <a class="sidebar-nav-item" href="/static/java_revisions/">Coding</a>
+          
+        
+      
+        
+           
+            <a class="sidebar-nav-item" href="/static/problemProfiles/">Profiles</a>
+          
+        
+      
+        
+          
+        
+      
+     
+      <i> -- Connect -- </i>
+      <a class="sidebar-nav-item" href="https://github.com/nitinkc">GitHub</a>
+      <a class="sidebar-nav-item" href="https://www.linkedin.com/in/nitinchaurasia" > LinkedIn </a>
+      <a class="sidebar-nav-item" href="http://blogs.bgsu.edu/nitinc/" > BGSU Blog </a>
+      <!-- <span class="sidebar-nav-item">Currently v0.0.1</span> -->
+
+      <i> -- Resources -- </i>
+      <a href="https://nitinc.gitbooks.io/developer-machine-setup-guide/content/" target="_blank"> Machine Setup</a>
+    </nav>
+
+    <div class="acknowledgement"
+    <p> Thanks to Mark Otto for <cite><a href="http://hyde.getpoole.com/">Hyde </a></cite> </p>
+  </div>
+
+
+  </div>
+</div>
+
+
+    <div class="content container">
+      <h1 id="step-process">7 Step Process</h1>
+
+<p>Before jumping into the Coding<br />
+ 1. Method Signature (Understand the problem statement)
+ 2. Some examples (test cases) to understand the edge cases
+ 3. Brainstorming 
+ 4. (Talking the problem and bring some approach)
+ 5. Find the Data structure and Algorithm to be used
+ 6. Write Code (use paper or whiteboard)
+ 7. Test for more test cases to avoid edge cases and</p>
+
+<h5 id="queue-using-two-stacks">Queue using two Stacks</h5>
+
+<p>One Stack to hold values, the second one to hold the poped values from one</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">main</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+<span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+
+<span class="c1">//O(1) operation</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">enque</span><span class="p">(</span><span class="kt">int</span> <span class="n">item</span><span class="o">){</span>
+    <span class="n">main</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">deque</span><span class="p">(</span><span class="o">){</span>
+    <span class="kt">int</span> <span class="n">ret</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">main</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">){</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">main</span><span class="o">.</span><span class="na">size</span> <span class="o">==</span> <span class="mi">1</span><span class="o">){</span>
+            <span class="n">temp</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">main</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span><span class="c1">//put the value into the temp Stack</span>
+        <span class="o">}</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">main</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span> <span class="c1">// retain the value to return</span>
+    <span class="o">}</span>
+    <span class="c1">// Reset the array for further processing (or interchange the stacks)</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">temp</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
+        <span class="n">main</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">temp</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="cm">/* Interchanging the Stack
+        private Stack&lt;Integer&gt; interchange = null;
+        interchange = main;
+        main = temp; //Main to set to the filled Stack
+        temp = interchange;
+    */</span>
+
+    <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="reverse-a-linked-list-iteratively-and-recursively">Reverse a Linked List (Iteratively and Recursively)</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">reverseList</span><span class="p">(</span><span class="n">Node</span> <span class="n">head</span><span class="o">){</span>
+    <span class="n">Node</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="n">Node</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+
+    <span class="k">while</span> <span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+        <span class="n">Node</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">curr</span><span class="o">;</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="find-a-cycle-in-a-linked-list-iteratively-and-recursively">Find a cycle in a Linked List (Iteratively and Recursively)</h5>
+
+<h5 id="find-a-cycle-in-a-linked-list-iteratively-and-recursively-1">Find a cycle in a Linked List (Iteratively and Recursively)</h5>
+
+<h5 id="uncoupled-integer-in-an-array">UnCoupled Integer in an Array.</h5>
+
+<p>O(n) Space and O(n) time Complexity in a set</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">unique</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">arr</span><span class="o">){</span> <span class="c1">// iterating the array</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">unique</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">i</span><span class="o">)){</span>
+        <span class="c1">//do nothing</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">unique</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>O(1) Space and O(n) time complexity in XOR Approach</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">xor</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">arr</span><span class="o">++){</span>
+    <span class="n">xor</span> <span class="o">=</span> <span class="n">xor</span><span class="o">^</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span> <span class="c1">// Keeps only unique numbers</span>
+<span class="o">}</span>
+
+<span class="k">return</span> <span class="n">xor</span><span class="o">;</span>
+</code></pre>
+</div>
+
+<h5 id="balanced-parenthesis">Balanced Parenthesis</h5>
+
+<p>Push on opener and pop on closers.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span> 
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+    <span class="kt">char</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+
+    <span class="c1">// Push on Openers</span>
+    <span class="k">if</span> <span class="o">(</span> <span class="n">curr</span> <span class="o">==</span> <span class="sc">'('</span> <span class="o">||</span> <span class="n">curr</span> <span class="o">=</span> <span class="sc">'['</span> <span class="o">||</span> <span class="n">curr</span> <span class="o">=</span> <span class="sc">'{'</span> <span class="o">){</span>
+        <span class="n">temp</span><span class="o">.</span><span class="na">push</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// pop on SIMILAR closers</span>
+        <span class="c1">// ALSO CHECK IF SIMIAR IS COMING OUT</span>
+        <span class="kt">char</span> <span class="n">top</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span><span class="c1">//top element of stack </span>
+        <span class="k">if</span> <span class="o">(</span> <span class="o">(</span><span class="n">curr</span> <span class="o">==</span> <span class="sc">'('</span> <span class="o">&amp;&amp;</span> <span class="n">top</span> <span class="o">==</span> <span class="sc">')'</span><span class="o">)</span> <span class="o">||</span> 
+             <span class="o">(</span><span class="n">curr</span> <span class="o">==</span> <span class="sc">'{'</span> <span class="o">&amp;&amp;</span> <span class="n">top</span> <span class="o">==</span> <span class="sc">'}'</span><span class="o">)</span> <span class="o">||</span>
+             <span class="o">(</span><span class="n">curr</span> <span class="o">==</span> <span class="sc">'['</span> <span class="o">&amp;&amp;</span> <span class="n">top</span> <span class="o">==</span> <span class="sc">']'</span><span class="o">)</span>
+            <span class="o">){</span>
+                <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+            <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="find-count-of-given-sum-in-all-pairs-in-the-array">Find count of given Sum in all pairs in the Array</h5>
+
+<p>Checks :</p>
+
+<ul>
+  <li>if array size &lt; 2, return 0;</li>
+</ul>
+
+<p>Greedy approach to test all the possible combinations exhaustively</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// O(n^2)</span>
+
+ <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">lenght</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="n">sum</span><span class="o">){</span>
+            <span class="n">count</span><span class="o">++;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+ <span class="o">}</span>
+ <span class="k">return</span> <span class="n">count</span><span class="o">;</span>
+</code></pre>
+</div>
+
+<p>Test only those possible combinations that makes sense</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Two pointer Approach</span>
+<span class="cm">/* Sort the Array First in Ascending Order [O(nLog(n))] */</span>
+<span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span>  <span class="mi">1</span><span class="o">;</span>
+<span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">){</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">+</span> <span class="n">arr</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">sum</span><span class="o">){</span><span class="c1">//Right is heavier</span>
+        <span class="n">right</span><span class="o">--;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">+</span> <span class="n">arr</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">sum</span><span class="o">){</span> <span class="c1">// Left is lighter</span>
+        <span class="n">left</span> <span class="o">++</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// Sum is equal</span>
+        <span class="n">count</span><span class="o">++;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="k">return</span> <span class="n">count</span><span class="o">;</span>
+</code></pre>
+</div>
+
+    </div>
+
+  </body>
+</html>

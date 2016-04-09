@@ -22,16 +22,35 @@
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
         {% if node.title != null %}
-          {% if node.layout == "page" %}
+          {% if node.layout == "pages" %}
             <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
           {% endif %}
         {% endif %}
       {% endfor %}
 
+      <!-- Putting the Page explicitly -->
       <a class="sidebar-nav-item" href="{{ site.baseurl }}about">About</a>
-      <a class="sidebar-nav-item" href="{{ site.baseurl }}static/java_revisions">Coding</a>
-      <i> -- Connect -- </i>
 
+
+<!--  <a class="sidebar-nav-item" href="{{ site.baseurl }}static/java_revisions">Coding</a>
+      <a class="sidebar-nav-item" href="{{ site.baseurl }}static/projects">Projects</a> -->
+       {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: static` in the front-matter removing the dependencies as commented above.
+      {% endcomment %}
+
+      <i> -- Tools -- </i>
+      <!-- Generte the Links dynamically for the STATIC Pages -->
+      {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "static" %} 
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+     
+      <i> -- Connect -- </i>
       <a class="sidebar-nav-item" href="{{ site.github }}">GitHub</a>
       <a class="sidebar-nav-item" href="{{ site.linkedIn }}" > LinkedIn </a>
       <a class="sidebar-nav-item" href="{{ site.bgsuBlog }}" > BGSU Blog </a>
