@@ -158,7 +158,7 @@
       <div class="post">
   <h1 class="post-title">Trees</h1>
   <span class="post-date">06 Apr 2016</span>
-  <h5 id="linked-list-iteration">Linked List Iteration</h5>
+  <h5 id="trees-iteration">Trees Iteration</h5>
 <noscript><pre>public int countEmpty() {
     return countEmpty(overallRoot);
 }
@@ -183,123 +183,6 @@ public int countEmpty(IntTreeNode root) {
     return count;
 }</pre></noscript>
 <script src="https://gist.github.com/nitinkc/619d22e2ae458a3f174b0297019e6fd5.js"> </script>
-
-<h5 id="set-all-nodes-to-42">Set all nodes to 42</h5>
-<noscript><pre>/* Change all nodes to 42 */
-ListNode runner = list;
-
-//Change values as itrarte
-while (runner != null){
-    runner.data = 42;
-    runner = runner.next;
-}</pre></noscript>
-<script src="https://gist.github.com/nitinkc/9aef8598074b343be5e85c4946c9c2b7.js"> </script>
-
-<h5 id="set-last-node-to-42">Set Last node to 42</h5>
-
-<noscript><pre>/* Add nodes with 42 in the end */
-public void addNodeEnd{
-    ListNode runner = list;
-    while(runner.next != null){
-        runner = runner.next;
-    }
-    runner.next = new ListNode(42, null);
-}</pre></noscript>
-<script src="https://gist.github.com/nitinkc/3a068e9a976ed17e8dd48fb0926cce5e.js"> </script>
-
-<h5 id="set-a-given-node-to-42">Set a given node to 42</h5>
-<noscript><pre>public void set(int index, int value){
-    ListNode runner = front;
-
-    while(index != 0){
-        runner = runner.next;
-        index--;
-    }
-    runner.data = value;
-}</pre></noscript>
-<script src="https://gist.github.com/nitinkc/0adc9cbca58a575ad8cdc7519c3fd0a1.js"> </script>
-
-<h5 id="find-the-maxmin-in-a-linked-list">Find the max/min in a Linked List</h5>
-<noscript><pre>public int min(){
-    if (front == null)
-        throw new NoSuchElementException();
-    
-    int min = 2147483647;// Max int value
-    ListNode runner = front;
-    while (runner != null){
-        if (runner.data &lt; min){
-            min = runner.data;
-        }
-        runner = runner.next;
-    }
-    return min;
-}</pre></noscript>
-<script src="https://gist.github.com/nitinkc/743c96f56cadd8ad502d313e871a56b6.js"> </script>
-
-<h5 id="find-the-last-index-of-a-given-number-in-a-linked-list">Find the last index of a given number in a Linked List</h5>
-<noscript><pre>public int lastIndexOf(int num){
-    if (front == null)
-        return -1;
-    
-    int index = 0;
-    int lastIndex = -1;
-    
-    ListNode runner = front;
-    while (runner != null){
-        if (runner.data == num){
-            lastIndex = index;
-        }
-        index++;
-        runner = runner.next;
-    }
-    return lastIndex;
-}</pre></noscript>
-<script src="https://gist.github.com/nitinkc/e607f8b37d13eb2fbf4d9e6333f38869.js"> </script>
-
-<h5 id="count-duplicate">Count Duplicate</h5>
-<noscript><pre>public int countDuplicates(){
-    if (front == null || front.next == null)
-        return 0;
-    
-    int duplicateCount = 0;
-    int temp = front.data;
-    ListNode runner = front.next;
-    
-    while (runner != null){
-        if (temp == runner.data){
-            duplicateCount++;
-        }
-        temp = runner.data;
-        runner = runner.next;
-    }
-    return duplicateCount;
-}</pre></noscript>
-<script src="https://gist.github.com/nitinkc/3376fda31d518cc1f1747bcd1135d0e7.js"> </script>
-
-<h5 id="delete-from-the-end">Delete from the end</h5>
-<noscript><pre>public int deleteBack(){
-  if (front == null)
-      throw new NoSuchElementException();
-  
-  // Only one node is present
-  if (front.next == null){
-      int deletedData = front.data;
-      front = null;
-      return deletedData;
-  }
-  
-  ListNode runner = front;
-  // Reaching the second last element and staying there
-  while(runner.next.next != null){
-      runner = runner.next;
-  }
-    
-  // Leaving the last node for GC
-  int deletedData = runner.next.data;
-  runner.next = null;
-  return deletedData;
-}</pre></noscript>
-<script src="https://gist.github.com/nitinkc/b0021888f69349f08614edc484f7d050.js"> </script>
 
 
 </div>
