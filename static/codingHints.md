@@ -3,7 +3,14 @@ layout: static
 title:  "Coding Hints"
 ---
 
+## Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
 # 7 Step Process
+{:.no_toc}
 
 Before jumping into the Coding  
 
@@ -180,13 +187,123 @@ Maintain 2 Stacks, One internally for keeping track of the Max/Min Stack
 
 ## Recursion based 
 
+sadsad
+
 ##### Find BST Height
 
 ```java
 int getHeight(BSTNode root){
+    if root( == null )
+        return 1;
 
+    // Recursive calls 
+    return 1 + getHeight(root.left) + getHeight(root.right);
 }
 ```
+
+
+##### Binary Search 
+
+```java
+int binarySearchRecursive(int[] arr, int start, int end, int value)
+/* Base Case when start > end */
+
+if (start > end)
+   return -1;// value not found. Index = -1
+
+int mid = (start + end) / 2; 
+
+if (arr[mid] < value)
+    binarySearchRecursive(arr, mid + 1, end, value);
+else if  (arr[mid] > value)
+    binarySearchRecursive(arr, 0, mid - 1, value);   
+else
+    return mid;           
+```
+
+
+
+##### FizzBuzz Problem
+
+Importacnce of placing if statements are tested here!!
+
+```java
+public String fizzString2(int n) {
+
+    /* Important to check for 3 & 5 first else test cases fails.
+     * Other if statements passes the if test, leaving this one unexecuted)  */
+    //if (n%3 == 0 && n%5 == 0) 
+    if(n%15 == 0)//Same as above
+        return "FizzBuzz!";
+    if (n%3 == 0) 
+        return "Fizz!";
+    if (n%5 == 0) 
+        return "Buzz!";  
+}
+```
+
+
+
+### Tree Traversals
+
+##### Inorder
+
+```java
+ /* Function for inorder traversal */
+    public void inorder(BSTNode r)
+    {
+        if(r != null){
+        inorder(r.left);
+        System.out.print(r.data + " ");
+        inorder(r.right);
+        }
+    }
+```
+
+##### PreOrder
+
+```java
+    /* Function for pre-order traversal */
+    public void preorder(BSTNode r)
+    {
+       if(r != null){
+           System.out.print(r.data + " ");
+           preorder(r.left);
+           preorder(r.right);
+       }
+    }
+```
+
+##### PostOrder
+
+```java
+    /* Function for postorder traversal */
+    public void postorder(BSTNode r)
+    {
+         if(r != null){
+           preorder(r.left);
+           preorder(r.right);
+           System.out.print(r.data + " ");
+         }     
+    }
+```
+
+
+### Test Cases
+
+##### String
+
+1. if null
+2. if odd/even length
+3. throw new IllegalArgumentException
+4. String with all same character
+5. String with special characters
+
+##### Arrays
+
+ 1. if Null
+ 2. if arr.length == 0
+ 3. if arr.length > required size
 
 
 

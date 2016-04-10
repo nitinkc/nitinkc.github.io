@@ -155,7 +155,37 @@
 
 
     <div class="content container">
-      <h1 id="step-process">7 Step Process</h1>
+      <h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#queue-using-two-stacks" id="markdown-toc-queue-using-two-stacks">Queue using two Stacks</a></li>
+  <li><a href="#reverse-a-linked-list-iteratively-and-recursively" id="markdown-toc-reverse-a-linked-list-iteratively-and-recursively">Reverse a Linked List (Iteratively and Recursively)</a></li>
+  <li><a href="#find-a-cycle-in-a-linked-list-iteratively-and-recursively" id="markdown-toc-find-a-cycle-in-a-linked-list-iteratively-and-recursively">Find a cycle in a Linked List (Iteratively and Recursively)</a></li>
+  <li><a href="#find-a-cycle-in-a-linked-list-iteratively-and-recursively-1" id="markdown-toc-find-a-cycle-in-a-linked-list-iteratively-and-recursively-1">Find a cycle in a Linked List (Iteratively and Recursively)</a></li>
+  <li><a href="#uncoupled-integer-in-an-array" id="markdown-toc-uncoupled-integer-in-an-array">UnCoupled Integer in an Array.</a></li>
+  <li><a href="#balanced-parenthesis" id="markdown-toc-balanced-parenthesis">Balanced Parenthesis</a></li>
+  <li><a href="#find-count-of-given-sum-in-all-pairs-in-the-array" id="markdown-toc-find-count-of-given-sum-in-all-pairs-in-the-array">Find count of given Sum in all pairs in the Array</a></li>
+  <li><a href="#find-minimum-in-a-stack" id="markdown-toc-find-minimum-in-a-stack">Find minimum in a Stack</a></li>
+  <li><a href="#recursion-based" id="markdown-toc-recursion-based">Recursion based</a>    <ul>
+      <li><a href="#find-bst-height" id="markdown-toc-find-bst-height">Find BST Height</a></li>
+      <li><a href="#binary-search" id="markdown-toc-binary-search">Binary Search</a></li>
+      <li><a href="#fizzbuzz-problem" id="markdown-toc-fizzbuzz-problem">FizzBuzz Problem</a></li>
+      <li><a href="#tree-traversals" id="markdown-toc-tree-traversals">Tree Traversals</a>        <ul>
+          <li><a href="#inorder" id="markdown-toc-inorder">Inorder</a></li>
+          <li><a href="#preorder" id="markdown-toc-preorder">PreOrder</a></li>
+          <li><a href="#postorder" id="markdown-toc-postorder">PostOrder</a></li>
+        </ul>
+      </li>
+      <li><a href="#test-cases" id="markdown-toc-test-cases">Test Cases</a>        <ul>
+          <li><a href="#string" id="markdown-toc-string">String</a></li>
+          <li><a href="#arrays" id="markdown-toc-arrays">Arrays</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 class="no_toc" id="step-process">7 Step Process</h1>
 
 <p>Before jumping into the Coding</p>
 
@@ -332,13 +362,121 @@
 
 <h2 id="recursion-based">Recursion based</h2>
 
+<p>sadsad</p>
+
 <h5 id="find-bst-height">Find BST Height</h5>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">getHeight</span><span class="p">(</span><span class="n">BSTNode</span> <span class="n">root</span><span class="o">){</span>
+    <span class="k">if</span> <span class="n">root</span><span class="o">(</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
 
+    <span class="c1">// Recursive calls </span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">getHeight</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">)</span> <span class="o">+</span> <span class="n">getHeight</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre>
 </div>
+
+<h5 id="binary-search">Binary Search</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">binarySearchRecursive</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">,</span> <span class="kt">int</span> <span class="n">value</span><span class="o">)</span>
+<span class="cm">/* Base Case when start &gt; end */</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">start</span> <span class="o">&gt;</span> <span class="n">end</span><span class="o">)</span>
+   <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span><span class="c1">// value not found. Index = -1</span>
+
+<span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="o">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span> 
+
+<span class="k">if</span> <span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">value</span><span class="o">)</span>
+    <span class="n">binarySearchRecursive</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">end</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+<span class="k">else</span> <span class="nf">if</span>  <span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">value</span><span class="o">)</span>
+    <span class="n">binarySearchRecursive</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>   
+<span class="k">else</span>
+    <span class="k">return</span> <span class="n">mid</span><span class="o">;</span>           
+</code></pre>
+</div>
+
+<h5 id="fizzbuzz-problem">FizzBuzz Problem</h5>
+
+<p>Importacnce of placing if statements are tested here!!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="n">String</span> <span class="nf">fizzString2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="cm">/* Important to check for 3 &amp; 5 first else test cases fails.
+     * Other if statements passes the if test, leaving this one unexecuted)  */</span>
+    <span class="c1">//if (n%3 == 0 &amp;&amp; n%5 == 0) </span>
+    <span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">%</span><span class="mi">15</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span><span class="c1">//Same as above</span>
+        <span class="k">return</span> <span class="s">"FizzBuzz!"</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">n</span><span class="o">%</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> 
+        <span class="k">return</span> <span class="s">"Fizz!"</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">n</span><span class="o">%</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> 
+        <span class="k">return</span> <span class="s">"Buzz!"</span><span class="o">;</span>  
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="tree-traversals">Tree Traversals</h3>
+
+<h5 id="inorder">Inorder</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> <span class="cm">/* Function for inorder traversal */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">inorder</span><span class="o">(</span><span class="n">BSTNode</span> <span class="n">r</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+        <span class="n">inorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+        <span class="n">inorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="preorder">PreOrder</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="cm">/* Function for pre-order traversal */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">preorder</span><span class="o">(</span><span class="n">BSTNode</span> <span class="n">r</span><span class="o">)</span>
+    <span class="o">{</span>
+       <span class="k">if</span><span class="o">(</span><span class="n">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+           <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+           <span class="n">preorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+           <span class="n">preorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+       <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="postorder">PostOrder</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="cm">/* Function for postorder traversal */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">postorder</span><span class="o">(</span><span class="n">BSTNode</span> <span class="n">r</span><span class="o">)</span>
+    <span class="o">{</span>
+         <span class="k">if</span><span class="o">(</span><span class="n">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+           <span class="n">preorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+           <span class="n">preorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+           <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+         <span class="o">}</span>     
+    <span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="test-cases">Test Cases</h3>
+
+<h5 id="string">String</h5>
+
+<ol>
+  <li>if null</li>
+  <li>if odd/even length</li>
+  <li>throw new IllegalArgumentException</li>
+  <li>String with all same character</li>
+  <li>String with special characters</li>
+</ol>
+
+<h5 id="arrays">Arrays</h5>
+
+<ol>
+  <li>if Null</li>
+  <li>if arr.length == 0</li>
+  <li>if arr.length &gt; required size</li>
+</ol>
 
 
     </div>
