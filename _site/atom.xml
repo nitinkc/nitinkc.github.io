@@ -4,13 +4,59 @@
  <title>{ni[T]in}</title>
  <link href="http://nitinkc.github.io/atom.xml" rel="self"/>
  <link href="http://nitinkc.github.io/"/>
- <updated>2016-04-11T13:20:47-04:00</updated>
+ <updated>2016-04-12T15:56:02-04:00</updated>
  <id>http://nitinkc.github.io</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Post one</title>
+   <link href="http://nitinkc.github.io/2016/04/12/testing/"/>
+   <updated>2016-04-12T00:00:00-04:00</updated>
+   <id>http://nitinkc.github.io/2016/04/12/testing</id>
+   <content type="html">&lt;h1 id=&quot;this-the-post-excerpt&quot;&gt;this the post excerpt&lt;/h1&gt;
+
+&lt;p&gt;this is the maybe useless post body&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Graphs</title>
+   <link href="http://nitinkc.github.io/2016/04/11/graphs/"/>
+   <updated>2016-04-11T18:20:00-04:00</updated>
+   <id>http://nitinkc.github.io/2016/04/11/graphs</id>
+   <content type="html">&lt;h5 id=&quot;graphs&quot;&gt;Graphs&lt;/h5&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Stacks</title>
+   <link href="http://nitinkc.github.io/2016/04/11/stacks/"/>
+   <updated>2016-04-11T18:20:00-04:00</updated>
+   <id>http://nitinkc.github.io/2016/04/11/stacks</id>
+   <content type="html">&lt;h5 id=&quot;stack-using-an-arraylistarray-also-min&quot;&gt;Stack Using an ArrayList/Array (Also min)&lt;/h5&gt;
+
+&lt;h5 id=&quot;stack-using-2-stacks-also-min&quot;&gt;Stack using 2 stacks (Also min)&lt;/h5&gt;
+
+&lt;p&gt;#####&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Queue</title>
+   <link href="http://nitinkc.github.io/2016/04/11/queues/"/>
+   <updated>2016-04-11T07:33:00-04:00</updated>
+   <id>http://nitinkc.github.io/2016/04/11/queues</id>
+   <content type="html">&lt;h5 id=&quot;queue-using-an-arraylistarray&quot;&gt;Queue Using an ArrayList/Array&lt;/h5&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Trees</title>
