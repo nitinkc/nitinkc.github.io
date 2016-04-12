@@ -4,11 +4,11 @@ title: Nitin Chaurasia
 ---
 # Nitin Kumar Chaurasia
 
-###### BE (Computer Engineering) - SGSITS, Indore (MP) INDIA
-
-###### MS (Computer Science) - BGSU (OH) USA
-
 *[view complete resume]({{ site.url }}/static/resume.pdf)*.
+
+
+###### BE (Computer Engineering) - SGSITS, Indore (MP) INDIA <br> MS (Computer Science) - BGSU (OH) USA
+
 
 
 > Learning new Technologies and Programming Languages to build Web and Mobile Applications  and enhancing skills to write **Good Softwares**.
