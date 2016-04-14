@@ -4,13 +4,90 @@
  <title>{ni[T]in}</title>
  <link href="http://nitinkc.github.io/atom.xml" rel="self"/>
  <link href="http://nitinkc.github.io/"/>
- <updated>2016-04-13T23:32:56-05:00</updated>
+ <updated>2016-04-14T16:57:12-05:00</updated>
  <id>http://nitinkc.github.io</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Test</title>
+   <link href="http://nitinkc.github.io/2016/04/14/testing/"/>
+   <updated>2016-04-14T11:21:00-05:00</updated>
+   <id>http://nitinkc.github.io/2016/04/14/testing</id>
+   <content type="html">&lt;h5 id=&quot;sql&quot;&gt;SQL&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;How to retrieve all the data from a table.&lt;/li&gt;
+  &lt;li&gt;retrieve particular empid.&lt;/li&gt;
+  &lt;li&gt;how many types to delete the data
+    &lt;ul&gt;
+      &lt;li&gt;truncate&lt;/li&gt;
+      &lt;li&gt;delete&lt;/li&gt;
+      &lt;li&gt;which one can be rolledback&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Whiteboard&lt;/em&gt; Find count departments id where more than 5 employees. WHITE BOARD - count.
+    &lt;ul&gt;
+      &lt;li&gt;Followed by bonus : related to sub query. Name all the depts with more than 5 employees.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;diff. in inner join and outer join&lt;/li&gt;
+  &lt;li&gt;what is left outer join and right outer join.&lt;/li&gt;
+  &lt;li&gt;explain plan, performance tuning.&lt;/li&gt;
+  &lt;li&gt;syntax for finding indexes in tuning.&lt;/li&gt;
+  &lt;li&gt;syntax fro doing index&lt;/li&gt;
+  &lt;li&gt;full table scan&lt;/li&gt;
+  &lt;li&gt;index advantegs of indexes in sql tuning? What is the syntax of doing that.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;java&quot;&gt;Java&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;what are the data types&lt;/li&gt;
+  &lt;li&gt;String equality&lt;/li&gt;
+  &lt;li&gt;GC - when does the world stops&lt;/li&gt;
+  &lt;li&gt;Java heaps - memory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;White board :&lt;/p&gt;
+
+&lt;h5 id=&quot;linux&quot;&gt;Linux&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;ps commans and jobs command&lt;/li&gt;
+  &lt;li&gt;what is ls.&lt;/li&gt;
+  &lt;li&gt;error : file cnanot be read and what would not be the reason. how u can check the access modifier. File permission&lt;/li&gt;
+  &lt;li&gt;chmod&lt;/li&gt;
+  &lt;li&gt;what is there in exe Folder. READ ABOUT THE SYSTEM FOLDERS in Linux.&lt;/li&gt;
+  &lt;li&gt;700 file in meaning&lt;/li&gt;
+  &lt;li&gt;grep and find.&lt;/li&gt;
+  &lt;li&gt;how can u find a pattern and how to do recursively&lt;/li&gt;
+  &lt;li&gt;filename with directory&lt;/li&gt;
+  &lt;li&gt;state folder, city, houde file hierarchy. Find a file. find and give the path.&lt;/li&gt;
+  &lt;li&gt;how do u connect to remove server securely.&lt;/li&gt;
+  &lt;li&gt;remove the file from remote server&lt;/li&gt;
+  &lt;li&gt;difference between move and copy&lt;/li&gt;
+  &lt;li&gt;diff : compare the two files. cat&lt;/li&gt;
+  &lt;li&gt;distributions in Linux&lt;/li&gt;
+  &lt;li&gt;version of Linux.&lt;/li&gt;
+  &lt;li&gt;What is GNOME. READ IT.&lt;/li&gt;
+  &lt;li&gt;what recent version.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;hibernate&quot;&gt;Hibernate&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;Disadvantage of Hibernate&lt;/li&gt;
+  &lt;li&gt;Hibernate over JDBC&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;spring&quot;&gt;Spring&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;What is Dependency Injection&lt;/li&gt;
+  &lt;li&gt;what is setter injection and constructor injection&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Java Revisions</title>
@@ -80,18 +157,6 @@
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Post one</title>
-   <link href="http://nitinkc.github.io/2016/04/12/testing/"/>
-   <updated>2016-04-12T00:00:00-05:00</updated>
-   <id>http://nitinkc.github.io/2016/04/12/testing</id>
-   <content type="html">&lt;h1 id=&quot;this-the-post-excerpt&quot;&gt;this the post excerpt&lt;/h1&gt;
-
-&lt;p&gt;this is the maybe useless post body&lt;/p&gt;
 
 </content>
  </entry>
