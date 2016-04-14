@@ -4,7 +4,7 @@
  <title>{ni[T]in}</title>
  <link href="http://nitinkc.github.io/atom.xml" rel="self"/>
  <link href="http://nitinkc.github.io/"/>
- <updated>2016-04-12T17:07:59-04:00</updated>
+ <updated>2016-04-13T23:32:56-05:00</updated>
  <id>http://nitinkc.github.io</id>
  <author>
    <name></name>
@@ -13,9 +13,81 @@
 
  
  <entry>
+   <title>Java Revisions</title>
+   <link href="http://nitinkc.github.io/2016/04/13/java-theory-revisions/"/>
+   <updated>2016-04-13T11:11:00-05:00</updated>
+   <id>http://nitinkc.github.io/2016/04/13/java-theory-revisions</id>
+   <content type="html">&lt;h5 id=&quot;objects&quot;&gt;Objects&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Objects&lt;/li&gt;
+  &lt;li&gt;OOPS ()
+    &lt;ul&gt;
+      &lt;li&gt;Inheritance&lt;/li&gt;
+      &lt;li&gt;Polymorphism&lt;/li&gt;
+      &lt;li&gt;Abstraction&lt;/li&gt;
+      &lt;li&gt;
+        &lt;hr /&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inheritance
+    &lt;ul&gt;
+      &lt;li&gt;Overloading vs overriding&lt;/li&gt;
+      &lt;li&gt;multiple inheritance&lt;/li&gt;
+      &lt;li&gt;method hiding&lt;/li&gt;
+      &lt;li&gt;can static be inherited.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Abstraction
+    &lt;ul&gt;
+      &lt;li&gt;Interface
+        &lt;ul&gt;
+          &lt;li&gt;variables in interface&lt;/li&gt;
+          &lt;li&gt;default interface&lt;/li&gt;
+          &lt;li&gt;100% Abstraction&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Abstraction instantiation?&lt;/li&gt;
+      &lt;li&gt;Use Abstraction when there is some relation&lt;/li&gt;
+      &lt;li&gt;Use Interface when there is no relation&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Polymorphism
+    &lt;ul&gt;
+      &lt;li&gt;Runtime Ploymorphism vs compile time polymorphism&lt;/li&gt;
+      &lt;li&gt;Polymorphism as a way to have multiple inheritance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;Thread
+    &lt;ul&gt;
+      &lt;li&gt;Ways to implement a Thread&lt;/li&gt;
+      &lt;li&gt;Concurrency package&lt;/li&gt;
+      &lt;li&gt;Volatile&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Collections
+    &lt;ul&gt;
+      &lt;li&gt;List
+        &lt;ul&gt;
+          &lt;li&gt;ArrayList&lt;/li&gt;
+          &lt;li&gt;LinkedList&lt;/li&gt;
+          &lt;li&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>Post one</title>
    <link href="http://nitinkc.github.io/2016/04/12/testing/"/>
-   <updated>2016-04-12T00:00:00-04:00</updated>
+   <updated>2016-04-12T00:00:00-05:00</updated>
    <id>http://nitinkc.github.io/2016/04/12/testing</id>
    <content type="html">&lt;h1 id=&quot;this-the-post-excerpt&quot;&gt;this the post excerpt&lt;/h1&gt;
 
@@ -27,7 +99,7 @@
  <entry>
    <title>Graphs</title>
    <link href="http://nitinkc.github.io/2016/04/11/graphs/"/>
-   <updated>2016-04-11T18:20:00-04:00</updated>
+   <updated>2016-04-11T17:20:00-05:00</updated>
    <id>http://nitinkc.github.io/2016/04/11/graphs</id>
    <content type="html">&lt;h5 id=&quot;graphs&quot;&gt;Graphs&lt;/h5&gt;
 
@@ -37,7 +109,7 @@
  <entry>
    <title>Stacks</title>
    <link href="http://nitinkc.github.io/2016/04/11/stacks/"/>
-   <updated>2016-04-11T18:20:00-04:00</updated>
+   <updated>2016-04-11T17:20:00-05:00</updated>
    <id>http://nitinkc.github.io/2016/04/11/stacks</id>
    <content type="html">&lt;h5 id=&quot;stack-using-an-arraylistarray-also-min&quot;&gt;Stack Using an ArrayList/Array (Also min)&lt;/h5&gt;
 
@@ -51,7 +123,7 @@
  <entry>
    <title>Queue</title>
    <link href="http://nitinkc.github.io/2016/04/11/queues/"/>
-   <updated>2016-04-11T07:33:00-04:00</updated>
+   <updated>2016-04-11T06:33:00-05:00</updated>
    <id>http://nitinkc.github.io/2016/04/11/queues</id>
    <content type="html">&lt;h5 id=&quot;queue-using-an-arraylistarray&quot;&gt;Queue Using an ArrayList/Array&lt;/h5&gt;
 
@@ -61,7 +133,7 @@
  <entry>
    <title>Trees</title>
    <link href="http://nitinkc.github.io/2016/04/06/trees/"/>
-   <updated>2016-04-06T01:14:00-04:00</updated>
+   <updated>2016-04-06T00:14:00-05:00</updated>
    <id>http://nitinkc.github.io/2016/04/06/trees</id>
    <content type="html">&lt;h5 id=&quot;trees-iteration&quot;&gt;Trees Iteration&lt;/h5&gt;
 &lt;noscript&gt;&lt;pre&gt;public int countEmpty() {
@@ -95,7 +167,7 @@ public int countEmpty(IntTreeNode root) {
  <entry>
    <title>Linked List</title>
    <link href="http://nitinkc.github.io/2016/04/06/linked-list/"/>
-   <updated>2016-04-06T01:14:00-04:00</updated>
+   <updated>2016-04-06T00:14:00-05:00</updated>
    <id>http://nitinkc.github.io/2016/04/06/linked-list</id>
    <content type="html">&lt;h5 id=&quot;linked-list-iteration&quot;&gt;Linked List Iteration&lt;/h5&gt;
 &lt;noscript&gt;&lt;pre&gt;// Traditional Iteration for LinkedList
@@ -234,7 +306,7 @@ public void addNodeEnd{
  <entry>
    <title>Chrome Extension</title>
    <link href="http://nitinkc.github.io/2016/04/06/chrome-extention/"/>
-   <updated>2016-04-06T01:14:00-04:00</updated>
+   <updated>2016-04-06T00:14:00-05:00</updated>
    <id>http://nitinkc.github.io/2016/04/06/chrome-extention</id>
    <content type="html">&lt;h2 id=&quot;building-the-chrome-extension&quot;&gt;Building the Chrome Extension&lt;/h2&gt;
 
@@ -251,7 +323,7 @@ public void addNodeEnd{
  <entry>
    <title>Tools used for making Personal Website</title>
    <link href="http://nitinkc.github.io/2016/04/04/tools-used/"/>
-   <updated>2016-04-04T14:31:00-04:00</updated>
+   <updated>2016-04-04T13:31:00-05:00</updated>
    <id>http://nitinkc.github.io/2016/04/04/tools-used</id>
    <content type="html">&lt;h3 id=&quot;making-a-personal-website-using-githubs-free-hosting-for-the-jekyll-sites&quot;&gt;Making a personal website using GitHubs free Hosting for the Jekyll Sites&lt;/h3&gt;
 
@@ -284,7 +356,7 @@ Npm install&lt;/p&gt;
  <entry>
    <title>Building a Jekyll Blog and Hosting on GitHub!</title>
    <link href="http://nitinkc.github.io/jekyll/update/2016/04/04/building-the-jekyll-blog/"/>
-   <updated>2016-04-04T14:31:00-04:00</updated>
+   <updated>2016-04-04T13:31:00-05:00</updated>
    <id>http://nitinkc.github.io/jekyll/update/2016/04/04/building-the-jekyll-blog</id>
    <content type="html">&lt;h1 id=&quot;making-a-personal-website-using-githubs-free-hosting-for-the-jekyll-sites&quot;&gt;Making a personal website using GitHubs free Hosting for the Jekyll Sites&lt;/h1&gt;
 </content>

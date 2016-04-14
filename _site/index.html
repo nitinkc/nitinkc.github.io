@@ -167,6 +167,82 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/2016/04/13/java-theory-revisions/">
+        Java Revisions
+      </a>
+    </h1>
+
+    <span class="post-date">13 Apr 2016</span>
+
+    <h5 id="objects">Objects</h5>
+
+<ul>
+  <li>Objects</li>
+  <li>OOPS ()
+    <ul>
+      <li>Inheritance</li>
+      <li>Polymorphism</li>
+      <li>Abstraction</li>
+      <li>
+        <hr />
+      </li>
+    </ul>
+  </li>
+  <li>Inheritance
+    <ul>
+      <li>Overloading vs overriding</li>
+      <li>multiple inheritance</li>
+      <li>method hiding</li>
+      <li>can static be inherited.</li>
+    </ul>
+  </li>
+  <li>Abstraction
+    <ul>
+      <li>Interface
+        <ul>
+          <li>variables in interface</li>
+          <li>default interface</li>
+          <li>100% Abstraction</li>
+        </ul>
+      </li>
+      <li>Abstraction instantiation?</li>
+      <li>Use Abstraction when there is some relation</li>
+      <li>Use Interface when there is no relation</li>
+      <li></li>
+    </ul>
+  </li>
+  <li>Polymorphism
+    <ul>
+      <li>Runtime Ploymorphism vs compile time polymorphism</li>
+      <li>Polymorphism as a way to have multiple inheritance</li>
+    </ul>
+  </li>
+  <li></li>
+  <li>Thread
+    <ul>
+      <li>Ways to implement a Thread</li>
+      <li>Concurrency package</li>
+      <li>Volatile</li>
+    </ul>
+  </li>
+  <li>Collections
+    <ul>
+      <li>List
+        <ul>
+          <li>ArrayList</li>
+          <li>LinkedList</li>
+          <li></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/2016/04/12/testing/">
         Post one
       </a>
@@ -223,44 +299,6 @@
     <span class="post-date">11 Apr 2016</span>
 
     <h5 id="queue-using-an-arraylistarray">Queue Using an ArrayList/Array</h5>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2016/04/06/trees/">
-        Trees
-      </a>
-    </h1>
-
-    <span class="post-date">06 Apr 2016</span>
-
-    <h5 id="trees-iteration">Trees Iteration</h5>
-<noscript><pre>public int countEmpty() {
-    return countEmpty(overallRoot);
-}
-
-public int countEmpty(IntTreeNode root) {
-    if (root == null)
-        return 1;
-    int count = 0;
-
-    //if its a child, there are two empty spots
-    if (root.left == null &amp;&amp; root.right == null) {
-        return 2;
-    }
-
-    //Else if one child is there, one sopt is there and the other spot had a subproblem
-    else if (root.left == null &amp;&amp; root.right != null) {
-        return 1 + countEmpty(root.right);
-    } else if (root.left != null &amp;&amp; root.right == null) {
-        return 1 + countEmpty(root.left);
-    } else
-        count = countEmpty(root.left) + countEmpty(root.right);
-    return count;
-}</pre></noscript>
-<script src="https://gist.github.com/nitinkc/619d22e2ae458a3f174b0297019e6fd5.js"> </script>
 
 
   </div>
