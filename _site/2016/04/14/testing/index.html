@@ -89,6 +89,10 @@
           
         
       
+        
+          
+        
+      
 
       <!-- Putting the Page explicitly -->
       <a class="sidebar-nav-item" href="/about">About</a>
@@ -142,6 +146,10 @@
           
         
       
+        
+          
+        
+      
      
       <i> -- Connect -- </i>
       <a class="sidebar-nav-item" href="https://github.com/nitinkc">GitHub</a>
@@ -166,29 +174,198 @@
       <div class="post">
   <h1 class="post-title">Test</h1>
   <span class="post-date">14 Apr 2016</span>
-  <h5 id="sql">SQL</h5>
+  <h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#sql" id="markdown-toc-sql">SQL</a></li>
+  <li><a href="#java" id="markdown-toc-java">Java</a></li>
+  <li><a href="#linux" id="markdown-toc-linux">Linux</a></li>
+  <li><a href="#hibernate" id="markdown-toc-hibernate">Hibernate</a></li>
+  <li><a href="#spring" id="markdown-toc-spring">Spring</a></li>
+</ul>
+
+<h5 id="sql">SQL</h5>
+<p><i class="fa fa-question"></i> How to retrieve all the data from a table.</p>
+
+<blockquote>
+  <p><i class="fa fa-check"></i>
+ Use * wild card. Select * from tablename.</p>
+</blockquote>
+
+<p><i class="fa fa-question"></i> Retrieve a particular empid.</p>
+
+<blockquote>
+  <p><i class="fa fa-check"></i>
+ Use <strong>where</strong> clause</p>
+</blockquote>
+
+<p><i class="fa fa-question"></i> How many types to delete the data</p>
+
+<blockquote>
+  <ul>
+    <li>truncate (deletes data but not table): TRUNCATE removes all rows from a table</li>
+    <li>The DELETE command is used to remove rows from a table
+      <ul>
+        <li>DELETE FROM emp WHERE job = ‘CLERK’;</li>
+        <li>you need to COMMIT or ROLLBACK the transaction to make the change permanent</li>
+      </ul>
+    </li>
+    <li>drop table/database : deletes a table/database
+      <ul>
+        <li>All the tables’ rows, indexes and privileges will also be removed</li>
+        <li>The operation cannot be rolled back.</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p><strong>Whiteboard:</strong> Find count departments id where more than 5 employees.</p>
+
+<blockquote>
+  <div class="highlighter-rouge"><pre class="highlight"><code><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">"# employees"</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+      <span class="k">from</span> <span class="n">dept</span> <span class="n">d</span><span class="p">,</span> <span class="n">employees</span> <span class="n">e</span><span class="p">,</span> <span class="n">mapping</span> <span class="n">m</span>
+      <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">eid</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">eid</span> <span class="k">AND</span> <span class="n">d</span><span class="p">.</span><span class="n">did</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">did</span>
+      <span class="k">group</span> <span class="k">by</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+      <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>
+</code></pre>
+  </div>
+
+  <p>SET Theory: Inline-view, TOP-N Analysis
+Select 11th heighest salary.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
+<span class="k">where</span> <span class="n">rownum</span> <span class="o">&lt;</span> <span class="mi">12</span> 
+<span class="n">MINUS</span>
+<span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
+<span class="k">where</span> <span class="n">rownum</span> <span class="o">&lt;</span> <span class="mi">11</span>
+</code></pre>
+</div>
+
+<p><strong>Whiteboard:</strong> Followed by bonus : related to sub query. Name all the depts with more than 5 employees.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">select</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+      <span class="k">from</span> <span class="n">dept</span> <span class="n">d</span><span class="p">,</span> <span class="n">employees</span> <span class="n">e</span><span class="p">,</span> <span class="n">mapping</span> <span class="n">m</span>
+      <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">eid</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">eid</span> <span class="k">AND</span> <span class="n">d</span><span class="p">.</span><span class="n">did</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">did</span>
+      <span class="k">group</span> <span class="k">by</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+      <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p><i class="fa fa-question"></i> Diff. in inner join and outer join</p>
+
+<pre>
+JOINS : to combine rows from two or more tables, based on a common field between them.
+    INNER (Common Type) – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
+    OUTER (Smarter than inner)– LEFT, RIGHT &amp; FULL
+
+    OUTER is result of INNER &amp; some additional data   
+</pre>
+<blockquote>
+  <p><strong>INNER JOIN</strong>: Return rows as long as there one match in both tables</p>
+
+</blockquote>
+
+<p>SELECT SSN, E.Name AS EName, LastName, D.Name AS DName, Department, Code, Budget
+ FROM Employees E <strong>INNER JOIN</strong> Departments D
+ <strong>ON</strong> E.Department = D.Code;
+ <br /><br /><strong>IS SAME AS</strong><br /><br />
+ SELECT SSN, E.Name AS Name_E, LastName, D.Name AS Name_D, Department, Code, Budget
+ FROM <strong>Employees E, Departments D</strong>
+ <strong>where</strong> E.Department = D.Code;</p>
+
+<p><strong>SELF JOIN</strong> – only one table is involved in join <br /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">e1</span><span class="p">.</span><span class="n">ename</span><span class="o">||</span><span class="s1">' works for '</span><span class="o">||</span><span class="n">e2</span><span class="p">.</span><span class="n">ename</span>  <span class="k">AS</span>
+<span class="nv">"Employees and their Managers"</span> 
+<span class="k">FROM</span> <span class="n">emp</span> <span class="n">e1</span> <span class="k">JOIN</span> <span class="n">emp</span> <span class="n">e2</span> <span class="k">ON</span> <span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="n">mgr</span> <span class="o">=</span> <span class="n">e2</span><span class="p">.</span><span class="n">empno</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>OR can be written as</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">e1</span><span class="p">.</span><span class="n">ename</span><span class="o">||</span><span class="s1">' works for '</span><span class="o">||</span><span class="n">e2</span><span class="p">.</span><span class="n">ename</span>  <span class="k">AS</span>
+<span class="nv">"Employees and their Managers"</span> 
+<span class="k">FROM</span> <span class="n">emp</span> <span class="n">e1</span><span class="p">,</span> <span class="n">emp</span> <span class="n">e2</span> <span class="k">where</span> <span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="n">mgr</span> <span class="o">=</span> <span class="n">e2</span><span class="p">.</span><span class="n">empno</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p><br />
+<strong>LEFT OUTER JOIN</strong>: Return all rows from the left table, even if there are 
+no matches in the right table and all matching rows from right<br />
+<strong>RIGHT OUTER JOIN</strong>: Return all rows from the right table and matching rows from left<br />
+<strong>FULL OUTER JOIN</strong>: Return rows when there is a match in one of the tables<br /></p>
+  <pre>
+The USING clause
+</pre>
+</blockquote>
+
+<p>The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.
+The ON clause</p>
+
+<p>The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
+&lt;/pre&gt;
+&gt;Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
+&gt; &lt;/pre&gt;</p>
+
+<p><i class="fa fa-question"></i> what is left outer join and right outer join.</p>
+
+<p><i class="fa fa-question"></i> explain plan, performance tuning.</p>
+
 <ul>
-  <li>How to retrieve all the data from a table.</li>
-  <li>retrieve particular empid.</li>
-  <li>how many types to delete the data
+  <li>The EXPLAIN PLAN statement displays execution plans chosen by the Oracle optimizer for SELECT, UPDATE, INSERT, and DELETE statements. A statement’s execution plan is the sequence of operations Oracle performs to run the statement.</li>
+</ul>
+
+<p><i class="fa fa-question"></i> syntax for finding indexes in tuning.</p>
+
+<blockquote>
+  <p>Indexes are special lookup tables that the database search engine can use to 
+speed up data retrieval. An index is a pointer to data in a 
+table.</p>
+  <pre>
+CREATE UNIQUE INDEX index_name
+ON table_name (column_name)
+</pre>
+  <p><i class="fa fa-question"></i> full table scan</p>
+</blockquote>
+
+<p><i class="fa fa-question"></i> index advantegs of indexes in sql tuning? What is the syntax of doing that.
+&gt; Indexes are a performance drag when the time comes to modify records.</p>
+
+<p><i class="fa fa-question"></i></p>
+
+<blockquote>
+  <p>Multiple Conditions : AND <br />
+<code class="highlighter-rouge">sql
+SELECT * from EMP WHERE salary &gt; 10000 AND dateofjoining &gt; ‘1-Jan-1990’ ;
+</code>
+<br />Range Selection - BETWEEN
+<code class="highlighter-rouge">sql
+SELECT * from EMP WHERE salary between 9000 AND 20000;
+</code>
+<br />Exact List Matching
+<code class="highlighter-rouge">sql
+SELECT * from EMP WHERE employeeID IN (3001,  3002);
+</code></p>
+</blockquote>
+
+<p><i class="fa fa-question"></i> Full table scan</p>
+
+<ul>
+  <li>A full table scan occurs when an index is either not used or there is no index on the table(s)</li>
+  <li>Full table scans should be avoided when reading large tables.For example, a full table scan is performed when a table that does not have an index is read</li>
+  <li>FTS will be performed even though an index is present on that table.
     <ul>
-      <li>truncate</li>
-      <li>delete</li>
-      <li>which one can be rolledback</li>
+      <li>If a query does have a WHERE clause, but none of the columns in that WHERE clause match.</li>
+      <li>when WHERE clause prevents the use of an index like below.</li>
+      <li>If the NOT EQUAL (the “&lt;&gt;“) operator is used.</li>
+      <li>If the NOT operator is used.</li>
+      <li>If the wildcard operator is used in the first position of a comparison string. An example is “WHERE NAME LIKE ‘%INTERVIEW%’”.</li>
     </ul>
   </li>
-  <li><em>Whiteboard</em> Find count departments id where more than 5 employees. WHITE BOARD - count.
-    <ul>
-      <li>Followed by bonus : related to sub query. Name all the depts with more than 5 employees.</li>
-    </ul>
-  </li>
-  <li>diff. in inner join and outer join</li>
-  <li>what is left outer join and right outer join.</li>
-  <li>explain plan, performance tuning.</li>
-  <li>syntax for finding indexes in tuning.</li>
-  <li>syntax fro doing index</li>
-  <li>full table scan</li>
-  <li>index advantegs of indexes in sql tuning? What is the syntax of doing that.</li>
 </ul>
 
 <h5 id="java">Java</h5>
@@ -199,39 +376,139 @@
   <li>Java heaps - memory</li>
 </ul>
 
-<p>White board :</p>
+<p><strong>Whiteboard</strong> Find popular name in a List of names. Most frequently name in a List</p>
 
 <h5 id="linux">Linux</h5>
+
 <ul>
-  <li>ps commans and jobs command</li>
-  <li>what is ls.</li>
-  <li>error : file cnanot be read and what would not be the reason. how u can check the access modifier. File permission</li>
-  <li>chmod</li>
-  <li>what is there in exe Folder. READ ABOUT THE SYSTEM FOLDERS in Linux.</li>
-  <li>700 file in meaning</li>
-  <li>grep and find.</li>
-  <li>how can u find a pattern and how to do recursively</li>
-  <li>filename with directory</li>
-  <li>state folder, city, houde file hierarchy. Find a file. find and give the path.</li>
-  <li>how do u connect to remove server securely.</li>
-  <li>remove the file from remote server</li>
-  <li>difference between move and copy</li>
-  <li>diff : compare the two files. cat</li>
-  <li>distributions in Linux</li>
-  <li>version of Linux.</li>
-  <li>What is GNOME. READ IT.</li>
-  <li>what recent version.</li>
+  <li>what is ls.
+    <ul>
+      <li>list all the commands</li>
+    </ul>
+  </li>
+  <li>Commands to see processesps commands and jobs command
+    <ul>
+      <li>top</li>
+      <li>ps -ef</li>
+      <li>GUI : System monitor (GNOME, KDE System -&gt; Monitor)</li>
+      <li>kill -9 to terminate.</li>
+    </ul>
+  </li>
+  <li>Error in file access. (File Permission)
+    <ul>
+      <li>Ownership permission (ugo -&gt; USER, GROUP &amp; OTHER)</li>
+      <li>Viweing Permission (r=4; w=2; x=1)</li>
+      <li>eg: 700 (rwx for u, none got g,o)</li>
+      <li>chmod for changing file permission (chmod 771 file.exe)</li>
+    </ul>
+  </li>
+  <li>what is there in exe Folder.
+    <ul>
+      <li><em><a href="/2016/04/14/linux-files/">Important Linux Files</a></em>.</li>
+    </ul>
+  </li>
+  <li>grep : Search a pettern in File.
+    <ul>
+      <li><code class="highlighter-rouge">grep ‘pattern to search’ file1 file2</code></li>
+      <li><code class="highlighter-rouge">grep -i -n ‘administrator’  file1.txt</code></li>
+      <li>Ignoring the case ( -i)</li>
+      <li>Displaying line Numbers  ( -n )</li>
+    </ul>
+  </li>
+  <li>How can u find a pattern and how to do recursively
+    <ul>
+      <li>grep -r “texthere” .</li>
+      <li>Recursively search “texthere” in PWD.</li>
+    </ul>
+  </li>
+  <li>Given directory hierarchy. Find a file.
+    <ul>
+      <li><code class="highlighter-rouge">find / -name 'program.c' 2&gt;errors.txt</code>
+        <ul>
+          <li>Start searching from the root directory (i.e / directory)</li>
+          <li><code class="highlighter-rouge">-name</code> : Given search text is the filename rather than any other attribute of a file</li>
+          <li><code class="highlighter-rouge">'program.c'</code> Search text that we have entered. Always enclose the filename in single quotes.. why to do this is complex.. so simply do so.</li>
+          <li><code class="highlighter-rouge">$ find /mp3collection -name '*.mp3' -size -5000k</code> find in /mp3collection, only those mp3 files that have a size less than 5000 Kilobytes ( &lt; 5MB)</li>
+          <li><code class="highlighter-rouge">$ find / -size +10000k</code> search from the / directory for any file that is larger than 10000k (&gt; 10MB)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>how do u connect to remove server securely.
+    <ul>
+      <li><code class="highlighter-rouge">ssh remote_username@remote_host</code></li>
+      <li>SSH keys should be generated on the computer you wish to log in from. This is usually your local computer. Enter the following into the command line. <code class="highlighter-rouge">ssh-keygen -t rsa</code></li>
+    </ul>
+  </li>
+  <li>remove the file from remote server
+    <ul>
+      <li><code class="highlighter-rouge">ssh username@domain.com 'rm /some/where/some_file.war'</code></li>
+    </ul>
+  </li>
+  <li>difference between move and copy
+    <ul>
+      <li>mv displaces the file, cp makes a new copy</li>
+    </ul>
+  </li>
+  <li>diff : compare the two files.
+    <ul>
+      <li>cmp returns first occurrence of difference</li>
+      <li>diff returns all differences</li>
+    </ul>
+  </li>
+  <li>Distributions &amp; version of Linux
+    <ul>
+      <li>Fedora/RedHat based : Fedora 23, Cent OS</li>
+      <li>Debian Based : Ubuntu 15 LTS</li>
+      <li>Mac OS is based on a BSD code base</li>
+    </ul>
+  </li>
+  <li>What is GNOME.
+    <ul>
+      <li>GNOME desktop and KDE</li>
+    </ul>
+  </li>
 </ul>
 
 <h5 id="hibernate">Hibernate</h5>
 <ul>
   <li>Disadvantage of Hibernate</li>
-  <li>Hibernate over JDBC</li>
+</ul>
+<pre>
+1. Not that flexible when it comes to mapping composite-ids (although you can do a lot). While this is not a fault of Hibernate as composite-ids are typically used in legacy systems, it can be a pain when attempting to map legacy tables.
+
+2. Everything is an object. If you need only a portion of data (say, for a search), you would still have to retrieve the object. However, this is true for any ORM strategy.
+
+3. In some cases, you will encounter the (n+1) select problem. That is, Hibernate will execute (n+1) queries for going through a list of records of size n. There are some mechanisms suggested by Hibernate that can be used to mitigate this risk.
+
+4. Till Hibernate 3, you cannot map multiple tables to a single class. This has been fixed in Hibernate 3 using the join tag.
+</pre>
+
+<ul>
+  <li>Hibernate over JDBC
+    <ul>
+      <li>Make software database independent. Can replace any other database with this.</li>
+    </ul>
+  </li>
 </ul>
 
 <h5 id="spring">Spring</h5>
 <ul>
   <li>What is Dependency Injection</li>
+</ul>
+<pre>IOC(Inversion Of Controller):   Giving control to the container to get instance of object is called Inversion of Control., 
+    • means instead of you are creating object using new operator, let the container do that for you.
+
+DI(Dependency Injection):  Decoupling by passing an object to a function rather than CREATING the object the circle inside the method.
+Way of injecting properties to an object is called Dependency injection.
+
+    We have three types of Dependency injection
+        1)  Constructor Injection : Constructor-based DI is accomplished when the container invokes a class constructor with a number of arguments, each representing a dependency on other class.
+        2)  Setter/Getter Injection : Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or no-argument static factory method to instantiate your bean.
+        3)  Interface Injection
+Spring support only Constructor Injection and Setter/Getter Injection.
+</pre>
+<ul>
   <li>what is setter injection and constructor injection</li>
 </ul>
 
@@ -244,27 +521,27 @@
     
       <li>
         <h3>
-          <a href="/2016/04/13/java-theory-revisions/">
-            Java Revisions
-            <small>13 Apr 2016</small>
+          <a href="/2016/04/15/sql-revisions/">
+            SQL Revisions
+            <small>15 Apr 2016</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/2016/04/11/graphs/">
-            Graphs
-            <small>11 Apr 2016</small>
+          <a href="/2016/04/14/linux-files/">
+            Linux Files
+            <small>14 Apr 2016</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/2016/04/11/stacks/">
-            Stacks
-            <small>11 Apr 2016</small>
+          <a href="/2016/04/14/sql-joins/">
+            SQL Joins
+            <small>14 Apr 2016</small>
           </a>
         </h3>
       </li>

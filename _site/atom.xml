@@ -4,7 +4,7 @@
  <title>{ni[T]in}</title>
  <link href="http://nitinkc.github.io/atom.xml" rel="self"/>
  <link href="http://nitinkc.github.io/"/>
- <updated>2016-04-14T16:57:12-05:00</updated>
+ <updated>2016-04-15T11:45:33-05:00</updated>
  <id>http://nitinkc.github.io</id>
  <author>
    <name></name>
@@ -13,33 +13,310 @@
 
  
  <entry>
+   <title>SQL Revisions</title>
+   <link href="http://nitinkc.github.io/2016/04/15/sql-revisions/"/>
+   <updated>2016-04-15T06:45:00-05:00</updated>
+   <id>http://nitinkc.github.io/2016/04/15/sql-revisions</id>
+   <content type="html">&lt;p&gt;https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management&lt;/p&gt;
+
+&lt;p&gt;https://en.wikibooks.org/wiki/SQL_Exercises&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Linux Files</title>
+   <link href="http://nitinkc.github.io/2016/04/14/linux-files/"/>
+   <updated>2016-04-14T15:11:00-05:00</updated>
+   <id>http://nitinkc.github.io/2016/04/14/linux-files</id>
+   <content type="html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Directory&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/&lt;/td&gt;
+      &lt;td&gt;Root&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/boot&lt;/td&gt;
+      &lt;td&gt;For Linux kernel and boot loader files.The kernel is a file called &lt;strong&gt;vmlinuz&lt;/strong&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/etc&lt;/td&gt;
+      &lt;td&gt;Configuration files (All &lt;strong&gt;text files&lt;/strong&gt;).&lt;br /&gt;&lt;br /&gt; &lt;strong&gt;/etc/passwd&lt;/strong&gt; Here users are defined &amp;amp; essential information for each user is kept like username, password (&lt;strong&gt;Encrypetd &amp;amp; stored in shadow&lt;/strong&gt;), group id, userid, user id info, home directory, command shell etc… .&lt;br /&gt; Password is stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/shadow&lt;/code&gt; file not in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/passwd&lt;/code&gt; &lt;br /&gt; &lt;strong&gt;/etc/fstab&lt;/strong&gt; table of devices that get mounted when your system boots. defines your disk drives.&lt;br /&gt; &lt;strong&gt;/etc/hosts&lt;/strong&gt; Lists the network host names and IP addresses that are intrinsically known to the system. &lt;br /&gt; &lt;strong&gt;/etc/init.d&lt;/strong&gt; This directory contains the scripts that start various system services at boot time.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/bin &lt;br /&gt;/usr/bin&lt;/td&gt;
+      &lt;td&gt;contains most of the executable programs for the system. /bin : system requires to operate, /usr/bin contains applications for the system’s users.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/sbin&lt;br /&gt; /usr/sbin&lt;/td&gt;
+      &lt;td&gt;Executables for system administration by the superuser.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/usr&lt;/td&gt;
+      &lt;td&gt;Things that support user applications &lt;br /&gt; &lt;strong&gt;/usr/share/X11&lt;/strong&gt; Support files for the X Windows system&lt;br /&gt; &lt;strong&gt;/usr/share/dict&lt;/strong&gt; Dictionaries for the spelling checker. Ckeck &lt;code class=&quot;highlighter-rouge&quot;&gt;look&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ispell&lt;/code&gt;.&lt;br /&gt;&lt;strong&gt;/usr/share/doc&lt;/strong&gt; documentation files in a variety of formats.&lt;br /&gt;&lt;strong&gt;/usr/share/man&lt;/strong&gt; Place for man pages.&lt;br /&gt; &lt;strong&gt;/usr/src&lt;/strong&gt; Source code files.(if kernel source code package is installed)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/usr/local&lt;br /&gt; /usr/local/bin&lt;/td&gt;
+      &lt;td&gt;Used for the installation of software for local machine.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/var&lt;/td&gt;
+      &lt;td&gt;Files that change as the system is running. &lt;br /&gt; &lt;strong&gt;/var/log&lt;/strong&gt; log files updated as the system runs. &lt;br /&gt; &lt;strong&gt;/var/spool&lt;/strong&gt; This directory is used to hold files that are queued for some process, such as mail messages and print jobs. Eg: local email is first stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/spool/mail&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/lib&lt;/td&gt;
+      &lt;td&gt;shared libraries (like .dll in Windows)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/dev&lt;/td&gt;
+      &lt;td&gt;Devices (as files) that are available to the system. /dev/sda (/dev/hda on older systems) is the first IDE hard drive.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc&lt;/td&gt;
+      &lt;td&gt;processes running on the system.  Many of these entries can be viewed. Eg. &lt;code class=&quot;highlighter-rouge&quot;&gt;/proc/cpuinfo&lt;/code&gt;. This entry will tell you what the kernel thinks of your CPU.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/media &lt;br /&gt; /mnt&lt;/td&gt;
+      &lt;td&gt;The /media directory is used for mount points. This process of attaching (&lt;em&gt;devices attached to the file system tree in various places&lt;/em&gt;) a device to the tree is called &lt;strong&gt;mounting&lt;/strong&gt;. For a device to be available, it must first be mounted. &lt;br /&gt;&lt;br /&gt;When your system boots, it reads a list of mounting instructions in the file /etc/fstab, which describes which device is mounted at which mount point in the directory tree. This takes care of the hard drives, but you may also have devices that are considered temporary, such as CD-ROMs and floppy disks. Since these are removable, they do not stay mounted all the time. The /media directory is used by the automatic device mounting mechanisms found in modern desktop oriented Linux distributions. &lt;br /&gt;&lt;br /&gt;On systems that require manual mounting of removable devices, the &lt;strong&gt;/mnt&lt;/strong&gt; directory provides a convenient place for &lt;strong&gt;mounting these temporary devices&lt;/strong&gt;. You will often see the directories /mnt/floppy and /mnt/cdrom. To see what devices and mount points are used, type mount.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>SQL Joins</title>
+   <link href="http://nitinkc.github.io/2016/04/14/sql-joins/"/>
+   <updated>2016-04-14T11:21:00-05:00</updated>
+   <id>http://nitinkc.github.io/2016/04/14/sql-joins</id>
+   <content type="html">&lt;p&gt;JOINS
+    INNER &amp;amp; OUTER
+    INNER – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
+    OUTER – LEFT, RIGHT &amp;amp; FULL&lt;/p&gt;
+
+&lt;p&gt;OUTER is result of INNER &amp;amp; some additional data &lt;br /&gt;
+Data from one of the tables or from both the tables&lt;/p&gt;
+
+&lt;p&gt;INNER – select t1.* from t1, t2 where t1.c = t2.c
+And t2.d &amp;gt; 2000
+SELF JOIN – only one table is involved in join
+Select t1.* from KYC k1, KYC k2 where k1.kyc_ind = K2.kyc_ind&lt;/p&gt;
+
+&lt;p&gt;OUTER is smarter than INNER
+Customer – cust_id -1,2,3
+Sales – cust_id- 3, 6&lt;/p&gt;
+
+&lt;p&gt;Select * from customer c, sales s where c.cust_id = s.cust_id&lt;/p&gt;
+
+&lt;p&gt;Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Test</title>
    <link href="http://nitinkc.github.io/2016/04/14/testing/"/>
    <updated>2016-04-14T11:21:00-05:00</updated>
    <id>http://nitinkc.github.io/2016/04/14/testing</id>
-   <content type="html">&lt;h5 id=&quot;sql&quot;&gt;SQL&lt;/h5&gt;
+   <content type="html">&lt;h2 class=&quot;no_toc&quot; id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#sql&quot; id=&quot;markdown-toc-sql&quot;&gt;SQL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#java&quot; id=&quot;markdown-toc-java&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#linux&quot; id=&quot;markdown-toc-linux&quot;&gt;Linux&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#hibernate&quot; id=&quot;markdown-toc-hibernate&quot;&gt;Hibernate&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#spring&quot; id=&quot;markdown-toc-spring&quot;&gt;Spring&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;sql&quot;&gt;SQL&lt;/h5&gt;
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; How to retrieve all the data from a table.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;i class=&quot;fa fa-check&quot;&gt;&lt;/i&gt;
+ Use * wild card. Select * from tablename.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Retrieve a particular empid.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;i class=&quot;fa fa-check&quot;&gt;&lt;/i&gt;
+ Use &lt;strong&gt;where&lt;/strong&gt; clause&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; How many types to delete the data&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;truncate (deletes data but not table): TRUNCATE removes all rows from a table&lt;/li&gt;
+    &lt;li&gt;The DELETE command is used to remove rows from a table
+      &lt;ul&gt;
+        &lt;li&gt;DELETE FROM emp WHERE job = ‘CLERK’;&lt;/li&gt;
+        &lt;li&gt;you need to COMMIT or ROLLBACK the transaction to make the change permanent&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;drop table/database : deletes a table/database
+      &lt;ul&gt;
+        &lt;li&gt;All the tables’ rows, indexes and privileges will also be removed&lt;/li&gt;
+        &lt;li&gt;The operation cannot be rolled back.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Whiteboard:&lt;/strong&gt; Find count departments id where more than 5 employees.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;# employees&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dept&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapping&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+  &lt;p&gt;SET Theory: Inline-view, TOP-N Analysis
+Select 11th heighest salary.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SALARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMPLOYEE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rownum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;MINUS&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SALARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMPLOYEE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rownum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Whiteboard:&lt;/strong&gt; Followed by bonus : related to sub query. Name all the depts with more than 5 employees.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dept&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapping&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Diff. in inner join and outer join&lt;/p&gt;
+
+&lt;pre&gt;
+JOINS : to combine rows from two or more tables, based on a common field between them.
+    INNER (Common Type) – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
+    OUTER (Smarter than inner)– LEFT, RIGHT &amp;amp; FULL
+
+    OUTER is result of INNER &amp;amp; some additional data   
+&lt;/pre&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;INNER JOIN&lt;/strong&gt;: Return rows as long as there one match in both tables&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;SELECT SSN, E.Name AS EName, LastName, D.Name AS DName, Department, Code, Budget
+ FROM Employees E &lt;strong&gt;INNER JOIN&lt;/strong&gt; Departments D
+ &lt;strong&gt;ON&lt;/strong&gt; E.Department = D.Code;
+ &lt;br /&gt;&lt;br /&gt;&lt;strong&gt;IS SAME AS&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;
+ SELECT SSN, E.Name AS Name_E, LastName, D.Name AS Name_D, Department, Code, Budget
+ FROM &lt;strong&gt;Employees E, Departments D&lt;/strong&gt;
+ &lt;strong&gt;where&lt;/strong&gt; E.Department = D.Code;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SELF JOIN&lt;/strong&gt; – only one table is involved in join &lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; works for &#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;&quot;Employees and their Managers&quot;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mgr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empno&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;OR can be written as&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; works for &#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;&quot;Employees and their Managers&quot;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mgr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empno&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;LEFT OUTER JOIN&lt;/strong&gt;: Return all rows from the left table, even if there are 
+no matches in the right table and all matching rows from right&lt;br /&gt;
+&lt;strong&gt;RIGHT OUTER JOIN&lt;/strong&gt;: Return all rows from the right table and matching rows from left&lt;br /&gt;
+&lt;strong&gt;FULL OUTER JOIN&lt;/strong&gt;: Return rows when there is a match in one of the tables&lt;br /&gt;&lt;/p&gt;
+  &lt;pre&gt;
+The USING clause
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.
+The ON clause&lt;/p&gt;
+
+&lt;p&gt;The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
+&amp;lt;/pre&amp;gt;
+&amp;gt;Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
+&amp;gt; &amp;lt;/pre&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; what is left outer join and right outer join.&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; explain plan, performance tuning.&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;How to retrieve all the data from a table.&lt;/li&gt;
-  &lt;li&gt;retrieve particular empid.&lt;/li&gt;
-  &lt;li&gt;how many types to delete the data
+  &lt;li&gt;The EXPLAIN PLAN statement displays execution plans chosen by the Oracle optimizer for SELECT, UPDATE, INSERT, and DELETE statements. A statement’s execution plan is the sequence of operations Oracle performs to run the statement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; syntax for finding indexes in tuning.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Indexes are special lookup tables that the database search engine can use to 
+speed up data retrieval. An index is a pointer to data in a 
+table.&lt;/p&gt;
+  &lt;pre&gt;
+CREATE UNIQUE INDEX index_name
+ON table_name (column_name)
+&lt;/pre&gt;
+  &lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; full table scan&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; index advantegs of indexes in sql tuning? What is the syntax of doing that.
+&amp;gt; Indexes are a performance drag when the time comes to modify records.&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Multiple Conditions : AND &lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sql
+SELECT * from EMP WHERE salary &amp;gt; 10000 AND dateofjoining &amp;gt; ‘1-Jan-1990’ ;
+&lt;/code&gt;
+&lt;br /&gt;Range Selection - BETWEEN
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sql
+SELECT * from EMP WHERE salary between 9000 AND 20000;
+&lt;/code&gt;
+&lt;br /&gt;Exact List Matching
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sql
+SELECT * from EMP WHERE employeeID IN (3001,  3002);
+&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Full table scan&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A full table scan occurs when an index is either not used or there is no index on the table(s)&lt;/li&gt;
+  &lt;li&gt;Full table scans should be avoided when reading large tables.For example, a full table scan is performed when a table that does not have an index is read&lt;/li&gt;
+  &lt;li&gt;FTS will be performed even though an index is present on that table.
     &lt;ul&gt;
-      &lt;li&gt;truncate&lt;/li&gt;
-      &lt;li&gt;delete&lt;/li&gt;
-      &lt;li&gt;which one can be rolledback&lt;/li&gt;
+      &lt;li&gt;If a query does have a WHERE clause, but none of the columns in that WHERE clause match.&lt;/li&gt;
+      &lt;li&gt;when WHERE clause prevents the use of an index like below.&lt;/li&gt;
+      &lt;li&gt;If the NOT EQUAL (the “&amp;lt;&amp;gt;“) operator is used.&lt;/li&gt;
+      &lt;li&gt;If the NOT operator is used.&lt;/li&gt;
+      &lt;li&gt;If the wildcard operator is used in the first position of a comparison string. An example is “WHERE NAME LIKE ‘%INTERVIEW%’”.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Whiteboard&lt;/em&gt; Find count departments id where more than 5 employees. WHITE BOARD - count.
-    &lt;ul&gt;
-      &lt;li&gt;Followed by bonus : related to sub query. Name all the depts with more than 5 employees.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;diff. in inner join and outer join&lt;/li&gt;
-  &lt;li&gt;what is left outer join and right outer join.&lt;/li&gt;
-  &lt;li&gt;explain plan, performance tuning.&lt;/li&gt;
-  &lt;li&gt;syntax for finding indexes in tuning.&lt;/li&gt;
-  &lt;li&gt;syntax fro doing index&lt;/li&gt;
-  &lt;li&gt;full table scan&lt;/li&gt;
-  &lt;li&gt;index advantegs of indexes in sql tuning? What is the syntax of doing that.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;java&quot;&gt;Java&lt;/h5&gt;
@@ -50,39 +327,139 @@
   &lt;li&gt;Java heaps - memory&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;White board :&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Whiteboard&lt;/strong&gt; Find popular name in a List of names. Most frequently name in a List&lt;/p&gt;
 
 &lt;h5 id=&quot;linux&quot;&gt;Linux&lt;/h5&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;ps commans and jobs command&lt;/li&gt;
-  &lt;li&gt;what is ls.&lt;/li&gt;
-  &lt;li&gt;error : file cnanot be read and what would not be the reason. how u can check the access modifier. File permission&lt;/li&gt;
-  &lt;li&gt;chmod&lt;/li&gt;
-  &lt;li&gt;what is there in exe Folder. READ ABOUT THE SYSTEM FOLDERS in Linux.&lt;/li&gt;
-  &lt;li&gt;700 file in meaning&lt;/li&gt;
-  &lt;li&gt;grep and find.&lt;/li&gt;
-  &lt;li&gt;how can u find a pattern and how to do recursively&lt;/li&gt;
-  &lt;li&gt;filename with directory&lt;/li&gt;
-  &lt;li&gt;state folder, city, houde file hierarchy. Find a file. find and give the path.&lt;/li&gt;
-  &lt;li&gt;how do u connect to remove server securely.&lt;/li&gt;
-  &lt;li&gt;remove the file from remote server&lt;/li&gt;
-  &lt;li&gt;difference between move and copy&lt;/li&gt;
-  &lt;li&gt;diff : compare the two files. cat&lt;/li&gt;
-  &lt;li&gt;distributions in Linux&lt;/li&gt;
-  &lt;li&gt;version of Linux.&lt;/li&gt;
-  &lt;li&gt;What is GNOME. READ IT.&lt;/li&gt;
-  &lt;li&gt;what recent version.&lt;/li&gt;
+  &lt;li&gt;what is ls.
+    &lt;ul&gt;
+      &lt;li&gt;list all the commands&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Commands to see processesps commands and jobs command
+    &lt;ul&gt;
+      &lt;li&gt;top&lt;/li&gt;
+      &lt;li&gt;ps -ef&lt;/li&gt;
+      &lt;li&gt;GUI : System monitor (GNOME, KDE System -&amp;gt; Monitor)&lt;/li&gt;
+      &lt;li&gt;kill -9 to terminate.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Error in file access. (File Permission)
+    &lt;ul&gt;
+      &lt;li&gt;Ownership permission (ugo -&amp;gt; USER, GROUP &amp;amp; OTHER)&lt;/li&gt;
+      &lt;li&gt;Viweing Permission (r=4; w=2; x=1)&lt;/li&gt;
+      &lt;li&gt;eg: 700 (rwx for u, none got g,o)&lt;/li&gt;
+      &lt;li&gt;chmod for changing file permission (chmod 771 file.exe)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;what is there in exe Folder.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;&lt;a href=&quot;/2016/04/14/linux-files/&quot;&gt;Important Linux Files&lt;/a&gt;&lt;/em&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;grep : Search a pettern in File.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grep ‘pattern to search’ file1 file2&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grep -i -n ‘administrator’  file1.txt&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Ignoring the case ( -i)&lt;/li&gt;
+      &lt;li&gt;Displaying line Numbers  ( -n )&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How can u find a pattern and how to do recursively
+    &lt;ul&gt;
+      &lt;li&gt;grep -r “texthere” .&lt;/li&gt;
+      &lt;li&gt;Recursively search “texthere” in PWD.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Given directory hierarchy. Find a file.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find / -name &#39;program.c&#39; 2&amp;gt;errors.txt&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Start searching from the root directory (i.e / directory)&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-name&lt;/code&gt; : Given search text is the filename rather than any other attribute of a file&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&#39;program.c&#39;&lt;/code&gt; Search text that we have entered. Always enclose the filename in single quotes.. why to do this is complex.. so simply do so.&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ find /mp3collection -name &#39;*.mp3&#39; -size -5000k&lt;/code&gt; find in /mp3collection, only those mp3 files that have a size less than 5000 Kilobytes ( &amp;lt; 5MB)&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ find / -size +10000k&lt;/code&gt; search from the / directory for any file that is larger than 10000k (&amp;gt; 10MB)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;how do u connect to remove server securely.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh remote_username@remote_host&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;SSH keys should be generated on the computer you wish to log in from. This is usually your local computer. Enter the following into the command line. &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh-keygen -t rsa&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;remove the file from remote server
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh username@domain.com &#39;rm /some/where/some_file.war&#39;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;difference between move and copy
+    &lt;ul&gt;
+      &lt;li&gt;mv displaces the file, cp makes a new copy&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;diff : compare the two files.
+    &lt;ul&gt;
+      &lt;li&gt;cmp returns first occurrence of difference&lt;/li&gt;
+      &lt;li&gt;diff returns all differences&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Distributions &amp;amp; version of Linux
+    &lt;ul&gt;
+      &lt;li&gt;Fedora/RedHat based : Fedora 23, Cent OS&lt;/li&gt;
+      &lt;li&gt;Debian Based : Ubuntu 15 LTS&lt;/li&gt;
+      &lt;li&gt;Mac OS is based on a BSD code base&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;What is GNOME.
+    &lt;ul&gt;
+      &lt;li&gt;GNOME desktop and KDE&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;hibernate&quot;&gt;Hibernate&lt;/h5&gt;
 &lt;ul&gt;
   &lt;li&gt;Disadvantage of Hibernate&lt;/li&gt;
-  &lt;li&gt;Hibernate over JDBC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;
+1. Not that flexible when it comes to mapping composite-ids (although you can do a lot). While this is not a fault of Hibernate as composite-ids are typically used in legacy systems, it can be a pain when attempting to map legacy tables.
+
+2. Everything is an object. If you need only a portion of data (say, for a search), you would still have to retrieve the object. However, this is true for any ORM strategy.
+
+3. In some cases, you will encounter the (n+1) select problem. That is, Hibernate will execute (n+1) queries for going through a list of records of size n. There are some mechanisms suggested by Hibernate that can be used to mitigate this risk.
+
+4. Till Hibernate 3, you cannot map multiple tables to a single class. This has been fixed in Hibernate 3 using the join tag.
+&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hibernate over JDBC
+    &lt;ul&gt;
+      &lt;li&gt;Make software database independent. Can replace any other database with this.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;spring&quot;&gt;Spring&lt;/h5&gt;
 &lt;ul&gt;
   &lt;li&gt;What is Dependency Injection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;IOC(Inversion Of Controller):   Giving control to the container to get instance of object is called Inversion of Control., 
+    • means instead of you are creating object using new operator, let the container do that for you.
+
+DI(Dependency Injection):  Decoupling by passing an object to a function rather than CREATING the object the circle inside the method.
+Way of injecting properties to an object is called Dependency injection.
+
+    We have three types of Dependency injection
+        1)  Constructor Injection : Constructor-based DI is accomplished when the container invokes a class constructor with a number of arguments, each representing a dependency on other class.
+        2)  Setter/Getter Injection : Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or no-argument static factory method to instantiate your bean.
+        3)  Interface Injection
+Spring support only Constructor Injection and Setter/Getter Injection.
+&lt;/pre&gt;
+&lt;ul&gt;
   &lt;li&gt;what is setter injection and constructor injection&lt;/li&gt;
 &lt;/ul&gt;
 

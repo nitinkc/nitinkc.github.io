@@ -11,7 +11,7 @@
 
   <title>
     
-      Queue &middot; {ni[T]in}
+      Linux Files &middot; {ni[T]in}
     
   </title>
 
@@ -172,9 +172,66 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Queue</h1>
-  <span class="post-date">11 Apr 2016</span>
-  <h5 id="queue-using-an-arraylistarray">Queue Using an ArrayList/Array</h5>
+  <h1 class="post-title">Linux Files</h1>
+  <span class="post-date">14 Apr 2016</span>
+  <table>
+  <thead>
+    <tr>
+      <th>Directory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/</td>
+      <td>Root</td>
+    </tr>
+    <tr>
+      <td>/boot</td>
+      <td>For Linux kernel and boot loader files.The kernel is a file called <strong>vmlinuz</strong>.</td>
+    </tr>
+    <tr>
+      <td>/etc</td>
+      <td>Configuration files (All <strong>text files</strong>).<br /><br /> <strong>/etc/passwd</strong> Here users are defined &amp; essential information for each user is kept like username, password (<strong>Encrypetd &amp; stored in shadow</strong>), group id, userid, user id info, home directory, command shell etc… .<br /> Password is stored in <code class="highlighter-rouge">/etc/shadow</code> file not in <code class="highlighter-rouge">/etc/passwd</code> <br /> <strong>/etc/fstab</strong> table of devices that get mounted when your system boots. defines your disk drives.<br /> <strong>/etc/hosts</strong> Lists the network host names and IP addresses that are intrinsically known to the system. <br /> <strong>/etc/init.d</strong> This directory contains the scripts that start various system services at boot time.</td>
+    </tr>
+    <tr>
+      <td>/bin <br />/usr/bin</td>
+      <td>contains most of the executable programs for the system. /bin : system requires to operate, /usr/bin contains applications for the system’s users.</td>
+    </tr>
+    <tr>
+      <td>/sbin<br /> /usr/sbin</td>
+      <td>Executables for system administration by the superuser.</td>
+    </tr>
+    <tr>
+      <td>/usr</td>
+      <td>Things that support user applications <br /> <strong>/usr/share/X11</strong> Support files for the X Windows system<br /> <strong>/usr/share/dict</strong> Dictionaries for the spelling checker. Ckeck <code class="highlighter-rouge">look</code> and <code class="highlighter-rouge">ispell</code>.<br /><strong>/usr/share/doc</strong> documentation files in a variety of formats.<br /><strong>/usr/share/man</strong> Place for man pages.<br /> <strong>/usr/src</strong> Source code files.(if kernel source code package is installed)</td>
+    </tr>
+    <tr>
+      <td>/usr/local<br /> /usr/local/bin</td>
+      <td>Used for the installation of software for local machine.</td>
+    </tr>
+    <tr>
+      <td>/var</td>
+      <td>Files that change as the system is running. <br /> <strong>/var/log</strong> log files updated as the system runs. <br /> <strong>/var/spool</strong> This directory is used to hold files that are queued for some process, such as mail messages and print jobs. Eg: local email is first stored in <code class="highlighter-rouge">/var/spool/mail</code></td>
+    </tr>
+    <tr>
+      <td>/lib</td>
+      <td>shared libraries (like .dll in Windows)</td>
+    </tr>
+    <tr>
+      <td>/dev</td>
+      <td>Devices (as files) that are available to the system. /dev/sda (/dev/hda on older systems) is the first IDE hard drive.</td>
+    </tr>
+    <tr>
+      <td>/proc</td>
+      <td>processes running on the system.  Many of these entries can be viewed. Eg. <code class="highlighter-rouge">/proc/cpuinfo</code>. This entry will tell you what the kernel thinks of your CPU.</td>
+    </tr>
+    <tr>
+      <td>/media <br /> /mnt</td>
+      <td>The /media directory is used for mount points. This process of attaching (<em>devices attached to the file system tree in various places</em>) a device to the tree is called <strong>mounting</strong>. For a device to be available, it must first be mounted. <br /><br />When your system boots, it reads a list of mounting instructions in the file /etc/fstab, which describes which device is mounted at which mount point in the directory tree. This takes care of the hard drives, but you may also have devices that are considered temporary, such as CD-ROMs and floppy disks. Since these are removable, they do not stay mounted all the time. The /media directory is used by the automatic device mounting mechanisms found in modern desktop oriented Linux distributions. <br /><br />On systems that require manual mounting of removable devices, the <strong>/mnt</strong> directory provides a convenient place for <strong>mounting these temporary devices</strong>. You will often see the directories /mnt/floppy and /mnt/cdrom. To see what devices and mount points are used, type mount.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 </div>
@@ -194,8 +251,8 @@
     
       <li>
         <h3>
-          <a href="/2016/04/14/linux-files/">
-            Linux Files
+          <a href="/2016/04/14/sql-joins/">
+            SQL Joins
             <small>14 Apr 2016</small>
           </a>
         </h3>
@@ -203,8 +260,8 @@
     
       <li>
         <h3>
-          <a href="/2016/04/14/sql-joins/">
-            SQL Joins
+          <a href="/2016/04/14/testing/">
+            Test
             <small>14 Apr 2016</small>
           </a>
         </h3>
@@ -221,7 +278,7 @@
        */
 
        /* var disqus_config = function () {
-       this.page.url = "/2016/04/11/queues/"; // Replace PAGE_URL with your page's canonical URL variable
+       this.page.url = "/2016/04/14/linux-files/"; // Replace PAGE_URL with your page's canonical URL variable
        this.page.identifier = "A7655498-AB9E-40BF-A0D5-E5C6DE6BBF28"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
      }; */
 
