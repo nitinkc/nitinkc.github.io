@@ -46,17 +46,17 @@ for (int i = 0; i < arr.length; i = i+2){
 
 // Start the Pointer from an index ahead and check the previous
 for (int i = 1; i < num.length; i++) //NOTICE : i < num.length
-  if (num[i-1] == num[i]) 
+  if (num[i-1] == num[i])
     return true;
 
 // Start the Pointer from index 0 and check the next
 for (int i = 0; i < num.length - 1; i++) // NOTICE : i < num.length -1
-  if (num[i] == num[i+1]) 
+  if (num[i] == num[i+1])
     return true;
 
-//Prints alphabets from 'a' to 'z' 
-for (char i = 'a'; i <= 'z'; i++){ 
-  System.out.println(i); 
+//Prints alphabets from 'a' to 'z'
+for (char i = 'a'; i <= 'z'; i++){
+  System.out.println(i);
 }
 ```
 
@@ -65,7 +65,7 @@ for (char i = 'a'; i <= 'z'; i++){
 ```java
 
 //Single Line Declaration. NO () IS USED
-int[] a = new int[3]; 
+int[] a = new int[3];
 
 //Split Line Declaration
 int[] a;
@@ -124,16 +124,16 @@ a.toArray();
 str.chatAt(i);
 
 //Method in String, Field in Arrays;
-str.length(); 
+str.length();
 
 //index j not included
 str.substring(i,j);
 
-//from i till end 
+//from i till end
 //str.substring(i,str.length());
 str.substring(i);
 
-//For Equality 
+//For Equality
 str.equals();//DO NOT USE == (will compare objects)
 
 //2 if "er" begins from index 1, -1 if not Found
@@ -153,39 +153,6 @@ str.replace("old","new");
 
 //Cut the Strings from spaces into a words
 String[] ransomWords = ransom.split(" ");
-
-```
-
-
-
-### Reading, Parsing and Type Checking Command Line Inputs.
-```java
-/*Assuming 2 command line arguments <Nitin 29>*/
-
-if (args.length == 0 || args.length > 2) {
-     System.err.println("Incorrect Number of arguments passed");
-     System.exit(-1);
-  }
-String name = args[0];
-  int age = Integer.parseInt(args[1]);
-```
-
-### Running time of a method
-```java
-System.currentTimeMillis();//type long , from Jan 1 1970
-System.nanoTime();
-```
-
-### Random
-```java
-import java.util.Random
-
-Random generator = new Random(); //or new Random(123), 123 being the seed
-generator.nextInt(5);//range 0 to 5, add 1 to get range 1 to 6 (dices)
-/* Eg: int throw = generator.nextInt(6) + 1; */
-
-generator.nextInt(); // 2^31 to 2^31 -1
-generator.nextDouble();//Range: 0.0 to 1.1
 
 ```
 
@@ -239,6 +206,28 @@ else{
 }
 ```
 
+### The XOR Trick
+
+Same variables cancels the effect of each other if the bitwise XOR is used.
+
+```java
+a = a^b;
+b = a^b; //a^b^b yields a
+a = a^b;//a^b^a = b(b is recently converted to a)
+/* (Works only with integer, in its native form, for others change it into its equivalent binary representation) */
+
+/*
+The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake)
+*/
+
+// Use of XOR (both flags are boolean)
+if (flag2 ^ flag4)
+//is equivalent to
+(flag2 && !flag4) || (!flag2 && flag4);
+```
+
+## COLLECTIONS FRAMEWORK
+
 ### For Each Loop (Read Only Loop)
 ```java
 //Eg: Read as "for g in Grades of type Double"
@@ -256,40 +245,12 @@ Iterator itr = c.iterator();
  itr.next();
 ```
 
-### The XOR Trick
-
-Same variables cancels the effect of each other if the bitwise XOR is used.
-
-```java
-a = a^b;
-b = a^b; //a^b^b yields a
-a = a^b;//a^b^a = b(b is recently converted to a)
-/* (Works only with integer, in its native form, for others change it into its equivalent binary representation) */
-
-/* 
-The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake) 
-*/
-
-// Use of XOR (both flags are boolean)
-if (flag2 ^ flag4)
-//is equivalent to
-(flag2 && !flag4) || (!flag2 && flag4);
-```
-
-### HashMap
-```java
-Map<String, Integer> ret = new HashMap<String, Integer>();
-for (int key : map.keySet()){
-ret.put(map.get(key),key);
-}
-```
-
 ### ArrayList
 ```java
 // Declaration (Child of List Interface)
 
 ArrayList<Integer> list = new ArrayList<Integer>();
-List<Integer> list = new ArrayList<Integer>();// Polymorphic 
+List<Integer> list = new ArrayList<Integer>();// Polymorphic
 
 // Insert element
 for (int i = 0; i < list.size(); i++){
@@ -308,12 +269,54 @@ list.toString();
 list.toArray();
 ```
 
+### HashMap
+```java
+Map<String, Integer> ret = new HashMap<String, Integer>();
+for (int key : map.keySet()){
+ret.put(map.get(key),key);
+}
+```
+
 ### HASHMAP (IMPLEMENTATION OF HASHTABLE)
 ```java
 Map<String, Integer> ret = new HashMap<String, Integer>();
   for (int key : map.keySet()){
   ret.put(map.get(key),key);
 }
+```
+
+### SETS
+
+
+### Reading, Parsing and Type Checking Command Line Inputs.
+```java
+/*Assuming 2 command line arguments <Nitin 29>*/
+
+if (args.length == 0 || args.length > 2) {
+     System.err.println("Incorrect Number of arguments passed");
+     System.exit(-1);
+  }
+String name = args[0];
+  int age = Integer.parseInt(args[1]);
+```
+
+### Running time of a method
+```java
+System.currentTimeMillis();//type long , from Jan 1 1970
+System.nanoTime();
+```
+
+### Random
+```java
+import java.util.Random
+
+Random generator = new Random(); //or new Random(123), 123 being the seed
+generator.nextInt(5);//range 0 to 5, add 1 to get range 1 to 6 (dices)
+/* Eg: int throw = generator.nextInt(6) + 1; */
+
+generator.nextInt(); // 2^31 to 2^31 -1
+generator.nextDouble();//Range: 0.0 to 1.1
+
 ```
 
 ## Java Input
@@ -342,7 +345,7 @@ import java.util.Scanner;
 ```java
 //Open the File
  File myFile = new File("/nitin/a.txt");
- Scanner in = new Scanner(myFile); 
+ Scanner in = new Scanner(myFile);
  //Instead of System.in, take the file to read
 
 //Read from the File
@@ -361,7 +364,7 @@ import java.util.Scanner;
 ```java
 import java.io.PrintWriter;
  final String FILENAME = "nitin.txt";
-//Surrounding with try catch!! 
+//Surrounding with try catch!!
  PrintWriter output = new PrintWriter(FILENAME);
 
  output.println("Nitin"); output.println("Chaurasia");
