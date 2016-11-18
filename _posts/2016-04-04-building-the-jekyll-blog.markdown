@@ -8,4 +8,10 @@ disqus_identifier: A7655498-AB9E-40BF-A0D5-E5C6DE6BBF28
 tags: [jekyll, disqus]
 ---
 
-# Making a personal website using GitHubs free Hosting for the Jekyll Sites
+Making a personal website using GitHubs free Hosting for the Jekyll Sites
+
+Create a blog with naming convention of yyyy-mm-dd-name-of-the-blog.md and save it in _posts dircetory
+
+execute in the terminal
+jekyll build
+jekyll serve

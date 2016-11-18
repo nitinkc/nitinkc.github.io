@@ -93,6 +93,10 @@
           
         
       
+        
+          
+        
+      
 
       <!-- Putting the Page explicitly -->
       <a class="sidebar-nav-item" href="/about">About</a>
@@ -129,6 +133,10 @@
         
            
             <a class="sidebar-nav-item active" href="/static/java_revisions/">Coding</a>
+          
+        
+      
+        
           
         
       
@@ -184,9 +192,6 @@
       <li><a href="#d-arrays-1" id="markdown-toc-d-arrays-1">2D Arrays</a></li>
       <li><a href="#the-arrays-class" id="markdown-toc-the-arrays-class">The Arrays Class</a></li>
       <li><a href="#string-functions-most-important" id="markdown-toc-string-functions-most-important">String Functions (Most Important)</a></li>
-      <li><a href="#reading-parsing-and-type-checking-command-line-inputs" id="markdown-toc-reading-parsing-and-type-checking-command-line-inputs">Reading, Parsing and Type Checking Command Line Inputs.</a></li>
-      <li><a href="#running-time-of-a-method" id="markdown-toc-running-time-of-a-method">Running time of a method</a></li>
-      <li><a href="#random" id="markdown-toc-random">Random</a></li>
       <li><a href="#array-vs-linked-list" id="markdown-toc-array-vs-linked-list">Array vs Linked List</a></li>
       <li><a href="#linked-list" id="markdown-toc-linked-list">Linked List</a>        <ul>
           <li><a href="#add-in-the-list" id="markdown-toc-add-in-the-list">Add in the List</a>            <ul>
@@ -197,12 +202,19 @@
           </li>
         </ul>
       </li>
-      <li><a href="#for-each-loop-read-only-loop" id="markdown-toc-for-each-loop-read-only-loop">For Each Loop (Read Only Loop)</a></li>
-      <li><a href="#iterator-itr-for-some-collection" id="markdown-toc-iterator-itr-for-some-collection">Iterator itr (for some collection)</a></li>
       <li><a href="#the-xor-trick" id="markdown-toc-the-xor-trick">The XOR Trick</a></li>
-      <li><a href="#hashmap" id="markdown-toc-hashmap">HashMap</a></li>
-      <li><a href="#arraylist" id="markdown-toc-arraylist">ArrayList</a></li>
-      <li><a href="#hashmap-implementation-of-hashtable" id="markdown-toc-hashmap-implementation-of-hashtable">HASHMAP (IMPLEMENTATION OF HASHTABLE)</a></li>
+      <li><a href="#collections-framework" id="markdown-toc-collections-framework">COLLECTIONS FRAMEWORK</a>        <ul>
+          <li><a href="#for-each-loop-read-only-loop" id="markdown-toc-for-each-loop-read-only-loop">For Each Loop (Read Only Loop)</a></li>
+          <li><a href="#iterator-itr-for-some-collection" id="markdown-toc-iterator-itr-for-some-collection">Iterator itr (for some collection)</a></li>
+          <li><a href="#arraylist" id="markdown-toc-arraylist">ArrayList</a></li>
+          <li><a href="#hashmap" id="markdown-toc-hashmap">HashMap</a></li>
+          <li><a href="#hashmap-implementation-of-hashtable" id="markdown-toc-hashmap-implementation-of-hashtable">HASHMAP (IMPLEMENTATION OF HASHTABLE)</a></li>
+          <li><a href="#sets" id="markdown-toc-sets">SETS</a></li>
+          <li><a href="#reading-parsing-and-type-checking-command-line-inputs" id="markdown-toc-reading-parsing-and-type-checking-command-line-inputs">Reading, Parsing and Type Checking Command Line Inputs.</a></li>
+          <li><a href="#running-time-of-a-method" id="markdown-toc-running-time-of-a-method">Running time of a method</a></li>
+          <li><a href="#random" id="markdown-toc-random">Random</a></li>
+        </ul>
+      </li>
       <li><a href="#java-input" id="markdown-toc-java-input">Java Input</a>        <ul>
           <li><a href="#key-board-input" id="markdown-toc-key-board-input">Key Board Input</a></li>
           <li><a href="#file-input" id="markdown-toc-file-input">File Input</a></li>
@@ -256,17 +268,17 @@
 
 <span class="c1">// Start the Pointer from an index ahead and check the previous</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="c1">//NOTICE : i &lt; num.length</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> 
+  <span class="k">if</span> <span class="o">(</span><span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">])</span>
     <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
 
 <span class="c1">// Start the Pointer from index 0 and check the next</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="c1">// NOTICE : i &lt; num.length -1</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">])</span> 
+  <span class="k">if</span> <span class="o">(</span><span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">])</span>
     <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
 
-<span class="c1">//Prints alphabets from 'a' to 'z' </span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">i</span> <span class="o">=</span> <span class="sc">'a'</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="sc">'z'</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span> 
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span> 
+<span class="c1">//Prints alphabets from 'a' to 'z'</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">i</span> <span class="o">=</span> <span class="sc">'a'</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="sc">'z'</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre>
 </div>
@@ -275,7 +287,7 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
 <span class="c1">//Single Line Declaration. NO () IS USED</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">];</span> 
+<span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">];</span>
 
 <span class="c1">//Split Line Declaration</span>
 <span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">;</span>
@@ -360,16 +372,16 @@ a.toArray();
 <span class="n">str</span><span class="o">.</span><span class="na">chatAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
 
 <span class="c1">//Method in String, Field in Arrays;</span>
-<span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> 
+<span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
 
 <span class="c1">//index j not included</span>
 <span class="n">str</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">i</span><span class="o">,</span><span class="n">j</span><span class="o">);</span>
 
-<span class="c1">//from i till end </span>
+<span class="c1">//from i till end</span>
 <span class="c1">//str.substring(i,str.length());</span>
 <span class="n">str</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
 
-<span class="c1">//For Equality </span>
+<span class="c1">//For Equality</span>
 <span class="n">str</span><span class="o">.</span><span class="na">equals</span><span class="o">();</span><span class="c1">//DO NOT USE == (will compare objects)</span>
 
 <span class="c1">//2 if "er" begins from index 1, -1 if not Found</span>
@@ -389,37 +401,6 @@ a.toArray();
 
 <span class="c1">//Cut the Strings from spaces into a words</span>
 <span class="n">String</span><span class="o">[]</span> <span class="n">ransomWords</span> <span class="o">=</span> <span class="n">ransom</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
-
-</code></pre>
-</div>
-
-<h3 id="reading-parsing-and-type-checking-command-line-inputs">Reading, Parsing and Type Checking Command Line Inputs.</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cm">/*Assuming 2 command line arguments &lt;Nitin 29&gt;*/</span>
-
-<span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
-     <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Incorrect Number of arguments passed"</span><span class="o">);</span>
-     <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
-  <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
-</code></pre>
-</div>
-
-<h3 id="running-time-of-a-method">Running time of a method</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span><span class="c1">//type long , from Jan 1 1970</span>
-<span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
-</code></pre>
-</div>
-
-<h3 id="random">Random</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Random</span>
-
-<span class="n">Random</span> <span class="n">generator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span> <span class="c1">//or new Random(123), 123 being the seed</span>
-<span class="n">generator</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span><span class="c1">//range 0 to 5, add 1 to get range 1 to 6 (dices)</span>
-<span class="cm">/* Eg: int throw = generator.nextInt(6) + 1; */</span>
-
-<span class="n">generator</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span> <span class="c1">// 2^31 to 2^31 -1</span>
-<span class="n">generator</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span><span class="c1">//Range: 0.0 to 1.1</span>
 
 </code></pre>
 </div>
@@ -474,6 +455,28 @@ a.toArray();
 </code></pre>
 </div>
 
+<h3 id="the-xor-trick">The XOR Trick</h3>
+
+<p>Same variables cancels the effect of each other if the bitwise XOR is used.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="o">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="o">;</span> <span class="c1">//a^b^b yields a</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="o">;</span><span class="c1">//a^b^a = b(b is recently converted to a)</span>
+<span class="cm">/* (Works only with integer, in its native form, for others change it into its equivalent binary representation) */</span>
+
+<span class="cm">/*
+The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake)
+*/</span>
+
+<span class="c1">// Use of XOR (both flags are boolean)</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">flag2</span> <span class="o">^</span> <span class="n">flag4</span><span class="o">)</span>
+<span class="c1">//is equivalent to</span>
+<span class="o">(</span><span class="n">flag2</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">flag4</span><span class="o">)</span> <span class="o">||</span> <span class="o">(!</span><span class="n">flag2</span> <span class="o">&amp;&amp;</span> <span class="n">flag4</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h2 id="collections-framework">COLLECTIONS FRAMEWORK</h2>
+
 <h3 id="for-each-loop-read-only-loop">For Each Loop (Read Only Loop)</h3>
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">//Eg: Read as "for g in Grades of type Double"</span>
 <span class="n">Set</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">grades</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;();</span>
@@ -491,39 +494,11 @@ a.toArray();
 </code></pre>
 </div>
 
-<h3 id="the-xor-trick">The XOR Trick</h3>
-
-<p>Same variables cancels the effect of each other if the bitwise XOR is used.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="o">;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="o">;</span> <span class="c1">//a^b^b yields a</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="o">;</span><span class="c1">//a^b^a = b(b is recently converted to a)</span>
-<span class="cm">/* (Works only with integer, in its native form, for others change it into its equivalent binary representation) */</span>
-
-<span class="cm">/* 
-The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake) 
-*/</span>
-
-<span class="c1">// Use of XOR (both flags are boolean)</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">flag2</span> <span class="o">^</span> <span class="n">flag4</span><span class="o">)</span>
-<span class="c1">//is equivalent to</span>
-<span class="o">(</span><span class="n">flag2</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">flag4</span><span class="o">)</span> <span class="o">||</span> <span class="o">(!</span><span class="n">flag2</span> <span class="o">&amp;&amp;</span> <span class="n">flag4</span><span class="o">);</span>
-</code></pre>
-</div>
-
-<h3 id="hashmap">HashMap</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">key</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">()){</span>
-<span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">),</span><span class="n">key</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
 <h3 id="arraylist">ArrayList</h3>
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Declaration (Child of List Interface)</span>
 
 <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span><span class="c1">// Polymorphic </span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span><span class="c1">// Polymorphic</span>
 
 <span class="c1">// Insert element</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
@@ -543,11 +518,52 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 </code></pre>
 </div>
 
+<h3 id="hashmap">HashMap</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">key</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">()){</span>
+<span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">),</span><span class="n">key</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
 <h3 id="hashmap-implementation-of-hashtable">HASHMAP (IMPLEMENTATION OF HASHTABLE)</h3>
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
   <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">key</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">()){</span>
   <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">),</span><span class="n">key</span><span class="o">);</span>
 <span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="sets">SETS</h3>
+
+<h3 id="reading-parsing-and-type-checking-command-line-inputs">Reading, Parsing and Type Checking Command Line Inputs.</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cm">/*Assuming 2 command line arguments &lt;Nitin 29&gt;*/</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+     <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Incorrect Number of arguments passed"</span><span class="o">);</span>
+     <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+  <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+</code></pre>
+</div>
+
+<h3 id="running-time-of-a-method">Running time of a method</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span><span class="c1">//type long , from Jan 1 1970</span>
+<span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+</code></pre>
+</div>
+
+<h3 id="random">Random</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Random</span>
+
+<span class="n">Random</span> <span class="n">generator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span> <span class="c1">//or new Random(123), 123 being the seed</span>
+<span class="n">generator</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span><span class="c1">//range 0 to 5, add 1 to get range 1 to 6 (dices)</span>
+<span class="cm">/* Eg: int throw = generator.nextInt(6) + 1; */</span>
+
+<span class="n">generator</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span> <span class="c1">// 2^31 to 2^31 -1</span>
+<span class="n">generator</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span><span class="c1">//Range: 0.0 to 1.1</span>
+
 </code></pre>
 </div>
 
@@ -576,7 +592,7 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">//Open the File</span>
  <span class="n">File</span> <span class="n">myFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"/nitin/a.txt"</span><span class="o">);</span>
- <span class="n">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">myFile</span><span class="o">);</span> 
+ <span class="n">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">myFile</span><span class="o">);</span>
  <span class="c1">//Instead of System.in, take the file to read</span>
 
 <span class="c1">//Read from the File</span>
@@ -595,7 +611,7 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 <h3 id="writing-text-to-file">Writing text to File</h3>
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
  <span class="kd">final</span> <span class="n">String</span> <span class="n">FILENAME</span> <span class="o">=</span> <span class="s">"nitin.txt"</span><span class="o">;</span>
-<span class="c1">//Surrounding with try catch!! </span>
+<span class="c1">//Surrounding with try catch!!</span>
  <span class="n">PrintWriter</span> <span class="n">output</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="n">FILENAME</span><span class="o">);</span>
 
  <span class="n">output</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Nitin"</span><span class="o">);</span> <span class="n">output</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Chaurasia"</span><span class="o">);</span>

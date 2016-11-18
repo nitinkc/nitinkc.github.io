@@ -4,7 +4,7 @@
  <title>{ni[T]in}</title>
  <link href="http://nitinkc.github.io/atom.xml" rel="self"/>
  <link href="http://nitinkc.github.io/"/>
- <updated>2016-04-15T11:45:33-05:00</updated>
+ <updated>2016-11-18T01:35:49-05:00</updated>
  <id>http://nitinkc.github.io</id>
  <author>
    <name></name>
@@ -13,9 +13,35 @@
 
  
  <entry>
+   <title>Upgrading the Macbook Pro - Model A1278</title>
+   <link href="http://nitinkc.github.io/2016/07/31/Mac-Upgrade/"/>
+   <updated>2016-07-31T11:04:00-04:00</updated>
+   <id>http://nitinkc.github.io/2016/07/31/Mac-Upgrade</id>
+   <content type="html">&lt;h2 id=&quot;upgrading-the-macbook-pro&quot;&gt;Upgrading the Macbook Pro&lt;/h2&gt;
+&lt;p&gt;I was planning to buy a new Macbook as the one which was gifted by one of my best friends became a really slow.&lt;/p&gt;
+
+&lt;p&gt;Ijust checked a few videos on Youtube and found out that just by replaching and changing my HDD to SSD, it will boost up the performance.&lt;/p&gt;
+
+&lt;p&gt;Thus I ordered everything online&lt;/p&gt;
+
+&lt;p&gt;Opening up the Macbook Pro flap needs special tools, so i ordered a universal tool kit to open all the screws of macbook, iphone and other android phones.&lt;/p&gt;
+
+&lt;p&gt;I upgraded
+ * RAM from the original 4GB to 16 GB - Crucial 16GB Kit (8GBx2) DDR3L 1600 SODIMM Memory for Mac System(CT2K8G3S160BM )- (Crucible RAM - https://www.amazon.com/gp/product/B008LTBJFW/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)
+ * Replaced the original HDD with Samsung SSD - Samsung 850 EVO - 500GB - 2.5-Inch SATA III Internal SSD (MZ-75E500B/AM) (https://www.amazon.com/gp/product/B00OBRE5UE/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)&lt;/p&gt;
+
+&lt;p&gt;The hard disk that came out cam be used as an external drive using an enclosure. The best one that i liked is
+HandAcc 2.5 Inch USB 3.0 Hard Drive External Enclosure Case For 9.5mm &amp;amp; 7mm 2.5” SATA HDD and SSD, Support UASP, Tool-free, Silver
+(https://www.amazon.com/gp/product/B015P98F8E/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)&lt;/p&gt;
+
+&lt;p&gt;Before upgrading the SSD, the clone needs to be created from the original HDD. This clone on the new SSD will help use the SSD directly. I have used Bombich Software’s Carbon Copy Cleaner. The free 30 day trial was enough for me to clone my HDD. It took nearly 6 hours to clone 460GB Data.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>SQL Revisions</title>
    <link href="http://nitinkc.github.io/2016/04/15/sql-revisions/"/>
-   <updated>2016-04-15T06:45:00-05:00</updated>
+   <updated>2016-04-15T07:45:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/15/sql-revisions</id>
    <content type="html">&lt;p&gt;https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management&lt;/p&gt;
 
@@ -26,7 +52,7 @@
  <entry>
    <title>Linux Files</title>
    <link href="http://nitinkc.github.io/2016/04/14/linux-files/"/>
-   <updated>2016-04-14T15:11:00-05:00</updated>
+   <updated>2016-04-14T16:11:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/14/linux-files</id>
    <content type="html">&lt;table&gt;
   &lt;thead&gt;
@@ -93,7 +119,7 @@
  <entry>
    <title>SQL Joins</title>
    <link href="http://nitinkc.github.io/2016/04/14/sql-joins/"/>
-   <updated>2016-04-14T11:21:00-05:00</updated>
+   <updated>2016-04-14T12:21:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/14/sql-joins</id>
    <content type="html">&lt;p&gt;JOINS
     INNER &amp;amp; OUTER
@@ -123,7 +149,7 @@ Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id&lt;/p
  <entry>
    <title>Test</title>
    <link href="http://nitinkc.github.io/2016/04/14/testing/"/>
-   <updated>2016-04-14T11:21:00-05:00</updated>
+   <updated>2016-04-14T12:21:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/14/testing</id>
    <content type="html">&lt;h2 class=&quot;no_toc&quot; id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
 
@@ -469,7 +495,7 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  <entry>
    <title>Java Revisions</title>
    <link href="http://nitinkc.github.io/2016/04/13/java-theory-revisions/"/>
-   <updated>2016-04-13T11:11:00-05:00</updated>
+   <updated>2016-04-13T12:11:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/13/java-theory-revisions</id>
    <content type="html">&lt;h5 id=&quot;objects&quot;&gt;Objects&lt;/h5&gt;
 
@@ -541,7 +567,7 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  <entry>
    <title>Graphs</title>
    <link href="http://nitinkc.github.io/2016/04/11/graphs/"/>
-   <updated>2016-04-11T17:20:00-05:00</updated>
+   <updated>2016-04-11T18:20:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/11/graphs</id>
    <content type="html">&lt;h5 id=&quot;graphs&quot;&gt;Graphs&lt;/h5&gt;
 
@@ -551,7 +577,7 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  <entry>
    <title>Stacks</title>
    <link href="http://nitinkc.github.io/2016/04/11/stacks/"/>
-   <updated>2016-04-11T17:20:00-05:00</updated>
+   <updated>2016-04-11T18:20:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/11/stacks</id>
    <content type="html">&lt;h5 id=&quot;stack-using-an-arraylistarray-also-min&quot;&gt;Stack Using an ArrayList/Array (Also min)&lt;/h5&gt;
 
@@ -565,7 +591,7 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  <entry>
    <title>Queue</title>
    <link href="http://nitinkc.github.io/2016/04/11/queues/"/>
-   <updated>2016-04-11T06:33:00-05:00</updated>
+   <updated>2016-04-11T07:33:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/11/queues</id>
    <content type="html">&lt;h5 id=&quot;queue-using-an-arraylistarray&quot;&gt;Queue Using an ArrayList/Array&lt;/h5&gt;
 
@@ -575,7 +601,7 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  <entry>
    <title>Trees</title>
    <link href="http://nitinkc.github.io/2016/04/06/trees/"/>
-   <updated>2016-04-06T00:14:00-05:00</updated>
+   <updated>2016-04-06T01:14:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/06/trees</id>
    <content type="html">&lt;h5 id=&quot;trees-iteration&quot;&gt;Trees Iteration&lt;/h5&gt;
 &lt;noscript&gt;&lt;pre&gt;public int countEmpty() {
@@ -609,7 +635,7 @@ public int countEmpty(IntTreeNode root) {
  <entry>
    <title>Linked List</title>
    <link href="http://nitinkc.github.io/2016/04/06/linked-list/"/>
-   <updated>2016-04-06T00:14:00-05:00</updated>
+   <updated>2016-04-06T01:14:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/06/linked-list</id>
    <content type="html">&lt;h5 id=&quot;linked-list-iteration&quot;&gt;Linked List Iteration&lt;/h5&gt;
 &lt;noscript&gt;&lt;pre&gt;// Traditional Iteration for LinkedList
@@ -748,7 +774,7 @@ public void addNodeEnd{
  <entry>
    <title>Chrome Extension</title>
    <link href="http://nitinkc.github.io/2016/04/06/chrome-extention/"/>
-   <updated>2016-04-06T00:14:00-05:00</updated>
+   <updated>2016-04-06T01:14:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/06/chrome-extention</id>
    <content type="html">&lt;h2 id=&quot;building-the-chrome-extension&quot;&gt;Building the Chrome Extension&lt;/h2&gt;
 
@@ -765,7 +791,7 @@ public void addNodeEnd{
  <entry>
    <title>Tools used for making Personal Website</title>
    <link href="http://nitinkc.github.io/2016/04/04/tools-used/"/>
-   <updated>2016-04-04T13:31:00-05:00</updated>
+   <updated>2016-04-04T14:31:00-04:00</updated>
    <id>http://nitinkc.github.io/2016/04/04/tools-used</id>
    <content type="html">&lt;h3 id=&quot;making-a-personal-website-using-githubs-free-hosting-for-the-jekyll-sites&quot;&gt;Making a personal website using GitHubs free Hosting for the Jekyll Sites&lt;/h3&gt;
 
@@ -798,9 +824,15 @@ Npm install&lt;/p&gt;
  <entry>
    <title>Building a Jekyll Blog and Hosting on GitHub!</title>
    <link href="http://nitinkc.github.io/jekyll/update/2016/04/04/building-the-jekyll-blog/"/>
-   <updated>2016-04-04T13:31:00-05:00</updated>
+   <updated>2016-04-04T14:31:00-04:00</updated>
    <id>http://nitinkc.github.io/jekyll/update/2016/04/04/building-the-jekyll-blog</id>
-   <content type="html">&lt;h1 id=&quot;making-a-personal-website-using-githubs-free-hosting-for-the-jekyll-sites&quot;&gt;Making a personal website using GitHubs free Hosting for the Jekyll Sites&lt;/h1&gt;
+   <content type="html">&lt;p&gt;Making a personal website using GitHubs free Hosting for the Jekyll Sites&lt;/p&gt;
+
+&lt;p&gt;Create a blog with naming convention of yyyy-mm-dd-name-of-the-blog.md and save it in _posts dircetory&lt;/p&gt;
+
+&lt;p&gt;execute in the terminal
+jekyll build
+jekyll serve&lt;/p&gt;
 </content>
  </entry>
  
