@@ -13,5 +13,5 @@ Making a personal website using GitHubs free Hosting for the Jekyll Sites
 Create a blog with naming convention of yyyy-mm-dd-name-of-the-blog.md and save it in _posts dircetory
 
 execute in the terminal
-jekyll build
-jekyll serve
+```jekyll build```
+```jekyll serve```
