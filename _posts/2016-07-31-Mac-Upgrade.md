@@ -14,8 +14,9 @@ Thus I ordered everything online
 Opening up the Macbook Pro flap needs special tools, so i ordered a universal tool kit to open all the screws of macbook, iphone and other android phones.
 
 I upgraded
- * RAM from the original 4GB to 16 GB - Crucial 16GB Kit (8GBx2) DDR3L 1600 SODIMM Memory for Mac System(CT2K8G3S160BM )- (Crucible RAM - https://www.amazon.com/gp/product/B008LTBJFW/ref=od_aui_detailpages01?ie=UTF8&psc=1)
- * Replaced the original HDD with Samsung SSD - Samsung 850 EVO - 500GB - 2.5-Inch SATA III Internal SSD (MZ-75E500B/AM) (https://www.amazon.com/gp/product/B00OBRE5UE/ref=od_aui_detailpages01?ie=UTF8&psc=1)
+ *   RAM from the original 4GB to 16 GB - Crucial 16GB Kit (8GBx2) DDR3L 1600 SODIMM Memory for Mac System(CT2K8G3S160BM )- (Crucible RAM - https://www.amazon.com/gp/product/B008LTBJFW/ref=od_aui_detailpages01?ie=UTF8&psc=1)
+ 
+ *  Replaced the original HDD with Samsung SSD - Samsung 850 EVO - 500GB - 2.5-Inch SATA III Internal SSD (MZ-75E500B/AM) (https://www.amazon.com/gp/product/B00OBRE5UE/ref=od_aui_detailpages01?ie=UTF8&psc=1)
 
 The hard disk that came out cam be used as an external drive using an enclosure. The best one that i liked is
 HandAcc 2.5 Inch USB 3.0 Hard Drive External Enclosure Case For 9.5mm & 7mm 2.5" SATA HDD and SSD, Support UASP, Tool-free, Silver

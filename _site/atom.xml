@@ -4,13 +4,44 @@
  <title>{ni[T]in}</title>
  <link href="http://nitinkc.github.io/atom.xml" rel="self"/>
  <link href="http://nitinkc.github.io/"/>
- <updated>2016-11-25T19:48:54-05:00</updated>
+ <updated>2017-01-02T00:46:43-05:00</updated>
  <id>http://nitinkc.github.io</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Arrays Patterns</title>
+   <link href="http://nitinkc.github.io/2016/11/25/Arrays-Patterns/"/>
+   <updated>2016-11-25T15:20:00-05:00</updated>
+   <id>http://nitinkc.github.io/2016/11/25/Arrays Patterns</id>
+   <content type="html">&lt;h2 id=&quot;arrays-patterns&quot;&gt;Arrays Patterns&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Two Pointer Technique
+   1. One Fast runner the other one runs slow.
+   2. One begins from start, other from the end. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;noscript&gt;&lt;pre&gt;public void revereseString2Pointes(char[] str){
+ //check if the string is null
+  if(str.length == 0) return;
+  
+  int start = 0, end = str.length - 1;
+  
+  //Use while for code clarity
+  while (i &amp;lt; j){
+    swap (str, i, j);
+    i++;
+    j--;
+  }
+}&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/nitinkc/8a3eb81f7ccf93b013a2fe8455a04703.js&quot;&gt; &lt;/script&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Upgrading the Macbook Pro - Model A1278</title>
@@ -27,8 +58,11 @@
 &lt;p&gt;Opening up the Macbook Pro flap needs special tools, so i ordered a universal tool kit to open all the screws of macbook, iphone and other android phones.&lt;/p&gt;
 
 &lt;p&gt;I upgraded
- * RAM from the original 4GB to 16 GB - Crucial 16GB Kit (8GBx2) DDR3L 1600 SODIMM Memory for Mac System(CT2K8G3S160BM )- (Crucible RAM - https://www.amazon.com/gp/product/B008LTBJFW/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)
- * Replaced the original HDD with Samsung SSD - Samsung 850 EVO - 500GB - 2.5-Inch SATA III Internal SSD (MZ-75E500B/AM) (https://www.amazon.com/gp/product/B00OBRE5UE/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)&lt;/p&gt;
+ *   RAM from the original 4GB to 16 GB - Crucial 16GB Kit (8GBx2) DDR3L 1600 SODIMM Memory for Mac System(CT2K8G3S160BM )- (Crucible RAM - https://www.amazon.com/gp/product/B008LTBJFW/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Replaced the original HDD with Samsung SSD - Samsung 850 EVO - 500GB - 2.5-Inch SATA III Internal SSD (MZ-75E500B/AM) (https://www.amazon.com/gp/product/B00OBRE5UE/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;The hard disk that came out cam be used as an external drive using an enclosure. The best one that i liked is
 HandAcc 2.5 Inch USB 3.0 Hard Drive External Enclosure Case For 9.5mm &amp;amp; 7mm 2.5” SATA HDD and SSD, Support UASP, Tool-free, Silver
