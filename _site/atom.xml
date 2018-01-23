@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>{ni[T]in}</title>
- <link href="http://nitinkc.github.io/atom.xml" rel="self"/>
- <link href="http://nitinkc.github.io/"/>
- <updated>2017-02-04T00:53:27-05:00</updated>
- <id>http://nitinkc.github.io</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2018-01-22T19:15:16-05:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name></name>
    <email></email>
@@ -14,32 +14,30 @@
  
  <entry>
    <title>Maps Patterns</title>
-   <link href="http://nitinkc.github.io/2017/02/01/maps/"/>
+   <link href="http://localhost:4000/2017/02/01/maps/"/>
    <updated>2017-02-01T19:20:00-05:00</updated>
-   <id>http://nitinkc.github.io/2017/02/01/maps</id>
-   <content type="html">&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;containsKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+   <id>http://localhost:4000/2017/02/01/maps</id>
+   <content type="html">&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;containsKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;containsValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//get value from the key&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;keySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//get all the keys&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;map-iterator-using-set&quot;&gt;Map Iterator using Set&lt;/h4&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;//Iterator on all the keys&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;keySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasNext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()){&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;map-iterator-using-entryset&quot;&gt;Map Iterator using EntrySet&lt;/h4&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;entrySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasNext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()){&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
@@ -50,12 +48,11 @@
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;removing-the-element&quot;&gt;Removing the element&lt;/h4&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasNext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tempKey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tempKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
@@ -66,8 +63,7 @@
         &lt;span class=&quot;n&quot;&gt;itr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Count the number of occurances&lt;/li&gt;
@@ -91,16 +87,15 @@ for (int i = 0; i &amp;lt; list.size()-1; i++) {
  
  <entry>
    <title>Arrays Patterns</title>
-   <link href="http://nitinkc.github.io/2016/11/25/Arrays-Patterns/"/>
+   <link href="http://localhost:4000/2016/11/25/Arrays-Patterns/"/>
    <updated>2016-11-25T15:20:00-05:00</updated>
-   <id>http://nitinkc.github.io/2016/11/25/Arrays Patterns</id>
+   <id>http://localhost:4000/2016/11/25/Arrays Patterns</id>
    <content type="html">&lt;h2 id=&quot;arrays-patterns&quot;&gt;Arrays Patterns&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Two Pointer Technique
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Two Pointer Technique
    1. One Fast runner the other one runs slow.
    2. One begins from start, other from the end. 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;noscript&gt;&lt;pre&gt;public void revereseString2Pointes(char[] str){
  //check if the string is null
@@ -122,9 +117,9 @@ for (int i = 0; i &amp;lt; list.size()-1; i++) {
  
  <entry>
    <title>Upgrading the Macbook Pro - Model A1278</title>
-   <link href="http://nitinkc.github.io/2016/07/31/Mac-Upgrade/"/>
+   <link href="http://localhost:4000/2016/07/31/Mac-Upgrade/"/>
    <updated>2016-07-31T11:04:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/07/31/Mac-Upgrade</id>
+   <id>http://localhost:4000/2016/07/31/Mac-Upgrade</id>
    <content type="html">&lt;h2 id=&quot;upgrading-the-macbook-pro&quot;&gt;Upgrading the Macbook Pro&lt;/h2&gt;
 &lt;p&gt;I was planning to buy a new Macbook as the one which was gifted by one of my best friends became a really slow.&lt;/p&gt;
 
@@ -134,11 +129,14 @@ for (int i = 0; i &amp;lt; list.size()-1; i++) {
 
 &lt;p&gt;Opening up the Macbook Pro flap needs special tools, so i ordered a universal tool kit to open all the screws of macbook, iphone and other android phones.&lt;/p&gt;
 
-&lt;p&gt;I upgraded
- *   RAM from the original 4GB to 16 GB - Crucial 16GB Kit (8GBx2) DDR3L 1600 SODIMM Memory for Mac System(CT2K8G3S160BM )- (Crucible RAM - https://www.amazon.com/gp/product/B008LTBJFW/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)&lt;/p&gt;
-
+&lt;p&gt;I upgraded&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Replaced the original HDD with Samsung SSD - Samsung 850 EVO - 500GB - 2.5-Inch SATA III Internal SSD (MZ-75E500B/AM) (https://www.amazon.com/gp/product/B00OBRE5UE/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RAM from the original 4GB to 16 GB - Crucial 16GB Kit (8GBx2) DDR3L 1600 SODIMM Memory for Mac System(CT2K8G3S160BM )- (Crucible RAM - https://www.amazon.com/gp/product/B008LTBJFW/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Replaced the original HDD with Samsung SSD - Samsung 850 EVO - 500GB - 2.5-Inch SATA III Internal SSD (MZ-75E500B/AM) (https://www.amazon.com/gp/product/B00OBRE5UE/ref=od_aui_detailpages01?ie=UTF8&amp;amp;psc=1)&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The hard disk that came out cam be used as an external drive using an enclosure. The best one that i liked is
@@ -151,9 +149,9 @@ HandAcc 2.5 Inch USB 3.0 Hard Drive External Enclosure Case For 9.5mm &amp;amp; 
  
  <entry>
    <title>SQL Revisions</title>
-   <link href="http://nitinkc.github.io/2016/04/15/sql-revisions/"/>
+   <link href="http://localhost:4000/2016/04/15/sql-revisions/"/>
    <updated>2016-04-15T07:45:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/15/sql-revisions</id>
+   <id>http://localhost:4000/2016/04/15/sql-revisions</id>
    <content type="html">&lt;p&gt;https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management&lt;/p&gt;
 
 &lt;p&gt;https://en.wikibooks.org/wiki/SQL_Exercises&lt;/p&gt;
@@ -162,9 +160,9 @@ HandAcc 2.5 Inch USB 3.0 Hard Drive External Enclosure Case For 9.5mm &amp;amp; 
  
  <entry>
    <title>Linux Files</title>
-   <link href="http://nitinkc.github.io/2016/04/14/linux-files/"/>
+   <link href="http://localhost:4000/2016/04/14/linux-files/"/>
    <updated>2016-04-14T16:11:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/14/linux-files</id>
+   <id>http://localhost:4000/2016/04/14/linux-files</id>
    <content type="html">&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
@@ -229,9 +227,9 @@ HandAcc 2.5 Inch USB 3.0 Hard Drive External Enclosure Case For 9.5mm &amp;amp; 
  
  <entry>
    <title>SQL Joins</title>
-   <link href="http://nitinkc.github.io/2016/04/14/sql-joins/"/>
+   <link href="http://localhost:4000/2016/04/14/sql-joins/"/>
    <updated>2016-04-14T12:21:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/14/sql-joins</id>
+   <id>http://localhost:4000/2016/04/14/sql-joins</id>
    <content type="html">&lt;p&gt;JOINS
     INNER &amp;amp; OUTER
     INNER – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
@@ -259,9 +257,9 @@ Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id&lt;/p
  
  <entry>
    <title>Test</title>
-   <link href="http://nitinkc.github.io/2016/04/14/testing/"/>
+   <link href="http://localhost:4000/2016/04/14/testing/"/>
    <updated>2016-04-14T12:21:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/14/testing</id>
+   <id>http://localhost:4000/2016/04/14/testing</id>
    <content type="html">&lt;h2 class=&quot;no_toc&quot; id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -310,35 +308,32 @@ Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id&lt;/p
 &lt;p&gt;&lt;strong&gt;Whiteboard:&lt;/strong&gt; Find count departments id where more than 5 employees.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;# employees&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;# employees&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dept&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapping&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
 
   &lt;p&gt;SET Theory: Inline-view, TOP-N Analysis
 Select 11th heighest salary.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SALARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMPLOYEE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SALARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMPLOYEE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rownum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt; 
 &lt;span class=&quot;n&quot;&gt;MINUS&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SALARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMPLOYEE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rownum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Whiteboard:&lt;/strong&gt; Followed by bonus : related to sub query. Name all the depts with more than 5 employees.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dept&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapping&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Diff. in inner join and outer join&lt;/p&gt;
 
@@ -364,19 +359,17 @@ JOINS : to combine rows from two or more tables, based on a common field between
 
 &lt;p&gt;&lt;strong&gt;SELF JOIN&lt;/strong&gt; – only one table is involved in join &lt;br /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; works for &#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' works for '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;&quot;Employees and their Managers&quot;&lt;/span&gt; 
 &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mgr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empno&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;OR can be written as&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; works for &#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' works for '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;&quot;Employees and their Managers&quot;&lt;/span&gt; 
 &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mgr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empno&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;br /&gt;
@@ -393,11 +386,13 @@ The USING clause
 The ON clause&lt;/p&gt;
 
 &lt;p&gt;The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
-&amp;lt;/pre&amp;gt;
-&amp;gt;Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
+&amp;lt;/pre&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
 Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
 Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
-&amp;gt; &amp;lt;/pre&amp;gt;&lt;/p&gt;
+&amp;lt;/pre&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; what is left outer join and right outer join.&lt;/p&gt;
 
@@ -420,24 +415,23 @@ ON table_name (column_name)
   &lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; full table scan&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; index advantegs of indexes in sql tuning? What is the syntax of doing that.
-&amp;gt; Indexes are a performance drag when the time comes to modify records.&lt;/p&gt;
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; index advantegs of indexes in sql tuning? What is the syntax of doing that.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Indexes are a performance drag when the time comes to modify records.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Multiple Conditions : AND &lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;sql
-SELECT * from EMP WHERE salary &amp;gt; 10000 AND dateofjoining &amp;gt; ‘1-Jan-1990’ ;
-&lt;/code&gt;
-&lt;br /&gt;Range Selection - BETWEEN
-&lt;code class=&quot;highlighter-rouge&quot;&gt;sql
-SELECT * from EMP WHERE salary between 9000 AND 20000;
-&lt;/code&gt;
-&lt;br /&gt;Exact List Matching
-&lt;code class=&quot;highlighter-rouge&quot;&gt;sql
-SELECT * from EMP WHERE employeeID IN (3001,  3002);
-&lt;/code&gt;&lt;/p&gt;
+  &lt;p&gt;Multiple Conditions : AND &lt;br /&gt;&lt;/p&gt;
+  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateofjoining&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Jan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1990&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;&lt;br /&gt;Range Selection - BETWEEN&lt;/p&gt;
+  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;between&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9000&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;&lt;br /&gt;Exact List Matching&lt;/p&gt;
+  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employeeID&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;3002&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Full table scan&lt;/p&gt;
@@ -511,12 +505,12 @@ SELECT * from EMP WHERE employeeID IN (3001,  3002);
   &lt;/li&gt;
   &lt;li&gt;Given directory hierarchy. Find a file.
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find / -name &#39;program.c&#39; 2&amp;gt;errors.txt&lt;/code&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find / -name 'program.c' 2&amp;gt;errors.txt&lt;/code&gt;
         &lt;ul&gt;
           &lt;li&gt;Start searching from the root directory (i.e / directory)&lt;/li&gt;
           &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-name&lt;/code&gt; : Given search text is the filename rather than any other attribute of a file&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&#39;program.c&#39;&lt;/code&gt; Search text that we have entered. Always enclose the filename in single quotes.. why to do this is complex.. so simply do so.&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ find /mp3collection -name &#39;*.mp3&#39; -size -5000k&lt;/code&gt; find in /mp3collection, only those mp3 files that have a size less than 5000 Kilobytes ( &amp;lt; 5MB)&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'program.c'&lt;/code&gt; Search text that we have entered. Always enclose the filename in single quotes.. why to do this is complex.. so simply do so.&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ find /mp3collection -name '*.mp3' -size -5000k&lt;/code&gt; find in /mp3collection, only those mp3 files that have a size less than 5000 Kilobytes ( &amp;lt; 5MB)&lt;/li&gt;
           &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ find / -size +10000k&lt;/code&gt; search from the / directory for any file that is larger than 10000k (&amp;gt; 10MB)&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
@@ -530,7 +524,7 @@ SELECT * from EMP WHERE employeeID IN (3001,  3002);
   &lt;/li&gt;
   &lt;li&gt;remove the file from remote server
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh username@domain.com &#39;rm /some/where/some_file.war&#39;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh username@domain.com 'rm /some/where/some_file.war'&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;difference between move and copy
@@ -605,9 +599,9 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  
  <entry>
    <title>Java Revisions</title>
-   <link href="http://nitinkc.github.io/2016/04/13/java-theory-revisions/"/>
+   <link href="http://localhost:4000/2016/04/13/java-theory-revisions/"/>
    <updated>2016-04-13T12:11:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/13/java-theory-revisions</id>
+   <id>http://localhost:4000/2016/04/13/java-theory-revisions</id>
    <content type="html">&lt;h5 id=&quot;objects&quot;&gt;Objects&lt;/h5&gt;
 
 &lt;ul&gt;
@@ -677,9 +671,9 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  
  <entry>
    <title>Graphs</title>
-   <link href="http://nitinkc.github.io/2016/04/11/graphs/"/>
+   <link href="http://localhost:4000/2016/04/11/graphs/"/>
    <updated>2016-04-11T18:20:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/11/graphs</id>
+   <id>http://localhost:4000/2016/04/11/graphs</id>
    <content type="html">&lt;h5 id=&quot;graphs&quot;&gt;Graphs&lt;/h5&gt;
 
 </content>
@@ -687,17 +681,16 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  
  <entry>
    <title>Stacks</title>
-   <link href="http://nitinkc.github.io/2016/04/11/stacks/"/>
+   <link href="http://localhost:4000/2016/04/11/stacks/"/>
    <updated>2016-04-11T18:20:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/11/stacks</id>
-   <content type="html">&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+   <id>http://localhost:4000/2016/04/11/stacks</id>
+   <content type="html">&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// return the value and pops the top&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;peek&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// Return the top&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;##### Stack Using an ArrayList/Array (Also min)&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h5 id=&quot;stack-using-an-arraylistarray-also-min&quot;&gt;Stack Using an ArrayList/Array (Also min)&lt;/h5&gt;
 
 &lt;h5 id=&quot;stack-using-2-stacks-also-min&quot;&gt;Stack using 2 stacks (Also min)&lt;/h5&gt;
 
@@ -708,9 +701,9 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  
  <entry>
    <title>Queue</title>
-   <link href="http://nitinkc.github.io/2016/04/11/queues/"/>
+   <link href="http://localhost:4000/2016/04/11/queues/"/>
    <updated>2016-04-11T07:33:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/11/queues</id>
+   <id>http://localhost:4000/2016/04/11/queues</id>
    <content type="html">&lt;h5 id=&quot;queue-using-an-arraylistarray&quot;&gt;Queue Using an ArrayList/Array&lt;/h5&gt;
 
 </content>
@@ -718,9 +711,9 @@ Spring support only Constructor Injection and Setter/Getter Injection.
  
  <entry>
    <title>Trees</title>
-   <link href="http://nitinkc.github.io/2016/04/06/trees/"/>
+   <link href="http://localhost:4000/2016/04/06/trees/"/>
    <updated>2016-04-06T01:14:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/06/trees</id>
+   <id>http://localhost:4000/2016/04/06/trees</id>
    <content type="html">&lt;h5 id=&quot;trees-iteration&quot;&gt;Trees Iteration&lt;/h5&gt;
 &lt;noscript&gt;&lt;pre&gt;public int countEmpty() {
     return countEmpty(overallRoot);
@@ -752,9 +745,9 @@ public int countEmpty(IntTreeNode root) {
  
  <entry>
    <title>Linked List</title>
-   <link href="http://nitinkc.github.io/2016/04/06/linked-list/"/>
+   <link href="http://localhost:4000/2016/04/06/linked-list/"/>
    <updated>2016-04-06T01:14:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/06/linked-list</id>
+   <id>http://localhost:4000/2016/04/06/linked-list</id>
    <content type="html">&lt;h5 id=&quot;linked-list-iteration&quot;&gt;Linked List Iteration&lt;/h5&gt;
 &lt;noscript&gt;&lt;pre&gt;// Traditional Iteration for LinkedList
 LinkedList runner = head;
@@ -891,9 +884,9 @@ public void addNodeEnd{
  
  <entry>
    <title>Chrome Extension</title>
-   <link href="http://nitinkc.github.io/2016/04/06/chrome-extention/"/>
+   <link href="http://localhost:4000/2016/04/06/chrome-extention/"/>
    <updated>2016-04-06T01:14:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/06/chrome-extention</id>
+   <id>http://localhost:4000/2016/04/06/chrome-extention</id>
    <content type="html">&lt;h2 id=&quot;building-the-chrome-extension&quot;&gt;Building the Chrome Extension&lt;/h2&gt;
 
 &lt;h5 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h5&gt;
@@ -908,9 +901,9 @@ public void addNodeEnd{
  
  <entry>
    <title>Tools used for making Personal Website</title>
-   <link href="http://nitinkc.github.io/2016/04/04/tools-used/"/>
+   <link href="http://localhost:4000/2016/04/04/tools-used/"/>
    <updated>2016-04-04T14:31:00-04:00</updated>
-   <id>http://nitinkc.github.io/2016/04/04/tools-used</id>
+   <id>http://localhost:4000/2016/04/04/tools-used</id>
    <content type="html">&lt;h3 id=&quot;making-a-personal-website-using-githubs-free-hosting-for-the-jekyll-sites&quot;&gt;Making a personal website using GitHubs free Hosting for the Jekyll Sites&lt;/h3&gt;
 
 &lt;ol&gt;
@@ -941,9 +934,9 @@ Npm install&lt;/p&gt;
  
  <entry>
    <title>Jekyll Blog and Free Hosting on GitHub!</title>
-   <link href="http://nitinkc.github.io/jekyll/update/2016/04/04/jekyll-blog-GitHub-hosting/"/>
+   <link href="http://localhost:4000/jekyll/update/2016/04/04/jekyll-blog-GitHub-hosting/"/>
    <updated>2016-04-04T14:31:00-04:00</updated>
-   <id>http://nitinkc.github.io/jekyll/update/2016/04/04/jekyll-blog-GitHub-hosting</id>
+   <id>http://localhost:4000/jekyll/update/2016/04/04/jekyll-blog-GitHub-hosting</id>
    <content type="html">&lt;p&gt;Making a personal website using GitHubs free Hosting for the Jekyll Sites&lt;/p&gt;
 
 &lt;p&gt;Create a blog with naming convention of yyyy-mm-dd-name-of-the-blog.md and save it in _posts dircetory&lt;/p&gt;

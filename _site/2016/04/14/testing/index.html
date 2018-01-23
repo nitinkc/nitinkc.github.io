@@ -238,35 +238,32 @@
 <p><strong>Whiteboard:</strong> Find count departments id where more than 5 employees.</p>
 
 <blockquote>
-  <div class="highlighter-rouge"><pre class="highlight"><code><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">"# employees"</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">"# employees"</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
       <span class="k">from</span> <span class="n">dept</span> <span class="n">d</span><span class="p">,</span> <span class="n">employees</span> <span class="n">e</span><span class="p">,</span> <span class="n">mapping</span> <span class="n">m</span>
       <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">eid</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">eid</span> <span class="k">AND</span> <span class="n">d</span><span class="p">.</span><span class="n">did</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">did</span>
       <span class="k">group</span> <span class="k">by</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
       <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>SET Theory: Inline-view, TOP-N Analysis
 Select 11th heighest salary.</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
 <span class="k">where</span> <span class="n">rownum</span> <span class="o">&lt;</span> <span class="mi">12</span> 
 <span class="n">MINUS</span>
 <span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
 <span class="k">where</span> <span class="n">rownum</span> <span class="o">&lt;</span> <span class="mi">11</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Whiteboard:</strong> Followed by bonus : related to sub query. Name all the depts with more than 5 employees.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">select</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
       <span class="k">from</span> <span class="n">dept</span> <span class="n">d</span><span class="p">,</span> <span class="n">employees</span> <span class="n">e</span><span class="p">,</span> <span class="n">mapping</span> <span class="n">m</span>
       <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">eid</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">eid</span> <span class="k">AND</span> <span class="n">d</span><span class="p">.</span><span class="n">did</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">did</span>
       <span class="k">group</span> <span class="k">by</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
       <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><i class="fa fa-question"></i> Diff. in inner join and outer join</p>
 
@@ -292,19 +289,17 @@ JOINS : to combine rows from two or more tables, based on a common field between
 
 <p><strong>SELF JOIN</strong> – only one table is involved in join <br /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">e1</span><span class="p">.</span><span class="n">ename</span><span class="o">||</span><span class="s1">' works for '</span><span class="o">||</span><span class="n">e2</span><span class="p">.</span><span class="n">ename</span>  <span class="k">AS</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">e1</span><span class="p">.</span><span class="n">ename</span><span class="o">||</span><span class="s1">' works for '</span><span class="o">||</span><span class="n">e2</span><span class="p">.</span><span class="n">ename</span>  <span class="k">AS</span>
 <span class="nv">"Employees and their Managers"</span> 
 <span class="k">FROM</span> <span class="n">emp</span> <span class="n">e1</span> <span class="k">JOIN</span> <span class="n">emp</span> <span class="n">e2</span> <span class="k">ON</span> <span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="n">mgr</span> <span class="o">=</span> <span class="n">e2</span><span class="p">.</span><span class="n">empno</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>OR can be written as</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">e1</span><span class="p">.</span><span class="n">ename</span><span class="o">||</span><span class="s1">' works for '</span><span class="o">||</span><span class="n">e2</span><span class="p">.</span><span class="n">ename</span>  <span class="k">AS</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">e1</span><span class="p">.</span><span class="n">ename</span><span class="o">||</span><span class="s1">' works for '</span><span class="o">||</span><span class="n">e2</span><span class="p">.</span><span class="n">ename</span>  <span class="k">AS</span>
 <span class="nv">"Employees and their Managers"</span> 
 <span class="k">FROM</span> <span class="n">emp</span> <span class="n">e1</span><span class="p">,</span> <span class="n">emp</span> <span class="n">e2</span> <span class="k">where</span> <span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="n">mgr</span> <span class="o">=</span> <span class="n">e2</span><span class="p">.</span><span class="n">empno</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p><br />
@@ -321,11 +316,13 @@ The USING clause
 The ON clause</p>
 
 <p>The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
-&lt;/pre&gt;
-&gt;Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
+&lt;/pre&gt;</p>
+<blockquote>
+  <p>Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
 Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
 Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
-&gt; &lt;/pre&gt;</p>
+&lt;/pre&gt;</p>
+</blockquote>
 
 <p><i class="fa fa-question"></i> what is left outer join and right outer join.</p>
 
@@ -348,24 +345,23 @@ ON table_name (column_name)
   <p><i class="fa fa-question"></i> full table scan</p>
 </blockquote>
 
-<p><i class="fa fa-question"></i> index advantegs of indexes in sql tuning? What is the syntax of doing that.
-&gt; Indexes are a performance drag when the time comes to modify records.</p>
+<p><i class="fa fa-question"></i> index advantegs of indexes in sql tuning? What is the syntax of doing that.</p>
+<blockquote>
+  <p>Indexes are a performance drag when the time comes to modify records.</p>
+</blockquote>
 
 <p><i class="fa fa-question"></i></p>
 
 <blockquote>
-  <p>Multiple Conditions : AND <br />
-<code class="highlighter-rouge">sql
-SELECT * from EMP WHERE salary &gt; 10000 AND dateofjoining &gt; ‘1-Jan-1990’ ;
-</code>
-<br />Range Selection - BETWEEN
-<code class="highlighter-rouge">sql
-SELECT * from EMP WHERE salary between 9000 AND 20000;
-</code>
-<br />Exact List Matching
-<code class="highlighter-rouge">sql
-SELECT * from EMP WHERE employeeID IN (3001,  3002);
-</code></p>
+  <p>Multiple Conditions : AND <br /></p>
+  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMP</span> <span class="k">WHERE</span> <span class="n">salary</span> <span class="o">&gt;</span> <span class="mi">10000</span> <span class="k">AND</span> <span class="n">dateofjoining</span> <span class="o">&gt;</span> <span class="err">‘</span><span class="mi">1</span><span class="o">-</span><span class="n">Jan</span><span class="o">-</span><span class="mi">1990</span><span class="err">’</span> <span class="p">;</span>
+</code></pre></div>  </div>
+  <p><br />Range Selection - BETWEEN</p>
+  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMP</span> <span class="k">WHERE</span> <span class="n">salary</span> <span class="k">between</span> <span class="mi">9000</span> <span class="k">AND</span> <span class="mi">20000</span><span class="p">;</span>
+</code></pre></div>  </div>
+  <p><br />Exact List Matching</p>
+  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMP</span> <span class="k">WHERE</span> <span class="n">employeeID</span> <span class="k">IN</span> <span class="p">(</span><span class="mi">3001</span><span class="p">,</span>  <span class="mi">3002</span><span class="p">);</span>
+</code></pre></div>  </div>
 </blockquote>
 
 <p><i class="fa fa-question"></i> Full table scan</p>
