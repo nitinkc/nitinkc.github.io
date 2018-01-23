@@ -6,7 +6,7 @@
   paginate:           5
   markdown:           kramdown
   highlighter:        rouge # or rouge or null
-  gems:               [jekyll-gist, jekyll-paginate]
+  plugins:               [jekyll-gist, jekyll-paginate]
   exclude:            ["node_modules", "gulpfile.js", "package.json", "README.md"]
 
 # About/contact
