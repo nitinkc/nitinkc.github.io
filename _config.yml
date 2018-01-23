@@ -2,7 +2,7 @@
   title:              "{ni[T]in}"
   tagline:            'Nitin Kumar Chaurasia'
   description:
-  baseurl:            /
+  # baseurl:            /
   paginate:           5
   markdown:           kramdown
   highlighter:        rouge # or rouge or null

@@ -16,13 +16,15 @@
   </title>
 
   <!-- CSS -->
+  <!-- <link rel="stylesheet" href="public/css/poole.css">
+  <link rel="stylesheet" href="public/css/syntax.css">
+  <link rel="stylesheet" href="public/css/hyde.css"> -->
+
+<!-- Removed site.baseurl variable based on this artical
+https://github.com/biopython/biopython.github.io/issues/120 -->
   <link rel="stylesheet" href="/public/css/poole.css">
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
-
-  <!-- <link rel="stylesheet" href="//public/css/poole.css ">
-  <link rel="stylesheet" href="//public/css/syntax.css ">
-  <link rel="stylesheet" href="//public/css/hyde.css "> -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -44,6 +46,7 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <h1 class="logo">
+        <!-- <a href=""> -->
         <a href="/">
           {ni[T]in}
         </a>
@@ -111,8 +114,8 @@
       <a class="sidebar-nav-item" href="/about">About</a>
 
 
-<!--  <a class="sidebar-nav-item" href="/static/java_revisions">Coding</a>
-      <a class="sidebar-nav-item" href="/static/projects">Projects</a> -->
+<!--  <a class="sidebar-nav-item" href="static/java_revisions">Coding</a>
+      <a class="sidebar-nav-item" href="static/projects">Projects</a> -->
        
 
       <i> -- Tools -- </i>
@@ -130,7 +133,7 @@
         
       
         
-           
+          
             <a class="sidebar-nav-item" href="/static/codingHints/">Coding Hints</a>
           
         
@@ -144,13 +147,13 @@
         
       
         
-           
+          
             <a class="sidebar-nav-item active" href="/static/java_revisions/">Coding</a>
           
         
       
         
-           
+          
             <a class="sidebar-nav-item" href="/static/problemProfiles/">Profiles</a>
           
         
@@ -171,7 +174,7 @@
           
         
       
-     
+
       <i> -- Connect -- </i>
       <a class="sidebar-nav-item" href="https://github.com/nitinkc">GitHub</a>
       <a class="sidebar-nav-item" href="https://www.linkedin.com/in/nitinchaurasia" > LinkedIn </a>
@@ -222,6 +225,7 @@
           <li><a href="#arraylist" id="markdown-toc-arraylist">ArrayList</a></li>
           <li><a href="#hashmap" id="markdown-toc-hashmap">HashMap</a></li>
           <li><a href="#hashmap-implementation-of-hashtable" id="markdown-toc-hashmap-implementation-of-hashtable">HASHMAP (IMPLEMENTATION OF HASHTABLE)</a></li>
+          <li><a href="#java-map-api" id="markdown-toc-java-map-api">Java Map API</a></li>
           <li><a href="#sets" id="markdown-toc-sets">SETS</a></li>
           <li><a href="#reading-parsing-and-type-checking-command-line-inputs" id="markdown-toc-reading-parsing-and-type-checking-command-line-inputs">Reading, Parsing and Type Checking Command Line Inputs.</a></li>
           <li><a href="#running-time-of-a-method" id="markdown-toc-running-time-of-a-method">Running time of a method</a></li>
@@ -487,7 +491,11 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 </code></pre></div></div>
 
 <h3 id="iterator-itr-for-some-collection">Iterator itr (for some collection)</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Iterator</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  3 main methods of iterator
+     1. hasNext()
+     2. next()
+     3. remove()*/</span>
+<span class="n">Iterator</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
  <span class="n">itr</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
  <span class="n">itr</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();</span>
  <span class="n">itr</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
@@ -530,10 +538,81 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 <span class="o">}</span>
 </code></pre></div></div>
 
-<h3 id="sets">SETS</h3>
+<h3 id="java-map-api">Java Map API</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Make a new empty map */</span>
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;();</span><span class="c1">// Natural Ordering is preserved</span>
+<span class="cm">/* retrieves the stored value for a key, or null if that key is not present in the map. */</span>
+<span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+<span class="cm">/* stores a new key/value pair in the map. Overwrites any existing value for that key.*/</span>
+<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span><span class="n">value</span><span class="o">);</span>
+<span class="cm">/* returns true if the key is in the map, false otherwise.*/</span>
+<span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+<span class="cm">/* removes the key/value pair for this key if present. Does nothing if the key is not present. */</span>
+<span class="n">map</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">key</span><span class="o">);</span><span class="c1">// Concurrent Modification Exception in a Loop</span>
+<span class="n">itr</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span><span class="c1">// used to avoid conc. modi. excep.</span>
 
+<span class="cm">/* Iterating a map */</span>
+<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">itr</span><span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">().</span><span class="na">iterator</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">(</span><span class="n">itr</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>
+    <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">itr</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">"  -  "</span> <span class="o">+</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">)</span> <span class="o">);</span>
+<span class="o">}</span>
+
+<span class="cm">/* Iterating a map using Entry Set */</span>
+<span class="c1">//Extracting the entry set and iterating over it</span>
+<span class="n">Set</span> <span class="n">myMap</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">();</span>
+<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">myMap</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+
+<span class="k">while</span><span class="o">(</span><span class="n">itr</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+   <span class="n">Map</span><span class="o">.</span><span class="na">Entry</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">itr</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+   <span class="c1">//Return the toString representation of Map.Entry</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">curr</span><span class="o">);</span>
+   <span class="c1">//Extracting the key and value out of Entry</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Key is : "</span><span class="o">+</span><span class="n">curr</span><span class="o">.</span><span class="na">getKey</span><span class="o">()+</span><span class="s">" Value is "</span><span class="o">+</span><span class="n">curr</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+ * There are 3 classes that implements the Map interface
+ *
+ * 1.) HashMap: this is usually "the map", able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good
+ * PROBLEM: makes no guarantee about the order of iteration
+
+ * 2.) TreeMap: it supports ordering --&gt; natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!
+
+ * 3.) LinkedHashMap: it contains a doubly linked list connecting all the entries in the map
+ * It can provide the so-called insertion-order: so unlike HashMap it can provide the order
+ * in which keys were inserted into a map ~ insertion order is not affected if a key is re-inserted into the map
+ *
+ * IMPORTANT: they consume more memory than HashMap !!!
+ */</span>
+</code></pre></div></div>
+
+<h3 id="sets">SETS</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* while adding into a set, a test of equality happens, to determine if the object being pushed already exist */</span>
+<span class="c1">// With Integer, no need to override hashCode and equals</span>
+<span class="c1">// With Tree set it will sort to DNSO</span>
+
+<span class="c1">// Sorted values while iterating</span>
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+<span class="c1">// Ordering NOT guaranteed in HashSet</span>
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+
+<span class="cm">/* f this set already contains the element, the call leaves the set unchanged and returns false*/</span>
+<span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">key</span><span class="o">,</span><span class="n">value</span><span class="o">);</span>
+<span class="cm">/* returns true if the key is in the map, false otherwise.*/</span>
+<span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+<span class="cm">/* removes the key/value pair for this key if present. Does nothing if the key is not present. */</span>
+<span class="n">set</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">key</span><span class="o">);</span><span class="c1">// Concurrent Modification Exception in a Loop</span>
+<span class="n">itr</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span><span class="c1">// used to avoid conc. modi. excep.</span>
+
+<span class="cm">/* Returns the number of elements in this set (its cardinality). */</span>
+<span class="n">set</span><span class="o">.</span><span class="na">size</span><span class="err">​</span><span class="o">()</span>
+
+</code></pre></div></div>
 <h3 id="reading-parsing-and-type-checking-command-line-inputs">Reading, Parsing and Type Checking Command Line Inputs.</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*Assuming 2 command line arguments &lt;Nitin 29&gt;*/</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/*Assuming 2 command line arguments &lt;Nitin 29&gt;*/</span>
 
 <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
      <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Incorrect Number of arguments passed"</span><span class="o">);</span>

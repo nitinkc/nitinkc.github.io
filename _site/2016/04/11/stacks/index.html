@@ -16,13 +16,15 @@
   </title>
 
   <!-- CSS -->
+  <!-- <link rel="stylesheet" href="public/css/poole.css">
+  <link rel="stylesheet" href="public/css/syntax.css">
+  <link rel="stylesheet" href="public/css/hyde.css"> -->
+
+<!-- Removed site.baseurl variable based on this artical
+https://github.com/biopython/biopython.github.io/issues/120 -->
   <link rel="stylesheet" href="/public/css/poole.css">
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
-
-  <!-- <link rel="stylesheet" href="//public/css/poole.css ">
-  <link rel="stylesheet" href="//public/css/syntax.css ">
-  <link rel="stylesheet" href="//public/css/hyde.css "> -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -44,6 +46,7 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <h1 class="logo">
+        <!-- <a href=""> -->
         <a href="/">
           {ni[T]in}
         </a>
@@ -111,8 +114,8 @@
       <a class="sidebar-nav-item" href="/about">About</a>
 
 
-<!--  <a class="sidebar-nav-item" href="/static/java_revisions">Coding</a>
-      <a class="sidebar-nav-item" href="/static/projects">Projects</a> -->
+<!--  <a class="sidebar-nav-item" href="static/java_revisions">Coding</a>
+      <a class="sidebar-nav-item" href="static/projects">Projects</a> -->
        
 
       <i> -- Tools -- </i>
@@ -130,7 +133,7 @@
         
       
         
-           
+          
             <a class="sidebar-nav-item" href="/static/codingHints/">Coding Hints</a>
           
         
@@ -144,13 +147,13 @@
         
       
         
-           
+          
             <a class="sidebar-nav-item" href="/static/java_revisions/">Coding</a>
           
         
       
         
-           
+          
             <a class="sidebar-nav-item" href="/static/problemProfiles/">Profiles</a>
           
         
@@ -171,7 +174,7 @@
           
         
       
-     
+
       <i> -- Connect -- </i>
       <a class="sidebar-nav-item" href="https://github.com/nitinkc">GitHub</a>
       <a class="sidebar-nav-item" href="https://www.linkedin.com/in/nitinchaurasia" > LinkedIn </a>
@@ -197,6 +200,7 @@
   <span class="post-date">11 Apr 2016</span>
   <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
 <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+<span class="n">stack</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span><span class="c1">// Both add and push does the same thing</span>
 <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span><span class="c1">// return the value and pops the top</span>
 <span class="k">if</span> <span class="o">(!</span><span class="n">stack</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">());</span>
 <span class="n">stack</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span><span class="c1">// Return the top</span>
