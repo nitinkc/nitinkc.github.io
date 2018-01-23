@@ -239,6 +239,10 @@ for (double g: grades){
 
 ### Iterator itr (for some collection)
 ```java
+/*  3 main methods of iterator
+     1. hasNext()
+     2. next()
+     3. remove()*/
 Iterator itr = c.iterator();
  itr.remove(i);
  itr.hasNext();
@@ -285,11 +289,83 @@ Map<String, Integer> ret = new HashMap<String, Integer>();
 }
 ```
 
+### Java Map API
+```java
+/* Make a new empty map */
+Map<String, String> map = new HashMap<String, String>();
+Map<String, Integer> map = new TreeMap<>();// Natural Ordering is preserved
+/* retrieves the stored value for a key, or null if that key is not present in the map. */
+map.get(key);
+/* stores a new key/value pair in the map. Overwrites any existing value for that key.*/
+map.put(key,value);
+/* returns true if the key is in the map, false otherwise.*/
+map.containsKey(key);
+/* removes the key/value pair for this key if present. Does nothing if the key is not present. */
+map.remove(key);// Concurrent Modification Exception in a Loop
+itr.remove();// used to avoid conc. modi. excep.
+
+/* Iterating a map */
+Iterator<Integer> itr= map.keySet().iterator();
+while (itr.hasNext()){
+    int key = itr.next();
+    System.out.println(key + "  -  " + map.get(key) );
+}
+
+/* Iterating a map using Entry Set */
+//Extracting the entry set and iterating over it
+Set myMap = map.entrySet();
+Iterator<Map.Entry<Integer,Integer>> itr = myMap.iterator();
+
+while(itr.hasNext()) {
+   Map.Entry curr = itr.next();
+   //Return the toString representation of Map.Entry
+   System.out.println(curr);
+   //Extracting the key and value out of Entry
+   System.out.println("Key is : "+curr.getKey()+" Value is "+curr.getValue());
+}
+
+/**
+ * There are 3 classes that implements the Map interface
+ *
+ * 1.) HashMap: this is usually "the map", able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good
+ * PROBLEM: makes no guarantee about the order of iteration
+
+ * 2.) TreeMap: it supports ordering --> natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!
+
+ * 3.) LinkedHashMap: it contains a doubly linked list connecting all the entries in the map
+ * It can provide the so-called insertion-order: so unlike HashMap it can provide the order
+ * in which keys were inserted into a map ~ insertion order is not affected if a key is re-inserted into the map
+ *
+ * IMPORTANT: they consume more memory than HashMap !!!
+ */
+```
+
 ### SETS
+```java
+/* while adding into a set, a test of equality happens, to determine if the object being pushed already exist */
+// With Integer, no need to override hashCode and equals
+// With Tree set it will sort to DNSO
 
+// Sorted values while iterating
+Set<Integer> set = new TreeSet<Integer>();
+// Ordering NOT guaranteed in HashSet
+Set<Integer> set = new HashSet<Integer>();
 
+/* f this set already contains the element, the call leaves the set unchanged and returns false*/
+set.add(key,value);
+/* returns true if the key is in the map, false otherwise.*/
+set.contains(key);
+/* removes the key/value pair for this key if present. Does nothing if the key is not present. */
+set.remove(key);// Concurrent Modification Exception in a Loop
+itr.remove();// used to avoid conc. modi. excep.
+
+/* Returns the number of elements in this set (its cardinality). */
+set.size​()
+
+```
 ### Reading, Parsing and Type Checking Command Line Inputs.
 ```java
+
 /*Assuming 2 command line arguments <Nitin 29>*/
 
 if (args.length == 0 || args.length > 2) {
