@@ -11,7 +11,7 @@
 
   <title>
     
-      Coding &middot; {ni[T]in}
+      Syntax Reference &middot; ηї☂їᾔ
     
   </title>
 
@@ -48,7 +48,7 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       <h1 class="logo">
         <!-- <a href=""> -->
         <a href="/">
-          {ni[T]in}
+          ηї☂їᾔ
         </a>
       </h1>
       <p class="lead"></p>
@@ -148,7 +148,7 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       
         
           
-            <a class="sidebar-nav-item active" href="/static/java_revisions/">Coding</a>
+            <a class="sidebar-nav-item active" href="/static/java_revisions/">Syntax Reference</a>
           
         
       
@@ -176,9 +176,9 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       
 
       <i> -- Connect -- </i>
-      <a class="sidebar-nav-item" href="https://github.com/nitinkc">GitHub</a>
-      <a class="sidebar-nav-item" href="https://www.linkedin.com/in/nitinchaurasia" > LinkedIn </a>
-      <a class="sidebar-nav-item" href="http://blogs.bgsu.edu/nitinc/" > BGSU Blog </a>
+      <a class="sidebar-nav-item" href="https://github.com/nitinkc" target="_blank">GitHub</a>
+      <a class="sidebar-nav-item" href="https://www.linkedin.com/in/nitinchaurasia" target="_blank" > LinkedIn </a>
+      <a class="sidebar-nav-item" href="http://blogs.bgsu.edu/nitinc/" target="_blank" > BGSU Blog </a>
       <!-- <span class="sidebar-nav-item">Currently v0.0.1</span> -->
 
       <i> -- Resources -- </i>
@@ -197,133 +197,83 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
     <div class="content container">
       <h1 id="reference-for-coding-interviews">Reference for Coding Interviews</h1>
 
-<h2 class="no_toc" id="contents">Contents</h2>
+<!-- ## Contents -->
+<!-- {:.no_toc} -->
 
-<ul id="markdown-toc">
-  <li><a href="#reference-for-coding-interviews" id="markdown-toc-reference-for-coding-interviews">Reference for Coding Interviews</a>    <ul>
-      <li><a href="#points-to-keep-in-mind" id="markdown-toc-points-to-keep-in-mind">Points to keep in Mind</a></li>
-      <li><a href="#boolean-logic-multiple-if-statements-into-switch" id="markdown-toc-boolean-logic-multiple-if-statements-into-switch">Boolean Logic (multiple if statements into switch)</a></li>
-      <li><a href="#for-loop-traps" id="markdown-toc-for-loop-traps">For Loop Traps</a></li>
-      <li><a href="#1d-arrays" id="markdown-toc-1d-arrays">1D Arrays</a></li>
-      <li><a href="#2d-arrays" id="markdown-toc-2d-arrays">2D Arrays</a></li>
-      <li><a href="#the-arrays-class" id="markdown-toc-the-arrays-class">The Arrays Class</a></li>
-      <li><a href="#string-functions-most-important" id="markdown-toc-string-functions-most-important">String Functions (Most Important)</a></li>
-      <li><a href="#array-vs-linked-list" id="markdown-toc-array-vs-linked-list">Array vs Linked List</a></li>
-      <li><a href="#linked-list" id="markdown-toc-linked-list">Linked List</a>        <ul>
-          <li><a href="#add-in-the-list" id="markdown-toc-add-in-the-list">Add in the List</a>            <ul>
-              <li><a href="#add-in-the-front" id="markdown-toc-add-in-the-front">Add in the front</a></li>
-              <li><a href="#add-at-index" id="markdown-toc-add-at-index">Add at ‘index’</a></li>
-              <li><a href="#add-in-the-end" id="markdown-toc-add-in-the-end">Add in the end</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#the-xor-trick" id="markdown-toc-the-xor-trick">The XOR Trick</a></li>
-      <li><a href="#collections-framework" id="markdown-toc-collections-framework">COLLECTIONS FRAMEWORK</a>        <ul>
-          <li><a href="#for-each-loop-read-only-loop" id="markdown-toc-for-each-loop-read-only-loop">For Each Loop (Read Only Loop)</a></li>
-          <li><a href="#iterator-itr-for-some-collection" id="markdown-toc-iterator-itr-for-some-collection">Iterator itr (for some collection)</a></li>
-          <li><a href="#arraylist" id="markdown-toc-arraylist">ArrayList</a></li>
-          <li><a href="#hashmap" id="markdown-toc-hashmap">HashMap</a></li>
-          <li><a href="#hashmap-implementation-of-hashtable" id="markdown-toc-hashmap-implementation-of-hashtable">HASHMAP (IMPLEMENTATION OF HASHTABLE)</a></li>
-          <li><a href="#java-map-api" id="markdown-toc-java-map-api">Java Map API</a></li>
-          <li><a href="#sets" id="markdown-toc-sets">SETS</a></li>
-          <li><a href="#reading-parsing-and-type-checking-command-line-inputs" id="markdown-toc-reading-parsing-and-type-checking-command-line-inputs">Reading, Parsing and Type Checking Command Line Inputs.</a></li>
-          <li><a href="#running-time-of-a-method" id="markdown-toc-running-time-of-a-method">Running time of a method</a></li>
-          <li><a href="#random" id="markdown-toc-random">Random</a></li>
-        </ul>
-      </li>
-      <li><a href="#java-input" id="markdown-toc-java-input">Java Input</a>        <ul>
-          <li><a href="#key-board-input" id="markdown-toc-key-board-input">Key Board Input</a></li>
-          <li><a href="#file-input" id="markdown-toc-file-input">File Input</a></li>
-        </ul>
-      </li>
-      <li><a href="#output-file-handling" id="markdown-toc-output-file-handling">Output File Handling</a>        <ul>
-          <li><a href="#writing-text-to-file" id="markdown-toc-writing-text-to-file">Writing text to File</a></li>
-          <li><a href="#appending-text-to-file" id="markdown-toc-appending-text-to-file">Appending Text to file</a></li>
-          <li><a href="#reading-data-from-a-file" id="markdown-toc-reading-data-from-a-file">Reading Data from a file</a>            <ul>
-              <li><a href="#insert-java-code" id="markdown-toc-insert-java-code">Insert Java Code</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+<!-- * Will be replaced with the ToC, excluding the "Contents" header -->
+<!-- {:toc} -->
 <hr />
 
 <h3 id="points-to-keep-in-mind">Points to keep in Mind</h3>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//length is a field in Arrays</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span> <span class="o">=&gt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+<noscript><pre>//length is a field in Arrays
+int[] nums =&gt; nums.length;
 
-<span class="c1">//length is a method in String</span>
-<span class="n">String</span> <span class="n">str</span> <span class="o">=&gt;</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+//length is a method in String
+String str =&gt; str.length();
 
-<span class="c1">//length is called size() in arrayList</span>
-<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="n">a</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
-</code></pre></div></div>
+//length is called size() in arrayList
+ArrayList&lt;Integer&gt; a =&gt; a.size();</pre></noscript>
+<script src="https://gist.github.com/nitinkc/7bed7e03f3e21790c98353df6a921137.js"> </script>
 
 <h3 id="boolean-logic-multiple-if-statements-into-switch">Boolean Logic (multiple if statements into switch)</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="o">){</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-<span class="o">}</span>
-
-<span class="c1">//is equivalent to</span>
-
-<span class="k">return</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="o">);</span>
-</code></pre></div></div>
+<noscript><pre>if (a &gt; b &amp;&amp; (a-b) &gt;= 2){
+    return true;
+}
+//is equivalent to
+return (a &gt; b &amp;&amp; (a-b) &gt;= 2);</pre></noscript>
+<script src="https://gist.github.com/nitinkc/96387a9700c9c58185a969ae48bfdc45.js"> </script>
 
 <h3 id="for-loop-traps">For Loop Traps</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">arr</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">8</span><span class="o">];</span>
+<noscript><pre>int arr[] = new int[8];
 
-<span class="c1">// Check for the Boundry conditions</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="o">){</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>  
-   <span class="o">}</span> <span class="c1">// if length = 8, loop will run 0,2,4,6.... 8 is never included.</span>
+// Check for the Boundry conditions
+//this will leave the odd numbered last index untouched
+for (int i = 0; i &lt; arr.length; i = i+2){
+    System.out.println(i);  
+   } // if length = 8, loop will run 0,2,4,6.... 8 is never included.
 
-<span class="c1">// Start the Pointer from an index ahead and check the previous</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="c1">//NOTICE : i &lt; num.length</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">])</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+// Start the Pointer from an index ahead and check the previous
+for (int i = 1; i &lt; num.length; i++) //NOTICE : i &lt; num.length
+  if (num[i-1] == num[i])
+    return true;
 
-<span class="c1">// Start the Pointer from index 0 and check the next</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="c1">// NOTICE : i &lt; num.length -1</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">num</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">])</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+// Start the Pointer from index 0 and check the next
+for (int i = 0; i &lt; num.length - 1; i++) // NOTICE : i &lt; num.length -1
+  if (num[i] == num[i+1])
+    return true;
 
-<span class="c1">//Prints alphabets from 'a' to 'z'</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">i</span> <span class="o">=</span> <span class="sc">'a'</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="sc">'z'</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div></div>
+//Prints alphabets from &#39;a&#39; to &#39;z&#39;
+for (char i = &#39;a&#39;; i &lt;= &#39;z&#39;; i++){
+  System.out.println(i);
+}</pre></noscript>
+<script src="https://gist.github.com/nitinkc/382798a984e00a732d86a12a6637e0a2.js"> </script>
 
 <h3 id="1d-arrays">1D Arrays</h3>
+<noscript><pre>//Single Line Declaration. NO () IS USED
+int[] a = new int[3];
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="c1">//Single Line Declaration. NO () IS USED</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">];</span>
+//Split Line Declaration
+int[] a;
+a = new int[3]; //notice []. NOT () to be used
 
-<span class="c1">//Split Line Declaration</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">];</span> <span class="c1">//notice []. NOT () to be used</span>
+// Declaration and Initialization
+int[] a = new int[] {1,2,3};
+// Same as above
+int[] b = {1,2,3};
 
-<span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">;</span> <span class="c1">//Length is a "field" in Array, while a method in Strings</span>
+//Length is a &quot;field&quot; in Array, while a method in Strings
+a.length ;
 
-<span class="c1">// Declaration and Initialization</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">};</span>
+//Converting array to ArrayList (arr is standard array)
+ArrayList&lt;E&gt; arrayList = Arrays.asList(arr);
 
-<span class="c1">// Same as above</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">};</span>
+//Printing Arrays as String using Arrays utility
+System.out.println(Arrays.toString(num));
 
-<span class="c1">//Converting array to ArrayList (arr is standard array)</span>
-<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">arrayList</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">arr</span><span class="o">);</span>
-
-<span class="c1">//Printing Arrays as String using Arrays utility</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">num</span><span class="o">));</span>
-
-<span class="c1">//Testing if a value exists in an Array</span>
-<span class="kt">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">arr</span><span class="o">).</span><span class="na">contains</span><span class="o">(</span><span class="s">"a"</span><span class="o">);</span><span class="c1">// returns boolean true/false</span>
-</code></pre></div></div>
+//Testing if a value exists in an Array
+boolean result = Arrays.asList(arr).contains(&quot;a&quot;);// returns boolean true/false</pre></noscript>
+<script src="https://gist.github.com/nitinkc/c2abeb754d1a64641b0149bc6d8f21ae.js"> </script>
 
 <h3 id="2d-arrays">2D Arrays</h3>
 
@@ -377,44 +327,43 @@ Arrays.toString(a);//op: [1,2,3]
 a.toArray();
 </code></pre></div></div>
 
-<h3 id="string-functions-most-important">String Functions (Most Important)</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">+</span> <span class="err">⇒</span> <span class="n">concatenation</span>
+<h3 id="string-methods-most-important">String Methods (Most Important)</h3>
+<noscript><pre>String a = &quot;In String Pool&quot;; // JVM uses the String Pool
+String b = new String(&quot;No String Pool&quot;);// JVM Doesn&#39;t 
 
-<span class="c1">//returns a character at a given index i</span>
-<span class="n">str</span><span class="o">.</span><span class="na">chatAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
++ ⇒ concatenation
 
-<span class="c1">//Method in String, Field in Arrays;</span>
-<span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+//Method in String, Field in Arrays;
+str.length();
 
-<span class="c1">//index j not included</span>
-<span class="n">str</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">i</span><span class="o">,</span><span class="n">j</span><span class="o">);</span>
+//returns a character at a given index i
+str.chatAt(i);
 
-<span class="c1">//from i till end</span>
-<span class="c1">//str.substring(i,str.length());</span>
-<span class="n">str</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+//index j not included
+str.substring(i,j);
+//from i till end
+str.substring(i);
+str.substring(i,str.length());
 
-<span class="c1">//For Equality</span>
-<span class="n">str</span><span class="o">.</span><span class="na">equals</span><span class="o">();</span><span class="c1">//DO NOT USE == (will compare objects)</span>
+//For Equality, DO NOT USE == (will compare objects)
+str.equals();
 
-<span class="c1">//2 if "er" begins from index 1, -1 if not Found</span>
-<span class="n">str</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">"er"</span><span class="o">);</span>
+//2 if &quot;er&quot; begins from index 1, -1 if not Found
+str.indexOf(&quot;er&quot;);
+str.indexOf(&quot;er&quot;, 2); //start the search from index 2
 
-<span class="n">str</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">"er"</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span> <span class="c1">//start the search from index 2</span>
+str.lastIndexOf(&quot;ew&quot;);//searches right to left
+str.lastIndexOf(&quot;ew&quot;, 5);//right to left, from index 5
 
-<span class="n">str</span><span class="o">.</span><span class="na">lastIndexOf</span><span class="o">(</span><span class="s">"ew"</span><span class="o">);</span><span class="c1">//searches right to left</span>
+str.toLowerCase();
+str.toUpperCase();
 
-<span class="n">str</span><span class="o">.</span><span class="na">lastIndexOf</span><span class="o">(</span><span class="s">"ew"</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span><span class="c1">//right to left, from index 5</span>
+str.compareTo(&quot;&quot;);
+str.replace(&quot;old&quot;,&quot;new&quot;);
 
-<span class="n">str</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span>
-<span class="n">str</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>
-
-<span class="n">str</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
-<span class="n">str</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">"old"</span><span class="o">,</span><span class="s">"new"</span><span class="o">);</span>
-
-<span class="c1">//Cut the Strings from spaces into a words</span>
-<span class="n">String</span><span class="o">[]</span> <span class="n">ransomWords</span> <span class="o">=</span> <span class="n">ransom</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
-
-</code></pre></div></div>
+//Cut the Strings from spaces into a words
+String[] ransomWords = ransom.split(&quot; &quot;);</pre></noscript>
+<script src="https://gist.github.com/nitinkc/a91ab5df313cbd3e21b6ea71c30f993f.js"> </script>
 
 <h3 id="array-vs-linked-list">Array vs Linked List</h3>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
@@ -426,40 +375,234 @@ a.toArray();
  <span class="o">}</span>
 </code></pre></div></div>
 
-<h3 id="linked-list">Linked List</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">LinkNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span><span class="c1">//head</span>
- <span class="k">while</span> <span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span><span class="c1">//Runner stops at the last node, else runner will end up pointing null!!</span>
- <span class="n">runner</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-<span class="o">}</span>
+<h2 id="collections-framework">COLLECTIONS FRAMEWORK</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Collection(I)
+|
+|---List
+|      |----ArrayList
+|      |----LinkedList
+|      |----Vector---Stack      
+|      
+|----Set
+|      |----HashSet----LinkedHashSet
+|      |----TreeSet
+|           
+|----Queue
+|      |----PriorityQueue(I) (Heap Representation in Java)
+|      |----BlockingQueue
 </code></pre></div></div>
 
-<h4 id="add-in-the-list">Add in the List</h4>
+<p><em><a href="http://localhost:4000/media/Collections.pdf">Collection API - PDF</a></em>.</p>
 
-<h5 id="add-in-the-front">Add in the front</h5>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
-</code></pre></div></div>
+<p><a href="http://blogs.bgsu.edu/nitinc/2017/02/11/collection/">Collection Interface</a></p>
 
-<h5 id="add-at-index">Add at ‘index’</h5>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-<span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
-<span class="k">else</span><span class="o">{</span>
-<span class="n">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span><span class="c1">//Stop at an index one before the desired</span>
-<span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-<span class="o">}</span>
-<span class="n">current</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">);</span> <span class="c1">//old current.next is assigned to the new node which in turn is assigned to current.next</span>
-</code></pre></div></div>
+<h3 id="for-each-loop-read-only-loop">For Each Loop (Read Only Loop)</h3>
+<noscript><pre>/***** LIST (ArrayList or LinkedList) ******/
+List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+for (Integer i : list){
+	System.out.print(i + &quot; &quot;);
+}
 
-<h5 id="add-in-the-end">Add in the end</h5>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">front</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-  <span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
-<span class="k">else</span><span class="o">{</span>
-  <span class="n">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span>
-  <span class="k">while</span> <span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="c1">// Go till the last node</span>
-      <span class="n">runner</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-  <span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">);</span> <span class="c1">//this constructor has .next as null</span>
-<span class="o">}</span>
-</code></pre></div></div>
+/***** Set (HashSet or TreeSet) ******/
+//Eg: Read as &quot;for g in Grades of type Double&quot;
+Set&lt;Double&gt; grades = new HashSet&lt;Double&gt;();
+for (double g: grades){
+   System.out.println(g);
+}
+
+/***** Map (HashMap or TreeMap) ******/
+for(int key :map.keySet()){
+ int value = map.get(key);
+
+for(Map.Entry&lt;Integer,Integer&gt;itr:map.entrySet()){
+	System.out.println(&quot;Key:&quot;+itr.getKey()+&quot;Value:&quot;+itr.getValue());
+}</pre></noscript>
+<script src="https://gist.github.com/nitinkc/606150a527983a417dd1c5b5d4926cf3.js"> </script>
+
+<h3 id="iterator-itr-for-some-collection">Iterator itr (for some collection)</h3>
+<noscript><pre>/* THREE CURSORS OF JAVA 
+Enumeration (I)
+Iterator (I)
+ListIterator (I) 2 way iteration : list.previous()
+
+3 main methods of iterator API
+   1. hasNext()
+   2. next()
+   3. remove(object) -&gt; avoid concurrent modification exception
+*/
+Iterator itr = collection.iterator();
+
+/******** List (ArrayList or LinkedList) ******/
+List&lt;E&gt; list = new ArrayList&lt;&gt;();
+Iterator&lt;E&gt; itr = list.iterator();
+while (itr.hasNext()){
+	SOP (itr.next())
+}
+
+//LIST ITERATOR 2 way iteration : Has itr.previous()
+ListIterator&lt;Integer&gt; itr = list.listIterator();
+
+/******** Set (TreeSet or HashSet) ******/
+// IMP methods
+// Set.contains(i); set.add(i), itr.remove(i)
+
+Iterator&lt;Integer&gt; itr = hashSet.iterator();
+While (itr.hasNext()){
+	SOP (itr.next())
+}
+
+/******** Map(TreeMap or HashMap) ******/
+// Using Key Set
+Set keyset = map.keySet();
+iterator&lt;E&gt; itr= keyset.iterator();
+//Combined
+iterator itr= map.keySet().iterator();
+
+while (itr.hasNext()){
+	int key = itr.next
+	int value = map.get(key)
+}
+
+//For Each Loop
+for(Int key :map.keySet()){
+	int value = map.get(key);
+}
+
+//Using EntrySet
+Set set = map.entrySet();
+Iterator&lt;Map.Entry&lt;Integer,String&gt;&gt; itr = set.iterator()
+// Combined
+Iterator&lt;Map.Entry&lt;Integer,String&gt;&gt; itr = map.entrySet().iterator();
+//itr.getKey(), itr.getValue
+while (itr.hasNext()){
+	int key = itr.getKey();
+	int value = itr.getValue();
+}
+
+// IMP methods
+if (map.containsKey(s)){ } // boolean check</pre></noscript>
+<script src="https://gist.github.com/nitinkc/78621758745aa25b11369999cc942120.js"> </script>
+
+<h3 id="arraylist">ArrayList</h3>
+<noscript><pre>// Declaration (Child of List Interface)
+ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
+List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();// Polymorphic
+list.add(23);
+
+// Insert element
+for (int i = 0; i &lt; list.size(); i++){
+  list.get(i);
+  list.remove(i);//Concurrent Modification Exception, use iterator
+}
+
+/** Array List API
+boolean add (E e) // Appends the specified element to the end of this list.
+void add(int index, E element) //Inserts at the specified position and Shifts current and subsequent elements to the right (adds one to their indices)
+int indexOf(Object o) //index of the first occurrence of the element in this list, or -1 if this list does not contain the element.
+E get(int index) //Returns the element at the specified position in this list.
+ListIterator listIterator()
+E set(int index, E element) //Replaces the element at the specified position .Returns the previous element 
+E remove(int index) //Removes the element at the specified position in this list.
+boolean remove(Object o) //Removes the first occurrence of the specified element from this list, if it is present.
+*/</pre></noscript>
+<script src="https://gist.github.com/nitinkc/98b5adaf0ed85980472ec423237e9edd.js"> </script>
+
+<h3 id="hashmap-implementation-of-hashtable">HASHMAP (IMPLEMENTATION OF HASHTABLE)</h3>
+
+<p>There are 3 classes that implements the Map interface</p>
+
+<p>1.) HashMap: this is “the map”, able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good</p>
+<ul>
+  <li>PROBLEM: makes no guarantee about the order of iteration</li>
+</ul>
+
+<p>2.) TreeMap: it supports ordering –&gt; natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!</p>
+
+<p>3.) LinkedHashMap: it contains a doubly linked list connecting all the entries in the map</p>
+<ul>
+  <li>Unlike HashMap it preserves insertion-order</li>
+  <li>insertion order is not affected if a key is re-inserted into the map</li>
+  <li>IMPORTANT: they consume more memory than HashMap !!!</li>
+</ul>
+
+<noscript><pre>/* Make a new empty map */
+Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
+Map&lt;String, Integer&gt; map = new TreeMap&lt;&gt;();// Natural Ordering is preserved
+
+/* retrieves the stored value for a key, or null if that key is not present in the map. */
+map.get(key);
+
+/* stores a new key/value pair in the map. Overwrites any existing value for that key.*/
+map.put(key,value);
+/* returns true if the key is in the map, false otherwise.*/
+map.containsKey(key);
+/* removes the key/value pair for this key if present. Does nothing if the key is not present. */
+map.remove(key);// Concurrent Modification Exception in a Loop
+itr.remove();// used to avoid conc. modi. excep.
+
+/* Iterating a map */
+Iterator&lt;Integer&gt; itr= map.keySet().iterator();
+while (itr.hasNext()){
+    int key = itr.next();
+    System.out.println(key + &quot;  -  &quot; + map.get(key) );
+}
+
+/* Iterating a map using Entry Set */
+//Extracting the entry set and iterating over it
+Set myMap = map.entrySet();
+Iterator&lt;Map.Entry&lt;Integer,Integer&gt;&gt; itr = myMap.iterator();
+
+while(itr.hasNext()) {
+   Map.Entry curr = itr.next();
+   //Return the toString representation of Map.Entry
+   System.out.println(curr);
+   //Extracting the key and value out of Entry
+   System.out.println(&quot;Key is : &quot;+curr.getKey()+&quot; Value is &quot;+curr.getValue());
+}</pre></noscript>
+<script src="https://gist.github.com/nitinkc/3b434410bca596c8fbeae64a0e7c2895.js"> </script>
+
+<h3 id="sets">SETS</h3>
+<p>Set takes only single instance of an element.</p>
+
+<p>While adding an element into a set, a test of equality happens, to determine if the object being pushed already exist</p>
+
+<p>With Integer, no need to override hashCode() and equals()</p>
+
+<p>With Tree set it will sort to DNSO</p>
+<noscript><pre>// Ordering NOT guaranteed in HashSet
+Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
+// Sorted values returned while iterating in TreeSet
+Set&lt;Integer&gt; set = new TreeSet&lt;Integer&gt;();
+
+/* Adds the element to the set and returns true if this set does not have this element.
+if the element already exist the call leaves the set unchanged and returns false*/
+set.add(value);
+//boolean add(E e);
+
+/* returns true if the key is in the map, false otherwise.*/
+set.contains(key);
+
+boolean remove(Object o)
+// Removes the specified element from this set if it is present. Returns true if this set contained the element
+set.remove(key);// Concurrent Modification Exception in a Loop
+itr.remove();// used to avoid conc. modi. excep.
+
+/* Returns the number of elements in this set (its cardinality). */
+set.size​()</pre></noscript>
+<script src="https://gist.github.com/nitinkc/f98cd225bc3dd60b21368c56980ef006.js"> </script>
+
+<h3 id="heaps-priority-queues-in-java">Heaps (Priority Queues in Java)</h3>
+<p>Heaps are represented using Priority Queue. It gives O(1) seek time</p>
+<ul>
+  <li>add(E e) Inserts the specified element into this priority queue.</li>
+  <li>offer(E e) Inserts the specified element into this priority queue</li>
+  <li>poll() Retrieves and removes the head of this queue, or returns null if this queue is empty.</li>
+</ul>
+<noscript><pre>Queue&lt;Integer&gt; pq = new PriorityQueue&lt;Integer&gt;();
+pq.offer(13);
+System.out.print(&quot; &quot; +pq.poll());
+</pre></noscript>
+<script src="https://gist.github.com/nitinkc/c187b0ee3462c34d3e7eae3597fd01da.js"> </script>
 
 <h3 id="the-xor-trick">The XOR Trick</h3>
 
@@ -480,136 +623,6 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 <span class="o">(</span><span class="n">flag2</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">flag4</span><span class="o">)</span> <span class="o">||</span> <span class="o">(!</span><span class="n">flag2</span> <span class="o">&amp;&amp;</span> <span class="n">flag4</span><span class="o">);</span>
 </code></pre></div></div>
 
-<h2 id="collections-framework">COLLECTIONS FRAMEWORK</h2>
-
-<h3 id="for-each-loop-read-only-loop">For Each Loop (Read Only Loop)</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Eg: Read as "for g in Grades of type Double"</span>
-<span class="n">Set</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">grades</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;();</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">double</span> <span class="nl">g:</span> <span class="n">grades</span><span class="o">){</span>
-   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">g</span><span class="o">);</span>
- <span class="o">}</span>
-</code></pre></div></div>
-
-<h3 id="iterator-itr-for-some-collection">Iterator itr (for some collection)</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  3 main methods of iterator
-     1. hasNext()
-     2. next()
-     3. remove()*/</span>
-<span class="n">Iterator</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
- <span class="n">itr</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
- <span class="n">itr</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();</span>
- <span class="n">itr</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-</code></pre></div></div>
-
-<h3 id="arraylist">ArrayList</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Declaration (Child of List Interface)</span>
-
-<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span><span class="c1">// Polymorphic</span>
-
-<span class="c1">// Insert element</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
-  <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-  <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-<span class="o">}</span>
-
-<span class="c1">// Common methods</span>
-<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
-<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">index</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
-<span class="n">list</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">index</span><span class="o">.</span> <span class="n">value</span><span class="o">);</span>
-<span class="n">list</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
-<span class="n">list</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
-<span class="n">list</span><span class="o">.</span><span class="na">lastIndexOf</span><span class="o">();</span>
-<span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
-<span class="n">list</span><span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
-</code></pre></div></div>
-
-<h3 id="hashmap">HashMap</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">key</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">()){</span>
-<span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">),</span><span class="n">key</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h3 id="hashmap-implementation-of-hashtable">HASHMAP (IMPLEMENTATION OF HASHTABLE)</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
-  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">key</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">()){</span>
-  <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">),</span><span class="n">key</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h3 id="java-map-api">Java Map API</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Make a new empty map */</span>
-<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
-<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;();</span><span class="c1">// Natural Ordering is preserved</span>
-<span class="cm">/* retrieves the stored value for a key, or null if that key is not present in the map. */</span>
-<span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
-<span class="cm">/* stores a new key/value pair in the map. Overwrites any existing value for that key.*/</span>
-<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span><span class="n">value</span><span class="o">);</span>
-<span class="cm">/* returns true if the key is in the map, false otherwise.*/</span>
-<span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
-<span class="cm">/* removes the key/value pair for this key if present. Does nothing if the key is not present. */</span>
-<span class="n">map</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">key</span><span class="o">);</span><span class="c1">// Concurrent Modification Exception in a Loop</span>
-<span class="n">itr</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span><span class="c1">// used to avoid conc. modi. excep.</span>
-
-<span class="cm">/* Iterating a map */</span>
-<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">itr</span><span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">().</span><span class="na">iterator</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">(</span><span class="n">itr</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>
-    <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">itr</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">"  -  "</span> <span class="o">+</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">)</span> <span class="o">);</span>
-<span class="o">}</span>
-
-<span class="cm">/* Iterating a map using Entry Set */</span>
-<span class="c1">//Extracting the entry set and iterating over it</span>
-<span class="n">Set</span> <span class="n">myMap</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">();</span>
-<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">myMap</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
-
-<span class="k">while</span><span class="o">(</span><span class="n">itr</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
-   <span class="n">Map</span><span class="o">.</span><span class="na">Entry</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">itr</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-   <span class="c1">//Return the toString representation of Map.Entry</span>
-   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">curr</span><span class="o">);</span>
-   <span class="c1">//Extracting the key and value out of Entry</span>
-   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Key is : "</span><span class="o">+</span><span class="n">curr</span><span class="o">.</span><span class="na">getKey</span><span class="o">()+</span><span class="s">" Value is "</span><span class="o">+</span><span class="n">curr</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
-<span class="o">}</span>
-
-<span class="cm">/**
- * There are 3 classes that implements the Map interface
- *
- * 1.) HashMap: this is usually "the map", able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good
- * PROBLEM: makes no guarantee about the order of iteration
-
- * 2.) TreeMap: it supports ordering --&gt; natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!
-
- * 3.) LinkedHashMap: it contains a doubly linked list connecting all the entries in the map
- * It can provide the so-called insertion-order: so unlike HashMap it can provide the order
- * in which keys were inserted into a map ~ insertion order is not affected if a key is re-inserted into the map
- *
- * IMPORTANT: they consume more memory than HashMap !!!
- */</span>
-</code></pre></div></div>
-
-<h3 id="sets">SETS</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* while adding into a set, a test of equality happens, to determine if the object being pushed already exist */</span>
-<span class="c1">// With Integer, no need to override hashCode and equals</span>
-<span class="c1">// With Tree set it will sort to DNSO</span>
-
-<span class="c1">// Sorted values while iterating</span>
-<span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-<span class="c1">// Ordering NOT guaranteed in HashSet</span>
-<span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-
-<span class="cm">/* f this set already contains the element, the call leaves the set unchanged and returns false*/</span>
-<span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">key</span><span class="o">,</span><span class="n">value</span><span class="o">);</span>
-<span class="cm">/* returns true if the key is in the map, false otherwise.*/</span>
-<span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
-<span class="cm">/* removes the key/value pair for this key if present. Does nothing if the key is not present. */</span>
-<span class="n">set</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">key</span><span class="o">);</span><span class="c1">// Concurrent Modification Exception in a Loop</span>
-<span class="n">itr</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span><span class="c1">// used to avoid conc. modi. excep.</span>
-
-<span class="cm">/* Returns the number of elements in this set (its cardinality). */</span>
-<span class="n">set</span><span class="o">.</span><span class="na">size</span><span class="err">​</span><span class="o">()</span>
-
-</code></pre></div></div>
 <h3 id="reading-parsing-and-type-checking-command-line-inputs">Reading, Parsing and Type Checking Command Line Inputs.</h3>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cm">/*Assuming 2 command line arguments &lt;Nitin 29&gt;*/</span>
@@ -701,9 +714,6 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">File</span> <span class="n">myFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"customer.txt"</span><span class="o">);</span>
 <span class="n">Scanner</span> <span class="n">ipFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">myFile</span><span class="o">);</span> <span class="c1">//instead of System.in</span>
 </code></pre></div></div>
-
-<h5 id="insert-java-code">Insert Java Code</h5>
-
 
     </div>
 

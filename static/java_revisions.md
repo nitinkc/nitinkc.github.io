@@ -1,93 +1,28 @@
 ---
 layout: static
-title:  "Coding"
+title:  "Syntax Reference"
 ---
 # Reference for Coding Interviews
 
-## Contents
-{:.no_toc}
+<!-- ## Contents -->
+<!-- {:.no_toc} -->
 
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
+<!-- * Will be replaced with the ToC, excluding the "Contents" header -->
+<!-- {:toc} -->
 ---
 
 ### Points to keep in Mind
 
-```java
-//length is a field in Arrays
-int[] nums => nums.length;
-
-//length is a method in String
-String str => str.length();
-
-//length is called size() in arrayList
-ArrayList<Integer> a => a.size();
-```
+{% gist nitinkc/7bed7e03f3e21790c98353df6a921137 %}
 
 ### Boolean Logic (multiple if statements into switch)
-```java
-if (a > b && (a-b) >= 2){
-    return true;
-}
-
-//is equivalent to
-
-return (a > b && (a-b) >= 2);
-```
+{% gist nitinkc/96387a9700c9c58185a969ae48bfdc45 %}
 
 ### For Loop Traps
-```java
-int arr[] = new int[8];
-
-// Check for the Boundry conditions
-for (int i = 0; i < arr.length; i = i+2){
-    System.out.println(i);  
-   } // if length = 8, loop will run 0,2,4,6.... 8 is never included.
-
-// Start the Pointer from an index ahead and check the previous
-for (int i = 1; i < num.length; i++) //NOTICE : i < num.length
-  if (num[i-1] == num[i])
-    return true;
-
-// Start the Pointer from index 0 and check the next
-for (int i = 0; i < num.length - 1; i++) // NOTICE : i < num.length -1
-  if (num[i] == num[i+1])
-    return true;
-
-//Prints alphabets from 'a' to 'z'
-for (char i = 'a'; i <= 'z'; i++){
-  System.out.println(i);
-}
-```
+{% gist nitinkc/382798a984e00a732d86a12a6637e0a2 %}
 
 ### 1D Arrays
-
-```java
-
-//Single Line Declaration. NO () IS USED
-int[] a = new int[3];
-
-//Split Line Declaration
-int[] a;
-a = new int[3]; //notice []. NOT () to be used
-
-a.length ; //Length is a "field" in Array, while a method in Strings
-
-// Declaration and Initialization
-int[] a = new int[] {1,2,3};
-
-// Same as above
-int[] b = {1,2,3};
-
-//Converting array to ArrayList (arr is standard array)
-ArrayList<E> arrayList = Arrays.asList(arr);
-
-//Printing Arrays as String using Arrays utility
-System.out.println(Arrays.toString(num));
-
-//Testing if a value exists in an Array
-boolean result = Arrays.asList(arr).contains("a");// returns boolean true/false
-```
+{% gist nitinkc/c2abeb754d1a64641b0149bc6d8f21ae %}
 
 ### 2D Arrays
 
@@ -116,45 +51,8 @@ Arrays.toString(a);//op: [1,2,3]
 a.toArray();
 ```
 
-### String Functions (Most Important)
-```java
-+ ⇒ concatenation
-
-//returns a character at a given index i
-str.chatAt(i);
-
-//Method in String, Field in Arrays;
-str.length();
-
-//index j not included
-str.substring(i,j);
-
-//from i till end
-//str.substring(i,str.length());
-str.substring(i);
-
-//For Equality
-str.equals();//DO NOT USE == (will compare objects)
-
-//2 if "er" begins from index 1, -1 if not Found
-str.indexOf("er");
-
-str.indexOf("er", 2); //start the search from index 2
-
-str.lastIndexOf("ew");//searches right to left
-
-str.lastIndexOf("ew", 5);//right to left, from index 5
-
-str.toLowerCase();
-str.toUpperCase();
-
-str.compareTo("");
-str.replace("old","new");
-
-//Cut the Strings from spaces into a words
-String[] ransomWords = ransom.split(" ");
-
-```
+### String Methods (Most Important)
+{% gist nitinkc/a91ab5df313cbd3e21b6ea71c30f993f %}
 
 ### Array vs Linked List
 ```java
@@ -167,44 +65,70 @@ String[] ransomWords = ransom.split(" ");
  }
 ```
 
-### Linked List
-```java
- LinkNode runner = front;//head
- while (runner.next != null){//Runner stops at the last node, else runner will end up pointing null!!
- runner = runner.next;
-}
+## COLLECTIONS FRAMEWORK
+```
+Collection(I)
+|
+|---List
+|      |----ArrayList
+|      |----LinkedList
+|      |----Vector---Stack      
+|      
+|----Set
+|      |----HashSet----LinkedHashSet
+|      |----TreeSet
+|           
+|----Queue
+|      |----PriorityQueue(I) (Heap Representation in Java)
+|      |----BlockingQueue
 ```
 
-#### Add in the List
+*[Collection API - PDF]({{ site.url }}/media/Collections.pdf)*.
 
-##### Add in the front
-```java
-front = new ListNode(value, front);
-```
+[Collection Interface](http://blogs.bgsu.edu/nitinc/2017/02/11/collection/)
 
-##### Add at 'index'
-```java
-if (index == 0)
-front = new ListNode(value, front);
-else{
-ListNode runner = front;
-for (int i = 0; i < index - 1; i++)//Stop at an index one before the desired
-current = current.next;
-}
-current.next = new ListNode(value, current.next); //old current.next is assigned to the new node which in turn is assigned to current.next
-```
+### For Each Loop (Read Only Loop)
+{% gist nitinkc/606150a527983a417dd1c5b5d4926cf3 %}
 
-##### Add in the end
-```java
-if (front == null)
-  front = new ListNode(value, front);
-else{
-  ListNode runner = front;
-  while (runner.next != null) // Go till the last node
-      runner = runner.next;
-  runner.next = new ListNode(value); //this constructor has .next as null
-}
-```
+### Iterator itr (for some collection)
+{% gist nitinkc/78621758745aa25b11369999cc942120 %}
+
+### ArrayList
+{% gist nitinkc/98b5adaf0ed85980472ec423237e9edd %}
+
+### HASHMAP (IMPLEMENTATION OF HASHTABLE)
+
+There are 3 classes that implements the Map interface
+
+ 1.) HashMap: this is "the map", able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good
+ * PROBLEM: makes no guarantee about the order of iteration
+
+ 2.) TreeMap: it supports ordering --> natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!
+
+ 3.) LinkedHashMap: it contains a doubly linked list connecting all the entries in the map
+ * Unlike HashMap it preserves insertion-order
+ * insertion order is not affected if a key is re-inserted into the map
+ * IMPORTANT: they consume more memory than HashMap !!!
+
+{% gist nitinkc/3b434410bca596c8fbeae64a0e7c2895 %}
+
+### SETS
+Set takes only single instance of an element.
+
+While adding an element into a set, a test of equality happens, to determine if the object being pushed already exist
+
+With Integer, no need to override hashCode() and equals()
+
+With Tree set it will sort to DNSO
+{% gist nitinkc/f98cd225bc3dd60b21368c56980ef006 %}
+
+
+### Heaps (Priority Queues in Java)
+Heaps are represented using Priority Queue. It gives O(1) seek time
+ * 	add(E e) Inserts the specified element into this priority queue.
+ *  offer(E e) Inserts the specified element into this priority queue
+ *  poll() Retrieves and removes the head of this queue, or returns null if this queue is empty.
+{% gist nitinkc/c187b0ee3462c34d3e7eae3597fd01da %}
 
 ### The XOR Trick
 
@@ -226,143 +150,6 @@ if (flag2 ^ flag4)
 (flag2 && !flag4) || (!flag2 && flag4);
 ```
 
-## COLLECTIONS FRAMEWORK
-
-### For Each Loop (Read Only Loop)
-```java
-//Eg: Read as "for g in Grades of type Double"
-Set<Double> grades = new HashSet<Double>();
-for (double g: grades){
-   System.out.println(g);
- }
-```
-
-### Iterator itr (for some collection)
-```java
-/*  3 main methods of iterator
-     1. hasNext()
-     2. next()
-     3. remove()*/
-Iterator itr = c.iterator();
- itr.remove(i);
- itr.hasNext();
- itr.next();
-```
-
-### ArrayList
-```java
-// Declaration (Child of List Interface)
-
-ArrayList<Integer> list = new ArrayList<Integer>();
-List<Integer> list = new ArrayList<Integer>();// Polymorphic
-
-// Insert element
-for (int i = 0; i < list.size(); i++){
-  list.add(i);
-  list.get(i);
-}
-
-// Common methods
-list.add(value);
-list.add(index, value);
-list.set(index. value);
-list.clear();
-list.indexOf(value);
-list.lastIndexOf();
-list.toString();
-list.toArray();
-```
-
-### HashMap
-```java
-Map<String, Integer> ret = new HashMap<String, Integer>();
-for (int key : map.keySet()){
-ret.put(map.get(key),key);
-}
-```
-
-### HASHMAP (IMPLEMENTATION OF HASHTABLE)
-```java
-Map<String, Integer> ret = new HashMap<String, Integer>();
-  for (int key : map.keySet()){
-  ret.put(map.get(key),key);
-}
-```
-
-### Java Map API
-```java
-/* Make a new empty map */
-Map<String, String> map = new HashMap<String, String>();
-Map<String, Integer> map = new TreeMap<>();// Natural Ordering is preserved
-/* retrieves the stored value for a key, or null if that key is not present in the map. */
-map.get(key);
-/* stores a new key/value pair in the map. Overwrites any existing value for that key.*/
-map.put(key,value);
-/* returns true if the key is in the map, false otherwise.*/
-map.containsKey(key);
-/* removes the key/value pair for this key if present. Does nothing if the key is not present. */
-map.remove(key);// Concurrent Modification Exception in a Loop
-itr.remove();// used to avoid conc. modi. excep.
-
-/* Iterating a map */
-Iterator<Integer> itr= map.keySet().iterator();
-while (itr.hasNext()){
-    int key = itr.next();
-    System.out.println(key + "  -  " + map.get(key) );
-}
-
-/* Iterating a map using Entry Set */
-//Extracting the entry set and iterating over it
-Set myMap = map.entrySet();
-Iterator<Map.Entry<Integer,Integer>> itr = myMap.iterator();
-
-while(itr.hasNext()) {
-   Map.Entry curr = itr.next();
-   //Return the toString representation of Map.Entry
-   System.out.println(curr);
-   //Extracting the key and value out of Entry
-   System.out.println("Key is : "+curr.getKey()+" Value is "+curr.getValue());
-}
-
-/**
- * There are 3 classes that implements the Map interface
- *
- * 1.) HashMap: this is usually "the map", able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good
- * PROBLEM: makes no guarantee about the order of iteration
-
- * 2.) TreeMap: it supports ordering --> natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!
-
- * 3.) LinkedHashMap: it contains a doubly linked list connecting all the entries in the map
- * It can provide the so-called insertion-order: so unlike HashMap it can provide the order
- * in which keys were inserted into a map ~ insertion order is not affected if a key is re-inserted into the map
- *
- * IMPORTANT: they consume more memory than HashMap !!!
- */
-```
-
-### SETS
-```java
-/* while adding into a set, a test of equality happens, to determine if the object being pushed already exist */
-// With Integer, no need to override hashCode and equals
-// With Tree set it will sort to DNSO
-
-// Sorted values while iterating
-Set<Integer> set = new TreeSet<Integer>();
-// Ordering NOT guaranteed in HashSet
-Set<Integer> set = new HashSet<Integer>();
-
-/* f this set already contains the element, the call leaves the set unchanged and returns false*/
-set.add(key,value);
-/* returns true if the key is in the map, false otherwise.*/
-set.contains(key);
-/* removes the key/value pair for this key if present. Does nothing if the key is not present. */
-set.remove(key);// Concurrent Modification Exception in a Loop
-itr.remove();// used to avoid conc. modi. excep.
-
-/* Returns the number of elements in this set (its cardinality). */
-set.size​()
-
-```
 ### Reading, Parsing and Type Checking Command Line Inputs.
 ```java
 
@@ -462,7 +249,3 @@ PrintWriter pw = new PrintWriter(new FileWriter("Names.txt, true"));
 File myFile = new File("customer.txt");
 Scanner ipFile = new Scanner(myFile); //instead of System.in
 ```
-
-##### Insert Java Code
-{% highlight java linenos %}
-{% endhighlight %}

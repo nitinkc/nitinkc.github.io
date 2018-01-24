@@ -4,7 +4,7 @@ title: Nitin Chaurasia
 ---
 # Nitin Kumar Chaurasia
 
-*[view complete resume]({{ site.url }}/static/resume.pdf)*.
+*[view complete resume]({{ site.url }}/media/resume.pdf)*.
 
 
 ###### BE (Computer Engineering) - SGSITS, Indore (MP) INDIA <br> MS (Computer Science) - BGSU (OH) USA

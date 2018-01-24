@@ -11,7 +11,7 @@
 
   <title>
     
-      Linked List &middot; {ni[T]in}
+      Linked List &middot; ηї☂їᾔ
     
   </title>
 
@@ -48,7 +48,7 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       <h1 class="logo">
         <!-- <a href=""> -->
         <a href="/">
-          {ni[T]in}
+          ηї☂їᾔ
         </a>
       </h1>
       <p class="lead"></p>
@@ -148,7 +148,7 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       
         
           
-            <a class="sidebar-nav-item" href="/static/java_revisions/">Coding</a>
+            <a class="sidebar-nav-item" href="/static/java_revisions/">Syntax Reference</a>
           
         
       
@@ -176,9 +176,9 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       
 
       <i> -- Connect -- </i>
-      <a class="sidebar-nav-item" href="https://github.com/nitinkc">GitHub</a>
-      <a class="sidebar-nav-item" href="https://www.linkedin.com/in/nitinchaurasia" > LinkedIn </a>
-      <a class="sidebar-nav-item" href="http://blogs.bgsu.edu/nitinc/" > BGSU Blog </a>
+      <a class="sidebar-nav-item" href="https://github.com/nitinkc" target="_blank">GitHub</a>
+      <a class="sidebar-nav-item" href="https://www.linkedin.com/in/nitinchaurasia" target="_blank" > LinkedIn </a>
+      <a class="sidebar-nav-item" href="http://blogs.bgsu.edu/nitinc/" target="_blank" > BGSU Blog </a>
       <!-- <span class="sidebar-nav-item">Currently v0.0.1</span> -->
 
       <i> -- Resources -- </i>
@@ -198,7 +198,42 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       <div class="post">
   <h1 class="post-title">Linked List</h1>
   <span class="post-date">06 Apr 2016</span>
-  <h5 id="linked-list-iteration">Linked List Iteration</h5>
+  <h3 id="linked-list">Linked List</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">LinkNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span><span class="c1">//head</span>
+ <span class="k">while</span> <span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span><span class="c1">//Runner stops at the last node, else runner will end up pointing null!!</span>
+ <span class="n">runner</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="add-in-the-list">Add in the List</h4>
+
+<h5 id="add-in-the-front">Add in the front</h5>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h5 id="add-at-index">Add at ‘index’</h5>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+<span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
+<span class="k">else</span><span class="o">{</span>
+<span class="n">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span><span class="c1">//Stop at an index one before the desired</span>
+<span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="n">current</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">);</span> <span class="c1">//old current.next is assigned to the new node which in turn is assigned to current.next</span>
+</code></pre></div></div>
+
+<h5 id="add-in-the-end">Add in the end</h5>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">front</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+  <span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
+<span class="k">else</span><span class="o">{</span>
+  <span class="n">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span>
+  <span class="k">while</span> <span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="c1">// Go till the last node</span>
+      <span class="n">runner</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+  <span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">);</span> <span class="c1">//this constructor has .next as null</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h5 id="linked-list-iteration">Linked List Iteration</h5>
 <noscript><pre>// Traditional Iteration for LinkedList
 LinkedList runner = head;
 	while(runner != head){
@@ -338,6 +373,15 @@ public void addNodeEnd{
     
       <li>
         <h3>
+          <a href="/2018/01/23/CollectionClass/">
+            Collection Class
+            <small>23 Jan 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2017/02/01/maps/">
             Maps Patterns
             <small>01 Feb 2017</small>
@@ -350,15 +394,6 @@ public void addNodeEnd{
           <a href="/2016/11/25/Arrays-Patterns/">
             Arrays Patterns
             <small>25 Nov 2016</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2016/07/31/Mac-Upgrade/">
-            Upgrading the Macbook Pro - Model A1278
-            <small>31 Jul 2016</small>
           </a>
         </h3>
       </li>
