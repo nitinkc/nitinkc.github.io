@@ -96,6 +96,24 @@ Collection(I)
 ### ArrayList
 {% gist nitinkc/98b5adaf0ed85980472ec423237e9edd %}
 
+### SETS
+Set takes only single instance of an element.
+
+While adding an element into a set, a test of equality happens, to determine if the object being pushed already exist
+
+With Integer, no need to override hashCode() and equals()
+
+With Tree set it will sort to DNSO
+{% gist nitinkc/f98cd225bc3dd60b21368c56980ef006 %}
+
+### Stacks
+Stacks print in an [a, b, c] format from bottom  to top
+{% gist nitinkc/df63e7d0bc54653a97f133233eca3925 %}
+
+### Queues
+Queues print in an [a, b, c] format from front to back
+{% gist /nitinkc/9a3b529f8bad45a05ba20405bc975411 %}
+
 ### HASHMAP (IMPLEMENTATION OF HASHTABLE)
 
 There are 3 classes that implements the Map interface
@@ -111,17 +129,6 @@ There are 3 classes that implements the Map interface
  * IMPORTANT: they consume more memory than HashMap !!!
 
 {% gist nitinkc/3b434410bca596c8fbeae64a0e7c2895 %}
-
-### SETS
-Set takes only single instance of an element.
-
-While adding an element into a set, a test of equality happens, to determine if the object being pushed already exist
-
-With Integer, no need to override hashCode() and equals()
-
-With Tree set it will sort to DNSO
-{% gist nitinkc/f98cd225bc3dd60b21368c56980ef006 %}
-
 
 ### Heaps (Priority Queues in Java)
 Heaps are represented using Priority Queue. It gives O(1) seek time
