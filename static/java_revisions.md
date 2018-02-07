@@ -114,28 +114,41 @@ Stacks print in an [a, b, c] format from bottom  to top
 Queues print in an [a, b, c] format from front to back
 {% gist /nitinkc/9a3b529f8bad45a05ba20405bc975411 %}
 
-### HASHMAP (IMPLEMENTATION OF HASHTABLE)
+### Heaps (Priority Queues in Java)
+Heaps are represented using Priority Queue. It gives O(1) seek time.A priority queue does not permit null elements.The elements of the priority queue are ordered according to their natural ordering, or by a Comparator provided at queue construction time. It gives O(1) seek time.A priority queue does not permit null elements.
+ * 	add(E e) Inserts the specified element into this priority queue.
+ *  offer(E e) Inserts the specified element into this priority queue
+ *  poll() Retrieves and removes the head of this queue, or returns null if this queue is empty.
+{% gist nitinkc/c187b0ee3462c34d3e7eae3597fd01da %}
+
+### MAP (Not part of Collection Framework)
 
 There are 3 classes that implements the Map interface
 
- 1.) HashMap: this is "the map", able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good
+ **1.) HashMap**: (IMPLEMENTATION OF HASHTABLE) This is "the map", able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good
  * PROBLEM: makes no guarantee about the order of iteration
 
- 2.) TreeMap: it supports ordering --> natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!
+ **2.) TreeMap**: it supports ordering --> natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!
 
- 3.) LinkedHashMap: it contains a doubly linked list connecting all the entries in the map
+ **3.) LinkedHashMap**: it contains a doubly linked list connecting all the entries in the map
  * Unlike HashMap it preserves insertion-order
  * insertion order is not affected if a key is re-inserted into the map
  * IMPORTANT: they consume more memory than HashMap !!!
 
 {% gist nitinkc/3b434410bca596c8fbeae64a0e7c2895 %}
 
-### Heaps (Priority Queues in Java)
-Heaps are represented using Priority Queue. It gives O(1) seek time
- * 	add(E e) Inserts the specified element into this priority queue.
- *  offer(E e) Inserts the specified element into this priority queue
- *  poll() Retrieves and removes the head of this queue, or returns null if this queue is empty.
-{% gist nitinkc/c187b0ee3462c34d3e7eae3597fd01da %}
+### Binary Search Tree
+"BST": a binary tree that is either:
+* empty (null), or
+* a root node R such that:
+  1. every element of R's left subtree contains data "less than" R's data,
+  2. every element of R's right subtree contains data "greater than" R's,
+  3. R's left and right subtrees are also binary search trees.
+
+BSTs store their elements insorted order, which is helpfulfor searching/sorting tasks.
+
+{% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
+
 
 ### The XOR Trick
 

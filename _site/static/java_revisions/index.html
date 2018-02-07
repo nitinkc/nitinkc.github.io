@@ -105,10 +105,6 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
           
         
       
-        
-          
-        
-      
 
       <!-- Putting the Page explicitly -->
       <a class="sidebar-nav-item" href="/about">About</a>
@@ -155,10 +151,6 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
         
           
             <a class="sidebar-nav-item" href="/static/problemProfiles/">Profiles</a>
-          
-        
-      
-        
           
         
       
@@ -507,18 +499,90 @@ boolean remove(Object o) //Removes the first occurrence of the specified element
 */</pre></noscript>
 <script src="https://gist.github.com/nitinkc/98b5adaf0ed85980472ec423237e9edd.js"> </script>
 
-<h3 id="hashmap-implementation-of-hashtable">HASHMAP (IMPLEMENTATION OF HASHTABLE)</h3>
+<h3 id="sets">SETS</h3>
+<p>Set takes only single instance of an element.</p>
+
+<p>While adding an element into a set, a test of equality happens, to determine if the object being pushed already exist</p>
+
+<p>With Integer, no need to override hashCode() and equals()</p>
+
+<p>With Tree set it will sort to DNSO</p>
+<noscript><pre>// Ordering NOT guaranteed in HashSet
+Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
+// Sorted values returned while iterating in TreeSet
+Set&lt;Integer&gt; set = new TreeSet&lt;Integer&gt;();
+
+/* Adds the element to the set and returns true if this set does not have this element.
+if the element already exist the call leaves the set unchanged and returns false*/
+set.add(value);
+//boolean add(E e);
+
+/* returns true if the key is in the map, false otherwise.*/
+set.contains(key);
+
+boolean remove(Object o)
+// Removes the specified element from this set if it is present. Returns true if this set contained the element
+set.remove(key);// Concurrent Modification Exception in a Loop
+itr.remove();// used to avoid conc. modi. excep.
+
+/* Returns the number of elements in this set (its cardinality). */
+set.size​()</pre></noscript>
+<script src="https://gist.github.com/nitinkc/f98cd225bc3dd60b21368c56980ef006.js"> </script>
+
+<h3 id="stacks">Stacks</h3>
+<p>Stacks print in an [a, b, c] format from bottom  to top</p>
+<noscript><pre>Stack&lt;Integer&gt; s = new Stack&lt;Integer&gt;();
+s.addAll(Arrays.asList(1,2,3,4,5,6));
+// Prints in the same order, not in the top down fashion
+System.out.println(s);//[1,2,3,4,5,6]
+System.out.println(s.peek);// 6
+
+while (!s.isEmpty()) {
+	do something with s.pop();
+}
+
+for (int i : stack){
+            System.out.println(i);
+        }
+
+// This Does not work as stack.pop reduces the size of the stack each time
+for (int i = 0; i &lt; stack.size(); i++) {
+   System.out.println(stack.pop());
+}
+</pre></noscript>
+<script src="https://gist.github.com/nitinkc/df63e7d0bc54653a97f133233eca3925.js"> </script>
+
+<h3 id="queues">Queues</h3>
+<p>Queues print in an [a, b, c] format from front to back</p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com//nitinkc/9a3b529f8bad45a05ba20405bc975411.js"> </script>
+
+<h3 id="heaps-priority-queues-in-java">Heaps (Priority Queues in Java)</h3>
+<p>Heaps are represented using Priority Queue. It gives O(1) seek time.A priority queue does not permit null elements.The elements of the priority queue are ordered according to their natural ordering, or by a Comparator provided at queue construction time. It gives O(1) seek time.A priority queue does not permit null elements.</p>
+<ul>
+  <li>add(E e) Inserts the specified element into this priority queue.</li>
+  <li>offer(E e) Inserts the specified element into this priority queue</li>
+  <li>poll() Retrieves and removes the head of this queue, or returns null if this queue is empty.</li>
+</ul>
+<noscript><pre>Queue&lt;Integer&gt; pq = new PriorityQueue&lt;Integer&gt;();
+pq.offer(13);
+System.out.print(&quot; &quot; +pq.poll());
+</pre></noscript>
+<script src="https://gist.github.com/nitinkc/c187b0ee3462c34d3e7eae3597fd01da.js"> </script>
+
+<h3 id="map-not-part-of-collection-framework">MAP (Not part of Collection Framework)</h3>
 
 <p>There are 3 classes that implements the Map interface</p>
 
-<p>1.) HashMap: this is “the map”, able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good</p>
+<p><strong>1.) HashMap</strong>: (IMPLEMENTATION OF HASHTABLE) This is “the map”, able to store key-value pairs, and able to find the value according to the key in O(1) if the hash function is perfect/good</p>
 <ul>
   <li>PROBLEM: makes no guarantee about the order of iteration</li>
 </ul>
 
-<p>2.) TreeMap: it supports ordering –&gt; natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!</p>
+<p><strong>2.) TreeMap</strong>: it supports ordering –&gt; natural ordering, compareTo() method or Comparator is important to be able to decide the order !!!</p>
 
-<p>3.) LinkedHashMap: it contains a doubly linked list connecting all the entries in the map</p>
+<p><strong>3.) LinkedHashMap</strong>: it contains a doubly linked list connecting all the entries in the map</p>
 <ul>
   <li>Unlike HashMap it preserves insertion-order</li>
   <li>insertion order is not affected if a key is re-inserted into the map</li>
@@ -561,48 +625,24 @@ while(itr.hasNext()) {
 }</pre></noscript>
 <script src="https://gist.github.com/nitinkc/3b434410bca596c8fbeae64a0e7c2895.js"> </script>
 
-<h3 id="sets">SETS</h3>
-<p>Set takes only single instance of an element.</p>
-
-<p>While adding an element into a set, a test of equality happens, to determine if the object being pushed already exist</p>
-
-<p>With Integer, no need to override hashCode() and equals()</p>
-
-<p>With Tree set it will sort to DNSO</p>
-<noscript><pre>// Ordering NOT guaranteed in HashSet
-Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
-// Sorted values returned while iterating in TreeSet
-Set&lt;Integer&gt; set = new TreeSet&lt;Integer&gt;();
-
-/* Adds the element to the set and returns true if this set does not have this element.
-if the element already exist the call leaves the set unchanged and returns false*/
-set.add(value);
-//boolean add(E e);
-
-/* returns true if the key is in the map, false otherwise.*/
-set.contains(key);
-
-boolean remove(Object o)
-// Removes the specified element from this set if it is present. Returns true if this set contained the element
-set.remove(key);// Concurrent Modification Exception in a Loop
-itr.remove();// used to avoid conc. modi. excep.
-
-/* Returns the number of elements in this set (its cardinality). */
-set.size​()</pre></noscript>
-<script src="https://gist.github.com/nitinkc/f98cd225bc3dd60b21368c56980ef006.js"> </script>
-
-<h3 id="heaps-priority-queues-in-java">Heaps (Priority Queues in Java)</h3>
-<p>Heaps are represented using Priority Queue. It gives O(1) seek time</p>
+<h3 id="binary-search-tree">Binary Search Tree</h3>
+<p>“BST”: a binary tree that is either:</p>
 <ul>
-  <li>add(E e) Inserts the specified element into this priority queue.</li>
-  <li>offer(E e) Inserts the specified element into this priority queue</li>
-  <li>poll() Retrieves and removes the head of this queue, or returns null if this queue is empty.</li>
+  <li>empty (null), or</li>
+  <li>a root node R such that:
+    <ol>
+      <li>every element of R’s left subtree contains data “less than” R’s data,</li>
+      <li>every element of R’s right subtree contains data “greater than” R’s,</li>
+      <li>R’s left and right subtrees are also binary search trees.</li>
+    </ol>
+  </li>
 </ul>
-<noscript><pre>Queue&lt;Integer&gt; pq = new PriorityQueue&lt;Integer&gt;();
-pq.offer(13);
-System.out.print(&quot; &quot; +pq.poll());
+
+<p>BSTs store their elements insorted order, which is helpfulfor searching/sorting tasks.</p>
+
+<noscript><pre>400: Invalid request
 </pre></noscript>
-<script src="https://gist.github.com/nitinkc/c187b0ee3462c34d3e7eae3597fd01da.js"> </script>
+<script src="https://gist.github.com//nitinkc/dbc98632abc89fb83119af50b2448300.js"> </script>
 
 <h3 id="the-xor-trick">The XOR Trick</h3>
 
