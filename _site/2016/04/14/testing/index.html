@@ -193,191 +193,10 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
   <h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#sql" id="markdown-toc-sql">SQL</a></li>
   <li><a href="#java" id="markdown-toc-java">Java</a></li>
   <li><a href="#linux" id="markdown-toc-linux">Linux</a></li>
   <li><a href="#hibernate" id="markdown-toc-hibernate">Hibernate</a></li>
   <li><a href="#spring" id="markdown-toc-spring">Spring</a></li>
-</ul>
-
-<h5 id="sql">SQL</h5>
-<p><i class="fa fa-question"></i> How to retrieve all the data from a table.</p>
-
-<blockquote>
-  <p><i class="fa fa-check"></i>
- Use * wild card. Select * from tablename.</p>
-</blockquote>
-
-<p><i class="fa fa-question"></i> Retrieve a particular empid.</p>
-
-<blockquote>
-  <p><i class="fa fa-check"></i>
- Use <strong>where</strong> clause</p>
-</blockquote>
-
-<p><i class="fa fa-question"></i> How many types to delete the data</p>
-
-<blockquote>
-  <ul>
-    <li>truncate (deletes data but not table): TRUNCATE removes all rows from a table</li>
-    <li>The DELETE command is used to remove rows from a table
-      <ul>
-        <li>DELETE FROM emp WHERE job = ‘CLERK’;</li>
-        <li>you need to COMMIT or ROLLBACK the transaction to make the change permanent</li>
-      </ul>
-    </li>
-    <li>drop table/database : deletes a table/database
-      <ul>
-        <li>All the tables’ rows, indexes and privileges will also be removed</li>
-        <li>The operation cannot be rolled back.</li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-
-<p><strong>Whiteboard:</strong> Find count departments id where more than 5 employees.</p>
-
-<blockquote>
-  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">"# employees"</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
-      <span class="k">from</span> <span class="n">dept</span> <span class="n">d</span><span class="p">,</span> <span class="n">employees</span> <span class="n">e</span><span class="p">,</span> <span class="n">mapping</span> <span class="n">m</span>
-      <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">eid</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">eid</span> <span class="k">AND</span> <span class="n">d</span><span class="p">.</span><span class="n">did</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">did</span>
-      <span class="k">group</span> <span class="k">by</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
-      <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>
-</code></pre></div>  </div>
-
-  <p>SET Theory: Inline-view, TOP-N Analysis
-Select 11th heighest salary.</p>
-</blockquote>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
-<span class="k">where</span> <span class="n">rownum</span> <span class="o">&lt;</span> <span class="mi">12</span> 
-<span class="n">MINUS</span>
-<span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
-<span class="k">where</span> <span class="n">rownum</span> <span class="o">&lt;</span> <span class="mi">11</span>
-</code></pre></div></div>
-
-<p><strong>Whiteboard:</strong> Followed by bonus : related to sub query. Name all the depts with more than 5 employees.</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
-      <span class="k">from</span> <span class="n">dept</span> <span class="n">d</span><span class="p">,</span> <span class="n">employees</span> <span class="n">e</span><span class="p">,</span> <span class="n">mapping</span> <span class="n">m</span>
-      <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">eid</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">eid</span> <span class="k">AND</span> <span class="n">d</span><span class="p">.</span><span class="n">did</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">did</span>
-      <span class="k">group</span> <span class="k">by</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
-      <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p><i class="fa fa-question"></i> Diff. in inner join and outer join</p>
-
-<pre>
-JOINS : to combine rows from two or more tables, based on a common field between them.
-    INNER (Common Type) – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
-    OUTER (Smarter than inner)– LEFT, RIGHT &amp; FULL
-
-    OUTER is result of INNER &amp; some additional data   
-</pre>
-<blockquote>
-  <p><strong>INNER JOIN</strong>: Return rows as long as there one match in both tables</p>
-
-</blockquote>
-
-<p>SELECT SSN, E.Name AS EName, LastName, D.Name AS DName, Department, Code, Budget
- FROM Employees E <strong>INNER JOIN</strong> Departments D
- <strong>ON</strong> E.Department = D.Code;
- <br /><br /><strong>IS SAME AS</strong><br /><br />
- SELECT SSN, E.Name AS Name_E, LastName, D.Name AS Name_D, Department, Code, Budget
- FROM <strong>Employees E, Departments D</strong>
- <strong>where</strong> E.Department = D.Code;</p>
-
-<p><strong>SELF JOIN</strong> – only one table is involved in join <br /></p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">e1</span><span class="p">.</span><span class="n">ename</span><span class="o">||</span><span class="s1">' works for '</span><span class="o">||</span><span class="n">e2</span><span class="p">.</span><span class="n">ename</span>  <span class="k">AS</span>
-<span class="nv">"Employees and their Managers"</span> 
-<span class="k">FROM</span> <span class="n">emp</span> <span class="n">e1</span> <span class="k">JOIN</span> <span class="n">emp</span> <span class="n">e2</span> <span class="k">ON</span> <span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="n">mgr</span> <span class="o">=</span> <span class="n">e2</span><span class="p">.</span><span class="n">empno</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>OR can be written as</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">e1</span><span class="p">.</span><span class="n">ename</span><span class="o">||</span><span class="s1">' works for '</span><span class="o">||</span><span class="n">e2</span><span class="p">.</span><span class="n">ename</span>  <span class="k">AS</span>
-<span class="nv">"Employees and their Managers"</span> 
-<span class="k">FROM</span> <span class="n">emp</span> <span class="n">e1</span><span class="p">,</span> <span class="n">emp</span> <span class="n">e2</span> <span class="k">where</span> <span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="n">mgr</span> <span class="o">=</span> <span class="n">e2</span><span class="p">.</span><span class="n">empno</span><span class="p">);</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p><br />
-<strong>LEFT OUTER JOIN</strong>: Return all rows from the left table, even if there are 
-no matches in the right table and all matching rows from right<br />
-<strong>RIGHT OUTER JOIN</strong>: Return all rows from the right table and matching rows from left<br />
-<strong>FULL OUTER JOIN</strong>: Return rows when there is a match in one of the tables<br /></p>
-  <pre>
-The USING clause
-</pre>
-</blockquote>
-
-<p>The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.
-The ON clause</p>
-
-<p>The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
-&lt;/pre&gt;</p>
-<blockquote>
-  <p>Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
-&lt;/pre&gt;</p>
-</blockquote>
-
-<p><i class="fa fa-question"></i> what is left outer join and right outer join.</p>
-
-<p><i class="fa fa-question"></i> explain plan, performance tuning.</p>
-
-<ul>
-  <li>The EXPLAIN PLAN statement displays execution plans chosen by the Oracle optimizer for SELECT, UPDATE, INSERT, and DELETE statements. A statement’s execution plan is the sequence of operations Oracle performs to run the statement.</li>
-</ul>
-
-<p><i class="fa fa-question"></i> syntax for finding indexes in tuning.</p>
-
-<blockquote>
-  <p>Indexes are special lookup tables that the database search engine can use to 
-speed up data retrieval. An index is a pointer to data in a 
-table.</p>
-  <pre>
-CREATE UNIQUE INDEX index_name
-ON table_name (column_name)
-</pre>
-  <p><i class="fa fa-question"></i> full table scan</p>
-</blockquote>
-
-<p><i class="fa fa-question"></i> index advantegs of indexes in sql tuning? What is the syntax of doing that.</p>
-<blockquote>
-  <p>Indexes are a performance drag when the time comes to modify records.</p>
-</blockquote>
-
-<p><i class="fa fa-question"></i></p>
-
-<blockquote>
-  <p>Multiple Conditions : AND <br /></p>
-  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMP</span> <span class="k">WHERE</span> <span class="n">salary</span> <span class="o">&gt;</span> <span class="mi">10000</span> <span class="k">AND</span> <span class="n">dateofjoining</span> <span class="o">&gt;</span> <span class="err">‘</span><span class="mi">1</span><span class="o">-</span><span class="n">Jan</span><span class="o">-</span><span class="mi">1990</span><span class="err">’</span> <span class="p">;</span>
-</code></pre></div>  </div>
-  <p><br />Range Selection - BETWEEN</p>
-  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMP</span> <span class="k">WHERE</span> <span class="n">salary</span> <span class="k">between</span> <span class="mi">9000</span> <span class="k">AND</span> <span class="mi">20000</span><span class="p">;</span>
-</code></pre></div>  </div>
-  <p><br />Exact List Matching</p>
-  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMP</span> <span class="k">WHERE</span> <span class="n">employeeID</span> <span class="k">IN</span> <span class="p">(</span><span class="mi">3001</span><span class="p">,</span>  <span class="mi">3002</span><span class="p">);</span>
-</code></pre></div>  </div>
-</blockquote>
-
-<p><i class="fa fa-question"></i> Full table scan</p>
-
-<ul>
-  <li>A full table scan occurs when an index is either not used or there is no index on the table(s)</li>
-  <li>Full table scans should be avoided when reading large tables.For example, a full table scan is performed when a table that does not have an index is read</li>
-  <li>FTS will be performed even though an index is present on that table.
-    <ul>
-      <li>If a query does have a WHERE clause, but none of the columns in that WHERE clause match.</li>
-      <li>when WHERE clause prevents the use of an index like below.</li>
-      <li>If the NOT EQUAL (the “&lt;&gt;“) operator is used.</li>
-      <li>If the NOT operator is used.</li>
-      <li>If the wildcard operator is used in the first position of a comparison string. An example is “WHERE NAME LIKE ‘%INTERVIEW%’”.</li>
-    </ul>
-  </li>
 </ul>
 
 <h5 id="java">Java</h5>
@@ -508,7 +327,7 @@ ON table_name (column_name)
 <ul>
   <li>What is Dependency Injection</li>
 </ul>
-<pre>IOC(Inversion Of Controller):   Giving control to the container to get instance of object is called Inversion of Control., 
+<pre>IOC(Inversion Of Controller):   Giving control to the container to get instance of object is called Inversion of Control.,
     • means instead of you are creating object using new operator, let the container do that for you.
 
 DI(Dependency Injection):  Decoupling by passing an object to a function rather than CREATING the object the circle inside the method.
@@ -523,7 +342,6 @@ Spring support only Constructor Injection and Setter/Getter Injection.
 <ul>
   <li>what is setter injection and constructor injection</li>
 </ul>
-
 
 </div>
 

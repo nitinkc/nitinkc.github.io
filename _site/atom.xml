@@ -4,7 +4,7 @@
  <title>ηї☂їᾔ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-02-07T05:37:28-05:00</updated>
+ <updated>2018-02-07T05:42:34-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name></name>
@@ -941,6 +941,209 @@ HandAcc 2.5 Inch USB 3.0 Hard Drive External Enclosure Case For 9.5mm &amp;amp; 
    <content type="html">&lt;p&gt;https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management&lt;/p&gt;
 
 &lt;p&gt;https://en.wikibooks.org/wiki/SQL_Exercises&lt;/p&gt;
+
+&lt;p&gt;JOINS
+    INNER &amp;amp; OUTER
+    INNER – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
+    OUTER – LEFT, RIGHT &amp;amp; FULL&lt;/p&gt;
+
+&lt;p&gt;OUTER is result of INNER &amp;amp; some additional data &lt;br /&gt;
+Data from one of the tables or from both the tables&lt;/p&gt;
+
+&lt;p&gt;INNER – select t1.* from t1, t2 where t1.c = t2.c
+And t2.d &amp;gt; 2000
+SELF JOIN – only one table is involved in join
+Select t1.* from KYC k1, KYC k2 where k1.kyc_ind = K2.kyc_ind&lt;/p&gt;
+
+&lt;p&gt;OUTER is smarter than INNER
+Customer – cust_id -1,2,3
+Sales – cust_id- 3, 6&lt;/p&gt;
+
+&lt;p&gt;Select * from customer c, sales s where c.cust_id = s.cust_id&lt;/p&gt;
+
+&lt;p&gt;Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id&lt;/p&gt;
+
+&lt;h5 id=&quot;sql&quot;&gt;SQL&lt;/h5&gt;
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; How to retrieve all the data from a table.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;i class=&quot;fa fa-check&quot;&gt;&lt;/i&gt;
+ Use * wild card. Select * from tablename.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Retrieve a particular empid.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;i class=&quot;fa fa-check&quot;&gt;&lt;/i&gt;
+ Use &lt;strong&gt;where&lt;/strong&gt; clause&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; How many types to delete the data&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;truncate (deletes data but not table): TRUNCATE removes all rows from a table&lt;/li&gt;
+    &lt;li&gt;The DELETE command is used to remove rows from a table
+      &lt;ul&gt;
+        &lt;li&gt;DELETE FROM emp WHERE job = ‘CLERK’;&lt;/li&gt;
+        &lt;li&gt;you need to COMMIT or ROLLBACK the transaction to make the change permanent&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;drop table/database : deletes a table/database
+      &lt;ul&gt;
+        &lt;li&gt;All the tables’ rows, indexes and privileges will also be removed&lt;/li&gt;
+        &lt;li&gt;The operation cannot be rolled back.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Whiteboard:&lt;/strong&gt; Find count departments id where more than 5 employees.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;# employees&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dept&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapping&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+  &lt;p&gt;SET Theory: Inline-view, TOP-N Analysis
+Select 11th heighest salary.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SALARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMPLOYEE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rownum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;MINUS&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SALARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMPLOYEE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rownum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Whiteboard:&lt;/strong&gt; Followed by bonus : related to sub query. Name all the depts with more than 5 employees.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dept&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapping&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Diff. in inner join and outer join&lt;/p&gt;
+
+&lt;pre&gt;
+JOINS : to combine rows from two or more tables, based on a common field between them.
+    INNER (Common Type) – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
+    OUTER (Smarter than inner)– LEFT, RIGHT &amp;amp; FULL
+
+    OUTER is result of INNER &amp;amp; some additional data   
+&lt;/pre&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;INNER JOIN&lt;/strong&gt;: Return rows as long as there one match in both tables&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;SELECT SSN, E.Name AS EName, LastName, D.Name AS DName, Department, Code, Budget
+ FROM Employees E &lt;strong&gt;INNER JOIN&lt;/strong&gt; Departments D
+ &lt;strong&gt;ON&lt;/strong&gt; E.Department = D.Code;
+ &lt;br /&gt;&lt;br /&gt;&lt;strong&gt;IS SAME AS&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;
+ SELECT SSN, E.Name AS Name_E, LastName, D.Name AS Name_D, Department, Code, Budget
+ FROM &lt;strong&gt;Employees E, Departments D&lt;/strong&gt;
+ &lt;strong&gt;where&lt;/strong&gt; E.Department = D.Code;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SELF JOIN&lt;/strong&gt; – only one table is involved in join &lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' works for '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;&quot;Employees and their Managers&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mgr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empno&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;OR can be written as&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' works for '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;&quot;Employees and their Managers&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mgr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empno&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;LEFT OUTER JOIN&lt;/strong&gt;: Return all rows from the left table, even if there are
+no matches in the right table and all matching rows from right&lt;br /&gt;
+&lt;strong&gt;RIGHT OUTER JOIN&lt;/strong&gt;: Return all rows from the right table and matching rows from left&lt;br /&gt;
+&lt;strong&gt;FULL OUTER JOIN&lt;/strong&gt;: Return rows when there is a match in one of the tables&lt;br /&gt;&lt;/p&gt;
+  &lt;pre&gt;
+The USING clause
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.
+The ON clause&lt;/p&gt;
+
+&lt;p&gt;The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
+&amp;lt;/pre&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
+&amp;lt;/pre&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; what is left outer join and right outer join.&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; explain plan, performance tuning.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The EXPLAIN PLAN statement displays execution plans chosen by the Oracle optimizer for SELECT, UPDATE, INSERT, and DELETE statements. A statement’s execution plan is the sequence of operations Oracle performs to run the statement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; syntax for finding indexes in tuning.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Indexes are special lookup tables that the database search engine can use to
+speed up data retrieval. An index is a pointer to data in a
+table.&lt;/p&gt;
+  &lt;pre&gt;
+CREATE UNIQUE INDEX index_name
+ON table_name (column_name)
+&lt;/pre&gt;
+  &lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; full table scan&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; index advantegs of indexes in sql tuning? What is the syntax of doing that.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Indexes are a performance drag when the time comes to modify records.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Multiple Conditions : AND &lt;br /&gt;&lt;/p&gt;
+  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateofjoining&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Jan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1990&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;&lt;br /&gt;Range Selection - BETWEEN&lt;/p&gt;
+  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;between&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9000&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;&lt;br /&gt;Exact List Matching&lt;/p&gt;
+  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employeeID&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;3002&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Full table scan&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A full table scan occurs when an index is either not used or there is no index on the table(s)&lt;/li&gt;
+  &lt;li&gt;Full table scans should be avoided when reading large tables.For example, a full table scan is performed when a table that does not have an index is read&lt;/li&gt;
+  &lt;li&gt;FTS will be performed even though an index is present on that table.
+    &lt;ul&gt;
+      &lt;li&gt;If a query does have a WHERE clause, but none of the columns in that WHERE clause match.&lt;/li&gt;
+      &lt;li&gt;when WHERE clause prevents the use of an index like below.&lt;/li&gt;
+      &lt;li&gt;If the NOT EQUAL (the “&amp;lt;&amp;gt;“) operator is used.&lt;/li&gt;
+      &lt;li&gt;If the NOT operator is used.&lt;/li&gt;
+      &lt;li&gt;If the wildcard operator is used in the first position of a comparison string. An example is “WHERE NAME LIKE ‘%INTERVIEW%’”.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  
@@ -1019,191 +1222,10 @@ HandAcc 2.5 Inch USB 3.0 Hard Drive External Enclosure Case For 9.5mm &amp;amp; 
    <content type="html">&lt;h2 class=&quot;no_toc&quot; id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#sql&quot; id=&quot;markdown-toc-sql&quot;&gt;SQL&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#java&quot; id=&quot;markdown-toc-java&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#linux&quot; id=&quot;markdown-toc-linux&quot;&gt;Linux&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#hibernate&quot; id=&quot;markdown-toc-hibernate&quot;&gt;Hibernate&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#spring&quot; id=&quot;markdown-toc-spring&quot;&gt;Spring&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;sql&quot;&gt;SQL&lt;/h5&gt;
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; How to retrieve all the data from a table.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;i class=&quot;fa fa-check&quot;&gt;&lt;/i&gt;
- Use * wild card. Select * from tablename.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Retrieve a particular empid.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;i class=&quot;fa fa-check&quot;&gt;&lt;/i&gt;
- Use &lt;strong&gt;where&lt;/strong&gt; clause&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; How many types to delete the data&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;truncate (deletes data but not table): TRUNCATE removes all rows from a table&lt;/li&gt;
-    &lt;li&gt;The DELETE command is used to remove rows from a table
-      &lt;ul&gt;
-        &lt;li&gt;DELETE FROM emp WHERE job = ‘CLERK’;&lt;/li&gt;
-        &lt;li&gt;you need to COMMIT or ROLLBACK the transaction to make the change permanent&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;drop table/database : deletes a table/database
-      &lt;ul&gt;
-        &lt;li&gt;All the tables’ rows, indexes and privileges will also be removed&lt;/li&gt;
-        &lt;li&gt;The operation cannot be rolled back.&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Whiteboard:&lt;/strong&gt; Find count departments id where more than 5 employees.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;# employees&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dept&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapping&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
-
-  &lt;p&gt;SET Theory: Inline-view, TOP-N Analysis
-Select 11th heighest salary.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SALARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMPLOYEE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rownum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;MINUS&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SALARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMPLOYEE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rownum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Whiteboard:&lt;/strong&gt; Followed by bonus : related to sub query. Name all the depts with more than 5 employees.&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dept&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapping&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;did&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dname&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Diff. in inner join and outer join&lt;/p&gt;
-
-&lt;pre&gt;
-JOINS : to combine rows from two or more tables, based on a common field between them.
-    INNER (Common Type) – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
-    OUTER (Smarter than inner)– LEFT, RIGHT &amp;amp; FULL
-
-    OUTER is result of INNER &amp;amp; some additional data   
-&lt;/pre&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;INNER JOIN&lt;/strong&gt;: Return rows as long as there one match in both tables&lt;/p&gt;
-
-&lt;/blockquote&gt;
-
-&lt;p&gt;SELECT SSN, E.Name AS EName, LastName, D.Name AS DName, Department, Code, Budget
- FROM Employees E &lt;strong&gt;INNER JOIN&lt;/strong&gt; Departments D
- &lt;strong&gt;ON&lt;/strong&gt; E.Department = D.Code;
- &lt;br /&gt;&lt;br /&gt;&lt;strong&gt;IS SAME AS&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;
- SELECT SSN, E.Name AS Name_E, LastName, D.Name AS Name_D, Department, Code, Budget
- FROM &lt;strong&gt;Employees E, Departments D&lt;/strong&gt;
- &lt;strong&gt;where&lt;/strong&gt; E.Department = D.Code;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;SELF JOIN&lt;/strong&gt; – only one table is involved in join &lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' works for '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;&quot;Employees and their Managers&quot;&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mgr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empno&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;OR can be written as&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' works for '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ename&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;&quot;Employees and their Managers&quot;&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mgr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empno&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;LEFT OUTER JOIN&lt;/strong&gt;: Return all rows from the left table, even if there are 
-no matches in the right table and all matching rows from right&lt;br /&gt;
-&lt;strong&gt;RIGHT OUTER JOIN&lt;/strong&gt;: Return all rows from the right table and matching rows from left&lt;br /&gt;
-&lt;strong&gt;FULL OUTER JOIN&lt;/strong&gt;: Return rows when there is a match in one of the tables&lt;br /&gt;&lt;/p&gt;
-  &lt;pre&gt;
-The USING clause
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.
-The ON clause&lt;/p&gt;
-
-&lt;p&gt;The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
-&amp;lt;/pre&amp;gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
-&amp;lt;/pre&amp;gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; what is left outer join and right outer join.&lt;/p&gt;
-
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; explain plan, performance tuning.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The EXPLAIN PLAN statement displays execution plans chosen by the Oracle optimizer for SELECT, UPDATE, INSERT, and DELETE statements. A statement’s execution plan is the sequence of operations Oracle performs to run the statement.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; syntax for finding indexes in tuning.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Indexes are special lookup tables that the database search engine can use to 
-speed up data retrieval. An index is a pointer to data in a 
-table.&lt;/p&gt;
-  &lt;pre&gt;
-CREATE UNIQUE INDEX index_name
-ON table_name (column_name)
-&lt;/pre&gt;
-  &lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; full table scan&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; index advantegs of indexes in sql tuning? What is the syntax of doing that.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Indexes are a performance drag when the time comes to modify records.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Multiple Conditions : AND &lt;br /&gt;&lt;/p&gt;
-  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateofjoining&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Jan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1990&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
-  &lt;p&gt;&lt;br /&gt;Range Selection - BETWEEN&lt;/p&gt;
-  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;between&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9000&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
-  &lt;p&gt;&lt;br /&gt;Exact List Matching&lt;/p&gt;
-  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EMP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employeeID&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;3002&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt; Full table scan&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A full table scan occurs when an index is either not used or there is no index on the table(s)&lt;/li&gt;
-  &lt;li&gt;Full table scans should be avoided when reading large tables.For example, a full table scan is performed when a table that does not have an index is read&lt;/li&gt;
-  &lt;li&gt;FTS will be performed even though an index is present on that table.
-    &lt;ul&gt;
-      &lt;li&gt;If a query does have a WHERE clause, but none of the columns in that WHERE clause match.&lt;/li&gt;
-      &lt;li&gt;when WHERE clause prevents the use of an index like below.&lt;/li&gt;
-      &lt;li&gt;If the NOT EQUAL (the “&amp;lt;&amp;gt;“) operator is used.&lt;/li&gt;
-      &lt;li&gt;If the NOT operator is used.&lt;/li&gt;
-      &lt;li&gt;If the wildcard operator is used in the first position of a comparison string. An example is “WHERE NAME LIKE ‘%INTERVIEW%’”.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;java&quot;&gt;Java&lt;/h5&gt;
@@ -1334,7 +1356,7 @@ ON table_name (column_name)
 &lt;ul&gt;
   &lt;li&gt;What is Dependency Injection&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;IOC(Inversion Of Controller):   Giving control to the container to get instance of object is called Inversion of Control., 
+&lt;pre&gt;IOC(Inversion Of Controller):   Giving control to the container to get instance of object is called Inversion of Control.,
     • means instead of you are creating object using new operator, let the container do that for you.
 
 DI(Dependency Injection):  Decoupling by passing an object to a function rather than CREATING the object the circle inside the method.
@@ -1349,7 +1371,6 @@ Spring support only Constructor Injection and Setter/Getter Injection.
 &lt;ul&gt;
   &lt;li&gt;what is setter injection and constructor injection&lt;/li&gt;
 &lt;/ul&gt;
-
 </content>
  </entry>
  
