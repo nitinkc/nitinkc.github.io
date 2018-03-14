@@ -190,40 +190,11 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       <div class="post">
   <h1 class="post-title">SQL Revisions</h1>
   <span class="post-date">15 Apr 2016</span>
-  <p>https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management</p>
+  <p><a href="https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management" target="\_blank">Exercise 1</a></p>
 
-<p>https://en.wikibooks.org/wiki/SQL_Exercises</p>
-
-<p>JOINS
-    INNER &amp; OUTER
-    INNER – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
-    OUTER – LEFT, RIGHT &amp; FULL</p>
-
-<p>OUTER is result of INNER &amp; some additional data <br />
-Data from one of the tables or from both the tables</p>
-
-<p>INNER – select t1.* from t1, t2 where t1.c = t2.c
-And t2.d &gt; 2000
-SELF JOIN – only one table is involved in join
-Select t1.* from KYC k1, KYC k2 where k1.kyc_ind = K2.kyc_ind</p>
-
-<p>OUTER is smarter than INNER
-Customer – cust_id -1,2,3
-Sales – cust_id- 3, 6</p>
-
-<p>Select * from customer c, sales s where c.cust_id = s.cust_id</p>
-
-<p>Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id</p>
+<p><a href="https://en.wikibooks.org/wiki/SQL_Exercises" target="\_blank">Exercise 2</a></p>
 
 <h5 id="sql">SQL</h5>
-<p><i class="fa fa-question"></i> How to retrieve all the data from a table.</p>
-
-<blockquote>
-  <p><i class="fa fa-check"></i>
- Use * wild card. Select * from tablename.</p>
-</blockquote>
 
 <p><i class="fa fa-question"></i> Retrieve a particular empid.</p>
 
@@ -252,28 +223,27 @@ Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id</p>
   </ul>
 </blockquote>
 
-<p><strong>Whiteboard:</strong> Find count departments id where more than 5 employees.</p>
+<p><strong>Find count departments id where more than 5 employees.</strong></p>
 
-<blockquote>
-  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">"# employees"</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">"# employees"</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
       <span class="k">from</span> <span class="n">dept</span> <span class="n">d</span><span class="p">,</span> <span class="n">employees</span> <span class="n">e</span><span class="p">,</span> <span class="n">mapping</span> <span class="n">m</span>
       <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">eid</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">eid</span> <span class="k">AND</span> <span class="n">d</span><span class="p">.</span><span class="n">did</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">did</span>
       <span class="k">group</span> <span class="k">by</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
       <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>SET Theory: Inline-view, TOP-N Analysis
-Select 11th heighest salary.</p>
-</blockquote>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
+<p><strong>SET Theory</strong>: Inline-view, TOP-N Analysis</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Select 11th heighest salary.</span>
+<span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span>
+<span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
 <span class="k">where</span> <span class="n">rownum</span> <span class="o">&lt;</span> <span class="mi">12</span>
 <span class="n">MINUS</span>
-<span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
+<span class="k">select</span> <span class="n">EMP_ID</span><span class="p">,</span> <span class="n">SALARY</span>
+<span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">EMPLOYEE</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span>
 <span class="k">where</span> <span class="n">rownum</span> <span class="o">&lt;</span> <span class="mi">11</span>
 </code></pre></div></div>
 
-<p><strong>Whiteboard:</strong> Followed by bonus : related to sub query. Name all the depts with more than 5 employees.</p>
+<p><strong>Name all the depts with more than 5 employees.</strong></p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span>
       <span class="k">from</span> <span class="n">dept</span> <span class="n">d</span><span class="p">,</span> <span class="n">employees</span> <span class="n">e</span><span class="p">,</span> <span class="n">mapping</span> <span class="n">m</span>
@@ -282,27 +252,73 @@ Select 11th heighest salary.</p>
       <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p><i class="fa fa-question"></i> Diff. in inner join and outer join</p>
+<h2 id="joins">JOINS</h2>
 
-<pre>
-JOINS : to combine rows from two or more tables, based on a common field between them.
-    INNER (Common Type) – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
-    OUTER (Smarter than inner)– LEFT, RIGHT &amp; FULL
+<p>JOINS : To combine rows from two or more tables, based on common fields between them.</p>
 
-    OUTER is result of INNER &amp; some additional data   
-</pre>
+<p><strong>INNER JOIN</strong>: (Common Type) – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN</p>
+
+<p>Return rows as long as there one match in both tables</p>
+
+<p><strong>OUTER JOIN</strong> (Smarter than inner)– LEFT, RIGHT &amp; FULL</p>
+
+<p><em>OUTER is result of INNER &amp; some additional data from one of the tables or from both the tables</em></p>
+
+<ul>
+  <li>
+    <p><strong>LEFT OUTER JOIN</strong>: Return all rows from the left table, even if there are
+ no matches in the right table and all matching rows from right</p>
+  </li>
+  <li>
+    <p><strong>RIGHT OUTER JOIN</strong>: Return all rows from the right table and matching rows from left</p>
+  </li>
+  <li>
+    <p><strong>FULL OUTER JOIN</strong>: Return rows when there is a match in one of the tables</p>
+  </li>
+</ul>
+
+<p><img src="http://localhost:4000/media/Joins.png" alt="alt text" /></p>
+
 <blockquote>
-  <p><strong>INNER JOIN</strong>: Return rows as long as there one match in both tables</p>
-
+  <p>The USING clause</p>
 </blockquote>
 
-<p>SELECT SSN, E.Name AS EName, LastName, D.Name AS DName, Department, Code, Budget
- FROM Employees E <strong>INNER JOIN</strong> Departments D
- <strong>ON</strong> E.Department = D.Code;
- <br /><br /><strong>IS SAME AS</strong><br /><br />
- SELECT SSN, E.Name AS Name_E, LastName, D.Name AS Name_D, Department, Code, Budget
- FROM <strong>Employees E, Departments D</strong>
- <strong>where</strong> E.Department = D.Code;</p>
+<p>The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.</p>
+
+<blockquote>
+  <p>The ON clause</p>
+</blockquote>
+
+<p>The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.</p>
+
+<pre><code class="language-SQL">-- OUTER JOIN is smarter than INNER
+-- Customer – cust_id - 1,2,3
+-- Sales – cust_id - 3, 6
+
+Select * from customer c, sales s where c.cust_id = s.cust_id
+
+Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
+</code></pre>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- INNER</span>
+<span class="k">select</span> <span class="n">t1</span><span class="p">.</span><span class="o">*</span> <span class="k">from</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="k">where</span> <span class="n">t1</span><span class="p">.</span><span class="k">c</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="k">c</span>
+<span class="k">And</span> <span class="n">t2</span><span class="p">.</span><span class="n">d</span> <span class="o">&gt;</span> <span class="mi">2000</span>
+
+<span class="c1">-- SELF JOIN only one table is involved in join</span>
+<span class="k">Select</span> <span class="n">t1</span><span class="p">.</span><span class="o">*</span> <span class="k">from</span> <span class="n">KYC</span> <span class="n">k1</span><span class="p">,</span> <span class="n">KYC</span> <span class="n">k2</span> <span class="k">where</span> <span class="n">k1</span><span class="p">.</span><span class="n">kyc_ind</span> <span class="o">=</span> <span class="n">K2</span><span class="p">.</span><span class="n">kyc_ind</span>
+
+<span class="k">SELECT</span> <span class="n">SSN</span><span class="p">,</span> <span class="n">E</span><span class="p">.</span><span class="n">Name</span> <span class="k">AS</span> <span class="n">EName</span><span class="p">,</span> <span class="n">LastName</span><span class="p">,</span> <span class="n">D</span><span class="p">.</span><span class="n">Name</span> <span class="k">AS</span> <span class="n">DName</span><span class="p">,</span> <span class="n">Department</span><span class="p">,</span> <span class="n">Code</span><span class="p">,</span> <span class="n">Budget</span>
+ <span class="k">FROM</span> <span class="n">Employees</span> <span class="n">E</span> <span class="o">**</span><span class="k">INNER</span> <span class="k">JOIN</span><span class="o">**</span> <span class="n">Departments</span> <span class="n">D</span>
+ <span class="o">**</span><span class="k">ON</span><span class="o">**</span> <span class="n">E</span><span class="p">.</span><span class="n">Department</span> <span class="o">=</span> <span class="n">D</span><span class="p">.</span><span class="n">Code</span><span class="p">;</span>
+
+ <span class="o">**</span><span class="k">IS</span> <span class="n">SAME</span> <span class="k">AS</span><span class="o">**</span>
+
+ <span class="k">SELECT</span> <span class="n">SSN</span><span class="p">,</span> <span class="n">E</span><span class="p">.</span><span class="n">Name</span> <span class="k">AS</span> <span class="n">Name_E</span><span class="p">,</span> <span class="n">LastName</span><span class="p">,</span> <span class="n">D</span><span class="p">.</span><span class="n">Name</span> <span class="k">AS</span> <span class="n">Name_D</span><span class="p">,</span> <span class="n">Department</span><span class="p">,</span> <span class="n">Code</span><span class="p">,</span> <span class="n">Budget</span>
+ <span class="k">FROM</span> <span class="o">**</span><span class="n">Employees</span> <span class="n">E</span><span class="p">,</span> <span class="n">Departments</span> <span class="n">D</span><span class="o">**</span>
+ <span class="o">**</span><span class="k">where</span><span class="o">**</span> <span class="n">E</span><span class="p">.</span><span class="n">Department</span> <span class="o">=</span> <span class="n">D</span><span class="p">.</span><span class="n">Code</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><strong>SELF JOIN</strong> – only one table is involved in join <br /></p>
 
@@ -318,30 +334,7 @@ JOINS : to combine rows from two or more tables, based on a common field between
 <span class="k">FROM</span> <span class="n">emp</span> <span class="n">e1</span><span class="p">,</span> <span class="n">emp</span> <span class="n">e2</span> <span class="k">where</span> <span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="n">mgr</span> <span class="o">=</span> <span class="n">e2</span><span class="p">.</span><span class="n">empno</span><span class="p">);</span>
 </code></pre></div></div>
 
-<blockquote>
-  <p><br />
-<strong>LEFT OUTER JOIN</strong>: Return all rows from the left table, even if there are
-no matches in the right table and all matching rows from right<br />
-<strong>RIGHT OUTER JOIN</strong>: Return all rows from the right table and matching rows from left<br />
-<strong>FULL OUTER JOIN</strong>: Return rows when there is a match in one of the tables<br /></p>
-  <pre>
-The USING clause
-</pre>
-</blockquote>
-
-<p>The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.
-The ON clause</p>
-
-<p>The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
-&lt;/pre&gt;</p>
-<blockquote>
-  <p>Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
-&lt;/pre&gt;</p>
-</blockquote>
-
-<p><i class="fa fa-question"></i> what is left outer join and right outer join.</p>
+<hr />
 
 <p><i class="fa fa-question"></i> explain plan, performance tuning.</p>
 

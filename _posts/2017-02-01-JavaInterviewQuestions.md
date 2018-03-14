@@ -4,14 +4,12 @@ title:  "Java Interview Questions"
 date:   2018-01-31 00:20:00
 ---
 
-##### Objects
-
- - Objects
  - OOPS ()
-     + Inheritance
-     + Polymorphism
-     + Abstraction
-     + ---
+     + **Encapsulation** (Accessors and Mutators)
+     + **Abstraction** (crisply defined conceptual boundaries, relative to the perspective of the viewer — G. Booch)
+     + **Inheritance**
+     + **Polymorphism**
+      ---
  - Inheritance
      + Overloading vs overriding
      + multiple inheritance
@@ -29,7 +27,7 @@ date:   2018-01-31 00:20:00
  - Polymorphism
      + Runtime Ploymorphism vs compile time polymorphism
      + Polymorphism as a way to have multiple inheritance
- -
+
  - Thread
      + Ways to implement a Thread
      + Concurrency package
@@ -60,6 +58,7 @@ Difference between Final, Finally, Finalize
 ---------------
 ### String, StringBuffer and StringBuilder
 1. **String** objects are immutable (every equality with string object creates a new object)
+
 ```java
 String a = new String(“Nitin”);//Immutable Object
 String b = "Nitin";// When we use double quotes to create a string, it first looks for the string with the same value in the String Pool. If found it just returns the reference.

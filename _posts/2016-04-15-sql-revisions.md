@@ -3,38 +3,11 @@ layout: post
 title:  "SQL Revisions"
 date:   2016-04-15 11:45:00
 ---
-https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management
+[Exercise 1](https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management){:target="\_blank"}
 
-https://en.wikibooks.org/wiki/SQL_Exercises
-
-JOINS
-    INNER & OUTER
-    INNER – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
-    OUTER – LEFT, RIGHT & FULL
-
-OUTER is result of INNER & some additional data   
-Data from one of the tables or from both the tables
-
-INNER – select t1.* from t1, t2 where t1.c = t2.c
-And t2.d > 2000
-SELF JOIN – only one table is involved in join
-Select t1.* from KYC k1, KYC k2 where k1.kyc_ind = K2.kyc_ind
-
-OUTER is smarter than INNER
-Customer – cust_id -1,2,3
-Sales – cust_id- 3, 6
-
-Select * from customer c, sales s where c.cust_id = s.cust_id
-
-Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
+[Exercise 2](https://en.wikibooks.org/wiki/SQL_Exercises){:target="\_blank"}
 
 ##### SQL
-<i class="fa fa-question"></i> How to retrieve all the data from a table.
-
-> <i class="fa fa-check"></i>
->  Use * wild card. Select * from tablename.
 
 <i class="fa fa-question"></i> Retrieve a particular empid.
 
@@ -51,28 +24,29 @@ Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
 >     +  All the tables' rows, indexes and privileges will also be removed
 >     +  The operation cannot be rolled back.
 
-**Whiteboard:** Find count departments id where more than 5 employees.
+**Find count departments id where more than 5 employees.**
 
-> ``` sql
-> select count(*) AS "# employees", d.dname
+``` sql
+select count(*) AS "# employees", d.dname
       from dept d, employees e, mapping m
       where e.eid = m.eid AND d.did = m.did
       group by d.dname
       having count(*) > 5;
-> ```
->
-> SET Theory: Inline-view, TOP-N Analysis
-> Select 11th heighest salary.
+```
 
+**SET Theory**: Inline-view, TOP-N Analysis
 ```sql
-select EMP_ID, SALARY from (select * from EMPLOYEE order by salary desc)
+-- Select 11th heighest salary.
+select EMP_ID, SALARY
+from (select * from EMPLOYEE order by salary desc)
 where rownum < 12
 MINUS
-select EMP_ID, SALARY from (select * from EMPLOYEE order by salary desc)
+select EMP_ID, SALARY
+from (select * from EMPLOYEE order by salary desc)
 where rownum < 11
 ```
 
-**Whiteboard:** Followed by bonus : related to sub query. Name all the depts with more than 5 employees.
+**Name all the depts with more than 5 employees.**
 
 ```sql
 select d.dname
@@ -82,26 +56,66 @@ select d.dname
       having count(*) > 5;
 ```
 
+## JOINS
 
-<i class="fa fa-question"></i> Diff. in inner join and outer join
+JOINS : To combine rows from two or more tables, based on common fields between them.
 
-<pre>
-JOINS : to combine rows from two or more tables, based on a common field between them.
-    INNER (Common Type) – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
-    OUTER (Smarter than inner)– LEFT, RIGHT & FULL
+**INNER JOIN**: (Common Type) – EQUI JOIN, NON-EQUI JOIN, NATURAL JOIN, SELF JOIN
 
-    OUTER is result of INNER & some additional data   
-</pre>
-> **INNER JOIN**: Return rows as long as there one match in both tables
->
+  Return rows as long as there one match in both tables
+
+**OUTER JOIN** (Smarter than inner)– LEFT, RIGHT & FULL
+
+_OUTER is result of INNER & some additional data from one of the tables or from both the tables_
+
+  - **LEFT OUTER JOIN**: Return all rows from the left table, even if there are
+ no matches in the right table and all matching rows from right
+
+  - **RIGHT OUTER JOIN**: Return all rows from the right table and matching rows from left
+
+  - **FULL OUTER JOIN**: Return rows when there is a match in one of the tables
+
+![alt text]({{ site.url }}/media/Joins.png)
+
+> The USING clause
+
+The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.
+
+> The ON clause
+
+The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
+
+```SQL
+-- OUTER JOIN is smarter than INNER
+-- Customer – cust_id - 1,2,3
+-- Sales – cust_id - 3, 6
+
+Select * from customer c, sales s where c.cust_id = s.cust_id
+
+Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
+Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
+```
+
+```sql
+-- INNER
+select t1.* from t1, t2 where t1.c = t2.c
+And t2.d > 2000
+
+-- SELF JOIN only one table is involved in join
+Select t1.* from KYC k1, KYC k2 where k1.kyc_ind = K2.kyc_ind
 
 SELECT SSN, E.Name AS EName, LastName, D.Name AS DName, Department, Code, Budget
  FROM Employees E **INNER JOIN** Departments D
  **ON** E.Department = D.Code;
- <br><br>**IS SAME AS**<br><br>
+
+ **IS SAME AS**
+
  SELECT SSN, E.Name AS Name_E, LastName, D.Name AS Name_D, Department, Code, Budget
  FROM **Employees E, Departments D**
  **where** E.Department = D.Code;
+```
+
 
 **SELF JOIN** – only one table is involved in join <br>
 
@@ -119,25 +133,7 @@ SELECT e1.ename||' works for '||e2.ename  AS
 FROM emp e1, emp e2 where (e1.mgr = e2.empno);
 ```
 
-> <br>
-> **LEFT OUTER JOIN**: Return all rows from the left table, even if there are
-> no matches in the right table and all matching rows from right<br>
-> **RIGHT OUTER JOIN**: Return all rows from the right table and matching rows from left<br>
-> **FULL OUTER JOIN**: Return rows when there is a match in one of the tables<br>
-> <pre>
-> The USING clause
-
-The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.
-The ON clause
-
-The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
-</pre>
->Select * from customer c LEFT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c RIGHT OUTER JOIN sales s ON c.cust_id = s.sales_id
-Select * from customer c FULL OUTER JOIN sales s ON c.cust_id = s.sales_id
-> </pre>
-
-<i class="fa fa-question"></i> what is left outer join and right outer join.
+-----------
 
 <i class="fa fa-question"></i> explain plan, performance tuning.
 
