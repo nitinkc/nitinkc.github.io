@@ -270,16 +270,45 @@ boolean result = Arrays.asList(arr).contains(&quot;a&quot;);// returns boolean t
 <h3 id="2d-arrays">2D Arrays</h3>
 
 <p>A Rectangular 2D array has different no. of Rows and Columns (eg: 6X7)</p>
-<noscript><pre>public static void main (String[] args){
-    String arr[][] = new String[6][7];
-    int row = arr.length;// Row = 6
-    int col = arr[0].length; // Columns = 7
-    for (int i = 0; i &lt; row; i = i+1){
-        for (int j = 0; j &lt; col ; j = j+1){
-          arr[i][j] = i + &quot;&quot; + j + &quot; &quot;;
-          System.out.print(arr[i][j]);
+<noscript><pre>public static void main(String[] args) {
+
+        // Declaring a Rectangular Matrix
+        String arr[][] = new String[6][7];
+        int row = arr.length;// Row = 6
+        int col = arr[0].length; // Columns = 7
+
+        //Printing the Matrix using FOR Loop
+        for (int i = 0; i &lt; row; i = i + 1) {
+            for (int j = 0; j &lt; col; j = j + 1) {
+                arr[i][j] = i + &quot;&quot; + j + &quot; &quot;;
+                System.out.print(arr[i][j]);
+            }
+            System.out.println();
         }
-        System.out.println();
+
+        //For Each loop for Multi dimensional Array
+        for (String a[] : arr) {
+            for (String b : a) {
+                System.out.print(b + &quot;\t&quot;);
+            }
+            System.out.println();
+        }
+
+        //Declaring a 3X3 Square matrix
+        String arr2[][] = new String[3][3];
+        for (int i = 0; i &lt; arr2[0].length; i++) {
+            for (int j = 0; j &lt; arr2[i].length; j++) {
+                arr2[i][j] = &quot;-&quot; + i + &quot;_&quot; + j;
+            }
+        }
+
+        //For Each loop for Multi dimensional Array
+        for (String a1[] : arr2) {
+            for (String b : a1) {
+                System.out.print(b + &quot;\t&quot;);
+            }
+            System.out.println();
+        }
     }</pre></noscript>
 <script src="https://gist.github.com/nitinkc/d9ca95267cae73a9145d5e96ca7d8f22.js"> </script>
 

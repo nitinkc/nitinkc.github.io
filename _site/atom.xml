@@ -4,13 +4,22 @@
  <title>ηї☂їᾔ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-14T18:11:00-04:00</updated>
+ <updated>2019-04-12T13:53:43-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Preparation Schedule</title>
+   <link href="http://localhost:4000/2019/04/12/CollectionClass/"/>
+   <updated>2019-04-12T09:52:00-04:00</updated>
+   <id>http://localhost:4000/2019/04/12/CollectionClass</id>
+   <content type="html">&lt;h1 id=&quot;topics&quot;&gt;Topics&lt;/h1&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Java Interview Questions</title>
@@ -87,11 +96,14 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;finally (Associated with try catch block)
-    &lt;ul&gt;
-      &lt;li&gt;try {keep risky code}&lt;/li&gt;
-      &lt;li&gt;catch (Exception e) {Exception Handling Code}&lt;/li&gt;
-      &lt;li&gt;finally {Clean up code}&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-Java&quot;&gt;try {
+  keep risky code
+} catch (Exception e) {
+  Exception Handling Code
+} finally {
+  Clean up code
+}
+&lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
   &lt;li&gt;finalize() : Method in Object Class
     &lt;ul&gt;
@@ -110,7 +122,7 @@
   &lt;li&gt;&lt;strong&gt;String&lt;/strong&gt; objects are immutable (every equality with string object creates a new object)&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Nitin&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Immutable Object&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Nitin&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Immutable Object&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Nitin&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// When we use double quotes to create a string, it first looks for the string with the same value in the String Pool. If found it just returns the reference.&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;//  It does so for conserving memory FLYWAY DESIGN PATTERN.&lt;/span&gt;
 
@@ -120,14 +132,12 @@
 
 &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;concate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Chaurasia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Eligible for GC as not referenced&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;sop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// Nitin&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//2 strings are created (Nitin and Nitin Chaurasia). NC not referenced&lt;/span&gt;
-
-
+&lt;span class=&quot;c1&quot;&gt;//2 strings are created (Nitin and Nitin Chaurasia). NC not reference&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;StringBuffer&lt;/strong&gt; objects are mutable
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;StringBuffer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Nitin&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Chaurasia&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;StringBuffer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Nitin&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chaurasia&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;sop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//nitin chaurasia&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;StringBuffer (since java 1.0) is Synchronized, thus thread safe, thus low performance (only one thread operates on the object at a time, others has to wait)&lt;/p&gt;
@@ -274,7 +284,7 @@
 &lt;hr /&gt;
 &lt;h3 id=&quot;systemoutprintln&quot;&gt;System.out.println()&lt;/h3&gt;
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Class&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MySystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nitin&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;nitin&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;MySystem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Compare it to&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nitin&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
@@ -322,11 +332,10 @@ public static void nitin(String[] a)
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Overloading (Compile time polymorphism, static polymorphism, early binding.)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;methods same name but different argument.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;h2 id=&quot;method-resolution-is-done-by-compiler-based-on-reference-type&quot;&gt;Method resolution is done by compiler based on reference type&lt;/h2&gt;
-    &lt;p&gt;In overloading check only method name (same) and argument type (different, at least order). &lt;strong&gt;&lt;em&gt;Return types, access modifiers are not required&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Method resolution is done by compiler based on reference type&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;In overloading check only method name (same) and argument type (different, at least order). &lt;strong&gt;&lt;em&gt;Return types, access modifiers are not required&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Overriding (Runtime polymorphism, dynamic polymorphism, late binding)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -337,18 +346,18 @@ public static void nitin(String[] a)
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;In overriding: EVERYTHING should be same.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Parent p = new Child();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;can invoke only parents methods&lt;/li&gt;
-  &lt;li&gt;polymorphism call - use parent reference to hold any child class object
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Child c = new Child();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;can invoke both parent and child methods&lt;/li&gt;
-  &lt;li&gt;can hold only child type of object&lt;/li&gt;
-  &lt;li&gt;non polymorphic call&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Polymorphism call&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Java&quot;&gt;Parent p = new Child();
+// p can invoke only parents methods
+// polymorphism call - use parent reference to hold any child class object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Non polymorphic call&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Java&quot;&gt;Child c = new Child();
+// c can invoke both parent and child methods
+// can hold only child type of object
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;ADD IMAGE&lt;/p&gt;
 
@@ -402,9 +411,9 @@ public static void nitin(String[] a)
   &lt;li&gt;Checked by compiler for smooth execution of the program at runtime
 (Menmonics : HallTicketMissingException, PenNotWorkingException, FileNotFoundException)&lt;/li&gt;
   &lt;li&gt;if programmer doesn’t handle checked exceptions, compile time error. in other words, programmer has to handle the exception.&lt;/li&gt;
-  &lt;li&gt;Must be caught (try catch) or thrown (throws clause in the method definition)
-• Throwable -&amp;gt; Exception -&amp;gt;)Runtime exception and its child classes, (Throwable-&amp;gt;)Error and its child classes are unchecked exceptions. Rest all are checked.
-• Further classified as fully checked or partially checked&lt;/li&gt;
+  &lt;li&gt;Must be caught (try catch) or thrown (throws clause in the method definition)&lt;/li&gt;
+  &lt;li&gt;Throwable -&amp;gt; Exception -&amp;gt;)Runtime exception and its child classes, (Throwable-&amp;gt;)Error and its child classes are unchecked exceptions. Rest all are checked.&lt;/li&gt;
+  &lt;li&gt;Further classified as fully checked or partially checked&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Unchecked Exception&lt;/p&gt;

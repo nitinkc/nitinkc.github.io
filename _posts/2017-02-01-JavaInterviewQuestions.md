@@ -45,9 +45,15 @@ Difference between Final, Finally, Finalize
 - a method –> no over riding in child class
 -  a class –> no extend (inheritance), no child class
 2. finally (Associated with try catch block)
-- try {keep risky code}
--  catch (Exception e) {Exception Handling Code}
--  finally {Clean up code}
+```Java
+try {
+  keep risky code
+} catch (Exception e) {
+  Exception Handling Code
+} finally {
+  Clean up code
+}
+```
 3. finalize() : Method in Object Class
 -  Always invoked by Garbage Collector just before destroying the object
 -  to perform cleanup activities (like database connection close, socket close)
@@ -60,7 +66,7 @@ Difference between Final, Finally, Finalize
 1. **String** objects are immutable (every equality with string object creates a new object)
 
 ```java
-String a = new String(“Nitin”);//Immutable Object
+String a = new String("Nitin");//Immutable Object
 String b = "Nitin";// When we use double quotes to create a string, it first looks for the string with the same value in the String Pool. If found it just returns the reference.
 //  It does so for conserving memory FLYWAY DESIGN PATTERN.
 
@@ -70,14 +76,12 @@ String s5 = new String("nitin");
 
 a.concate(Chaurasia);//Eligible for GC as not referenced
 sop(a);// Nitin
-//2 strings are created (Nitin and Nitin Chaurasia). NC not referenced
-
-
+//2 strings are created (Nitin and Nitin Chaurasia). NC not reference
 ```
 2. **StringBuffer** objects are mutable
 ```java
-StringBuffer sb = new StringBuffer(“Nitin”);
-sb.append(“Chaurasia”);
+StringBuffer sb = new StringBuffer("Nitin");
+sb.append("Chaurasia");
 sop(sb);//nitin chaurasia
 ```
 StringBuffer (since java 1.0) is Synchronized, thus thread safe, thus low performance (only one thread operates on the object at a time, others has to wait)
@@ -142,7 +146,7 @@ Anything can be declared inside anything!!
 ### System.out.println()
 ```java
 Class MySystem{
-static string out = “nitin”;
+static string out = "nitin";
 }
 MySystem.out.length(); //Compare it to
 System.out.println("nitin");
@@ -184,7 +188,7 @@ Appears that overriding is applicable, but because of the static nature, its met
 ***Overloading (Compile time polymorphism, static polymorphism, early binding.)***
 - methods same name but different argument.
 - Method resolution is done by compiler based on reference type
--
+
 In overloading check only method name (same) and argument type (different, at least order). ***Return types, access modifiers are not required***
 
 ***Overriding (Runtime polymorphism, dynamic polymorphism, late binding)***
@@ -194,17 +198,20 @@ In overloading check only method name (same) and argument type (different, at le
 
 ***In overriding: EVERYTHING should be same.***
 
-```
+Polymorphism call
+
+```Java
 Parent p = new Child();
+// p can invoke only parents methods
+// polymorphism call - use parent reference to hold any child class object
 ```
-- can invoke only parents methods
-- polymorphism call - use parent reference to hold any child class object
-```
+
+Non polymorphic call
+```Java
 Child c = new Child();
+// c can invoke both parent and child methods
+// can hold only child type of object
 ```
-- can invoke both parent and child methods
-- can hold only child type of object
-- non polymorphic call
 
 ADD IMAGE
 
@@ -257,8 +264,8 @@ Checked Exception : (Checked by Complier)
 (Menmonics : HallTicketMissingException, PenNotWorkingException, FileNotFoundException)
 - if programmer doesn’t handle checked exceptions, compile time error. in other words, programmer has to handle the exception.
 - Must be caught (try catch) or thrown (throws clause in the method definition)
-• Throwable -> Exception ->)Runtime exception and its child classes, (Throwable->)Error and its child classes are unchecked exceptions. Rest all are checked.
-• Further classified as fully checked or partially checked
+- Throwable -> Exception ->)Runtime exception and its child classes, (Throwable->)Error and its child classes are unchecked exceptions. Rest all are checked.
+- Further classified as fully checked or partially checked
 
 Unchecked Exception
 
