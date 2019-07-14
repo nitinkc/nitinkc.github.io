@@ -4,7 +4,7 @@
  <title>ηї☂їᾔ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-07-14T01:48:18-04:00</updated>
+ <updated>2019-07-14T04:06:09-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name></name>
@@ -1633,30 +1633,20 @@ public void addNodeEnd{
 &lt;ol&gt;
   &lt;li&gt;Ruby (Pre requisites for Jekyll) : https://jekyllrb.com/docs/installation/&lt;/li&gt;
   &lt;li&gt;Jekyll - for static site and blogging&lt;/li&gt;
-  &lt;li&gt;Jade - no html&lt;/li&gt;
-  &lt;li&gt;SASS&lt;/li&gt;
-  &lt;li&gt;Autoprefixer - different permutations for the files&lt;/li&gt;
-  &lt;li&gt;Browser Sync - JIT effects of changes&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Npm install gulp
-Gulp&lt;/p&gt;
+&lt;h3 id=&quot;build-the-site&quot;&gt;Build the site&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
 
-&lt;p&gt;gulp - jeykll
-Download from git@github.com:shakyShane/jekyll-gulp-sass-browser-sync.git
-Unzip in, goto that directory
-And do
-Npm install&lt;/p&gt;
+bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Goto that directory&lt;/p&gt;
+&lt;p&gt;Incase of any issue,&lt;/p&gt;
 
-&lt;p&gt;Gulp jade&lt;/p&gt;
-
-&lt;p&gt;gulp&lt;/p&gt;
-
-&lt;p&gt;export LDFLAGS=”-L/usr/local/opt/libffi/lib” &amp;amp;&amp;amp; \
-export PKG_CONFIG_PATH=”/usr/local/opt/libffi/lib/pkgconfig” &amp;amp;&amp;amp; \
-bundle install&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export LDFLAGS=&quot;-L/usr/local/opt/libffi/lib&quot; &amp;amp;&amp;amp; \
+export PKG_CONFIG_PATH=&quot;/usr/local/opt/libffi/lib/pkgconfig&quot; &amp;amp;&amp;amp; \
+bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
  
