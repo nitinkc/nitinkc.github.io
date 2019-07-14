@@ -98,6 +98,8 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
         
       
         
+      
+        
           
         
       
@@ -156,6 +158,8 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       
         
           
+        
+      
         
       
         
@@ -388,11 +392,11 @@ String[] ransomWords = ransom.split(&quot; &quot;);</pre></noscript>
 
 <h3 id="array-vs-linked-list">Array vs Linked List</h3>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">prinln</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">prinln</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
  <span class="o">}</span>
 
- <span class="k">for</span> <span class="o">(</span><span class="n">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span> <span class="n">runner</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">){</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+ <span class="k">for</span> <span class="o">(</span><span class="nc">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span> <span class="n">runner</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">){</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
  <span class="o">}</span>
 </code></pre></div></div>
 
@@ -697,22 +701,22 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 <span class="cm">/*Assuming 2 command line arguments &lt;Nitin 29&gt;*/</span>
 
 <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
-     <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Incorrect Number of arguments passed"</span><span class="o">);</span>
-     <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
+     <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Incorrect Number of arguments passed"</span><span class="o">);</span>
+     <span class="nc">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
   <span class="o">}</span>
-<span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
-  <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+<span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+  <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
 </code></pre></div></div>
 
 <h3 id="running-time-of-a-method">Running time of a method</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span><span class="c1">//type long , from Jan 1 1970</span>
-<span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span><span class="c1">//type long , from Jan 1 1970</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
 </code></pre></div></div>
 
 <h3 id="random">Random</h3>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Random</span>
 
-<span class="n">Random</span> <span class="n">generator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span> <span class="c1">//or new Random(123), 123 being the seed</span>
+<span class="nc">Random</span> <span class="n">generator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Random</span><span class="o">();</span> <span class="c1">//or new Random(123), 123 being the seed</span>
 <span class="n">generator</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span><span class="c1">//range 0 to 5, add 1 to get range 1 to 6 (dices)</span>
 <span class="cm">/* Eg: int throw = generator.nextInt(6) + 1; */</span>
 
@@ -726,13 +730,13 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 <h3 id="key-board-input">Key Board Input</h3>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
- <span class="n">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+ <span class="nc">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
 
  <span class="cm">/* Input Problem occurs when a mix of int and strings are given
  The extra invocation is done to get rid of previous \n */</span>
  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
  <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span> <span class="c1">//To avoid INPUT Problem</span>
- <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+ <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
 
  <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span><span class="c1">//reads entire line of in</span>
  <span class="n">in</span><span class="o">.</span><span class="na">next</span><span class="o">();</span><span class="c1">//next character upto but not including space</span>
@@ -744,15 +748,15 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 <h3 id="file-input">File Input</h3>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Open the File</span>
- <span class="n">File</span> <span class="n">myFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"/nitin/a.txt"</span><span class="o">);</span>
- <span class="n">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">myFile</span><span class="o">);</span>
+ <span class="nc">File</span> <span class="n">myFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">"/nitin/a.txt"</span><span class="o">);</span>
+ <span class="nc">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="n">myFile</span><span class="o">);</span>
  <span class="c1">//Instead of System.in, take the file to read</span>
 
 <span class="c1">//Read from the File</span>
- <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+ <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
 <span class="c1">//OR</span>
  <span class="k">while</span> <span class="o">(</span><span class="n">in</span><span class="o">.</span><span class="na">hasNext</span><span class="o">());</span>
- <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
+ <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
 
 <span class="c1">//Close the File</span>
  <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
@@ -762,26 +766,26 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 
 <h3 id="writing-text-to-file">Writing text to File</h3>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
- <span class="kd">final</span> <span class="n">String</span> <span class="n">FILENAME</span> <span class="o">=</span> <span class="s">"nitin.txt"</span><span class="o">;</span>
+ <span class="kd">final</span> <span class="nc">String</span> <span class="no">FILENAME</span> <span class="o">=</span> <span class="s">"nitin.txt"</span><span class="o">;</span>
 <span class="c1">//Surrounding with try catch!!</span>
- <span class="n">PrintWriter</span> <span class="n">output</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="n">FILENAME</span><span class="o">);</span>
+ <span class="nc">PrintWriter</span> <span class="n">output</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PrintWriter</span><span class="o">(</span><span class="no">FILENAME</span><span class="o">);</span>
 
  <span class="n">output</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Nitin"</span><span class="o">);</span> <span class="n">output</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Chaurasia"</span><span class="o">);</span>
 
 <span class="c1">//To avoid erasing files that already exist</span>
- <span class="n">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">"nitin.txt"</span><span class="o">,</span> <span class="kc">true</span><span class="o">));</span>
+ <span class="nc">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PrintWriter</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="s">"nitin.txt"</span><span class="o">,</span> <span class="kc">true</span><span class="o">));</span>
 </code></pre></div></div>
 
 <h3 id="appending-text-to-file">Appending Text to file</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">"Names.txt"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
-<span class="n">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="n">fw</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="s">"Names.txt"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="nc">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PrintWriter</span><span class="o">(</span><span class="n">fw</span><span class="o">);</span>
 <span class="c1">//OR</span>
-<span class="n">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">"Names.txt, true"</span><span class="o">));</span>
+<span class="nc">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PrintWriter</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="s">"Names.txt, true"</span><span class="o">));</span>
 </code></pre></div></div>
 
 <h3 id="reading-data-from-a-file">Reading Data from a file</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">File</span> <span class="n">myFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"customer.txt"</span><span class="o">);</span>
-<span class="n">Scanner</span> <span class="n">ipFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">myFile</span><span class="o">);</span> <span class="c1">//instead of System.in</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">File</span> <span class="n">myFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">"customer.txt"</span><span class="o">);</span>
+<span class="nc">Scanner</span> <span class="n">ipFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="n">myFile</span><span class="o">);</span> <span class="c1">//instead of System.in</span>
 </code></pre></div></div>
 
     </div>

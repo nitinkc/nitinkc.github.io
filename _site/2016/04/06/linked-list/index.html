@@ -98,6 +98,8 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
         
       
         
+      
+        
           
         
       
@@ -159,6 +161,8 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
         
       
         
+      
+        
           
         
       
@@ -191,7 +195,7 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
   <h1 class="post-title">Linked List</h1>
   <span class="post-date">06 Apr 2016</span>
   <h3 id="linked-list">Linked List</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">LinkNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span><span class="c1">//head</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nc">LinkNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span><span class="c1">//head</span>
  <span class="k">while</span> <span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span><span class="c1">//Runner stops at the last node, else runner will end up pointing null!!</span>
  <span class="n">runner</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
 <span class="o">}</span>
@@ -200,28 +204,28 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 <h4 id="add-in-the-list">Add in the List</h4>
 
 <h5 id="add-in-the-front">Add in the front</h5>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
 </code></pre></div></div>
 
 <h5 id="add-at-index">Add at ‘index’</h5>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-<span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
+<span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
 <span class="k">else</span><span class="o">{</span>
-<span class="n">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span>
+<span class="nc">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span><span class="c1">//Stop at an index one before the desired</span>
 <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
 <span class="o">}</span>
-<span class="n">current</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">);</span> <span class="c1">//old current.next is assigned to the new node which in turn is assigned to current.next</span>
+<span class="n">current</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">);</span> <span class="c1">//old current.next is assigned to the new node which in turn is assigned to current.next</span>
 </code></pre></div></div>
 
 <h5 id="add-in-the-end">Add in the end</h5>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">front</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-  <span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
+  <span class="n">front</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">front</span><span class="o">);</span>
 <span class="k">else</span><span class="o">{</span>
-  <span class="n">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span>
+  <span class="nc">ListNode</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">front</span><span class="o">;</span>
   <span class="k">while</span> <span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="c1">// Go till the last node</span>
       <span class="n">runner</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-  <span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">);</span> <span class="c1">//this constructor has .next as null</span>
+  <span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="n">value</span><span class="o">);</span> <span class="c1">//this constructor has .next as null</span>
 <span class="o">}</span>
 </code></pre></div></div>
 

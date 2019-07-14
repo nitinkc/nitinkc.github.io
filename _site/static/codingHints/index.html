@@ -98,6 +98,8 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
         
       
         
+      
+        
           
         
       
@@ -156,6 +158,8 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
       
         
           
+        
+      
         
       
         
@@ -235,8 +239,8 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 
 <p>One Stack to hold values, the second one to hold the poped values from one</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">main</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-<span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">main</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;();</span>
+<span class="kd">private</span> <span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;();</span>
 
 <span class="c1">//O(1) operation</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">enque</span><span class="o">(</span><span class="kt">int</span> <span class="n">item</span><span class="o">){</span>
@@ -269,12 +273,12 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 
 <h5 id="reverse-a-linked-list-iteratively-and-recursively">Reverse a Linked List (Iteratively and Recursively)</h5>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">reverseList</span><span class="o">(</span><span class="n">Node</span> <span class="n">head</span><span class="o">){</span>
-    <span class="n">Node</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
-    <span class="n">Node</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">reverseList</span><span class="o">(</span><span class="nc">Node</span> <span class="n">head</span><span class="o">){</span>
+    <span class="nc">Node</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="nc">Node</span> <span class="n">runner</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
 
     <span class="k">while</span> <span class="o">(</span><span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
-        <span class="n">Node</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">curr</span><span class="o">;</span>
+        <span class="nc">Node</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">curr</span><span class="o">;</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
         <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
         <span class="n">runner</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
@@ -290,7 +294,7 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 
 <p>O(n) Space and O(n) time Complexity in a set</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">unique</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">unique</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;();</span>
 
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">arr</span><span class="o">){</span> <span class="c1">// iterating the array</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">unique</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">i</span><span class="o">)){</span>
@@ -317,7 +321,7 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 <p>Push on opener and pop on closers.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* If the String is odd lenght, the return false*/</span>
-  <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
+  <span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">Character</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">&lt;&gt;();</span>
     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
         <span class="kt">char</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
 
@@ -391,7 +395,7 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 
 <h5 id="find-bst-height">Find BST Height</h5>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">getHeight</span><span class="o">(</span><span class="n">BSTNode</span> <span class="n">root</span><span class="o">){</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">getHeight</span><span class="o">(</span><span class="nc">BSTNode</span> <span class="n">root</span><span class="o">){</span>
     <span class="k">if</span> <span class="nf">root</span><span class="o">(</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">)</span>
         <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
 
@@ -422,7 +426,7 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 
 <p>Importacnce of placing if statements are tested here!!</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="n">String</span> <span class="nf">fizzString2</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">String</span> <span class="nf">fizzString2</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="cm">/* Important to check for 3 &amp; 5 first else test cases fails.
      * Other if statements passes the if test, leaving this one unexecuted)  */</span>
@@ -441,11 +445,11 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 <h5 id="inorder">Inorder</h5>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cm">/* Function for inorder traversal */</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">inorder</span><span class="o">(</span><span class="n">BSTNode</span> <span class="n">r</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">inorder</span><span class="o">(</span><span class="nc">BSTNode</span> <span class="n">r</span><span class="o">)</span>
     <span class="o">{</span>
         <span class="k">if</span><span class="o">(</span><span class="n">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
         <span class="n">inorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
         <span class="n">inorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
@@ -454,10 +458,10 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 <h5 id="preorder">PreOrder</h5>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cm">/* Function for pre-order traversal */</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">preorder</span><span class="o">(</span><span class="n">BSTNode</span> <span class="n">r</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">preorder</span><span class="o">(</span><span class="nc">BSTNode</span> <span class="n">r</span><span class="o">)</span>
     <span class="o">{</span>
        <span class="k">if</span><span class="o">(</span><span class="n">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
-           <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+           <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
            <span class="n">preorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
            <span class="n">preorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
        <span class="o">}</span>
@@ -467,12 +471,12 @@ https://github.com/biopython/biopython.github.io/issues/120 -->
 <h5 id="postorder">PostOrder</h5>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cm">/* Function for postorder traversal */</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postorder</span><span class="o">(</span><span class="n">BSTNode</span> <span class="n">r</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postorder</span><span class="o">(</span><span class="nc">BSTNode</span> <span class="n">r</span><span class="o">)</span>
     <span class="o">{</span>
          <span class="k">if</span><span class="o">(</span><span class="n">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
            <span class="n">preorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
            <span class="n">preorder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
-           <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+           <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
          <span class="o">}</span>     
     <span class="o">}</span>
 </code></pre></div></div>

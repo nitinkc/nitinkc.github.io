@@ -42,8 +42,12 @@ Unzip in, goto that directory
 And do
 Npm install
 
-Goto that dorectory
+Goto that directory
 
 Gulp jade
 
 gulp
+
+export LDFLAGS="-L/usr/local/opt/libffi/lib" && \
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig" && \
+bundle install
