@@ -18,6 +18,11 @@
 			<!-- Putting the Page explicitly -->
 			<a class="sidebar-nav-item" href="/about">About</a>
 
+			<div>
+				<!-- <button type="submit" onclick="openSearch()"><i class="fa fa-search fa-2x"></i>Search</button> -->
+				<button class="openBtn" onclick="openSearch()">Search</button>
+			</div>
+
 			{% comment %}
 			The code below dynamically generates a sidebar nav of pages with
 			`layout: static` in the front-matter removing the dependencies as commented above.
@@ -46,12 +51,25 @@
 
 		<div class="acknowledgement"
 			 <p> Thanks to Mark Otto for <cite><a href="http://hyde.getpoole.com/">Hyde </a></cite> </p>
-</div>
+		 </div>
 
-<!-- Html Elements for Search -->
-<div id="search-container">
-	<input type="text" id="search-input" placeholder="search...">
-	<ul id="results-container"></ul>
+		<!-- Html Elements for Search -->
+		<!-- <div id="search-container">
+			<input type="text" id="search-input" placeholder="search...">
+			<button type="submit" onclick="openSearch()"><i class="fa fa-search"></i></button>
+			<ul id="results-container"></ul>
+		</div> -->
+
+		<div id="myOverlay" class="overlay">
+		  <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+		  <div class="overlay-content" id="search-container">
+		      <input type="text" id="search-input" placeholder="Search.." name="search">
+					<p>&nbsp;</p>
+					<ul id="results-container"></ul>
+		  </div>
+		</div>
+
+	</div>
 </div>
 
 <!-- Script pointing to search-script.js -->
@@ -64,10 +82,15 @@
 		resultsContainer: document.getElementById('results-container'),
 		json: '/search.json'
 	})
+
+	// Open the full screen search box
+function openSearch() {
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+// Close the full screen search box
+function closeSearch() {
+  document.getElementById("myOverlay").style.display = "none";
+}
+
 </script>
-
-
-</div>
-</div>
-
-
