@@ -26,28 +26,18 @@ jekyll serve
 
 1. Ruby (Pre requisites for Jekyll) : https://jekyllrb.com/docs/installation/
 2. Jekyll - for static site and blogging
-3. Jade - no html
-4. SASS
-5. Autoprefixer - different permutations for the files
-6. Browser Sync - JIT effects of changes
 
+### Build the site
+```
+bundle install
 
-Npm install gulp
-Gulp
+bundle exec jekyll serve
+```
 
+Incase of any issue,
 
-gulp - jeykll
-Download from git@github.com:shakyShane/jekyll-gulp-sass-browser-sync.git
-Unzip in, goto that directory
-And do
-Npm install
-
-Goto that directory
-
-Gulp jade
-
-gulp
-
+```
 export LDFLAGS="-L/usr/local/opt/libffi/lib" && \
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig" && \
 bundle install
+```
