@@ -12,13 +12,14 @@ Making a personal website using GitHubs free Hosting for the Jekyll Sites
 
 Create a blog with naming convention of yyyy-mm-dd-name-of-the-blog.md and save it in \_posts directory
 
+
 execute in the terminal
 
-```
-jekyll build
-```
+> [!NOTE]
+> If not using the gem File
 
-```
+```sh
+jekyll build
 jekyll serve
 ```
 
@@ -36,7 +37,7 @@ bundle exec jekyll serve
 
 Incase of any issue,
 
-```
+```sh
 export LDFLAGS="-L/usr/local/opt/libffi/lib" && \
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig" && \
 bundle install
