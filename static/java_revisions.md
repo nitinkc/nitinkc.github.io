@@ -34,22 +34,8 @@ The Skewed 2D array need not have the same number of Columns each Row.
 {% gist nitinkc/f828994bdaabbc55505c51096c3b7d0d %}
 
 ### The Arrays Class
+{% gist nitinkc/4a5d5fab82a5d432c6ef627a556c2d6b %}
 
-```
-Import java.util.ArrayList;
-
-// Declaring an ArrayList
-ArrayList<Integer> a = new ArrayList<Integer>;
-
-//Inserting values
-a.add(1); a.add(2); a.add(3);
-
-//Printing an ArrayList as ann Integer
-Arrays.toString(a);//op: [1,2,3]
-
-//Converting an ArrayList into Array <ArrayList.toArray()>
-a.toArray();
-```
 
 ### String Methods (Most Important)
 {% gist nitinkc/a91ab5df313cbd3e21b6ea71c30f993f %}
@@ -154,21 +140,7 @@ BSTs store their elements insorted order, which is helpfulfor searching/sortin
 
 Same variables cancels the effect of each other if the bitwise XOR is used.
 
-```java
-a = a^b;
-b = a^b; //a^b^b yields a
-a = a^b;//a^b^a = b(b is recently converted to a)
-/* (Works only with integer, in its native form, for others change it into its equivalent binary representation) */
-
-/*
-The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake)
-*/
-
-// Use of XOR (both flags are boolean)
-if (flag2 ^ flag4)
-//is equivalent to
-(flag2 && !flag4) || (!flag2 && flag4);
-```
+{% gist /nitinkc/d27862e78398dbbd1a45d131c2336322 %}
 
 ### Reading, Parsing and Type Checking Command Line Inputs.
 ```java
