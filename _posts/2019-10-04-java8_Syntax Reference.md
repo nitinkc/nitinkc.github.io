@@ -98,21 +98,21 @@ Collections.sort(list, comparator.reversed());
 
 //Prior to Java 8, using anonymous class
 list.sort(new Comparator<String>() {
-                @Override
-                public int compare(String o1, String o2) {
-                    int interstateNumber1 = Integer.parseInt(o1.substring(2));
-                    int interstateNumber2 = Integer.parseInt(o2.substring(2));
+          @Override
+          public int compare(String o1, String o2) {
+              int interstateNumber1 = Integer.parseInt(o1.substring(2));
+              int interstateNumber2 = Integer.parseInt(o2.substring(2));
 
-                    if (interstateNumber1 > interstateNumber2) {
-                        return 1;
-                    } else if (interstateNumber1 < interstateNumber2){
-                        return -1;
-                    }
-                    else{
-                        throw new IllegalArgumentException("Two Interstates with same name in a Same City");
-                    }
-                }
-            });
+              if (interstateNumber1 > interstateNumber2) {
+                  return 1;
+              } else if (interstateNumber1 < interstateNumber2){
+                  return -1;
+              }
+              else{
+                  throw new IllegalArgumentException("Two Interstates with same name in a Same City");
+              }
+          }
+      });
 
 
  // Sort the List of Objects based on the Population
