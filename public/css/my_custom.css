@@ -84,6 +84,6 @@
 /* Gist via GitHub Pages */
 .gist-data {
     display: block;
-    height: 250px;
+    /* height: 250px; */
     overflow-y: auto;
 }
