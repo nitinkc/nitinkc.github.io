@@ -27,8 +27,8 @@ list.stream().forEach(System.out :: print);
 
 # Predefined Functional Interfaces.
 
-### Consumer
-the Consumer accepts a generified argument and returns nothing. It is a function that is representing side effects
+### Consumer : (used with forEach) takes generified argument and returns nothing
+It is a function that is representing side effects
 ```java
 public interface Consumer<T> {
     void accept(T t);
@@ -38,24 +38,11 @@ List<String> strList = Arrays.asList("test","this","is","a","test","this","test"
 
 Consumer<String> c = s -> System.out.print(s + " ,");
 //Consumer<String> c = System.out::println;
-
 strList.stream().forEach(c);
-System.out.println();
-
-Map<String,Integer> map = new HashMap<>();
-//BiConsumer<String,Integer> b1 = map::put;
-BiConsumer<String,Integer> b2 = (k,v) -> {
-    if(map.containsKey(k)) {
-        map.put(k, map.get(k)+1);
-    }else{
-        map.put(k,1);
-        }
-};
-
-//Passing 0 as the default key, it actually gets calculated while evaluated in biConsumer
-strList.forEach(y -> b2.accept(y,0));
-
 ```
+{% gist nitinkc/f0cdad5af384796e2c5684cb6e5cdc34 %}
+
+{% gist nitinkc/ff63f3c1d164ef3b8dfe3a91a02e3259 %}
 
 ### Predicate (used with Filters)
 
@@ -157,47 +144,8 @@ Another common higher-order function is reduce, which is more commonly known as 
 
 ##### Sorting a list
 
-```java
-// Single Line Implementation
-Collections.sort(list, ((String a, String b) -> Integer.parseInt(a.substring(2)) - Integer.parseInt(b.substring(2))));
-
-Comparator<String>  comparator = (String a, String b) -> Integer.parseInt(a.substring(2)) - Integer.parseInt(b.substring(2));
-// Sorting in Natural Order
-Collections.sort(list, comparator);
-// Sorting in reversed order
-Collections.sort(list, comparator.reversed());
-
-//Prior to Java 8, using anonymous class
-list.sort(new Comparator<String>() {
-          @Override
-          public int compare(String o1, String o2) {
-              int interstateNumber1 = Integer.parseInt(o1.substring(2));
-              int interstateNumber2 = Integer.parseInt(o2.substring(2));
-
-              if (interstateNumber1 > interstateNumber2) {
-                  return 1;
-              } else if (interstateNumber1 < interstateNumber2){
-                  return -1;
-              }
-              else{
-                  throw new IllegalArgumentException("Two Interstates with same name in a Same City");
-              }
-          }
-      });
-
-
- // Sort the List of Objects based on the Population
-list.sort(Comparator
-        .comparing(Data::getPopulation).reversed()
-        .thenComparing(Data::getState)
-        .thenComparing(Data::getCity));
-```
+{% gist nitinkc/d55b4541f27fc0bfd86f122d35c2b527 %}
 
 ##### Sorting a set
-```java
-Set<Student> students = new TreeSet<Student>(Comparator
-                .comparing(Student::getName)
-                .thenComparing(Student::getAge)
-                .thenComparing((Student s1) -> s1.getName().length())
-        );
-```
+
+{% gist nitinkc/61476aad3b16d3c29e843553788e640b %}
