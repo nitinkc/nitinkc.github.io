@@ -12,26 +12,13 @@ All Microservices Projects are hosted in
 
 https://github.com/spring-microservices-learning
 
-
-1. Limits Service
-
-git clone https://github.com/spring-microservices-learning/limits-service.git
-
-2. Spring cloud Config Server
-
-git clone https://github.com/spring-microservices-learning/spring-cloud-config-server.git
-
-3. Global Config Repository
-
-git clone https://github.com/spring-microservices-learning/config-repo.git
-
-4. Currency Exchange Microservice
-
-git clone https://github.com/spring-microservices-learning/currency-exchange.git
-
-5. Currency Converter
-
-git clone https://github.com/spring-microservices-learning/currency-exchange.git
+|     Application       |     Repository          |
+| ------------- | ------------- |
+|1. Limits Service|git clone https://github.com/spring-microservices-learning/limits-service.git|
+|2. Spring cloud Config Server|git clone https://github.com/spring-microservices-learning/spring-cloud-config-server.git|
+|3. Global Config Repository|git clone https://github.com/spring-microservices-learning/config-repo.git|
+|4. Currency Exchange Microservice|git clone https://github.com/spring-microservices-learning/currency-exchange.git
+|5. Currency Converter|git clone https://github.com/spring-microservices-learning/currency-exchange.git|
 
 
 ## URLs
