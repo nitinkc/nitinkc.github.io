@@ -13,7 +13,12 @@ date:   2019-10-04 13:43:00
 | 3  | Reference to an instance method of an arbitrary object of a particular type | ContainingType::methodName           |
 | 4  |Reference to a constructor                             | ClassName::new                       |
 
+1. Predicate (test(), returns boolean)
+2. Function (apply(T k), return user defined type)
+3. Consumer (accept)
+4. Supplier (get)
 
+Defined in java.util.function
 
 ```Java
 //For each method applies the lambda to each element of the collection
