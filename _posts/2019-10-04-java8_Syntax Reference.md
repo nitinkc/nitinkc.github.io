@@ -4,7 +4,17 @@ title:  "Java 8 Syntax Reference"
 date:   2019-10-04 13:43:00
 ---
 
-# Topics
+##### For each method **applies the lambda** to each element of the collection
+
+```java
+//Prints each element
+list.stream().forEach(str -> System.out.println(str));
+
+//Where ever Lambda is there it can be replaced by method reference
+list.stream().forEach(System.out :: print);
+```
+
+## Double Colon Operator
 
 | S.no| Kind                                                  | Example                              |
 |---- |-------------------------------------------------------|--------------------------------------+
@@ -13,51 +23,25 @@ date:   2019-10-04 13:43:00
 | 3  | Reference to an instance method of an arbitrary object of a particular type | ContainingType::methodName           |
 | 4  |Reference to a constructor                             | ClassName::new                       |
 
-1. Predicate (test(), returns boolean)
-2. Function (apply(T k), return user defined type)
-3. Consumer (accept)
-4. Supplier (get)
+## Predefined Functional Interface
 
 Defined in java.util.function
 
-```Java
-//For each method applies the lambda to each element of the collection
-//Prints each element
-list.stream().forEach(str -> System.out.println(str));
-
-//Where ever Lambda is there it can be replaced by method reference
-list.stream().forEach(System.out :: print);
-
-```
-
-# Predefined Functional Interfaces.
-
-### Consumer : (used with forEach) takes generified argument and returns nothing
-It is a function that is representing side effects
-```java
-public interface Consumer<T> {
-    void accept(T t);
-}
-
-List<String> strList = Arrays.asList("test","this","is","a","test","this","test","is","not","complex");
-
-Consumer<String> c = s -> System.out.print(s + " ,");
-//Consumer<String> c = System.out::println;
-strList.stream().forEach(c);
-```
-{% gist nitinkc/f0cdad5af384796e2c5684cb6e5cdc34 %}
-
-{% gist nitinkc/ff63f3c1d164ef3b8dfe3a91a02e3259 %}
+1. Predicate (test(), returns boolean) - Used with filter() in Stream API
+2. Function (apply(T k), return user defined TYPE) - Used with map() in Stream API
+3. Consumer (accept()), - Used with forEach() method
+4. Supplier (get()),
 
 ### Predicate (used with Filters)
 
-The Java Predicate interface, java.util.function.Predicate, represents a simple function that takes a single value as parameter, and returns true or false.
-Java
+java.util.function.Predicate, represents a simple function that takes a single value as parameter, and returns true or false.
+
 ```java
 public interface Predicate<T> {
     boolean test(T t);
 }
 
+**Predicate uses a Lambda that returns true and false**
 
 Predicate<Student> firstNameLength = Student -> (Student.getfName().length() <= 3);
 Predicate<Student> semPredicate = Student -> (Student.getSem() == 1);
@@ -92,20 +76,6 @@ studentList
   .forEach(System.out::println);
 ```
 
-### Supplier
-```java
-public interface Supplier<T> {
-    T get();
-}
-
-
-//Static method Reference
-Supplier<LocalDate> s1 = LocalDate::now;
-//Lambda Expression
-Supplier<LocalDate> s2 = () -> LocalDate.now();
-
-```
-
 ### Function (used with MAP)
 
 The Function interface represents a function (method) that takes a single parameter and returns a single value. Here is how the Function interface definition looks:
@@ -114,6 +84,7 @@ public interface Function<T, R> {
     R apply(T t);
 }
 
+**Write Lambda in such a way that it accepts an argument and performs an action on it**
 List<String> list = Arrays.asList("1","2","3", "n", "",null);
 
 // Function to convert Strings to Int, put 9999 as default value for other cases
@@ -154,3 +125,35 @@ Another common higher-order function is reduce, which is more commonly known as 
 ##### Sorting a set
 
 {% gist nitinkc/61476aad3b16d3c29e843553788e640b %}
+
+### Consumer : (used with forEach) takes generified argument and returns nothing
+
+It is a function that is representing side effects
+```java
+public interface Consumer<T> {
+    void accept(T t);
+}
+
+List<String> strList = Arrays.asList("test","this","is","a","test","this","test","is","not","complex");
+
+Consumer<String> c = s -> System.out.print(s + " ,");
+//Consumer<String> c = System.out::println;
+strList.stream().forEach(c);
+```
+{% gist nitinkc/f0cdad5af384796e2c5684cb6e5cdc34 %}
+
+{% gist nitinkc/ff63f3c1d164ef3b8dfe3a91a02e3259 %}
+
+### Supplier
+```java
+public interface Supplier<T> {
+    T get();
+}
+
+
+//Static method Reference
+Supplier<LocalDate> s1 = LocalDate::now;
+//Lambda Expression
+Supplier<LocalDate> s2 = () -> LocalDate.now();
+
+```
