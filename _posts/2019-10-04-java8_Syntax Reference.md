@@ -79,19 +79,25 @@ studentList
 ### Function (used with MAP)
 
 The Function interface represents a function (method) that takes a single parameter and returns a single value. Here is how the Function interface definition looks:
+
 ```java
 public interface Function<T, R> {
     R apply(T t);
 }
 
 **Write Lambda in such a way that it accepts an argument and performs an action on it**
+
+function is used in map() function
+
 List<String> list = Arrays.asList("1","2","3", "n", "",null);
+final int DEFAULT_VALUE = 9999;
 
 // Function to convert Strings to Int, put 9999 as default value for other cases
 Function<String, Integer> function = x -> NumberUtils.toInt(x,DEFAULT_VALUE);
-
+// Predicate to replace to test if the number in the list is a Default value.
 Predicate<Integer> predicate = (Integer x) -> (x == DEFAULT_VALUE);
-//MAP is used to apply a function
+
+//Print entire list
 list
     .stream()
     .map(function)
@@ -157,3 +163,15 @@ Supplier<LocalDate> s1 = LocalDate::now;
 Supplier<LocalDate> s2 = () -> LocalDate.now();
 
 ```
+
+# Java Streams
+
+* A stream in Java is a sequence of data
+ * A Stream Pileline is the operation (STREAM OPERATIONS) that run on a stream to produce a result
+ * Finite Streams have a limit
+ * infinite Streams are like sunrise/sunset cycle
+ *
+ * SOURCE : Where the stream comes from
+ * INTERMEDIATE OPERATIONS : Transforms the stream into another stream. STREAMS USE LAZY EVALUATION.
+ * The intermediate operations do not run until the terminal operation runs.
+ * TERMINAL OPERATION: Actually produces a result. Stream becomes invalid after terminal operation
