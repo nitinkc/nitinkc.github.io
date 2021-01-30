@@ -2,6 +2,7 @@
 layout: post
 title:  "Linux Files"
 date:   2016-04-14 20:11:00
+published: false
 ---
 
 Directory     | Description
