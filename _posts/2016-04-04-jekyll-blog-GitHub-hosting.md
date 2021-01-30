@@ -6,6 +6,7 @@ categories: jekyll update
 comments: true
 disqus_identifier: A7655498-AB9E-40BF-A0D5-E5C6DE6BBF28
 tags: [jekyll, disqus]
+published: false
 ---
 
 Making a personal website using GitHubs free Hosting for the Jekyll Sites
