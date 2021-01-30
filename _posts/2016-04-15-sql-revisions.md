@@ -1,8 +1,13 @@
 ---
-layout: post
 title:  "SQL Revisions"
 date:   2016-04-15 11:45:00
+toc: true
 ---
+
+
+{% include toc title="Index" %}
+
+
 [Exercise 1](https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management){:target="\_blank"}
 
 [Exercise 2](https://en.wikibooks.org/wiki/SQL_Exercises){:target="\_blank"}

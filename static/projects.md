@@ -1,7 +1,10 @@
 ---
-<!-- layout: static -->
+layout: static
 title:  "Projects"
 ---
+
+
+{% include toc title="Index" %}
 
 # Projects
 

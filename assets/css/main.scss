@@ -1,0 +1,154 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// $primary-color: #b51b58 !default;
+$primary-color: #1bb582 !default;
+$link-color: $primary-color;
+$link-color-visited: #b51b58 !default;
+$intro-transition  : true;
+$global-transition : none;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin fromn the config.yml
+@import "minimal-mistakes"; // main partials
+
+#main {
+    max-width: unset !important;
+  }
+  
+  .taxonomy__section .list__item { margin-top: 2em; }
+  .taxonomy__section .list__item:nth-child(1) {
+    margin-top: 0.5em;
+  }
+  
+  .taxonomy__index a {
+    text-transform: uppercase;
+    font-size: 0.70em;
+  }
+  
+  .archive__item-title a {
+    color: $text-color;
+  }
+  
+  .archive__item-title a:hover {
+    color: $link-color;
+  }
+  
+  .archive__subtitle::after {
+    background: $primary-color;
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 0.75em auto 0 auto;
+    position: relative;
+    width: 4em;
+  }
+  
+  .archive__subtitle {
+    font-size: $type-size-5;
+    color: $muted-text-color;
+    font-weight: 800;
+    letter-spacing: .25em;
+    line-height: 1.65;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 0px solid #bfbfbf;
+  
+    + .list__item .archive__item-title {
+      margin-top: 0.5em;
+    }
+  }
+  
+  // kbd {
+  //   border: 1px solid #aaa;
+  //   -moz-border-radius: $border-radius;
+  //   -webkit-border-radius: $border-radius;
+  //   border-radius: $border-radius;
+  //   -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+  //   -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+  //   box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+  //   background-color: $code-background-color;
+  //   background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee);
+  //   background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee);
+  //   background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee);
+  //   background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee);
+  //   padding: 0.1em 0.3em;
+  //   font-family: inherit;
+  //   font-size: $type-size-6;
+  // }
+  
+  .site-title {
+    align-self: stretch;
+    -webkit-box-align: center;
+    align-items: center;
+    z-index: 20;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    // text-transform: uppercase;
+    font-size: 1.3em;
+  }
+  
+  // .masthead__menu-item {
+  //   display: block;
+  //   list-style-type: none;
+  //   white-space: nowrap;
+  //   font-weight: 200;
+  //   letter-spacing: .05em;
+  //   text-transform: uppercase;
+  
+  //   &--lg {
+  //     padding-right: 2em;
+  //     font-weight: 700;
+  //   }
+  // }
+  
+  .page__title {
+    margin-top: 0;
+    font-weight: 800;
+    letter-spacing: .15em;
+    line-height: 1.65;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    text-align: center;
+  
+    & + .page__meta {
+      margin-top: -0.5em;
+    }
+  }
+
+  .sidebar__right {
+    margin-bottom: 1em;
+  
+    @include breakpoint($large) {
+      position: sticky !important; /* added to make toc scroll with page */
+      float: right !important; /* added to make toc scroll with page */
+      top: 0;
+      right: 0;
+      width: $right-sidebar-width-narrow;
+      //margin-right: -1 * $right-sidebar-width-narrow;
+      padding-left: 1em;
+      padding-top: 1em !important; /* added to make toc scroll with page */
+      z-index: 10;  
+      width: 300px;
+    }
+
+    // .toc {
+    //   //text-transform: uppercase;
+    //   letter-spacing: 1px;
+    // }
+    
+    // .toc__menu li ul > li a {
+    //   font-weight: normal
+    // }
+    
+    // .toc__menu a {
+    //   font-size: 0.6875em;
+    //   padding: 0.25rem 0.75rem;
+    // }
+  }
+
+  // .sidebar.sticky {
+  //   background-color:$primary-color;
+  // }

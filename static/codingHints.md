@@ -1,13 +1,13 @@
 ---
 layout: static
 title:  "Coding Hints"
+toc: true
 ---
 
 ## Contents
-{:.no_toc}
 
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
+
+{% include toc title="Index" %}
 
 # 7 Step Process
 {:.no_toc}
@@ -16,11 +16,11 @@ Before jumping into the Coding
 
  1. Method Signature (Understand the problem statement)
  2. Some examples (test cases) to understand the edge cases
- 3. Brainstorming 
+ 3. Brainstorming
  4. (Talking the problem and bring some approach)
  5. Find the Data structure and Algorithm to be used
  6. Write Code (use paper or whiteboard)
- 7. Test for more test cases to avoid edge cases and 
+ 7. Test for more test cases to avoid edge cases and
 
 
 ##### Queue using two Stacks
@@ -81,7 +81,7 @@ public void reverseList(Node head){
 ##### Find a cycle in a Linked List (Iteratively and Recursively)
 
 
-##### UnCoupled Integer in an Array. 
+##### UnCoupled Integer in an Array.
 
 O(n) Space and O(n) time Complexity in a set
 
@@ -142,9 +142,9 @@ Push on opener and pop on closers.
 ```
 
 
-##### Find count of given Sum in all pairs in the Array 
+##### Find count of given Sum in all pairs in the Array
 
-Checks : 
+Checks :
 
   * if array size < 2, return 0;
 
@@ -185,7 +185,7 @@ return count;
 
 Maintain 2 Stacks, One internally for keeping track of the Max/Min Stack
 
-## Recursion based 
+## Recursion based
 
 sadsad
 
@@ -196,13 +196,13 @@ int getHeight(BSTNode root){
     if root( == null )
         return 1;
 
-    // Recursive calls 
+    // Recursive calls
     return 1 + getHeight(root.left) + getHeight(root.right);
 }
 ```
 
 
-##### Binary Search 
+##### Binary Search
 
 ```java
 int binarySearchRecursive(int[] arr, int start, int end, int value)
@@ -211,7 +211,7 @@ int binarySearchRecursive(int[] arr, int start, int end, int value)
 if (start > end)
    return -1;// value not found. Index = -1
 
-int mid = (start + end) / 2; 
+int mid = (start + end) / 2;
 
 if (arr[mid] < value)
     binarySearchRecursive(arr, mid + 1, end, value);
@@ -232,12 +232,12 @@ public String fizzString2(int n) {
 
     /* Important to check for 3 & 5 first else test cases fails.
      * Other if statements passes the if test, leaving this one unexecuted)  */
-    //if (n%3 == 0 && n%5 == 0) 
+    //if (n%3 == 0 && n%5 == 0)
     if(n%15 == 0)//Same as above
         return "FizzBuzz!";
-    if (n%3 == 0) 
+    if (n%3 == 0)
         return "Fizz!";
-    if (n%5 == 0) 
+    if (n%5 == 0)
         return "Buzz!";  
 }
 ```
@@ -304,20 +304,3 @@ public String fizzString2(int n) {
  1. if Null
  2. if arr.length == 0
  3. if arr.length > required size
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

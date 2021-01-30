@@ -1,28 +1,286 @@
-# Setup
-  # title:              "{ni[T]in}"
-  title:              "ηї☂їᾔ"
-  tagline:            'Nitin Kumar Chaurasia'
-  description:
-  # baseurl:            /
-  paginate:           5
-  markdown:           kramdown
-  highlighter:        rouge # or rouge or null
-  plugins:               [jekyll-gist, jekyll-paginate]
-  exclude:            ["node_modules", "gulpfile.js", "package.json", "README.md"]
+# Site Setting
+# title:              "{ni[T]in}"
+title                 : "ηї☂їᾔ"
+tagline               : 'Nitin Kumar Chaurasia'
+description           :
+title_separator       : "-"
+subtitle              : Nashville, TN
+name                  : Nitin K Chaurasia #Name appearing on the Footer
+locale                : "en-US"
+#locale                : "hi-IN"
+# Theme
+#theme                : "minimal-mistakes-jekyll"
+remote_theme          :             "mmistakes/minimal-mistakes@4.21.0"
+minimal_mistakes_skin : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-# About/contact
-  author:             Nitin Chaurasia
-  url:                http://nitinkc.github.io # the base hostname & protocol for your site
-  email:              gs.nitin@gmail.com
-  linkedIn:           https://www.linkedin.com/in/nitinchaurasia
-  github:             https://github.com/nitinkc
-  bgsuBlog:           http://blogs.bgsu.edu/nitinc/
-  devSetupBook:       https://nitinc.gitbooks.io/developer-machine-setup-guide/content/
-
-  version:            0.0.1
-
-# Permalinks
-#
+# Outputting
+permalink: /:categories/:title/
 # Use of `relative_permalinks` ensures post links from the index work properly.
-  permalink:           pretty
-  #relative_permalinks: true
+#permalink           : pretty
+#relative_permalinks: true
+paginate: 15 # amount of posts to show
+paginate_path: /page:num/
+timezone : 'America/Chicago' # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+version               : 0.0.1
+
+# Site Author
+author:
+  name                : Nitin Chaurasia
+  avatar              : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio                 : Learning for Earning
+  location            : Nashville, TN
+  url                 : https://nitinkc.github.io/
+  baseurl             : '/'
+  repository          : nitinkc/nitinkc.github.io
+  email               : gs.nitin@gmail.com
+  linkedIn            : https://www.linkedin.com/in/nitinchaurasia
+  github              : https://github.com/nitinkc
+  bgsuBlog            : http://blogs.bgsu.edu/nitinc/
+  devSetupBook        : https://nitinc.gitbooks.io/developer-machine-setup-guide/content/
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:gs.nitin@gmail.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://nitinkc.github.io/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      # url: "https://twitter.com/"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url: "https://facebook.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/nitinkc"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      # url: "https://instagram.com/"
+
+
+  teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+  logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+  masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+  # breadcrumbs            : false # true, false (default)
+  words_per_minute         : 200
+comments:
+  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  disqus:
+    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    # https://developers.facebook.com/docs/plugins/comments
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+  utterances:
+    theme                : # "github-light" (default), "github-dark"
+    issue_term           : # "pathname" (default)
+  staticman:
+    branch               : # "master"
+    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+reCaptcha:
+  siteKey                :
+  secret                 :
+atom_feed:
+  path                   : # blank (default) uses feed.xml
+
+# Site wide Search
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
+search_provider          : lunr # lunr (default), algolia, google
+algolia:
+  application_id         : # YOUR_APPLICATION_ID
+  index_name             : # YOUR_INDEX_NAME
+  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
+  powered_by             : # true (default), false
+google:
+  search_engine_id       : fa68a460423affeb0
+  instant_search         : true # false (default), true
+# SEO Related
+google_site_verification : google60e8efe70fe91d70.html
+bing_site_verification   :
+yandex_site_verification :
+naver_site_verification  :
+
+
+# Analytics
+analytics:
+  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          :
+    anonymize_ip         : # true, false (default)
+
+# Site Footer
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      # url:
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: https://nitinkc.github.io/
+    - label: "GitLab"
+      icon: "fab fa-fw fa-gitlab"
+      # url:
+    - label: "Bitbucket"
+      icon: "fab fa-fw fa-bitbucket"
+      # url:
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      # url:
+
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
+keep_files:
+  - .git
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+
+# Front Matter Defaults
+defaults:
+# _posts
+- scope:
+    path: "_posts"
+    type: posts
+  values:
+    layout: single
+    author_profile: false
+    read_time: true
+    comments: true
+    share: true
+    related: true
+    #  sidebar: true
+# _pages
+- scope:
+    path: "_archives"
+    type: pages
+  values:
+    layout: single
+    author_profile: true
+  # _portfolio
+- scope:
+    path: ""
+    type: portfolio
+  values:
+    layout: single
+    author_profile: false
+    share: true
+
+  github: [metadata]  

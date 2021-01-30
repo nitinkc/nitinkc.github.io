@@ -3,16 +3,19 @@ layout: static
 title:  "Profiles"
 ---
 
+
+{% include toc title="Index" %}
+
 ## <i class="fa fa-stack-overflow"></i> Stacks
- 
+
  1. Queue using two Stacks (Tower of Hanoi type)
  2. Reversing a Sentence (Splittable with whitespace)
  3. Reversing a Linked List (Singly)
  4. Balanced Parenthesis Problem - ([{()}])
- 5. 
+ 5.
 
 ## <i class="fa fa-stack-overflow"></i> Two Stacks
- 
+
  1. Minimum Stack `1
 
 ## <i class="fa fa-bars fa-rotate-90"></i> Queues
@@ -24,7 +27,7 @@ title:  "Profiles"
 ## <i class="fa fa-tree"></i> Set
 
 ## Bitwise Operations
-   
+
 ##### 5 Operators
 
  1. AND `&`

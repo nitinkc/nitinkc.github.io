@@ -2,4 +2,12 @@ _site/
 node_modules/
 .sass-cache
 .jekyll-metadata
-.idea/
+package-lock.json
+npm-debug.log*
+
+.DS_Store
+# Jekyll generated files
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+_asset_bundler_cache

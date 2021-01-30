@@ -1,17 +1,25 @@
 ---
-layout: post
 title:  "Jekyll Blog and Free Hosting on GitHub!"
 date:   2016-04-04 18:31:00
 categories: jekyll update
 comments: true
+classes: wide
 disqus_identifier: A7655498-AB9E-40BF-A0D5-E5C6DE6BBF28
 tags: [jekyll, disqus]
+sidebar:
+  nav: "docs"
 ---
+
+{% include toc title="Index" %}
 
 Making a personal website using GitHubs free Hosting for the Jekyll Sites
 
 Create a blog with naming convention of yyyy-mm-dd-name-of-the-blog.md and save it in \_posts directory
 
+
+On a new machine (mac) use this link
+
+[Install Jekyll](https://jekyllrb.com/docs/installation/)
 
 execute in the terminal
 
@@ -19,7 +27,7 @@ execute in the terminal
 > If not using the gem File
 
 ```sh
-jekyll build
+bundle exec jekyll build
 jekyll serve
 ```
 

@@ -1,8 +1,10 @@
 ---
-layout: post
 title:  "Collection Class"
 date:   2018-01-24 00:32:00
 ---
+
+
+{% include toc title="Index" %}
 
 *[Collection API]({{ site.url }}/media/Collections.docx)*.
 
