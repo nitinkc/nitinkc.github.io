@@ -2,6 +2,7 @@
 layout: post
 title:  "Upgrading the Macbook Pro - Model A1278"
 date:   2016-07-31 15:04:00
+published: false
 ---
 
 ## Upgrading the Macbook Pro : (13-inch, Mid 2012)
