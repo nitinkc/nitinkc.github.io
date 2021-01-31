@@ -20,12 +20,14 @@ gem 'faraday', '~> 0.17.3'
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
   gem "jekyll-gist"
   gem "jekyll-paginate"
   gem 'jekyll-include-cache'
   gem 'github-pages'
-  gem "jekyll-algolia"
+  gem 'jekyll-sitemap'
+  gem 'jekyll-feed'
+  gem 'jekyll-seo-tag'
+  gem "jekyll-data"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

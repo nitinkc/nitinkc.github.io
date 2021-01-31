@@ -1,7 +1,11 @@
 ---
-layout: static
+# layout: static
 title:  "Coding Hints"
 toc: true
+layout: splash
+classes:
+  - landing
+  - dark-theme
 ---
 
 ## Contents
@@ -10,7 +14,6 @@ toc: true
 {% include toc title="Index" %}
 
 # 7 Step Process
-{:.no_toc}
 
 Before jumping into the Coding  
 

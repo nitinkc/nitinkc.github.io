@@ -1,6 +1,9 @@
 ---
-layout: static
+layout: splash
 title:  "Syntax Reference"
+breadcrumbs: true  # disabled by default
+breadcrumb_home_label : "Home"
+breadcrumb_separator  : ">"
 ---
 # Reference for Coding Interviews
 

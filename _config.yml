@@ -3,14 +3,13 @@
 title                 : "ηї☂їᾔ"
 tagline               : 'Nitin Kumar Chaurasia'
 description           :
-title_separator       : "-"
 subtitle              : Nashville, TN
+title_separator       : "-"
 name                  : Nitin K Chaurasia #Name appearing on the Footer
-locale                : "en-US"
+locale               : "en-US"
 #locale                : "hi-IN"
-# Theme
 #theme                : "minimal-mistakes-jekyll"
-remote_theme          :             "mmistakes/minimal-mistakes@4.21.0"
+remote_theme          : "mmistakes/minimal-mistakes@4.21.0"
 minimal_mistakes_skin : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Outputting

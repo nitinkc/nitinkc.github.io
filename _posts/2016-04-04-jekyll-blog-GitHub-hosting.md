@@ -7,7 +7,7 @@ classes: wide
 disqus_identifier: A7655498-AB9E-40BF-A0D5-E5C6DE6BBF28
 tags: [jekyll, disqus]
 sidebar:
-  nav: "docs"
+  nav: "algo"
 ---
 
 {% include toc title="Index" %}
