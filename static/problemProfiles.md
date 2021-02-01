@@ -1,6 +1,8 @@
 ---
-layout: splash
 title:  "Profiles"
+collection: portfolio
+sidebar:
+  nav: "algo"
 ---
 
 

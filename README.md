@@ -23,3 +23,8 @@ sudo bundle install --path vendor/bundle
 added in default.html in navigation and in head.html in include
 <!-- Added to allow font awesome icons -->
 <script src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>   
+
+kill running process occupying 
+lsof -P | grep ':4000' | awk '{print $2}' | xargs kill -9
+
+SiteMap : https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap

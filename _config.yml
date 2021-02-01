@@ -3,14 +3,18 @@
 title                 : "ηї☂їᾔ"
 tagline               : 'Nitin Kumar Chaurasia'
 description           :
-subtitle              : Nashville, TN
+subtitle              : 
 title_separator       : "-"
 name                  : Nitin K Chaurasia #Name appearing on the Footer
-locale               : "en-US"
+locale                : "en-US"
 #locale                : "hi-IN"
-#theme                : "minimal-mistakes-jekyll"
+#theme                 : "minimal-mistakes-jekyll"
 remote_theme          : "mmistakes/minimal-mistakes@4.21.0"
-minimal_mistakes_skin : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                     :  /assets/images/Coloured.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+breadcrumbs            : true # true, false (default)
 
 # Outputting
 permalink: /:categories/:title/
@@ -22,21 +26,17 @@ paginate_path: /page:num/
 timezone : 'America/Chicago' # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 version               : 0.0.1
+words_per_minute         : 200
 
 # Site Author
 author:
   name                : Nitin Chaurasia
-  avatar              : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio                 : Learning for Earning
-  location            : Nashville, TN
+  avatar              : /assets/images/avatar.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio                 : Java Microservices Developer
+  location            : Not on Moon Yet!!
   url                 : https://nitinkc.github.io/
   baseurl             : '/'
   repository          : nitinkc/nitinkc.github.io
-  email               : gs.nitin@gmail.com
-  linkedIn            : https://www.linkedin.com/in/nitinchaurasia
-  github              : https://github.com/nitinkc
-  bgsuBlog            : http://blogs.bgsu.edu/nitinc/
-  devSetupBook        : https://nitinc.gitbooks.io/developer-machine-setup-guide/content/
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -44,25 +44,19 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://nitinkc.github.io/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/nitinkc"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
-
-
-  teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-  logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-  masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-  # breadcrumbs            : false # true, false (default)
-  words_per_minute         : 200
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/nitinchaurasia/"
+    - label: "BGSU Blog"
+      icon: "fas fa-fw fa-university"
+      url: "http://blogs.bgsu.edu/nitinc/"
+    - label: "Git Book"
+      icon: "fas fa-fw fa-book"
+      url: "https://nitinc.gitbooks.io/developer-machine-setup-guide/content/"
+      
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
@@ -123,7 +117,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: https://nitinkc.github.io/
+      url: "https://github.com/nitinkc"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -202,6 +196,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - octopress-debugger
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -263,9 +258,10 @@ defaults:
     author_profile: false
     read_time: true
     comments: true
-    share: true
+    share: false
     related: true
     #  sidebar: true
+    disqus_identifier: A7655498-AB9E-40BF-A0D5-E5C6DE6BBF28
 # _pages
 - scope:
     path: "_archives"

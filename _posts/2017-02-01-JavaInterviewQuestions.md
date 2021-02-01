@@ -1,10 +1,6 @@
 ---
 title:  "Java Interview Questions"
 date:   2018-01-31 00:20:00
-# classes: wide
-# toc: true
-# toc_label: "My Table of Contents"
-# toc_icon: "cog"
 ---
 
 

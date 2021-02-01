@@ -1,10 +1,7 @@
 ---
-layout: post
 title:  "Spring Boot - Hello World"
 date:   2019-11-17 13:54:00
 categories: Spring Miocroservices
-comments: true
-disqus_identifier: A7655498-AB9E-40BF-A0D5-E5C6DE6BBF28
 tags: [Spring Microservices, Spring Boot]
 ---
 

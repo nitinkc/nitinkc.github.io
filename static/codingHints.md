@@ -1,11 +1,9 @@
 ---
 # layout: static
 title:  "Coding Hints"
-toc: true
-layout: splash
-classes:
-  - landing
-  - dark-theme
+collection : portfolio
+sidebar:
+  nav: "algo"
 ---
 
 ## Contents

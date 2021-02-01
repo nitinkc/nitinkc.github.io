@@ -13,8 +13,8 @@
 $intro-transition  : true;
 $global-transition : none;
 
-/* Colors */
-$background-color: #eeeeee !default;
+/* Colors Air Skin*/
+//$background-color: #eeeeee !default;
 $text-color: #222831 !default;
 $muted-text-color: #393e46 !default;
 $primary-color: #0092ca !default;
@@ -24,14 +24,6 @@ $link-color: #393e46 !default;
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
-
-.page__footer {
-  color: #fff !important; // override
-}
-
-.page__footer-follow .social-icons .svg-inline--fa {
-  color: inherit;
-}
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin fromn the config.yml
 @import "minimal-mistakes"; // main partials
@@ -45,6 +37,14 @@ $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
     margin-top: 0.5em;
   }
   
+  .page__footer {
+    color: #fff !important; // override
+  }
+  
+  .page__footer-follow .social-icons .svg-inline--fa {
+    color: inherit;
+  }
+
   .taxonomy__index a {
     text-transform: uppercase;
     font-size: 0.70em;
@@ -112,19 +112,19 @@ $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
     font-size: 1.3em;
   }
   
-  // .masthead__menu-item {
-  //   display: block;
-  //   list-style-type: none;
-  //   white-space: nowrap;
-  //   font-weight: 200;
-  //   letter-spacing: .05em;
-  //   text-transform: uppercase;
+  .masthead__menu-item {
+    display: block;
+    list-style-type: none;
+    white-space: nowrap;
+    font-weight: 200;
+    letter-spacing: .05em;
+    text-transform: uppercase;
   
-  //   &--lg {
-  //     padding-right: 2em;
-  //     font-weight: 700;
-  //   }
-  // }
+    &--lg {
+      padding-right: 2em;
+      font-weight: 700;
+    }
+  }
   
   .page__title {
     margin-top: 0;
@@ -140,36 +140,36 @@ $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
     }
   }
 
-  .sidebar__right {
-    margin-bottom: 1em;
-  
-    @include breakpoint($large) {
-      position: sticky !important; /* added to make toc scroll with page */
-      float: right !important; /* added to make toc scroll with page */
-      top: 0;
-      right: 0;
-      width: $right-sidebar-width-narrow;
-      //margin-right: -1 * $right-sidebar-width-narrow;
-      padding-left: 1em;
-      padding-top: 1em !important; /* added to make toc scroll with page */
-      z-index: 10;  
-      width: 300px;
-    }
+.sidebar__right {
+  margin-bottom: 1em;
 
-    // .toc {
-    //   //text-transform: uppercase;
-    //   letter-spacing: 1px;
-    // }
-    
-    // .toc__menu li ul > li a {
-    //   font-weight: normal
-    // }
-    
-    // .toc__menu a {
-    //   font-size: 0.6875em;
-    //   padding: 0.25rem 0.75rem;
-    // }
+  @include breakpoint($large) {
+    position: sticky !important; /* added to make toc scroll with page */
+    float: right !important; /* added to make toc scroll with page */
+    top: 0;
+    right: 0;
+    width: $right-sidebar-width-narrow;
+    //margin-right: -1 * $right-sidebar-width-narrow;
+    padding-left: 1em;
+    padding-top: 1em !important; /* added to make toc scroll with page */
+    z-index: 10;  
+    width: 300px;
   }
+
+  .toc {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .toc__menu li ul > li a {
+    font-weight: normal
+  }
+  
+  .toc__menu a {
+    //font-size: 0.6875em;
+    padding: 0.25rem 0.75rem;
+  }
+}
 
   // .sidebar.sticky {
   //   background-color:$primary-color;

@@ -1,9 +1,10 @@
 ---
-layout: splash
 title:  "Syntax Reference"
 breadcrumbs: true  # disabled by default
 breadcrumb_home_label : "Home"
 breadcrumb_separator  : ">"
+sidebar:
+  nav: "algo"
 ---
 # Reference for Coding Interviews
 

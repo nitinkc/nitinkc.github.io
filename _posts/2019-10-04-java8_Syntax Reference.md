@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Java 8 Syntax Reference"
 date:   2019-10-04 13:43:00
 ---
