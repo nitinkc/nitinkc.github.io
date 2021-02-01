@@ -1,6 +1,6 @@
 # nitinkc.github.io
 
-Please visit [my site here](http://nitinkc.github.io) for coding interviews References.
+
 
 [Text using Symbols](https://fsymbols.com/generators/encool/)
 
@@ -28,3 +28,11 @@ kill running process occupying
 lsof -P | grep ':4000' | awk '{print $2}' | xargs kill -9
 
 SiteMap : https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap
+
+
+
+pandoc -f docx -t markdown Buying\ a\ bigger\ machine.docx -o x.md                                                                                       ─╯
+
+
+## Add right side bar Index
+{% include toc title="Index" %}
