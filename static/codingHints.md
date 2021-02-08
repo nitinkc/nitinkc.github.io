@@ -8,7 +8,6 @@ sidebar:
 
 ## Contents
 
-
 {% include toc title="Index" %}
 
 # 7 Step Process
