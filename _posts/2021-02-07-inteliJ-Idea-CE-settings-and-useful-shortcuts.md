@@ -24,5 +24,5 @@ and use the following pattern
 */
 ```
 
-![](/assets/images/IntelliJ.png)
+![](/assets/images/intelliJ.png)
 
