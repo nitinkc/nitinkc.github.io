@@ -10,6 +10,12 @@ sidebar:
 
 {% include toc title="Index" %}
 
+# Useful Shortcuts
+| S.no| Shortcut                 | Use                              |
+|---- |--------------------------|----------------------------------|
+| 1  | cntl + shift + N | Find class/interface files  |
+| 2  | |
+
 # Initial Settings 
 
 For the personalized comments, use the following the templates in the Preferences as below
