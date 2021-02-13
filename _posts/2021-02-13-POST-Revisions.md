@@ -65,8 +65,8 @@ POST : http://localhost:8100/temperature-converter/
 Request Body :
 ```json
 {
-    "from":"USD",
-    "to":"INR",
+    "from":"F",
+    "to":"C",
     "values":["10","12.5","50","111"]
 }
 ```
