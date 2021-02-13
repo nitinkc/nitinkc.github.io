@@ -32,3 +32,10 @@ and use the following pattern
 
 ![](/assets/images/intelliJ.png)
 
+## Useful Plugins
+
+Scenario : When entity or DTO classes have lots of fields, it is easy to miss fileds that are set,
+to Generate all Setters for long entity classes, use this plugin
+
+[Generate All Setters](https://plugins.jetbrains.com/plugin/9360-generateallsetter)
+
