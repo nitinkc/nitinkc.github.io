@@ -1,8 +1,8 @@
 ---
 title:  "Code Quality"
 date:   2019-12-04 21:15:00
-categories: Code Quality
-tags: [Quality Control, Code Quality]
+categories: ['Code Quality']
+tags: ['Code Quality']
 ---
 
 * Readability

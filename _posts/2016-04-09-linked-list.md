@@ -1,51 +1,64 @@
 ---
 title:  "Linked List"
 date:   2016-04-06 05:14:00
-categories: data structures
+categories: ['Data Structures']
 tags: [job interview, basic data structures]
 ---
 
-
 {% include toc title="Index" %}
 
-### Linked List
+# Three types of Linked List
+1. Singly Linked List
+2. Doubly Linked list
+3. Circular Linked List
+
+## Singly Linked List
+* Head is the starting point
+* Can traverse only in one direction
+* copy head into a runner and work with the runner. **Never** modify head
+
 ```java
- LinkNode runner = front;//head
- while (runner.next != null){//Runner stops at the last node, else runner will end up pointing null!!
+class Node<V> {
+    public V dataObject;
+    Node next;
+}
+```
+
+## Doubly Linked List
+* Head is the starting point
+* Can traverse only in **either** direction
+* copy head into a runner and work with the runner. **Never** modify head
+
+```java
+class Node<V> {
+    Node previous
+    public V dataObject;
+    Node next;
+}
+```
+
+## Singly LinkedList Challenges
+
+### Traversal accross all elements
+```java
+ Node runner = head;//head
+ while (runner != null){
+ // Obtain the dataObject and perform operation on it
  runner = runner.next;
 }
 ```
 
-#### Add in the List
-
-##### Add in the front
+##### Add at the front of the List
 ```java
-front = new ListNode(value, front);
+head = new Node(value, head);
 ```
 
-##### Add at 'index'
-```java
-if (index == 0)
-front = new ListNode(value, front);
-else{
-ListNode runner = front;
-for (int i = 0; i < index - 1; i++)//Stop at an index one before the desired
-current = current.next;
-}
-current.next = new ListNode(value, current.next); //old current.next is assigned to the new node which in turn is assigned to current.next
-```
+##### Add at an 'index'
+{% gist nitinkc/66e6ca32e3c6faf4b1fc4cec5472b7de %}
 
-##### Add in the end
-```java
-if (front == null)
-  front = new ListNode(value, front);
-else{
-  ListNode runner = front;
-  while (runner.next != null) // Go till the last node
-      runner = runner.next;
-  runner.next = new ListNode(value); //this constructor has .next as null
-}
-```
+##### Add a node at the end of a Linked List
+
+{% gist nitinkc/1a7981081dbdeacfda37bfaeca1caaae %}
 
 ##### Linked List Iteration
 {% gist nitinkc/4e97df8926c80696a67ba8ae8ca87b08 %}
@@ -54,7 +67,6 @@ else{
 {% gist nitinkc/9aef8598074b343be5e85c4946c9c2b7 %}
 
 ##### Set Last node to 42
-
 {% gist nitinkc/3a068e9a976ed17e8dd48fb0926cce5e %}
 
 ##### Set a given node to 42

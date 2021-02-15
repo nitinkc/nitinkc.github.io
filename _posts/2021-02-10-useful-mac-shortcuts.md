@@ -2,6 +2,9 @@
 # layout: static
 title:  "Useful Mac settings"
 collection : Developer tools
+date: 2021-02-10 02:15:00
+categories: 
+tags: [System Design]
 ---
 
 ## Toggle Hidden files

@@ -1,6 +1,8 @@
 ---
-title:  "Arrays Patterns"
+title:  "Arrays"
 date:   2016-11-25 20:20:00
+categories: ['Data Structures']
+tags: [job interview, basic data structures]
 ---
 
 {% include toc title="Index" %}

@@ -1,14 +1,16 @@
 ---
-title:  "Collection Class"
+title:  "Java Collection Class"
 date:   2018-01-24 00:32:00
+categories: ['Data Structures']
+tags: [job interview, basic data structures]
 ---
 
 
 {% include toc title="Index" %}
 
-*[Collection API]({{ site.url }}/media/Collections.docx)*.
+*[Collection API]({{ site.url }}/assets/media/Collections.docx)*.
 
-*[Collection API - PDF]({{ site.url }}/media/Collections.pdf)*.
+*[Collection API - PDF]({{ site.url }}/assets/media/Collections.pdf)*.
 ```
 Collection(I)
 |
