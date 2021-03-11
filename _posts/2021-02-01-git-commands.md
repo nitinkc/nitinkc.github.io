@@ -1,7 +1,7 @@
 ---
 title:  "Useful git commands"
 date:   2021-02-01 11:30:00
-categories: 
+categories:
 tags: [Git]
 ---
 
@@ -12,8 +12,12 @@ Most used git commands after cloning a project. Target is to create a new featur
 ## Create new Feature Branch for development
 ```sh
 # First checkout the branch from which a new branch is to be created
-git checkout <existing develop branch> # Example : future-develop 
+git checkout <existing develop branch> # Example : future-develop
 git pull  # Optional
+
+## Pull the latest changes from parent branch into child
+# must be in the child branch. Resolve any conflicts
+git merge parent
 
 #Create your branch (2 in 1 command)
 git checkout -b feature/<branch-name>
@@ -22,7 +26,14 @@ git commit -m <file names>
 # Add the branch remotely
 git push -u origin <branch> # (-u short for --set-upstream) option)
 ```
+## Take uncommited changes from one branch to another new branch
+```sh
+# With Git 2.23
+git switch -c <new-branch>
 
+# The same could be achieved prior to Git 2.23 by
+git checkout -b <new-branch>
+```
 ## Remove Accidental Pushes from Remote
 ```bash
 git rm <filename or folder> # removes the file from the repo but also deletes it from the local file system.
@@ -71,19 +82,18 @@ git push -u origin master (master is our local repo, branch name)
 ## Delete a remote branch using
 ```sh
 git push origin --delete <branchName>
-git push origin :old_branch 
-
-
+git push origin :old_branch
 ```
 
-Delete branch from remote repository
+## Delete branch from remote repository
+```sh
+git push origin --delete [branchname]
+```
 
-$ git push origin --delete [branchname]
-
-Delete branch from local repository
-$ git branch -d [branchname]
-
-
+## Delete branch from local repository
+```sh
+git branch -d [branchname]
+```
 
 ## Rename a branch
 ```sh

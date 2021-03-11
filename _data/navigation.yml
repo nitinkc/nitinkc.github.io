@@ -1,11 +1,11 @@
 # Main links on the top 
 main:
-  - title: "Posts By Year"
-    url: /posts/
   - title: "Posts By Tag"
     url: /tags/
   - title: "Posts By Category"
     url: /categories/
+  - title: "Posts By Year"
+    url: /posts/
   - title: About
     url: /about/
   - #title: "Collections"
