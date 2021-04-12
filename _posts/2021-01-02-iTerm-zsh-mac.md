@@ -19,11 +19,12 @@ Instead of using the Mac default Bash shell, preferred here is zsh with multiple
 * Install latest version of zsh using brew and verify the version.
 
 ```
-brew install zsh zsh-completions
+brew install zsh
 zsh --version
 ```
 
 * Make zsh as system’s default shell
+
 ```
 chsh -s $(which zsh)
 ```
@@ -62,7 +63,7 @@ Edit ~/.zshrc and set ZSH_THEME="powerlevel10k/powerlevel10k".
 
 * [Zsh Apple touchbar](https://github.com/zsh-users/zsh-apple-touchbar)
 ```
-brew install zsh-syntax-highlighting
+brew install zsh-syntax-highlighting zsh-completions
 ```
 
 Global settings:

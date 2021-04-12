@@ -40,3 +40,11 @@ to Generate all Setters for long entity classes, use this plugin
 
 [Generate All Setters](https://plugins.jetbrains.com/plugin/9360-generateallsetter)
 
+Scenario : Converting application.properties into aplication.yml
+
+[properties to yml convert](https://plugins.jetbrains.com/plugin/8000-properties-to-yaml-converter)
+
+Scenario: While converting maven project to Gradle. USe this plugin for converting pom dependencies into gradle.
+
+[Pom to Gradle](https://plugins.jetbrains.com/plugin/7937-gradle-dependencies-formatter)
+

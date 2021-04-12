@@ -103,3 +103,8 @@ git branch -m <oldname> <newname>
 # If you want to rename the current branch, you can simply do:
 git branch -m <newname>
 ```
+
+## Push local branch to repo.
+```
+ git push --set-upstream origin <Branch name>
+ ```
