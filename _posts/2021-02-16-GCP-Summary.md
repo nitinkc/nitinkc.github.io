@@ -3,7 +3,7 @@
 title:  "Google Cloud Platform"
 date:   2021-02-16 23:00:00
 categories: GCP
-tags: [GCP]
+tags: [Google Cloud Platform]
 ---
 
 {% include toc title="Index" %}

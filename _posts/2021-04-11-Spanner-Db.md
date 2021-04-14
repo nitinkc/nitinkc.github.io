@@ -1,7 +1,16 @@
+---
+# layout: static
+title:  "Spanner Database"
+date:   2021-04-08 02:15:00
+collection : GCP
+categories: 
+tags: [Google Cloud Platform]
+---
+
 For making full use of the free tier, The Database and it's corrosponding instance need to be up and running only while development and testing.
 Always delete the instance after the experimentation is done
 
-```
+```shell
 ### Delete Instance
 gcloud spanner instances delete development-nc
 ```
@@ -19,7 +28,7 @@ gcloud spanner databases create spanner-db --instance=development-nc
 
 If needed :
 
-```
+```shell
 ### Update instance
 gcloud spanner instances update [INSTANCE-ID] --description=[INSTANCE-NAME]
 
