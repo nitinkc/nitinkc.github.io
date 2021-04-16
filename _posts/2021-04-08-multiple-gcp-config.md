@@ -2,7 +2,7 @@
 # layout: static
 title:  "Handling Multiple GCP Configs"
 date:   2021-04-08 02:15:00
-categories : GCP
+categories: GCP
 tags: [Google Cloud Platform]
 ---
 
