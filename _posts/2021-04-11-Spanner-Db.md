@@ -2,8 +2,7 @@
 # layout: static
 title:  "Spanner Database"
 date:   2021-04-08 02:15:00
-collection : GCP
-categories: 
+categories : GCP
 tags: [Google Cloud Platform]
 ---
 
