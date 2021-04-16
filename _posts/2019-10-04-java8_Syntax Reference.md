@@ -1,6 +1,8 @@
 ---
 title:  "Java 8 Syntax Reference"
 date:   2019-10-04 13:43:00
+categories: ['Java']
+tags: ['Java']
 ---
 
 ##### For each method **applies the lambda** to each element of the collection

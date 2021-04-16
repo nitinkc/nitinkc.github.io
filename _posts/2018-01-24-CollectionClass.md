@@ -1,8 +1,8 @@
 ---
 title:  "Java Collection Class"
 date:   2018-01-24 00:32:00
-categories: ['Data Structures']
-tags: [job interview, basic data structures]
+categories: ['Java']
+tags: ['Java']
 ---
 
 

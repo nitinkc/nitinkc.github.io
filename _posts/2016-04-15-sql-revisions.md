@@ -1,6 +1,8 @@
 ---
 title:  "SQL Revisions"
 date:   2016-04-15 11:45:00
+categories: ['SQL']
+tags: ['SQL']
 ---
 
 

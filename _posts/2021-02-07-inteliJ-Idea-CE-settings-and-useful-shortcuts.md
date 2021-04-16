@@ -1,8 +1,9 @@
 ---
 # layout: static
 title:  "IntelliJ Idea - Useful settings and shortcuts"
-collection : Developer tools
 date:   2021-02-07 02:15:00
+categories: ['Developer tools']
+tags: ['Developer tools']
 sidebar:
   nav: "algo"
 ---

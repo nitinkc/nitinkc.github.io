@@ -2,7 +2,7 @@
 title:  "Linked List"
 date:   2016-04-06 05:14:00
 categories: ['Data Structures']
-tags: [job interview, basic data structures]
+tags: ['Data Structures']
 ---
 
 {% include toc title="Index" %}

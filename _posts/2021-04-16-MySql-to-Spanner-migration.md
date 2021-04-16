@@ -8,6 +8,8 @@ tags: [Google Cloud Platform]
 
 # Import MySql data dump into Spanner using HarbourBridge
 
+[MySQL to Cloud Spanner via HarbourBridge](https://opensource.googleblog.com/2020/09/mysql-to-cloud-spanner-via-harbourbridge.html)
+
 Install GO using the download option and setting the path into profile as
 ```shell
 export GOPATH=/usr/local/go
@@ -49,36 +51,31 @@ gcloud spanner databases create spanner-db --instance=development-nc
 After everything is set in order, pick up the correct schema from MySql DB that needs importing. Ensure that MySql DB is 
 running and keep the user and password ready. Follow the steps
 
+[Follow this link for argument options](https://github.com/cloudspannerecosystem/harbourbridge/blob/master/mysql/README.md#using-harbourbridge-with-mysqldump)
 ```shell
-mysqldump classicmodels -u root -p | $GOPATH/bin/harbourbridge -driver=mysqldump
-```
+# Importing Data directly from running instance of MySql
+mysqldump employees -u root -p | $GOPATH/bin/harbourbridge -driver=mysqldump -dbname employees-db
 
+# if sql dump file is provided
+#harbourbridge -driver=mysqldump < dump.sql
+harbourbridge -driver=mysqldump -instance development-nc -dbname hr < hrDB.txt
+# If the database name is to be chosen, it can be priovided like below. The db should not exist
+#mysqldump classicmodels -u root -p | harbourbridge -driver=mysqldump -instance my-spanner-instance -dbname my-spanner-database-name
+
+mysqldump classicmodels -u root -p | harbourbridge -driver=mysqldump -instance development-nc -dbname spanner-db
+```
 here classicmodels is the schema name.
 
-The log would look like
-```text
- mysqldump classicmodels -u root -p | $GOPATH/bin/harbourbridge -driver=mysqldump
-Enter password: Using driver (source DB): mysqldump
-Using Google Cloud project: mera-chandrayaan-2021
-Using only available Spanner instance: development-nc
-Using Cloud Spanner instance: development-nc
 
-WARNING: Please check that permissions for this Spanner instance are
-appropriate. Spanner manages access control at the database level, and the
-database created by HarbourBridge will inherit default permissions from this
-instance. All data written to Spanner will be visible to anyone who can
-access the created database. Note that mysqldump table-level and row-level
-ACLs are dropped during conversion since they are not supported by Spanner.
+# Importing Employees Database.
 
+Import the Data into MySql and then use harbourBridge to migrate the data into Spanner
 
-Generating schema: 100%
-Wrote schema to file 'mysqldump_2021-04-16_699a-f26b.schema.txt'.
-Wrote session to file 'mysqldump_2021-04-16_699a-f26b.session.json'.
-Creating new database mysqldump_2021-04-16_699a-f26b in instance development-nc with default permissions ... done.
-Writing data to Spanner: 100%
-Updating schema of database mysqldump_2021-04-16_699a-f26b in instance development-nc with foreign key constraints ...: 100%
-Processed 192956 bytes of mysqldump data (56 statements, 3864 rows of data, 0 errors, 0 unexpected conditions).
-Schema conversion: EXCELLENT (all columns mapped cleanly).
-Data conversion: EXCELLENT (all 3864 rows written to Spanner).
-See file 'mysqldump_2021-04-16_699a-f26b.report.txt' for details of the schema and data conversions.
+[Download the Sample Data here](https://github.com/datacharmer/test_db)
+
+Schema : 
+https://github.com/datacharmer/test_db/blob/master/images/employees.jpg
+
+```shell
+mysqldump employees -u root -p | $GOPATH/bin/harbourbridge -driver=mysqldump -dbname employees-db
 ```

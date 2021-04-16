@@ -1,8 +1,8 @@
 ---
 title:  "Useful git commands"
 date:   2021-02-01 11:30:00
-categories:
-tags: [Git]
+categories: ['Git']
+tags: ['Git']
 ---
 
 {% include toc title="Index" %}

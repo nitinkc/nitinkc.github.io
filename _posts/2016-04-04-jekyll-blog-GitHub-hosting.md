@@ -1,8 +1,8 @@
 ---
 title:  "Jekyll Blog and Free Hosting on GitHub!"
 date:   2016-04-04 18:31:00
-categories: Personal-Blogging
-tags: [jekyll]
+categories: ['Developer tools']
+tags: ['Developer tools']
 sidebar:
   nav: "algo"
 ---

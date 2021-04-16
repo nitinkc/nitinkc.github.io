@@ -1,8 +1,8 @@
 ---
 title:  "Detached Head Problem"
 date:   2020-05-19 19:14:00
-categories: Git
-tags: [Git, submodules]
+categories: ['Git']
+tags: ['Git']
 ---
 
 While using Git Submodules, after cloning a submodule, the projects are in detached

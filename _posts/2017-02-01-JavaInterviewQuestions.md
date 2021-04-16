@@ -1,6 +1,8 @@
 ---
 title:  "Java Interview Questions"
 date:   2018-01-31 00:20:00
+categories: ['Java']
+tags: ['Java']
 ---
 
 
