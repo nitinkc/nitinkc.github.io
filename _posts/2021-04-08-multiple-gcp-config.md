@@ -97,7 +97,7 @@ gcloud init
 # should get a list of project after logging in
 # This will also ensure that the 'learn' config is enabled and ready to be used
 
-project name : mera-chandrayaan-2021
+project name : tat-twam-asi
 
 #Ensure that the current user is credentiated
 gcloud auth application-default login
