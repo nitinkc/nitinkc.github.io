@@ -34,3 +34,44 @@ gcloud spanner instances update [INSTANCE-ID] --description=[INSTANCE-NAME]
 ### Update the number of nodes
 gcloud spanner instances update [INSTANCE-ID] --nodes=[NODE-COUNT]
 ```
+
+## Using Emulator
+
+```shell
+# Start the Emulator
+gcloud emulators spanner start
+
+# Create config for Emulator and set the variables
+gcloud config configurations create emulator
+gcloud config set auth/disable_credentials true
+gcloud config set project tat-twam-asi
+gcloud config set api_endpoint_overrides/spanner http://localhost:9020/
+
+# Create Spanner instance on Emulator
+gcloud spanner instances create development-nc  \
+--config=emulator-config --description="Learning Spanner on Emulator" --nodes=1
+
+# Create database for testing
+gcloud spanner databases create spanner-db --instance=development-nc
+
+# After Creating tables and inserting data, validate like 
+ gcloud spanner databases execute-sql spanner-db --instance=development-nc \
+--sql='SELECT SingerId, AlbumId, AlbumTitle FROM Albums'
+
+```
+
+
+# After the work done
+```shell
+ gcloud spanner instances delete development-nc  
+
+ gcloud config configurations activate local  
+
+# Check the emulator config, copy the name and delete it for cleanup process
+gcloud config configurations list   
+
+gcloud config configurations delete emulator 
+
+#Stop the emulator
+contrl C to stop the running instance
+```
