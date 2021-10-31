@@ -76,9 +76,9 @@ public void reverseList(Node head){
 }
 ```
 
-##### Find a cycle in a Linked List (Iteratively and Recursively)
+##### Find a cycle in a Linked List (Recursively)
 
-##### Find a cycle in a Linked List (Iteratively and Recursively)
+##### Find a cycle in a Linked List (Iteratively)
 
 
 ##### UnCoupled Integer in an Array.
@@ -142,44 +142,6 @@ Push on opener and pop on closers.
 ```
 
 
-##### Find count of given Sum in all pairs in the Array
-
-Checks :
-
-  * if array size < 2, return 0;
-
-Greedy approach to test all the possible combinations exhaustively
-
-```java
-// O(n^2)
-
- for (int i = 0; i < arr.length; i++){
-    for (int j = i + 1; j < arr.lenght; j++){
-        if (arr[i] + arr[j] == sum){
-            count++;
-        }
-    }
- }
- return count;
-```
-
-Test only those possible combinations that makes sense
-
-``` java
-// Two pointer Approach
-/* Sort the Array First in Ascending Order [O(nLog(n))] */
-int left = 0, right = arr.length -  1;
-while (left < right){
-    if (arr[left] + arr[right] > sum){//Right is heavier
-        right--;
-    } else if (arr[left] + arr[right] < sum){ // Left is lighter
-        left ++
-    } else { // Sum is equal
-        count++;
-    }
-}
-return count;
-```
 
 ##### Find minimum in a Stack
 

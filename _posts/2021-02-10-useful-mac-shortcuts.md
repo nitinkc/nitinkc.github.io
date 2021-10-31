@@ -14,3 +14,16 @@ or
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES;killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO;killall Finder /System/Library/CoreServices/Finder.app'
 ```
+
+
+# Developer tools
+
+
+gemini 2
+
+PhotoSweeper
+
+# Mac Settings
+
+Press Shift-Command-5 (macOS Mojave or later) and invoke the screen capture panel.
+Click on Options and choose "Other Location" to choose a destination.
