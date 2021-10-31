@@ -97,7 +97,8 @@ Collection(I)
 ### SETS
 Set takes only single instance of an element.
 
-While adding an element into a set, a test of equality happens, to determine if the object being pushed already exist
+While adding an element into a set, a test of equality happens, to determine if the object being pushed already exist.
+Thus override equals & hashCode methods in case of non primitive Objects
 
 With Integer, no need to override hashCode() and equals()
 
@@ -113,10 +114,18 @@ Queues print in an [a, b, c] format from front to back
 {% gist /nitinkc/9a3b529f8bad45a05ba20405bc975411 %}
 
 ### Heaps (Priority Queues in Java)
-Heaps are represented using Priority Queue. It gives O(1) seek time.A priority queue does not permit null elements.The elements of the priority queue are ordered according to their natural ordering, or by a Comparator provided at queue construction time. It gives O(1) seek time.A priority queue does not permit null elements.
+Heaps are represented using Priority Queue.
+
+  * It gives O(1) seek time.
+  * Does not permit null elements.
+  * The elements are ordered according to their natural ordering, or by a Comparator provided at queue construction time.
+
+METHDS :
+
  * 	add(E e) Inserts the specified element into this priority queue.
  *  offer(E e) Inserts the specified element into this priority queue
  *  poll() Retrieves and removes the head of this queue, or returns null if this queue is empty.
+
 {% gist nitinkc/c187b0ee3462c34d3e7eae3597fd01da %}
 
 ### MAP (Not part of Collection Framework)
