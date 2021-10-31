@@ -162,20 +162,23 @@ BSTs store their elements insorted order, which is helpfulfor searching/sortin
 Same variables cancels the effect of each other if the bitwise XOR is used.
 
 ```java
-a = a^b;
-b = a^b; //a^b^b yields a
-a = a^b;//a^b^a = b(b is recently converted to a)
-/* (Works only with integer, in its native form, for others change it into its equivalent binary representation) */
-
-/*
-The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake)
-*/
-
-// Use of XOR (both flags are boolean)
+// Use of XOR (both flags are boolean) - Exactly one is True
 if (flag2 ^ flag4)
 //is equivalent to
 (flag2 && !flag4) || (!flag2 && flag4);
 ```
+
+```java
+// Works only with integer, in its native form, for others change it into its equivalent binary representation.
+a = a^b;
+b = a^b; //a^b^b yields a
+a = a^b;//a^b^a = b(b is recently converted to a)
+```
+
+The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake)
+
+{% gist nitinkc/c2b08480ddf73b06f2ad1df65be5483d %}
+
 
 ### Reading, Parsing and Type Checking Command Line Inputs.
 ```java
