@@ -1,11 +1,7 @@
 ---
 title:  "Syntax Reference"
-#breadcrumbs: true  # disabled by default
-#breadcrumb_home_label : "Home"
-#breadcrumb_separator  : ">"
-sidebar:
-  nav: "algo"
-categories: Algorithm Interviews
+date:   2021-10-30 21:55:00
+categories: Algorithms
 tags: [Algorithm Interviews]
 ---
 # Reference for Coding Interviews
