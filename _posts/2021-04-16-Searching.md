@@ -1,14 +1,14 @@
 ---
 # layout: static
-title:  "MySql to Spanner Migration using HarbourBridge"
+title:  "Searching"
 date:   2021-04-16 01:25:00
 categories: GCP
-tags: [Google Cloud Platform]
+tags: [Algorithms]
 ---
 
 # Searching
 
-Liner Search : 
+Liner Search :
 
 Binary Search : O(log n). n,n/2,n/4,n/8,....
 
