@@ -2,8 +2,8 @@
 # layout: static
 title:  "Coding Hints"
 collection : portfolio
-sidebar:
-  nav: "algo"
+categories: Algorithm Interviews
+tags: [Algorithm Interviews]
 ---
 
 ## Contents

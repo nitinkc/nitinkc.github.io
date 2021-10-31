@@ -3,6 +3,8 @@ title:  "Profiles"
 collection: portfolio
 sidebar:
   nav: "algo"
+categories: Algorithm Interviews
+tags: [Algorithm Interviews]
 ---
 
 
