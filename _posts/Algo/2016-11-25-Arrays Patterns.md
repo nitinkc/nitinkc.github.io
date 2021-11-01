@@ -52,10 +52,10 @@ Approach 3 : Hash map and variant approach
 
 Create two temporary arrays, one left that takes computation of elements to the left, upto the current element. Same for Right array.
 
-##### Replace each element with the greatest element to the Right in an Arrays
+##### Replace each element with the greatest element to the Right in an Array
 
 [https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/](https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/)
-]
+
 {% gist nitinkc/c326860cffb8fc3cf2d87c193cc0a33d %}
 
 
@@ -64,3 +64,15 @@ Create two temporary arrays, one left that takes computation of elements to the 
 [https://leetcode.com/problems/product-of-array-except-self/](https://leetcode.com/problems/product-of-array-except-self/)
 
 {% gist nitinkc/2f07a7eab2eaffc1609fbc7211eadb1a %}
+
+
+##### Trapping Rain Water
+
+[Trapping Rain Water Problem](https://leetcode.com/problems/trapping-rain-water/)
+
+```Java
+left[i] = Math.max(left[i-1], arr[i]);
+right[i] = math.max(right[i+1], arr[i]);
+result = result + Math.min(left[i],right[i]) - arr[i];
+```
+{% gist nitinkc/ba5c2731c23b85a89eb5dd71636d01d0 %}
