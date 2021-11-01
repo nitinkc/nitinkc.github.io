@@ -54,13 +54,13 @@ Create two temporary arrays, one left that takes computation of elements to the 
 
 ##### Replace each element with the greatest element to the Right in an Arrays
 
-https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/
-
+[https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/](https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/)
+]
 {% gist nitinkc/c326860cffb8fc3cf2d87c193cc0a33d %}
 
 
 ##### Relace a number with product of all other without division
 
-https://leetcode.com/problems/product-of-array-except-self/
+[https://leetcode.com/problems/product-of-array-except-self/](https://leetcode.com/problems/product-of-array-except-self/)
 
 {% gist nitinkc/2f07a7eab2eaffc1609fbc7211eadb1a %}
