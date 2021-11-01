@@ -70,9 +70,10 @@ Create two temporary arrays, one left that takes computation of elements to the 
 
 [Trapping Rain Water Problem](https://leetcode.com/problems/trapping-rain-water/)
 
-```Java
+```java
 left[i] = Math.max(left[i-1], arr[i]);
 right[i] = math.max(right[i+1], arr[i]);
 result = result + Math.min(left[i],right[i]) - arr[i];
 ```
+
 {% gist nitinkc/ba5c2731c23b85a89eb5dd71636d01d0 %}
