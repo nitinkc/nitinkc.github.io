@@ -16,7 +16,6 @@ tags: ['Data Structures']
 {% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
 
 
-
 ##### Find count of given Sum in all pairs in the Array
 
 Checks :
@@ -27,7 +26,6 @@ Approach 1 : Greedy approach to test all the possible combinations exhaustively
 
 ```java
 // O(n^2)
-
  for (int i = 0; i < arr.length; i++){
     for (int j = i + 1; j < arr.lenght; j++){
         if (arr[i] + arr[j] == sum){
@@ -71,9 +69,12 @@ Create two temporary arrays, one left that takes computation of elements to the 
 [Trapping Rain Water Problem](https://leetcode.com/problems/trapping-rain-water/)
 
 ```java
-left[i] = Math.max(left[i-1], arr[i]);
-right[i] = math.max(right[i+1], arr[i]);
+left[i] = Math.max(left[i-1], arr[i]);//arr[i] means including current element
+right[i] = Math.max(right[i+1], arr[i]);
 result = result + Math.min(left[i],right[i]) - arr[i];
 ```
 
 {% gist nitinkc/ba5c2731c23b85a89eb5dd71636d01d0 %}
+
+
+### Sliding Window Approach

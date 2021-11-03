@@ -102,8 +102,18 @@ Thus override equals & hashCode methods in case of non primitive Objects
 
 With Integer, no need to override hashCode() and equals()
 
+```java
+//Set Iteration and removal using Iterator
+```
+{% gist /nitinkc/9a7740ba3a53ae899e75681a0a0c9a67 %}
+
 With Tree set it will sort to DNSO
 {% gist nitinkc/f98cd225bc3dd60b21368c56980ef006 %}
+
+##### Sets RetainAll
+[Count Common Problem](https://practiceit.cs.washington.edu/problem/view/bjp5/chapter11/e7-countCommon)
+set1.retainAll(set2) -> retains all the common elements, like intersection
+{% gist nitinkc/d5eba43be0e6ceb996b7b79132196320 %}
 
 ### Stacks
 Stacks print in an [a, b, c] format from bottom  to top
@@ -142,6 +152,13 @@ There are 3 classes that implements the Map interface
  * insertion order is not affected if a key is re-inserted into the map
  * IMPORTANT: they consume more memory than HashMap !!!
 
+Filling up a map
+
+```java
+for (String str: list) {
+    map.put(str, map.getOrDefault(str,0) + 1);
+}
+```
 {% gist nitinkc/3b434410bca596c8fbeae64a0e7c2895 %}
 
 ### Binary Search Tree
