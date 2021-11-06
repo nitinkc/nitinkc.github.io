@@ -1,8 +1,8 @@
 ---
 title:  "Linked List"
 date:   2016-04-06 05:14:00
-categories: ['Data Structures']
-tags: ['Data Structures']
+categories: Algorithms
+tags: [Algorithms]
 ---
 
 {% include toc title="Index" %}

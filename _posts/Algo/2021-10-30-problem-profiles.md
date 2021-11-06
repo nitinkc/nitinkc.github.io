@@ -2,7 +2,7 @@
 title:  "Profiles"
 date:   2021-10-30 21:55:00
 categories: Algorithms
-tags: [Algorithm Interviews]
+tags: [Algorithms]
 ---
 
 

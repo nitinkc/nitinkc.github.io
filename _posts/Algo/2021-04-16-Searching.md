@@ -3,7 +3,7 @@
 title:  "Searching"
 date:   2021-04-16 01:25:00
 categories: Algorithms
-tags: [Algorithm Interviews]
+tags: [Algorithms]
 ---
 
 # Searching
