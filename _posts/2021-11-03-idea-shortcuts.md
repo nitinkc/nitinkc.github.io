@@ -8,11 +8,26 @@ tags: [Shortcuts]
 
 
 
-<ul>
+<!-- <ul>
 {% for shortcut in site.data.shortcuts %}
   <li>
       {{ shortcut.keys }}
       {{ shortcut.shortcut }}
   </li>
 {% endfor %}
-</ul>
+</ul> -->
+
+
+<table>
+  <tr>
+    <th>Key Combination</th>
+    <th>Details</th>
+  </tr>
+{% for individual_shortcut in site.data.shortcuts %}
+  <tr>
+    <td> {{ individual_shortcut.keys }} </td>
+    <td> {{ individual_shortcut.shortcut }} </td>
+  </tr>
+{% endfor %}
+
+</table>
