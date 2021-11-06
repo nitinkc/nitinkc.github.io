@@ -1,8 +1,8 @@
 ---
 title:  "Arrays"
 date:   2016-11-25 20:20:00
-categories: ['Data Structures']
-tags: ['Data Structures']
+categories: Algorithms
+tags: [Algorithms]
 ---
 
 {% include toc title="Index" %}
