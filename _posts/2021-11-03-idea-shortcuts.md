@@ -33,3 +33,7 @@ tags: [Shortcuts]
 </table>
 
 {{ site.time | date: '%y' }}
+
+NOW 
+
+{{ 'now' | date: "%Y/%m/%d" }}
