@@ -32,4 +32,4 @@ tags: [Shortcuts]
 
 </table>
 
-<p>{{ site.time }}</p><
+{{ site.time | date: '%y' }}
