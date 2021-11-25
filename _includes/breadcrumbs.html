@@ -23,7 +23,6 @@
           <meta itemprop="position" content="{{ i }}" />
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
-        {{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
       {% endif %}
       {% if forloop.last %}
         <li class="current">{{ page.title }}</li>
@@ -34,8 +33,8 @@
           <meta itemprop="position" content="{{ i }}" />
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
-        {{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
       {% endif %}
     {% endfor %}
+    {{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
   </ol>
 </nav>
