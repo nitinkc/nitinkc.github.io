@@ -32,8 +32,15 @@ tags: [Shortcuts]
 
 </table>
 
-{{ site.time | date: '%y' }}
+SITE BUILD TIME
+
+{{ site.time  }}
 
 NOW 
 
 {{ 'now' | date: "%Y/%m/%d" }}
+
+{{ 'now' | date_to_rfc822 }}
+
+
+{{ 'now' | date: "%C" }}
