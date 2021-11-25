@@ -1,5 +1,5 @@
 ---
-title:  "Heaps"
+title:  "Utility Methods"
 date:   2021-11-06 02:42:00
 categories: Algorithms
 tags: [Algorithms]
