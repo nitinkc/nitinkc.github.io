@@ -39,3 +39,6 @@ tags: [Shortcuts]
 
 
 {{ 'now' | date: "%c" }}
+
+
+{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
