@@ -39,3 +39,18 @@ pandoc -f docx -t markdown Buying\ a\ bigger\ machine.docx -o x.md              
 
 ## Include gists as 
 {% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
+
+## INCLUDE TIME
+
+SITE BUILD TIME
+
+{{ site.time  }}
+
+NOW 
+
+{{ 'now' | date: "%Y/%m/%d" }}
+
+{{ 'now' | date_to_rfc822 }}
+
+
+{{ 'now' | date: "%C" }}
