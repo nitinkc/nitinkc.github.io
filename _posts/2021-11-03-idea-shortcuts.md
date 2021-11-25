@@ -31,3 +31,5 @@ tags: [Shortcuts]
 {% endfor %}
 
 </table>
+
+<p>{{ site.time }}</p><
