@@ -10,6 +10,7 @@
         <a class="site-title" href="{{ '/' | relative_url }}">
           {{ site.masthead_title | default: site.title }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
+          <!-- <span class="site-subtitle">{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}</span> -->
         </a>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
