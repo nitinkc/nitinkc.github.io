@@ -34,10 +34,17 @@ tags: [Shortcuts]
 
 sadfsad
 
-| :---| :---    |  
 |⌘ P         |See Parameter Infor|
 |⌘ ⇧ I        |See definition of a symbol at caret|
 |⌘ J          |See documentation of a symbol at caret|
+
+
+Coding Assistance
+
+|F2           |Goto Next coding Error|
+|⌘ F1         |See Warning Errors, Press twice for details|
+|**⌘ ⇧ F7**       |Highlighted All Usages|
+
 
 
 
