@@ -7,34 +7,33 @@ tags: [Shortcuts]
 ---
 
 
-| Key Combination	 | Details | 
-| :---             | :---    |      
-||⌘E|Move to the last location you edited.|
-|⌘  +⇧+N|Search Resource|
-|⌘  +1|It activates the quick fix.|
-|⌘  +F12|Find methods|
-|⇧ ⇧| Find All|
-|⇧⌘ F|Find reference|
-|Alt + F7|Find a method where its used|
-|||
-|⌘  +E|Shows you a list of all open editors.|
-||Use to move between open editors|
-|⌘  + M|Maximize or unmaximize your current tab.|
-|⌘  + O|Search a method within a  or|
-||unmaximize your current tab.|
-|⌘  + K/^ Sh K|Find instances fwd / backwards|
-|F3|Find uses in the same file|
-|⌘  + B|Build|
-|||
-|⌘  +⇧+G|Select an element and search its occurrences|
-|⇧⌘⌫|Jump back to previous edit|
-|⌘[ /⌘]|Move through navigation history|
+| Key | Details | 
+| :---| :---    |      
+|⌘E       |Move to the last location you edited.|
+|⌘  +⇧+N  |Search Resource|
+|⌘  +1    |It activates the quick fix.|
+|⌘  +F12  |Find methods|
+|⇧ ⇧      | Find All| 
+|⇧⌘ F     |Find reference|
+|Alt + F7 |Find a method where its used|
+|⌘  +E    |Shows you a list of all open editors.|
+|         |Use to move between open editors|
+|⌘  + M   |Maximize or unmaximize your current tab.|
+|⌘  + O   |Search a method within a  or|
+|         |unmaximize your current tab.|
+|⌘ + K/^ Sh K|Find instances fwd / backwards|
+|F3       |Find uses in the same file|
+|⌘  + B   |Build|
+|⌘  +⇧+G  |Select an element and search its occurrences|
+|⇧⌘⌫      |Jump back to previous edit|
+|⌘[ /⌘]   |Move through navigation history|
 |⌘  ⌥ + O |Optimize Imports|
-|||
-|⌘  +⇧+O||
-|⌘  ⌥ L| Code Format - Selected Code and Entire File|
-|⌘  ⌥  ⇧  L|Reformatting Setting|
-|⌘+ P|See Parameter Infor
+|⌘  +⇧+O  ||
+|⌘  ⌥ L   | Code Format - Selected Code and Entire File|
+|⌘  ⌥  ⇧ L|Reformatting Setting|
+|⌘+ P     |See Parameter Infor
+
+
 <!-- <table>
   <tr>
     <th>Key Combination</th>
