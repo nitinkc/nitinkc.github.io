@@ -25,13 +25,20 @@ tags: [Shortcuts]
 |**F3**           |Find uses in the same file|
 |⌘  + B       |Build|
 |⌘  +⇧+G      |Select an element and search its occurrences|
-|⇧⌘⌫          |Jump back to previous edit|
+|⌘ ⇧ ⌫          |Jump back to previous edit|
 |⌘[ /⌘]       |Move through navigation history|
 |**⌘ ⌥ O**     |Optimize Imports|
 |⌘  ⇧ O      ||
 |**⌘  ⌥ L**  | Code Format - Selected Code and Entire File|
 |⌘  ⌥  ⇧ L    |Reformatting Setting|
-|⌘ P         |See Parameter Infor
+
+sadfsad
+
+| :---| :---    |  
+|⌘ P         |See Parameter Infor|
+|⌘ ⇧ I        |See definition of a symbol at caret|
+|⌘ J          |See documentation of a symbol at caret|
+
 
 
 <!-- <table>
