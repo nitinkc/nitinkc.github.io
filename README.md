@@ -52,5 +52,9 @@ NOW
 
 {{ 'now' | date_to_rfc822 }}
 
-
 {{ 'now' | date: "%C" }}
+
+{{ 'now' | date: "%c" }}
+
+
+{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}

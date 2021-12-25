@@ -6,18 +6,6 @@ categories: Shortcuts
 tags: [Shortcuts]
 ---
 
-
-
-<!-- <ul>
-{% for shortcut in site.data.shortcuts %}
-  <li>
-      {{ shortcut.keys }}
-      {{ shortcut.shortcut }}
-  </li>
-{% endfor %}
-</ul> -->
-
-
 <table>
   <tr>
     <th>Key Combination</th>
@@ -32,13 +20,11 @@ tags: [Shortcuts]
 
 </table>
 
-
-
-
-{{ 'now' | date_to_rfc822 }}
-
-
-{{ 'now' | date: "%c" }}
-
-
-{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
+<!-- <ul>
+{% for shortcut in site.data.shortcuts %}
+  <li>
+      {{ shortcut.keys }}
+      {{ shortcut.shortcut }}
+  </li>
+{% endfor %}
+</ul> -->
