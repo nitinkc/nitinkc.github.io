@@ -1,21 +1,27 @@
 keys,shortcut
 ⌘E,Move to the last location you edited.
-CTRL+SHIFT+N,Search Resource
-CTRL+1,It activates the quick fix.
-cmd + F12,Find methods
-Press  SHIFT TWO times, dsa
+⌘  +⇧+N,Search Resource
+⌘  +1,It activates the quick fix.
+⌘  + F12,Find methods
+⇧ ⇧, Find All
 ⇧⌘ F,Find reference
 Alt + F7,Find a method where its used
-CTRL+E,Shows you a list of all open editors.
-sdsd,Use to move between open editors
-CTRL + M,Maximize or unmaximize your current tab
-CTRL + O,Search a method within a  or unmaximize your current tab.
-CTRL + K/^ Sh K, Find instances fwd / backwards
+,
+⌘  +E,Shows you a list of all open editors.
+,Use to move between open editors
+⌘  + M,Maximize or unmaximize your current tab.
+⌘  + O,Search a method within a  or
+,unmaximize your current tab.
+⌘  + K/^ Sh K,Find instances fwd / backwards
 F3,Find uses in the same file
-CNRK + B,Build
-CTRL+SHIFT+G,Select an element and search its occurrences
-⇧⌘⌫, Jump back to previous edit
-⌘[ / ⌘],Move through navigation history
-CTRL + ALT + O, Optimize Imports
-CTRL+SHIFT+O,
-CTRL + ALT + L, Code Format
+⌘  + B,Build
+,
+⌘  +⇧+G,Select an element and search its occurrences
+⇧⌘⌫,Jump back to previous edit﻿
+⌘[ / ⌘],Move through navigation history﻿
+⌘  ⌥ + O ,Optimize Imports
+,
+⌘  +⇧+O,
+⌘  ⌥ L, Code Format - Selected Code and Entire File
+⌘  ⌥  ⇧  L,Reformatting Setting
+⌘+ P,See Parameter Infor
