@@ -58,7 +58,6 @@ Find & Replace in Files
 | ^Ctrl ⇧Shift R   |Replace in Files |
 
 File Structure
-
 |⌘Cmd  F12      |Display all methods in a file|
 |⌘Cmd  7        |File Structure Tool Window|
 
@@ -76,7 +75,7 @@ Inheritance Hierarchy
 
 Recent Files and Locations
 
-| <td style="background-color:yellow;"> ⌘Cmd E     </td>        |Show recently opened Files|
+| ⌘Cmd E             |Show recently opened Files|
 |⌘Cmd ⇧Shift E             |See edited code is recently opened Files|
 
 
