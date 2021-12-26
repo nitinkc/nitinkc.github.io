@@ -6,7 +6,9 @@ categories: Shortcuts
 tags: [Shortcuts]
 ---
 
-⌘Cmd ⇧Shift ^Ctrl ⌥Opt
+⌘Cmd ⇧Shift ^Ctrl ⌥Opt ⎋Esc
+
+⇧Shift ⎋Esc to hide a tool window
 
 
 | Key | Details | 
@@ -19,12 +21,14 @@ Coding Assistance
 
 |**⇧ ⇧**       |Find All| 
 |**⌘  ⇧ N**    |Search Resource|
-|⌘  + F12      |Find methods|
+|F2           |Goto Next coding Error|
+|⌘ F1         |See Warning Errors, Press twice for details|
+|**⌘ ⇧ F7**       |Highlighted All Usages|
+|⇧⌘ F         |Find reference|
+|Alt + F7     |Find a method where its used|
 |⌘ J          |See documentation of a symbol at caret|
 
 
-|⇧⌘ F         |Find reference|
-|Alt + F7     |Find a method where its used|
 |⌘  +E        |Shows you a list of all open editors.|
 |             |Use to move between open editors|
 |⌘  + M       |Maximize or unmaximize your current tab.|
@@ -47,17 +51,32 @@ sadfsad
 |⌘ ⇧ I        |See definition of a symbol at caret|
 
 
-Coding Assistance
+Find & Replace in Files
 
-|F2           |Goto Next coding Error|
-|⌘ F1         |See Warning Errors, Press twice for details|
-|**⌘ ⇧ F7**       |Highlighted All Usages|
-
-
-|⇧Shift ^Ctrl F|Find in Files |
+|^Ctrl ⇧Shift F |Find in Files |
 |W or ⌥Opt W    |Narrow search on Find While Searching|
+| ^Ctrl ⇧Shift R   |Replace in Files |
 
+File Structure
+|⌘Cmd  F12      |Display all methods in a file|
+|⌘Cmd  7        |File Structure Tool Window|
 
+Declaration and Usage
+
+|⌘Cmd B         |Jump to declaration of method, Toggle by clicking twice|
+|⌥Opt F7        |Window for detailed view of usages  |
+
+Inheritance Hierarchy
+
+|⌘Cmd ⌥Opt B        |See implementation of SomeInterface#foo|
+|⌘Cmd U             |Navigate to super method|
+|⌘Cmd  ⇧Shift H     |See Hierarchy Window|
+|⌘Cmd H             |See Class Hierarchy|
+
+Recent Files and Locations
+
+| <td style="background-color:yellow;"> ⌘Cmd E     </td>        |Show recently opened Files|
+|⌘Cmd ⇧Shift E             |See edited code is recently opened Files|
 
 
 <!-- <table>
