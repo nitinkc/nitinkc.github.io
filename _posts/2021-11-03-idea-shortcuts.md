@@ -58,6 +58,7 @@ Find & Replace in Files
 | ^Ctrl ⇧Shift R   |Replace in Files |
 
 File Structure
+
 |⌘Cmd  F12      |Display all methods in a file|
 |⌘Cmd  7        |File Structure Tool Window|
 
