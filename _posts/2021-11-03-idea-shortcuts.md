@@ -6,14 +6,23 @@ categories: Shortcuts
 tags: [Shortcuts]
 ---
 
+⌘Cmd ⇧Shift ^Ctrl ⌥Opt
+
 
 | Key | Details | 
 | :---| :---    |      
 |⌘E            |Move to the last location you edited.|
-|⌘  + ⇧+N      |Search Resource|
+
 |⌘  + 1        |It activates the quick fix.|
+
+Coding Assistance
+
+|**⇧ ⇧**       |Find All| 
+|**⌘  ⇧ N**    |Search Resource|
 |⌘  + F12      |Find methods|
-|**⇧ ⇧**          |Find All| 
+|⌘ J          |See documentation of a symbol at caret|
+
+
 |⇧⌘ F         |Find reference|
 |Alt + F7     |Find a method where its used|
 |⌘  +E        |Shows you a list of all open editors.|
@@ -36,7 +45,6 @@ sadfsad
 
 |⌘ P         |See Parameter Infor|
 |⌘ ⇧ I        |See definition of a symbol at caret|
-|⌘ J          |See documentation of a symbol at caret|
 
 
 Coding Assistance
@@ -44,6 +52,10 @@ Coding Assistance
 |F2           |Goto Next coding Error|
 |⌘ F1         |See Warning Errors, Press twice for details|
 |**⌘ ⇧ F7**       |Highlighted All Usages|
+
+
+|⇧Shift ^Ctrl F|Find in Files |
+|W or ⌥Opt W    |Narrow search on Find While Searching|
 
 
 
