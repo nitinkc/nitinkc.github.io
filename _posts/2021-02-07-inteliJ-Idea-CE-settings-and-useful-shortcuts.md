@@ -1,6 +1,6 @@
 ---
 # layout: static
-title:  "IntelliJ Idea - Useful settings and shortcuts"
+title:  "IntelliJ Idea settings"
 date:   2021-02-07 02:15:00
 categories: ['Developer tools']
 tags: ['Developer tools']
@@ -12,13 +12,7 @@ sidebar:
 
 {% include toc title="Index" %}
 
-# Useful Shortcuts
-| S.no| Shortcut                 | Use                              |
-|---- |--------------------------|----------------------------------|
-| 1  | cntl + shift + N | Find class/interface files  |
-| 2  | |
-
-# Initial Settings 
+# Initial Settings
 
 For the personalized comments, use the following the templates in the Preferences as below
 
