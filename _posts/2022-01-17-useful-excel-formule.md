@@ -17,3 +17,7 @@ tags: [Excel]
 
 
 Hit **^Ctrl ⇧Shift ↵Return** to get the result, if the cell values are equal, it will displa TRUE, otherwise, it will display FALSE, 
+
+## Proper
+
+![]({{ site.url }}/assets/images/proper.png)
