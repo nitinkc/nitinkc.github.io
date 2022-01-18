@@ -16,4 +16,4 @@ tags: [Excel]
 ![]({{ site.url }}/assets/images/excel_multi_col_compare.png)
 
 
-press Ctrl + Shift + Enter to get the result, if the cell values are equal, it will display TRUE, otherwise, it will display FALSE, 
+Hit **^Ctrl ⇧Shift ↵Return** to get the result, if the cell values are equal, it will displa TRUE, otherwise, it will display FALSE, 

@@ -6,7 +6,7 @@ categories: Shortcuts
 tags: [Shortcuts]
 ---
 
-⌘Cmd ⇧Shift ^Ctrl ⌥Opt ⎋Esc
+⌘Cmd ⇧Shift ^Ctrl ⌥Opt ⎋Esc ↵Return
 
 ⇧Shift ⎋Esc to hide a tool window
 
