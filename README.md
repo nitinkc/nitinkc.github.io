@@ -1,7 +1,6 @@
 # nitinkc.github.io
 
 
-
 [Text using Symbols](https://fsymbols.com/generators/encool/)
 
 Liquid Templating Language
@@ -30,39 +29,4 @@ lsof -P | grep ':4000' | awk '{print $2}' | xargs kill -9
 SiteMap : https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap
 
 
-
 pandoc -f docx -t markdown Buying\ a\ bigger\ machine.docx -o x.md                                                                                       ─╯
-
-
-## Add right side bar Index
-{% include toc title="Index" %}
-
-## Include gists as
-{% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
-
-## INCLUDE TIME
-
-SITE BUILD TIME
-
-{{ site.time  }}
-
-NOW 
-
-{{ 'now' | date: "%Y/%m/%d" }}
-
-{{ 'now' | date_to_rfc822 }}
-
-{{ 'now' | date: "%C" }}
-
-{{ 'now' | date: "%c" }}
-
-
-{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
-
-
-## Markdown links syntax
-If you're building your pages with markdown, use the following examples to generate internal links.
-
-[Link title]({{ site.baseurl }}{% link page/index.html %})
-[Link title]({% post_url 2019-03-06-post-title %})
-[Link title]({{ site.baseurl }}{% post_url 2019-03-06-post-title %})

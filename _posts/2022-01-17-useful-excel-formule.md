@@ -1,6 +1,6 @@
 ---
 # layout: static
-title:  "USeful MS Excel Tools"
+title:  "Useful MS Excel Tools"
 date:   2022-01-17 21:55:00
 categories: Excel
 tags: [Excel]
