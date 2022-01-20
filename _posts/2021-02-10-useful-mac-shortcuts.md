@@ -1,6 +1,6 @@
 ---
 # layout: static
-title:  "Useful Mac settings"
+title:  "Configuring a new MacBook for Dev Productivity"
 date: 2021-02-10 02:15:00
 categories: ['Developer tools']
 tags: ['Developer tools']
@@ -16,12 +16,22 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO;killall Fi
 ```
 
 
-# Developer tools
+# Useful Office Productivity tool
 
+| Tool | Details | 
+| :---| :---    |   
+|Alfred 4 for Mac 	| | 
+|gemini 2 			| Scan the mac for duplicates|
+|PhotoSweeper 		||
+|Amphetamine 		| keeping the mac active and prevent it from locking|
+|Flycut 			| Clipboard manager|
+|Flux 				| Whitelight manager, based on location. Redundant with latest mac OS|
+|TimeOut 			| Rest your eyes based on Pomodoro Cycles|
+|Kap 				| Screen Recorder, Screenshot for emails|
+|Rectangle 			| Move and resize windows in macOS|
+|Cheatsheet			| Reveal Mac shortcuts|
+|CustomShortcuts 	| Define your own shortcuts|
 
-gemini 2
-
-PhotoSweeper
 
 # Mac Settings
 
