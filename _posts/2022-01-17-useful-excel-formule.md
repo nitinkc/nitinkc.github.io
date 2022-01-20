@@ -18,6 +18,10 @@ Hit **^Ctrl ⇧Shift ↵Return** to get the result, if the cell values are equal
 ![]({{ site.url }}/assets/images/excel_multi_col_compare.png)
 
 
+Comparing two cells 
+```excel
+=EXACT(A1,D1)
+```
 ## Proper
 
 Make a String in camel case.
