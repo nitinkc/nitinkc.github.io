@@ -10,8 +10,8 @@ tags: ['Developer tools']
 
 Installing the following tools and configuring them ensures maximum ease of development
 
-* Install Brew Package manager
-* Create profiles and [configure iTerm and PowerLine](https://github.com/nitinkc/SystemEnvironment#readme)
+1. Install Brew Package manager
+2. Create personalized [profiles and configure alias](https://github.com/nitinkc/SystemEnvironment#readme)
 
 | Tool | Details | 
 | :---| :---    |   
