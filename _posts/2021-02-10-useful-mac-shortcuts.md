@@ -6,9 +6,22 @@ categories: ['Developer tools']
 tags: ['Developer tools']
 ---
 
+# Configuring Java development Environment
+
+Installing the following tools and configuring them ensures maximum ease of development
+
+* Install Brew Package manager
+* Create profiles and [configure iTerm and PowerLine](https://github.com/nitinkc/SystemEnvironment#readme)
+
+| Tool | Details | 
+| :---| :---    |   
+|Iterm		|[Configuring iTerm]({% post_url /2021-01-02-iTerm-zsh-mac %})|
+|IntelliJ	|[Configuring IntelliJ]({% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})|
+|Sublime	|[Configuring Sublime Editor]({% post_url 2021-03-24-Sublime-Settings)|
+
+
 The following tools helps a lot making the develop environment much more conducive to work. 
 
-Install Brew Package manager
 
 # Useful Office Productivity tool
 
@@ -29,16 +42,6 @@ Install Brew Package manager
 |DBeaver			| Open source DB client for all|
 |ItsYCal			| View Calander and Time like Windows on ToolBar on top|
 
-
-# Configuring Java development Environment
-
-Installing the following tools and configuring them ensures maximum ease of development
-
-| Tool | Details | 
-| :---| :---    |   
-|Iterm		|[Configuring iTerm]({% post_url /2021-01-02-iTerm-zsh-mac %})|
-|IntelliJ	|[Configuring IntelliJ]({% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})|
-|Sublime	|[Configuring Sublime Editor]({% post_url 2021-03-24-Sublime-Settings)|
 
 # Mac Settings
 
