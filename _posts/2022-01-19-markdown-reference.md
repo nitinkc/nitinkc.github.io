@@ -7,16 +7,19 @@ tags: ['Developer tools']
 ---
 
 ## Add right side bar Index
+```
 {% include toc title="Index" %}
-
+```
 ## Include gists as
+```
 {% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
-
+```
 ## INCLUDE TIME
 
 SITE BUILD TIME
-
+```
 {{ site.time  }}
+```
 
 NOW 
 ```sh
@@ -37,8 +40,8 @@ NOW
 
 If you're building your pages with markdown, use the following examples to generate internal links.
 
-```markdown
-[Link title]({{ site.baseurl }}{% link page/index.html %})
-[Link title]({% post_url 2019-03-06-post-title %})
-[Link title]({{ site.baseurl }}{% post_url 2019-03-06-post-title %})
+```
+[Link title]({{ site.baseurl }}{% link index.html %})
+[Link title]({% post_url 2016-04-04-jekyll-blog-GitHub-hosting %})
+[Link title]({{ site.baseurl }}{% post_url 2016-04-04-jekyll-blog-GitHub-hosting %})
 ```
