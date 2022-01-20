@@ -43,9 +43,10 @@ The following tools helps a lot making the develop environment much more conduci
 |ItsYCal			| View Calander and Time like Windows on ToolBar on top|
 
 
-# Mac Settings
+# Mac Shortcuts
 
 Press Shift-Command-5 (macOS Mojave or later) and invoke the screen capture panel.
+
 Click on Options and choose "Other Location" to choose a destination.
 
 
