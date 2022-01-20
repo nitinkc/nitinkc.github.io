@@ -6,6 +6,10 @@ categories: ['Developer tools']
 tags: ['Developer tools']
 ---
 
+## Contents
+
+{% include toc title="Index" %}
+
 ## Add right side bar Index
 ```
 {% include toc title="Index" %}

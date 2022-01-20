@@ -6,8 +6,11 @@ categories: Excel
 tags: [Excel]
 ---
 
-## Compare multiple columns together for equality
+## Contents
 
+{% include toc title="Index" %}
+
+## Compare multiple columns together for equality
 
 ```excel
 =AND(EXACT(A1:D1,A1))
@@ -47,3 +50,5 @@ Make a String in camel case.
 * Finally FALSE to find an exact match.
 
 ![]({{ site.url }}/assets/images/vlookup.png)
+
+## Find Duplicates

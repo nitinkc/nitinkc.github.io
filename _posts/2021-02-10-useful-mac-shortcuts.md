@@ -6,6 +6,10 @@ categories: ['Developer tools']
 tags: ['Developer tools']
 ---
 
+## Contents
+
+{% include toc title="Index" %}
+
 # Configuring Java development Environment
 
 Installing the following tools and configuring them ensures maximum ease of development
