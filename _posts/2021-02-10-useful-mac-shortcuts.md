@@ -6,15 +6,7 @@ categories: ['Developer tools']
 tags: ['Developer tools']
 ---
 
-## Toggle Hidden files
-Command + Shift + Period
-
-or
-```sh
-alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES;killall Finder /System/Library/CoreServices/Finder.app'
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO;killall Finder /System/Library/CoreServices/Finder.app'
-```
-
+The following tools helps a lot making the develop environment much more conducive to work. 
 
 # Useful Office Productivity tool
 
@@ -28,12 +20,32 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO;killall Fi
 |Flux 				| Whitelight manager, based on location. Redundant with latest mac OS|
 |TimeOut 			| Rest your eyes based on Pomodoro Cycles|
 |Kap 				| Screen Recorder, Screenshot for emails|
+|Giphy Capture		| Screen Recorder to GIF for email attachments|
 |Rectangle 			| Move and resize windows in macOS|
 |Cheatsheet			| Reveal Mac shortcuts|
 |CustomShortcuts 	| Define your own shortcuts|
+|DBeaver			| Open source DB client for all|
+|ItsYCal			| View Calander and Time like Windows on ToolBar on top|
+
+
+[Configuring iTerm]({% post_url /2021-01-02-iTerm-zsh-mac %})
+
+[Configuring IntelliJ]({% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})
+
 
 
 # Mac Settings
 
 Press Shift-Command-5 (macOS Mojave or later) and invoke the screen capture panel.
 Click on Options and choose "Other Location" to choose a destination.
+
+
+## Toggle Hidden files
+
+Command + Shift + Period
+
+or
+```sh
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES;killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO;killall Finder /System/Library/CoreServices/Finder.app'
+```
