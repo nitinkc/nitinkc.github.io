@@ -52,3 +52,6 @@ Make a String in camel case.
 ![]({{ site.url }}/assets/images/vlookup.png)
 
 ## Find Duplicates
+
+![]({{ site.url }}/assets/images/duplicates.png)
+
