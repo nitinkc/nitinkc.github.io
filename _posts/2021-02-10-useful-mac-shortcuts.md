@@ -8,6 +8,8 @@ tags: ['Developer tools']
 
 The following tools helps a lot making the develop environment much more conducive to work. 
 
+Install Brew Package manager
+
 # Useful Office Productivity tool
 
 | Tool | Details | 
@@ -28,11 +30,15 @@ The following tools helps a lot making the develop environment much more conduci
 |ItsYCal			| View Calander and Time like Windows on ToolBar on top|
 
 
-[Configuring iTerm]({% post_url /2021-01-02-iTerm-zsh-mac %})
+# Configuring Java development Environment
 
-[Configuring IntelliJ]({% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})
+Installing the following tools and configuring them ensures maximum ease of development
 
-
+| Tool | Details | 
+| :---| :---    |   
+|Iterm		|[Configuring iTerm]({% post_url /2021-01-02-iTerm-zsh-mac %})|
+|IntelliJ	|[Configuring IntelliJ]({% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})|
+|Sublime	|[Configuring Sublime Editor]({% post_url 2021-03-24-Sublime-Settings)|
 
 # Mac Settings
 
