@@ -12,13 +12,13 @@ tags: ['Developer tools']
 
 ## Add right side bar Index
 {% raw  %}
-{% include toc title="Index" %}
+`{% include toc title="Index" %}`
 {% endraw %}
 
 
 ## Include gists as
 {% raw  %}
-{% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
+`{% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}`
 {% endraw %}
 
 ## INCLUDE TIME
@@ -29,15 +29,15 @@ SITE BUILD TIME
 
 {{ site.time  }}
 
-{{ 'now' | date: "%Y/%m/%d" }}
+`{{ 'now' | date: "%Y/%m/%d" }}`
 
-{{ 'now' | date_to_rfc822 }}
+`{{ 'now' | date_to_rfc822 }}`
 
-{{ 'now' | date: "%C" }}
+`{{ 'now' | date: "%C" }}`
 
-{{ 'now' | date: "%c" }}
+`{{ 'now' | date: "%c" }}`
 
-{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
+`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`
 
 {% endraw %}
 
@@ -47,9 +47,9 @@ SITE BUILD TIME
 If you're building your pages with markdown, use the following examples to generate internal links.
 
 {% raw  %}
-[Link title]({{ site.baseurl }}{% link index.html %})
+`[Link title]({{ site.baseurl }}{% link index.html %})`
 
-[Link title]({% post_url 2016-04-04-jekyll-blog-GitHub-hosting %})
+`[Link title]({% post_url 2016-04-04-jekyll-blog-GitHub-hosting %})`
 
-[Link title]({{ site.baseurl }}{% post_url 2016-04-04-jekyll-blog-GitHub-hosting %})
+`[Link title]({{ site.baseurl }}{% post_url 2016-04-04-jekyll-blog-GitHub-hosting %})`
 {% endraw %}
