@@ -66,11 +66,9 @@ If you're building your pages with markdown, use the following examples to gener
 
 Use raw tag 
 
-```markdown
-{% raw  %}
+> {% raw  %}
+> {% endraw %}
 
-{% endraw %}
-```
 {% raw  %}
 Use backtick quotes (\`) to display a liquid tag as a span of code .
 {% endraw %}
