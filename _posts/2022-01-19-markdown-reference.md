@@ -62,12 +62,11 @@ If you're building your pages with markdown, use the following examples to gener
 ## Escape Liquid template tags in Jekyll posts
 
 Use raw tag 
-
+```
 {% raw  %}
-`{% raw  %}`
-`Any liquid Template Tag`
-`{% endraw %}`
 
 {% endraw %}
-
+```
+{% raw  %}
 Use backtick quotes (\`) to display a liquid tag as a span of code .
+{% endraw %}
