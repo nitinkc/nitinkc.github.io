@@ -53,3 +53,21 @@ If you're building your pages with markdown, use the following examples to gener
 
 `[Link title]({{ site.baseurl }}{% post_url 2016-04-04-jekyll-blog-GitHub-hosting %})`
 {% endraw %}
+
+## Use a picture in a post
+{% raw  %}
+`![]({{ site.url }}/assets/images/image.png)`
+{% endraw %}
+
+## Escape Liquid template tags in Jekyll posts
+
+Use raw tag 
+
+{% raw  %}
+`{% raw  %}`
+`Any liquid Template Tag`
+`{% endraw %}`
+
+{% endraw %}
+
+Use backtick quotes (\`) to display a liquid tag as a span of code .
