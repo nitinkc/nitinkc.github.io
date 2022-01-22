@@ -10,36 +10,35 @@ tags: ['Developer tools']
 
 {% include toc title="Index" %}
 
-## Add right side bar Index
+## Add right side Index bar on this blog
+
 {% raw  %}
 `{% include toc title="Index" %}`
 {% endraw %}
 
 
 ## Include gists as
+
+Include code as a gist into the Jekyll post. Uses jekyll-gist plugin.
 {% raw  %}
 `{% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}`
 {% endraw %}
 
 ## INCLUDE TIME
 
-SITE BUILD TIME
+| Column Header 1 | Column Header 1  | 
+| :---		| :---   |  
+|{% raw  %}
+|Site Build Time to be displayed|
+|`{{ site.time  }}`|{{ site.time  }}|
+|`{{ 'now' | date: "%Y/%m/%d" }}`|{{ 'now' | date: "%Y/%m/%d" }}|
+|`{{ 'now' | date_to_rfc822 }}`|{{ 'now' | date_to_rfc822 }}|
+|`{{ 'now' | date: "%C" }}`|{{ 'now' | date: "%C" }}|
+|`{{ 'now' | date: "%c" }}`|{{ 'now' | date: "%c" }}|
+|`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`|{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
+|{% endraw %}    ||
 
-{% raw  %}
 
-{{ site.time  }}
-
-`{{ 'now' | date: "%Y/%m/%d" }}`
-
-`{{ 'now' | date_to_rfc822 }}`
-
-`{{ 'now' | date: "%C" }}`
-
-`{{ 'now' | date: "%c" }}`
-
-`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`
-
-{% endraw %}
 
 
 ## Markdown links syntax
