@@ -4,6 +4,8 @@ title:  "Markdown Reference"
 date:   2022-01-19 21:55:00
 categories: ['Developer tools']
 tags: ['Developer tools']
+sidebar:
+  nav: "algo"
 ---
 
 ## Contents
@@ -70,4 +72,15 @@ Use backtick quotes (\`) to display a liquid tag as a span of code .
 | :---		| :---   |      
 | ⌘E    	| Move to the last location you edited.	|
 | ⌘  + 1  	|It activates the quick fix.|
+```
+
+## Add Sidebar Navigation
+
+In the header tag add
+
+```markdown
+---
+sidebar:
+  nav: "algo"
+---
 ```
