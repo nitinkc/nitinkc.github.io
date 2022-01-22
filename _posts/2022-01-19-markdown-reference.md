@@ -27,19 +27,13 @@ Include code as a gist into the Jekyll post. Uses jekyll-gist plugin.
 ## INCLUDE TIME
 
 | Column Header 1 | Column Header 1  | 
-| :---		| :---   |  
-|{% raw  %}
-|Site Build Time to be displayed|
-|`{{ site.time  }}`|{{ site.time  }}|
-|`{{ 'now' | date: "%Y/%m/%d" }}`|{{ 'now' | date: "%Y/%m/%d" }}|
-|`{{ 'now' | date_to_rfc822 }}`|{{ 'now' | date_to_rfc822 }}|
-|`{{ 'now' | date: "%C" }}`|{{ 'now' | date: "%C" }}|
-|`{{ 'now' | date: "%c" }}`|{{ 'now' | date: "%c" }}|
-|`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`|{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
-|{% endraw %}    ||
-
-
-
+| :---				| :---   |  
+|Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} |{{ site.time  }}|
+|{% raw  %}`{{ 'now' | date: "%Y/%m/%d" }}`{% endraw %}|{{ 'now' | date: "%Y/%m/%d" }}|
+|{% raw  %}`{{ 'now' | date_to_rfc822 }}`{% endraw %}|{{ 'now' | date_to_rfc822 }}|
+|{% raw  %}`{{ 'now' | date: "%C" }}`{% endraw %}|{{ 'now' | date: "%C" }}|
+|{% raw  %}`{{ 'now' | date: "%c" }}`{% endraw %}|{{ 'now' | date: "%c" }}|
+|{% raw  %}`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}|{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
 
 ## Markdown links syntax
 
