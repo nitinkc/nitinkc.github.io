@@ -74,7 +74,7 @@ Use backtick quotes (\`) to display a liquid tag as a span of code .
 
 ```markdown
 | Column Header 1 | Column Header 1  | 
-| :---			| :---   |      
+| :---		| :---   |      
 | ⌘E    	| Move to the last location you edited.	|
 | ⌘  + 1  	|It activates the quick fix.|
 ```
