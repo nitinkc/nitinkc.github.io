@@ -8,6 +8,31 @@ tags: [Shortcuts]
 
 # Necessasary UI Settings
 
-1. Show Full directory path on Finder: File path at the top and bottom ![](Screen Shot 2016-02-24 at 10.36.01 PM.png)
-2. 
-2. Set your favorite editor to open up text/java/c files etc.
+### Show Full directory path on Finder: 
+
+File path at the top of the tool bar on finder window
+
+```sh
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true; killall Finder
+```
+Execute the command on terminal and the file path would appear like :-
+
+![]({{ site.url }}/assets/images/filePath.png)
+
+
+### Useful toolbar items
+
+![]({{ site.url }}/assets/images/mac_toolbar.png)
+
+
+### Show Path Bar
+
+Path Bar appears on the bottom of the Finder Window
+
+![]({{ site.url }}/assets/images/pathbar.png)
+
+
+ Open **Finder** and go to View > Show Path Bar.
+
+![]({{ site.url }}/assets/images/pathbar_set.png){:height="400px" width="200px"}
+
