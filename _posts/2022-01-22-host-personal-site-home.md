@@ -6,15 +6,7 @@ categories: Shortcuts
 tags: [Shortcuts]
 ---
 
-# ssh-enabled
-
-* Login to router and enable port forwarding for SSH on port 80.
-* Find out the Routers ip-address. This address is exposed to the outside world. Find [ipv4/ipv6](http://ipv4.whatismyv6.com/) address.
-* Check the status of the ports at [You get Signal](http://www.yougetsignal.com/tools/open-ports/)
-* Login from any computer in the world using `ssh synergy@67.170.249.191`where 67.170.249.191 is the Router address at my office.
-
-
-# port forwarding
+# Port Forwarding on Home Router
 
 In order to use the web server truly as a remote web server, we have to make it accessible outside the LAN. This can be achieved via port forwarding.
 
@@ -28,8 +20,18 @@ The comcast business router default values are
 http://10.1.10.1/
 user: cusadmin
 password: highspeed
+
 ![port forwarding]({{ site.url }}/assets/images/prot-forward.JPG)
+
 Here the server IP address is the address of the computer inside the LAN running HTTP Server
+
+
+# ssh-enabled
+
+* Login to router and enable port forwarding for SSH on port 80.
+* Find out the Routers ip-address. This address is exposed to the outside world. Find [ipv4/ipv6](http://ipv4.whatismyv6.com/) address.
+* Check the status of the ports at [You get Signal](http://www.yougetsignal.com/tools/open-ports/)
+* Login from any computer in the world using `ssh synergy@67.170.249.191`where 67.170.249.191 is the Router address.
 
 
 # Publish Website
@@ -42,8 +44,8 @@ eg: http://67.170.249.191
 
 Using DDNS service, you can register this IP address with a Domain Name String.
 
-# DDNS
+# DNS
 
-Since it is harder to remember IPO addresses like 67.170.249.191, use DDNS service. You can find service providers, both paid and free. One free provider is 
+Since it is harder to remember IP addresses like 67.170.249.191, use DDNS service. You can find service providers, both paid and free. One free provider is 
 
 
