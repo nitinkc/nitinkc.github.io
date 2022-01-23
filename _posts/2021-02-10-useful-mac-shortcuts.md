@@ -45,7 +45,8 @@ The following tools helps a lot making the develop environment much more conduci
 |CustomShortcuts 	| Define your own shortcuts|
 |DBeaver			| Open source DB client for all|
 |ItsYCal			| View Calander and Time like Windows on ToolBar on top|
-
+|[***XMind***](http://www.xmind.net/download/mac/)|MindMapping tool|
+|Transmission|for Peer to peer Torrent transfer. Setup your own server|
 
 # Mac Shortcuts
 

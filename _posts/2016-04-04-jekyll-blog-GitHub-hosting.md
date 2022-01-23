@@ -7,10 +7,9 @@ sidebar:
   nav: "algo"
 ---
 
-Making a personal website using GitHub's free Hosting for the Jekyll Sites
-
 {% include toc title="Index" %}
 
+Making a personal website using GitHub's free Hosting for the Jekyll Sites
 Create a blog with naming convention of yyyy-mm-dd-name-of-the-blog.md and save it in \_posts directory
 
 On a new machine (mac) use this link
