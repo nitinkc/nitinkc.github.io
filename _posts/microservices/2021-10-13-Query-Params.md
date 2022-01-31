@@ -11,6 +11,7 @@ tags: [Spring Microservices, Spring Boot]
 ```
 v1/customer/{customerId}/orders?orderDate=10-11-2021
 ```
+
 The difficulty is in taking the date in a particular format and parse it. Only Date is involved and not the time field.
 
 Notice the data format and required parameter

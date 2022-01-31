@@ -9,10 +9,12 @@ tags: ['Java']
 
 ```java
 //Prints each element
-list.stream().forEach(str -> System.out.println(str));
+list.stream()
+    .forEach(str -> System.out.println(str));
 
 //Where ever Lambda is there it can be replaced by method reference
-list.stream().forEach(System.out :: print);
+list.stream()
+    .forEach(System.out :: print);
 ```
 
 ## Double Colon Operator
@@ -33,85 +35,46 @@ Defined in java.util.function
 3. Consumer (accept()), - Used with forEach() method
 4. Supplier (get()),
 
-### Predicate (used with Filters)
+### Predicate 
 
-java.util.function.Predicate, represents a simple function that takes a single value as parameter, and returns true or false.
+`java.util.function.Predicate`, represents a simple function that takes a single value as parameter, and returns true or false.
+
+/**Predicate uses a Lambda that returns true and false**
+
+Commonly used with Filters. 
+
+Here is how the Function interface definition looks:
 
 ```java
 public interface Predicate<T> {
     boolean test(T t);
 }
-
-**Predicate uses a Lambda that returns true and false**
-
-Predicate<Student> firstNameLength = Student -> (Student.getfName().length() <= 3);
-Predicate<Student> semPredicate = Student -> (Student.getSem() == 1);
-Predicate<Student> deptPredicate = Student -> (Student.getDeptCode().equalsIgnoreCase("mec"));
-
-//Find out all the students based on firstNameLength predicate
-System.out.println("Find out all the students based on firstNameLength predicate");
-studentList
-  .stream()
-  .filter(firstNameLength)
-  .forEach(System.out::println);
-
-//Find all students from 1st Sem
-System.out.println("Find all students from 1st Sem");
-studentList
-  .stream()
-  .filter(semPredicate)
-  .forEach(System.out::println);
-
-//Composite Predicate : All Students from CSE of First sem
-System.out.println("Composite Predicate : All Students from CSE of First sem");
-studentList
-  .stream()
-  .filter(semPredicate.and(deptPredicate.negate()))
-  .forEach(System.out::println);
-
-//Same as above
-studentList
-  .stream()
-  .filter(semPredicate)
-  .filter(deptPredicate.negate())
-  .forEach(System.out::println);
 ```
 
-### Function (used with MAP)
+{% gist nitinkc/b63f8cbb3d13cab6ba1fb5256d748d6f %}
 
-The Function interface represents a function (method) that takes a single parameter and returns a single value. Here is how the Function interface definition looks:
+
+### Function 
+
+Commonly used with streams.map()
+
+The Function interface represents a function (method) that **takes a single parameter and returns a single value**. Here is how the Function interface definition looks:
+
+function is used in map() function
 
 ```java
 public interface Function<T, R> {
     R apply(T t);
 }
-
-**Write Lambda in such a way that it accepts an argument and performs an action on it**
-
-function is used in map() function
-
-List<String> list = Arrays.asList("1","2","3", "n", "",null);
-final int DEFAULT_VALUE = 9999;
-
-// Function to convert Strings to Int, put 9999 as default value for other cases
-Function<String, Integer> function = x -> NumberUtils.toInt(x,DEFAULT_VALUE);
-// Predicate to replace to test if the number in the list is a Default value.
-Predicate<Integer> predicate = (Integer x) -> (x == DEFAULT_VALUE);
-
-//Print entire list
-list
-    .stream()
-    .map(function)
-    .forEach(System.out::println);
-
-//all the numbers except for the default replacement number
-list.stream()
-    .map(function)
-    .filter(predicate.negate())
-    .forEach(System.out::println);
 ```
 
+Write Lambda in such a way that it **accepts an argument and performs an action** on it
+
+{% gist nitinkc/bed9ceea341088f49355f8422958d04a %}
+
+
 ### BiFunction
+
 ```java
 public interface BiFunction<T, U, R> {
      R apply(T t, U u);
@@ -121,6 +84,7 @@ public interface BiFunction<T, U, R> {
 higher-order functions. Two common examples are filter and map.
 
 A filter processes a list in some order to produce a new list containing exactly those elements of the original list for which a given predicate (think Boolean expression) returns true.
+
 A map applies a given function to each element of a list, returning a list of results in the same order.
 
 Another common higher-order function is reduce, which is more commonly known as a fold. This function reduces a list to a single value.
@@ -167,47 +131,26 @@ Supplier<LocalDate> s2 = () -> LocalDate.now();
 
 # Java Streams
 
-(Java Streams API Java doc)[https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html]
 * A stream in Java is a sequence of data that takes input from Collections or IO Channels
-* Streams don’t change the original data structure.
+* Streams **don’t change** the original data structure.
 * A Stream Pileline is the operation (STREAM OPERATIONS) that run on a stream to produce a result
 * Each intermediate operation is lazily executed and returns a stream as a result.
 * Terminal operations mark the end of the stream and return the result.
 * Finite Streams have a limit
 * infinite Streams are like sunrise/sunset cycle
 
+Stream Operations
+
 * **SOURCE** : Where the stream comes from
 * **INTERMEDIATE OPERATIONS** : Transforms the stream into another stream. STREAMS USE LAZY EVALUATION.
+  * **map**: The map method is used to returns a stream consisting of the results of applying the given function to the elements of this stream.
+  * **filter**: The filter method is used to select elements as per the Predicate passed as argument.
+  * **sorted**: The sorted method is used to sort the stream.
 * **The intermediate operations do not run until the terminal operation runs.**
 * **TERMINAL OPERATION**: Actually produces a result. Stream becomes invalid after terminal operation
-
-
-## Intermediate Operations:
-
-* **map**: The map method is used to returns a stream consisting of the results of applying the given function to the elements of this stream.
-
-* **filter**: The filter method is used to select elements as per the Predicate passed as argument.
-
-* **sorted**: The sorted method is used to sort the stream.
-
-## Terminal Operations:
-
-* **collect**: The collect method is used to return the result of the intermediate operations performed on the stream.
-
-* **forEach**: The forEach method is used to iterate through every element of the stream.
-
-* **reduce**: The reduce method is used to reduce the elements of a stream to a single value.
-The reduce method takes a BinaryOperator as a parameter.
-
-# Optional
-
-* New class Optional in java.util package.
-* It is a Container to hold at most one value, like Collections and Arrays.
-* To represent a value if its present or absent.
-* Avoids any runtime NullPointerExceptions
-
-In Streams API, Optional is returned
-
+  * **collect**: The collect method is used to return the result of the intermediate operations performed on the stream.
+  * **forEach**: The forEach method is used to iterate through every element of the stream.
+  * **reduce**: The reduce method is used to reduce the elements of a stream to a single value. The reduce method takes a BinaryOperator as a parameter.
 
 ### Non-Terminal Operations
 filter()
@@ -230,6 +173,15 @@ min()
 max()
 reduce()
 toArray()
+
+# Optional
+
+* New class Optional in java.util package.
+* It is a Container to hold at most one value, like Collections and Arrays.
+* To represent a value if its present or absent.
+* Avoids any runtime NullPointerExceptions
+
+In Streams API, Optional is returned
 
 
 ## Object Creation & Assignment In Streams
