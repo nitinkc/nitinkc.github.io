@@ -1,7 +1,7 @@
 ---
 title:  "Designing a microservice"
 date:   2019-11-22 21:35:00
-categories: Spring Miocroservices
+categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title:  "Spring Config Client"
 date:   2019-11-22 21:15:00
-categories: Spring Miocroservices
+categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 

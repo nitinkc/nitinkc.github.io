@@ -2,8 +2,8 @@
 # layout: static
 title:  "Optional Use cases"
 date:   2021-10-13 21:55:00
-categories: Spring Miocroservices
-tags: [Spring Microservices, Spring Boot]
+categories: ['Java']
+tags: ['Java']
 ---
 
 
