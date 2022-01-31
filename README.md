@@ -1,6 +1,13 @@
 # nitinkc.github.io
 
+Clone the code, goto root directory and run
 
+```sh
+bundle install 
+
+bundle exec jekyll serve
+```
+ 
 [Text using Symbols](https://fsymbols.com/generators/encool/)
 
 Liquid Templating Language

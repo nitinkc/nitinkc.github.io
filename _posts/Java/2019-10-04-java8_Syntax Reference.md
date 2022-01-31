@@ -230,3 +230,10 @@ min()
 max()
 reduce()
 toArray()
+
+
+## Object Creation & Assignment In Streams
+
+Object Assignment using traditional for loop VS in Streams.Notice in Streams, instead of individually assigning object to each element of Arraylist, an entire collection is assigned
+
+{% gist nitinkc/3bc7cde3d5c123c3fdec9d96a56dbd9f %}

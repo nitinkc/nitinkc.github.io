@@ -36,3 +36,28 @@ Path Bar appears on the bottom of the Finder Window
 
 ![]({{ site.url }}/assets/images/pathbar_set.png){:height="400px" width="200px"}
 
+### Show Library folder
+
+```sh
+chflags nohidden ~/Library/;killall Finder;
+```
+
+### Show Hidden Files
+
+```sh
+defaults write com.apple.finder AppleShowAllFiles YES
+```
+
+### Disable Delete message
+```sh
+defaults write com.apple.finder NSUserKeyEquivalents {"Move to Trash"="\U007F"}
+```
+
+### Change Screenshot File Type
+```sh
+alias screenShotType='defaults write com.apple.screencapture type -string "png"'
+```
+### Change Screenshot Location
+```sh
+alias screenTypeDir='defaults write com.apple.screencapture location /Users/nitin/Downloads'
+```
