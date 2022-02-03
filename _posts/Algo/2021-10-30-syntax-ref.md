@@ -6,12 +6,7 @@ tags: [Algorithms]
 ---
 # Reference for Coding Interviews
 
-
 {% include toc title="Index" %}
-
-### Points to keep in Mind
-
-{% gist nitinkc/7bed7e03f3e21790c98353df6a921137 %}
 
 ### Boolean Logic (multiple if statements into switch)
 {% gist nitinkc/96387a9700c9c58185a969ae48bfdc45 %}
@@ -20,30 +15,20 @@ tags: [Algorithms]
 {% gist nitinkc/382798a984e00a732d86a12a6637e0a2 %}
 
 
-### For Each Loop (Read Only Loop)
-{% gist nitinkc/606150a527983a417dd1c5b5d4926cf3 %}
-
-
-### ArrayList
-{% gist nitinkc/98b5adaf0ed85980472ec423237e9edd %}
-
-
 ### Reading, Parsing and Type Checking Command Line Inputs.
 ```java
-
-/*Assuming 2 command line arguments <Nitin 29>*/
-
+// Assuming 2 command line arguments <Nitin 29>
 if (args.length == 0 || args.length > 2) {
-     System.err.println("Incorrect Number of arguments passed");
-     System.exit(-1);
-  }
+  System.err.println("Incorrect Number of arguments passed");
+  System.exit(-1);
+}
 String name = args[0];
-  int age = Integer.parseInt(args[1]);
+int age = Integer.parseInt(args[1]);
 ```
 
 ### Running time of a method
 ```java
-System.currentTimeMillis();//type long , from Jan 1 1970
+System.currentTimeMillis();//type long, from Jan 1 1970
 System.nanoTime();
 ```
 
@@ -57,7 +42,6 @@ generator.nextInt(5);//range 0 to 5, add 1 to get range 1 to 6 (dices)
 
 generator.nextInt(); // 2^31 to 2^31 -1
 generator.nextDouble();//Range: 0.0 to 1.1
-
 ```
 
 ## Java Input
