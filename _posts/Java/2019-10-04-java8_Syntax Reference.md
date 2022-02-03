@@ -89,6 +89,12 @@ A map applies a given function to each element of a list, returning a list of re
 
 Another common higher-order function is reduce, which is more commonly known as a fold. This function reduces a list to a single value.
 
+
+### Higher-order functions. 
+Methods that Return Functions
+
+Two common examples are filter and map.
+
 ##### Sorting a list
 
 {% gist nitinkc/d55b4541f27fc0bfd86f122d35c2b527 %}
@@ -111,8 +117,12 @@ Consumer<String> c = s -> System.out.print(s + " ,");
 //Consumer<String> c = System.out::println;
 strList.stream().forEach(c);
 ```
+
+BiConsumer example. Using BiConsumer to insert values into hashmap.
+
 {% gist nitinkc/f0cdad5af384796e2c5684cb6e5cdc34 %}
 
+Parenthesis Checker using Consumer
 {% gist nitinkc/ff63f3c1d164ef3b8dfe3a91a02e3259 %}
 
 ### Supplier
