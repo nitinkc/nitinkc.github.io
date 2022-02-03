@@ -37,9 +37,9 @@ Defined in java.util.function
 
 ### Predicate 
 
-`java.util.function.Predicate`, represents a simple function that takes a single value as parameter, and returns true or false.
+`java.util.function.Predicate` represents a simple function that takes a single value as parameter, and returns true or false.
 
-/**Predicate uses a Lambda that returns true and false**
+**Predicate uses a Lambda that returns true and false**
 
 Commonly used with Filters. 
 
@@ -50,7 +50,7 @@ public interface Predicate<T> {
     boolean test(T t);
 }
 ```
-
+Predicate can be defined within Labda or can be separately defined and invoked using test method.
 {% gist nitinkc/b63f8cbb3d13cab6ba1fb5256d748d6f %}
 
 
@@ -149,7 +149,7 @@ Supplier<LocalDate> s2 = () -> LocalDate.now();
 * Finite Streams have a limit
 * infinite Streams are like sunrise/sunset cycle
 
-Stream Operations
+## Stream Operations
 
 * **SOURCE** : Where the stream comes from
 * **INTERMEDIATE OPERATIONS** : Transforms the stream into another stream. STREAMS USE LAZY EVALUATION.

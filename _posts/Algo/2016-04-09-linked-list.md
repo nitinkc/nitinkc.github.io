@@ -37,6 +37,18 @@ class Node<V> {
 }
 ```
 
+
+### Array vs Linked List
+```java
+ for (int i = 0; i < arr.length; i++){
+      System.out.prinln(arr[i]);
+ }
+
+ for (ListNode runner = head; runner != null; runner = runner.next){
+      System.out.println(runner.data);
+ }
+```
+
 ## Singly LinkedList Challenges
 
 ### Traversal accross all elements
