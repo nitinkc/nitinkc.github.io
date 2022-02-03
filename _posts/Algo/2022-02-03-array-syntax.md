@@ -11,6 +11,19 @@ tags: [Algorithms]
 ### ArrayList
 {% gist nitinkc/98b5adaf0ed85980472ec423237e9edd %}
 
+Important Methods
+```java
+// Array List API
+list.add (10) // Appends the specified element to the end of this list. Returns boolean
+list.add(3, 10) //Inserts at index 3 Shifts current and subsequent elements to the right (adds one to their indices)
+int indx =  list.indexOf(10) //index of the first occurrence of the element in the list, or -1 if this list does not contain the element.
+int data = list.get(3) //Returns the element at the specified position in this list.
+ListIterator listIterator() //Bi directional iterator
+
+list.set(3, 10) //Replaces the element at the specified position .Returns the previous element 
+list.remove(3) //Removes the element at the specified position in this list.
+list.remove(10) //Removes the first occurrence of the specified element from this list, if it is present.
+```
 ### 1D Arrays
 {% gist nitinkc/c2abeb754d1a64641b0149bc6d8f21ae %}
 
@@ -26,31 +39,11 @@ The Skewed 2D array need not have the same number of Columns each Row.
 ### The Arrays Class
 
 ```
-Import java.util.ArrayList;
-
-// Declaring an ArrayList
-ArrayList<Integer> a = new ArrayList<Integer>;
-
-//Inserting values
-a.add(1); a.add(2); a.add(3);
+List<Integer> a = Arrays.asList(1,2,3);
 
 //Printing an ArrayList as ann Integer
 Arrays.toString(a);//op: [1,2,3]
 
 //Converting an ArrayList into Array <ArrayList.toArray()>
-a.toArray();
-```
-
-### String Methods (Most Important)
-{% gist nitinkc/a91ab5df313cbd3e21b6ea71c30f993f %}
-
-### Array vs Linked List
-```java
- for (int i = 0; i < arr.length; i++){
-      System.out.prinln(arr[i]);
- }
-
- for (ListNode runner = head; runner != null; runner = runner.next){
-      System.out.println(runner.data);
- }
+int[] result = a.toArray();
 ```
