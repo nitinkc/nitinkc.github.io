@@ -27,7 +27,7 @@ list.remove(10) //Removes the first occurrence of the specified element from thi
 ### 1D Arrays
 {% gist nitinkc/c2abeb754d1a64641b0149bc6d8f21ae %}
 
-### 2D Arrays
+### 2D Array using primitive arrays
 
 A Rectangular 2D array has different no. of Rows and Columns (eg: 6X7)
 {% gist nitinkc/d9ca95267cae73a9145d5e96ca7d8f22 %}
@@ -40,11 +40,13 @@ The Skewed 2D array need not have the same number of Columns each Row.
 Square Matrix using Arraylist with a focus on Iteration
 
 Row count is equal to the size of the entire List
+```java
 row = list.size();
-
+```
 Column count is individual sublist size
+```java
 col = list.get(i).size();
-
+```
 {% gist nitinkc/79da313a1da762bfc0c791a1f3843305 %}
 
 
