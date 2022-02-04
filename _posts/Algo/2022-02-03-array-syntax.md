@@ -30,6 +30,12 @@ list.remove(10) //Removes the first occurrence of the specified element from thi
 ### 2D Array using primitive arrays
 
 A Rectangular 2D array has different no. of Rows and Columns (eg: 6X7)
+
+In both cases, the row and column count is
+```java
+int row = arr.length;
+int col = arr[0].length;
+```
 {% gist nitinkc/d9ca95267cae73a9145d5e96ca7d8f22 %}
 
 
@@ -47,6 +53,7 @@ Column count is individual sublist size
 ```java
 col = list.get(i).size();
 ```
+
 {% gist nitinkc/79da313a1da762bfc0c791a1f3843305 %}
 
 
