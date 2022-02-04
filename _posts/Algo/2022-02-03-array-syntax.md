@@ -36,6 +36,18 @@ A Rectangular 2D array has different no. of Rows and Columns (eg: 6X7)
 The Skewed 2D array need not have the same number of Columns each Row.
 {% gist nitinkc/f828994bdaabbc55505c51096c3b7d0d %}
 
+### 2D ArrayList
+Square Matrix using Arraylist with a focus on Iteration
+
+Row count is equal to the size of the entire List
+row = list.size();
+
+Column count is individual sublist size
+col = list.get(i).size();
+
+{% gist nitinkc/79da313a1da762bfc0c791a1f3843305 %}
+
+
 ### The Arrays Class
 
 ```
