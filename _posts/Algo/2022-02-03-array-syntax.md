@@ -4,6 +4,7 @@ date:   2022-01-03 01:30:00
 categories: Algorithms
 tags: [Algorithms]
 ---
+{% include toc title="Index" %}
 
 ### Points to keep in Mind
 {% gist nitinkc/7bed7e03f3e21790c98353df6a921137 %}

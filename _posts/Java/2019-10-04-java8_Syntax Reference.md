@@ -4,6 +4,8 @@ date:   2019-10-04 13:43:00
 categories: ['Java']
 tags: ['Java']
 ---
+{% include toc title="Index" %}
+
 
 ##### For each method **applies the lambda** to each element of the collection
 
