@@ -17,7 +17,7 @@ tags: [Shortcuts]
 
 |⌘  + 1        |It activates the quick fix.|
 
-Coding Assistance
+## Coding Assistance
 
 |**⇧ ⇧**       |Find All| 
 |**⌘  ⇧ N**    |Search Resource|
@@ -50,30 +50,30 @@ Coding Assistance
 |⌘ ⇧ I        |See definition of a symbol at caret|
 
 
-Find & Replace in Files
+## Find & Replace in Files
 
 |^Ctrl ⇧Shift F |Find in Files |
 |W or ⌥Opt W    |Narrow search on Find While Searching|
 | ^Ctrl ⇧Shift R   |Replace in Files |
 
-File Structure
+## File Structure
 
 |⌘Cmd  F12      |Display all methods in a file|
 |⌘Cmd  7        |File Structure Tool Window|
 
-Declaration and Usage
+## Declaration and Usage
 
 |⌘Cmd B         |Jump to declaration of method, Toggle by clicking twice|
 |⌥Opt F7        |Window for detailed view of usages  |
 
-Inheritance Hierarchy
+## Inheritance Hierarchy
 
 |⌘Cmd ⌥Opt B        |See implementation of SomeInterface#foo|
 |⌘Cmd U             |Navigate to super method|
 |⌘Cmd  ⇧Shift H     |See Hierarchy Window|
 |⌘Cmd H             |See Class Hierarchy|
 
-Recent Files and Locations
+## Recent Files and Locations
 
 |⌘Cmd E             |Show recently opened Files|
 |⌘Cmd ⇧Shift E             |See edited code is recently opened Files|
