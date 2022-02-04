@@ -8,12 +8,11 @@ tags: [Algorithms]
 ### Points to keep in Mind
 {% gist nitinkc/7bed7e03f3e21790c98353df6a921137 %}
 
-### ArrayList
-{% gist nitinkc/98b5adaf0ed85980472ec423237e9edd %}
+<!-- ### ArrayList
+{% gist nitinkc/98b5adaf0ed85980472ec423237e9edd %} -->
 
-Important Methods
+### Array List API
 ```java
-// Array List API
 list.add (10) // Appends the specified element to the end of this list. Returns boolean
 list.add(3, 10) //Inserts at index 3 Shifts current and subsequent elements to the right (adds one to their indices)
 int indx =  list.indexOf(10) //index of the first occurrence of the element in the list, or -1 if this list does not contain the element.
@@ -37,7 +36,6 @@ int row = arr.length;
 int col = arr[0].length;
 ```
 {% gist nitinkc/d9ca95267cae73a9145d5e96ca7d8f22 %}
-
 
 The Skewed 2D array need not have the same number of Columns each Row.
 {% gist nitinkc/f828994bdaabbc55505c51096c3b7d0d %}
