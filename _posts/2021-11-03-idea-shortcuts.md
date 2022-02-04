@@ -27,8 +27,6 @@ tags: [Shortcuts]
 |⇧⌘ F         |Find reference|
 |Alt + F7     |Find a method where its used|
 |⌘ J          |See documentation of a symbol at caret|
-
-
 |⌘  +E        |Shows you a list of all open editors.|
 |             |Use to move between open editors|
 |⌘  + M       |Maximize or unmaximize your current tab.|
@@ -44,8 +42,6 @@ tags: [Shortcuts]
 |⌘  ⇧ O      ||
 |**⌘  ⌥ L**  | Code Format - Selected Code and Entire File|
 |⌘  ⌥  ⇧ L    |Reformatting Setting|
-
-
 |⌘ P         |See Parameter Infor|
 |⌘ ⇧ I        |See definition of a symbol at caret|
 
