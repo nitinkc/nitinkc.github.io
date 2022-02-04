@@ -14,19 +14,17 @@ tags: [Shortcuts]
 | Key | Details | 
 | :---| :---    |      
 |⌘E            |Move to the last location you edited.|
-
 |⌘  + 1        |It activates the quick fix.|
 
 ## Coding Assistance
 
-|**⇧ ⇧**       |Find All| 
-|**⌘  ⇧ N**    |Search Resource|
 |F2           |Goto Next coding Error|
 |⌘ F1         |See Warning Errors, Press twice for details|
 |**⌘ ⇧ F7**       |Highlighted All Usages|
 |⇧⌘ F         |Find reference|
 |Alt + F7     |Find a method where its used|
 |⌘ J          |See documentation of a symbol at caret|
+
 |⌘  +E        |Shows you a list of all open editors.|
 |             |Use to move between open editors|
 |⌘  + M       |Maximize or unmaximize your current tab.|
@@ -48,6 +46,8 @@ tags: [Shortcuts]
 
 ## Find & Replace in Files
 
+|**⇧ ⇧**       |Find All| 
+|**⌘  ⇧ N**    |Search Resource|
 |^Ctrl ⇧Shift F |Find in Files |
 |W or ⌥Opt W    |Narrow search on Find While Searching|
 | ^Ctrl ⇧Shift R   |Replace in Files |
