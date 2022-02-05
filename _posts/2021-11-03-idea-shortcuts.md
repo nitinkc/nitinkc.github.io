@@ -5,22 +5,22 @@ date:   2021-11-03 21:55:00
 categories: Shortcuts
 tags: [Shortcuts]
 ---
-
 ⌘Cmd ⇧Shift ^Ctrl ⌥Opt ⎋Esc ↵Return
 
-⇧Shift ⎋Esc to hide a tool window
 
 
 | Key | Details | 
 | :---| :---    |      
-|⌘E            |Move to the last location you edited.|
+|⌘ + E            |Move to the last location you edited.|
 |⌘  + 1        |It activates the quick fix.|
+|⇧Shift ⎋Esc | to hide a tool window|
+
 
 ## Coding Assistance
 
 |F2           |Goto Next coding Error|
 |⌘ F1         |See Warning Errors, Press twice for details|
-|**⌘ ⇧ F7**       |Highlighted All Usages|
+|**⌘ ⇧ F7       |Highlight All Usages**|
 |⇧⌘ F         |Find reference|
 |Alt + F7     |Find a method where its used|
 |⌘ J          |See documentation of a symbol at caret|
@@ -73,6 +73,8 @@ tags: [Shortcuts]
 
 |⌘Cmd E             |Show recently opened Files|
 |⌘Cmd ⇧Shift E             |See edited code is recently opened Files|
+
+
 
 
 <!-- <table>
