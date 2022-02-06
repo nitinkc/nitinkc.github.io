@@ -1,19 +1,34 @@
 # nitinkc.github.io
 
-Clone the code, goto root directory and run
+Clone the code, goto root directory.
+
+Build site using default _config.yml file:
 
 ```sh
 bundle install 
 
+#Serve site at http://localhost:4000
 bundle exec jekyll serve
+```
+
+```sh
+#Deletes Jekyll generated old ./_site cache folder
+bundle exec jekyll clean or 
+rm -rf _site 
+
+#Build site into ./_site
+bundle exec jekyll build
+
+#Build site as production, default is development
+JEKYLL_ENV=production bundle exec jekyll build
+
+#Build site into ./_site and for watch changes
+bundle exec jekyll build --watch
 ```
  
 [Text using Symbols](https://fsymbols.com/generators/encool/)
 
-Liquid Templating Language
-
-
-Add Font matter to the top of the page
+Liquid Templating Language. Add Font matter to the top of the page
 
 ---
 # front matter tells Jekyll to process Liquid
