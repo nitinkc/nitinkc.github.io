@@ -2,8 +2,8 @@
 # layout: static
 title:  "Mac UI Settings"
 date:   2022-01-22 21:55:00
-categories: Shortcuts
-tags: [Shortcuts]
+categories: ['Developer tools']
+tags: ['Developer tools']
 ---
 
 # Necessasary UI Settings

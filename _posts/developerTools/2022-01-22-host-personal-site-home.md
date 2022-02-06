@@ -2,8 +2,8 @@
 # layout: static
 title:  "Hosting personal website on home router"
 date:   2022-01-22 21:55:00
-categories: Shortcuts
-tags: [Shortcuts]
+categories: ['Developer tools']
+tags: ['Developer tools']
 ---
 
 # Port Forwarding on Home Router
