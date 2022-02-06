@@ -5,9 +5,9 @@ date:   2021-11-03 21:55:00
 categories: Shortcuts
 tags: [Shortcuts]
 ---
-⌘Cmd ⇧Shift ^Ctrl ⌥Opt ⎋Esc ↵Return
+Common Keys used for shortcut :
 
-
+|⌘Cmd | ⇧Shift | ^Ctrl | ⌥Opt | ⎋Esc | ↵Return |
 
 | Key | Details | 
 | :---| :---    |      
