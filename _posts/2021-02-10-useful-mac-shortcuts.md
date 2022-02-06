@@ -19,7 +19,7 @@ Installing the following tools and configuring them ensures maximum ease of deve
 
 | Tool | Details | 
 | :---| :---    |   
-|Iterm		|[Configuring iTerm]({% post_url /2021-01-02-iTerm-zsh-mac %})|
+|Iterm		|[Configuring iTerm]({{ site.baseurl }} {% post_url /developerTools/2021-02-01-iterm2-zsh-config %})|
 |IntelliJ	|[Configuring IntelliJ]({% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})|
 |Sublime	|[Configuring Sublime Editor]({% post_url 2021-03-24-Sublime-Settings %})|
 
