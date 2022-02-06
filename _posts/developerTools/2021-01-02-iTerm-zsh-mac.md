@@ -1,11 +1,9 @@
 ---
 title:  "iTerm2 Set up with zsh on Mac"
-date:   2021-02-01 14:00
+date:   2021-02-01 14:00:00
 categories: ['Developer tools']
 tags: ['Developer tools']
 ---
-
-## Contents
 
 {% include toc title="Index" %}
 
@@ -14,7 +12,8 @@ tags: ['Developer tools']
 ### Unix shell and Framework installation
 
 Between iTerm and Hyper, iTerm is preferred here. Download and install iTerm
-```
+
+```sh
 brew cask install iterm2
 ```
 
@@ -22,19 +21,19 @@ Instead of using the Mac default Bash shell, preferred here is zsh with multiple
 
 * Install latest version of zsh using brew and verify the version.
 
-```
+```sh
 brew install zsh
 zsh --version
 ```
 
 * Make zsh as system’s default shell
 
-```
+```sh
 chsh -s $(which zsh)
 ```
 * Verify:
 
-```
+```sh
 echo $SHELL
 expected result: /bin/zsh
 ```
@@ -43,7 +42,7 @@ expected result: /bin/zsh
 
 ### Install Powerline 10k
 
-```
+```sh
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
 Run either
@@ -66,7 +65,7 @@ Edit ~/.zshrc and set ZSH_THEME="powerlevel10k/powerlevel10k".
 * [Zsh history substring](https://github.com/zsh-users/zsh-history-substring-search)
 
 * [Zsh Apple touchbar](https://github.com/zsh-users/zsh-apple-touchbar)
-```
+```sh
 brew install zsh-syntax-highlighting zsh-completions
 ```
 
@@ -125,8 +124,6 @@ ln -s $HOME/Programming/SystemEnvironment/mac/.bash_profile ~
 ### Adding in a Permanent Location
 create a .bash_profile or .profile file in the home directory and set the path in the files as.
 `sh export PATH="/usr/local/<my_package>/bin:$PATH" `
-
-
 
 ## References
 
