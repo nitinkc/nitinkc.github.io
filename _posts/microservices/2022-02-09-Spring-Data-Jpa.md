@@ -6,17 +6,17 @@ categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 
-#Basic Rest Calls
+# CRUD Rest Calls
 
-## Using CrudRepositiry
+## Using JpaRepository
+
 ```java
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 }
 ```
 
-### Using this Repo (Service) in the Controller Class to perform CRUD Operations
-
+> Avoiding Service layer for simplicity
 
 ##### Get a list of all the users
 ```java
@@ -35,18 +35,19 @@ public class StudentController {
 }
 ```
 
-Verify the data connectivity from GET Request
+Verify the data retrieval from GET Request
+```
+http://localhost:8080/jpa/users
+```
+##### Get a student based on id (from get request parameter)
 
-[http://localhost:8080/jpa/users]
+With support of the use of Java 8 OPTIONAL, Null values can be easily avoided. The Service Layer is avoided for simplicity. 
 
-##### Get a user based on id (from get request parameter)
-
-In Controller, Support of the use of Java 8 OPTIONAL is required. 
 ```java
 // Retrieve specific users
 @GetMapping(path = "/student/{id}")
 public Student retrieveUserById(@PathVariable("id") @NotBlank Long id) {
-    Optional<Student> optional = studentRepository.findById(id);
+    Optional<Student> optional = studentRepository.findById(id);//To Accomodate Null return
 
     if (!optional.isPresent()){
         throw new StudentNotFoundException("id:" + id);
@@ -56,8 +57,9 @@ public Student retrieveUserById(@PathVariable("id") @NotBlank Long id) {
     return foundStudent;
 }
 ```
-
+```
 http://localhost:8089/api/hardCodedData/user/1
+```
 
 Another Approach
 
@@ -70,11 +72,11 @@ public Student retrieveUserById(@PathVariable("id") @NotBlank Long id) {
 }
 ```
 
-#POST Rest Calls
+# POST Rest Calls (Creating a new Entity)
 
 ### Saving a new Entry
 
-in Controller Class
+Doing this in Controller Class is not recommended. Service Layer is avoided for simplicity.
 ```java
 @PostMapping("/student")
 public ResponseEntity<Object> createStudent(@Valid @RequestBody Student student){
@@ -91,11 +93,7 @@ public ResponseEntity<Object> createStudent(@Valid @RequestBody Student student)
 }
 ```
 
-In Postman, create a POST call
-
-{{address}}{{port}}/api/jpa/student
-
-with Request Body RAW and JSON
+In Postman, create a POST call **{{address}}{{port}}/api/jpa/student** with Request Body RAW and JSON as 
 ```json
 {
 "name": "Nitin",
@@ -105,9 +103,8 @@ with Request Body RAW and JSON
 
 See notes of the Restful Web
 
-Returns 200 OK
-
-Returns 201 Created
+> Returns 200 OK
+> Returns 201 Created
 
 
 # PUT Request (modifying an existing Value) 
@@ -132,9 +129,10 @@ public Student modifyValue(@RequestBody Student newStudent, @PathVariable Long i
 }
 ```
 
-# Generic Exception
+# Generic Exception (With Controller Advice)
 
 Similar format of exception for all the Classes.
+
 ```java
 @RestController
 @ControllerAdvice
@@ -149,6 +147,21 @@ public class CustomizedResponseEntiryExceptionHandler extends ResponseEntityExce
 ```
 
 # DELETE Rest Call
+
+In Controller
+```java
+//Delete a User
+@DeleteMapping(path = "/user/{id}")
+public User deleteUserById(@PathVariable int id) throws UserNotFoundException {
+    User user = userDAOService.deleteById(id);
+
+    //If user is not found
+    if(user == null){
+        throw new UserNotFoundException("User with id " + id +" is not found");
+    }
+    return user;
+}
+```
 
 in DAOService
 ```java
@@ -168,24 +181,7 @@ public User deleteById(int id){
     return deletedUser;
 }
 ```
-
-In Controller
-```java
-//Delete a User
-@DeleteMapping(path = "/user/{id}")
-public User deleteUserById(@PathVariable int id) throws UserNotFoundException {
-    User user = userDAOService.deleteById(id);
-
-    //If user is not found
-    if(user == null){
-        throw new UserNotFoundException("User with id " + id +" is not found");
-    }
-    return user;
-}
-```
-Delete a user by passing its ID to a delete postman request-
-
-{{address}}{{port}}/api/hardCodedData/user/1
+Delete a user by passing its ID to a delete postman request- **{{address}}{{port}}/api/hardCodedData/user/1**
 
 
 # Validations
