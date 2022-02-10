@@ -1,4 +1,4 @@
-]---
+---
 # layout: static
 title:  "Spring Data JPA"
 date:   2022-02-09 20:55:00
