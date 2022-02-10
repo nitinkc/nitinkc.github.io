@@ -5,6 +5,7 @@ date:   2022-02-09 20:55:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+{% include toc title="Index" %}
 
 # CRUD Rest Calls
 
@@ -72,7 +73,7 @@ public Student retrieveUserById(@PathVariable("id") @NotBlank Long id) {
 }
 ```
 
-# POST Rest Calls (Creating a new Entity)
+## POST Rest Calls (Creating a new Entity)
 
 ### Saving a new Entry
 
@@ -107,7 +108,7 @@ See notes of the Restful Web
 > Returns 201 Created
 
 
-# PUT Request (modifying an existing Value) 
+## PUT Request (modifying an existing Value) 
 
 Use of Java 8 Map.
 
@@ -129,7 +130,7 @@ public Student modifyValue(@RequestBody Student newStudent, @PathVariable Long i
 }
 ```
 
-# Generic Exception (With Controller Advice)
+## Generic Exception (With Controller Advice)
 
 Similar format of exception for all the Classes.
 
@@ -146,7 +147,7 @@ public class CustomizedResponseEntiryExceptionHandler extends ResponseEntityExce
 }
 ```
 
-# DELETE Rest Call
+## DELETE Rest Call
 
 In Controller
 ```java
@@ -184,7 +185,7 @@ public User deleteById(int id){
 Delete a user by passing its ID to a delete postman request- **{{address}}{{port}}/api/hardCodedData/user/1**
 
 
-# Validations
+## Validations
 
 Use of @Valid in the Controller class forces a validation check. The validation is defined in the Entity class
 
