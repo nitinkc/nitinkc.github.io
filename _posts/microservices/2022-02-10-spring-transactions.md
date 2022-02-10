@@ -11,7 +11,7 @@ tags: ["Spring Microservices", Spring Boot]
 # Spring Transactions
 
 
-## Admission Service
+## Admission Service Example
 
 1. Register a Student
 2. Register Student in Department
@@ -19,9 +19,10 @@ tags: ["Spring Microservices", Spring Boot]
 4. Register Student in a Society (Optional)
 
 [https://github.com/nitinkc/Spring-Transactions](https://github.com/nitinkc/Spring-Transactions/tree/7-admission-service-without-Rollback-partial-commit/src/main/java/com/learn/transaction/myAdmissionService)
+
 In the above Example, the transaction is propagated in the same order as mentioned above.
 
-# Transaction Propagation
+## Transaction Propagation
 
 [Tx Pitfalls](https://medium.com/@safa_ertekin/common-transaction-propagation-pitfalls-in-spring-framework-2378ee7d6521)
 
@@ -121,7 +122,7 @@ The requirement here is to have Student, Department, Hostel and Society Txs to b
 ```
 
 Logs:
-```log
+```java
 20-02-02 Sun 02:34:37.324 DEBUG JpaTransactionManager Found thread-bound EntityManager [SessionImpl(1417143744<open>)] for JPA transaction
 20-02-02 Sun 02:34:37.324 DEBUG JpaTransactionManager Participating in existing transaction
 Hibernate: select department0_.student_enrolled as student_1_1_0_, department0_.dept_name as dept_nam2_1_0_ from department department0_ where department0_.student_enrolled=?
