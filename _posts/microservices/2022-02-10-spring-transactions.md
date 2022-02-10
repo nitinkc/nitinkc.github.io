@@ -2,8 +2,8 @@
 # layout: static
 title:  "Spring Transactions"
 date:   2022-02-09 20:55:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: "Spring Microservices"
+tags: ["Spring Microservices", Spring Boot]
 ---
 {% include toc title="Index" %}
 
