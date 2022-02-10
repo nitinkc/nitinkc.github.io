@@ -18,7 +18,7 @@ tags: ["Spring Microservices", Spring Boot]
 3. Register Student in Hostel (Optional and based on Gender)
 4. Register Student in a Society (Optional)
 
-[https://github.com/nitinkc/Spring-Transactions](https://github.com/nitinkc/Spring-Transactions/tree/7-admission-service-without-Rollback-partial-commit/src/main/java/com/learn/transaction/myAdmissionService)
+[https://github.com/nitinkc/Spring-Transactions](https://github.com/nitinkc/Spring-Transactions/tree/master/src/main/java/com/learn/transaction/myAdmissionService)
 
 In the above Example, the transaction is propagated in the same order as mentioned above.
 
