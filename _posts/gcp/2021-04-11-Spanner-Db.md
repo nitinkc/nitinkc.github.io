@@ -61,7 +61,7 @@ gcloud spanner databases create spanner-db --instance=development-nc
 ```
 
 
-# After the work done
+# After the work is done
 ```shell
  gcloud spanner instances delete development-nc  
 
