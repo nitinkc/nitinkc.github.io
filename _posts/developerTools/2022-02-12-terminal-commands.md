@@ -11,19 +11,39 @@ tags: ['Developer tools']
 
 Creating folders
 
-'mkdir -p" option allows creation of a whole hierarchy of folders in one step
-```sh
-mkdir -p dir1/dir2/dir3
-```
+```sh mkdir -p dir1/dir2/dir3 ``` creation of a whole hierarchy of folders in one step
 
-Deleting a folder
-```sh
-rm -rf MyStuff
-```
-Deleting multiple files. You can remove several files with one command by listing the filenames with spaces between them. 
-```sh
-rm foo bar "burning bush"
-```
+```shrm -rf MyStuff``` Deleting a folder
+
+```sh rm foo bar "New Folder" ``` Deleting multiple files. 
+
+## File and folder management
+
+* chown ("change owner") - to change the owner of a file or folder
+* chmod ("change mode") - to change the permissions of a file or folder
+* ln ("link") - to make a link to a file or folder
+* find - to search the filesystem for files or folders matching given criteria
+* mdfind - to search for files or folders using the "Spotlight" meta-data
+* locate - to see where certain files are located (uses a database that is updated periodically)
+* du ("disk usage") - to show the amount of disk space used by a file or folder
+
+## File content
+* more - to display the contents of a file page by page (press Return to go down one line, press * space to go down one page)
+* cat ("concatenate") - to display the full contents of a file or to concatenate two or more files * into one
+* head - to display the first part of a file
+* tail - to display the last part of a file
+* mdls - display the meta-data for a file
+* xattr - display the extended attributes for a file
+* diff - to compare two text files (or, with the "-r" option, two folders)
+* cmp - to compare two binary files
+* grep ("global regular expression print") - to search inside a file for lines matching a given * pattern
+* sed ("stream editor") - to modify the text that is streaming through a pipe
+* sort - to sort the lines of text files
+* uniq - to filter out repeated lines of text files
+* fold - to wrap long lines of text files (useful when printing)
+* hexdump - to show the contents of a file as hexadecimal numbers
+* textutil - convert plain text to HTML or RTF (and vice versa)
+
 
 ## Network
 
@@ -118,35 +138,6 @@ To get 'xargs' to insert the list of files at a specified place in the command l
 ```sh
 find . -name "*.java" -print0 | xargs -0 -J % cp % destinationFolder 
 ```
-
-
-## File and folder management
-
-* chown ("change owner") - to change the owner of a file or folder
-* chmod ("change mode") - to change the permissions of a file or folder
-* ln ("link") - to make a link to a file or folder
-* find - to search the filesystem for files or folders matching given criteria
-* mdfind - to search for files or folders using the "Spotlight" meta-data
-* locate - to see where certain files are located (uses a database that is updated periodically)
-* du ("disk usage") - to show the amount of disk space used by a file or folder
-
-## File content
-* more - to display the contents of a file page by page (press Return to go down one line, press * space to go down one page)
-* cat ("concatenate") - to display the full contents of a file or to concatenate two or more files * into one
-* head - to display the first part of a file
-* tail - to display the last part of a file
-* mdls - display the meta-data for a file
-* xattr - display the extended attributes for a file
-* diff - to compare two text files (or, with the "-r" option, two folders)
-* cmp - to compare two binary files
-* grep ("global regular expression print") - to search inside a file for lines matching a given * pattern
-* sed ("stream editor") - to modify the text that is streaming through a pipe
-* sort - to sort the lines of text files
-* uniq - to filter out repeated lines of text files
-* fold - to wrap long lines of text files (useful when printing)
-* hexdump - to show the contents of a file as hexadecimal numbers
-* textutil - convert plain text to HTML or RTF (and vice versa)
-
 
 ## Networking
 * ```ifconfig``` ("interface configure") - to display and configure network interface parameters
