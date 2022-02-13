@@ -11,11 +11,11 @@ tags: ['Developer tools']
 
 Creating folders
 
-```sh mkdir -p dir1/dir2/dir3 ``` creation of a whole hierarchy of folders in one step
+``` mkdir -p dir1/dir2/dir3 ``` creation of a whole hierarchy of folders in one step
 
-```shrm -rf MyStuff``` Deleting a folder
+``` rm -rf MyStuff``` Deleting a folder
 
-```sh rm foo bar "New Folder" ``` Deleting multiple files. 
+``` rm foo bar "New Folder" ``` Deleting multiple files. 
 
 ## File and folder management
 
