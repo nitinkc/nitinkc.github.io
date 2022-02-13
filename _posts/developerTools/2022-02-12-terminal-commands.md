@@ -31,13 +31,13 @@ To check internet speed
 	○ Cmd + spaec (spotlight)
 	○ Open Network utility
 
-Netstat
-Ping
-Lookup
-Traceroute
-Whois
-Finger
-Portscan
+*Netstat
+*Ping
+*Lookup
+*Traceroute
+*Whois
+*Finger
+*Portscan
 
 get default (Wifi router address). User wifi name and password to login into the wifi
 ```sh
@@ -52,61 +52,83 @@ open .
 open /usr 
 ```
 
-
-OS Commands
+## OS Commands
 Top
 Kill -9
-• To check uptime
-Uptime
 
-• To stop mac from sleep
+To check uptime
+```sh 
+uptime
+```
+To stop mac from sleep
+```sh
 caffeinate -t 3600
-name of the OS
+```
+
+name of the OS/print hardware name
+
+```sh
 uname
 
-print hardware name
 uname -m
+```
+
 Clear RAM
-Sudo Purge
+```shell
+sudo Purge
+```
 
-
-Displaying Current Environment & Shell Variables in Mac OS X
+## Displaying Current Environment & Shell Variables in Mac OS X
 get a list of environmental variables
+```
 printenv
+```
 complete list of shell variables, the ‘set’ command:
+```
 set 
+```
 To show a list including the "shell variables" you can enter the next command:
+```
 ( set -o posix ; set ) | less
-
+```
 The output of these commands can be lengthy so you may wish to pipe the output through the less or more commands.
+
 Bash History
+```sh
 history |grep "defaults"
+```
 Find out the shell
+```sh
 finger $USER
 echo $0
 echo $SHELL
-From <http://osxdaily.com/2015/07/28/set-enviornment-variables-mac-os-x/> 
+```
 
 
-If you want to run a command on all of the files found by a 'find', and the command takes a list of files as command-line arguments, you can do that by using the 'xargs' command. For example:
+'find' with 'xargs' command. xargs works on the result of the find command
+
+```sh
 find . -name "*.java" -print0 | xargs -0 wc
+```
+
 It's slightly trickier to use 'xargs' when the command you want to run takes other arguments and the list of files has to come before those other arguments. For example, if you wanted to copy all those ".java" files to a different folder, you'd want to use the 'cp' command. But it has the form:
 cp file1 file2 file3 ... destinationFolder
+
 To get 'xargs' to insert the list of files at a specified place in the command line, you use the "-J" option and supply your choice of placeholder - for example:
+```sh
 find . -name "*.java" -print0 | xargs -0 -J % cp % destinationFolder 
-For full details, read 'man find' and 'man xargs'
-From <http://hayne.net/MacDev/Notes/unixFAQ.html#whichShell> 
+```
 
 
-File and folder management
+## File and folder management
 
-chown ("change owner") - to change the owner of a file or folder
-chmod ("change mode") - to change the permissions of a file or folder
-ln ("link") - to make a link to a file or folder
-find - to search the filesystem for files or folders matching given criteria
-mdfind - to search for files or folders using the "Spotlight" meta-data
-locate - to see where certain files are located (uses a database that is updated periodically)
-du ("disk usage") - to show the amount of disk space used by a file or folder
+* chown ("change owner") - to change the owner of a file or folder
+* chmod ("change mode") - to change the permissions of a file or folder
+* ln ("link") - to make a link to a file or folder
+* find - to search the filesystem for files or folders matching given criteria
+* mdfind - to search for files or folders using the "Spotlight" meta-data
+* locate - to see where certain files are located (uses a database that is updated periodically)
+* du ("disk usage") - to show the amount of disk space used by a file or folder
 
 File content
 more - to display the contents of a file page by page (press Return to go down one line, press space to go down one page)

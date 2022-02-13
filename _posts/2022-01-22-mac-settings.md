@@ -8,7 +8,7 @@ tags: ['Developer tools']
 
 # Necessasary UI Settings
 
-### Show Full directory path on Finder: 
+### Show Full directory path on Finder:
 
 File path at the top of the tool bar on finder window
 
