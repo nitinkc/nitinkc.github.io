@@ -35,23 +35,19 @@ The following tools helps a lot making the develop environment much more conduci
 |gemini 2 			| Scan the mac for duplicates|
 |PhotoSweeper 		||
 |Amphetamine 		| keeping the mac active and prevent it from locking|
-|Flycut 			| Clipboard manager|
+|Flycut /JumpCut 	| Clipboard manager|
 |Flux 				| Whitelight manager, based on location. Redundant with latest mac OS|
 |TimeOut 			| Rest your eyes based on Pomodoro Cycles|
 |Kap 				| Screen Recorder, Screenshot for emails|
 |Giphy Capture		| Screen Recorder to GIF for email attachments|
 |Rectangle 			| Move and resize windows in macOS|
-|Cheatsheet			| Reveal Mac shortcuts|
+|Cheatsheet			| Reveal Mac shortcuts, if you hold command (⌘) key for a few seconds in a software context|
 |CustomShortcuts 	| Define your own shortcuts|
 |DBeaver			| Open source DB client for all|
 |ItsYCal			| View Calander and Time like Windows on ToolBar on top|
 |[***XMind***](http://www.xmind.net/download/mac/)|MindMapping tool|
 |Transmission|for Peer to peer Torrent transfer. Setup your own server|
 
-	1. Cheat Sheet App
-:This simple app displays shortcuts if you hold command (⌘) key for a few seconds in a software context
-
-JumpCut clipboard buffering: Often times there are lots of copy-paste happening during the development process. the software keeps 99 copy statements in its buffer
 
 # Mac Shortcuts
 
