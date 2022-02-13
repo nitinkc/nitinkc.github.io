@@ -71,7 +71,7 @@ Add Terminal (or iTerm2) shortcuts to the Services menu by
 * scroll down to “Files and Folders” 
 * enable “New Terminal at Folder” and “New Terminal Tab at Folder.”
 
-![]({{ site.url }}/assets/images/set_keyboard_shortcut.png){:height="400px" width="200px"}
+![]({{ site.url }}/assets/images/set_keyboard_shortcut.png)
 
-![]({{ site.url }}/assets/images/treminal_from_finder.png){:height="400px" width="200px"}
+![]({{ site.url }}/assets/images/treminal_from_finder.png)
 
