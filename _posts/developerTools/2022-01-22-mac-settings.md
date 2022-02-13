@@ -64,6 +64,13 @@ alias screenTypeDir='defaults write com.apple.screencapture location /Users/niti
 
 ### Terminal from Finder
 
+Open the Keyboard system preferences and click on the “Shortcuts” tab. 
+
+Add Terminal (or iTerm2) shortcuts to the Services menu by
+* clicking on the “Services” category
+* scroll down to “Files and Folders” 
+* enable “New Terminal at Folder” and “New Terminal Tab at Folder.”
+
 ![]({{ site.url }}/assets/images/set_keyboard_shortcut.png){:height="400px" width="200px"}
 
 ![]({{ site.url }}/assets/images/treminal_from_finder.png){:height="400px" width="200px"}
