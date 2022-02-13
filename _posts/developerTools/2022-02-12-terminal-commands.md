@@ -72,6 +72,20 @@ open .
 open /usr 
 ```
 
+All Computers in the network
+
+```
+arp -a
+```
+
+* ```ifconfig``` ("interface configure") - to display and configure network interface parameters
+* ping - to send a test packet to another computer (amusing article about the history of this * command)
+* traceroute - to see the route taken by packets across a network
+* host - to find out the IP address corresponding to a hostname or viceversa
+* curl - to download contents of a document via a URL
+* ftp - command-line FTP client
+* ssh ("secure shell") - remote login to another computer
+
 ## OS Commands
 Top
 Kill -9
@@ -97,6 +111,19 @@ Clear RAM
 ```shell
 sudo Purge
 ```
+
+Find the Brand of the CPU
+
+```sh
+sysctl -n machdep.cpu.brand_string
+
+system_profiler | grep Processor
+
+sysctl -a | grep machdep.cpu
+
+sysctl hw.cpufrequency # query the CPU speed
+``` 
+
 
 ## Displaying Current Environment & Shell Variables in Mac OS X
 get a list of environmental variables
@@ -139,15 +166,6 @@ To get 'xargs' to insert the list of files at a specified place in the command l
 find . -name "*.java" -print0 | xargs -0 -J % cp % destinationFolder 
 ```
 
-## Networking
-* ```ifconfig``` ("interface configure") - to display and configure network interface parameters
-* ping - to send a test packet to another computer (amusing article about the history of this * command)
-* traceroute - to see the route taken by packets across a network
-* host - to find out the IP address corresponding to a hostname or viceversa
-* curl - to download contents of a document via a URL
-* ftp - command-line FTP client
-* ssh ("secure shell") - remote login to another computer
-
 ## Processes
 * ps ("process status") - to see detailed info about the processes running
 * top - to get a summary of the processes running and resource consumption
@@ -167,8 +185,6 @@ find . -name "*.java" -print0 | xargs -0 -J % cp % destinationFolder
 * diskutil - versatile disk management utility (info, formatting, mounting, repairing, etc)
 
 ## Misc
-* echo - to send something to "standard output" (useful in pipes, etc)
-* open - to open a file or a folder (in the Finder)
 * date - to display the current date and time (in various formats)
 * sleep - to pause execution for a given number of seconds (useful in scripts)
 * wc ("word count") - to display the number of characters, words, and lines in a text file
