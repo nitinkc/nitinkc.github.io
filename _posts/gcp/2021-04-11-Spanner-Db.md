@@ -73,5 +73,5 @@ gcloud config configurations list
 gcloud config configurations delete emulator 
 
 #Stop the emulator
-contrl C to stop the running instance
+ctrl C to stop the running instance
 ```

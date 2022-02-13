@@ -61,3 +61,10 @@ alias screenShotType='defaults write com.apple.screencapture type -string "png"'
 ```sh
 alias screenTypeDir='defaults write com.apple.screencapture location /Users/nitin/Downloads'
 ```
+
+### Terminal from Finder
+
+![]({{ site.url }}/assets/images/set_keyboard_shortcut.png){:height="400px" width="200px"}
+
+![]({{ site.url }}/assets/images/treminal_from_finder.png){:height="400px" width="200px"}
+

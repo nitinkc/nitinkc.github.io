@@ -48,6 +48,11 @@ The following tools helps a lot making the develop environment much more conduci
 |[***XMind***](http://www.xmind.net/download/mac/)|MindMapping tool|
 |Transmission|for Peer to peer Torrent transfer. Setup your own server|
 
+	1. Cheat Sheet App
+:This simple app displays shortcuts if you hold command (⌘) key for a few seconds in a software context
+
+JumpCut clipboard buffering: Often times there are lots of copy-paste happening during the development process. the software keeps 99 copy statements in its buffer
+
 # Mac Shortcuts
 
 Press Shift-Command-5 (macOS Mojave or later) and invoke the screen capture panel.
