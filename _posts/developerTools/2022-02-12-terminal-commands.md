@@ -90,14 +90,9 @@ arp -a
 Top
 Kill -9
 
-To check uptime
-```sh 
-uptime
-```
-To stop mac from sleep
-```sh
-caffeinate -t 3600
-```
+``` uptime ``` To check the time since last start
+
+``` caffeinate -t 3600 ``` To stop mac from sleep
 
 name of the OS/print hardware name
 
@@ -106,13 +101,9 @@ uname
 
 uname -m
 ```
+``` sudo Purge ``` Clear RAM
 
-Clear RAM
-```shell
-sudo Purge
-```
-
-Find the Brand of the CPU
+Find CPU related info
 
 ```sh
 sysctl -n machdep.cpu.brand_string
