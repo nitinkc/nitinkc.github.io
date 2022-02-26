@@ -1,6 +1,6 @@
 ---
 title:  "Array Syntax"
-date:   2022-01-03 01:30:00
+date:   2022-02-03 01:30:00
 categories: Algorithms
 tags: [Algorithms]
 ---
