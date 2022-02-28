@@ -13,28 +13,6 @@ tags: [Algorithms]
 {% gist nitinkc/96387a9700c9c58185a969ae48bfdc45 %}
 
 
-### 
-Uniformaly handles even an odd lenght Strings 
->> for (int i = 0, j = word.length()-1; i < j; i++,j--) {
-
-```java
-for (int i = 0, j = word.length()-1; i < j; i++,j--) {
-    if(Character.toLowerCase(word.charAt(i)) != Character.toLowerCase(word.charAt(j)))
-        return false;
-}
-```
-
-### String to Int
-```java
-int digit = 0;
-int x = str.charAt(i) - '0';//Subtracting '0' char is important
-
-//12345 = 1*10^4 + 2*10^3 + 3*10^2 + 4*10^1 + 5*10^0;
-digit = (int) (digit + (x* Math.pow(10,str.length()-1-i)));
-
-//12345 = 1 -> 10+2 -> 120+3 -> 1230+4 -> 12340+5
-digit = digit*10 + x;
-```
 ### For Loop Traps
 {% gist nitinkc/382798a984e00a732d86a12a6637e0a2 %}
 
