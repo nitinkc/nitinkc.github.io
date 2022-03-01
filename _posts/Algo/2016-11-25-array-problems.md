@@ -16,6 +16,7 @@ tags: [Algorithms]
 {% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
 
 ##### Left pointer and Right pointer movements based on if condition.
+
 {% gist nitinkc/00b4970b6d3d13d6b52c7c57cc06af41 %}
 
 
@@ -26,17 +27,7 @@ Checks :
 
 Approach 1 : Greedy approach to test all the possible combinations exhaustively
 
-```java
-// O(n^2)
- for (int i = 0; i < arr.length; i++){
-    for (int j = i + 1; j < arr.lenght; j++){
-        if (arr[i] + arr[j] == sum){
-            count++;
-        }
-    }
- }
- return count;
-```
+{% gist nitinkc/27b6ac30958dcf7a2d37d30797442603 %}
 
 Approach 2 : Two pointer Approach - Test only those possible combinations that makes sense
 

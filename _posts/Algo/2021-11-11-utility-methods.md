@@ -9,11 +9,13 @@ tags: [Algorithms]
 
 ## Arrays, Lists and Collections Utility Classes
 
-## Character Utility Class
+## Character
+
+While comparing individual characters of a String, `Character.toLowerCase('C')` comes handy.
+
+Note: To uniformaly handles even an odd length Strings the condition  `i < j` with pointers running from both end 
 
 ```java
-Character.toLowerCase(word.charAt(i))
-
 private static Boolean isPalindrome(String word) {
     for (int i = 0, j = word.length()-1; i < j; i++,j--) {
         if(Character.toLowerCase(word.charAt(i)) != Character.toLowerCase(word.charAt(j)))
@@ -23,9 +25,7 @@ private static Boolean isPalindrome(String word) {
 }
 ```
 
-//Skip punctuation marks
-while(!Character.isLetterOrDigit(str.charAt(i)) && i < j)
-    i++;
+Identify if a character is alphanumeric or Skipping punctuation marks `Character.isLetterOrDigit(str.charAt(i))`
 
 ```java
 private static Boolean isStringPalindrome(String str) {
@@ -46,19 +46,24 @@ private static Boolean isStringPalindrome(String str) {
 }
 ```
 
+## String 
 
-### 
-Uniformaly handles even an odd length Strings 
->> for (int i = 0, j = word.length()-1; i < j; i++,j--) {
+From String to char array
 
 ```java
-for (int i = 0, j = word.length()-1; i < j; i++,j--) {
-    if(Character.toLowerCase(word.charAt(i)) != Character.toLowerCase(word.charAt(j)))
-        return false;
-}
+String str = "Ramdom String";
+char[] charArr = str.toCharArray();
 ```
 
+From Char Array to String
+```java
+String newStr = new String(charArr);
+```
+
+
+
 ### String to Int
+
 ```java
 int digit = 0;
 int x = str.charAt(i) - '0';//Subtracting '0' char is important
