@@ -11,40 +11,16 @@ tags: [Algorithms]
 
 ## Character
 
-While comparing individual characters of a String, `Character.toLowerCase('C')` comes handy.
+While comparing individual characters of a String, `Character.toLowerCase('A')` comes handy.
 
 Note: To uniformaly handle even an odd length Strings, use While loop with the condition  `start < end` with pointers running from both end 
 
-```java
-private static Boolean isPalindrome(String word) {
-    for (int i = 0, j = word.length()-1; i < j; i++,j--) {
-        if(Character.toLowerCase(word.charAt(i)) != Character.toLowerCase(word.charAt(j)))
-            return false;
-    }
-    return true;
-}
-```
+{% gist nitinkc/677d996fd8fab0b033c8339e4fe6ae6d %}
+
 
 Identify if a character is alphanumeric or Skipping punctuation marks `Character.isLetterOrDigit(str.charAt(i))`
+{% gist nitinkc/eb96b7d58398b277e97e8df6b6f22e0a %}
 
-```java
-private static Boolean isStringPalindrome(String str) {
-    int i = 0, j = str.length()-1;
-    while (i < j) {
-        //Skip punctuation marks
-        while(!Character.isLetterOrDigit(str.charAt(i)) && i < j)
-            i++;
-
-        while(!Character.isLetterOrDigit(str.charAt(j)) && i < j)
-            j--;
-
-        if(Character.toLowerCase(str.charAt(i)) != Character.toLowerCase(str.charAt(j)))
-            return false;
-        i++;j--;
-    }
-    return true;
-}
-```
 
 ## String 
 
@@ -59,8 +35,6 @@ From Char Array to String
 ```java
 String newStr = new String(charArr);
 ```
-
-
 
 ### String to Int
 
