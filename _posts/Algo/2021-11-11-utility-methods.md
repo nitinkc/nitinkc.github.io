@@ -13,7 +13,7 @@ tags: [Algorithms]
 
 While comparing individual characters of a String, `Character.toLowerCase('C')` comes handy.
 
-Note: To uniformaly handles even an odd length Strings the condition  `i < j` with pointers running from both end 
+Note: To uniformaly handle even an odd length Strings, use While loop with the condition  `start < end` with pointers running from both end 
 
 ```java
 private static Boolean isPalindrome(String word) {
