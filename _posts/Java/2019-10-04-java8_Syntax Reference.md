@@ -32,10 +32,10 @@ list.stream().forEach(System.out :: print);
 
 Defined in java.util.function
 
-1. Predicate (test(), returns boolean) - Used with filter() in Stream API
-2. Function (apply(T k), return user defined TYPE) - Used with map() in Stream API
-3. Consumer (accept()), - Used with forEach() method
-4. Supplier (get()),
+|1.| Predicate | test(), returns boolean) | Used with filter() in Stream API|
+|2.| Function |(apply(T k), return user defined TYPE) | Used with map() in Stream API
+|3.| Consumer |(accept()), |Used with forEach() method |
+|4.| Supplier |(get()), ||
 
 ### Predicate 
 
