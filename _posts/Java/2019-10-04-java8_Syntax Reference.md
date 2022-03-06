@@ -57,11 +57,9 @@ Predicate can be defined within Labda or can be separately defined and invoked u
 
 ### Function 
 
+The Function interface represents a function (method) that **takes a single parameter T and returns a single value R**.
+
 Commonly used with streams.map()
-
-The Function interface represents a function (method) that **takes a single parameter and returns a single value**. Here is how the Function interface definition looks:
-
-function is used in map() function
 
 ```java
 public interface Function<T, R> {
@@ -69,7 +67,7 @@ public interface Function<T, R> {
 }
 ```
 
-Write Lambda in such a way that it **accepts an argument and performs an action** on it
+Write Lambda in such a way that it **accepts an argument and performs an action** on it to return an Object
 
 {% gist nitinkc/bed9ceea341088f49355f8422958d04a %}
 
