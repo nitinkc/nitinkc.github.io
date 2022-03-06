@@ -32,16 +32,14 @@ list.stream().forEach(System.out :: print);
 
 Defined in java.util.function
 
-|1.| Predicate | test(), returns boolean) | Used with filter() in Stream API|
-|2.| Function |(apply(T k), return user defined TYPE) | Used with map() in Stream API
-|3.| Consumer |(accept()), |Used with forEach() method |
-|4.| Supplier |(get()), ||
+|1.| Predicate | test(), returns boolean | Used with filter() in Stream API|
+|2.| Function |apply(T k), return user defined TYPE | Used with map() in Stream API
+|3.| Consumer |accept(), |Used with forEach() method |
+|4.| Supplier |get(), ||
 
 ### Predicate 
 
-`java.util.function.Predicate` represents a simple function that takes a single value as parameter, and returns true or false.
-
-**Predicate uses a Lambda that returns true and false**
+`java.util.function.Predicate` represents a simple function that takes a single value as parameter, and returns true or false. Predicate uses a Lambda that returns true and false
 
 Commonly used with Filters. 
 
@@ -53,6 +51,7 @@ public interface Predicate<T> {
 }
 ```
 Predicate can be defined within Labda or can be separately defined and invoked using test method.
+
 {% gist nitinkc/b63f8cbb3d13cab6ba1fb5256d748d6f %}
 
 
