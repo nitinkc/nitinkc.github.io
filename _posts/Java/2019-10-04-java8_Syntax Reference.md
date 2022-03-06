@@ -6,18 +6,15 @@ tags: ['Java']
 ---
 {% include toc title="Index" %}
 
-##### For each in Streams
+##### ForEach in Streams
 
 **applies the lambda** to each element of the collection
 
 ```java
 //Prints each element
-list.stream()
-    .forEach(str -> System.out.println(str));
-
-//Where ever Lambda is there it can be replaced by method reference
-list.stream()
-    .forEach(System.out :: print);
+list.stream().forEach(str -> System.out.println(str));
+//Lambda can be replaced by method reference
+list.stream().forEach(System.out :: print);
 ```
 
 ## The Double Colon Operator
@@ -30,6 +27,7 @@ list.stream()
 | 4  | Ref. to a constructor  | ClassName::new       | MyClass :: new | () - > new MyClass()|
 
 **Instance method** are methods which can only be invoked through an object of the class. It needs an object if a class to ve called.
+
 ## Predefined Functional Interface
 
 Defined in java.util.function
