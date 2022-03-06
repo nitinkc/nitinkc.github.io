@@ -6,7 +6,6 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-
 Save an object in case it it null.
 
 Use of if statement can be avoided using declarative functional way. 

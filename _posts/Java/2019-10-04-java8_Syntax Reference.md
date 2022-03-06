@@ -6,8 +6,9 @@ tags: ['Java']
 ---
 {% include toc title="Index" %}
 
+##### For each in Streams
 
-##### For each method **applies the lambda** to each element of the collection
+**applies the lambda** to each element of the collection
 
 ```java
 //Prints each element
@@ -19,15 +20,16 @@ list.stream()
     .forEach(System.out :: print);
 ```
 
-## Double Colon Operator
+## The Double Colon Operator
 
-| S.no| Kind                                                  | Example                              |
-|---- |-------------------------------------------------------|--------------------------------------+
-| 1  | Reference to a static method                          | ContainingClass::staticMethodName  |
-| 2  |Reference to an instance method of a particular object | containingObject::instanceMethodName |
-| 3  | Reference to an instance method of an arbitrary object of a particular type | ContainingType::methodName           |
-| 4  |Reference to a constructor                             | ClassName::new                       |
+|S.no| Kind | Example | Method Reference | Equivalent Labmda |
+| :----:  | :----: | :----: | :----: |
+| 1  | Ref. to a static method (Simplest Type) | ContainingClass::staticMethodName  | System.out :: print <br /> MyStringUtils::isPalindrome | x -> System.out.println(x) <br /> (str) -> MyStringUtils.isPalindrome(str)
+| 2  | Ref. to an instance method of a particular object | someObject::instanceMethodName | obj :: test  <br /> str :: toLowerCase| x -> obj.test() <br />  |
+| 3  | Ref. to an instance method of an arbitrary object of a particular type | ContainingType::methodName|  |
+| 4  | Ref. to a constructor  | ClassName::new       | String :: new | |
 
+**Instance method** are methods which can only be invoked through an object of the class. It needs an object if a class to ve called.
 ## Predefined Functional Interface
 
 Defined in java.util.function
