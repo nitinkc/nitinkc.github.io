@@ -32,10 +32,10 @@ list.stream().forEach(System.out :: print);
 
 Defined in java.util.function
 
-|1.| Predicate | test(), returns boolean | Used with filter() in Stream API|
-|2.| Function |apply(T k), return user defined TYPE | Used with map() in Stream API
-|3.| Consumer |accept(), |Used with forEach() method |
-|4.| Supplier |get(), ||
+|1.| Predicate<T> | test(), takes T in, returns boolean | Used with filter() in Stream API|
+|2.| Function<T,R> |apply(T k), T in return user defined TYPE R | Used with map() in Stream API
+|3.| Consumer<T> |accept(), T in, void out |Used with forEach() method |
+|4.| Supplier<T> |get(), nothing in, T out ||
 
 ### Predicate 
 
@@ -57,7 +57,7 @@ Predicate can be defined within Labda or can be separately defined and invoked u
 
 ### Function 
 
-The Function interface represents a function (method) that **takes a single parameter T and returns a single value R**.
+The Function interface represents a function that **takes a single parameter T and returns a single value R**.
 
 Commonly used with streams.map()
 
@@ -82,7 +82,7 @@ public interface BiFunction<T, U, R> {
 ```
 higher-order functions. Two common examples are filter and map.
 
-A filter processes a list in some order to produce a new list containing exactly those elements of the original list for which a given predicate (think Boolean expression) returns true.
+A filter processes a list in some order to produce a new list containing exactly those elements of the original list for which a given predicate (the Boolean expression) returns true.
 
 A map applies a given function to each element of a list, returning a list of results in the same order.
 
