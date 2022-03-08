@@ -32,10 +32,10 @@ list.stream().forEach(System.out :: print);
 
 Defined in java.util.function
 
-|1.| Predicate<T> | test(), takes T in, returns boolean | Used with filter() in Stream API|
+|1.| Predicate &lt;T> | test(), takes T in, returns boolean | Used with filter() in Stream API|
 |2.| Function<T,R> |apply(T k), T in return user defined TYPE R | Used with map() in Stream API
-|3.| Consumer<T> |accept(), T in, void out |Used with forEach() method |
-|4.| Supplier<T> |get(), nothing in, T out ||
+|3.| Consumer &lt;T> |accept(), T in, void out |Used with forEach() method |
+|4.| Supplier&lt;T> |get(), nothing in, T out ||
 
 ### Predicate 
 
@@ -90,6 +90,7 @@ Another common higher-order function is reduce, which is more commonly known as 
 
 
 ### Higher-order functions in function
+
 |compose|f1.compose(f2) -> first run f2, then pass the result to f1||
 |andThen|f1.andThen(f2) -> first run f1, then pass the result to f2. So, f2.andThen(f1) is same as f1.compose(f2).||
 |identity|Function.identity() creates a function whose apply method just returns the argument unchanged||
