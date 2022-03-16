@@ -34,7 +34,7 @@ Defined in java.util.function
 
 |1.| Predicate &lt;T> | test(), takes T in, returns boolean | Used with filter() in Stream API|
 |2.| Function<T,R> |apply(T k), T in return user defined TYPE R | Used with map() in Stream API
-|3.| Consumer &lt;T> |accept(), T in, void out |Used with forEach() method |
+|3.| Consumer&lt;T> |accept(), T in, void out |Used with forEach() method |
 |4.| Supplier&lt;T> |get(), nothing in, T out ||
 
 ### Predicate 

@@ -1,6 +1,6 @@
 ---
 # layout: static
-title:  "Java Date Time"
+title:  "Java ZonedDate Time"
 date:   2022-03-08 00:27:00
 categories: ['Java']
 tags: ['Java']
@@ -12,6 +12,9 @@ As per [Java 17 documentation](https://docs.oracle.com/en/java/javase/17/docs/ap
 
 Z would format the date with timezone in the end with + or - sign indicating the timezone compared to UTC. 
 
-| Z |	Time zone |	RFC 822 time zone |	-0800 |
+7| Z |	Time zone |	RFC 822 time zone |	-0800 |
 
 {% gist nitinkc/22f8f3ea4afcf340d49a2610407297fc %}
+
+### ZonedDateTime
+{% gist nitinkc/7e3dc6cb2ac498e478a8a1d92b3537f9 %}
