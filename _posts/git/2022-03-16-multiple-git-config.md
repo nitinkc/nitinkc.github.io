@@ -9,7 +9,7 @@ tags: ['Git']
 
 To ensure multiple git or bitbucket repositories to work seemlessly with one machine, configure the global git file in such a way that it picks up right user name for specific projects under a folder.
 
-For example, betweek work and personal repositores, code checkin using correct user id is maintained with following confog :-
+For example, between work and personal repositores, code checkin using correct user id is maintained with following confog :-
 
 with global; gitconfig file (.gitconfig in home folder ~)
 ```sh
