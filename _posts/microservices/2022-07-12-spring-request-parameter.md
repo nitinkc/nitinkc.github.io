@@ -21,6 +21,7 @@ localhost:8084/orders/dashboard/summary?fromDate=2021-06-01&toDate=2022-06-17
 
 Notice the defaultValue property of @RequestParam. This is useful when the dates are not passed. The fromDate takes the **current date** as default date to todate parameter takes **the end of the day today** as the default vale
 
+Default value is set with default value with input e defaultValue = "#{T(java.time.LocalDateTime).now()}" 
 
 The Corrosponding Spring Controller would look like
 
