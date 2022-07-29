@@ -7,6 +7,7 @@ tags: ['Java']
 ---
 
 Asynchronous Task Execution Engine -> Executor Service introduced in J1.5
+
 It has 
     * Work Queue (Blocking Queue)
     * Completion Queue
@@ -15,7 +16,7 @@ It has
 As soon as the work is placed in the work queue, you get Future. Future is a proxy or refrence of the result that will be returned in the Future
 
 
-Fork Join Framework (used in parallel stream behind the scenes)-> Java 7 (Extends Executor service)
+Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Extends Executor service)
 
 
 # CompletableFuture
@@ -50,6 +51,8 @@ Fork Join Framework (used in parallel stream behind the scenes)-> Java 7 (Extend
     * deals with functions that **returns CompletableFuture<T>**
     * thenCompose depends on the completion of the dependent Future task
 
+
+
 # CompletableFuture and Reactive Manifest
 
 ### Responsive
@@ -67,3 +70,13 @@ Fork Join Framework (used in parallel stream behind the scenes)-> Java 7 (Extend
 ### Message Driven
     * Event driven async tasks interaction
     * thenAccept() runs on completion of supplyAsync(event is done and signalling to initiate thenAccept is received)
+
+# Exception handling with Completablle Future
+
+Three options available
+    * handle()
+    * exceptionally()
+
+    The above two catches the exception and recovers 
+
+    * whenComplete() -> Catches Exception but does not recover

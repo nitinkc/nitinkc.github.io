@@ -8,7 +8,9 @@ tags: ["Spring Microservices", Spring Boot]
 {% include toc title="Index" %}
 
 
-# GET : Request Parameter
+# GET : Path Parameter and Request Parameter
+
+@PathVariables annotation is used to extract values from the URI path
 
 If Requirement for the API is to get the summary of recent orders in the last 24 hours
 ```
