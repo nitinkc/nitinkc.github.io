@@ -20,8 +20,8 @@ Installing the following tools and configuring them ensures maximum ease of deve
 | Tool | Details | 
 | :---| :---    |   
 |Iterm		|[Configuring iTerm]({{ site.baseurl }} {% post_url /developerTools/2021-02-01-iterm2-zsh-config %})|
-|IntelliJ	|[Configuring IntelliJ]({% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})|
-|Sublime	|[Configuring Sublime Editor]({% post_url /developerTools/2021-03-24-sublime-settings %})|
+|IntelliJ	|[Configuring IntelliJ]({{ site.baseurl }} {% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})|
+|Sublime	|[Configuring Sublime Editor]({{ site.baseurl }} {% post_url /developerTools/2021-03-24-sublime-settings %})|
 |Git Config |[Configuring global git config]({{ site.baseurl }} {% post_url /git/2022-03-16-multiple-git-config %})|
 
 The following tools helps a lot making the develop environment much more conducive to work. 
