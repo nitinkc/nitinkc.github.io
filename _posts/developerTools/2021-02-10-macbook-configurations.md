@@ -17,14 +17,14 @@ Installing the following tools and configuring them ensures maximum ease of deve
 1. Install Brew Package manager
 2. Create personalized [profiles and configure alias](https://github.com/nitinkc/SystemEnvironment#readme)
 
-<!--
+
 | Tool | Details | 
 | :---| :---    |   
-|Iterm		|[Configuring iTerm]({{ site.baseurl }} {% post_url /developertools/2021-02-01-iterm2-zsh-config %})|
+|Iterm		|[Configuring iTerm]({% post_url /developertools/2021-02-01-iterm2-zsh-config %})|
 |IntelliJ	|[Configuring IntelliJ]({{ site.baseurl }} {% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})|
 |Git Config |[Configuring global git config]({{ site.baseurl }} {% post_url /git/2022-03-16-multiple-git-config %})|
-|Sublime	|[Configuring Sublime Editor]({{ site.baseurl }} {% post_url /developertools/2021-03-24-sublime-settings %})|
--->
+|Sublime	|[Configuring Sublime Editor]({% post_url /developertools/2021-03-24-sublime-settings %})|
+
 The following tools helps a lot making the develop environment much more conducive to work. 
 
 
