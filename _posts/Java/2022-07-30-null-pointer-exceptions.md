@@ -11,6 +11,9 @@ tags: ['Java']
 
 ## Boolean Variables
 
+Prefer primitive boolean types over Wrapper class to avoid creating objects & NPE.
+
+
 If a String, intended to carry boolean values, is to be tested,
 
 ```java

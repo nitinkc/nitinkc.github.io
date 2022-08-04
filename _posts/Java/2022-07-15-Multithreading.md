@@ -80,3 +80,20 @@ Three options available
     The above two catches the exception and recovers 
 
     * whenComplete() -> Catches Exception but does not recover
+
+
+# CompletableFuture - ThreadPool
+
+By Default Completable future uses the **Common ForkJoinPool**. Which means that the number of threads in a commong forkjoin pool is equal to ther number of cores in the machine (Runtime.getRuntime().availableProcessors())
+ 
+Common ForkJoinPoll is shared by 
+    * ParallelStreams
+    * CompletableFuture
+
+And thus, user defined thread pool is also an option to avoid for resource waiting scenarios arising from common thread pool.
+
+### Define User-defined threadpool
+
+```java
+Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
+```
