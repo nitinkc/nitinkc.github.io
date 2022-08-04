@@ -43,5 +43,13 @@ public static ZonedDateTime convertToZonedDateTimeFromSqlTimeStamp(Timestamp tim
 public static Timestamp fromDate(ZonedDateTime date) {
         return Optional.of(Timestamp.valueOf(date.toLocalDateTime())).orElse(null);
 }
+```
 
+### Finding current SQL Timestamp from current time with UTC timezone 
+
+Often, to save current time stamp in DB (ex. updateTime column in a table), with multiple timezones, it is a good idea to save in UTC 
+```java
+public static Timestamp currentTimestamp() {
+        return Timestamp.from(ZonedDateTime.now(ZoneOffset.UTC).toInstant());
+    }
 ```
