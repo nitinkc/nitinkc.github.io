@@ -12,9 +12,8 @@ Use of if statement can be avoided using declarative functional way.
 
 ```java
 null != student.getFirstName() ? student.getFirstName() : ""
-```
-can be re-written as 
-```java
+
+//is Equivalent to 
 Optional.of(student.getFirstName()).orElse("")
 ```
 
@@ -31,7 +30,7 @@ String str2 = Optional.ofNullable(obj.getCityName()))
                             .orElse("");
 ```
 
-### Applying conterters with Optional
+### Applying converters with Optional
 
 {% gist nitinkc/3b6166b2b2825dad85bea8dd9cf7812a %}
 
