@@ -8,7 +8,7 @@ tags: ['Java']
 For ZoneDateTime 
 "yyyy-MM-dd'T'HH:mm:ss.SSSZ" format would look like 
 
-"2022-03-03T09:08:56.064+0000" 
+"2022-03-03T09:08:56.064+0000"  
 
 As per [Java 17 documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html)
 
