@@ -10,7 +10,7 @@ tags: ['Java']
 
 In case of applying operations on Stream, it is necessasary to assign the result of the stream back to the collection.
 
-For example, of the class Person has persontFullName as the property
+For example, if the class Person has persontFullName as the property
 ```java
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor @ToString
 class Person {
@@ -18,7 +18,7 @@ class Person {
 }
 ```
 
-and if a list of persons needs to be sorted in natural order like this, the return list will not be sorted.
+and if a list of persons needs to be sorted in natural order, the return list will not be sorted.
 ```java
 listOfPersons.stream()
     .sorted(Comparator.comparing(Person::getPersontFullName,Comparator.nullsLast(Comparator.naturalOrder())));
@@ -36,5 +36,9 @@ return listOfPersons;
 ```
 
 
-### 
+### Parallel Stream issues 
+
+The behavoiur of list.parallelStream() or list.stream().parallel() is unpredictable in certain scenarios.
+
+{% gist nitinkc/c34b3f61fff2fe68f9d00b2ae95f635e %}
 
