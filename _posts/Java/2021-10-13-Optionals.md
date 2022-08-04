@@ -19,8 +19,8 @@ Optional.of(student.getFirstName()).orElse("")
 ```
 
 Optional of Nullable - If present then set else keep a default value
+{% gist nitinkc/48b38c0c6ffab602a38dc305179d42f4 %}
 
-{% gist nitinkc/3b6166b2b2825dad85bea8dd9cf7812a %}
 
 
 ```java
@@ -35,7 +35,7 @@ String str2 = Optional.ofNullable(obj.getCityName()))
 
 ### Applying conterters with Optional
 
-{% gist nitinkc/48b38c0c6ffab602a38dc305179d42f4 %}
+{% gist nitinkc/3b6166b2b2825dad85bea8dd9cf7812a %}
 
 ```java
  public Optional<Map<String, Object >> getInfoByCode(String code){
