@@ -5,7 +5,10 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-"yyyy-MM-dd'T'HH:mm:ss.SSSZ" format would look like "2022-03-03T09:08:56.064+0000" 
+For ZoneDateTime 
+"yyyy-MM-dd'T'HH:mm:ss.SSSZ" format would look like 
+
+"2022-03-03T09:08:56.064+0000" 
 
 As per [Java 17 documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html)
 
@@ -15,7 +18,9 @@ RFC 822 time zone |	-0800 |
 
 {% gist nitinkc/22f8f3ea4afcf340d49a2610407297fc %}
 
-### ZonedDateTime
+### Dates comparison with ZonedDateTime 
+It is easy to compare the dates with Zoned Date Time
+
 {% gist nitinkc/7e3dc6cb2ac498e478a8a1d92b3537f9 %}
 
 
