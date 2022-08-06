@@ -208,7 +208,7 @@ Object Assignment using traditional for loop VS in Streams.Notice in Streams, in
 {% gist nitinkc/3bc7cde3d5c123c3fdec9d96a56dbd9f %}
 
 
-### Filthy way od sorting a list
+### Filthy way of sorting a list
 ```java
 // Sort method under Collection takes the same comparator
 list.sort(Comparator.comparing(String::toString, (String a, String b) -> Integer.parseInt(a.substring(2)) - Integer.parseInt(b.substring(2))));
