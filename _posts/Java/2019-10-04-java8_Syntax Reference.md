@@ -206,3 +206,36 @@ In Streams API, Optional is returned
 Object Assignment using traditional for loop VS in Streams.Notice in Streams, instead of individually assigning object to each element of Arraylist, an entire collection is assigned
 
 {% gist nitinkc/3bc7cde3d5c123c3fdec9d96a56dbd9f %}
+
+
+### Filthy way od sorting a list
+```java
+// Sort method under Collection takes the same comparator
+list.sort(Comparator.comparing(String::toString, (String a, String b) -> Integer.parseInt(a.substring(2)) - Integer.parseInt(b.substring(2))));
+list.sort(Comparator.comparing(String::toString,comparator.reversed()));
+
+// Single Line Implementation using Collections Arrays Utility Class
+Collections.sort(list, ((String a, String b) -> Integer.parseInt(a.substring(2)) - Integer.parseInt(b.substring(2))));
+
+Comparator<String>  comparator = (String a, String b) -> Integer.parseInt(a.substring(2)) - Integer.parseInt(b.substring(2));
+Collections.sort(list, comparator);
+list.sort(comparator);
+
+//Prior to Java 8, using anonymous class
+list.sort(new Comparator<String>() {
+          @Override
+          public int compare(String o1, String o2) {
+              int interstateNumber1 = Integer.parseInt(o1.substring(2));
+              int interstateNumber2 = Integer.parseInt(o2.substring(2));
+
+              if (interstateNumber1 > interstateNumber2) {
+                  return 1;
+              } else if (interstateNumber1 < interstateNumber2){
+                  return -1;
+              }
+              else{
+                  throw new IllegalArgumentException("Two Interstates with same name in a Same City");
+              }
+          }
+      });
+```
