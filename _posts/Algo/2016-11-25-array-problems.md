@@ -1,5 +1,5 @@
 ---
-title:  "Arrays"
+title:  "Array Problems"
 date:   2016-11-25 20:20:00
 categories: Algorithms
 tags: [Algorithms]
