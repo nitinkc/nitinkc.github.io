@@ -99,9 +99,13 @@ Methods that Return Functions
 
 Two common examples are filter and map.
 
-##### Sorting a list
+##### Sorting a Primitive list
 
 {% gist nitinkc/d55b4541f27fc0bfd86f122d35c2b527 %}
+
+##### Sorting a list of certain Type
+{% gist nitinkc/bb52e836bb4a5472959ebbd5c95375f5 %}
+
 
 ##### Sorting a set
 

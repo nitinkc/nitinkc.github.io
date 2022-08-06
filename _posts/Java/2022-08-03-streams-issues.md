@@ -18,7 +18,7 @@ class Person {
 }
 ```
 
-and if a list of persons needs to be sorted in natural order, the return list will not be sorted.
+and if a list of persons needs to be sorted in natural order, the return list will not be sorted this way :-
 ```java
 listOfPersons.stream()
     .sorted(Comparator.comparing(Person::getPersontFullName,Comparator.nullsLast(Comparator.naturalOrder())));
@@ -37,7 +37,7 @@ return listOfPersons;
 or simply like below, without using streams at all. The sorted method of collections takes care of sorting the list itself.
 ```java
 listOfPersons
-    .sorted(Comparator.comparing(Person::getPersontFullName,Comparator.nullsLast(Comparator.naturalOrder())));
+    .sort(Comparator.comparing(Person::getPersontFullName,Comparator.nullsLast(Comparator.naturalOrder())));
 
 return listOfPersons;
 ```
