@@ -100,7 +100,6 @@ Methods that Return Functions
 Two common examples are filter and map.
 
 ##### Sorting a Primitive list
-
 {% gist nitinkc/d55b4541f27fc0bfd86f122d35c2b527 %}
 
 ##### Sorting a list of certain Type
@@ -108,10 +107,10 @@ Two common examples are filter and map.
 
 
 ##### Sorting a set
-
 {% gist nitinkc/61476aad3b16d3c29e843553788e640b %}
 
-### Consumer : (used with forEach) takes generified argument and returns nothing
+### Consumer 
+(used with forEach) takes generified argument and returns nothing
 
 It is a function that is representing side effects
 ```java
