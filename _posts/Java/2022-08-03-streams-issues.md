@@ -34,7 +34,13 @@ listOfPersons = listOfPersons.stream()
 
 return listOfPersons;
 ```
+or simply like below, without using streams at all. The sorted method of collections takes care of sorting the list itself.
+```java
+listOfPersons
+    .sorted(Comparator.comparing(Person::getPersontFullName,Comparator.nullsLast(Comparator.naturalOrder())));
 
+return listOfPersons;
+```
 
 ### Parallel Stream issues 
 
