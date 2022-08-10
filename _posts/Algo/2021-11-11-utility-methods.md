@@ -7,7 +7,6 @@ tags: [Algorithms]
 
 {% include toc title="Index" %}
 
-# Arrays, Lists and Collections Utility Classes
 
 ## Character
 
