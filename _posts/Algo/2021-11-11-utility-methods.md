@@ -176,13 +176,11 @@ list.sort(Comparator.naturalOrder());
 ```java
 Collections.sort();
 ```
-```
 
-# Collectors.toMap
+## Collectors.toMap
 
 Collectors is a utility Class just like Collections.
 
-+
 
 ```java
 public static <T, K, U>
