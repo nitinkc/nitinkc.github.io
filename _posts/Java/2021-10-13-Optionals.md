@@ -6,6 +6,15 @@ categories: ['Java']
 tags: ['Java']
 ---
 
+# Optional
+
+* New class Optional in java.util package.
+* It is a Container to hold at most one value, like Collections and Arrays.
+* To represent a value if its present or absent.
+* Avoids any runtime NullPointerExceptions
+
+In Streams API, Optional is returned
+
 ### Keeping an object in case it is null, avoiding ternary operator
 
 Use of if statement can be avoided using declarative functional way. 

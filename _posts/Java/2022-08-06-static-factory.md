@@ -1,5 +1,5 @@
 ---
-title:  "Java Streams Nuances"
+title:  "Static Factory Methods"
 date:   2022-08-06 08:30:00
 categories: ['Java']
 tags: ['Java']

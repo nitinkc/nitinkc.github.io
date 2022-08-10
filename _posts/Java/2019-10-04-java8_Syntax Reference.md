@@ -146,68 +146,6 @@ Supplier<LocalDate> s2 = () -> LocalDate.now();
 
 ```
 
-# Java Streams
-
-* A stream in Java is a sequence of data that takes input from Collections or IO Channels
-* Streams **don’t change** the original data structure.
-* A Stream Pileline is the operation (STREAM OPERATIONS) that run on a stream to produce a result
-* Each intermediate operation is lazily executed and returns a stream as a result.
-* Terminal operations mark the end of the stream and return the result.
-* Finite Streams have a limit
-* infinite Streams are like sunrise/sunset cycle
-
-## Stream Operations
-
-* **SOURCE** : Where the stream comes from
-* **INTERMEDIATE OPERATIONS** : Transforms the stream into another stream. STREAMS USE LAZY EVALUATION.
-  * **map**: The map method is used to returns a stream consisting of the results of applying the given function to the elements of this stream.
-  * **filter**: The filter method is used to select elements as per the Predicate passed as argument.
-  * **sorted**: The sorted method is used to sort the stream.
-* **The intermediate operations do not run until the terminal operation runs.**
-* **TERMINAL OPERATION**: Actually produces a result. Stream becomes invalid after terminal operation
-  * **collect**: The collect method is used to return the result of the intermediate operations performed on the stream.
-  * **forEach**: The forEach method is used to iterate through every element of the stream.
-  * **reduce**: The reduce method is used to reduce the elements of a stream to a single value. The reduce method takes a BinaryOperator as a parameter.
-
-### Non-Terminal Operations
-filter()
-map()
-flatMap()
-distinct()
-limit()
-peek()
-
-### Terminal Operations
-anyMatch()
-allMatch()
-noneMatch()
-collect()
-count()
-findAny()
-findFirst() - returns Optional
-forEach()
-min()
-max()
-reduce()
-toArray()
-
-# Optional
-
-* New class Optional in java.util package.
-* It is a Container to hold at most one value, like Collections and Arrays.
-* To represent a value if its present or absent.
-* Avoids any runtime NullPointerExceptions
-
-In Streams API, Optional is returned
-
-
-## Object Creation & Assignment In Streams
-
-Object Assignment using traditional for loop VS in Streams.Notice in Streams, instead of individually assigning object to each element of Arraylist, an entire collection is assigned
-
-{% gist nitinkc/3bc7cde3d5c123c3fdec9d96a56dbd9f %}
-
-
 ### Filthy way of sorting a list
 ```java
 // Sort method under Collection takes the same comparator
