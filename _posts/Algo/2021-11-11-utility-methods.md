@@ -30,6 +30,8 @@ Character.isLetterOrDigit(str.charAt(i))
 ```java
 char c = '9';
 Character.isDigit(c)//True
+c = 'S';
+Character.isLetter(c)
 ```
 
 
@@ -47,6 +49,19 @@ char[] charArr = str.toCharArray();
 String newStr = new String(charArr);
 ```
 
+##### Turn anything into String
+```java
+char c = 'C';
+int d = 5;
+Integer i = 5;
+String newStr = String.valueOf(i));
+
+char c[] = {'T','e','s','t'};
+String newStr = String.valueOf(c);
+
+char
+```
+
 ##### String to Int
 
 ```java
@@ -58,6 +73,14 @@ digit = (int) (digit + (x* Math.pow(10,str.length()-1-i)));
 
 //12345 = 1 -> 10+2 -> 120+3 -> 1230+4 -> 12340+5
 digit = digit*10 + x;
+```
+
+##### Integer
+
+```java 
+int i = Integer.parseInt("12345");
+Integer x = Integer.valueOf("67");
+int j = Integer.valueOf("1234").intValue();
 ```
 
 ##### String Joining
@@ -88,10 +111,72 @@ int temp = Math.min(height[left],height[right]) * (right - left);
 
 ## Arrays
 
+Arrays.asList accepts Wrapper Class array.
+```java
+//Accepts arrays of Integer, Character, String etc.
+List<Integer> list = Arrays.asList(arr);
+```
+
+To convert primitive array into a list of Wrapper class (list of primitive class is not possible)
+
+```java
+int[] arr = {1, 2, 1, 3, 4, 5, 2, 1, 3, 4, 5, 6, 7, 8, 97, 1, 2};
+
+ List<Integer> list = Arrays.stream(arr)// IntStream
+                .boxed()// Stream<Integer>
+                .collect(Collectors.toList());
+
+list = IntStream.of(arr)//IntStream, Static Factory method
+                .boxed()
+                .collect(Collectors.toList());
+
+Integer[] intAr = Arrays.stream(arr)// IntStream
+                .boxed()// Stream<Integer>
+                .toArray(Integer[]::new);
+
+intAr = IntStream.of(arr)//IntStream, Static Factory method
+                .boxed()
+                .toArray(Integer[]::new);
+```
+
+```java
+ char c[] = {'T','e','s','t'};
+
+Character[] charArrBoxed = new String(c).chars()
+                            .mapToObj(ch -> (char) ch)
+                             .toArray(Character[]::new);
+        
+List<Character> characterList = new String(c).chars()
+                .mapToObj(ch -> (char) ch)
+                .collect(Collectors.toList());
+```
+## Sorting Arrays
+
 ##### Sorting an Array of primitives
 ```java
 int[] arr = {4,5,3,8,2};
 Arrays.sort(arr);
+```
+
+### Sorting List
+
+For list of type T, a comparator has to be defined.
+```java
+list.sort(Comparator
+        .comparing(Data::getPopulation).reversed()
+        .thenComparing(Data::getState)
+        .thenComparing(Data::getCity));
+```
+
+For list of primitive type, use
+
+```java
+list.sort(Comparator.naturalOrder());
+
+
+```java
+Collections.sort();
+```
 ```
 
 # Collectors.toMap
@@ -106,21 +191,7 @@ public static <T, K, U>
                                     Function<? super T, ? extends U> valueMapper)
 ```
 
-### Sorting
 
-For list of type T, a comparator has to be defined.
-```java
-list.sort(Comparator
-        .comparing(Data::getPopulation).reversed()
-        .thenComparing(Data::getState)
-        .thenComparing(Data::getCity));
-```
-
-For list of primitive type, use
-
-```java
-list.sort(Comparator.naturalOrder());
-```
 
 ### Boolean
 
