@@ -68,6 +68,7 @@ Edit `~/.zshrc` and `set ZSH_THEME="powerlevel10k/powerlevel10k"`.
 * [Zsh history substring](https://github.com/zsh-users/zsh-history-substring-search)
 
 * [Zsh Apple touchbar](https://github.com/zsh-users/zsh-apple-touchbar)
+
 ```sh
 brew install zsh-syntax-highlighting zsh-completions
 ```
@@ -135,12 +136,7 @@ create a .bash_profile or .profile file in the home directory and set the path i
 `sh export PATH="/usr/local/<my_package>/bin:$PATH" `
 
 
-##
 
-```sh
-exec zsh
-
-```
 ## References
 
 [Follow This Link](https://medium.com/swlh/power-up-your-terminal-using-oh-my-zsh-iterm2-c5a03f73a9fb)
