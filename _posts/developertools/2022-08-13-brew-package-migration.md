@@ -12,7 +12,9 @@ tags: ['Developer tools']
 brew leaves | xargs -n1 brew desc
 ```
 
-Taking all the brew packages from one machine to another machine can be achieved via
+Taking all the brew packages from one machine to another machine can be achieved via brew bundle
+
+[BrewFile](https://github.com/nitinkc/SystemEnvironment/blob/master/mac/.Brewfile)
 
 ```sh
 # Run on old machine to gather all the installed packages
@@ -24,6 +26,7 @@ brew bundle install --global
 
 ```
 
+### Commong Brew packages used
 
 ```text
 cmatrix: Console Matrix
