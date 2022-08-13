@@ -13,22 +13,20 @@ brew leaves | xargs -n1 brew desc
 ```
 
 Taking all the brew packages from one machine to another machine can be achieved via brew bundle
-
-[BrewFile](https://github.com/nitinkc/SystemEnvironment/blob/master/mac/.Brewfile)
-
 ```sh
 # Run on old machine to gather all the installed packages
 brew bundle dump --describe --global #Creates ~/.Brewfile with all installed package information
-
 #--global -> Read the Brewfile from ~/.Brewfile.
+```
 
+Run the following to install the packages from [BrewFile](https://github.com/nitinkc/SystemEnvironment/blob/master/mac/.Brewfile) 
+```sh
 brew bundle install --global
-
 ```
 
 ### Commong Brew packages used
 
-```text
+`
 cmatrix: Console Matrix
 csshx: Cluster ssh tool for Terminal.app
 exa: Modern replacement for 'ls'
@@ -68,4 +66,4 @@ xpdf: PDF viewer
 youtube-dl: Download YouTube videos from the command-line
 yt-dlp: A youtube-dl fork with additional features and fixes
 zsh: UNIX shell (command interpreter)
-```
+`
