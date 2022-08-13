@@ -146,5 +146,3 @@ create a .bash_profile or .profile file in the home directory and set the path i
 [detailed link](https://towardsdatascience.com/the-ultimate-guide-to-your-terminal-makeover-e11f9b87ac99)
 
 
-cmatrix
-❯ cmatrix -c

@@ -7,6 +7,21 @@ tags: ['Developer tools']
 ---
 {% include toc title="Index" %}
 
+
+## Apply settings
+
+After making changes to `.zshrc` apply the changes to iTerm (which uses zsh).
+
+```sh
+exec zsh
+```
+
+Matrix Screen saver for terminal
+```sh
+cmatrix
+cmatrix -c
+```
+
 ## Folder Related
 
 Creating folders
