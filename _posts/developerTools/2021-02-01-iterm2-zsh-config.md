@@ -27,6 +27,8 @@ brew install zsh
 zsh --version
 ```
 
+with zsh installed, the default profile will be from .zshrc file, where customized profiles can be added
+
 * Make zsh as system’s default shell
 
 ```sh
@@ -52,7 +54,7 @@ p10k configure
 ```
 OR
 
-Edit ~/.zshrc and set ZSH_THEME="powerlevel10k/powerlevel10k".
+Edit `~/.zshrc` and `set ZSH_THEME="powerlevel10k/powerlevel10k"`.
 
 
 ### Install plugins
@@ -68,6 +70,12 @@ Edit ~/.zshrc and set ZSH_THEME="powerlevel10k/powerlevel10k".
 * [Zsh Apple touchbar](https://github.com/zsh-users/zsh-apple-touchbar)
 ```sh
 brew install zsh-syntax-highlighting zsh-completions
+```
+
+
+https://timewarrior.net/docs/install/
+```sh
+brew install timewarrior
 ```
 
 Global settings:
@@ -126,6 +134,13 @@ ln -s $HOME/Programming/SystemEnvironment/mac/.bash_profile ~
 create a .bash_profile or .profile file in the home directory and set the path in the files as.
 `sh export PATH="/usr/local/<my_package>/bin:$PATH" `
 
+
+##
+
+```sh
+exec zsh
+
+```
 ## References
 
 [Follow This Link](https://medium.com/swlh/power-up-your-terminal-using-oh-my-zsh-iterm2-c5a03f73a9fb)
@@ -133,3 +148,7 @@ create a .bash_profile or .profile file in the home directory and set the path i
 [Follow this link as well](https://towardsdatascience.com/customising-the-mac-terminal-to-increase-productivity-and-improve-the-interface-894f6d86d573)
 
 [detailed link](https://towardsdatascience.com/the-ultimate-guide-to-your-terminal-makeover-e11f9b87ac99)
+
+
+cmatrix
+❯ cmatrix -c

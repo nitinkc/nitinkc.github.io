@@ -1,5 +1,5 @@
 ---
-title:  "Multiple Git Config"
+title:  "Git Config"
 date:   2022-02-01 11:30:00
 categories: ['Git']
 tags: ['Git']
@@ -7,11 +7,13 @@ tags: ['Git']
 
 {% include toc title="Index" %}
 
+# Create multiple Git Config
+
 To ensure multiple git or bitbucket repositories to work seemlessly with one machine, configure the global git file in such a way that it picks up right user name for specific projects under a folder.
 
 For example, between work and personal repositores, code checkin using correct user id is maintained with following confog :-
 
-with global; gitconfig file (.gitconfig in home folder ~)
+with global gitconfig file (.gitconfig in home folder ~)
 ```sh
 [includeIf "gitdir:~/Documents/ClonedCodeWork/"]
 	path = .gitconfig-work
@@ -34,4 +36,12 @@ Update the (relevant) information as needed in both the file under `[user]` tag
 	name = Your Name
 ```
 
-Note: While using git clients (github desktop, source tree etc), ensure that it does not overwrite the got config file
+Note: While using git clients (github desktop, source tree etc), ensure that it does not overwrite the git config file
+
+# Create global GitIgnore
+Create .gitignore_global file and add files that needs to be globally ignored
+
+```sh
+*~
+.DS_Store
+```

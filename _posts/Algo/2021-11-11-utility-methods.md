@@ -57,8 +57,6 @@ String newStr = String.valueOf(i));
 
 char c[] = {'T','e','s','t'};
 String newStr = String.valueOf(c);
-
-char
 ```
 
 ##### String to Int
@@ -187,7 +185,6 @@ public static <T, K, U>
     Collector<T, ?, Map<K,U>> toMap(Function<? super T, ? extends K> keyMapper,
                                     Function<? super T, ? extends U> valueMapper)
 ```
-
 
 
 ### Boolean
