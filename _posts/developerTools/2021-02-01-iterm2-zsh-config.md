@@ -15,7 +15,7 @@ tags: ['Developer tools']
 Between iTerm and Hyper, iTerm is preferred here. Download and install iTerm
 
 ```sh
-brew cask install iterm2
+brew install --cask iterm2 
 ```
 
 Instead of using the Mac default Bash shell, preferred here is zsh with multiple plugin support.
@@ -56,7 +56,18 @@ OR
 
 Edit `~/.zshrc` and `set ZSH_THEME="powerlevel10k/powerlevel10k"`.
 
+### Exa insted of ls
+```sh
+brew install exa
+```
+Add this to .zshrc file
 
+```
+if [ -x "$(command -v exa)" ]; then
+    alias ls="exa"
+    alias la="exa --long --all --group"
+fi
+```
 ### Install plugins
 
 * [Auto suggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
@@ -72,6 +83,14 @@ Edit `~/.zshrc` and `set ZSH_THEME="powerlevel10k/powerlevel10k"`.
 ```sh
 brew install zsh-syntax-highlighting zsh-completions
 ```
+
+in case of issues
+
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+```
+
 
 
 https://timewarrior.net/docs/install/

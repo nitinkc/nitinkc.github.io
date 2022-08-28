@@ -50,5 +50,5 @@ Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     String latitude = gson.toJson(results[0].geometry.location.lat);
     String longitude = gson.toJson(results[0].geometry.location.lng);
-
+ }
 ```
