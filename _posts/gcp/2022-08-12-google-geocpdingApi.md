@@ -15,9 +15,9 @@ Required dependency for accessing the API via Java/Spring
 implementation 'com.google.maps:google-maps-services:2.1.0'
 ```
 
-(GeoCodingAPI Documentation)[https://developers.google.com/maps/documentation/geocoding/requests-geocoding]
+[GeoCodingAPI Documentation](https://developers.google.com/maps/documentation/geocoding/requests-geocoding)
 
-```Java
+```java
 public GeocodingResult[] getLatLngFromGeoAPI(String address){
     GeoApiContext context = new GeoApiContext.Builder()
             .apiKey("API KEY")
