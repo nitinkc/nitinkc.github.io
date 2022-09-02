@@ -15,11 +15,11 @@ Required dependency for accessing the API via Java/Spring
 implementation 'com.google.maps:google-maps-services:2.1.0'
 ```
 
-(TimeZone API Documentation)[https://developers.google.com/maps/documentation/timezone/requests-timezone]
+[TimeZone API Documentation](https://developers.google.com/maps/documentation/timezone/requests-timezone)
 
-(Github project)[https://github.com/googlemaps/google-maps-services-java]
+[Github project](https://github.com/googlemaps/google-maps-services-java)
 
-```Java
+```java
 public TimeZone getTimeZone(Pair<String,String> latLng){
         //Find timezone from TimeZoneAPI
         GeoApiContext context = new GeoApiContext.Builder()

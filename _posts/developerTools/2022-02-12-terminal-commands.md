@@ -16,6 +16,14 @@ After making changes to `.zshrc` apply the changes to iTerm (which uses zsh).
 exec zsh
 ```
 
+exa instead of ls `brew install exa`
+adds a few extra alias
+```sh
+if [ -x "$(command -v exa)" ]; then
+    alias ls="exa"
+    alias la="exa --long --all --group"
+fi
+```
 Matrix Screen saver for terminal
 ```sh
 cmatrix

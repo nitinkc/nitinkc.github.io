@@ -7,7 +7,7 @@ tags: ['Java']
 
 As per [Java 17 documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html)
 
-Z would format the date with timezone in the end with + or - sign indicating the timezone compared to UTC. 
+Capital Z would format the date with timezone in the end with + or - sign indicating the timezone compared to UTC. 
 {% gist nitinkc/22f8f3ea4afcf340d49a2610407297fc %}
 
 For ZoneDateTime 
