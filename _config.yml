@@ -1,20 +1,20 @@
 # Site Setting
-# title:              "{ni[T]in}"
+# title:              : "{ni[T]in}"
 title                 : "ηї☂їᾔ"
 tagline               : 'Nitin Kumar Chaurasia'
-description           :
+description           : 
 subtitle              : 
 title_separator       : "-"
 name                  : Nitin K Chaurasia #Name appearing on the Footer
 locale                : "en-US"
-#locale                : "hi-IN"
-#theme                 : "minimal-mistakes-jekyll"
+#locale               : "hi-IN"
+#theme                : "minimal-mistakes-jekyll"
 remote_theme          : "mmistakes/minimal-mistakes@4.21.0"
 minimal_mistakes_skin : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     :  /assets/images/Coloured.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-breadcrumbs            : true # true, false (default)
+teaser                : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                  :  /assets/images/Coloured.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_titl         : # overrides the website title displayed in the masthead, use " " for no title
+breadcrumbs           : true # true, false (default)
 
 # Outputting
 permalink: /:categories/:title/
@@ -100,7 +100,7 @@ naver_site_verification  :
 
 
 # Analytics
-analytics:
+analyticsy:
   provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          :

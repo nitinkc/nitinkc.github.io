@@ -15,6 +15,10 @@ tags: ['Java']
 
 In Streams API, Optional is returned
 
+* value.get() – returns value if present or throws exception
+• value.orElse(other) – returns value if present or returns other
+• value.orElseGet(Supplier) – returns value if present or calls function
+• value.isPresent() – returns true if value is present
 ### Keeping an object in case it is null, avoiding ternary operator
 
 Use of if statement can be avoided using declarative functional way. 
@@ -58,3 +62,9 @@ In the given method, instead of returning a Map, returning an Optional of Map
                         .orElse(Collections.emptyMap()));
 }
 ```
+
+### IfPresent Or else
+
+Considering a scenario where we need to return the first element, if present, else return an empty response.
+{% gist nitinkc/1c8d47211a5b373292620dce79dbc36b %}
+

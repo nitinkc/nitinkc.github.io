@@ -26,13 +26,26 @@ git commit -m <file names>
 # Add the branch remotely
 git push -u origin <branch> # (-u short for --set-upstream) option)
 ```
-## Take uncommited changes from one branch to another new branch
+# Swith commits
+
+### uncommited changes 
+
+Take uncommitted changes from one branch to another
 ```sh
 # With Git 2.23
 git switch -c <new-branch>
 
 # The same could be achieved prior to Git 2.23 by
 git checkout -b <new-branch>
+```
+
+### committed changes
+
+If, by accident, a commit is made in one feature branch, but it was supposed t be in some other branch
+
+```sh
+# Find the commit hash
+git cherry-pick 0359ca8b 
 ```
 ## Remove Accidental Pushes from Remote
 ```bash

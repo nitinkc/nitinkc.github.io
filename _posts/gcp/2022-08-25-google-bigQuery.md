@@ -6,11 +6,6 @@ categories: "Spring Microservices"
 tags: ["Spring Microservices", Spring Boot, GCP]
 ---
 
-
-
-
-
-
 Once the data is received, convert (serialize) the results data into DTO, using defauklt jackson mapper
 
 ```java
