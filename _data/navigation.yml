@@ -14,14 +14,14 @@ main:
     url: /sitemap/
 
 # File extention is not required. Provide the path and filename without extention.
-algo:
-  - title: Coding Interview Hints
-    children:
-    - title : "Coding Hints"
-      url: /static/codingHints
-    - title : "Syntax Reference"
-      url: /static/syntaxRef   
-    - title : "Problem Profile"
-      url: /static/problemProfiles   
-    - title : "Coding Hints"
-      url: /static/codingHints
+# algo:
+#   - title: Coding Interview Hints
+#     children:
+#     - title : "Coding Hints"
+#       url: /static/codingHints
+#     - title : "Syntax Reference"
+#       url: /static/syntaxRef   
+#     - title : "Problem Profile"
+#       url: /static/problemProfiles   
+#     - title : "Coding Hints"
+#       url: /static/codingHints

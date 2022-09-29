@@ -6,7 +6,8 @@ tags: [Algorithms]
 ---
 
 {% include toc title="Index" %}
-# Reference for Coding Interviews
+
+# Syntax Reference for Coding Interviews
 
 
 ### Boolean Logic (multiple if statements into switch)

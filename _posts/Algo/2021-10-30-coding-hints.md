@@ -6,11 +6,11 @@ categories: Algorithms
 tags: [Algorithms]
 ---
 
-## Contents
-
 {% include toc title="Index" %}
 
-# 7 Step Process
+# Conding Hints
+
+### 7 Step Process
 
 Before jumping into the Coding  
 
