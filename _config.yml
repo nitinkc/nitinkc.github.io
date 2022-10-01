@@ -17,7 +17,7 @@ masthead_titl         : # overrides the website title displayed in the masthead,
 breadcrumbs           : true # true, false (default)
 
 # Outputting
-permalink: pretty
+permalink: /:categories/:title/
 #permalink: pretty
 # Use of `relative_permalinks` ensures post links from the index work properly.
 #permalink           : pretty
