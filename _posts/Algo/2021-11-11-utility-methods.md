@@ -108,6 +108,9 @@ int temp = Math.min(height[left],height[right]) * (right - left);
 
 ## Arrays
 
+#### Arrays fill
+{% gist nitinkc/8a955a843d2b383d88b7ca92997c627f %}
+
 Arrays.asList accepts Wrapper Class array.
 ```java
 //Accepts arrays of Integer, Character, String etc.
@@ -147,6 +150,7 @@ List<Character> characterList = new String(c).chars()
                 .mapToObj(ch -> (char) ch)
                 .collect(Collectors.toList());
 ```
+
 ## Sorting Arrays
 
 ##### Sorting an Array of primitives
