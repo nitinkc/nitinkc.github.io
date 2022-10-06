@@ -10,15 +10,16 @@ tags: [Shortcuts]
 
 # Shortcut Keys
 
-**⌘** Cmd &emsp; **⇧** Shift &emsp; **^** Ctrl  &emsp; **⌥** Opt  &emsp; **⎋** Esc  &emsp; **↵** Return &emsp;  **⌫** Delete 
-{: .notice--info}
+**LEGEND :** &emsp; **⌘** Cmd &emsp; **⇧** Shift &emsp; **^** Ctrl  &emsp; **⌥** Opt  &emsp; **⎋** Esc  &emsp; **↵** Return &emsp;  **⌫** Delete 
+{: .notice}
 
 
 ## Help
 
-| Key                              | Details                                                                     |                                   |
-| :---                             | :---                                                                        |                                   |
-| ⌘Cmd ⇧Shift A                    | Find Action                                                                 |                                   |
+| Key                              | Details                                                                     |                                    |
+| :---                             | :---                                                                        |:---                                |
+| ⌘Cmd ⇧Shift A                    | Find Action                                                                 |⇧⇧ to open the same pop up          |
+{: .notice--info}
 
 ## View
 
@@ -217,10 +218,11 @@ tags: [Shortcuts]
 | ⌘Cmd  +⇧Shift+G                  | Select an element and search its occurrences                                |                                   |
 | ⌘Cmd  ⇧Shift O                   |                                                                             |                                   |
 
+## PDF Reference
 
-<object data="https://github.com/nitinkc/nitinkc.github.io/blob/main/assets/media/IntelliJ_Idea_shortcuts.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/nitinkc/nitinkc.github.io/blob/main/assets/media/IntelliJ_Idea_shortcuts.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/nitinkc/nitinkc.github.io/blob/main/assets/media/IntelliJ_Idea_shortcuts.pdf">Download PDF</a>.</p>
+<object data="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf">Download PDF</a>.</p>
     </embed>
 </object>
 
