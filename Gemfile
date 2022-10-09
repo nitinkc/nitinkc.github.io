@@ -22,13 +22,13 @@ gem 'faraday', '~> 0.17.3'
 group :jekyll_plugins do
   gem "jekyll-gist"
   gem "jekyll-paginate"
-  gem 'jekyll-include-cache'
-  gem 'github-pages'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-feed'
-  gem 'jekyll-seo-tag'
+  gem "jekyll-include-cache"
+  gem "github-pages"
+  gem "jekyll-sitemap"
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
   gem "jekyll-data"
-  gem 'octopress-debugger'
+  gem "octopress-debugger"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

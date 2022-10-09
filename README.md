@@ -17,6 +17,7 @@ bundle exec jekyll clean or
 rm -rf _site 
 
 #Build site into ./_site
+bundle exec jekyll build --trace --verbose
 bundle exec jekyll build
 
 #Build site as production, default is development

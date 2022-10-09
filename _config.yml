@@ -9,7 +9,7 @@ name                  : Nitin K Chaurasia #Name appearing on the Footer
 locale                : "en-US"
 #locale               : "hi-IN"
 #theme                : "minimal-mistakes-jekyll"
-remote_theme          : "mmistakes/minimal-mistakes@4.21.0"
+remote_theme          : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 teaser                : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                  :  /assets/images/Coloured.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -176,6 +176,7 @@ incremental: false
 # Markdown Processing
 kramdown:
   input: GFM
+  # input: Kramdown
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
@@ -183,6 +184,10 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  # syntax_highlighter: coderay
+  # syntax_highlighter_opts:
+  #   line_numbers: table
+  #   bold_every: 5
 
 # Sass/SCSS
 sass:
@@ -198,6 +203,7 @@ plugins:
   - jekyll-include-cache
   - octopress-debugger
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -207,6 +213,7 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 
 # Archives

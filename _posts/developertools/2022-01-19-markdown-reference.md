@@ -84,3 +84,23 @@ sidebar:
   nav: "algo"
 ---
 ```
+
+## Notices with theme
+
+Notice [emphasized](#notices-with-theme) with the `{: .notice}` class.
+{: .notice}
+
+Notice [emphasized](#notices-with-theme) with the `{: .notice--primary}` class.
+{: .notice--primary}
+
+Notice [emphasized](#notices-with-theme) with the `{: .notice--info}` class.
+{: .notice--info}
+
+Notice [emphasized](#notices-with-theme) with the `{: .notice--warning}` class.
+{: .notice--warning}
+
+Notice [emphasized](#notices-with-theme) with the `{: .notice--success}` class.
+{: .notice--success}
+
+Notice [emphasized](#notices-with-theme) with the `{: .notice--danger}` class.
+{: .notice--danger}

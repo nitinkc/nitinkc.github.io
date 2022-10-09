@@ -121,3 +121,9 @@ git branch -m <newname>
 ```
  git push --set-upstream origin <Branch name>
  ```
+
+ ## Links
+
+ [https://ndpsoftware.com/git-cheatsheet.html#loc=workspace](https://ndpsoftware.com/git-cheatsheet.html#loc=workspace)
+
+ [https://git-school.github.io/visualizing-git/#cherry-pick](https://git-school.github.io/visualizing-git/#cherry-pick)
