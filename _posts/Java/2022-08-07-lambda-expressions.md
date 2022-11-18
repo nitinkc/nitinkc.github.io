@@ -47,9 +47,8 @@ MyFunctionalInterface2 functionalInterfaceWithTwoParam = (val1, val2) -> val1 * 
 
 ## Writing Lambda
 
-{% raw  %}
 `![Image Text]({{ site.url }}/assets/images/lambda.png)`
-{% endraw %}
+
 
 
 
