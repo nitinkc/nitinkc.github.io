@@ -47,7 +47,7 @@ MyFunctionalInterface2 functionalInterfaceWithTwoParam = (val1, val2) -> val1 * 
 
 ## Writing Lambda
 
-`![Image Text]({{ site.url }}/assets/images/lambda.png)`
+![Image Text]({{ site.url }}/assets/images/lambda.png)
 
 
 
