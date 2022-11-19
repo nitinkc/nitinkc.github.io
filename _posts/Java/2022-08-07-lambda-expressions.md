@@ -27,10 +27,16 @@ A function/method has 4 parts : name, return type, params/args list & method bod
 The most important parts are just the arguments and body. In Functional interface, there is only one method, so the name
 of the method is implied and the override has to be done by any class implementing the method.
 
-Lambda would be written as
-![Image Text]({{ site.url }}/assets/images/lambda1.png)
+Lambda would be written with argument data type
 
-even the the arguument/parameter data type can removed as
+<details>
+<summary> 
+Lambda with parameter data type
+</summary>
+![Image Text]({{ site.url }}/assets/images/lambda1.png)
+</details>
+
+even the argument/parameter data type can removed as
 ![Image Text]({{ site.url }}/assets/images/lambda2.png)
 
 ## Method Accepting Lambda
@@ -89,6 +95,7 @@ Strategy pattern. writing a function to be called from Lambda
 
 Consider a method written in such a way that it accepts a functional interface as an argument.
 
+Just pass a Lambda as parameter
 {% gist nitinkc/23bcaf8a1576ed48f144fe852f059f97 %}
 
 Since the strategy can be decided at runtime, we can pass the strategy right at the time when its needed
