@@ -3,6 +3,7 @@ title:  "Lambda Expressions & Functional Interface"
 date:   2022-08-06 08:30:00
 categories: ['Java']
 tags: ['Java']
+toc: true
 ---
 # Lambda 
 Lambda Expression is just an anonymous (nameless) function. A function does not have a state. Object has a state.
