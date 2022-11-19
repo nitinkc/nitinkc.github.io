@@ -27,12 +27,13 @@ A function/method has 4 parts : name, return type, params/args list & method bod
 The most important parts are just the arguments and body. In Functional interface, there is only one method, so the name
 of the method is implied and the override has to be done by any class implementing the method.
 
-Lambda would be written with argument data type
+Lambda would be written
 
 <details>
 <summary> 
-Lambda with parameter data type
+Lambda with parameter/argument data type
 </summary>
+
 ![Image Text]({{ site.url }}/assets/images/lambda1.png)
 </details>
 
@@ -91,7 +92,7 @@ list.forEach(x -> System.out.println(x));
 
 # Strategy Pattern
 
-Strategy pattern. writing a function to be called from Lambda
+Strategy pattern. writing a function to be called as Lambda
 
 Consider a method written in such a way that it accepts a functional interface as an argument.
 
