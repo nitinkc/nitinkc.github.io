@@ -14,18 +14,17 @@ Lambda Expression is just an anonymous (nameless) function. A function does not 
 * Functional interface assign a contract!!
 
 ## Writing Lambda
-A function/method has 4 parts : name, return type, params/args list, BODY
+A function/method has 4 parts : name, return type, params/args list & method body
 ![Parts of a Method/Function]({{ site.url }}/assets/images/methodParts.png)
 
 The most important parts are just the arguments and body. In Functional interface, there is only one method, so the name
 of the method is implied and the override has to be done by any class implementing the method.
 
-Lambda would be written like this :-
-![Image Text]({{ site.url }}/assets/images/lambda.png)
+Lambda would be written as
+![Image Text]({{ site.url }}/assets/images/lambda1.png)
 
-here, 
-* i -> params/args & 
-* System.out.println(i) -> body
+even the the arguument/parameter data type can removed as
+![Image Text]({{ site.url }}/assets/images/lambda2.png)
 
 {% gist nitinkc/1460522d8e96dc6bb2a7058ed190b9e2 %}
 
