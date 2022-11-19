@@ -4,6 +4,7 @@ date:   2022-08-06 08:30:00
 categories: ['Java']
 tags: ['Java']
 ---
+{::options parse_block_html="true" }
 
 # Lambda 
 Lambda Expression is just an anonymous (nameless) function. A function does not have a state. Object has a state.
@@ -12,6 +13,14 @@ Lambda Expression is just an anonymous (nameless) function. A function does not 
 * Interface with SAM : Single Abstract Method
 * Functional Interface : can automatically be elevated to lambda expression. In other words, you can only use lambdas for functional interfaces
 * Functional interface assign a contract!!
+
+
+<summary> 
+View Functional Interfaces
+</summary>
+<details>
+{% gist nitinkc/1460522d8e96dc6bb2a7058ed190b9e2 %}
+</details>
 
 ## Writing Lambda
 A function/method has 4 parts : name, return type, params/args list & method body
@@ -26,7 +35,6 @@ Lambda would be written as
 even the the arguument/parameter data type can removed as
 ![Image Text]({{ site.url }}/assets/images/lambda2.png)
 
-{% gist nitinkc/1460522d8e96dc6bb2a7058ed190b9e2 %}
 
 ## Method Accepting Lambda
 Any method that accepts Functional Interface as parameter, needs a Lambda, For Example `forEach` accepts
