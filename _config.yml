@@ -184,6 +184,8 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  parse_block_html: false
+  parse_span_html: false
   # syntax_highlighter: coderay
   # syntax_highlighter_opts:
   #   line_numbers: table
