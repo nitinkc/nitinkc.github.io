@@ -29,19 +29,30 @@ private static final Pattern WORD_BREAK = Pattern.compile("\\W+");
 
 ## The Four Kinds of Method References
 
-| **Method Ref**             | **Type Example**        | **Equivalent Lambda**          |
-|----------------------------|-------------------------|--------------------------------|
-| SomeClass::staticMethod    | Math::cos               | x -> Math.cos(x)               |
-| someObject::instanceMethod | someString::toUpperCase | () -> someString.toUpperCase() |
-| SomeClass::instanceMethod  | String::toUpperCase     | s -> s.toUpperCase()           |
-| SomeClass::new             | Employee::new           | () -> new Employee()           |
+| **Description**                                                                                                        | **Lambda**         				  			  | **Example Lambda**              | **Method Ref**             | **Method Reference**    |
+|------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|--------------------------------|----------------------------|-------------------------|
+| Take arguments and invoke a static method on a class passing exactly the same arguments								 |(param) -> Class.staticMethod(param)			  | x -> Math.cos(x)               | SomeClass::staticMethod    | Math::cos               |
+| Produces a lambda that takes exactly as many arguments as the method expects                                           |(param) -> object.instanceMethod(param) 		  | () -> someString.toUpperCase() | someObject::instanceMethod | someString::toUpperCase |
+| Take the first argument from the lambda, and use that to invoke a method, passing remaining arguments as method params |(object, param) -> object.instanceMethod(param) | s -> s.toUpperCase()           | SomeClass::instanceMethod  | String::toUpperCase     |
+| Takes the params of Lambda and passes them to a constructor                                                            |(param) -> new ClassName(param)				  | () -> new Employee()           | SomeClass::new             | Employee::new           |
 
+## Reference to an instance method of a particular object
 
+<details>
+    <summary> 
+    View Functional Interface & Class
+    </summary>
+{% gist nitinkc/9e72f492d1dc4ccd37870e5989788c55 %}
+</details>
 
-| ****Description****                                                                                                                                                                                   | ****Method Ref****         | ****Type Example****    | ****Equivalent Lambda****      |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|-------------------------|--------------------------------|
-| Take some arguments and invoke a static method on a class passing exactly the arguments to the lambda expression, directly to the method arguments of that static method.                             | SomeClass::staticMethod    | Math::cos               | x -> Math.cos(x)               |
-| Produces a lambda that takes exactly as many arguments as the method expects                                                                                             | someObject::instanceMethod | someString::toUpperCase | () -> someString.toUpperCase() |
-| And another format will take the first argument from the lambda, and use that to invoke a method. The remaining arguments from the lambda are then passed as the method arguments to that invocation. | SomeClass::instanceMethod  | String::toUpperCase     | s -> s.toUpperCase()           |
-| Case gain takes the lambdas arguments and passes them to a constructor                                                                                                                                | SomeClass::new             | Employee::new           | () -> new Employee()           |
+By creating a class and using its method to be passed as a Lambda
+```java
 
+MethodReferencesExample obj = new MethodReferencesExample();
+// Reference to the method using the object of the class myMethod
+Display display = ((a,b) -> obj.myMethod(a,b));//A Lambda needs a Functional Interface (Display)
+display = obj::myMethod;//method reference
+
+// Calling the method inside the functional interface Display
+display.displayResults(1,3);
+```
