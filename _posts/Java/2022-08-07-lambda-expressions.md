@@ -6,53 +6,33 @@ tags: ['Java']
 ---
 
 # Lambda 
-Lambda Expression is just an anonymous (nameless) function/class.
+Lambda Expression is just an anonymous (nameless) function. A function does not have a state. Object has a state.
 
 # Functional Interface
-
-Interface with SAM : Single Abstract Method
-Functional Interface : can automatically be elevated to lambda expression. In other words, you can Only use lambdas for functional interfaces
-Functional interface assign a contract!!
-
-* Strategy pattern. writing a function to be called from Lambda
-
-Function does not have a state.
-
-Object has a state
-
-```java
-@FunctionalInterface
-interface MyFunctionalInterface0{
-    //SAM : Single Abstract Method
-    void doSomework();
-}
-
-@FunctionalInterface
-interface MyFunctionalInterface1{
-    Integer doSomeJob(int a);
-}
-
-@FunctionalInterface
-interface MyFunctionalInterface2{
-    Integer doSomeTask(int a, int b);
-}
-```
-
-The definition to the interface methods can be given as below
-```java
-MyfunctionalInterface0 functionalInterfaceWithZeroParam = () -> System.out.println("Some String");//Providing the definition to the abstract method
-MyFunctionalInterface1 functionalInterfaceWithOneParam = (x -> x+x);//Providing the definition to the abstract method
-MyFunctionalInterface2 functionalInterfaceWithTwoParam = (val1, val2) -> val1 * val2;//Valid Lambda as 2 arguments are expected
-```
+* Interface with SAM : Single Abstract Method
+* Functional Interface : can automatically be elevated to lambda expression. In other words, you can only use lambdas for functional interfaces
+* Functional interface assign a contract!!
 
 ## Writing Lambda
+A function/method has 4 parts : name, return type, params/args list, BODY
+![Parts of a Method/Function]({{ site.url }}/assets/images/methodParts.png)
 
+The most important parts are just the arguments and body. In Functional interface, there is only one method, so the name
+of the method is implied and the override has to be done by any class implementing the method.
+
+Lambda would be written like this :-
 ![Image Text]({{ site.url }}/assets/images/lambda.png)
 
+here, 
+* i -> params/args & 
+* System.out.println(i) -> body
 
+{% gist nitinkc/1460522d8e96dc6bb2a7058ed190b9e2 %}
 
+## Method Accepting Lambda
+Any method that accepts Functional Interface as parameter, needs a Lambda, For Example `forEach` accepts
+a Consumer (a functional interface) as a parameter.
 
-Any method that accepts Functional Interface as parameter, needs a Lambda, For Example
 ```java
 default void forEach(Consumer<? super T> action);
 
@@ -104,3 +84,6 @@ private static final Pattern WORD_BREAK = Pattern.compile("\\W+");
 | And another format will take the first argument from the lambda, and use that to invoke a method. The remaining arguments from the lambda are then passed as the method arguments to that invocation. | SomeClass::instanceMethod  | String::toUpperCase     | s -> s.toUpperCase()           |
 | Case gain takes the lambdas arguments and passes them to a constructor                                                                                                                                | SomeClass::new             | Employee::new           | () -> new Employee()           |
 
+
+
+* Strategy pattern. writing a function to be called from Lambda
