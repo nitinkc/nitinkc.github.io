@@ -27,3 +27,6 @@ Gemfile.lock
 .sass-cache
 _asset_bundler_cache
 _site
+
+# IntelliJ idea related files
+.idea/
