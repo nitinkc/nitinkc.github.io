@@ -32,57 +32,53 @@ here,
 ## Method Accepting Lambda
 Any method that accepts Functional Interface as parameter, needs a Lambda, For Example `forEach` accepts
 a Consumer (a functional interface) as a parameter.
-
 ```java
 default void forEach(Consumer<? super T> action);
-
-// Usage with forEach        
-list.forEach(val -> System.out.println(val));
-
-//OR
-Consumer d = x -> System.out.println(x);
-list.forEach(val -> d.accept(val));
 ```
-## Valid Lamdba
 
-* Lambda expression can access static variables, instance variables,
-* effectively final variables and effectively Final local variables
-
-For Simpler one liner Lambdas, with or without parameters
-
-
+Traditionally the anonymous class implementation is done :-
 ```java
-.map(w ->  vcw.toLowerCase())
+List<Integer> list = Arrays.asList(1,4,6,8,9,7,5,3,2);
 
-.map(String :: toLowerCase())
+//Implemenation via anonymous inner class
+list.forEach(new Consumer<Integer>() {
+    @Override
+    public void accept(Integer i) {
+        System.out.println(i);
+    }
+});
 ```
 
-And it turns out that when we have any one of these four forms but notice it must be exactly these four forms we don't
-get to reorder the arguments or anything like that
+Above can be reduced by just keeping only the args and the method body
+```java
+list.forEach((Integer i) -> {
+        System.out.println(i);
+        return;
+    });
+//i -> params/args & System.out.println(i) -> body
+```
 
-private static final Pattern WORD_BREAK = Pattern.compile("\\W+");
+This can further be reduced by removing data type from argument, and removing unnecessasary return statement
+```java
+list.forEach(i -> System.out.println(i));
+```
 
-//Word break is an object .flatMap( l -> WORD_BREAK.splitAsStream(l))
-.flatMap(WORD_BREAK::splitAsStream)
-
-
-## The Four Kinds of Method References
-
-| **Method Ref**             | **Type Example**        | **Equivalent Lambda**          |
-|----------------------------|-------------------------|--------------------------------|
-| SomeClass::staticMethod    | Math::cos               | x -> Math.cos(x)               |
-| someObject::instanceMethod | someString::toUpperCase | () -> someString.toUpperCase() |
-| SomeClass::instanceMethod  | String::toUpperCase     | s -> s.toUpperCase()           |
-| SomeClass::new             | Employee::new           | () -> new Employee()           |
+This can be further reduced with the usage of method reference
+```java
+list.forEach(System.out::println);
+```
 
 
-
-| ****Description****                                                                                                                                                                                   | ****Method Ref****         | ****Type Example****    | ****Equivalent Lambda****      |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|-------------------------|--------------------------------|
-| Take some arguments and invoke a static method on a class passing exactly the arguments to the lambda expression, directly to the method arguments of that static method.                             | SomeClass::staticMethod    | Math::cos               | x -> Math.cos(x)               |
-| Produces a lambda that takes exactly as many arguments as the method expects                                                                                             | someObject::instanceMethod | someString::toUpperCase | () -> someString.toUpperCase() |
-| And another format will take the first argument from the lambda, and use that to invoke a method. The remaining arguments from the lambda are then passed as the method arguments to that invocation. | SomeClass::instanceMethod  | String::toUpperCase     | s -> s.toUpperCase()           |
-| Case gain takes the lambdas arguments and passes them to a constructor                                                                                                                                | SomeClass::new             | Employee::new           | () -> new Employee()           |
+For better understanding, step by step declaration and usage can be tried.
+```java
+Consumer consumer = x -> System.out.println(x);//since for each accepts a consumer, declare it first
+//use the consumer with the method present in the Consumer interface
+list.forEach(val -> consumer.accept(val));
+//Or for simplicity just pass the consumer
+list.forEach(consumer);
+//or just replace the variable
+list.forEach(x -> System.out.println(x));
+```
 
 
 
