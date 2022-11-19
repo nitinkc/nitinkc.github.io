@@ -29,10 +29,10 @@ The most important parts are just the arguments and body. In Functional interfac
 of the method is implied and the override has to be done by any class implementing the method.
 
 Lambda would be written as
-![Image Text]({{ site.url }}/assets/images/lambda1.png)
+![Image Text]({{ site.url }}/assets/images/lambda1.png =100x20)
 
 even the the arguument/parameter data type can removed as
-![Image Text]({{ site.url }}/assets/images/lambda2.png)
+![Image Text]({{ site.url }}/assets/images/lambda2.png =100x20)
 
 ## Method Accepting Lambda
 Any method that accepts Functional Interface as parameter, needs a Lambda, For Example `forEach` accepts
