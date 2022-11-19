@@ -12,12 +12,13 @@ sidebar:
 
 {% include toc title="Index" %}
 
-## Add right side Index bar on this blog
+## Add right side Index bar (Table of contents) on this blog
 
 {% raw  %}
 `{% include toc title="Index" %}`
 {% endraw %}
-
+ OR
+Or simpley add `toc: true` on the [front matter](https://jekyllrb.com/docs/front-matter/)
 
 ## Include gists as
 

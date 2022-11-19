@@ -40,8 +40,8 @@ tags: [Shortcuts]
 |✅ ⌃Ctrl ⇧Shift P                    | View Type Info                                                              |                                   |
 | ⌃Ctrl ⇧Shift  Q                   | Context Info                                                                |                                   |
 |✅ ⌘Cmd P                              | View Parameter Infor                                                        |                                   |
-|✅ **⌘Cmd + E**                      |  Move to the last location edited ,Show recently opened Files               |                                   |
-|✅ ⌘Cmd ⇧Shift  E                    | See edited code in recently opened Files, Recent Locations                   |                            |
+|✅ **⌘Cmd + E**                      |  Move to the last location edited ,Show recently opened Files etc.             |                                   |
+|✅ **⌘Cmd ⇧Shift + E**                   | See edited code in recently opened Files, Recent Locations                   |                            |
 |⌥Opt ⇧Shift  C                    |     Recent Changes                                                       |                                   |
 | ⌘Cmd   D                            | Compare With…                                                               |                                   |
 |✅ ⌃Ctrl `Backtick                   | Quick Switch Scheme, enter presentation mode, etc                         |                                   |
@@ -129,10 +129,10 @@ tags: [Shortcuts]
 | ⌘Cmd ⇧Shift ⌦                    | Unwrap/Remove…                                                              |                                   |
 | ⌘Cmd +                           | Expand                                                                      |                                   |
 | ⌘Cmd ⌥Opt +                      | Expand Recursively                                                          |                                   |
-| ⌘Cmd ⇧Shift +                    | Expand All                                                                  |                                   |
+|✅  **⌘Cmd ⇧Shift +**                    | Expand All                                                                  |                                   |
 | ⌘Cmd -                           | Collapse                                                                    |                                   |
 | ⌘Cmd ⌥Opt -                      | Collapse Recursively                                                        |                                   |
-| ⌘Cmd ⇧Shift -                    | Collapse All                                                                |                                   |
+|✅  **⌘Cmd ⇧Shift -**                   | Collapse All                                                                |                                   |
 | ⌘Cmd .                           | Fold Selection / Remove region                                              |                                   |
 | ⌘Cmd ⇧Shift .                    | Fold Code Block                                                             |                                   |
 |✅  ⌘Cmd /                           | Comment with Line Comment                                                   |                                   |

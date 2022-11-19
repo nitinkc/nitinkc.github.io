@@ -192,3 +192,27 @@ primitive return types, or primitive arguments, have probably been built for you
 
 And you should use the features of the java.util.function package when you need to create lambdas.
 
+
+Generically typed interfaces
+– Predicate<T> —T in, boolean out
+– Function<T,R> —T in, R out
+– Consumer<T> —T in, nothing (void) out
+– Supplier<T> —Nothing in, T out
+– BinaryOperator<T> —Two T’s in, T out
+
+Generic building blocks
+– Predicate
+Predicate<Employee> matcher = e -> e.getSalary() > 50000;
+if(matchFunction.test(someEmployee)) { doSomethingWith(someEmployee); }
+– Function
+Function<Employee, Double> raise = e -> e.getSalary() + 1000;
+for(Employee employee: employees) { employee.setSalary(raise.apply(employee)); }
+– BinaryOperator
+BinaryOperator<Integer> adder = (n1, n2) -> n1 + n2;
+int sum = adder.apply(num1, num2);
+– Consumer
+Consumer<Employee> raise = e -> e.setSalary(e.getSalary() * 1.1);
+for(Employee employee: employees) { raise.accept(employee); }
+For additional materials, please see http://www.coreservlets.com/. The Java tutorial section contains
+complete source code for all examples in this tutorial series, plus exercises and exercise solutions for each topic.
+coreservlets.com

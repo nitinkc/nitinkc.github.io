@@ -12,8 +12,6 @@ Lambda Expression is just an anonymous (nameless) function. A function does not 
 * Functional Interface : can automatically be elevated to lambda expression. In other words, you can only use lambdas for functional interfaces
 * Functional interface assign a contract!!
 
-
-
 <details>
 <summary> 
 View Functional Interfaces
@@ -29,10 +27,10 @@ The most important parts are just the arguments and body. In Functional interfac
 of the method is implied and the override has to be done by any class implementing the method.
 
 Lambda would be written as
-![Image Text]({{ site.url }}/assets/images/lambda1.png =100x20)
+![Image Text]({{ site.url }}/assets/images/lambda1.png)
 
 even the the arguument/parameter data type can removed as
-![Image Text]({{ site.url }}/assets/images/lambda2.png =100x20)
+![Image Text]({{ site.url }}/assets/images/lambda2.png)
 
 ## Method Accepting Lambda
 Any method that accepts Functional Interface as parameter, needs a Lambda, For Example `forEach` accepts
@@ -73,7 +71,6 @@ This can be further reduced with the usage of method reference
 list.forEach(System.out::println);
 ```
 
-
 For better understanding, step by step declaration and usage can be tried.
 ```java
 Consumer consumer = x -> System.out.println(x);//since for each accepts a consumer, declare it first
@@ -85,6 +82,27 @@ list.forEach(consumer);
 list.forEach(x -> System.out.println(x));
 ```
 
+# Strategy Pattern
+
+Strategy pattern. writing a function to be called from Lambda
+
+Consider a method written in such a way that it accepts a functional interface as an argument.
+
+{% gist nitinkc/23bcaf8a1576ed48f144fe852f059f97 %}
+
+Since the strategy can be decided at runtime, we can pass the strategy right at the time when its needed
+```java
+List<Integer> values = Arrays.asList(1, 2, 3, 4, 5, 6);
+
+//Print sum of all numbers
+System.out.println(totalValues(values, e -> true));
+
+//Print sum of all all Even numbers
+System.out.println(totalValues(values, e -> e % 2 == 0));
+
+//Print sum of all odd numbers
+System.out.println(totalValues(values, e -> e % 2 != 0));
+```
 
 
-* Strategy pattern. writing a function to be called from Lambda
+

@@ -3,9 +3,8 @@ title:  "Linux Files"
 date:   2016-04-14 20:11:00
 categories: ['Developer tools']
 tags: ['Developer tools']
+toc: true
 ---
-
-{% include toc title="Index" %}
 
 Directory     | Description
 -------- | ---
