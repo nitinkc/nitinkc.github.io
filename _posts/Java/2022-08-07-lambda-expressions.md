@@ -13,10 +13,11 @@ Lambda Expression is just an anonymous (nameless) function. A function does not 
 * Functional interface assign a contract!!
 
 
+
+<details>
 <summary> 
 View Functional Interfaces
 </summary>
-<details>
 {% gist nitinkc/1460522d8e96dc6bb2a7058ed190b9e2 %}
 </details>
 
@@ -32,7 +33,6 @@ Lambda would be written as
 
 even the the arguument/parameter data type can removed as
 ![Image Text]({{ site.url }}/assets/images/lambda2.png)
-
 
 ## Method Accepting Lambda
 Any method that accepts Functional Interface as parameter, needs a Lambda, For Example `forEach` accepts
