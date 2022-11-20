@@ -1,5 +1,5 @@
 ---
-title:  "Java 8 Syntax Reference"
+title:  "Java Syntax Reference"
 date:   2019-10-04 13:43:00
 categories: ['Java']
 tags: ['Java']
@@ -12,9 +12,9 @@ tags: ['Java']
 
 ```java
 //Prints each element
-list.stream().forEach(str -> System.out.println(str));
+list.forEach(str -> System.out.println(str));
 //Lambda can be replaced by method reference
-list.stream().forEach(System.out :: print);
+list.forEach(System.out :: print);
 ```
 
 ## The Double Colon Operator - Method Reference
