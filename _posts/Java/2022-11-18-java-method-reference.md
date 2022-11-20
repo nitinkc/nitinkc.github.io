@@ -5,36 +5,16 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-
-* Lambda expression can access static variables, instance variables,
-* effectively final variables and effectively Final local variables
-
-For Simpler one liner Lambdas, with or without parameters
-
-
-```java
-.map(w ->  vcw.toLowerCase())
-
-.map(String :: toLowerCase())
-```
-
-And it turns out that when we have any one of these four forms but notice it must be exactly these four forms we don't
-get to reorder the arguments or anything like that
-
-private static final Pattern WORD_BREAK = Pattern.compile("\\W+");
-
-//Word break is an object .flatMap( l -> WORD_BREAK.splitAsStream(l))
-.flatMap(WORD_BREAK::splitAsStream)
-
+Method reference only works where there is a possibility of passing a Lambda as an argument.
 
 ## The Four Kinds of Method References
 
-| **Description**                                                                                                        | **Lambda**         				  			  | **Example Lambda**              | **Method Ref**             | **Method Reference**    |
-|------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|--------------------------------|----------------------------|-------------------------|
-| Take arguments and invoke a static method on a class passing exactly the same arguments								 |(param) -> Class.staticMethod(param)			  | x -> Math.cos(x)               | SomeClass::staticMethod    | Math::cos               |
+| **Description**                                                                                                        | **Lambda**         				  			  | **Example Lambda**            | **Method Ref**             | **Method Reference**    |
+|------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|-------------------------------|----------------------------|-------------------------|
+| Take arguments and invoke a static method on a class passing exactly the same arguments								 |(param) -> Class.staticMethod(param)			  | (x,y) -> Math.hypot(x,y)       | SomeClass::staticMethod    | Math::hypot             |
 | Produces a lambda that takes exactly as many arguments as the method expects                                           |(param) -> object.instanceMethod(param) 		  | () -> someString.toUpperCase() | someObject::instanceMethod | someString::toUpperCase |
-| Take the first argument from the lambda, and use that to invoke a method, passing remaining arguments as method params |(object, param) -> object.instanceMethod(param) | s -> s.toUpperCase()           | SomeClass::instanceMethod  | String::toUpperCase     |
-| Takes the params of Lambda and passes them to a constructor                                                            |(param) -> new ClassName(param)				  | () -> new Employee()           | SomeClass::new             | Employee::new           |
+| Take the first argument from the lambda, and use that to invoke a method, passing remaining arguments as method params |(object, param) -> object.instanceMethod(param) | s -> s.toUpperCase()          | SomeClass::instanceMethod  | String::toUpperCase     |
+| Takes the params of Lambda and passes them to a constructor                                                            |(param) -> new ClassName(param)				  | () -> new Employee()          | SomeClass::new             | Employee::new           |
 
 ## Reference to an instance method of a particular object
 
@@ -46,13 +26,63 @@ private static final Pattern WORD_BREAK = Pattern.compile("\\W+");
 </details>
 
 By creating a class and using its method to be passed as a Lambda
+
+
+Declare the Lambda directly
 ```java
+Display<Integer> displayDeclaredHere = (a, b) -> System.out.println("method reference in java 8 : " + (a + b));
+displayDeclaredHere.displayResults(5,55);
+```
 
-MethodReferencesExample obj = new MethodReferencesExample();
+The Lambda can extracted as a private method
+
+```java
+Display displayExtractedSameClass = getDisplay();//this::getDisplay works with non-static classes
+displayExtractedSameClass.displayResults(10,20);
+
+private static Display getDisplay() {
+    return (a, b) -> System.out.println("method reference in java 8 : " + a + b);
+}
+```
+Taking the definition into another class, or using another class to define the interface
+```java
+MethodReferences obj = new MethodReferences();
 // Reference to the method using the object of the class myMethod
-Display display = ((a,b) -> obj.myMethod(a,b));//A Lambda needs a Functional Interface (Display)
-display = obj::myMethod;//method reference
-
+Display<Integer> displayInstanceMethodParticularObject = ((a,b) -> obj.myMethod(a,b));//putting the definition in object of another class
 // Calling the method inside the functional interface Display
-display.displayResults(1,3);
+displayInstanceMethodParticularObject.displayResults(1,3);
+```
+
+calling the same via method reference
+```java
+Display<Integer> displayReferenceInstanceMethodParticularObject = obj::myMethod;
+displayReferenceInstanceMethodParticularObject.displayResults(6,6);
+```
+
+# Examples
+
+```java
+MethodReferences myApp = new MethodReferences();
+// Calling the method with a lambda expression
+System.out.println(myApp.playBiFunction("Hello ", "World!", (a, b) -> a.concat(b)));
+```
+
+Reference to an instance method of an **arbitrary object** of a particular type
+```java
+System.out.println(myApp.playBiFunction("Hello ","World!", String::concat));
+```
+Reference to an **instance method** of a particular object
+```java
+System.out.println(myApp.playBiFunction("Hello ","World!", myApp::appendStrings));
+```
+Reference to a static method
+```java
+System.out.println(myApp.playBiFunction("Hello ", "World!", MethodReferences::staticAppendStrings));
+```
+
+Calling Static method From Math Library
+```java
+System.out.println(myApp.playBiFunction(3.0,4.0, (x,y) -> Math.hypot(x,y)));
+// Reference to a static method
+System.out.println(myApp.playBiFunction(3.0,4.0, Math::hypot));
 ```

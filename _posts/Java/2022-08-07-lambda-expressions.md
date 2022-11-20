@@ -114,4 +114,6 @@ System.out.println(totalValues(values, e -> e % 2 != 0));
 ```
 
 
+* Lambda expression can access static variables, instance variables,
+* effectively final variables and effectively Final local variables
 
