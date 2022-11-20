@@ -22,11 +22,11 @@ list.forEach(System.out :: print);
 |S.no| Kind | Example | Method Reference | Equivalent Labmda |
 | :----:  | :---- | :---- | :---- |
 | 1  | Ref. to a static method (Simplest Type) | ContainingClass::staticMethodName  | System.out :: print <br /> MyStringUtils :: isPalindrome | x -> System.out.println(x) <br /> (str) -> MyStringUtils.isPalindrome(str)
-| 2  | Ref. to an instance method of a particular object | someObject::instanceMethodName | obj :: test  <br /> | x -> obj.test() <br />  |
+| 2  | Ref. to an instance method of a particular object | someObject::instanceMethodName | obj :: test  <br /> | () -> obj.test() <br />  |
 | 3  | Ref. to an instance method of an arbitrary object of a particular type | ContainingType::methodName| String :: toUpperCase | str -> str.toUpperCase()
 | 4  | Ref. to a constructor  | ClassName::new       | MyClass :: new | () - > new MyClass()|
 
-**Instance method** are methods which can only be invoked through an object of the class. It needs an object if a class to ve called.
+**Instance method** are methods which can only be invoked through an object of the class. It needs an object if a class to be called.
 
 ## Predefined Functional Interface
 
