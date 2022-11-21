@@ -30,11 +30,12 @@ of the method is implied and the override has to be done by any class implementi
 Lambda would be written
 
 <details>
-<summary> 
-Lambda with parameter/argument data type
-</summary>
+    <summary> 
+    Lambda with parameter/argument data type
+    </summary>
 
 ![Image Text]({{ site.url }}/assets/images/lambda1.png)
+
 </details>
 
 even the argument/parameter data type can removed as
