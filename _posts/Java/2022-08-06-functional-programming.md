@@ -216,3 +216,14 @@ for(Employee employee: employees) { raise.accept(employee); }
 For additional materials, please see http://www.coreservlets.com/. The Java tutorial section contains
 complete source code for all examples in this tutorial series, plus exercises and exercise solutions for each topic.
 coreservlets.com
+
+
+## Predefined Functional Interface
+
+Defined in java.util.function
+
+|1.| Predicate &lt;T> | test(), takes T in, returns boolean | Used with filter() in Stream API|
+|2.| Function<T,R> |apply(T k), T in return user defined TYPE R | Used with map() in Stream API
+|3.| Consumer&lt;T> |accept(), T in, void out |Used with forEach() method |
+|4.| Supplier&lt;T> |get(), nothing in, T out |Used with .collect tereminal operator|
+

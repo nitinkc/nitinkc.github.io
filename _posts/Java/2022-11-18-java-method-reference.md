@@ -7,6 +7,17 @@ tags: ['Java']
 
 Method reference only works where there is a possibility of passing a Lambda as an argument.
 
+Lambda can be replaced by method reference
+
+**applies the lambda** to each element of the collection
+
+```java
+//Prints each element
+list.forEach(str -> System.out.println(str));
+//Lambda can be replaced by method reference
+list.forEach(System.out :: print);
+```
+
 ## The Four Kinds of Method References
 
 | **Description**                                                                                                                                                                                      | **Lambda**         				  			  | **Example Lambda**                                                                                       | **Method Ref style**       | **Method Reference**                                                        |
@@ -15,6 +26,8 @@ Method reference only works where there is a possibility of passing a Lambda as 
 | **Ref. to an instance method of a particular object** <br />Produces a lambda that takes exactly as many arguments as the method expects                                                                 |(param) -> object.instanceMethod(param) 		  | () -> someString.toUpperCase() <br/> (a,b) -> myApp.appendStrings(a,b) <br/> () -> obj.test()            | someObject::instanceMethod | someString::toUpperCase <br/> myApp::appendStrings <br/> obj :: test        |
 | **Ref. to an instance method of an arbitrary object of a particular type** <br /> Take the first argument from the lambda, and use that to invoke a method, passing remaining arguments as method params |(object, param) -> object.instanceMethod(param) | s -> s.toUpperCase() <br/> (String a, String b) -> a.compareToIgnoreCase(b)                               | SomeClass::instanceMethod  | String::toUpperCase   <br/> String::compareToIgnoreCase                     |
 | **Ref. to a constructor** <br />Takes the params of Lambda and passes them to a constructor                                                                                                              |(param) -> new ClassName(param)				  | () -> new Employee()                                                                                     | SomeClass::new             | Employee::new                                                               |
+
+**Instance method** are methods which can only be invoked through an object of the class. It needs an object if a class to be called.
 
 ## Reference to an instance method of a particular object
 
