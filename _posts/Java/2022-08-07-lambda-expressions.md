@@ -27,16 +27,9 @@ A function/method has 4 parts : name, return type, params/args list & method bod
 The most important parts are just the arguments and body. In Functional interface, there is only one method, so the name
 of the method is implied and the override has to be done by any class implementing the method.
 
-Lambda would be written
-
-<details>
-    <summary> 
-    Lambda with parameter/argument data type
-    </summary>
-
+Lambda with parameter/argument data type
 ![Image Text]({{ site.url }}/assets/images/lambda1.png)
 
-</details>
 
 even the argument/parameter data type can removed as
 ![Image Text]({{ site.url }}/assets/images/lambda2.png)
