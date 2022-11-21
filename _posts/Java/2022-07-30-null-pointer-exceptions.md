@@ -8,6 +8,7 @@ tags: ['Java']
 
 # Handling Null pointer Exceptions
 
+Try with resources -> Closable Interface
 
 ## Boolean Variables
 

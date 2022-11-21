@@ -51,9 +51,10 @@ public interface Predicate<T> {
 }
 ```
 Predicate can be defined within Labda or can be separately defined and invoked using test method.
-
 {% gist nitinkc/b63f8cbb3d13cab6ba1fb5256d748d6f %}
 
+With multiple predicates, we can use chaining and use
+{% gist nitinkc/b03e110b64c954d9c480ebcb4ce310af %}
 
 ### Function 
 
