@@ -38,7 +38,7 @@ It might also write things to the database.
 
 Pure functions are idempotent. Can be run many times without any effect.
 
-Improves concurrency as multiple pure functions can be executed in parellel wihout any sideeffects.
+Improves concurrency as multiple pure functions can be executed in parellel wihout any side effects.
 
 
 ---------------------------------
@@ -200,22 +200,6 @@ Generically typed interfaces
 – Supplier<T> —Nothing in, T out
 – BinaryOperator<T> —Two T’s in, T out
 
-Generic building blocks
-– Predicate
-Predicate<Employee> matcher = e -> e.getSalary() > 50000;
-if(matchFunction.test(someEmployee)) { doSomethingWith(someEmployee); }
-– Function
-Function<Employee, Double> raise = e -> e.getSalary() + 1000;
-for(Employee employee: employees) { employee.setSalary(raise.apply(employee)); }
-– BinaryOperator
-BinaryOperator<Integer> adder = (n1, n2) -> n1 + n2;
-int sum = adder.apply(num1, num2);
-– Consumer
-Consumer<Employee> raise = e -> e.setSalary(e.getSalary() * 1.1);
-for(Employee employee: employees) { raise.accept(employee); }
-For additional materials, please see http://www.coreservlets.com/. The Java tutorial section contains
-complete source code for all examples in this tutorial series, plus exercises and exercise solutions for each topic.
-coreservlets.com
 
 
 ## Predefined Functional Interface

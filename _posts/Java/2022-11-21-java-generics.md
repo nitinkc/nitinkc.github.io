@@ -1,6 +1,6 @@
 ---
 title:  "Generics"
-date:   2022-11-18 08:30:00
+date:   2022-11-21 08:30:00
 categories: ['Java']
 tags: ['Java']
 ---
