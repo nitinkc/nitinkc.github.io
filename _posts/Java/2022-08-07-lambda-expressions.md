@@ -8,6 +8,14 @@ toc: true
 # Lambda 
 Lambda Expression is just an anonymous (nameless) function. A function does not have a state. Object has a state.
 
+Best  Practices
+1. Be declarative and less imperative
+2. Favor immutability
+3. Reduce side effects
+4. Expressions over statements
+5. Design with Higher-Order functions
+
+
 # Functional Interface
 * Interface with SAM : Single Abstract Method
 * Functional Interface : can automatically be elevated to lambda expression. In other words, you can only use lambdas for functional interfaces

@@ -1,21 +1,21 @@
 ---
 # layout: static
-title:  "षोडशः संस्कार (The 16 Sanskars)"
+title:  "Gardening"
 date:   2022-01-26 21:55:00
 categories: Miscellaneous
 tags: [Miscellaneous]
 ---
 
-The 16 milestones of Life
-
-# SooraDasa (1478 AD to 1581 AD)
-
-Sooradasa envisioned Krishna in His childhood form. Explaining him the 16 stages of life.
-
-प्रथम संस्कार  : गर्भाधान संस्कार, Getting ready for Parent hood
+Jiffy Natural & Organic Seed Starter Mix, 12
 
 
-सीमन्तोन्नयन संस्कार 
-: Punsayaman Sanskara -
+Expert Gardener Indoor and Outdoor Potting Soil Mix, 1 cu. ft. Bag
 
-जातकर्म संस्कार : 6th day after birth - (naam karma)
+Jiffy Biodegradable Seed Starting Peat Strips, 4 Strips (32 Pots)
+
+Osmocote Smart-Release Plant Food Plus Outdoor & Indoor, 2 lb.
+
+Expert Gardener Flower Plant Food Fertilizer 10-10-10, 10 lbs.
+
+RootBoost 100538120 Rooting Hormone Powder, 2 oz, Green
+

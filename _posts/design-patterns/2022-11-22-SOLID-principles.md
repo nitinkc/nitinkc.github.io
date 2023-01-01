@@ -1,0 +1,22 @@
+---
+title:  "SOLID Principles"
+date:   2022-11-22 08:30:00
+categories: ['Java']
+tags: ['Java']
+---
+
+
+
+### Supplier
+```java
+public interface Supplier<T> {
+    T get();
+}
+```
+
+```java
+//Static method Reference
+Supplier<LocalDate> s1 = LocalDate::now;
+//Lambda Expression
+Supplier<LocalDate> s2 = () -> LocalDate.now();
+```
