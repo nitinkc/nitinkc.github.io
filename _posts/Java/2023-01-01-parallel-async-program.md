@@ -115,16 +115,95 @@ Should be a monoid
   * there should be an identity values  
   * the operations performed should result the values should belong to the same set
 
-## IO intensive Problem vs Computationally intensive problem
+## # of Threads
+
+The total number of thread creation depends upon the task. But `# of threads <= # of cores`
+
+IO intensive Problem vs Computationally intensive problem
 
 Computationally intensive
   number of threads should be less than or equal to number of cores
 
 For IO Intensive
-   number of threads may be greater than number of cores. the 
+   number of threads may be greater than number of cores. 
 
-This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
+Consider the equation
+
+`# of threads = # of cores / (1 - blocking factor)`
+
+For IO intensive tasks, the blocking factor is usually large. The thread keep waiting for longer duration 
+and that waiting time can be utilized by the CPU for some other task
+
+for example of the thread is waiting for half the time which is 50%, the blocking factor is 0.5 and the number of threads
+will be double the number of CPU cores, thus in effect twice the number of threads can be created.
+
+## Default number of threads
+
+Configuring JVM - Not recommended
+
+`java.util.concurrent.ForkJoinPool.common.parallelism=100`
+
+Sending the stream to a custom FJP. the reduce operation decides which thread pool the stream gets evaluated.
+
+```java
+Stream<Integer> integerParallelStream =
+    list.parallelStream()
+    .filter(num -> num * 1 == num)
+    .map(num -> incrementWith1SecDelay(num))
+    //.forEach(num -> {})
+    ;
+
+customizingForkJoinPool(integerParallelStream);//Sending the stream
+```
+
+Runs the code in the thread which resilves the reduce operation
+```java
+ForkJoinPool forkJoinPool = new ForkJoinPool(100);//parallelism = 100
+forkJoinPool.submit(
+        () -> integerStream.forEach(e -> {}));
+//Running the reduction operation in another method with another thread
+
+forkJoinPool.shutdown();
+```
 
 
+parallel with find first
 
+```java
+ //Find the name of the first employee greater than 40 years of age
+ String empName = employees.parallelStream()
+         .filter(Objects::nonNull).filter(emp -> null != emp.getAge()).filter(emp -> null != emp.getName())
+         .filter(emp -> emp.getAge() > 25)
+         .map(emp -> emp.getName())
+         .findFirst()//Ordered and thus yields same result in both parallel and sequential
+         .orElse("No Emp Found");
+```
 
+Erratic behaviour
+
+```java
+//Find the name of the any employee greater than 25 years of age
+ String empName = employees.parallelStream()
+         .filter(Objects::nonNull).filter(emp -> null != emp.getAge()).filter(emp -> null != emp.getName())
+         .filter(emp -> emp.getAge() > 25)
+         .map(emp -> emp.getName())
+         .findAny()//behaves erratically with Parallel stream. Runs fine with sequential execution
+         .orElse("No Emp Found");
+```
+
+## Stats
+
+```java
+ System.out.println("Available Processors : " + Runtime.getRuntime().availableProcessors());
+ System.out.println("Total Memory : " + Runtime.getRuntime().totalMemory());
+ System.out.println("Fork Join Pool : " + ForkJoinPool.commonPool());
+```
+
+Notice the difference between the total number of processors and parallelism in the thread pool complying
+`# of threads <= # of cores`
+
+```java
+Available Processors : 16
+Total Memory : 545259520
+Fork Join Pool : java.util.concurrent.ForkJoinPool@659e0bfd[Running, parallelism = 15, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]
+```
