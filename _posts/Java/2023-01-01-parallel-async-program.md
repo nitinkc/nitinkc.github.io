@@ -121,8 +121,10 @@ Computationally intensive
   number of threads should be less than or equal to number of cores
 
 For IO Intensive
-   number of threads may be greater than number of cores
+   number of threads may be greater than number of cores. the 
 
-```math
-\sqrt{3}
-```
+This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
+
+
+
+
