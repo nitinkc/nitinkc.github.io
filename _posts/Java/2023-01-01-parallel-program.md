@@ -1,5 +1,5 @@
 ---
-title:  "Parallel vs. Asynchronous Programming"
+title:  "Parallel Streams"
 date:   2023-01-01 18:10:00
 categories: ['Java']
 tags: ['Java']
