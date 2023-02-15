@@ -6,10 +6,13 @@ tags: [Spring Microservices, Spring Boot]
 ---
 
 
-Pattern used : https://www.baeldung.com/mapstruct#2-inject-spring-components-into-the-mapper
+[Pattern used in the example](https://www.baeldung.com/mapstruct#2-inject-spring-components-into-the-mapper)
 
-Either call the custom method by typing it inside the @Mapping annotation's qualifiedByName attribute
-or create an ANNOTATION for it --> NOT USED IN PROJECT -> Ref: https://www.baeldung.com/mapstruct-custom-mapper#custom-mapper-annotation
+call a custom defined in the @Mapping annotation with qualifiedByName attribute
+
+OR
+
+create an Annotation for it --> Ref: [Custom Mapper Annotation](https://www.baeldung.com/mapstruct-custom-mapper#custom-mapper-annotation)
 
 
 * target → Target DTO Class variable name
