@@ -8,10 +8,7 @@ sidebar:
   nav: "algo"
 ---
 
-## Contents
-{% raw  %}
 {% include toc title="Index" %}
-{% endraw %}
 
 ## Add Table of contents
 right side Index bar (on this blog)
