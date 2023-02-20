@@ -56,11 +56,13 @@ If you're building your pages with markdown, use the following examples to gener
 ## Include Hyper links
 
 ### Open link in another tab
+[Link title](www.google.com){:target="_blank"}
 {% raw %}
 `[Link title](www.google.com){:target="_blank"}`
 {% endraw %}
 
 ### Open link in same tab
+[Link title](www.google.com)
 {% raw %}
 `[Link title](www.google.com)`
 {% endraw %}
