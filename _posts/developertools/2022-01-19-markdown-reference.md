@@ -9,11 +9,12 @@ sidebar:
 ---
 
 ## Contents
-
+{% raw  %}
 {% include toc title="Index" %}
+{% endraw %}
 
-## Add right side Index bar (Table of contents) on this blog
-
+## Add Table of contents
+right side Index bar (on this blog)
 {% raw  %}
 `{% include toc title="Index" %}`
 {% endraw %}
@@ -26,17 +27,6 @@ Include code as a gist into the Jekyll post. Uses jekyll-gist plugin.
 {% raw  %}
 `{% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}`
 {% endraw %}
-
-## INCLUDE TIME
-
-| Column Header 1 | Column Header 1  | 
-| :---				| :---   |  
-|Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} |{{ site.time  }}|
-|{% raw  %}`{{ 'now' | date: "%Y/%m/%d" }}`{% endraw %}|{{ 'now' | date: "%Y/%m/%d" }}|
-|{% raw  %}`{{ 'now' | date_to_rfc822 }}`{% endraw %}|{{ 'now' | date_to_rfc822 }}|
-|{% raw  %}`{{ 'now' | date: "%C" }}`{% endraw %}|{{ 'now' | date: "%C" }}|
-|{% raw  %}`{{ 'now' | date: "%c" }}`{% endraw %}|{{ 'now' | date: "%c" }}|
-|{% raw  %}`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}|{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
 
 ## Markdown links syntax
 
@@ -100,6 +90,17 @@ sidebar:
   nav: "algo"
 ---
 ```
+
+## INCLUDE TIME
+
+| Column Header 1 | Column Header 1  | 
+| :---				| :---   |  
+|Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} |{{ site.time  }}|
+|{% raw  %}`{{ 'now' | date: "%Y/%m/%d" }}`{% endraw %}|{{ 'now' | date: "%Y/%m/%d" }}|
+|{% raw  %}`{{ 'now' | date_to_rfc822 }}`{% endraw %}|{{ 'now' | date_to_rfc822 }}|
+|{% raw  %}`{{ 'now' | date: "%C" }}`{% endraw %}|{{ 'now' | date: "%C" }}|
+|{% raw  %}`{{ 'now' | date: "%c" }}`{% endraw %}|{{ 'now' | date: "%c" }}|
+|{% raw  %}`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}|{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
 
 ## Notices with theme
 
