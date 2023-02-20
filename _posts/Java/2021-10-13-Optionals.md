@@ -6,32 +6,36 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-# Optional
+## Optional
 
 * New class Optional in java.util package.
 * It is a Container to hold at most one value, like Collections and Arrays.
 * To represent a value if its present or absent.
 * Avoids any runtime NullPointerExceptions
 
-In Streams API, Optional is returned
+##### In Streams API, Optional is returned
 
 * value.get() – returns value if present or throws exception
-• value.orElse(other) – returns value if present or returns other
-• value.orElseGet(Supplier) – returns value if present or calls function
-• value.isPresent() – returns true if value is present
-### Keeping an object in case it is null, avoiding ternary operator
+* value.orElse(other) – returns value if present or returns other
+* value.orElseGet(Supplier) – returns value if present or calls function
+* value.isPresent() – returns true if value is present
+
+
+### Avoid ternary operator
 
 Use of if statement can be avoided using declarative functional way. 
 
 ```java
-null != student.getFirstName() ? student.getFirstName() : ""
+String str = (null != student.getFirstName()) ? student.getFirstName() : StringUtils.EMPTY;
 
-//is Equivalent to 
-Optional.of(student.getFirstName()).orElse("")
+//is Equivalent to
+String str = Optional.of(student.getFirstName()).orElse(StringUtils.EMPTY);
 ```
 
 Optional of Nullable - If present then set else keep a default value
 {% gist nitinkc/48b38c0c6ffab602a38dc305179d42f4 %}
+
+With Optional, we get advantage of applying map as well.
 
 ```java
 //Another Example, in a loop, adding city name from the Object obj and appending a comma if the city exist, else leaving the city name.
@@ -39,7 +43,7 @@ String test1 = Optional.ofNullable(obj.getCityName()).isPresent() ? "," + obj.ge
 
 // Using Map, avoiding ternary operator
 String str2 = Optional.ofNullable(obj.getCityName()))
-                            .map(obj -> ","+ obj )
+                            .map(obj -> ","+ obj )//Advantage of using map
                             .orElse("");
 ```
 
@@ -47,17 +51,18 @@ String str2 = Optional.ofNullable(obj.getCityName()))
 
 {% gist nitinkc/3b6166b2b2825dad85bea8dd9cf7812a %}
 
-### Returning Optional from a mehtod to make it failsafe
+### Returning Optional from a method to make it failsafe
 
-In the given method, instead of returning a Map, returning an Optional of Map
+In the given method, instead of returning a Map, returning an Optional of Map provides more flexibility
 ```java
- public Optional<Map<String, Object >> getInfoByCode(String code){
+public Optional<Map<String, Object >> getInfoByCode(String code){
     Map<String, String> queryParams = new HashMap<>();
     queryParams.put("excludeSensitiveInfo", "true");
 
     //Get URL from config file
     List<Map<String, Object>> codes = restTemplate.getForObject(appConfig.getUrl()+"code/"+code, List.class, queryParams);
-    //Returniung a valid response even if the service fails.
+    
+    //Returning a valid response even if the service fails.
     return Optional.ofNullable(Optional.of(codes.stream().findFirst().get())
                         .orElse(Collections.emptyMap()));
 }

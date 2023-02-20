@@ -20,9 +20,7 @@ tags: [Shortcuts]
 | :---                             | :---                                                                        |:---                                |
 | ⌘Cmd ⇧Shift A                    | Find Action                                                                 |⇧⇧ to open the same pop up          |
 {: .notice--info}
-
 ## View
-
 | ⇧Shift ⎋Esc                         | Hide a tool window                                                          |                                   |
 | ⌘Cmd   0                            | Commit                                                                      |                                   |
 | ✅ ⌘Cmd  + 1                        | Project                                                                     |                                   |
@@ -48,9 +46,7 @@ tags: [Shortcuts]
 |✅ **F3**                            | Find uses in the same file                                                |                                   |
 | ⌘Cmd ⇧Shift F7                      | Highlight All Usages                                                        |                                   |
 |✅  ⌘Cmd  F12                           | Display all methods in a file, on a pop up window                       | Cmd⌘ 7 Structure                     |
-
-## Navigate   
-
+## Navigate
 |✅ ⌘Cmd ⇧Shift ⌫Delete                | Last Edit Location, Jump back to previous edit                             |                                   |
 |✅ ⌘Cmd ⌥Opt ←                         | Back                                                                        |                                   |
 | ⌘Cmd   G                         | Goto Line:Column                                                            |                                   |
@@ -69,9 +65,7 @@ tags: [Shortcuts]
 | ⌘Cmd ⇧Shift  T                   | Test                                                                        |                                   |
 | ⌘Cmd ⌥Opt ↖                      | Related Symbol…                                                             |                                   |
 | ⌃ H                              | Type Hierarchy                                                              |                                   |
-
 ## Find, Search & Edit, Replace in Files
-
 |✅ **⇧Shift ⇧Shift**                | Find All                               | Common entry point for all menu                                 |
 |✅ ⌘Cmd N                           | Class (⌘Cmd ⇧Shift N -> File) (⌘Cmd ⇧Shift ⌥Opt N -> Symbol )               | Can begin from  **⇧⇧**            |
 |✅ ⌘Cmd F                             |Find in current file                                                       |                                   |
@@ -109,10 +103,7 @@ tags: [Shortcuts]
 | ⌘Cmd F11                         | Add Mnemonic Bookmark...                                                    |                                   |
 | ⇧Shift F11                       | Show Line Bookmarks...                                                      |                                   |
 | ⌃Ctrl ⌘Cmd ␣                     | Emoji & Symbols                                                             |                                   |
-
-
-## Code  
-
+## Code
 | ✅ ⌘Cmd B                        | Jump to declaration of method, Toggle by clicking twice                     |                                   |
 | ⌘Cmd O                           | Override Methods                                                           |                                   |
 | ⌘Cmd I                           | Implement Methods                                                         |                                   |
@@ -147,9 +138,7 @@ tags: [Shortcuts]
 | ⌥Opt ⇧Shift  ↓                   | Move Line Down                                                              |                                   |
 | ⌥Opt ⇧Shift  ↑                   | Move Line Up                                                                |                                   |
 | ⌘Cmd ⇧Shift ⌥Opt K               | Convert Java File to Kotlin File                                            |                                   |
-
-### Refactor     
-
+### Refactor
 |✅  ⌘Cmd ⇧Shift ⌥Opt T             | Refactor This - Opens up all the options below                            |                                   |
 | ⌘Cmd F6                          | Change Signature…                                                           |                                   |
 | ✅ **⌘Cmd ⌥Opt V**                | Declare the variable                                                           |                                   |
@@ -157,20 +146,16 @@ tags: [Shortcuts]
 | ⌘Cmd ⌥Opt F                      | Field…                                                                      |                                   |
 | ⌘Cmd ⌥Opt P                      | Parameter…                                                                  |                                   |
 | ⌘Cmd ⇧Shift ⌥Opt P               | Functional Parameter…                                                       |                                   |
-| ⌘Cmd ⌥Opt M                      | Method…                                                                     |                                   |
+|✅ **⌘Cmd ⌥Opt M**                    | Extract Method                                                                     |                                   |
 | ⌘Cmd ⌥Opt N                      | Inline Super Class…                                                         |                                   |
 | F6                               | Move Members…                                                               |                                   |
 | F5                               | Copy Class…                                                                 |                                   |
-
-## Inheritance Hierarchy  
-
+## Inheritance Hierarchy
 | ⌘Cmd ⌥Opt B                      | See implementation of SomeInterface#foo                                     |                                   |
 | ⌘Cmd U                           | Navigate to super method                                                    |                                   |
 | ⌘Cmd  ⇧Shift H                   | See Hierarchy Window                                                        |                                   |
 | ⌘Cmd H                           | See Class Hierarchy                                                         |                                   |
-
-## Build, Run & Debug  
-
+## Build, Run & Debug
 | ⌘Cmd  + B                        | Build                                                                       |                                   |
 | ⌘F9                              | Build Project                                                               |                                   |
 | ⌘Cmd ⇧Shift F9                   | Recompile                                                                   |                                   |
@@ -183,16 +168,12 @@ tags: [Shortcuts]
 | ⌘Cmd ⇧Shift ⌥Opt F8              | Temporary Line Breakpoint                                                   |                                   |
 | ⌘Cmd ⇧Shift F8                   | View Breakpoints…                                                           |                                   |
 | ⌘Cmd ⌥OptF6                      | Show Coverage Data...                                                       |                                   |
-
 ## Tools  
-
 | ⌥Opt ⇧Shift  T                   | Switch Task                                                                 |                                   |
 | ⌥Opt ⇧Shift  N                   | Open Task                                                                   |                                   |
 | ⌥Opt ⇧Shift  S                   | Save Context                                                                |                                   |
 | ⌥Opt ⇧Shift  X                   | Clear Context                                                               |                                   |
-
 ## Window   
-
 | ⌘Cmd M                           | Maximize or unmaximize your current tab.                                    |                                   |
 | ⌃ ⌘Cmd =                            | Zoom In                                                                     |                                   |
 | ⇧F12                             | Restore Default Layout                                                      |                                   |
@@ -207,10 +188,7 @@ tags: [Shortcuts]
 | ⌘Cmd   H                            | Hide IntelliJ IDEA ⌘Cmd ⌥Opt H Hide Others                                  |                                   |
 | ⌘Cmd   Q                            | Quit IntelliJ IDEA                                                          |                                   |
 | ⌘Cmd ⌥Opt Q                      | Quit and Close All Windows                                                  |                                   |
-
-
-## Coding Assistance  
-
+## Coding Assistance
 | ⌘Cmd F1                          | See Warning Errors, Press twice for details                                 |                                   |
 | ⌘Cmd J                           | See documentation of a symbol at caret                                      |                                   |
 |                                  | unmaximize your current tab.                                                |                                   |
