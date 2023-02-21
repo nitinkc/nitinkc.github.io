@@ -5,6 +5,8 @@ categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 
+{% include toc title="Index" %}
+
 ### Problem 
 Get rid of the empty objects as pointed
 
@@ -12,7 +14,7 @@ Get rid of the empty objects as pointed
 
 From jackson mapping alone, it can't be taken care of as per this blog post [https://github.com/FasterXML/jackson-databind/issues/2376](https://github.com/FasterXML/jackson-databind/issues/2376){:target="_blank"}
 
-Suppose the return from DB contains Address array list object. 
+Suppose the return from DB (Employee Object) contains Address array list object. 
 
 {% gist nitinkc/e784b244949deab7102d7df72ab0a48e %}
 
@@ -79,6 +81,8 @@ public class Employee {
 }
 ```
 
+### Difference between `contentFilter` and `valueFilter`
+
 #### Value Filter
 `@JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = DateOfBirthFilter.class)`
 
@@ -89,8 +93,9 @@ While performing filter, the object's equals() method is called with value to se
 * if equals method returns **false**  -> value is included.
 
 
-NOTE: the filter will be called for each non-null value, but handling of null value differs: up to Jackson 2.13,
-call was only made once, but with 2.14 and later filter will be called once for each null value too.
+NOTE: the filter will be called for each non-null value, but handling of null value differs: 
+* up to Jackson 2.13, call was only made once, but 
+* with 2.14 and later filter will be called once for each null value too.
 {: .notice--info}
 
 #### Content Filter
@@ -98,7 +103,7 @@ call was only made once, but with 2.14 and later filter will be called once for 
 Filter 
 `@JsonInclude(content = JsonInclude.Include.CUSTOM, contentFilter = PhoneFilter.class)`
 
-* and/or `JsonInclude.contentFilter()` for contents of structured types (like email format, phone number format etc)
+* `JsonInclude.contentFilter()` is used for contents of structured types (like email format, phone number format etc)
 
 ```java
 public class Employee {
@@ -110,7 +115,7 @@ public class Employee {
 }
 ```
 
-The phone filter uses a pattern to filter the phone number that does not follow a particular pattern
+The phone filter uses a pattern to filter out the phone number that does not follow a particular pattern
 ```java
 public class PhoneFilter {
     private static Pattern phonePattern = Pattern.compile("\\d{3}-\\d{3}-\\d{4}");//111-111-1111
@@ -126,11 +131,35 @@ public class PhoneFilter {
 }
 ```
 
-### Difference between `contentFilter` and `valueFilter`
 
-### Apply formatting
+## Apply formatting
 `@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")`
+```java
+public class Employee {
+    ...
+    @JsonProperty("dateOfBirth")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date dob;
+    ...
+```
 
+input json
+```json5
+{
+  "name" : "John Doe",
+  "dateOfBirth" : 1656878272857,
+ ...
+}
+```
+output after applying json format
+```json5
+{
+  ...
+  "dateOfBirth" : "2022-07-03",
+  ...
+}
+
+```
 ### JsonInclude
 
 `@JsonInclude(JsonInclude.Include.NON_NULL)`
