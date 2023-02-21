@@ -49,13 +49,13 @@ public class Employee {
     private List<Address> addresses;
 }
 ```
+## Custom Filter
+Further filters (apart from Include.NON_NULL, NON_EMPTY etc ) can be added (typically on individual properties) using the `CUSTOM` include. 
 
-Further filters can be added (typically on individual properties) using the `CUSTOM` include. 
+### Class Level
+If custom include filter is used at class level, it gets applied to each member (field) of the class individually, and not as a group together.
 
-If custom include filter is used at class level, it gets applied top each member (field) of the class individually, and not as a group together.
-Thus we cannot remove an Address Object if all the fields/elements of Class Address are null. 
-
-We can remove individual elements using the filter criteria and if all elements are removed, only `{}` is returned
+Thus, we cannot remove an Address Object if all the fields/elements of class `Address` are null. 
 
 ```java
 @JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = ClassLevelFilter.class)
@@ -63,6 +63,9 @@ public class Address {
     ...
 }
 ```
+
+### Field Level
+We can remove individual elements using the filter criteria (or by Include.NON_NULL) and if all elements are removed, only `{}` is returned
 
 If the custom value filter is used at the field level in Employee class, the then filter can decide whether to incluse the whole list or exclude it. The filter will be unable to 
 remove the empty objects of the List. For example, if the first element of `addresses` list has all the fields as null, and if nulls are ignored in the `Address` class, the final output will be `{}`
@@ -76,9 +79,26 @@ public class Employee {
 }
 ```
 
-### Content Filter
+#### Value Filter
+`@JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = DateOfBirthFilter.class)`
 
+* Filter (to be used for determining inclusion criteria) Object specified by `JsonInclude.valueFilter()` for value itself
+
+While performing filter, the object's equals() method is called with value to serialize.
+* if equals method returns **true**   -> value is excluded (filtered out);
+* if equals method returns **false**  -> value is included.
+
+
+NOTE: the filter will be called for each non-null value, but handling of null value differs: up to Jackson 2.13,
+call was only made once, but with 2.14 and later filter will be called once for each null value too.
+{: .notice--info}
+
+#### Content Filter
+
+Filter 
 `@JsonInclude(content = JsonInclude.Include.CUSTOM, contentFilter = PhoneFilter.class)`
+
+* and/or `JsonInclude.contentFilter()` for contents of structured types (like email format, phone number format etc)
 
 ```java
 public class Employee {
@@ -127,19 +147,6 @@ Emptiness
   * For Java Strings, length() is called, and return value of 0 indicates empty String
   * and for other types, null values are excluded but other exclusions (if any).
 
-
-`@JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = DateOfBirthFilter.class)`
-
-* Filter (to be used for determining inclusion criteria) Object specified by `JsonInclude.valueFilter()` for value itself
-* and/or `JsonInclude.contentFilter()` for contents of structured types (like email format, phone number format etc)
-
-While performing filter, the object's equals(value) method is called with value to serialize.
- * if equals method returns **true**   -> value is excluded (filtered out); 
- * if equals method returns **false**  -> value is included.
-
-
-NOTE: the filter will be called for each non-null value, but handling of null value differs: up to Jackson 2.13, 
-call was only made once, but with 2.14 and later filter will be called once for each null value too.
 
 ## References
 
