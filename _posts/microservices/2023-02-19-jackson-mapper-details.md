@@ -6,12 +6,11 @@ tags: [Spring Microservices, Spring Boot]
 ---
 
 ### Problem 
+Get rid of the empty objects as pointed
 
 ![Image Text]({{ site.url }}/assets/images/jacksonMapper.png)
 
-In order to get rid of the empty objects as pointed above
-
-From jackson mapping alone, it can't be taken care of as per this blog post [https://github.com/FasterXML/jackson-databind/issues/2376](https://github.com/FasterXML/jackson-databind/issues/2376)
+From jackson mapping alone, it can't be taken care of as per this blog post [https://github.com/FasterXML/jackson-databind/issues/2376](https://github.com/FasterXML/jackson-databind/issues/2376){:target="_blank"}
 
 Suppose the return from DB contains Address array list object. 
 
@@ -31,7 +30,7 @@ public class Address {
 }
 ```
 
-The parent class
+The class that contains List of Address is 
 
 ```java
 @Builder
@@ -51,10 +50,47 @@ public class Employee {
 }
 ```
 
-Further filters can be added (typically on individual properties) using the `CUSTOM` include
+Further filters can be added (typically on individual properties) using the `CUSTOM` include. 
+
+If custom include filter is used at class level, it gets applied top each member (field) of the class individually, and not as a group together.
+Thus we cannot remove an Address Object if all the fields/elements of Class Address are null. 
+
+We can remove individual elements using the filter criteria and if all elements are removed, only `{}` is returned
+
+```java
+@JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = ClassLevelFilter.class)
+public class Address {
+    ...
+}
+```
+
+If the custom value filter is used at the field level in Employee class, the then filter can decide whether to incluse the whole list or exclude it. The filter will be unable to 
+remove the empty objects of the List. For example, if the first element of `addresses` list has all the fields as null, and if nulls are ignored in the `Address` class, the final output will be `{}`
+```java
+public class Employee {
+    ...
+    @JsonProperty("addresses")
+    @JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = EmptyListFilter.class)
+    private List<Address> addresses;
+    ...
+}
+```
+
+### Content Filter
 
 `@JsonInclude(content = JsonInclude.Include.CUSTOM, contentFilter = PhoneFilter.class)`
 
+```java
+public class Employee {
+    ...
+    @JsonProperty("phones")
+    @JsonInclude(content = JsonInclude.Include.CUSTOM, contentFilter = PhoneFilter.class)
+    private Map<String, String> phones;
+    ...
+}
+```
+
+The phone filter uses a pattern to filter the phone number that does not follow a particular pattern
 ```java
 public class PhoneFilter {
     private static Pattern phonePattern = Pattern.compile("\\d{3}-\\d{3}-\\d{4}");//111-111-1111
@@ -70,7 +106,7 @@ public class PhoneFilter {
 }
 ```
 
-Difference between `contentFilter` and `valueFilter`
+### Difference between `contentFilter` and `valueFilter`
 
 ### Apply formatting
 `@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")`
