@@ -182,3 +182,7 @@ $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
   // .sidebar.sticky {
   //   background-color:$primary-color;
   // }
+
+p>code,a>code,li>code,figcaption>code,td>code {
+    background: #aeeeca;
+}
