@@ -8,7 +8,7 @@ tags: [Spring Microservices, Spring Boot]
 
 [Pattern used in the example](https://www.baeldung.com/mapstruct#2-inject-spring-components-into-the-mapper)
 
-Call a custom method defined in the @Mapping annotation with qualifiedByName attribute
+Call a custom method defined in the `@Mapping` annotation with `qualifiedByName` attribute
 
 OR
 

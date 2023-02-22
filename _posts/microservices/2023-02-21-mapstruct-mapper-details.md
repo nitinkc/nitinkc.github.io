@@ -27,26 +27,9 @@ public interface EmployeeMapper {
 // Source = Employee
 ```
 
-<div class="container">
-  <div class="row ">
-
-    <div class="col-md-6">
-        public class EmployeeDto
-            private String employeeName;
-            private Date dateOfBirth;
-            private Map<String, String> phones;
-            private List<Address> addresses;
-    </div>
-
-    <div class="col-md-6">
-        @JsonProperty("name") private String name;
-        @JsonProperty("dateOfBirth") private Date dob;
-        @JsonProperty("phones") private Map<String, String> phones;
-        @JsonProperty("addresses") private List<Address> addresses;
-    </div>
-
-  </div>
-</div>
+| Column Header 1                                      | Column Header 1                                      | 
+|:-----------------------------------------------------|:-----------------------------------------------------|      
+| {% gist nitinkc/e6016bf92643dcb9b44eaa124c0e6d3d %}  | {% gist nitinkc/d0fd23e897d1fd5e44a8551daa41c714 %}  |
 
 The reverse is also possible. The data from UI form or from some client, can be prepared to be inserted into DB
 from DTO to DB Entity.
