@@ -51,6 +51,23 @@ public class Employee {
     private List<Address> addresses;
 }
 ```
+
+## JsonInclude
+
+Exclude NULL or EMPTY
+
+`@JsonInclude(JsonInclude.Include.NON_NULL)`
+
+Exclude properties with NULL values. Include all non-null values
+`@JsonInclude(JsonInclude.Include.NON_EMPTY)`
+
+#### Emptiness
+* For Collections and Maps, method isEmpty() is called;
+* For Java arrays, empty arrays are ones with length of 0
+* For Java Strings, length() is called, and return value of 0 indicates empty String
+* and for other types, null values are excluded but other exclusions (if any).
+
+
 ## Custom Filter
 Further filters (apart from Include.NON_NULL, NON_EMPTY etc ) can be added (typically on individual properties) using the `CUSTOM` include. 
 
@@ -81,7 +98,7 @@ public class Employee {
 }
 ```
 
-### Difference between `contentFilter` and `valueFilter`
+### contentFilter vs valueFilter
 
 #### Value Filter
 `@JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = DateOfBirthFilter.class)`
@@ -93,7 +110,7 @@ While performing filter, the object's equals() method is called with value to se
 * if equals method returns **false**  -> value is included.
 
 
-NOTE: the filter will be called for each non-null value, but handling of null value differs: 
+NOTE: the filter will be called for each non-null value, but handling of null value differs: {: .notice--info}
 * up to Jackson 2.13, call was only made once, but 
 * with 2.14 and later filter will be called once for each null value too.
 {: .notice--info}
@@ -144,7 +161,7 @@ public class Employee {
 ```
 
 input json
-```json5
+```json
 {
   "name" : "John Doe",
   "dateOfBirth" : 1656878272857,
@@ -152,7 +169,7 @@ input json
 }
 ```
 output after applying json format
-```json5
+```json
 {
   ...
   "dateOfBirth" : "2022-07-03",
@@ -160,22 +177,6 @@ output after applying json format
 }
 
 ```
-### JsonInclude
-
-`@JsonInclude(JsonInclude.Include.NON_NULL)`
-
-Exclude properties with NULL values. Include all non-null values
-
-`@JsonInclude(JsonInclude.Include.NON_EMPTY)`
-
-Exclude NULL or EMPTY
-
-Emptiness 
-  * For Collections and Maps, method isEmpty() is called;
-  * For Java arrays, empty arrays are ones with length of 0
-  * For Java Strings, length() is called, and return value of 0 indicates empty String
-  * and for other types, null values are excluded but other exclusions (if any).
-
 
 ## References
 
