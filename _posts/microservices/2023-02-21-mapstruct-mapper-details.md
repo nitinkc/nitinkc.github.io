@@ -29,7 +29,7 @@ public interface EmployeeMapper {
 
 | Column Header 1                                      | Column Header 1                                      | 
 |:-----------------------------------------------------|:-----------------------------------------------------|      
-| {% gist nitinkc/e6016bf92643dcb9b44eaa124c0e6d3d %}  | {% gist nitinkc/d0fd23e897d1fd5e44a8551daa41c714 %}  |
+| {% gist nitinkc/f6ceaf913062d7aae7e8fff04fe09033 %}  | {% gist nitinkc/d867c06073103b74a39466f9a9cc2718 %}  |
 
 The reverse is also possible. The data from UI form or from some client, can be prepared to be inserted into DB
 from DTO to DB Entity.
