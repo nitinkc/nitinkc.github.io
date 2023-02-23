@@ -64,25 +64,15 @@ public interface PersonMapper {
 
 # Type conversion
 
-input json
-```json
-{
-  "dateOfBirth": 1676878272857
-}
-```
-
 Applying the `dateFormat` attribute
 
 ```java
-z@Mapping(target = "birthDate", source = "employee.dob", dateFormat = "dd-MM-yyyy HH:mm:ss")
+@Mapping(target = "birthDate", source = "employee.dob", dateFormat = "dd-MM-yyyy HH:mm:ss")
 ```
-output json
 
-```json
-{
-  "birthDate" : "20-02-2023 01:31:12"
-}
-```
+| Input                                              | Output                                              | 
+|:---------------------------------------------------|:----------------------------------------------------|      
+| ```json { "dateOfBirth": 1676878272857 } ```       | ```json { "birthDate" : "20-02-2023 01:31:12" } ``` |
 
 Similarly 
 
