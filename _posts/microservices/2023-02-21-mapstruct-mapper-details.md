@@ -14,6 +14,14 @@ Common use case is when the data is retrieved from DB and the response from the 
 is expected in a different format or with less or more number of fields, then map struct can be utilized for 
 conversion.
 
+# Retrieving a mapper
+* [Using The Mappers factory](https://mapstruct.org/documentation/stable/reference/html/#mappers-factory)
+
+```java
+//import TestMapper Class
+import org.mapstruct.factory.Mappers;
+final TestMapper mapper = Mappers.getMapper(TestMapper.class);
+```
 # Field Mapping
 Mapping Fields With Different Field Names between Source and Target Objects
 
@@ -41,26 +49,7 @@ from DTO to DB Entity.
 
 When the Target Object class comprises fields which is a combination of multiple objects
 
-```java
-@Mapper
-public interface PersonMapper {
-    @Mapping(target = "employeeFirstName", source = "employee.name")
-    @Mapping(target = "employeeLastName", source = "employee.name")
-    @Mapping(target = "birthDate", source = "employee.dob")
-    @Mapping(target = "phones", source = "employee.phones")//Map to List
-    @Mapping(target = "beerBrand", source = "beer.brand")
-    @Mapping(target = "beerName", source = "beer.name")
-    @Mapping(target = "alcohol", source = "beer.alcohol")
-    @Mapping(target = "carMakeAndModel", source = "vehicle.makeAndModel")
-    @Mapping(target = "carColor", source = "vehicle.color")
-    @Mapping(target = "driveType", source = "vehicle.driveType")
-    @Mapping(target = "fuelType", source = "vehicle.fuelType")
-    @Mapping(target = "specs", source = "vehicle.specs")
-    @Mapping(target = "doors", source = "vehicle.doors")
-    @Mapping(target = "licensePlate", source = "vehicle.licensePlate")
-    PersonDto personMapper(Employee employee, Beer beer, Vehicle vehicle);
-}
-```
+{% gist nitinkc/37db7c00e09ee3d2cbd499d52d40df00 %}
 
 # Type conversion
 
@@ -122,6 +111,18 @@ List<String> processPhoneMap(Map<String, String> phoneMap) {
 | {% gist nitinkc/1702f1118e55c0512d2e04961cd281a1 %} | {% gist nitinkc/14a786fc4ce7d9e7df6c58c23c8bab34 %} |
 
 
+# Mapping a Map into a Bean(Pojo)
+
+In Case the data from JSON is not read into a JavaObject but instead into a Map using TypeReference
+
+```java
+Map<String, String> jsonAsMap = objectMapper.readValue(url, new TypeReference<Map<String, String>>() {});
+TesterDto testerDto = mapper.testMapperFromMap(jsonAsMap);
+```
+
+The mapper can be written in such a way, that the value of the Map is mapped with the PJO it is being mapped
+
+{% gist nitinkc/a2131a8cb4df37399d6cd58e006a1900 %}
 
 
 # Refer article
