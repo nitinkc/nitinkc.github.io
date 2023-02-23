@@ -64,23 +64,30 @@ public interface PersonMapper {
 
 # Type conversion
 
+#### dateFormat
 Applying the `dateFormat` attribute
 
 ```java
 @Mapping(target = "birthDate", source = "employee.dob", dateFormat = "dd-MM-yyyy HH:mm:ss")
 ```
 
-| Input                                              | Output                                              | 
-|:---------------------------------------------------|:----------------------------------------------------|      
-| ```json { "dateOfBirth": 1676878272857 } ```       | ```json { "birthDate" : "20-02-2023 01:31:12" } ``` |
+| Input                        | Output                            | 
+|:-----------------------------|:----------------------------------|      
+| "dateOfBirth": 1676878272857 |"birthDate" : "20-02-2023 01:31:12"|
 
-Similarly 
+#### numberFormat
+Similarly Applying the `numberFormat` attribute
 
-`numberFormat = "$#.00"`
+```java
+@Mapping(target="test", source="tester.test", numberFormat = "₹#.00")
+```
+
+| Input            | Output            | 
+|:-----------------|:------------------|      
+| "tester" : 52.32 | "test" : "₹52.32" |
 
 
 # Expression & defaultExpression
-
 
 #### defaultExpression
 
@@ -98,18 +105,6 @@ Similarly
 
 #### qualifiedByName
 
-Input is a map of phone numbers
-
-```java
-{
-    "phones" : {
-        "Work" : "(123) 456 7890",
-        "Cell" : "987-654-3210",
-        "Home" : "963-852-7410"
-    }
-}
-```
-
 Use the qualifiedByName attribute of @Mapping Annotation to invoke the java method to take more control
 ```java
 @Mapping(target = "phones", source = "employee.phones", qualifiedByName = "processPhoneMap")//Map to List
@@ -121,16 +116,11 @@ List<String> processPhoneMap(Map<String, String> phoneMap) {
         //Change the Map to a List
 }
 ```
-Output 
-```json
-{
-  "phones": [
-    "Work:(123) 456 7890",
-    "Cell:987-654-3210",
-    "Home:963-852-7410"
-  ]
-}
-```
+
+| Input is a map of phone numbers                     | Output is a List of Strings                         | 
+|:----------------------------------------------------|:----------------------------------------------------|      
+| {% gist nitinkc/1702f1118e55c0512d2e04961cd281a1 %} | {% gist nitinkc/14a786fc4ce7d9e7df6c58c23c8bab34 %} |
+
 
 
 
