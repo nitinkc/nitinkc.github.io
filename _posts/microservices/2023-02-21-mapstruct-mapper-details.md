@@ -15,13 +15,37 @@ is expected in a different format or with less or more number of fields, then ma
 conversion.
 
 # Retrieving a mapper
+
+#### Mappers.getMapper(TestMapper.class)
 * [Using The Mappers factory](https://mapstruct.org/documentation/stable/reference/html/#mappers-factory)
 
+
 ```java
-//import TestMapper Class
+@Mapper(componentModel = "default")//componentModel is optional for default
+public interface TestMapper {
+    ...
+}
+```
+
+Calling Class can use the Mappers factory to retrieve the relevant object
+```java
 import org.mapstruct.factory.Mappers;
+
 final TestMapper mapper = Mappers.getMapper(TestMapper.class);
 ```
+
+#### @Mapper(componentModel = "spring")
+
+* Using Dependency Injection - Spring framework
+
+Specify the component model to which the generated mapper should adhere.
+
+Supported values are
+* default: the mapper uses no component model, instances are typically retrieved via Factory Mappers.getMapper(Class)
+* spring: the generated mapper is a **Spring bean** and can be retrieved via `@Autowired`
+
+{% gist nitinkc/dc5974e7fbb51c4d9cf6f878534bd495 %}
+
 # Field Mapping
 Mapping Fields With Different Field Names between Source and Target Objects
 
