@@ -16,7 +16,8 @@ conversion.
 
 # Retrieving a mapper
 
-#### Mappers.getMapper(TestMapper.class)
+#### Mapper Factory
+Mappers.getMapper(TestMapper.class)
 * [Using The Mappers factory](https://mapstruct.org/documentation/stable/reference/html/#mappers-factory)
 
 
@@ -34,7 +35,8 @@ import org.mapstruct.factory.Mappers;
 final TestMapper mapper = Mappers.getMapper(TestMapper.class);
 ```
 
-#### @Mapper(componentModel = "spring")
+#### Dependency Injection
+@Mapper(componentModel = "spring")
 
 * Using Dependency Injection - Spring framework
 

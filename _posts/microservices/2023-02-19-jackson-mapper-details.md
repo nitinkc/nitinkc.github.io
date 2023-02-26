@@ -148,9 +148,10 @@ public class PhoneFilter {
 }
 ```
 
-
 ## Apply formatting
+
 `@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")`
+
 ```java
 public class Employee {
     ...
@@ -160,23 +161,10 @@ public class Employee {
     ...
 ```
 
-input json
-```json
-{
-  "name" : "John Doe",
-  "dateOfBirth" : 1656878272857,
- ...
-}
-```
-output after applying json format
-```json
-{
-  ...
-  "dateOfBirth" : "2022-07-03",
-  ...
-}
+| Input                                               | output                                              | 
+|:----------------------------------------------------|:----------------------------------------------------|      
+| {% gist nitinkc/14973504b39336196f505fa1c332c6de %} | {% gist nitinkc/6c804a3de35e042537bc1e7ad25e3720 %} |
 
-```
 
 ## References
 
