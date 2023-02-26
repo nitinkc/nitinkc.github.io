@@ -75,7 +75,10 @@ When the Target Object class comprises fields which is a combination of multiple
 
 {% gist nitinkc/37db7c00e09ee3d2cbd499d52d40df00 %}
 
-# Type conversion
+# Data Type conversion
+
+
+## Applying formnatting
 
 #### dateFormat
 Applying the `dateFormat` attribute
@@ -100,7 +103,7 @@ Similarly Applying the `numberFormat` attribute
 | "tester" : 52.32 | "test" : "₹52.32" |
 
 
-# Expression & defaultExpression
+## Explicit convesrion with Expressions
 
 #### defaultExpression
 
@@ -110,11 +113,10 @@ Similarly Applying the `numberFormat` attribute
 @Mapping(target = "extraField", source = "employee.nullTester", defaultExpression = "java(com.github.javafaker.Faker.instance().chuckNorris().fact())")
 ```
 
-```json
-{
- "extraField" : "Chuck Norris can write infinite recursion functions... and have them return."
-}
-```
+| Input is a null string                              | Output is a string based on Faker.instance().chuckNorris().fact() | 
+|:----------------------------------------------------|:------------------------------------------------------------------|      
+| {% gist nitinkc/aa3fa41108d15ebd1089010e22ba9b1b %} | {% gist nitinkc/aa316a68f721727af3e4dc9309db378f %}               |
+
 
 #### qualifiedByName
 
@@ -133,6 +135,10 @@ List<String> processPhoneMap(Map<String, String> phoneMap) {
 | Input is a map of phone numbers                     | Output is a List of Strings                         | 
 |:----------------------------------------------------|:----------------------------------------------------|      
 | {% gist nitinkc/1702f1118e55c0512d2e04961cd281a1 %} | {% gist nitinkc/14a786fc4ce7d9e7df6c58c23c8bab34 %} |
+
+
+#### qualifier with default
+
 
 
 # Mapping a Map into a Bean(Pojo)
