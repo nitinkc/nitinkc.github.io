@@ -103,7 +103,9 @@ Similarly Applying the `numberFormat` attribute
 | "tester" : 52.32 | "test" : "₹52.32" |
 
 
-## Explicit convesrion with Expressions
+## Explicit conversion with Expressions
+
+Converting a piece of data from one type to another
 
 #### defaultExpression
 
@@ -135,11 +137,6 @@ List<String> processPhoneMap(Map<String, String> phoneMap) {
 | Input is a map of phone numbers                     | Output is a List of Strings                         | 
 |:----------------------------------------------------|:----------------------------------------------------|      
 | {% gist nitinkc/1702f1118e55c0512d2e04961cd281a1 %} | {% gist nitinkc/14a786fc4ce7d9e7df6c58c23c8bab34 %} |
-
-
-#### qualifier with default
-
-
 
 # Mapping a Map into a Bean(Pojo)
 
