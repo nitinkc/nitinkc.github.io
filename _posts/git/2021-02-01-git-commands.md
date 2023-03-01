@@ -92,7 +92,7 @@ git remote add github <http git repo address> # instead of origin, github is the
 git push -u origin master (master is our local repo, branch name)
 ```
 
-## Delete a remote branch using
+## Delete a remote branch using
 ```sh
 git push origin --delete <branchName>
 git push origin :old_branch
@@ -121,6 +121,21 @@ git branch -m <newname>
 ```
  git push --set-upstream origin <Branch name>
  ```
+
+# Stash
+
+## View and Clear Stash
+```sh
+# Clear all the stash in one go
+git stash clear
+
+# Find all the stash with index Id
+git stash list
+
+# Take the index from the stash list
+git stash drop stash@{index}
+```
+
 
  ## Links
 
