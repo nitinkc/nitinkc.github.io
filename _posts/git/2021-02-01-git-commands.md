@@ -49,9 +49,9 @@ git cherry-pick 0359ca8b
 ```
 ## Remove Accidental Pushes from Remote
 ```bash
-git rm <filename or folder> # removes the file from the repo but also deletes it from the local file system.
+git rm <filename or folder> # removes the file from the repo but also deletes it from the local file system.
 
-# To remove the file from the remote repo and not delete it from the local file system use:
+# To remove the file from the remote repo and not delete it from the local file system use:
 git rm --cached <filename or folder>
 
 # remove from local as well as remote
@@ -125,6 +125,9 @@ git branch -m <newname>
 # Stash
 
 ## View and Clear Stash
+
+Acts as local clipboard to git
+
 ```sh
 # Clear all the stash in one go
 git stash clear
@@ -136,6 +139,15 @@ git stash list
 git stash drop stash@{index}
 ```
 
+Stash from one branch and bring it on another
+
+If changes are made accidentally on a branch where its not needed, then stash the changes and then 
+bring back into the other branch
+
+
+`--keep-index` allows to stash all changes that were not added to staging area.
+
+It safer to run `git stash apply` as it does not remove stashed changes instead of `git stash pop`. Conflicts might also occur.
 
  ## Links
 
