@@ -15,6 +15,9 @@ From `java.time` package
 
 toInstant connects
 
+When would you use OffsetDateTime instead of ZonedDateTime? If you are writing complex software that models its own rules for date and time calculations based on geographic locations, or if you are storing time-stamps in a database that track only absolute offsets from Greenwich/UTC time, then you might want to use OffsetDateTime.
+
+
 `parse` takes a string and returns the DataType of the Class being parsed, for example, LocalDate.parse returns LocalDate
 ```java
 LocalDate startLocalDate = LocalDate.parse("2023-10-30");//yyyy-mm-dd format by default
