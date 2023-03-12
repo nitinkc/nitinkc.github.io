@@ -16,7 +16,7 @@ right side Index bar (on this blog)
 `{% include toc title="Index" %}`
 {% endraw %}
  OR
-Or simpley add `toc: true` on the [front matter](https://jekyllrb.com/docs/front-matter/)
+Or simply add `toc: true` on the [front matter](https://jekyllrb.com/docs/front-matter/)
 
 ## Include gists as
 

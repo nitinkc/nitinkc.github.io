@@ -9,11 +9,17 @@ tags: ['Java']
 
 From `java.time` package
 
+The LocalDateTime class represents a date and time without a time zone, while the ZonedDateTime class represents a date and time with a time zone.
+
 * LocalDate     : A date without a time-zone in the ISO-8601 calendar system, eg `2023-03-12`
 * LocalDateTime : A date-time without a time-zone in the ISO-8601 calendar system, eg. `2023-03-12T10:15:30}`
+  * `LocalDateTime.now()` returns the current date and time in the local time zone
+  * `LocalDateTime.of()`  takes LocalDate and LocalTime object
 * ZonedDateTime : A date-time with a time-zone in the ISO-8601 calendar system, eg. `2007-12-03T10:15:30+01:00 Europe/Paris}`.
+  * `ZonedDateTime.now()` returns the current date and time in the system default time zone.
+  * `ZonedDateTime.of()` takes LocalDateTime object and a ZoneId
 
-toInstant connects
+> toInstant connects ZonedDateTime wtih sql Timestamp
 
 When would you use OffsetDateTime instead of ZonedDateTime? If you are writing complex software that models its own rules for date and time calculations based on geographic locations, or if you are storing time-stamps in a database that track only absolute offsets from Greenwich/UTC time, then you might want to use OffsetDateTime.
 
@@ -70,6 +76,17 @@ It is easy to compare the dates with Zoned Date Time
 
 # Convertors
 
+Working with Legacy DB that uses Timestamp
+
+Java provides a way to convert between ZonedDateTime and Timestamp using the 
+
+```java
+//converts a ZonedDateTime to a Timestamp
+Timestamp timestamp = Timestamp.from(ZonedDateTime.now(ZoneOffset.UTC).toInstant());
+
+//converts a Timestamp to a ZonedDateTime
+ZonedDateTime zonedDateTime = timestamp.toInstant().atZone(ZoneOffset.UTC);
+```
 ## from SQL Timestamp
 
 ### SQL Timestamp to LocalDate
