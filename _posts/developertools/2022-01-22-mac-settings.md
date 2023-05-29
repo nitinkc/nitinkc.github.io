@@ -66,6 +66,11 @@ alias screenShotType='defaults write com.apple.screencapture type -string "png"'
 alias screenTypeDir='defaults write com.apple.screencapture location /Users/nitin/Downloads'
 ```
 
+Activate the two aliases
+```shell
+screenShotType
+screenTypeDir
+```
 ### Terminal from Finder
 
 Open the Keyboard system preferences and click on the “Shortcuts” tab. 

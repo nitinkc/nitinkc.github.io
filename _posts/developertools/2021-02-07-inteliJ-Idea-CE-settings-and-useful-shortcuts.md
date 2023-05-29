@@ -26,7 +26,26 @@ and use the following pattern
 */
 ```
 
-![](/assets/images/intelliJ.png)
+![](/assets/images/intelliJ/intelliJ.png)
+
+
+
+![](/assets/images/intelliJ/2lineTabs.png)
+
+
+# Open the working Tabs on the left side.
+Ensure to check the MARK MODIFIED check box.
+
+![](/assets/images/intelliJ/tabsLeft.png)
+
+If opening on the top, uncheck the "Show tabs in one row, so that all the tabs appear like this
+![](/assets/images/intelliJ/oneRowTab.png)
+
+## Hide Usages
+![](/assets/images/intelliJ/hideUsages.png)
+
+## Change Font size
+![changeFont.png]((/assets/images/intelliJ/2FchangeFont.png))
 
 ## Useful Plugins
 

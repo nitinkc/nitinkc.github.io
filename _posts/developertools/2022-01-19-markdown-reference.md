@@ -48,7 +48,7 @@ If you're building your pages with markdown, use the following examples to gener
 `[Link title](https://www.google.com/){:target="_blank"}`
 {% endraw %}
 
-### Open link in same tab
+### Hyperlink Open link in same tab
 [Link title](https://www.google.com/)
 {% raw %}
 `[Link title](https://www.google.com/)`
