@@ -21,7 +21,7 @@ Installing the following tools and configuring them ensures maximum ease of deve
 | Tool | Details | 
 | :---| :---    |   
 |Iterm		|[Configuring iTerm]({% post_url _posts/developerTools/2021-02-01-iterm2-zsh-config %})|
-|IntelliJ	|[Configuring IntelliJ]({{ site.baseurl }} {% post_url /2021-02-07-inteliJ-Idea-CE-settings-and-useful-shortcuts %})|
+|IntelliJ	|[Configuring IntelliJ](https://nitinkc.github.io/developer%20tools/inteliJ-Idea-CE-settings-and-useful-shortcuts/)|
 |Git Config |[Configuring global git config]({{ site.baseurl }} {% post_url /git/2022-03-16-multiple-git-config %})|
 |Sublime	|[Configuring Sublime Editor](https://nitinkc.github.io/developer%20tools/Sublime-Settings/)|
 |Brew Package|[Migrating brew packages]({% post_url _posts/developerTools/2022-08-13-brew-package-migration%} ) |
