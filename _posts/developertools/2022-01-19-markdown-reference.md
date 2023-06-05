@@ -88,6 +88,16 @@ sidebar:
 ---
 ```
 
+## Embed pdf document
+```markdown
+## PDF Reference
+<object data="https://nitinkc.github.io/assets/media/file.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://nitinkc.github.io/assets/media/file.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://nitinkc.github.io/assets/media/file.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+```
 ## INCLUDE TIME
 
 | Column Header 1 | Column Header 1  | 
