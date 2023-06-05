@@ -97,26 +97,44 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 brew install timewarrior
 ```
 
-Global settings:
-`
+##### Order of file read with ZSH
+
+/etc/zshenv    # Read for every shell
+~/.zshenv      # Read for every shell except ones started with -f
+/etc/zprofile  # Global config for login shells, read before zshrc
+~/.zprofile    # User config for login shells
+/etc/zshrc     # Global config for interactive shells
+~/.zshrc       # User config for interactive shells
+/etc/zlogin    # Global config for login shells, read after zshrc
+~/.zlogin      # User config for login shells
+~/.zlogout     # User config for login shells, read upon logout
+/etc/zlogout   # Global config for login shells, read after user logout file
+
+### For regular Shell
+
+##### Global settings:
+```shell
 /etc/profile
 /etc/bashrc
-`
+```
 
-Personal settings:
-`
+##### Personal settings:
+```
 ~/.bash_profile OR  ~/.bash_login OR ~/.profile
 ~/.bashrc
 ~/.bash_aliases
-`
+```
 
 .bash_profile ->  login shell
+
 .bashrc -> non-login shell.
 
 When you start a sub-shell (by typing a shell's name at the command-prompt), you get a "non-login shell".
 
 When a "login shell" starts up, it reads the file
+
 "/etc/profile" and
+
 then "~/.bash_profile" or "~/.bash_login" or "~/.profile"
 (whichever one exists - it only reads one of these, checking for them in the order mentioned).
 
