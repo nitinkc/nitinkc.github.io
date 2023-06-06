@@ -10,9 +10,29 @@ tags: [Spring Microservices, Spring Boot]
 # Introduction
 MapStruct is used For converting the Entity to DTO.
 
+DB output -> mapper/transformer/convertor -> VIEW
+
+
 Common use case is when the data is retrieved from DB and the response from the microservice 
 is expected in a different format or with less or more number of fields, then map struct can be utilized for 
 conversion.
+
+If DB Output is
+```json
+{
+"first-name" : "Lorem",
+"middle-name" : "k",
+"last-name" : "ipsum"
+}
+```
+
+and VIEW (dito/angular UI) needs the following o/p
+```json
+{
+"fName" : "Lorem k"
+"lName" : "ipsum"
+}
+```
 
 # Retrieving a mapper
 
