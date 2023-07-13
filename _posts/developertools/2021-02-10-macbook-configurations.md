@@ -20,11 +20,11 @@ Installing the following tools and configuring them ensures maximum ease of deve
 
 | Tool             | Details                                                                                               | 
 |:-----------------|:------------------------------------------------------------------------------------------------------|   
-| Iterm            | [Configuring iTerm]({% post_url /developertools/2021-02-01-iterm2-zsh-config %})                      |
-| Profile Settings | [Set Local profile, alias etc.]({% post_url /developertools/2023-07-12-profile-settings.md %})        |
-| IntelliJ	        | [Configuring IntelliJ]({% post_url /developertools/2021-11-03-intelliJ-Idea-shortcuts.md %})          |
-| Git Config       | [Configuring global git config]({% post_url /git/2022-03-16-multiple-git-config %})                   |
-| Sublime	         | [Configuring Sublime Editor]({% post_url /developertools/2021-03-24-sublime-settings.md %})           |
+| Iterm            | [Configuring iTerm]({% post_url _posts/developertools/2021-02-01-iterm2-zsh-config %})                      |
+| Profile Settings | [Set Local profile, alias etc.]({% post_url _posts/developertools/2023-07-12-profile-settings.md %})        |
+| IntelliJ	        | [Configuring IntelliJ]({% post_url _posts/developertools/2021-11-03-intelliJ-Idea-shortcuts.md %})          |
+| Git Config       | [Configuring global git config]({% post_url _posts/git/2022-03-16-multiple-git-config %})                   |
+| Sublime	         | [Configuring Sublime Editor]({% post_url _posts/developertools/2021-03-24-sublime-settings.md %})           |
 | Brew Package     | [Migrating brew packages]({% post_url _posts/developerTools/2022-08-13-brew-package-migration%} )     |
 
 The following tools helps a lot making the develop environment much more conducive to work. 
