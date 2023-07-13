@@ -62,7 +62,7 @@ brew install exa
 ```
 Add this to .zshrc file
 
-```
+```shell
 if [ -x "$(command -v exa)" ]; then
     alias ls="exa"
     alias la="exa --long --all --group"
