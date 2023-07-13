@@ -18,38 +18,38 @@ Installing the following tools and configuring them ensures maximum ease of deve
 2. Create personalized [profiles and configure alias](https://github.com/nitinkc/SystemEnvironment#readme)
 
 
-| Tool             | Details                                                                                               | 
-|:-----------------|:------------------------------------------------------------------------------------------------------|   
-| Iterm            | [Configuring iTerm]({% post_url _posts/developertools/2021-02-01-iterm2-zsh-config %})                      |
-| Profile Settings | [Set Local profile, alias etc.]({% post_url _posts/developertools/2023-07-12-profile-settings.md %})        |
-| IntelliJ	        | [Configuring IntelliJ]({% post_url _posts/developertools/2021-11-03-intelliJ-Idea-shortcuts.md %})          |
-| Git Config       | [Configuring global git config]({% post_url _posts/git/2022-03-16-multiple-git-config %})                   |
-| Sublime	         | [Configuring Sublime Editor]({% post_url _posts/developertools/2021-03-24-sublime-settings.md %})           |
-| Brew Package     | [Migrating brew packages]({% post_url _posts/developerTools/2022-08-13-brew-package-migration%} )     |
+| Tool             | Details                                                                                           | 
+|:-----------------|:--------------------------------------------------------------------------------------------------|   
+| Iterm            | [Configuring iTerm]({% post_url _posts/developertools/2021-02-01-iterm2-zsh-config %})            |
+| Profile Settings | [Set Local profile, alias etc.]({% post_url _posts/developertools/2023-07-12-profile-settings %}) |
+| IntelliJ	        | [Configuring IntelliJ]({% post_url _posts/developertools/2021-11-03-intelliJ-Idea-shortcuts %})   |
+| Git Config       | [Configuring global git config]({% post_url /git/2022-03-16-multiple-git-config %})               |
+| Sublime	         | [Configuring Sublime Editor]({% post_url _posts/developertools/2021-03-24-sublime-settings %})    |
+| Brew Package     | [Migrating brew packages]({% post_url _posts/developerTools/2022-08-13-brew-package-migration%} ) |
 
 The following tools helps a lot making the develop environment much more conducive to work. 
 
 
 # Useful Office Productivity tool
 
-| Tool | Details | 
-| :---| :---    |   
-|Alfred 4 for Mac 	| | 
-|gemini 2 			| Scan the mac for duplicates|
-|PhotoSweeper 		||
-|Amphetamine 		| keeping the mac active and prevent it from locking|
-|Flycut /JumpCut 	| Clipboard manager|
-|Flux 				| Whitelight manager, based on location. Redundant with latest mac OS|
-|TimeOut 			| Rest your eyes based on Pomodoro Cycles|
-|Kap 				| Screen Recorder, Screenshot for emails|
-|Giphy Capture		| Screen Recorder to GIF for email attachments|
-|Rectangle 			| Move and resize windows in macOS|
-|Cheatsheet			| Reveal Mac shortcuts, if you hold command (⌘) key for a few seconds in a software context|
-|CustomShortcuts 	| Define your own shortcuts|
-|DBeaver			| Open source DB client for all|
-|ItsYCal			| View Calander and Time like Windows on ToolBar on top|
-|[***XMind***](http://www.xmind.net/download/mac/)|MindMapping tool|
-|Transmission|for Peer to peer Torrent transfer. Setup your own server|
+| Tool                                              | Details                                                                                   | 
+|:--------------------------------------------------|:------------------------------------------------------------------------------------------|   
+| Alfred 4 for Mac 	                                |                                                                                           | 
+| gemini 2 			                                      | Scan the mac for duplicates                                                               |
+| PhotoSweeper 		                                   |                                                                                           |
+| Amphetamine 		                                    | keeping the mac active and prevent it from locking                                        |
+| Flycut /JumpCut 	                                 | Clipboard manager                                                                         |
+| Flux 				                                         | Whitelight manager, based on location. Redundant with latest mac OS                       |
+| TimeOut 			                                       | Rest your eyes based on Pomodoro Cycles                                                   |
+| Kap 				                                          | Screen Recorder, Screenshot for emails                                                    |
+| Giphy Capture		                                   | Screen Recorder to GIF for email attachments                                              |
+| Rectangle 			                                     | Move and resize windows in macOS                                                          |
+| Cheatsheet			                                     | Reveal Mac shortcuts, if you hold command (⌘) key for a few seconds in a software context |
+| CustomShortcuts 	                                 | Define your own shortcuts                                                                 |
+| DBeaver			                                        | Open source DB client for all                                                             |
+| ItsYCal			                                        | View Calander and Time like Windows on ToolBar on top                                     |
+| [***XMind***](http://www.xmind.net/download/mac/) | MindMapping tool                                                                          |
+| Transmission                                      | for Peer to peer Torrent transfer. Setup your own server                                  |
 
 
 # Mac Shortcuts
