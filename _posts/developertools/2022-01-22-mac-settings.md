@@ -86,11 +86,17 @@ Add Terminal (or iTerm2) shortcuts to the Services menu by
 
 
 Command prompt Variables: PS1, PS2, PS3, PS4 and PROMPT_COMMANDPS1
+
 PS1 – Default interactive prompt 
+
 echo $PS1
+
 export PS1="\W]\$ "
+
 \W   The basename of $PWD.
+
 \$   If you are not root, inserts a "$"; if you are root, you get a "#"  (root uid = 0)
+
 This change can be made permanent by placing the "export" definition in your ~/.bashrc file.
 
 

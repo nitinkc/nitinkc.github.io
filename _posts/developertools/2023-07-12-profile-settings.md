@@ -1,6 +1,6 @@
 ---
 # layout: static
-title:  "Configuring profile"
+title:  "Configuring shell profile"
 date: 2023-07-12 22:10:00
 categories: ['Developer tools']
 tags: ['Developer tools']
@@ -25,7 +25,20 @@ On Mac with iTerm2 and ZSH
 /etc/zlogout   # Global config for login shells, read after user logout file
 ```
 
-### Two types of shells: login shells and interactive shells
+Output of the iTerm2 shell running on my macbook
+
+```log
+Loading .zshenv file ....
+Loading .profile file ....
+Loading .my_aliases file ....
+Loading .zprofile file ....
+Loading .zshrc file ....
+Loading .oh-my-zsh file ....
+Loading .p10k.zsh file ....
+Loading .iterm2_shell_integration file ....
+```
+
+### Two types of shells: login shell and interactive shell
 
 .bash_profile ->  login shell
 
@@ -43,9 +56,12 @@ The following commands will symlink the files and be modified for later use on o
 # ~ refers to $HOME Directory
 ln -s $HOME/Programming/SystemEnvironment/mac/.zshenv ~
 ln -s $HOME/Programming/SystemEnvironment/mac/.zshrc ~
+
 # personal settings
 ln -s $HOME/Programming/SystemEnvironment/mac/.my_aliases ~
 ln -s $HOME/Programming/SystemEnvironment/mac/.profile ~
+ln -s $HOME/Programming/SystemEnvironment/mac/.zprofile ~
+
 # Global Git settings
 ln -s $HOME/Programming/SystemEnvironment/mac/.gitconfig ~
 ln -s $HOME/Programming/SystemEnvironment/mac/.gitconfig-learn ~
@@ -55,6 +71,9 @@ ln -s $HOME/Programming/SystemEnvironment/mac/.gitignore_global ~
 #Keep these two for the Terminal (incase iTerm is not to be used)
 ln -s $HOME/Programming/SystemEnvironment/mac/.bashrc ~
 ln -s $HOME/Programming/SystemEnvironment/mac/.bash_profile ~
+
+# Sublime make it availabe in PATH
+ln -s /Applications/Development/Sublime\ Text.app/Contents/SharedSupport/bin /usr/local/bin/.
 ```
 
 * $PATH variable, a list directory names separated by colon (:) characters
@@ -82,54 +101,47 @@ Keep the alias in the profile file and then just load the profile.
 [[ -s "$HOME/.profile" ]] && . "$HOME/.profile"
 ```
 
-* -s is a file test operator for checking if a file exists and has **a non-zero size**. Works with the double brackets syntax ([[ ... ]])
-* -f is a file test operator for checking if a file exists and is a **regular file**. Works with []. the -f operator is not compatible with the double brackets syntax ([[ ... ]])
-
 * The && (AND operation) ensures that the next command is executed only if the previous command (the file test) evaluates to true.
-
 * The dot (.) is a special command in Bash that is used to "source" or include the content of another file into the current script
 
-* The single brackets are used for basic conditional expressions.
 
+* `-s` is a file test operator for checking if a file exists and has **a non-zero size**. Works with the double brackets syntax ([[ ... ]])
 * The double brackets are part of an extended conditional expression syntax available in Bash,
-
-Bash code with -s
 ```shell
-if [[ -s "$HOME/.profile" ]]; 
-    then . "$HOME/.profile"
-fi
-
-# Above can also be written as 
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
-# OR
 [[ -s "$HOME/.profile" ]] && . "$HOME/.profile"
 ```
-Bash code with if....else with -s
 
+* `-f` is a file test operator for checking if a file exists and is a **regular file**. Works with []. the -f operator is not compatible with the double brackets syntax ([[ ... ]])
+* The single brackets are used for basic conditional expressions.
+```shell
+[ -f "$HOME/.profiler" ] && echo "File '$HOME/.profile' exists."
+```
+
+* The `-e` flag is a test operator that checks for file existence.
+```shell
+test -e $HOME/.profiler && source $HOME/.profiler
+```
+
+##### Bash code with -s
 ```shell
 if [[ -s "$HOME/.profile" ]] && [ -f "$HOME/.profile" ]; then
     # Code to execute if both conditions are true
     echo "1. File '$HOME/.profile' exists, is a regular file, and has a non-zero size."
+    source $HOME/.profile
 else
     # Code to execute if either condition is false
     echo "File '$HOME/.profile' does not meet both conditions."
 fi
 
-[[ -s "$HOME/.profiled" ]] && [ -f "$HOME/.profile" ] && echo "1.1 File '$HOME/.profile' exists." || echo "1.1 File '$HOME/.profiled' does not meet both conditions."
+# Above can also be written as 
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+[[ -s "$HOME/.profiled" ]] && [ -f "$HOME/.profile" ] && source $HOME/.profiler || echo "1.1 File '$HOME/.profiled' does not meet both conditions."
+
+# OR
+[[ -s "$HOME/.profile" ]] && . "$HOME/.profile"
 ```
 
-Bash code with -f
-```shell
-[ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '$(brew --prefix)/etc/profile.d/autojump.sh' ];
-  then . '$(brew --prefix)/etc/profile.d/autojump.sh';
-fi
-```
-
-Bash code with if...else with -f switch
-
+##### Bash code with -f
 ```shell
 if [ -f "$HOME/.profile" ]; then
     echo "2. File '$HOME/.profile' exists, is a regular file, and has a non-zero size."
@@ -140,4 +152,7 @@ fi
 # Reduced Syntax
 [ -f "$HOME/.profiler" ] && echo "3. File '$HOME/.profile' exists." || echo "3. File '$HOME/.profiler' does not meet both conditions."
 
+# Syntax with test of existance -e
+test -e $HOME/.profile && echo "1 File '$HOME/.profile' exists." 
+test -e "$HOME/.profiled" && echo "2 File '$HOME/.profile' exists." || echo "2.1 File '$HOME/.profiled' does not meet both conditions."
 ```
