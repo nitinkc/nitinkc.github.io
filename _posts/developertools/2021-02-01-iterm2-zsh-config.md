@@ -100,13 +100,9 @@ Follow the documentation for further instructions.
 * [Autojump plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autojump)
 * [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
 * [Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
-
 * [Zsh Completions](https://github.com/zsh-users/zsh-completions/#Manual%20installation)
-
 * [Zsh history substring](https://github.com/zsh-users/zsh-history-substring-search)
-
 * [Zsh Apple touchbar](https://github.com/zsh-users/zsh-apple-touchbar)
-
 
 [Time Warrior](https://timewarrior.net/docs/install/)
 
