@@ -52,6 +52,10 @@ The following tools helps a lot making the develop environment much more conduci
 | Transmission             | for Peer to peer Torrent transfer. Setup your own server                                   |
 
 
+# caffeinate
+
+Keep Your Mac awake
+
 # Mac Shortcuts
 
 Press Shift-Command-5 (macOS Mojave or later) and invoke the screen capture panel.

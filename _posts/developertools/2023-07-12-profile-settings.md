@@ -94,6 +94,15 @@ Adding a Temporary Location
 PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 ```
 
+# Alias
+
+Few Alias are created by zsh which is annoying so locate the file `~/.oh-my-zsh/lib/directories.zsh`
+
+you can locate the alias using ack search
+```shell
+ack "it2api=/Users/nichaurasia/.iterm2/it2api" --ignore-dir=Library ~
+```
+
 # Load the default .profile
 
 Keep the alias in the profile file and then just load the profile.

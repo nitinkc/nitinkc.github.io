@@ -56,7 +56,7 @@ OR
 
 Edit `~/.zshrc` and `set ZSH_THEME="powerlevel10k/powerlevel10k"`.
 
-### Exa insted of ls
+### Exa instead of ls
 ```sh
 brew install exa
 ```
@@ -68,20 +68,23 @@ if [ -x "$(command -v exa)" ]; then
     alias la="exa --long --all --group"
 fi
 ```
-### Install plugins
 
-* [Auto suggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+### Install zshrc plugins
 
-* [Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+Standard plugins are at `$ZSH/plugins/` or `~/.oh-my-zsh/plugins`
 
-* [Zsh Completions](https://github.com/zsh-users/zsh-completions/#Manual%20installation)
+Custom plugins may be added to `$ZSH_CUSTOM/plugins/` or `~/.oh-my-zsh/custom/plugins`
 
-* [Zsh history substring](https://github.com/zsh-users/zsh-history-substring-search)
+Pluions can be added to the `.zshrc` file lile below
+```shell
+plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting)
+```
 
-* [Zsh Apple touchbar](https://github.com/zsh-users/zsh-apple-touchbar)
+Some plugins have to be installed before adding to the plugins array
 
 ```sh
 brew install zsh-syntax-highlighting zsh-completions
+brew install autojump
 ```
 
 in case of issues
@@ -90,6 +93,20 @@ in case of issues
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
+
+Follow the documentation for further instructions.
+
+* [Auto suggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+* [Autojump plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autojump)
+* [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
+* [Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+
+* [Zsh Completions](https://github.com/zsh-users/zsh-completions/#Manual%20installation)
+
+* [Zsh history substring](https://github.com/zsh-users/zsh-history-substring-search)
+
+* [Zsh Apple touchbar](https://github.com/zsh-users/zsh-apple-touchbar)
+
 
 [Time Warrior](https://timewarrior.net/docs/install/)
 
