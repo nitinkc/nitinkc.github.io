@@ -105,13 +105,13 @@ Keep the alias in the profile file and then just load the profile.
 * The dot (.) is a special command in Bash that is used to "source" or include the content of another file into the current script
 
 
-* `-s` is a file test operator for checking if a file exists and has **a non-zero size**. Works with the double brackets syntax ([[ ... ]])
+* `-s` is a file test operator for checking if a file exists and has **a non-zero size**. Works with the double brackets syntax (`[[ ... ]]`)
 * The double brackets are part of an extended conditional expression syntax available in Bash,
 ```shell
 [[ -s "$HOME/.profile" ]] && . "$HOME/.profile"
 ```
 
-* `-f` is a file test operator for checking if a file exists and is a **regular file**. Works with []. the -f operator is not compatible with the double brackets syntax ([[ ... ]])
+* `-f` is a file test operator for checking if a file exists and is a **regular file**. Works with []. the -f operator is not compatible with the double brackets syntax (`[[ ... ]]`)
 * The single brackets are used for basic conditional expressions.
 ```shell
 [ -f "$HOME/.profiler" ] && echo "File '$HOME/.profile' exists."
@@ -125,34 +125,24 @@ test -e $HOME/.profiler && source $HOME/.profiler
 ##### Bash code with -s
 ```shell
 if [[ -s "$HOME/.profile" ]] && [ -f "$HOME/.profile" ]; then
-    # Code to execute if both conditions are true
-    echo "1. File '$HOME/.profile' exists, is a regular file, and has a non-zero size."
+    echo "File '$HOME/.profile' exists, is a regular file, and has a non-zero size."
     source $HOME/.profile
 else
-    # Code to execute if either condition is false
     echo "File '$HOME/.profile' does not meet both conditions."
 fi
 
 # Above can also be written as 
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
-[[ -s "$HOME/.profiled" ]] && [ -f "$HOME/.profile" ] && source $HOME/.profiler || echo "1.1 File '$HOME/.profiled' does not meet both conditions."
+[[ -s "$HOME/.profile" ]] && [ -f "$HOME/.profile" ] &&  echo "File '$HOME/.profile' exists, is a regular file, and has a non-zero size."; source $HOME/.profile || echo "File '$HOME/.profiled' does not meet both conditions."
 
-# OR
+# OR without echo and else
 [[ -s "$HOME/.profile" ]] && . "$HOME/.profile"
 ```
 
 ##### Bash code with -f
 ```shell
-if [ -f "$HOME/.profile" ]; then
-    echo "2. File '$HOME/.profile' exists, is a regular file, and has a non-zero size."
-else
-    echo "File '$HOME/.profile' does not meet both conditions."
-fi
-
 # Reduced Syntax
-[ -f "$HOME/.profiler" ] && echo "3. File '$HOME/.profile' exists." || echo "3. File '$HOME/.profiler' does not meet both conditions."
+[ -f "$HOME/.profile" ] && echo "File '$HOME/.profile' exists."; . "$HOME/.profile" || echo "File '$HOME/.profile' does not exist"
 
 # Syntax with test of existance -e
-test -e $HOME/.profile && echo "1 File '$HOME/.profile' exists." 
-test -e "$HOME/.profiled" && echo "2 File '$HOME/.profile' exists." || echo "2.1 File '$HOME/.profiled' does not meet both conditions."
+test -e $HOME/.profile && echo "File '$HOME/.profile' exists."; . "$HOME/.profile" || echo "File '$HOME/.profile' does not exist"
 ```
