@@ -35,7 +35,9 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false; kill
 
 **Enabling the Path Bar for the OS X Finder**
 
-From a Finder window, pull down the “View” menu and select “Show Path Bar” you can double-click the individual folders to jump directly to them, and you can even drag and drop files and folders to them
+From a Finder window, pull down the “View” menu and select “Show Path Bar” 
+
+you can double-click the individual folders to jump directly to them, and you can even drag and drop files and folders to them
 
 **Path Bar appears at the bottom of the Finder Window**
 
