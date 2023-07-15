@@ -1,8 +1,8 @@
 ---
-title:  "iTerm2 Set up with zsh on Mac"
+title:  "MacBook : iTerm2 Set up with zsh on Mac"
 date:   2021-02-01 14:00:00
-categories: ['Developer tools']
-tags: ['Developer tools']
+categories: ['Developer tools','MacBook']
+tags: ['Developer tools','Macbook']
 ---
 
 {% include toc title="Index" %}

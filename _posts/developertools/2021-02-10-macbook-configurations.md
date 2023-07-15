@@ -1,9 +1,9 @@
 ---
 # layout: static
-title:  "Configuring a new MacBook for Dev Productivity"
+title:  "MacBook : Configuring a new MacBook for Dev Productivity"
 date: 2021-02-10 02:15:00
-categories: ['Developer tools']
-tags: ['Developer tools']
+categories: ['Developer tools','MacBook']
+tags: ['Developer tools','Macbook']
 ---
 
 ## Contents
