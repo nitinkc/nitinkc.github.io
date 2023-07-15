@@ -15,7 +15,7 @@ tags: ['Developer tools','Macbook']
 Installing the following tools and configuring them ensures maximum ease of development
 
 1. Install Brew Package manager
-2. Create personalized [profiles and configure alias](https://github.com/nitinkc/SystemEnvironment#readme)
+2. Create personalized [profiles and configure alias](https://github.com/nitinkc/SystemEnvironment/tree/master/mac)
 
 
 | Tool              | Details                                                                                           | 
