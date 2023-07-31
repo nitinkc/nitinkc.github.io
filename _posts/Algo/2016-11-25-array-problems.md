@@ -8,12 +8,18 @@ tags: [Algorithms]
 {% include toc title="Index" %}
 
 ### Two Pointer Technique
+For Arrays, Strings and Lists
 
-  - One Fast runner the other one runs slow.
-  - One begins from start, other from the end.
+* For Array, length is a field - `array.length`
+* For String, length is a method - `str.length()` 
+* List length is a method = `list.size()`
 
-##### Reversing String using two pointers.
+
+##### One Fast runner the other one runs slow.
+
+##### One begins from start, other from the end.
 {% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
+
 
 ##### Left pointer and Right pointer movements based on if condition.
 
@@ -71,3 +77,5 @@ result = result + Math.min(left[i],right[i]) - arr[i];
 
 
 ### Sliding Window Approach
+
+

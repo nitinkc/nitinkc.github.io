@@ -6,7 +6,7 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-## Optional
+# Optional
 
 * New class Optional in java.util package.
 * It is a Container to hold at most one value, like Collections and Arrays.
@@ -71,5 +71,20 @@ public Optional<Map<String, Object >> getInfoByCode(String code){
 ### IfPresent Or else
 
 Considering a scenario where we need to return the first element, if present, else return an empty response.
+
 {% gist nitinkc/1c8d47211a5b373292620dce79dbc36b %}
 
+
+# The null == object comparison:
+
+Using `null == object` is a defensive programming practice, especially in languages like Java, where accidental assignment 
+in conditionals can cause bugs. 
+
+Writing null == object instead of object == null prevents accidental assignment if a developer mistakenly use a single = instead of ==. 
+
+For example, `if(object = null)`, the expression object = null will always evaluate to null, and the **if condition will always be false**, even if object is not null.
+
+However, object == null to be more natural to read and understand. 
+Modern IDEs often help prevent such mistakes by showing a warning when an assignment is used inside a conditional expression. 
+So, whether to use null == object or object == null is largely a matter of personal preference and coding standards within a team. 
+Both forms are correct and serve the same purpose.
