@@ -3,6 +3,7 @@ title:  "Materialized views"
 date:   2023-08-02 14:25:00
 categories: ['SQL']
 tags: ['SQL']
+toc: true
 ---
 
 
@@ -11,7 +12,7 @@ A scheduled refresh ensures that the data in the materialized view is kept up-to
 
 In Oracle, there are different ways to schedule the refresh of materialized views:
 
-1. **Manual Refresh:**
+# Manual Refresh
    By default, materialized views are set to be refreshed manually. You can manually refresh a materialized view using
 the `DBMS_MVIEW` package or the `DBMS_SNAPSHOT` package. For example:
 ```sql
@@ -21,7 +22,7 @@ BEGIN
 END;
 ```
 
-2. **Refresh on Commit:**
+# Refresh on Commit
    You can configure a materialized view to be automatically refreshed.
 whenever there is a commit on the master tables that the materialized view depends on. 
 
@@ -35,7 +36,7 @@ SELECT ...
 FROM ...
 ```
 
-3. **Refresh on Demand:**
+# Refresh on Demand
    You can also schedule a materialized view to be refreshed at specific time intervals (e.g., hourly, daily, weekly)
 using the Oracle Scheduler. This involves creating a scheduled job to perform the refresh at the desired frequency.
 ```sql
