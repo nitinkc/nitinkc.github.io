@@ -12,6 +12,31 @@ tags: [Algorithms]
 2. Doubly Linked list
 3. Circular Linked List
 
+# Java Implementation of LinkedList
+```java
+import java.util.LinkedList;
+
+// Creating a LinkedList
+LinkedList<String> linkedList = new LinkedList<>();
+
+// Adding elements to the LinkedList
+linkedList.add("Apple");
+linkedList.add("Banana");
+
+// Adding elements at specific positions
+linkedList.add(2, "Grape");//Index 2
+linkedList.addFirst("Apricot");// Start of tje LinkedList
+linkedList.addLast("Fig");// End of the linked List
+
+// Getting elements by index
+String secondElement = linkedList.get(1);
+
+// Removing elements
+linkedList.remove("Banana");
+linkedList.remove(3);
+}
+
+```
 ## Singly Linked List
 * Head is the starting point
 * Can traverse only in one direction
