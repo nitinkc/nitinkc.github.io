@@ -10,20 +10,24 @@ tags: ['Java']
 
 *[Collection API]({{ site.url }}/assets/media/Collections.docx)*.
 
-*[Collection API - PDF]({{ site.url }}/assets/media/Collections.pdf)*.
-```
+```scss
 Collection(I)
 |
 |---List
 |      |
 |      |----ArrayList
 |      |----LinkedList
-|      |----Vector---Stack
+|      |----Vector
+|      |       |
+|      |       |----Stack
 |      
 |      
 |----Set
 |      |
-|      |----HashSet----LinkedHashSet
+|      |----HashSet
+|      |       |
+|      |       |----LinkedHashSet
+|      |
 |      |----TreeSet
 |      
 |      
@@ -31,6 +35,40 @@ Collection(I)
 |      |
 |      |----PriorityQueue(I)
 |      |----BlockingQueue
+|      |       |
+|      |       |----LinkedBlockingQueue
+|      |       |----LinkedBlockingDeque
+|      
+|      
+|----Deque
+|      |
+|      |----ArrayDeque
+|      |----LinkedList
+|      
+|      
+|----Map
+|      |
+|      |----HashMap
+|      |       |
+|      |       |----LinkedHashMap
+|      |
+|      |----TreeMap
+|      |----WeakHashMap
+|      |----ConcurrentHashMap
+|      |----ConcurrentSkipListMap
+|      
+|      
+|----NavigableMap(I)
+|      |
+|      |----TreeMap
+|      |----ConcurrentSkipListMap
+|      
+|      
+|----NavigableSet(I)
+       |
+       |----TreeSet
+       |----ConcurrentSkipListSet
+
 ```
 [Collection Interface](http://blogs.bgsu.edu/nitinc/2017/02/11/collection/){:target="_blank"}
 
