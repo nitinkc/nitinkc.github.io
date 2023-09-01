@@ -76,7 +76,7 @@ class Node<V> {
 
 ## Singly LinkedList Challenges
 
-Reaching the second last element and staying there
+### Reaching the second last element and staying there
 
 ```java
 // Reaching the second last element and staying there
