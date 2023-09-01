@@ -76,6 +76,15 @@ class Node<V> {
 
 ## Singly LinkedList Challenges
 
+Reaching the second last element and staying there
+
+```java
+// Reaching the second last element and staying there
+while(runner.next.next != null){
+  runner = runner.next;
+}
+```
+
 ### Traversal accross all elements
 ```java
  Node runner = head;//head
