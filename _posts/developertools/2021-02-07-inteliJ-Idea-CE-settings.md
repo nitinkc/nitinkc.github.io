@@ -45,7 +45,7 @@ If opening on the top, uncheck the "Show tabs in one row, so that all the tabs a
 ![](/assets/images/intelliJ/hideUsages.png)
 
 ## Change Font size
-![changeFont.png]((/assets/images/intelliJ/2FchangeFont.png))
+![changeFont.png]((/assets/images/intelliJ/changeFont.png))
 
 ## Useful Plugins
 

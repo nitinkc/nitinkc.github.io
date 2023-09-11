@@ -15,7 +15,7 @@ tags: ['Java']
 Good Design Principle
 ``` keep together what belongs together ```
 
-tight relationship between the car and the means of selecting a particular car, the criteria, should actually be in the
+Tight relationship between the car and the means of selecting a particular car, the criteria, should actually be in the
 car class.
 
 
@@ -23,7 +23,8 @@ A pure function is essentially one where the return value, the result of that fu
 There are no variations and there are no side effects.
 
 So, if we had a pure function and we call it, let's say, three and seven as arguments, the mechanism of the pure
-function always produces the same result for the same arguments; so, perhaps 10 in this case, if it were adding them
+function always produces the **same result** for the **same arguments**; 
+so, perhaps 10 in this case, if it were adding them
 together.
 
 Further, a pure function does not do anything else.
