@@ -29,6 +29,17 @@ public ResponseEntity<Student> getStudentById(@PathVariable Long studentId) {
 
 ### Add Validation to the Request
 
+User Entity Class (Using Lombok)
+```java
+@Data
+public class User {
+	private Integer id;
+	@Size(min=2,message = "Names should be at least characters long")
+	private String name;
+	@Past(message = "DOB Cannot be in the Future")
+	private Date dob;
+}
+```
 
 
 # POST Request
@@ -39,5 +50,5 @@ public ResponseEntity<Student> getStudentById(@PathVariable Long studentId) {
 Read the Request Body 
 `@RequestBody` in the method parameter
 
-[Link title]({{ site.baseurl }}{% post_url 2021-02-13-POST-Requests %})
+[Link title]({{ site.baseurl }}{% 2021-02-13-POST-Requests %})
 
