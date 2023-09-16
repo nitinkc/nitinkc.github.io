@@ -33,12 +33,15 @@ and use the following pattern
 ![](/assets/images/intelliJ/2lineTabs.png)
 
 
-# Open the working Tabs on the left side.
-Ensure to check the MARK MODIFIED check box.
+## Open the working Tabs on the left side.
+
+##### Ensure to check the MARK MODIFIED check box.
 
 ![](/assets/images/intelliJ/tabsLeft.png)
 
-If opening on the top, uncheck the "Show tabs in one row, so that all the tabs appear like this
+##### In one Row
+If opening on the top, uncheck the "Show tabs in one row, so that all the 
+tabs appear like this
 ![](/assets/images/intelliJ/oneRowTab.png)
 
 ## Hide Usages
@@ -47,7 +50,11 @@ If opening on the top, uncheck the "Show tabs in one row, so that all the tabs a
 ## Change Font size
 ![changeFont.png]((/assets/images/intelliJ/changeFont.png))
 
-## Useful Plugins
+
+## Hard Wrap
+![]((/assets/images/intelliJ/hardWrap.png))
+
+# Useful Plugins
 
 Scenario : When entity or DTO classes have lots of fields, it is easy to miss fileds that are set,
 to Generate all Setters for long entity classes, use this plugin
