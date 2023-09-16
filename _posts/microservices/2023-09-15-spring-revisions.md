@@ -51,5 +51,4 @@ Read the Request Body
 `@RequestBody` in the method parameter
 
 
-[POST Request]({% post_url _posts/microservices/2021-02-13-POST-Requests %})
-[Configuring iTerm]({% post_url _posts/developertools/2021-02-01-iterm2-zsh-config %})            |
+[POST Request](https://nitinkc.github.io/spring/microservices/POST-Revi/)
