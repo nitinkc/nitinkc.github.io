@@ -39,3 +39,12 @@ protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotV
     return  new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
 }
 ```
+
+```java
+@NotNull
+@NotEmpty
+@NotBlank: to have at least one character
+@Min and @Max: only for numerical field
+@Pattern: string field following a particular regular expression.
+@Email: specialization with @Pattern for a valid email address.
+```

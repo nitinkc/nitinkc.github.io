@@ -50,5 +50,5 @@ public class User {
 Read the Request Body 
 `@RequestBody` in the method parameter
 
-[Link title]({{ site.baseurl }}{% 2021-02-13-POST-Requests %})
 
+[POST Request]{% post_url _posts/microservices/2021-02-13-POST-Requests %}
