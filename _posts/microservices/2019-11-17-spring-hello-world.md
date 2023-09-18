@@ -1,7 +1,7 @@
 ---
 title:  "Spring Boot - Basics"
 date:   2019-11-17 13:54:00
-categories: Spring Microservices
+categories: Spring\ Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 
