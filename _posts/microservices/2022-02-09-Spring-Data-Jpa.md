@@ -4,8 +4,8 @@ title:  "Spring Data JPA"
 date:   2022-02-09 20:55:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
+toc: true
 ---
-{% include toc title="Index" %}
 
 # CRUD Rest Calls
 
@@ -27,7 +27,7 @@ public class StudentController {
 	@Autowired
 	private StudentRepository studentRepository;
 
-	// Retrieve all users
+	// Retrieve all users, bypassing service
 	@GetMapping(path = "/students")
 	public List<Student> retrieveAllUsers() {
 		System.err.println("###################################### Retrieving All Users ######################################");

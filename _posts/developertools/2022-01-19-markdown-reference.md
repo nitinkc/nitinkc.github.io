@@ -73,8 +73,9 @@ Use backtick quotes (\`) to display a liquid tag as a span of code .
 ## Insert Table
 
 ```markdown
+
 | Column Header 1 | Column Header 1  | 
-| :---		| :---   |      
+| :----  		| :---    |      
 | ⌘E    	| Move to the last location you edited.	|
 | ⌘  + 1  	|It activates the quick fix.|
 ```
@@ -102,14 +103,14 @@ sidebar:
 ```
 ## INCLUDE TIME
 
-| Column Header 1 | Column Header 1  | 
-| :---				| :---   |  
-|Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} |{{ site.time  }}|
-|{% raw  %}`{{ 'now' | date: "%Y/%m/%d" }}`{% endraw %}|{{ 'now' | date: "%Y/%m/%d" }}|
-|{% raw  %}`{{ 'now' | date_to_rfc822 }}`{% endraw %}|{{ 'now' | date_to_rfc822 }}|
-|{% raw  %}`{{ 'now' | date: "%C" }}`{% endraw %}|{{ 'now' | date: "%C" }}|
-|{% raw  %}`{{ 'now' | date: "%c" }}`{% endraw %}|{{ 'now' | date: "%c" }}|
-|{% raw  %}`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}|{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
+| Column Header 1                                                         | Column Header 1                               | 
+|:------------------------------------------------------------------------|:----------------------------------------------|  
+| Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} | {{ site.time  }}                              |
+| {% raw  %}`{{ 'now'                                                     | date: "%Y/%m/%d" }}`{% endraw %}              |{{ 'now' | date: "%Y/%m/%d" }}|
+| {% raw  %}`{{ 'now'                                                     | date_to_rfc822 }}`{% endraw %}                |{{ 'now' | date_to_rfc822 }}|
+| {% raw  %}`{{ 'now'                                                     | date: "%C" }}`{% endraw %}                    |{{ 'now' | date: "%C" }}|
+| {% raw  %}`{{ 'now'                                                     | date: "%c" }}`{% endraw %}                    |{{ 'now' | date: "%c" }}|
+| {% raw  %}`{{ 'now'                                                     | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %} |{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
 
 ## Notices with theme
 

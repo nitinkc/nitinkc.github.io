@@ -35,5 +35,5 @@ If, however, explicit dates are to be passed and particular type of Order is als
 localhost:8084/orders/dashboard/details?fromDate=2021-06-01&toDate=2022-06-17&orderType=Grocery Order
 ```
 
-The corrosponding Controller would be as follows. 
+The corresponding Controller would be as follows. 
 {% gist nitinkc/d347e24dc5a08d8195cd86c5a32505be %}
