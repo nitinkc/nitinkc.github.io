@@ -2,7 +2,7 @@
 title:  "GET REST Calls"
 date:   2023-09-15 21:30:00
 categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+tags: [CRUD]
 toc: true
 ---
 

@@ -3,7 +3,7 @@
 title:  "Spring Data JPA"
 date:   2022-02-09 20:55:00
 categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+tags: [CRUD]
 toc: true
 ---
 
