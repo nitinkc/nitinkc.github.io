@@ -8,106 +8,7 @@ toc: true
 
 # Stereotype Annotations
 
-@Component, @Controller, @Service, and @Repository 
-
-Port used = 8089
-```shell script
-server.port=8089
-```
-1. HelloWorld using Request Mapping
-```java
-   @RequestMapping(method= RequestMethod.GET,path="/requestMapping")
-```
-http://localhost:8089/api/v0/hello-world/requestMapping
-
-2. GetMapping
-```java
-@GetMapping(path="/getMapping")
-```
-http://localhost:8089/api/v0/hello-world/getMapping
-
-3. GettMapping returning a bean (JSON Response)
-```java
-@GetMapping(path="/getBean")
-public HelloWorldReturnBean helloWorldReturnBean() {
-    return new HelloWorldReturnBean("Hello World - From HelloWorldReturnBean");
-}
-```
-http://localhost:8089/api/v0/hello-world/getBean
-
-4. Passing in a path variable in the GET request
-```java
-@GetMapping(path = "/pathVariable/{var_name}")
-public String helloWorldPathVariable(@PathVariable("var_name") String name) {
-    return String.format("The Value returned is %s", name);
-}
-```
-http://localhost:8089/api/v0/hello-world/pathVariable/{var_name}
-
-# URIs
-Retrieve all Users - GET /users
-
-Create a User - POST /users
-
-Retrieve one User - GET /users/{id} -> /users/1
-
-Delete a User - DELETE /users/{id} -> /users/1
-
-Retrieve all posts for a User - GET /users/{id}/posts
-
-Create a posts for a User - POST /users/{id}/posts
-
-Retrieve details of a post - GET /users/{id}/posts/{post_id}
-
-
-# GET Request
-
-`@RequestMapping(method = RequestMethod.GET)` OR
-`@GetMapping("/student/{studentId}")`
-
-Read the Path Variable 
-`@PathVariable` in the method parameter
-
-```java
-@GetMapping("/student/{studentId}")
-public ResponseEntity<Student> getStudentById(@PathVariable Long studentId) {
-    return ResponseEntity.ok(studentService.getStudentById(userId));
-}
-```
-
-### Map model to Response and add return validation
-
-### Add Validation to the Request
-
-User Entity Class (Using Lombok)
-
-```java
-@Data
-public class User {
-	private Integer id;
-	@Size(min=2,message = "Names should be at least characters long")
-	private String name;
-	@Past(message = "DOB Cannot be in the Future")
-	private Date dob;
-}
-```
-
-
-# POST Request
-
-`@RequestMapping(method = RequestMethod.POST)` OR
-`@PostMapping("/students")`
-
-Read the Request Body 
-`@RequestBody` in the method parameter
-
-
-[POST Request](https://nitinkc.github.io/spring/microservices/POST-Requests/)
-
-
-# Stereotype Annotations
-
-> Basic philosophy : Conventions over configurations
+> Basic philosophy of Spring Boot : Conventions over configurations
 
 ```java
 @Component 
@@ -115,32 +16,35 @@ Read the Request Body
 @Service
 @Repository
 ```
+# REST APIs
 
-## Controller Vs RestController
-
-Controller needs `@ResponseBody` with method name
-```java
-@Controller
-@RequestMapping("/health")
-public class HealthCheckController {
-    @RequestMapping(path = "/check", method = RequestMethod.GET)
-    public @ResponseBody String hello(){
-        return "Health is Ok";
-    }
-}
+```shell
+Retrieve all Users - GET /users
+Create a User - POST /users
+Retrieve one User - GET /users/{id} -> /users/1
+Delete a User - DELETE /users/{id} -> /users/1
+Retrieve all posts for a User - GET /users/{id}/posts
+Create a posts for a User - POST /users/{id}/posts
+Retrieve details of a post - GET /users/{id}/posts/{post_id}
 ```
 
-```java
- @RequestMapping(path = "/requestMapping/{studentId}",
-            produces = { "application/json", MediaType.APPLICATION_XML_VALUE,  MediaType.APPLICATION_PDF_VALUE})
-public @ResponseBody StudentDto getStudentByIdRequestMapping(@PathVariable String studentId){
-        ...
-}
+# Appliation Yaml settings
+Set a desired Port
+```shell script
+server.port=8089
 ```
 
-## Scans
+# Scans
 
-Entity Scan vs
+## ComponentScan
+
+```java
+@ComponentScan(basePackages = {
+        "com.test.animals", 
+        "com.flowers"
+})
+```
+## Entity Scan
 
 ```java
 @EntityScan(basePackages = {"com.learningJPA.dSpringDataRepository"
@@ -149,7 +53,7 @@ Entity Scan vs
 }) 
 ```
 
-What is this??
+## What is this??
 ```java
 @SpringBootApplication(
     scanBasePackages = {
@@ -159,16 +63,7 @@ What is this??
     exclude = { JmxAutoConfiguration.class })
 ```
 
-ComponentScan
-
-```java
-@ComponentScan(basePackages = {
-        "com.test.animals", 
-        "com.flowers"
-})
-```
-
-## Autowired Dependency Injection
+# Autowired Dependency Injection
 
 Eliminates the need of creating a new object and hence the need of constructors from the components
 
@@ -178,57 +73,148 @@ Eliminates the need of creating a new object and hence the need of constructors 
 StudentService studentService;//Free to use studentService object within the class anywhere
 ```
 
-# Mappings
+# Sequence of execution
 
-### GetMapping
+> Postman/client -> Controller -> Service -> Repository -> Service -> Controller
 
+# Controller Vs RestController
+
+Controller needs `@ResponseBody` with method name
 ```java
-@RequestMapping(method= RequestMethod.GET,path="/requestMapping")
+@Controller
+@RequestMapping(method= RequestMethod.GET, path = "/health",
+        produces = { "application/json", MediaType.APPLICATION_XML_VALUE})
+public class HealthCheckController {
+    @RequestMapping(path = "/check", method = RequestMethod.GET)
+    public @ResponseBody String hello(){// ResponseBody Annotation is compulsory
+        return "Health is Ok";
+    }
+}
 ```
 
+# GET Request
+
 ```java
-@GetMapping(
-        value = "/{studentId}", 
-        path = "/{studentId}",
-        consumes = {MediaType.TEXT_PLAIN_VALUE, MediaType.APPLICATION_JSON_VALUE},
-        produces = { "application/json", MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_PDF_VALUE}
-)
+@RequestMapping(method = RequestMethod.GET, 
+        path = "/student/{studentId}")
+```
+OR
+
+```java
+@GetMapping(value = "/student/{studentId}", 
+        path = "/student/{studentId}",
+        produces = { "application/json", MediaType.APPLICATION_XML_VALUE})
 ```
 
-### Difference between PathVariable and RequestParam
+Between value and path attribute, value is commonly used to describe the path  
 
+Shortened GetMapping
+```java
+@GetMapping(path="/getMapping")
+```
 
-##### Read the Path Variable
+### GetMapping returning a bean (JSON Response)
+```java
+@GetMapping(path="/getBean")
+public HelloWorldReturnBean helloWorldReturnBean() {
+    return new HelloWorldReturnBean("Hello World - From HelloWorldReturnBean");
+}
+```
 
-`@PathVariable` in the method parameter
+### Path variable
 
+> ```javascript
+>http://localhost:8089/api/v0/hello-world/pathVariable/{var_name}
+> ```
+Read the Path Variable with `@PathVariable` in the method parameter
 ```java
 @GetMapping("/student/{studentId}")
 public ResponseEntity<Student> getStudentById(@PathVariable Long studentId) {
     return ResponseEntity.ok(studentService.getStudentById(userId));
 }
 ```
+```java
+@GetMapping(path = "/pathVariable/{var_name}")
+public String helloWorldPathVariable(@PathVariable("var_name") String name) {
+    return String.format("The Value returned is %s", name);
+}
+```
 
-##### Reading via RequestParam
+### RequestParam
 
 > ```javascript
-> /jpa/students/pagination?pageSize=5&pageNo=1&sortBy=email
+> /jpa/students/pagination?page_size=5&pageNo=1&sortBy=email
 > ```
+Check the `required` and `defaultValue` arguments of RequestParam Annotation
 
 ```java
 // Retrieve all users page by page
 @GetMapping(path = "/students/pagination")
 public List<Student> 
     retrieveAllUsersPagination(@RequestParam(defaultValue = "0") Integer pageNo,
-                                                @RequestParam(defaultValue = "10") Integer pageSize,
-                                                @RequestParam(defaultValue = "id") String sortBy) {
+                               @RequestParam(value = "page_size",required = false, defaultValue = "10") Integer 
+        pageSize,
+                               @RequestParam(defaultValue = "id") String sortBy) {
         ...
 }
 ```
 
-### POST Mappings
+### Validation 
 
-Read the request body using `@RequestBody ` into either a Map, for simple structures or a class for complex
+
+##### Request Validation
+
+At Class level, add `@Validated` annotation and at the `@Valid` at the parameter level
+
+Check the `required` and `defaultValue` arguments of RequestParam Annotation
+[Complex Validations](https://nitinkc.github.io/spring/microservices/spring-validations/)
+
+Simple validation at parameter level with simple class
+```java
+@RestController
+@RequestMapping("/test") @Validated
+public class ValidationController {
+
+    @GetMapping("/email")
+    public String testEmail(@Valid @Email(message = "Please provide a valid email address")
+                            @RequestParam(value = "email") String email ,
+                            @RequestParam(value = "greet", required = false, defaultValue = "No Val from Request") 
+                            String greet,
+                            @RequestParam(value = "count", required = false, defaultValue = "-1") Integer count) {
+
+        StringBuilder sb= new StringBuilder();
+        sb.append(email).append(" email OK").append("\nCount is ").append(count).append("\n").append(greet);
+        return sb.toString();
+    }
+}
+```
+
+##### Response Validation
+
+In the DTO Class (Using Lombok)
+
+```java
+@Data
+public class StudentRequestBody {
+    private int count;
+    @JsonProperty("studentIds")//If the name in the request bofy differs from variable name
+    private List<String> studentIdList;
+    @Email(message = "Incorrect EmailID received from DB")
+    private String emailId;
+}
+```
+
+# POST Request
+
+```java
+
+@RequestMapping(method = RequestMethod.POST) OR
+@PostMapping("/students")
+```
+Read the Request Body using `@RequestBody` in the method parameter into either a Map, for simple structures or a class for complex
+
+[POST Request in Detail](https://nitinkc.github.io/spring/microservices/POST-Requests/)
+
 
 ### With Map as Request Body
 
@@ -237,6 +223,16 @@ if request body is like below, a map can be used
 {
   "values":["10","12.5","50","100"]
 }
+```
+
+Curl Request
+
+```shell
+curl --location 'localhost:8090/student/db/studentIdsByMap' \
+--header 'Content-Type: application/json' \
+--data '{
+    "values": ["1","2","3","4","5",""]
+}'
 ```
 
 ```java
@@ -248,17 +244,6 @@ public List<StudentDto> getStudentByIdsByMap(@RequestBody Map<String,List<Intege
 }
 ```
 
-Curl Request
-
-```shell
-curl --location 'localhost:8090/student/db/studentIdsByMap' \
---header 'Content-Type: application/json' \
---data '{
-    "studentIds": ["1","2","3","4","5",""]
-}'
-```
-
-
 ### With Class as Request Body
 
 ```json
@@ -268,25 +253,7 @@ curl --location 'localhost:8090/student/db/studentIdsByMap' \
   "studentIds": ["1","2","3","4","5"]
 }
 ```
-
-```java
-@PostMapping(path = "/studentIdsByClassName",
-            consumes = {MediaType.APPLICATION_JSON_VALUE},
-            produces = {"application/json"})
-public StudentDtoClass getStudentByIdsRequestBody(@RequestBody StudentRequestBody studentRequestBody){
-        ...
-}
-```
-Corresponding Java class to catch the request Body
-
-```java
-public class StudentRequestBody {
-    private int count;
-    @JsonProperty("studentIds")//If the name in the request body differs from variable name
-    private List<String> studentIdList;
-    private String greeting;
-}
-```
+Curl Request
 
 ```shell
 curl --location 'localhost:8090/student/db/studentIdsByClassName' \
@@ -298,31 +265,53 @@ curl --location 'localhost:8090/student/db/studentIdsByClassName' \
 }'
 ```
 
+Corresponding Java class to catch the request Body
+
+```java
+public class StudentRequestBody {
+    private int count;
+    @JsonProperty("studentIds")//If the name in the request body differs from variable name
+    private List<String> studentIdList;
+    private String greeting;
+}
+```
+Controller
+```java
+@PostMapping(path = "/studentIdsByClassName",
+            consumes = {MediaType.APPLICATION_JSON_VALUE},
+            produces = {"application/json"})
+public StudentDtoClass getStudentByIdsRequestBody(@RequestBody StudentRequestBody studentRequestBody){
+        ...
+}
+```
+
 # Service
 
 For a single student Id, JPA's findById method can be utilized. It returns an Optional, so if in case the return is
-a null Optional Class findById can be utilized
+a null Optional Class findById can be utilized.
+
+### Return an Object
 
 ```java
 Optional<Student> studentById = studentRepository.findById(studentId);//Method from JPA Repo, returns Optional
 Student student = studentById.orElseGet(Student::new);//Return empty constructor if no data/Null
 ```
 
-The supplier in orElseGet can be rewritten in whichever way feels intuitive.
+The supplier in orElseGet can be written in whichever way feels intuitive.
 ```java
 Student student = studentById.orElseGet(Student::new);//Return empty constructor if no data/Null
 //student = studentById.orElseGet(() -> new Student());
 //student = studentById.orElseGet(() -> Student.builder().build());
 ```
 
-If the class structure of DAO Class is different than the DTO Class, then separate mappers or convertors can be written.
+##### Mapper 
 
-The convert method takes in DAO Object and returns DTO object
+If the class structure of DAO Class is different from the DTO Class, then separate mappers or convertors can be written.
+
 ```java
 StudentDto studentDto = studentMapper.convert(student);//Convertor/Mapper/Transformer
 ```
-
-Mapper of convertor can be written as
+The convert method takes in a DAO Object and returns a DTO object
 
 ```java
 @Component
@@ -340,14 +329,12 @@ public class StudentMapper {
 }
 ```
 
-Over all the service class with method to return a single student object would look like
+Over all the service class with method to return a single student object
 ```java
 @Service
 public class StudentServiceWithDb {
-    @Autowired
-    StudentRepository studentRepository;
-    @Autowired
-    StudentMapper studentMapper;
+    @Autowired StudentRepository studentRepository;
+    @Autowired StudentMapper studentMapper;
 
     public StudentDto getStudentById(int studentId) {
         Optional<Student> studentById = studentRepository.findById(studentId);//Method from JPA Repo, returns Optional
@@ -361,17 +348,19 @@ public class StudentServiceWithDb {
 }
 ```
 
+### Return a List of Object
+
 The method that returns a List of objects, based on the multiple student id's passed can be written using the
-findAllByIds method of JpaRepository Interface.
+`findAllByIds` method of JpaRepository Interface.
 
 ```java
 List<Student> studentDetailsList = studentRepository.findAllById(studentIdList);
 ```
-In order to convert the list of DAP objects to a list of DTO objects, the intuition could be of for loop like this
+In order to convert the list of DAO objects to a list of DTO objects, the intuition could be of for loop
 
 ```java
  //Intuitive way
-List<StudentDto> studentDtoList = new ArrayList<>();
+List<StudentDto> studentDtoList = new ArrayList<>();//Initialize the return array
 for(Student s:studentDetailsList){
     StudentDto singleStudentDto = studentMapper.convert(s);
     studentDtoList.add(singleStudentDto);
@@ -399,25 +388,24 @@ public List<StudentDto> getStudentByIds(List<Integer> studentIdList) {
 }
 ```
 
-# Simple Jackson Mapping
+# Jackson Mapping for DTO
+
+{: .notice} [Jackson Mapper in Detail](https://nitinkc.github.io/spring/microservices/jackson-mapper-details/)
 
 ```java
 @JsonProperty("studentIds")//If the name in the request body differs from variable name
  private List<String> studentIdList;
 ```
 
+Control other aspects of the DTO
 
-### Add Validation to the Request
-
-User Entity Class (Using Lombok)
+* if empty values in the array is not needed
 ```java
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
-public class User {
-	private Integer id;
-	@Size(min=2,message = "Names should be at least characters long")
-	private String name;
-	@Past(message = "DOB Cannot be in the Future")
-	private Date dob;
+public class Filters {
+    @JsonProperty("treatmentDay")
+    public String treatmentDay;
 }
 ```
 
@@ -449,10 +437,11 @@ If the requirement is to send the exception in business defined format, like bel
 
 Then the Custom Response class can be defined and be called into the GlobalException handler class
 ```java
-public class ExceptionResponse {
+public class ExceptionResponse {//Use Getters and Setters to avoid HttpMediaTypeNotAcceptableException
     private String errorCode;
     private String errorMessage;
     private String requestedURI;
+    ...
 }
 ```
 
@@ -465,29 +454,20 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = {StudentNotFoundException.class}) //Write the handler when such exception occurs
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ExceptionResponse handleStudentExceptions(//Method that executes upon encountering StudentNotFoundException
-            StudentNotFoundException exception, final HttpServletRequest request) {
-        ExceptionResponse error = new ExceptionResponse();
-        error.setErrorMessage(exception.getMessage());
-        error.setRequestedURI(request.getRequestURI());
-        error.setErrorCode(ERR_122.getErrorCode()+" :: "+ERR_122.getErrorMessage());
-
-        return error;
-    }
-
-    @ExceptionHandler(value = {DbDownException.class})
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public @ResponseBody
-    ExceptionResponse handleDbExceptions(
-            StudentNotFoundException exception, final HttpServletRequest request) {
-        ExceptionResponse error = new ExceptionResponse();
-        error.setErrorMessage(exception.getMessage());
-        error.setRequestedURI(request.getRequestURI());
-        error.setErrorCode(ERR_123.getErrorCode()+" :: "+ERR_123.getErrorMessage());
+           StudentNotFoundException exception, final HttpServletRequest request) {
+        //Set the desired fields
+        ExceptionResponse error = ExceptionResponse.builder()
+                .errorMessage(exception.getMessage())
+                .requestedURI(request.getRequestURI())
+                .exceptionType(exception.getClass().getSimpleName())
+                .methodName(request.getMethod())
+                .errorCode(ERR_122.getErrorCode()+" :: "+ERR_122.getErrorMessage())
+                .thrownByMethod(exception.getStackTrace()[0].getMethodName())//Method Name
+                .thrownByClass(exception.getStackTrace()[0].getClassName())//Class name, even the filename can be used
+                .build();
 
         return error;
     }
 }
-
 ```
-
 
