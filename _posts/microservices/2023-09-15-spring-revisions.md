@@ -8,14 +8,31 @@ toc: true
 
 # Stereotype Annotations
 
-> Basic philosophy of Spring Boot : Conventions over configurations
+Basic philosophy of Spring Boot : Conventions over configurations
+{: .notice--info}
 
-```java
-@Component 
-@Controller 
-@Service
-@Repository
-```
+##### @Component
+* **Purpose**: Marks a class as a Spring component or bean.
+* **Use Case**: Generally used as a generic stereotype for any Spring-managed component.
+* **Commonly Used in**: Utility classes, business logic classes, and other non-specialized components.
+
+##### @Controller 
+* **Purpose**: Marks a class as a Spring MVC controller.
+* **Use Case**: Used for classes that handle HTTP requests in a Spring MVC web application.
+* **Commonly Used in**: Classes that define request mappings, handle user input, and return views or data to the client.
+  
+##### @Service
+* **Purpose**: Marks a class as a service or business logic component.
+* **Use Case**: Typically used for classes that contain the business logic of the application.
+* **Commonly Used in**: Service layer classes that encapsulate business rules, data processing, and interactions with 
+  repositories or other services.
+
+##### @Repository
+* **Purpose**: Marks a class as a Spring Data repository.
+* **Use Case**: Used for classes that interact with a database or external data source.
+* **Commonly Used in**: Data access objects (DAOs) that perform CRUD (Create, Read, Update, Delete) operations on 
+  entities.
+
 # REST APIs
 
 ```shell
@@ -204,7 +221,6 @@ public class StudentRequestBody {
     private String emailId;
 }
 ```
-
 
 # POST Request
 
@@ -417,13 +433,28 @@ public class Filters {
 }
 ```
 
+# Repository
+
+Spring Data JAP is an implementation of Java Persistence API
+
 # Custom Exceptions
 
 Use `@ControllerAdvice` or `@RestControllerAdvice` for Global exception handling.
 
+### Difference between `@ControllerAdvice` & `@RestControllerAdvice`
+The primary difference is in the **type of responses** they handle. 
+* @RestControllerAdvice is geared toward RESTful services, where responses are typically data-centric (e.g., JSON or 
+XML),
+* while @ControllerAdvice is used in 
+traditional web applications, where responses often include both views and data.
+
+
+### @ResponseStatus
+
 Use `@ResponseStatus(HttpStatus.NOT_FOUND)` to denote the exception code
 
-The custom exception class can extend Exception or RunTimeException
+The custom exception class can extend Exception or RunTimeException. The `@ResponseStatus` of Global Exception class 
+(The one with `@ControllerAdvice`) **takes precedence** if it's used in both
 ```java
 @ResponseStatus(HttpStatus.NO_CONTENT)//200 series, //Seems Optional, the one in the Global exceptional handler takes precedence
 public class StudentNotFoundException extends Exception {
