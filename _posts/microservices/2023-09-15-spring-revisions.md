@@ -203,9 +203,7 @@ public class StudentRequestBody {
     private String emailId;
 }
 ```
-
 # POST Request
-
 ```java
 
 @RequestMapping(method = RequestMethod.POST) OR
