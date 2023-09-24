@@ -55,6 +55,9 @@ server.port=8089
 
 ## ComponentScan
 
+`@ComponentScan` is used to specify the packages that Spring should scan to discover Spring-managed components like 
+beans, controllers, services, etc.
+
 ```java
 @ComponentScan(basePackages = {
         "com.test.animals", 
@@ -63,6 +66,12 @@ server.port=8089
 ```
 ## Entity Scan
 
+`@EntityScan` is specific to Spring Data JPA. 
+* It's used to specify the packages where JPA entities are located.
+* This is important because Spring Data JPA needs to know where the entity classes are in order to create 
+ repositories  and perform CRUD operations.
+
+
 ```java
 @EntityScan(basePackages = {"com.learningJPA.dSpringDataRepository"
         ,"com.learningJPA.eTest.model"
@@ -70,7 +79,16 @@ server.port=8089
 }) 
 ```
 
-## What is this??
+## SpringBootApplication ScanBasePackages:
+
+`@SpringBootApplication` is a meta-annotation that combines several annotations, including @ComponentScan.
+* scanBasePackages within @SpringBootApplication allows you to specify the base packages to scan for Spring 
+components. 
+* used in the main application class.
+* It also scans the default package where the main application class is located.
+* exclude argument is used to exclude specific auto-configurations, which means that Spring Boot won't automatically 
+  configure the classes mentioned.
+
 ```java
 @SpringBootApplication(
     scanBasePackages = {
@@ -80,14 +98,152 @@ server.port=8089
     exclude = { JmxAutoConfiguration.class })
 ```
 
-# Autowired Dependency Injection
+# @Autowired & Dependency Injection
 
 Eliminates the need of creating a new object and hence the need of constructors from the components
-
 `StudentService studentService = new StudentService();`
 ```java
 @Autowired
 StudentService studentService;//Free to use studentService object within the class anywhere
+```
+
+`@Autowired`  used for automatic dependency injection.
+
+**Dependency injection** is a design pattern in which objects are **provided** with their dependencies (i.e., the 
+objects they need to collaborate with) rather than creating those dependencies themselves.
+
+**Automatic Injection**: When you annotate a field, setter method, or constructor with @Autowired, Spring will 
+automatically inject the required dependency (another Spring bean) at runtime.  
+
+* You don't need to create or instantiate the dependent object manually; Spring takes care of it.
+
+#### Types of Injection:
+
+##### Field Injection
+AVOID THIS
+{: .notice--danger}
+it's generally not recommended because it makes testing and mocking dependencies more challenging. 
+
+Constructor injection is preferred for better testability.
+
+You can annotate a class field directly with @Autowired. Spring will find the appropriate 
+bean to inject based on the field's type.
+
+```java
+@Service
+public class StudentServiceWithDb {
+  @Autowired
+  private StudentRepository studentRepository;
+
+  @Autowired
+  private StudentMapper studentMapper;
+
+  // Other methods of StudentServiceWithDb
+}
+```
+
+##### Setter Injection
+AVOID THIS
+{: .notice--danger}
+Like field injection, it's less recommended than constructor injection for the same reasons—it can make testing and mocking dependencies more complex.
+
+Annotate a setter method with @Autowired. Spring will call this method and pass the required dependency when 
+initializing the bean.
+
+```java
+@Service
+public class StudentServiceWithDb {
+  private StudentRepository studentRepository;
+  private StudentMapper studentMapper;
+
+  //Setter Injection
+  @Autowired
+  public void setStudentRepository(StudentRepository studentRepository) {
+    this.studentRepository = studentRepository;
+  }
+
+  @Autowired
+  public void setStudentMapper(StudentMapper studentMapper) {
+    this.studentMapper = studentMapper;
+  }
+
+  // Other methods of StudentServiceWithDb
+}
+```
+##### Constructor Injection
+
+Annotate a constructor with @Autowired. Spring will use this constructor to create 
+the bean and pass the required dependencies as constructor arguments.
+
+> Constructor injection is considered a best practice 
+
+because it ensures that a bean is fully initialized when created.
+
+```java
+@Service
+public class StudentServiceWithDb {
+
+    private final StudentRepository studentRepository;
+    private final StudentMapper studentMapper;
+
+    @Autowired // Constructor Injection
+    public StudentServiceWithDb(StudentRepository studentRepository, StudentMapper studentMapper) {
+        this.studentRepository = studentRepository;
+        this.studentMapper = studentMapper;
+    }
+
+    // Other methods of StudentServiceWithDb
+}
+```
+Dependency Resolution: If there are multiple beans of the same type that can be injected, Spring will perform
+dependency resolution based on the bean's name (if provided) or type.
+
+You can also use `@Qualifier` in conjunction  
+with `@Autowired` to specify which bean to inject if there are multiple candidates.
+
+```java
+public interface PaymentService {
+    String processPayment();
+}
+```
+
+The two implementations are
+
+```java
+@Service("creditCardService")
+public class CreditCardPaymentService implements PaymentService{
+    @Override
+    public String processPayment() {
+        return "Paid via credit card";
+    }
+}
+```
+```java
+@Service("onlineBankingService")
+public class OnlineBankingService implements PaymentService{
+    @Override
+    public String processPayment() {
+        return "Paid via Online Banking";
+    }
+}
+```
+The use of `@Qualifier` 
+
+```java
+@RestController
+@RequestMapping("/payment")
+public class PaymentController {
+    private PaymentService creditCardpaymentService;
+    private PaymentService onlineBankingpaymentService;
+
+    @Autowired
+    public PaymentController(@Qualifier("creditCardService") PaymentService creditCardPaymentService,
+                             @Qualifier("onlineBankingService") PaymentService onlineBankingpaymentService) {
+        this.creditCardpaymentService = creditCardPaymentService;
+        this.onlineBankingpaymentService = onlineBankingpaymentService;
+    }
+    // Other methods of PaymentController
+}
 ```
 
 # Sequence of execution
