@@ -591,7 +591,7 @@ public class Filters {
 
 # Repository
 
-Spring Data JAP is an implementation of Java Persistence API
+Spring Data JPA is an implementation of Java Persistence API
 
 # Custom Exceptions
 
