@@ -326,8 +326,7 @@ Check the `required` and `defaultValue` arguments of RequestParam Annotation
 @GetMapping(path = "/students/pagination")
 public List<Student> 
     retrieveAllUsersPagination(@RequestParam(defaultValue = "0") Integer pageNo,
-                               @RequestParam(value = "page_size",required = false, defaultValue = "10") Integer 
-        pageSize,
+                               @RequestParam(value = "page_size",required = false, defaultValue = "10") Integer pageSize,
                                @RequestParam(defaultValue = "id") String sortBy) {
         ...
 }
