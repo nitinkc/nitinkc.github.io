@@ -92,7 +92,8 @@ StudentService studentService;//Free to use studentService object within the cla
 
 # Sequence of execution
 
-> Postman/client -> Controller -> Service -> Repository -> Service -> Controller
+Postman/client -> Controller -> Service -> Repository -> Service -> Controller
+{: .notice--info}
 
 # Controller Vs RestController
 
@@ -140,9 +141,9 @@ public HelloWorldReturnBean helloWorldReturnBean() {
 
 ### Path variable
 
-> ```javascript
->http://localhost:8089/api/v0/hello-world/pathVariable/{var_name}
-> ```
+http://localhost:8089/api/v0/hello-world/pathVariable/{var_name}
+{: .notice--info}
+
 Read the Path Variable with `@PathVariable` in the method parameter
 ```java
 @GetMapping("/student/{studentId}")
