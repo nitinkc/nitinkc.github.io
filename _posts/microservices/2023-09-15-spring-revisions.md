@@ -311,7 +311,6 @@ public ResponseEntity<Student> getStudentById(@PathVariable Long studentId) {
 @GetMapping(path = "/pathVariable/{var_name}")
 public String helloWorldPathVariable(@PathVariable("var_name") String name) {
     return String.format("The Value returned is %s", name);
-}
 ```
 
 ### RequestParam
