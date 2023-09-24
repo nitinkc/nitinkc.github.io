@@ -204,6 +204,8 @@ public class StudentRequestBody {
     private String emailId;
 }
 ```
+
+
 # POST Request
 
 [POST Request in Detail](https://nitinkc.github.io/spring/microservices/POST-Requests/)
@@ -394,7 +396,7 @@ public List<StudentDto> getStudentByIds(List<Integer> studentIdList) {
 [Jackson Mapper in Detail](https://nitinkc.github.io/spring/microservices/jackson-mapper-details/)
 {: .notice--danger}
 
-##### 
+##### Map Struct
 [Map Struct in Detail](https://nitinkc.github.io/spring/microservices/mapstruct-mapper-details/)
 
 The simple one is Jackson mapper, with lot of control 
