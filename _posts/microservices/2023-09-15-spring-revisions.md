@@ -161,6 +161,7 @@ public List<Student>
 
 ### Validation 
 
+[Validations in Detail](https://nitinkc.github.io/spring/microservices/spring-validations/)
 
 ##### Request Validation
 
@@ -388,8 +389,8 @@ public List<StudentDto> getStudentByIds(List<Integer> studentIdList) {
 
 # Jackson Mapping for DTO
 
-{: .notice} [Jackson Mapper in Detail](https://nitinkc.github.io/spring/microservices/jackson-mapper-details/)
-
+[Jackson Mapper in Detail](https://nitinkc.github.io/spring/microservices/jackson-mapper-details/)
+{: .notice--info}
 ```java
 @JsonProperty("studentIds")//If the name in the request body differs from variable name
  private List<String> studentIdList;
