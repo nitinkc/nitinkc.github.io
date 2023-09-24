@@ -162,13 +162,13 @@ public List<Student>
 ### Validation 
 
 [Validations in Detail](https://nitinkc.github.io/spring/microservices/spring-validations/)
+{: .notice--danger}
 
 ##### Request Validation
 
 At Class level, add `@Validated` annotation and at the `@Valid` at the parameter level
 
 Check the `required` and `defaultValue` arguments of RequestParam Annotation
-[Complex Validations](https://nitinkc.github.io/spring/microservices/spring-validations/)
 
 Simple validation at parameter level with simple class
 ```java
@@ -205,15 +205,16 @@ public class StudentRequestBody {
 }
 ```
 # POST Request
+
+[POST Request in Detail](https://nitinkc.github.io/spring/microservices/POST-Requests/)
+{: .notice--danger}
+
 ```java
 
 @RequestMapping(method = RequestMethod.POST) OR
 @PostMapping("/students")
 ```
 Read the Request Body using `@RequestBody` in the method parameter into either a Map, for simple structures or a class for complex
-
-[POST Request in Detail](https://nitinkc.github.io/spring/microservices/POST-Requests/)
-
 
 ### With Map as Request Body
 
@@ -303,7 +304,7 @@ Student student = studentById.orElseGet(Student::new);//Return empty constructor
 //student = studentById.orElseGet(() -> Student.builder().build());
 ```
 
-##### Mapper 
+##### Simple Mapper 
 
 If the class structure of DAO Class is different from the DTO Class, then separate mappers or convertors can be written.
 
@@ -387,10 +388,16 @@ public List<StudentDto> getStudentByIds(List<Integer> studentIdList) {
 }
 ```
 
-# Jackson Mapping for DTO
+# Mapping for DTO
 
+##### Jackson Mapper
 [Jackson Mapper in Detail](https://nitinkc.github.io/spring/microservices/jackson-mapper-details/)
-{: .notice--info}
+{: .notice--danger}
+
+##### 
+[Map Struct in Detail](https://nitinkc.github.io/spring/microservices/mapstruct-mapper-details/)
+
+The simple one is Jackson mapper, with lot of control 
 ```java
 @JsonProperty("studentIds")//If the name in the request body differs from variable name
  private List<String> studentIdList;
