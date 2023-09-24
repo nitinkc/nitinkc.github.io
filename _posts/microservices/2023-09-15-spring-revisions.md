@@ -32,6 +32,7 @@ Basic philosophy of Spring Boot : Conventions over configurations
 * **Use Case**: Used for classes that interact with a database or external data source.
 * **Commonly Used in**: Data access objects (DAOs) that perform CRUD (Create, Read, Update, Delete) operations on 
   entities.
+* 
 
 # REST APIs
 
@@ -160,9 +161,9 @@ public String helloWorldPathVariable(@PathVariable("var_name") String name) {
 
 ### RequestParam
 
-> ```javascript
-> /jpa/students/pagination?page_size=5&pageNo=1&sortBy=email
-> ```
+/jpa/students/pagination?page_size=5&pageNo=1&sortBy=email
+{: .notice--info}
+
 Check the `required` and `defaultValue` arguments of RequestParam Annotation
 
 ```java
