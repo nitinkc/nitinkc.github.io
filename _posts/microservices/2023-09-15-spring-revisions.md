@@ -32,7 +32,6 @@ Basic philosophy of Spring Boot : Conventions over configurations
 * **Use Case**: Used for classes that interact with a database or external data source.
 * **Commonly Used in**: Data access objects (DAOs) that perform CRUD (Create, Read, Update, Delete) operations on 
   entities.
-* 
 
 # REST APIs
 
