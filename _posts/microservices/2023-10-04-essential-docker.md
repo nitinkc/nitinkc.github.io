@@ -104,6 +104,7 @@ docker run nitinkc/redis-server
 
 # Docker build
 
+
 ```shell
 docker build -t nitinkc/simpleweb .
 docker run -it nitinkc/simpleweb sh
@@ -112,6 +113,9 @@ docker run -p 8080:8080 nitinkc/simpleweb
 ```
 
 ## Docker compose
+
+[Sample project for Docker Compose to build a Postgres DB and initialize with sample data](https://github.com/nitinkc/DockerConcepts/tree/master/docker-compose)
+
 ```shell
 docker-compose up
 
