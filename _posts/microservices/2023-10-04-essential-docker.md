@@ -3,6 +3,7 @@ title:  "Docker"
 date:   2023-10-04 20:01:00
 categories: [Microservices]
 tags: [Microservices]
+toc: true
 ---
 
 # Docker commands
@@ -71,7 +72,6 @@ docker run redis # If the image is not there, then it will download
 docker ps <id>
 
 docker exec -it 3bd4306ce6b3 redis-cli
-
 # Exit or Quit to come out of the prompt
 ```
 
@@ -79,7 +79,15 @@ one liner
 
 ```shell
 docker run -it busybox sh
+
+docker exec -it 67e36143717b ls
 ```
+
+### Pass Environment Variables
+
+
+docker run ceaf9e1ebef5 -e "SPRING_PROFILES_ACTIVE=dev" -e "server.port=8080"
+
 
 ### Entering the shell of a container
 
