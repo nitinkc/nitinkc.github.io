@@ -85,31 +85,111 @@ docker exec -it 67e36143717b ls
 
 ### Pass Environment Variables
 
-
+```shell
 docker run ceaf9e1ebef5 -e "SPRING_PROFILES_ACTIVE=dev" -e "server.port=8080"
 
+docker run -d \
+    --name=mysql_learning \
+    --env="MYSQL_ROOT_PASSWORD=root" \
+    --env="MYSQL_PASSWORD=root" \
+    -v ~/Downloads/docker_data:/var/lib/mysql \
+    -p=3306:3306 mysql
+
+docker exec -it mysql_learning mysql -uroot -proot
+
+```
 
 ### Entering the shell of a container
 
+
+# Docker build
 
 ### Tagging an image
 
 ```shell
 # Last parameter specifies the directory of files/folders to use for a build
-docker build -t nitinkc/redis-server:latest . 
+docker build -t nitinkc/my-spring-boot-app:latest . 
+docker build -t my-spring-boot-app .
 
 # Run the image from the docker hub
 docker run nitinkc/redis-server
 ```
-
-# Docker build
-
 
 ```shell
 docker build -t nitinkc/simpleweb .
 docker run -it nitinkc/simpleweb sh
 
 docker run -p 8080:8080 nitinkc/simpleweb
+```
+
+# Publish Docker Image to Docker Hub
+
+```shell
+# Build the image using the Dockerfile in the project
+docker build . --file Dockerfile --tag test-image
+
+# Check the image created after the build
+docker image ls
+
+# Docker image
+docker login
+
+# Tag the image
+docker tag <CONTAINER ID> <DOCKER USERNAME>/<REPO>
+docker tag test-image nitinkc/test-image
+
+# Push the image
+docker push <Docker Hub User name>/<Repository name>
+docker push nitinkc/test-image
+# long form of the same command
+docker image push nitinkc/test-image 
+```
+
+# Bind a Directory in Docker Container to a Directory on Host Machine
+
+The -v switch is used
+
+> -v <directory on HOST machine>:<directory in Docker container>
+
+```shell
+docker run -d \
+    --name=mysql_learning \
+    --env="MYSQL_ROOT_PASSWORD=root" \
+    --env="MYSQL_PASSWORD=root" \
+    -v ~/Downloads/docker_data:/var/lib/mysql \
+    -p=3306:3306 mysql
+```
+
+# Docker Networks on Local Computer
+
+```shell
+docker network ls
+#Create Custom Docker Bridge Network
+docker network create --driver bridge <NETWORK NAME>
+```
+Run Docker container in the newly created custom bridge network
+
+```shell
+docker run <CONTAINER ID > --network <NAME OF CREATED NETWORK>
+```
+
+### Avoid Port Binding
+
+Make Docker Container use Host Network to Avoid Port Binding
+
+> docker run <IMAGE ID> --network host
+
+```shell
+docker run --publish 8080:5000 -t nitinkc/todo-app:todo-backend-26
+
+docker run -p 8080:5000 nitinkc/todo-app:todo-backend-26
+```
+
+Spring boot on Docker container running on port 5000, mapped with port 8080 of the local machine.
+
+
+```shell
+docker run nitinkc/todo-app:todo-backend-26 --network host
 ```
 
 ## Docker compose

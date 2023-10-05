@@ -8,6 +8,8 @@ toc: true
 
 # Stereotype Annotations
 
+[All Annotations](https://springframework.guru/spring-framework-annotations/)
+
 Basic philosophy of Spring Boot : Conventions over configurations
 {: .notice--info}
 
