@@ -20,6 +20,9 @@ tags: [Shortcuts]
 | ⌘Cmd ⇧Shift A     | Find Action              | ⇧⇧ to open the same pop up          |
 {: .notice--info}
 
+## Live Templates
+
+[https://www.jetbrains.com/help/fleet/live-templates-list-java.html](https://www.jetbrains.com/help/fleet/live-templates-list-java.html)
 ## View
 
 | Key                  | Details                                                                    |                                       |
