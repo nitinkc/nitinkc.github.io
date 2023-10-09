@@ -18,7 +18,10 @@ right side Index bar (on this blog)
 
  OR
 
-simply add `toc: true` on the [front matter](https://jekyllrb.com/docs/front-matter/)
+simply add `toc: true` on the [front matter](https://jekyllrb.com/docs/front-matter/). 
+
+Has some issues when the page is long
+{: .notice--danger}
 
 ## Include gists as
 
