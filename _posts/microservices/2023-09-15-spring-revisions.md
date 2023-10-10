@@ -5,6 +5,7 @@ categories: Spring Microservices
 tags: [Spring Microservices, CRUD]
 toc: true
 ---
+{% include toc title="Index" %}
 
 # Stereotype Annotations
 
@@ -49,7 +50,8 @@ Retrieve details of a post - GET /users/{id}/posts/{post_id}
 
 # Appliation Yaml settings
 Set a desired Port
-```shell script
+
+```shell
 server.port=8089
 ```
 
