@@ -56,7 +56,7 @@ list.parallelStream()
 
 | Streams                                          | Reactive Streams                                   | 
 |:-------------------------------------------------|:---------------------------------------------------|  
-| Sequestion vs parallel                           | Synchronous vs Asynchronous                        |
+| Sequential vs parallel                           | Synchronous vs Asynchronous                        |
 | Entire pipeline is either sequential or parallel | Depends                                            |
 | no segments                                      | subscribeOn - no segements \n onserveOn = segments |
 

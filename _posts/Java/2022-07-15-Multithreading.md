@@ -1,6 +1,6 @@
 ---
 # layout: static
-title:  "Multithreading"
+title:  "Multithreading & CompletableFuture"
 date:   2021-10-13 21:55:00
 categories: ['Java']
 tags: ['Java']
@@ -9,15 +9,15 @@ tags: ['Java']
 Asynchronous Task Execution Engine -> Executor Service introduced in J1.5
 
 It has 
+
     * Work Queue (Blocking Queue)
     * Completion Queue
     * Thread Pool
 
-As soon as the work is placed in the work queue, you get Future. Future is a proxy or refrence of the result that will be returned in the Future
-
+As soon as the work is placed in the work queue, you get Future. Future is a proxy or reference of the result that 
+will be returned in the Future
 
 Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Extends Executor service)
-
 
 # CompletableFuture
 
@@ -52,7 +52,6 @@ Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Exten
     * thenCompose depends on the completion of the dependent Future task
 
 
-
 # CompletableFuture and Reactive Manifest
 
 ### Responsive
@@ -71,24 +70,27 @@ Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Exten
     * Event driven async tasks interaction
     * thenAccept() runs on completion of supplyAsync(event is done and signalling to initiate thenAccept is received)
 
-# Exception handling with Completablle Future
+# Exception handling with Completable Future
 
 Three options available
-    * handle()
-    * exceptionally()
+    
+* handle()
+* exceptionally()
 
-    The above two catches the exception and recovers 
+  The above two catches the exception and recovers 
 
-    * whenComplete() -> Catches Exception but does not recover
+* whenComplete() -> Catches Exception but does not recover
 
 
 # CompletableFuture - ThreadPool
 
-By Default Completable future uses the **Common ForkJoinPool**. Which means that the number of threads in a commong forkjoin pool is equal to ther number of cores in the machine (Runtime.getRuntime().availableProcessors())
+By Default Completable future uses the **Common ForkJoinPool**. Which means that the number of threads in a common 
+forkjoin pool is equal to the number of cores in the machine `Runtime.getRuntime().availableProcessors()`
  
 Common ForkJoinPoll is shared by 
-    * ParallelStreams
-    * CompletableFuture
+
+*ParallelStreams
+* CompletableFuture
 
 And thus, user defined thread pool is also an option to avoid for resource waiting scenarios arising from common thread pool.
 

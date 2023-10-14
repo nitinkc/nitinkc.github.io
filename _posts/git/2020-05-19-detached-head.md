@@ -1,5 +1,5 @@
 ---
-title:  "Detached Head Problem"
+title:  "Submodules & Detached Head Problem"
 date:   2020-05-19 19:14:00
 categories: ['Git']
 tags: ['Git']
@@ -19,4 +19,21 @@ git checkout master
 git merge temp
 // delete branch locally
 git branch -d temp
+```
+
+# Clone submodules
+
+fetch up  to 6 submodules at a time with `-j6`
+
+```shell
+git clone --recurse-submodules -j6 https://github.com/nitinkc/spring-microservices.git
+```
+
+In case `git clone` is used on a submodule parent project
+```shell
+git clone https://github.com/nitinkc/spring-microservices.git
+cd spring-microservices
+
+git submodule init
+git submodule update 
 ```
