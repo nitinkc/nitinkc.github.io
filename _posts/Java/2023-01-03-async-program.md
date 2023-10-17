@@ -18,11 +18,29 @@ Promise
     * resolve, reject or pending state
     * 2 channels -> data channel & error channel
 
+# Railway Track pattern
 ```java
 data track  -----f------f     recovering from exception       f--or continue with then methods-----
                           \                                  /
 error track ----------------f---can retrun default data-----f----or handle exception---------------
 ```
+
+```java
+HappyPath==========================D==========D=======================
+data -> function -> Promise -> f-> P -> f  -> P -> f -> P -> f-> P -> f       
+UnhappyPath===========================================Exception==E=======
+
+```
+
+{% gist nitinkc/17229c16e91766fa9eb903cad63a8def %}
+
+
+| Current State | Next State | Function called            |
+|:--------------|:-----------|:---------------------------|
+| resolved      | resolved   | next then in the pipeline  | 
+| resolved      | rejected   | next catch in the pipeline |
+| rejected      | resolved   | next then in the pipeline  |
+| rejected      | resolved   | next catch in the pipeline |
 
 * treat error as another form of data and errors as first class citizens
 

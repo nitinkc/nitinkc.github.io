@@ -89,7 +89,7 @@ forkjoin pool is equal to the number of cores in the machine `Runtime.getRuntime
  
 Common ForkJoinPoll is shared by 
 
-*ParallelStreams
+* ParallelStreams
 * CompletableFuture
 
 And thus, user defined thread pool is also an option to avoid for resource waiting scenarios arising from common thread pool.
