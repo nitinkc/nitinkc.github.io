@@ -4,6 +4,7 @@ date:   2022-08-06 08:30:00
 categories: ['Java']
 tags: ['Java']
 ---
+{% include toc title="Index" %}
 
 # [Reactive Manifesto](https://www.reactivemanifesto.org/)
 

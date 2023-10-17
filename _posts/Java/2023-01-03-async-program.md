@@ -3,8 +3,8 @@ title:  "Asynchronous Programming"
 date:   2023-01-03 02:30:00
 categories: ['Java']
 tags: ['Java']
-toc: true
 ---
+{% include toc title="Index" %}
 
 Non Blocking : when you make a method call, you dont have to wait for it to 
 complete
