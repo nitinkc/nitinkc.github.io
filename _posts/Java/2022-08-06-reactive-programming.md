@@ -10,6 +10,17 @@ tags: ['Java']
 
 ![Diagram](https://www.reactivemanifesto.org/images/reactive-traits.svg)
 
+Reactive Programming is equivalent to Functional programming ++
+
+Asynchronous Programming : [vert.x library of Java](https://vertx.io/introduction-to-vertx-and-reactive/)
+
+Three options available
+
+* handle()
+* exceptionally()
+  The above two catches the exception and recovers
+* whenComplete() -> Catches Exception but does not recover
+
 ## Responsive :
 
 There should be an upper limit of response time off an application and an application should respond back to the user
