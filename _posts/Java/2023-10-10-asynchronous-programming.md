@@ -82,7 +82,7 @@ Future is a proxy or reference of the result that will be returned in the Future
 Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Extends Executor service)
 
 
-# Async programming Features
+# Async & non blocking programming Features
 
 **Call back** (Callback Hell) - When the response is received, execute the function
 
@@ -235,6 +235,40 @@ private static void failureOnTimeOut(CompletableFuture<Integer> future) {
 }
 ```
 
+### join()
+
+* to obtain the result of the asynchronous computation when it's done.
+* similar to the get() method, but doesn't throw checked exceptions.
+* waits indefinitely for the computation to finish 
+  * returns the result 
+  * or throws any unhandled exception if one occurs.
+
+```java
+CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> 100);
+int result = future.join(); // Get the result when the computation is complete
+```
+
+### get()
+
+* like join(), the get() method is also used to obtain the result of the asynchronous computation when it's done.
+* Unlike join(), the get() method can throw checked exceptions, specifically `InterruptedException` and 
+  `ExecutionException`, which need to be handled.
+* use get() if there is a need to handle exceptions or have more control over waiting for the result.
+
+```java
+CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> 100);
+try {
+    int result = future.get(); // Get the result and handle exceptions
+} catch (InterruptedException | ExecutionException e) {
+    // Handle exceptions
+}
+```
+
+### complete(T value):
+
+The complete(T value) method allows you to manually complete a CompletableFuture with a specific result value.
+This method can be used when you want to provide a result explicitly, bypassing the actual asynchronous computation.
+
 # Streams API vs Async API
 
 | Functional Interface | Method         | Streams API | Async API     |
@@ -263,3 +297,5 @@ Function returning Stream -> flatMap
 
 Function returning data -> thenAccept/thenApply
 Function returning CompletableFuture -> thenCompose
+
+
