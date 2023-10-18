@@ -6,96 +6,23 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-Asynchronous Task Execution Engine -> Executor Service introduced in J1.5
 
-It has 
+## History of multithreads
 
-    * Work Queue (Blocking Queue)
-    * Completion Queue
-    * Thread Pool
+Java 1 : Threads -> one set of API for all machines. hardware independent
 
-As soon as the work is placed in the work queue, you get Future. Future is a proxy or reference of the result that 
-will be returned in the Future
+Java 5 : ExecutorServices API -> Pool of threads
+* Issue 1: Pool induced deadlock
+* One thread breaks the problem and throws in the pool and waits foe the result to come back
+* All the threads in pool just divided the work, and no thread left to take care of the problem
 
-Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Extends Executor service)
+Java 7 : Fork Join pool
+* Work-stealing : the threads that divides problem, also solves one of the divided part
 
-# CompletableFuture
+Java 8 : ParallelStreams and CompletableFutures
+* uses Java 7 FJP
+* Common Fork join pool
 
-### supplyAsync()
-    * Factory method
-    * used to initiate asynchronous computations (tasks)
-    * takes **Supplier** as the input
-    * returns CompletableFuture<T>() of type T
+Java 21 : Virtual Threads
+* dsfgds
 
-### thenAccept()
-    * CompletionStage method
-    * used for chainign asynchronous tasks. has the capability to use the results of previous asynck ask and perform actions on it
-    * takes **Consumer** as the input
-    * returns CompletableFuture<Void>() type Void
-
-### thenApply()
-    * Completion Stage method
-    * used for applying transformations, takes a Function
-    * thenApply deals with **Function that returns** a value
-    * returns CompletableFuture<T>() of TypeT
-
-### thenCombine()
-    * combines independent CompletableFutures (Async Tasks)
-    * For Example : if a service makes 2 calls to independent services, then the total latency will be MAX(service1, service2) instead of SUM(service1, service2)
-    * takes 2 arguments, CompletionStage and BiFunction
-    * returns CompletableFuture
-
-### thenCompose()
-    * Completion Stage method
-    * used for applying transform one data to another, takes a Function
-    * deals with functions that **returns CompletableFuture<T>**
-    * thenCompose depends on the completion of the dependent Future task
-
-
-# CompletableFuture and Reactive Manifest
-
-### Responsive
-    * Asynchronous
-    * Control return immediately, and the response will be collected whrn its ready
-    * example CompletableFuture.supplyAsync() runs asynchronously 
-
-### Resilent
-    * No code crash on Exception or Error
-
-### Elastic 
-    * Async tasks run is a thread pool (Fork join pool)
-    * # threads can go up down automatically
-
-### Message Driven
-    * Event driven async tasks interaction
-    * thenAccept() runs on completion of supplyAsync(event is done and signalling to initiate thenAccept is received)
-
-# Exception handling with Completable Future
-
-Three options available
-    
-* handle()
-* exceptionally()
-
-  The above two catches the exception and recovers 
-
-* whenComplete() -> Catches Exception but does not recover
-
-
-# CompletableFuture - ThreadPool
-
-By Default Completable future uses the **Common ForkJoinPool**. Which means that the number of threads in a common 
-forkjoin pool is equal to the number of cores in the machine `Runtime.getRuntime().availableProcessors()`
- 
-Common ForkJoinPoll is shared by 
-
-* ParallelStreams
-* CompletableFuture
-
-And thus, user defined thread pool is also an option to avoid for resource waiting scenarios arising from common thread pool.
-
-### Define User-defined threadpool
-
-```java
-Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
-```

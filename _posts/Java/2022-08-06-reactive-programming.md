@@ -34,3 +34,21 @@ Eg. on DB Failures,
 Systems can achieve loose coupling. The components of the system should talk to each
 
 other by asynchronous communication.
+
+# CompletableFuture and Reactive Manifest
+
+### Responsive
+    * Asynchronous
+    * Control return immediately, and the response will be collected whrn its ready
+    * example CompletableFuture.supplyAsync() runs asynchronously 
+
+### Resilent
+    * No code crash on Exception or Error
+
+### Elastic
+    * Async tasks run is a thread pool (Fork join pool)
+    * # threads can go up down automatically
+
+### Message Driven
+    * Event driven async tasks interaction
+    * thenAccept() runs on completion of supplyAsync(event is done and signalling to initiate thenAccept is received)
