@@ -266,8 +266,10 @@ try {
 
 ### complete(T value):
 
-The complete(T value) method allows you to manually complete a CompletableFuture with a specific result value.
-This method can be used when you want to provide a result explicitly, bypassing the actual asynchronous computation.
+* allows to manually complete a CompletableFuture with a specific result value.
+* to provide a result explicitly, bypassing the actual asynchronous computation.
+
+{% gist nitinkc/28618b6feb55df00447289a75b351dba %}
 
 # Streams API vs Async API
 
@@ -280,22 +282,13 @@ This method can be used when you want to provide a result explicitly, bypassing 
 
 # Streams vs CompletableFuture
 
-| Streams                | CompletableFuture                  | 
-|:-----------------------|:-----------------------------------|  
-| Zreo, one or more data | zero or one                        |
-| only data channel      | data channel or error channel      |
-| pipeline & lazy        | pipeline & lazy                    |
-| Exception - nope       | error channel                      |
-| forEach                | thenAccept                         |
-| map                    | thenApply - perform transformation |
-| ((( zip )))            | thenCombine                        |
-| flatMap                | thenCompose                        |
-
-
-Function returning data -> map
-Function returning Stream -> flatMap
-
-Function returning data -> thenAccept/thenApply
-Function returning CompletableFuture -> thenCompose
-
-
+| Streams                  | CompletableFuture                       | 
+|:-------------------------|:----------------------------------------|  
+| Zreo, one or more data   | zero or one                             |
+| only data channel        | data channel or error channel           |
+| pipeline & lazy          | pipeline & lazy                         |
+| Exception - nope         | error channel                           |
+| forEach                  | thenAccept (consumes data)              |
+| map                      | thenApply - perform transformation      |
+| ((( zip )))              | thenCombine                             |
+| flatMap (returns Stream) | thenCompose (returns CompletableFuture) |
