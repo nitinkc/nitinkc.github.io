@@ -7,12 +7,6 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
-Subroutine : Function you call and get a response
-
-Coroutine : no entry point, no exit point. Just like a conversations
-
-Continuations : 
-
 **Concurrency** : looking for a new job, while working on the current job, during office hours.
 **Parallelism** : maintaining 2 jobs, with 2 managers, without telling either manager
 **Asynchronous** : While Brewing coffee, read emails and get back to coffee when it's done.
@@ -191,11 +185,12 @@ When one stage completes, another one starts and it keeps running
 * returns `CompletableFuture<T>()` of TypeT
 
 ### thenCombine()
-Use Case : When there is a need to bring data from multiple microservices and cvombine then
-* used to combine Independent Completable Futures
+Use Case : When there is a need to bring data from multiple microservices and combine them
+
+* used to combine Independent Completable Futures (two asynchronous tasks)
   * For Example : if a service makes 2 calls to independent services, then the total latency will be MAX(service1, 
   service2) instead of SUM(service1, service2)
-* Takes two arguments
+* Takes two arguments - `thenCombine(CompletionStage, BiFunction)`
   * CompletionStage,
   * BiFunction
 * Returns a CompletableFuture
@@ -203,10 +198,14 @@ Use Case : When there is a need to bring data from multiple microservices and cv
 {% gist nitinkc/124fce7e90ac53e72f3d45f014d8a88b %}
 
 ### thenCompose()
+* compose() is used for transforming the result of one CompletableFuture into another CompletableFuture.
+* used to chain two asynchronous operations where the second depends on the result of the first.
+* The function provided to compose() maps the result of the first CompletableFuture to a new CompletableFuture.
 * thenCompose depends on the completion of the dependent Future task
 * Completion Stage method
 * Input is a `Function` functional interface, Transform data from one form to another
-* Deals with functions that returns **CompletableFuture<T>**
+* returns **CompletableFuture<T>** here T is the type of the result of the second CompletableFuture. 
+* The resulting CompletableFuture is a flattened chain.
 
 ### Exceptionally
 
@@ -216,10 +215,17 @@ With the use of **exceptionally** if the execution of the task is
     * BUT with proper type handling. The return type of Exceptionally has to be of the proper type. 
     * Write the exception code generically and use that so that it aligns to the data type properly.
 
+compose() --> sequencing dependent asynchronous tasks, 
+thenCombine() --> combine the results of two independent asynchronous tasks into a single result
+{: .notice--primary}
+
 ### Dealing with TimeOut
  2 functions
-* completeOnTimeout - completeOnTimeout
-* orTimeout
+
+##### completeOnTimeout
+
+if the CompletableFuture doesn't complete within the specified timeout, it will be completed with the provided default 
+value.
 
 ```java
 private static void successOnTimeOut(CompletableFuture<Integer> future) {
@@ -228,10 +234,17 @@ private static void successOnTimeOut(CompletableFuture<Integer> future) {
 }
 ```
 
+##### orTimeout
+
+If the CompletableFuture times out, it is canceled, and the resulting CompletableFuture is considered completed 
+exceptionally with a TimeoutException.
+
+* it can interrupt the underlying task if it takes too long to complete. 
+
 ```java
 private static void failureOnTimeOut(CompletableFuture<Integer> future) {
     future.orTimeout(1, TimeUnit.SECONDS);//Does not keep the pipeline in PENDING state
-    //for more than a second. the value doesn't arrive in 1 sec (timeout) then resolve it, via the default value
+    //for more than a second. the value doesn't arrive in 1 sec (timeout) then cancel it, and completes it exceptionally with a TimeoutException
 }
 ```
 
