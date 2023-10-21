@@ -181,6 +181,37 @@ It is better to use toList directly in the stream rather than
 
 # Switch
 
+Statements vs. Expressions
+
+Statements perform action but do not return anything
+
+Statement cause side-effects (except one statement no-op)
+
+in java if is a statement
+
+switch statement
+* verbose
+* error proneside-effects and force mutability
+
+switch expressions
+* concise
+* less error prone - 
+* no side effect
+
+No need to write break
+```java
+String grade = switch (Math.min(score/10, 10)) {
+    case 9,10 -> "A";
+    case 8 -> "B";
+    case 7 -> "C";
+    case 6 -> "D";
+    default -> "F";
+};
+```
+
+
+
+
 ```java
 public static String lights(When when){
     return switch (when){
@@ -220,3 +251,19 @@ record Year(int year){
 }
 
 ```
+
+
+# CopyOf
+
+asList creates a mutable List
+ofList creates immutable
+
+What is immutable is safe to share - returns the same reference to it
+What is immutable is safe to copy - it never changes ever
+
+Stock price at an instant of time is immutable
+
+In Domain Driven Design, the value objects are expected to be immutable
+
+# Teeing
+
