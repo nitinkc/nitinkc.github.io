@@ -7,15 +7,19 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
+# Polymorphism
 
 **Overriding**
+```java
 Collection<T>     - remote(T) object <---- Compiler performs the boxing at compile time and at runtime, ends up calling for Collection
-List<T>               remove(T) object
+List<T>             remove(T) object
+```
 
 **Overloading**
-List<T>               remove(T) object
+```java
+List<T>         remove(T) object
 List<T>         remove(int index) index    <---- Compiler binds to this at compile time, when List is used
-
+```
 
 
 Polymorphism is at runtime. At runtime, it is going to choose an appropriate function based on the receiver
@@ -178,17 +182,25 @@ It is better to use toList directly in the stream rather than
 .collect(Collectors.toUnmodifiableList())//Immutable
 ```
 
+# Statements vs. Expressions
+
+In Java, expressions and statements are distinct. Expressions return values, and statements perform actions
+
+* **An expression** can be variables, operators, and function calls that can be **evaluated** to produce **a single value**.
+* Example: x + y, Math.sqrt(16), str.length(), 3 * (a + b).
+
+* **A statement** Statements perform action but do not return anything
+* Statement cause side-effects (except one statement no-op)
+* Statements are used to control the flow of a program, define variables, execute loops, conditionals, and function 
+  declarations, and manage side effects.
+* Example : if, for, while, switch, return, and variable declarations like int x = 5;
+* 
+
+In JavaScript, expressions can be used as statements, and statements can often be used as expressions.
+* For example, console.log(x + y);, where the expression x + y is used as a statement.
+
 
 # Switch
-
-Statements vs. Expressions
-
-Statements perform action but do not return anything
-
-Statement cause side-effects (except one statement no-op)
-
-in java if is a statement
-
 switch statement
 * verbose
 * error proneside-effects and force mutability
@@ -267,3 +279,54 @@ In Domain Driven Design, the value objects are expected to be immutable
 
 # Teeing
 
+
+# Exceptions
+
+### catch expressions (introduced in Java 16) and 
+* **Use Case** : well-suited for simple exception handling cases without complex logic or control flow change
+
+* Catch expressions are limited to a single expression, so cannot use control flow statements directly within the catch expression.
+```java
+// Using Catch Expressions (Java 16+)
+try {
+    int result = 10 / 0; // ArithmeticException
+} catch (ArithmeticException e) -> System.err.println("Arithmetic Exception occurred: " + e.getMessage());
+```
+* Encapsulate any control flow logic within a separate method or code block and call it from catch expression
+```java
+try {
+    int result = performComplexOperation();
+} catch (CustomException e) -> logAndThrow(e);
+
+
+private void logAndThrow(CustomException e) {
+    System.err.println("Custom Exception occurred: " + e.getMessage());
+    logError(e);
+    throw new AnotherException();
+}
+```
+* Catch Expressions Encapsulating Control Flow
+```java
+try {
+    int result = performComplexOperation();
+} catch (CustomException e) -> {
+    System.err.println("Custom Exception occurred: " + e.getMessage());
+    return; // Encapsulating control flow
+}
+
+```
+
+### catch statements (traditional approach)
+* The catch block can contain multiple statements, including control flow statements like return or break.
+* Provides flexibility to control the program's flow after catching an exception
+* **Use Cases**: Suitable for handling complex exception scenarios.
+
+```java
+// Using Catch Statements (Traditional)
+try {
+    // Code that may throw an exception
+} catch (IOException e) {
+    System.err.println("IO Exception occurred: " + e.getMessage());
+    // Additional error handling
+}
+```
