@@ -8,7 +8,7 @@ title_separator       : "-"
 name                  : Nitin K Chaurasia #Name appearing on the Footer
 locale                : "en-US"
 #locale               : "hi-IN"
-theme                 : "minimal-mistakes-jekyll"
+#theme                 : "minimal-mistakes-jekyll"
 remote_theme          : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 teaser                : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
