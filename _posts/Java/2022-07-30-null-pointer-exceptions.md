@@ -48,4 +48,4 @@ if(null != specificOrders) {
 
 ## Use of Optionals
 
-[Optional Use Cases]({% post_url _posts/Java/2021-10-13-Optionals %})
+[Optional Use Cases]({% post_url /Java/2021-10-13-Optionals %})

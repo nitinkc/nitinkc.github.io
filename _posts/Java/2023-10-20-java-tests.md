@@ -11,16 +11,29 @@ tags: ['Java']
 
 **Overriding**
 ```java
-Collection<T>     - remote(T) object <---- Compiler performs the boxing at compile time and at runtime, ends up calling for Collection
+Collection<T>       remote(T) object     <---- Compiler performs the boxing at compile time and at runtime, ends up calling for Collection
 List<T>             remove(T) object
 ```
 
 **Overloading**
 ```java
 List<T>         remove(T) object
-List<T>         remove(int index) index    <---- Compiler binds to this at compile time, when List is used
+List<T>         remove(int index) index  <---- Compiler binds to this at compile time, when List is used
 ```
 
+
+#### compile-time (or static) polymorphism and 
+* known as method overloading or method overriding at compile time
+* The appropriate method to be called is determined at compile time based on the method signature.
+* Compile-time polymorphism is resolved during compilation and not during runtime.
+  Example of compile-time polymorphism (method overloading)
+
+#### runtime (or dynamic) polymorphism
+
+* Also known as method overriding at runtime.
+* Occurs when a subclass provides a specific implementation of a method that is already defined in its superclass.
+The decision about which method to call is made at runtime, based on the actual type of the object.
+Runtime polymorphism is a key feature for implementing interfaces and abstract classes.
 
 Polymorphism is at runtime. At runtime, it is going to choose an appropriate function based on the receiver
 

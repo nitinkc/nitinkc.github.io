@@ -39,9 +39,9 @@ If you're building your pages with markdown, use the following examples to gener
 {% raw  %}
 [Link title]({{ site.baseurl }}{% link index.html %})
 
-[Link title]({% post_url 2016-04-04-jekyll-blog-GitHub-hosting %})
-
 [Link title]({{ site.baseurl }}{% post_url 2016-04-04-jekyll-blog-GitHub-hosting %})
+
+[Link title]({% post_url /developertools/2021-02-01-iterm2-zsh-config %})
 {% endraw %}
 ```
 
@@ -106,14 +106,14 @@ sidebar:
 ```
 ## INCLUDE TIME
 
-| Column Header 1                                                         | Column Header 1                               | 
-|:------------------------------------------------------------------------|:----------------------------------------------|  
-| Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} | {{ site.time  }}                              |
-| {% raw  %}`{{ 'now'                                                     | date: "%Y/%m/%d" }}`{% endraw %}              |{{ 'now' | date: "%Y/%m/%d" }}|
-| {% raw  %}`{{ 'now'                                                     | date_to_rfc822 }}`{% endraw %}                |{{ 'now' | date_to_rfc822 }}|
-| {% raw  %}`{{ 'now'                                                     | date: "%C" }}`{% endraw %}                    |{{ 'now' | date: "%C" }}|
-| {% raw  %}`{{ 'now'                                                     | date: "%c" }}`{% endraw %}                    |{{ 'now' | date: "%c" }}|
-| {% raw  %}`{{ 'now'                                                     | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %} |{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
+| Column Header 1                                                         | Column Header 1                          <br/> | Format   |
+|:------------------------------------------------------------------------|:-----------------------------------------------|:---------| 
+| Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} | {{ site.time  }}                               |          |
+| {% raw  %}`{{ 'now'                                                     | date: "%Y/%m/%d" }}`{% endraw %}               | {{ 'now' | date: "%Y/%m/%d" }} |
+| {% raw  %}`{{ 'now'                                                     | date_to_rfc822 }}`{% endraw %}                 | {{ 'now' | date_to_rfc822 }} |
+| {% raw  %}`{{ 'now'                                                     | date: "%C" }}`{% endraw %}                     | {{ 'now' | date: "%C" }} |
+| {% raw  %}`{{ 'now'                                                     | date: "%c" }}`{% endraw %}                     | {{ 'now' | date: "%c" }} |
+| {% raw  %}`{{ 'now'                                                     | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}  | {{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
 
 ## Notices with theme
 

@@ -1,13 +1,15 @@
 ---
-# layout: static
+layout: page
 title:  "Optional Use cases"
 date:   2021-10-13 21:55:00
 categories: ['Java']
 tags: ['Java']
 ---
 
-# Optional
+{% include toc title="Index" %}
 
+
+# Optional 
 * New class Optional in java.util package.
 * It is a Container to hold at most one value, like Collections and Arrays.
 * To represent a value if its present or absent.

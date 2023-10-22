@@ -8,12 +8,12 @@ title_separator       : "-"
 name                  : Nitin K Chaurasia #Name appearing on the Footer
 locale                : "en-US"
 #locale               : "hi-IN"
-#theme                : "minimal-mistakes-jekyll"
+theme                 : "minimal-mistakes-jekyll"
 remote_theme          : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 teaser                : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                  :  /assets/images/Coloured.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_titl         : # overrides the website title displayed in the masthead, use " " for no title
+masthead_title         : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs           : true # true, false (default)
 
 # Outputting
@@ -36,8 +36,8 @@ author:
   bio                 : Java Microservices Developer
   location            : Not on Moon Yet!!
   url                 : https://nitinkc.github.io/
-  baseurl             : '/'
-  repository          : nitinkc/nitinkc.github.io
+  #baseurl             : '/'
+  repository          : nitinkc/nitinkc.github.io.git
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
