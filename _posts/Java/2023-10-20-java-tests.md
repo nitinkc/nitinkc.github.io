@@ -7,47 +7,6 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
-# Polymorphism
-
-**Overriding**
-```java
-Collection<T>       remote(T) object     <---- Compiler performs the boxing at compile time and at runtime, ends up calling for Collection
-List<T>             remove(T) object
-```
-
-**Overloading**
-```java
-List<T>         remove(T) object
-List<T>         remove(int index) index  <---- Compiler binds to this at compile time, when List is used
-```
-
-
-#### compile-time (or static) polymorphism and 
-* known as method overloading or method overriding at compile time
-* The appropriate method to be called is determined at compile time based on the method signature.
-* Compile-time polymorphism is resolved during compilation and not during runtime.
-  Example of compile-time polymorphism (method overloading)
-
-#### runtime (or dynamic) polymorphism
-
-* Also known as method overriding at runtime.
-* Occurs when a subclass provides a specific implementation of a method that is already defined in its superclass.
-The decision about which method to call is made at runtime, based on the actual type of the object.
-Runtime polymorphism is a key feature for implementing interfaces and abstract classes.
-
-Polymorphism is at runtime. At runtime, it is going to choose an appropriate function based on the receiver
-
-Polymorphism - the method that is called is based on the runtime 'type' of a reference rather tha the compile time 
-type of the reference of the receiver. 
-
-Polymorphism does not consider the type of the parameters at runtime. That is resolved at compile time
-
-Multimethods : Polymorphism on steroids - the method that is called is based on the runtime type of both the 
-reference of the receiver and the runtime type of the parameters of the functions
-
-Language on JVM that supports Multimethods -> Groovy
-
-
 # Type inference
 
 removes the noise from the code and type inference can be used. 
@@ -195,63 +154,6 @@ It is better to use toList directly in the stream rather than
 .collect(Collectors.toUnmodifiableList())//Immutable
 ```
 
-# Statements vs. Expressions
-
-In Java, expressions and statements are distinct. Expressions return values, and statements perform actions
-
-* **An expression** can be variables, operators, and function calls that can be **evaluated** to produce **a single value**.
-* Example: x + y, Math.sqrt(16), str.length(), 3 * (a + b).
-
-* **A statement** Statements perform action but do not return anything
-* Statement cause side-effects (except one statement no-op)
-* Statements are used to control the flow of a program, define variables, execute loops, conditionals, and function 
-  declarations, and manage side effects.
-* Example : if, for, while, switch, return, and variable declarations like int x = 5;
-* 
-
-In JavaScript, expressions can be used as statements, and statements can often be used as expressions.
-* For example, console.log(x + y);, where the expression x + y is used as a statement.
-
-
-# Switch
-switch statement
-* verbose
-* error proneside-effects and force mutability
-
-switch expressions
-* concise
-* less error prone - 
-* no side effect
-
-No need to write break
-```java
-String grade = switch (Math.min(score/10, 10)) {
-    case 9,10 -> "A";
-    case 8 -> "B";
-    case 7 -> "C";
-    case 6 -> "D";
-    default -> "F";
-};
-```
-
-
-
-
-```java
-public static String lights(When when){
-    return switch (when){
-        case DAY -> "No Light";
-        case NIGHT -> "Lights needed";
-    };
-}
-```
-If you don't write the default, they write it for you.
-
-the compiler fails if a new element gets added and recompiled, which is good
-
-default -> never happens so how to cover the test case for it?
-
-Should NOT write Default.
 
 
 # Records
@@ -333,13 +235,3 @@ try {
 * The catch block can contain multiple statements, including control flow statements like return or break.
 * Provides flexibility to control the program's flow after catching an exception
 * **Use Cases**: Suitable for handling complex exception scenarios.
-
-```java
-// Using Catch Statements (Traditional)
-try {
-    // Code that may throw an exception
-} catch (IOException e) {
-    System.err.println("IO Exception occurred: " + e.getMessage());
-    // Additional error handling
-}
-```
