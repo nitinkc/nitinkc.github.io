@@ -290,3 +290,12 @@ Check the version numebr increment in the git workflow `docker-publish.yml` file
 [Example of Circle-ci](https://github.com/nitinkc/messenger-spring-boot/blob/master/.circleci/config.yml)
 
 [Circle-CI pipeline](https://app.circleci.com/pipelines/github/nitinkc/messenger-spring-boot)
+
+{% gist nitinkc/369ffd7a41871c1fbc335529fb6be9e0 %}
+
+
+##### Simpler Version
+
+{% gist nitinkc/7965906df336c8d19ff5315e0f1f0549 %}
+
+

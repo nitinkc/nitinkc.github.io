@@ -669,3 +669,35 @@ public class GlobalExceptionHandler {
 }
 ```
 
+
+# app.yml/app.props
+
+### HikariCP
+HikariCP, often referred to simply as Hikari, is a popular and high-performance connection pool library for Java applications.
+
+Connection pooling is a technique used to efficiently manage and reuse database connections in applications that interact with a relational
+```yml
+spring.jpa.properties.hibernate.default_schema="chinookMusic"
+spring.datasource.url = jdbc:postgresql://localhost:5432/mydb
+
+# or combined 
+spring.datasource.url=jdbc:postgresql://postgres:5432/mydb?currentSchema=test
+```
+
+# Read Environment properties
+
+Use the Environment dependency
+```java
+@Autowired 
+private Environment environment;
+
+int portNumber = Integer.parseInt(environment.getProperty("server.port"));
+
+```
+
+Another method by @Value Annotation
+
+```java
+@Value("${custom.value}")
+private String customVal;
+```
