@@ -240,6 +240,14 @@ tags: [Shortcuts]
 | ⌘Cmd  +⇧Shift+G                   | Select an element and search its occurrences                                 |
 | ⌘Cmd  ⇧Shift O                    |                                                                              |
 
+
+##### Surround with 
+
+Surround With **⌘Сmd ⌥Opt T**
+
+![surround_with.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsurround_with.png)
+
+
 ## PDF Reference
 
 <object data="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf" type="application/pdf" width="700px" height="700px">
