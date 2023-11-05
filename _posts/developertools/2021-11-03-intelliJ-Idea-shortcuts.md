@@ -120,42 +120,42 @@ tags: [Shortcuts]
 
 ## Code
 
-| Key                        | Details                                                                   |
-|:---------------------------|:--------------------------------------------------------------------------|
-| ✅ ⌘Cmd B                  | Jump to declaration of method, Toggle by clicking twice                  |
-| ⌘Cmd O                     | Override Methods                                                          |
-| ⌘Cmd I                     | Implement Methods                                                         |
-| ⌃ N                        | Generate                                                                  |
-| ⌃ ␣                        | Basic                                                                     |
-| ⌃Ctrl ⇧Shift ␣             | Type-Matching                                                             |
-| ✅ ⌘Cmd ⇧Shift  ↩          | Complete Current Statement                                               |
-| ⌥ /                        | Cyclic Expand Word                                                        |
-| ⌥ ?                        | Cyclic Expand Word (Backward)                                             |
-| ⌘Cmd ⇧Shift ⌥Opt I         | Run Inspection by Name…                                                   |
-| ⌘Cmd ⇧Shift ⌥Opt H         | Configure Current File Analysis…                                          |
-| ⌘Cmd J                     | Insert Live Template…                                                     |
-| ⌘Cmd ⌥Opt T                | Surround With…                                                            |
-| ⌘Cmd ⇧Shift ⌦              | Unwrap/Remove…                                                            |
-| ⌘Cmd +                     | Expand                                                                    |
-| ⌘Cmd ⌥Opt +                | Expand Recursively                                                        |
-| ✅  **⌘Cmd ⇧Shift +**       | Expand All                                                               |
-| ⌘Cmd -                     | Collapse                                                                  |
-| ⌘Cmd ⌥Opt -                | Collapse Recursively                                                      |
-| ✅  **⌘Cmd ⇧Shift -**       | Collapse All                                                             |
-| ⌘Cmd .                     | Fold Selection / Remove region                                            |
-| ⌘Cmd ⇧Shift .              | Fold Code Block                                                           |
-| ✅  ⌘Cmd /                  | Comment with Line Comment                                                |
-| ✅  ⌃ ?                     | Comment with Block Comment                                               |
-| ✅ **⌘Cmd  ⌥Opt L**         | Code Format - Selected Code and Entire File                              |
-| ⌘Cmd ⇧Shift ⌥Opt L         | Reformat File…                                                            |
-| ⌘Cmd  ⌥Opt  ⇧Shift L       | Reformatting Setting                                                      |
-| ⌘Cmd ⌥Opt I                | Auto-Indent Lines                                                         |
-| **⌘Cmd ⌥Opt O**            | Optimize Imports                                                          |
-| ⌘Cmd ⇧Shift ↓              | Move Statement Down                                                       |
-| ⌘Cmd ⇧Shift ↑              | Move Statement Up                                                         |
-| ⌥Opt ⇧Shift  ↓             | Move Line Down                                                            |
-| ⌥Opt ⇧Shift  ↑             | Move Line Up                                                              |
-| ⌘Cmd ⇧Shift ⌥Opt K         | Convert Java File to Kotlin File                                          |
+| Key                  | Details                                                 |
+|:---------------------|:--------------------------------------------------------|
+| ✅ ⌘Cmd B             | Jump to declaration of method, Toggle by clicking twice |
+| ⌘Cmd O               | Override Methods                                        |
+| ⌘Cmd I               | Implement Methods                                       |
+| ⌃ N                  | Generate                                                |
+| ⌃ ␣                  | Basic                                                   |
+| ⌃Ctrl ⇧Shift ␣       | Type-Matching                                           |
+| ✅ ⌘Cmd ⇧Shift  ↩     | Complete Current Statement                              |
+| ⌥ /                  | Cyclic Expand Word                                      |
+| ⌥ ?                  | Cyclic Expand Word (Backward)                           |
+| ⌘Cmd ⇧Shift ⌥Opt I   | Run Inspection by Name…                                 |
+| ⌘Cmd ⇧Shift ⌥Opt H   | Configure Current File Analysis…                        |
+| ⌘Cmd J               | Insert Live Template…                                   |
+| ✅ **⌘Cmd ⌥Opt T**   | [Surround With…](#surround-with)                        |
+| ⌘Cmd ⇧Shift ⌦        | Unwrap/Remove…                                          |
+| ⌘Cmd +               | Expand                                                  |
+| ⌘Cmd ⌥Opt +          | Expand Recursively                                      |
+| ✅  **⌘Cmd ⇧Shift +** | Expand All                                              |
+| ⌘Cmd -               | Collapse                                                |
+| ⌘Cmd ⌥Opt -          | Collapse Recursively                                    |
+| ✅  **⌘Cmd ⇧Shift -** | Collapse All                                            |
+| ⌘Cmd .               | Fold Selection / Remove region                          |
+| ⌘Cmd ⇧Shift .        | Fold Code Block                                         |
+| ✅  ⌘Cmd /            | Comment with Line Comment                               |
+| ✅  ⌃ ?               | Comment with Block Comment                              |
+| ✅ **⌘Cmd  ⌥Opt L**   | Code Format - Selected Code and Entire File             |
+| ⌘Cmd ⇧Shift ⌥Opt L   | Reformat File…                                          |
+| ⌘Cmd  ⌥Opt  ⇧Shift L | Reformatting Setting                                    |
+| ⌘Cmd ⌥Opt I          | Auto-Indent Lines                                       |
+| **⌘Cmd ⌥Opt O**      | Optimize Imports                                        |
+| ⌘Cmd ⇧Shift ↓        | Move Statement Down                                     |
+| ⌘Cmd ⇧Shift ↑        | Move Statement Up                                       |
+| ⌥Opt ⇧Shift  ↓       | Move Line Down                                          |
+| ⌥Opt ⇧Shift  ↑       | Move Line Up                                            |
+| ⌘Cmd ⇧Shift ⌥Opt K   | Convert Java File to Kotlin File                        |
 
 ### Refactor
 
