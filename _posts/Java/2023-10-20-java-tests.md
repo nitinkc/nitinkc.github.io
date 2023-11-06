@@ -69,7 +69,7 @@ Instead of using Arrays.asList use List.of(), the immutable variant. Similarly u
 * The Set's of does not provide duplicate
 * the of methods does not permit nulls
 
-# Streams
+# Streams Purity - Shared Mutability
 
 The execution is always lazy in Java or C#. For Kotlin and Scala you can choose between eager adn lazy
 

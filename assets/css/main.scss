@@ -25,7 +25,14 @@ $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin fromn the config.yml
+// Custom Font for the
+$helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
+$my-custom-font-family: Times, serif,-apple-system,BlinkMacSystemFont,Roboto,"roboto slab","droid serif","segoe ui",system-ui,Arial,sans-serif;
+//$global-font-family: $sans-serif !default;
+$global-font-family: $my-custom-font-family !default;
+$header-font-family: $helvetica !default;
+
+// @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin from the config.yml
 @import "minimal-mistakes"; // main partials
 
 #main {
@@ -134,55 +141,102 @@ $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
     // border-bottom: 4px solid #2053b8;
   }
 
-  .page__title {
+  .page__title{
     margin-top: 0;
     font-weight: 800;
-    letter-spacing: .15em;
+    //letter-spacing: .15em;
     line-height: 1.65;
-    margin: 0 0 1em 0;
+    //margin: 0 0 1em 0;
     text-transform: uppercase;
     text-align: center;
-  
+    color: #B00020;
+    text-decoration: underline;
+    font-family: 'Arial', sans-serif;
     & + .page__meta {
       margin-top: -0.5em;
     }
   }
 
-.sidebar__right {
-  margin-bottom: 1em;
+    .sidebar__right {
+      margin-bottom: 1em;
 
-  @include breakpoint($large) {
-    position: sticky !important; /* added to make toc scroll with page */
-    float: right !important; /* added to make toc scroll with page */
-    top: 0;
-    right: 0;
-    width: $right-sidebar-width-narrow;
-    //margin-right: -1 * $right-sidebar-width-narrow;
-    padding-left: 1em;
-    padding-top: 1em !important; /* added to make toc scroll with page */
-    z-index: 10;  
-    width: 300px;
-  }
+      @include breakpoint($large) {
+        position: sticky !important; /* added to make toc scroll with page */
+        float: right !important; /* added to make toc scroll with page */
+        top: 0;
+        right: 0;
+        width: $right-sidebar-width-narrow;
+        //margin-right: -1 * $right-sidebar-width-narrow;
+        padding-left: 1em;
+        padding-top: 1em !important; /* added to make toc scroll with page */
+        z-index: 10;
+        width: 300px;
+      }
 
-  .toc {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .toc__menu li ul > li a {
-    font-weight: normal
-  }
-  
-  .toc__menu a {
-    //font-size: 0.6875em;
-    padding: 0.25rem 0.75rem;
-  }
+      .toc {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+    .toc__menu li ul > li a {
+        font-weight: normal
+      }
+
+      .toc__menu a {
+        font-weight: normal;
+        padding: 0.25rem 0.75rem;
+      }
+    }
+
+    // .sidebar.sticky {
+    //   background-color:$primary-color;
+    // }
+
+    p>code,a>code,li>code,figcaption>code,td>code {
+    //     background: #B00020;
+    //     color: #fff;
+
+    //     padding: 2px 4px;
+        font-size: 90%;
+        color: #c7254e;
+        background-color: #f9f2f4;
+    }
+
+    // ul {
+    //     list-style: none; /* Remove default bullets */
+    // }
+
+    ul li::marker {
+        color: #d33a2c; /* Set the color of the bullet points */
+    }
+
+    .page__content > ul > li,
+    .page__content > ol > li {
+        margin-bottom: 0.15em;
+        font-style: oblique;
+        line-height: calc(1.5em + .2vw);
+         word-break: break-word;
+    }
+
+    h1{
+    // color: #CC0000;
+    }
+
+
+    $type-size-5b: 0.9em !default;
+    // This changes the code box
+    .highlight {
+      margin: 0;
+    //   padding: 0.5em;
+      font-family: $monospace;
+      //font-size: $type-size-5b;
+      line-height: 1.8;
+    }
+
+.page__content p {
+     margin: 0 0 0.15em;
 }
 
-  // .sidebar.sticky {
-  //   background-color:$primary-color;
-  // }
-
-p>code,a>code,li>code,figcaption>code,td>code {
-    background: #aeeeca;
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.25em 0 0.5em;
 }

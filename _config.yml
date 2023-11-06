@@ -24,7 +24,7 @@ permalink: /:categories/:title/
 #relative_permalinks: true
 paginate: 15 # amount of posts to show
 paginate_path: /page:num/
-timezone : 'America/Chicago' # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone : 'America/Denver' # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 version               : 0.0.1
 words_per_minute         : 200
@@ -127,7 +127,6 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
-
 
 # Reading Files
 include:
