@@ -240,3 +240,8 @@ $header-font-family: $helvetica !default;
 h1, h2, h3, h4, h5, h6 {
     margin: 0.5em 0 0.5em;
 }
+
+#c1 { //For the borders of the Clock
+    border-top: 4px solid $primary-color;
+    border-bottom: 4px solid $primary-color;
+}
