@@ -1,10 +1,34 @@
+---
+title:  "Iterator As a Design Pattern"
+date:   2023-11-06 08:30:00
+categories: ['Java','Design Patterns']
+tags: ['Java']
+---
 
+
+//break -> limit
+
+//limit and takeWhile are the functional equivalent of break from the imperative style.
 
 limit and takeWhile are the functional equivalent of break from the imperative style.
 
 
+The functional pipeline is *not* pure. We are doing shared mutability
+
 
 The functional pipeline is *not* pure. We are doing shared mutability
+```java
+var ret = new ArrayList<String>();
+
+// Code behaves - erratically with parallel Stream
+        list.parallelStream()
+                .filter(Objects::nonNull)
+                .filter(name -> name.length() > 4)
+                .map(nameInLowerCase -> nameInLowerCase.toUpperCase())
+                .limit(count)
+                .forEach(name -> ret.add(name));//BAD IDEA with ParallelStream - due to shared mutability - this is impure
+
+```
 
 The result may be unpredicatable if we
 ever **change** this code to run in **parallel** by adding .parallel() or
