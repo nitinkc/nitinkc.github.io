@@ -7,28 +7,32 @@ tags: ['Java']
 
 # Optionals - Patterns & Antipatterns
 
-A good design reads like a story and not like a puzzle
+**null is a smell**
 
+> Do not return a null, instead return an empty *collection* - Effective Java
 
-> Removing the Null : null is a smell
+var has strict type checking
+```java
 
->> Do not return a null, instead return an empty *collection*. Effective Java
+var a = SampleData.getSimpleEmployees();
+//a = "Nitin";//Strict type checking
+```
 
 
 ## What if we have a single value?
 
-* Instead of returning null return Option<T>
-* If a method will always have a single value as a result **do not use** Optional.
+* Instead of returning null return `Optional<T>`
+* If a method will *always have a single value* as a result **do not use** Optional.
 
 ```java
 var result = getName();
 String str = result.orElse("not found");//Default Value
-// str = result.orElseGet(String::new);//Empty String
-//str = result.orElseThrow();//if at all you need to use get, then use orThrow instead
-//str = result.get();//DO NOT USE THIS due to the danger on NPE
+        
+ str = result.orElseGet(String::new);//Empty String
+        
+str = result.orElseThrow();//if at all you need to use get, then use orThrow instead
 
-        var a = SampleData.getSimpleEmployees();
-//a = "Nitin";//Strict type checking
+//str = result.get();//DO NOT USE THIS due to the danger on NPE
 ```
 
 

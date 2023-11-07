@@ -5,6 +5,8 @@ categories: ['Java']
 tags: ['Java']
 ---
 
+A good design reads like a story and not like a puzzle
+
 
 DP #1 : take what varies and encapsulate it. It will not affect the rest of our code.
 

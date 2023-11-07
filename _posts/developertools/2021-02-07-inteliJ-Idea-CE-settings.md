@@ -69,3 +69,31 @@ Scenario: While converting maven project to Gradle. USe this plugin for converti
 
 [Pom to Gradle](https://plugins.jetbrains.com/plugin/7937-gradle-dependencies-formatter)
 
+# New UI
+
+Classic screen most used features
+
+**Top Left**
+
+* Back CMD [
+* FWD CMD ]
+
+**Sidebar**
+
+**Left**
+* Project
+* Commit
+* Structure
+* Bookmark
+
+**Right**
+* Gradle
+* Code Coverage
+
+![classic_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fclassic_intelliJ.png)
+
+##### Customize the Toolbar on the new UI to match the exact items
+![customize_toolbar_new_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fcustomize_toolbar_new_intelliJ.png)
+
+
+![new_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fnew_intelliJ.png)
