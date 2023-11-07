@@ -1,3 +1,10 @@
+---
+title:  "Composition"
+date:   2023-11-06 08:30:00
+categories: ['Java','Design Patterns', "Object Oriented Design"]
+tags: ['Java']
+---
+
 # Composition
 
 * Also known as whole-part relationship
@@ -21,4 +28,3 @@ class B{
 A -> B
 
 Runtime time instance of A has a reference to a run time instance of B
-

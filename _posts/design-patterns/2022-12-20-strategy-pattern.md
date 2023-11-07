@@ -1,3 +1,10 @@
+---
+title:  "Strategy Pattern"
+date:   2023-11-06 08:30:00
+categories: ['Java','Design Patterns']
+tags: ['Java']
+---
+
 # Strategy pattern
 
 We want to vary a small part of an algorithm while

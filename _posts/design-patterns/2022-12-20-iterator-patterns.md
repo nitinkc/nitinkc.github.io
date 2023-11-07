@@ -6,45 +6,74 @@ tags: ['Java']
 ---
 
 
-//break -> limit
+break & limit of Impertive style coding
 
-//limit and takeWhile are the functional equivalent of break from the imperative style.
+```java
+/* LIMIT */
+ int limit = 3;
+int counter = 0;
+
+while (counter < limit) {
+    counter++; // Increment the counter to limit the number of iterations.
+}
+
+/* BREAK */
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        break; // This will exit the loop when i is 5.
+    }
+}
+```
 
 limit and takeWhile are the functional equivalent of break from the imperative style.
+```java
+ List<Integer> numbers = Stream.iterate(1, n -> n + 1)
+                .takeWhile(n -> n <= 10) // Take elements while the condition is true (less than or equal to 10).
+                .limit(5) // Limit the stream to the first 5 elements.
+                .collect(Collectors.toList());
+
+```
 
 
-The functional pipeline is *not* pure. We are doing shared mutability
+# Shared Mutability
 
+Impurity in Functional Programming : The given functional pipeline is *not* pure. We are doing shared mutability.
 
-The functional pipeline is *not* pure. We are doing shared mutability
+The result may be unpredictable if we ever **change** this code to run in **parallel** by adding .parallel() or by changing .stream() to .parallelStream()
+
 ```java
 var ret = new ArrayList<String>();
 
 // Code behaves - erratically with parallel Stream
-        list.parallelStream()
-                .filter(Objects::nonNull)
-                .filter(name -> name.length() > 4)
-                .map(nameInLowerCase -> nameInLowerCase.toUpperCase())
-                .limit(count)
-                .forEach(name -> ret.add(name));//BAD IDEA with ParallelStream - due to shared mutability - this is impure
-
+list.parallelStream()
+        .filter(Objects::nonNull)
+        .filter(name -> name.length() > 4)
+        .map(nameInLowerCase -> nameInLowerCase.toUpperCase())
+        .limit(count)
+        .forEach(name -> ret.add(name));//BAD IDEA with ParallelStream - due to shared mutability - this is impure
 ```
 
-The result may be unpredicatable if we
-ever **change** this code to run in **parallel** by adding .parallel() or
-by changing .stream() to .parallelStream()
+Change the above code to use `collect(Collectors.toList())` to collect the list
+```java
+var ret = list.parallelStream()
+            .filter(Objects::nonNull)
+            .filter(name -> name.length() > 4)
+            .map(nameInLowerCase -> nameInLowerCase.toUpperCase())
+            .limit(count)
+            .collect(Collectors.toList());
+```
+
+Also, we should not use impure functions in the intermediate stages
 
 ```java
 //Really frustrating to replicate and unpredictable
-
-
 var result2 = new ArrayList<String>();
 names.stream()
-        .filter(name -> name.length() == 4)
-        //.map(name -> performImpureOperation(name)) //AVOID + DANGEROUS
-        .map(String::toUpperCase)
-        //.forEach(name -> result2.add(name)); //BAD IDEA with ParallelStream
-        .collect(Collectors.toList()); //to Listis a better option
+    .filter(name -> name.length() == 4)
+    //.map(name -> performImpureOperation(name)) //AVOID + DANGEROUS
+    .map(String::toUpperCase)
+    //.forEach(name -> result2.add(name)); //BAD IDEA with ParallelStream
+    .collect(Collectors.toList()); //to List is a better option
 ```
 
 Functional pipeline offers internal iterators
@@ -54,9 +83,8 @@ Functional pipeline offers internal iterators
 
 **BUT**
 
-Avoid shared mutable variables
-
-it is very important that we make the functional pipeline pure
+* Avoid **shared mutable** variables
+* Ensure that we make the functional pipeline pure
 
 # What is a pure function:
 
