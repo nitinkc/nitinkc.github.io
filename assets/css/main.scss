@@ -17,7 +17,7 @@ $global-transition : none;
 //$background-color: #eeeeee !default;
 $text-color: #222831 !default;
 $muted-text-color: #393e46 !default;
-$primary-color: #0092ca !default;
+$primary-color: #b51b58 !default;//#0092ca Blue
 $border-color: mix(#fff, #393e46, 75%) !default;
 $footer-background-color: $primary-color !default;
 $link-color: #393e46 !default;
@@ -238,5 +238,5 @@ $header-font-family: $helvetica !default;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 0.25em 0 0.5em;
+    margin: 0.5em 0 0.5em;
 }
