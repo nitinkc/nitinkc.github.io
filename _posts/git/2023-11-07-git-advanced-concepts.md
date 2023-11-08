@@ -1,6 +1,6 @@
 ---
 title:  "Git Reset - Revert"
-date:   2022-08-28 11:30:00
+date:   2023-11-07 11:30:00
 categories: ['Git']
 tags: ['Git']
 ---
