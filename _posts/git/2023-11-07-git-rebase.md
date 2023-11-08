@@ -20,9 +20,7 @@ If both the branches to be merged has changes, Recursive merge happens.
 An alternate to merge is Rebase. Rebase is used to integrate changes from one branch to another
 
 ## When to use Rebase?
-When your feature branch is local and changing history will not affect others. Use git rebase to get new changes from master to your feature branch.
-
-**When to use `git rebase`?**
+When your feature branch is local and changing history will not affect others.
 
 - Use `git rebase` when you want to update your feature branch with the latest changes from the main branch (usually `master` or `main`).
 - It's suitable when you desire a linear commit history for your branch, making it easier to understand the sequence of changes.
