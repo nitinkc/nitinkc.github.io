@@ -21,4 +21,3 @@ An alternate to merge is Rebase. Rebase is used to integrate changes from one br
 
 ## When to use Rebase?
 When your feature branch is local and changing history will not affect others. Use git rebase to get new changes from master to your feature branch.
-
