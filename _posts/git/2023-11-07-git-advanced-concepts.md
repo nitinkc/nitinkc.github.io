@@ -29,7 +29,12 @@ git revert 5b2e4af
 ```
 With revert, a new commit is created with the reverted code and it keeps the "old bad commit" history that can be viewed.
 
-<iframe width="420" height="315" src="https://youtu.be/1yaUn_PhlM8" frameborder="0"></iframe>
+<iframe
+src="https://www.youtube.com/embed/1yaUn_PhlM8" 
+    title="git revert - local and remote" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
 
 ### Git Reset
 
@@ -45,7 +50,13 @@ git reset 5b2e4af #takes --hard by default
 git push -f
 ```
 
-<iframe width="420" height="315" src="https://youtu.be/RLeD529jYfo" frameborder="0"></iframe>
+<iframe 
+    src="https://www.youtube.com/embed/RLeD529jYfo" 
+    title="Git Revert" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
 
 ### Git Reset Options
 
@@ -54,3 +65,4 @@ git push -f
 * git reset --mixed, keeps all files the same but unstages the changes. This is the most flexible option, it doesn’t modify files.
 
 ![2.png](..%2F..%2Fassets%2Fimages%2Fgit%2F2.png)
+[//]: # (<img src="../assets/images/git/2.png" alt="2.png" style="width: 50%; height:60%; border: 1px solid #ccc;">)
