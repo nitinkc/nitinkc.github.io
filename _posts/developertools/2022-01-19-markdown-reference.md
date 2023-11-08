@@ -65,6 +65,11 @@ If you're building your pages with markdown, use the following examples to gener
 `![Image Text]({{ site.url }}/assets/images/image.png)`
 {% endraw %}
 
+## Resize an image
+{% raw  %}
+<img src="assets/images/image.png" width="300" height="200">
+{% endraw %}
+
 ## Escape Liquid template tags in Jekyll posts
 
 * Use raw tag 

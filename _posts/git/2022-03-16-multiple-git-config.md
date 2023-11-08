@@ -1,5 +1,5 @@
 ---
-title:  "Git Config"
+title:  "Git Config - global "
 date:   2022-02-01 11:30:00
 categories: ['Git']
 tags: ['Git']
@@ -9,9 +9,9 @@ tags: ['Git']
 
 # Create multiple Git Config
 
-To ensure multiple git or bitbucket repositories to work seemlessly with one machine, configure the global git file in such a way that it picks up right user name for specific projects under a folder.
+To ensure multiple git or bitbucket repositories to work seamlessly with one machine, configure the global git file in such a way that it picks up right user name for specific projects under a folder.
 
-For example, between work and personal repositores, code checkin using correct user id is maintained with following confog :-
+For example, between work and personal repositores, code check-in using correct user id is maintained with following config :-
 
 with global gitconfig file (.gitconfig in home folder ~)
 ```sh
@@ -21,7 +21,7 @@ with global gitconfig file (.gitconfig in home folder ~)
 	path = .gitconfig-learn
 ```
 
-`gitdir` takes the folder where mulpile projects can reside from same repository (eg: bitbucket enterprise server)
+`gitdir` takes the folder where multiple projects can reside from same repository (eg: bitbucket enterprise server)
 
 create the files and open in a text editor
 ```sh

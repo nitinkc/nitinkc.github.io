@@ -5,6 +5,8 @@ categories: ['Java','Design Patterns', "Object Oriented Design"]
 tags: ['Java']
 ---
 
+{% include toc title="Index" %}
+
 # Composition
 
 * Also known as whole-part relationship

@@ -4,6 +4,7 @@ date:   2023-11-06 08:30:00
 categories: ['Java','Design Patterns']
 tags: ['Java']
 ---
+{% include toc title="Index" %}
 
 
 break & limit of Impertive style coding

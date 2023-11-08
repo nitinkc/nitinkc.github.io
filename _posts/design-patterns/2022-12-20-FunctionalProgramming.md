@@ -1,3 +1,12 @@
+---
+title:  "Functional Programming"
+date:   2023-11-06 08:30:00
+categories: ['Java','Design Patterns']
+tags: ['Java']
+---
+
+{% include toc title="Index" %}
+
 * As Polymorphism is to object-oriented Programming
 * Functional Composition + Lazy Evaluation is to functional programming
 

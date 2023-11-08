@@ -5,6 +5,8 @@ categories: ['Java']
 tags: ['Java']
 ---
 
+{% include toc title="Index" %}
+
 A good design reads like a story and not like a puzzle
 
 

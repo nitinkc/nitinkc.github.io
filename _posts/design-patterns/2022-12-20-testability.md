@@ -1,3 +1,12 @@
+---
+title:  "Optional As a Design Pattern"
+date:   2023-11-06 08:30:00
+categories: ['Java','Design Patterns']
+tags: ['Java']
+---
+
+
+{% include toc title="Index" %}
 
 No Curly in lambdas
 
