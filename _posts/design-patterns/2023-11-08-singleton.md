@@ -23,16 +23,16 @@ class SingletonDemo {
     }
 }
 ```
-* private reference - no external modification.
+* private reference or instance - no external modification.
 
 ```java
     //private static SingletonDemo singletonDemo = new SingletonDemo();//Eager Evaluation
     private static SingletonDemo singletonDemo;//Eager Evaluation
 ```
 
-* public static method (get or of - convention) is the only place that can get an object.
+* public static method (get()/of()/getInstance() - convention) is the only place that can get an object.
 
-
+## Eager Evaluation
 ```java
 //Lazy mode
 public static SingletonDemo of(){
@@ -44,6 +44,10 @@ public static SingletonDemo of(){
 }
 ```
 
+## Lazy Evaluation
+```java
+private static SingletonDemo singletonDemo = new SingletonDemo();//Eager Evaluation
+```
 
 There are four different ways to create objects in java:
 1.     Using new keyword
@@ -52,3 +56,26 @@ There are four different ways to create objects in java:
 4.     Using Object Deserialization: Using new Intance() method
 
 
+Private constructor **doesn't protect** from instantiation via **reflection**.
+
+Joshua Bloch (Effective Java) proposes a better implementation of Singleton
+
+```java
+//This ENUM acts as a singleton bean
+public enum SingletonDemoEnum {
+    //INSTANCE;
+    INSTANCE();
+
+    public String doSomething(){
+        return "Do something inside Enum";
+    }
+}
+
+```
+
+Access thew singleton object via
+```java
+SingletonDemoEnum object = SingletonDemoEnum.INSTANCE;//TODO: Whats is INSTANCE
+```
+
+# What does Spring use
