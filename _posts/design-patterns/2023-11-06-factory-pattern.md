@@ -5,6 +5,7 @@ categories: ['Java','Design Patterns']
 tags: ['Java']
 ---
 
+{% include toc title="Index" %}
 
 # Factory pattern
 

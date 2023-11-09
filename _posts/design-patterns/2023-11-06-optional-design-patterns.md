@@ -5,6 +5,8 @@ categories: ['Java','Design Patterns']
 tags: ['Java']
 ---
 
+{% include toc title="Index" %}
+
 # Optionals - Patterns & Antipatterns
 
 **null is a smell**

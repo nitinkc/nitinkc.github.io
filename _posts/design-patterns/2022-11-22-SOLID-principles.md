@@ -5,6 +5,7 @@ categories: ['Java']
 tags: ['Java']
 ---
 
+{% include toc title="Index" %}
 
 
 ### Supplier

@@ -14,7 +14,9 @@ You get message "You have performed a fast-forward merge."
 
 If both the branches to be merged has changes, Recursive merge happens.
 
-![rebase.png](..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png)
+[//]: # (![rebase.png]&#40;..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png&#41;)
+
+<img src="..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png" width="300" height="300">
 
 # Rebase
 An alternate to merge is Rebase. Rebase is used to integrate changes from one branch to another
@@ -28,3 +30,9 @@ When your feature branch is local and changing history will not affect others.
 
 > Note: `git rebase` should be used with caution in collaborative environments where rewriting history may affect others. 
 > In such cases, consider using `git merge` to incorporate changes from the main branch.
+
+# Using IntelliJ Squash
+
+Remove unnecessary commits by squashing intermediate commits into one.
+
+![squash_intelliJ.png](..%2F..%2Fassets%2Fimages%2Fgit%2Fsquash_intelliJ.png)

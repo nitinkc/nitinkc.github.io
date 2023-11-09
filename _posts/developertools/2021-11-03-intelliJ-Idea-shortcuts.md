@@ -25,35 +25,35 @@ tags: [Shortcuts]
 [https://www.jetbrains.com/help/fleet/live-templates-list-java.html](https://www.jetbrains.com/help/fleet/live-templates-list-java.html)
 ## View
 
-| Key                  | Details                                                                    |                                       |
-|:---------------------|:----------------------------------------------------------------------------|:--------------------------------------|
-| ⇧Shift ⎋Esc         | Hide a tool window                                                            |                                       |
-| ⌘Cmd 0              | Commit                                                                        |                                       |
-| ✅ ⌘Cmd + 1         | Project                                                                       |                                       |
-| ⌘Cmd 2              | Bookmarks                                                                     |                                       |
-| ⌘Cmd 3              | Find                                                                          |                                       |
-| ⌘Cmd 4              | Run                                                                           |                                       |
-| ⌘Cmd 5              | Debug                                                                         |                                       |
-| ⌘Cmd 6              | Problems                                                                      |                                       |
-| ✅ ⌘Cmd 7           | File Structure Tool Window, shows fields, properties, methods, lambdas etc    | **View -> Tool Windows -> Structure** |
-| ⌘Cmd 8              | Services                                                                      |                                       |
-| ⌘Cmd 9              | Git                                                                           |                                       |
-| ⌥Opt F12            | Terminal                                                                      |                                       |
-| ⌃Ctrl ⌘Cmd F        | Enter Full Screen                                                             |                                       |
-| ✅ ⌘Cmd ⇧Shift  I      | Quick Definition,See definition of a symbol at caret                       |                                       |
-| ✅ ⌃Ctrl ⇧Shift P      | View Type Info                                                             |                                       |
-| ⌃Ctrl ⇧Shift  Q       | Context Info                                                                |                                       |
-| ✅ ⌘Cmd P              | View Parameter Infor                                                       |                                       |
-| ✅ **⌘Cmd + E**        | Move to the last location edited ,Show recently opened Files etc.          |                                       |
-| ✅ **⌘Cmd ⇧Shift + E** | See edited code in recently opened Files, Recent Locations                 |                                       |
-| ⌥Opt ⇧Shift  C        | Recent Changes                                                              |                                       |
-| ⌘Cmd   D              | Compare With…                                                               |                                       |
-| ✅ ⌃Ctrl `Backtick     | Quick Switch Scheme, enter presentation mode, etc                          |                                       |
-| ✅ **F3**              | Find uses in the same file                                                 |                                       |
-| ⌘Cmd ⇧Shift F7        | Highlight All Usages                                                        |                                       |
-| ✅  ⌘Cmd  F12          | Display all methods in a file, on a pop up window                          | Cmd⌘ 7 Structure                      |
+| Key                        | Details                                                               |
+|----------------------------|:----------------------------------------------------------------------|
+| ⇧Shift ⎋Esc                | Hide a tool window                                                    |
+| ⌘Cmd 0                     | Commit                                                                |
+| ✅ ⌘Cmd + 1                 | Project                                                               |
+| ⌘Cmd 2                     | Bookmarks                                                             |
+| ⌘Cmd 3                     | Find                                                                  |
+| ⌘Cmd 4                     | Run                                                                   |
+| ⌘Cmd 5                     | Debug                                                                 |
+| ⌘Cmd 6                     | Problems                                                              |
+| ✅ ⌘Cmd 7                   | File Structure Tool Window,   **View -> Tool Windows -> Structure**   |
+| ⌘Cmd 8                     | Services                                                              |
+| ⌘Cmd 9                     | Git                                                                   |
+| ⌥Opt F12                   | Terminal                                                              |
+| ⌃Ctrl ⌘Cmd F               | Enter Full Screen                                                     |
+| ✅ ⌘Cmd ⇧Shift  I           | Quick Definition,See definition of a symbol at caret                  |
+| ✅ ⌃Ctrl ⇧Shift P           | View Type Info                                                        |
+| ⌃Ctrl ⇧Shift  Q            | Context Info                                                          |
+| ✅ ⌘Cmd P                   | View Parameter Infor                                                  |
+| ✅ **⌘Cmd + E**             | Move to the last location edited ,Show recently opened Files etc.     |
+| ✅ **⌘Cmd ⇧Shift + E**      | See edited code in recently opened Files, Recent Locations            |
+| ⌥Opt ⇧Shift  C             | Recent Changes                                                        |
+| ⌘Cmd   D                   | Compare With…                                                         |
+| ✅ ⌃Ctrl `Backtick          | Quick Switch Scheme, enter presentation mode, etc                     |
+| ✅ **F3**                   | Find uses in the same file                                            |
+| ⌘Cmd ⇧Shift F7             | Highlight All Usages                                                     |
 
-✅ ⌘Cmd E | Recent Files
+Cmd⌘ 7 Structure
+✅ ⌘Cmd E | Recent Files                                                                                                                                                                                                                                                                                                                                                                                                                                        
 ![4.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F4.png)
 
 ✅ ⌘Cmd ⇧Shift E | See edited code in recently opened Files, Recent Locations
@@ -78,29 +78,28 @@ tags: [Shortcuts]
 ![10.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F10.png)
 
 
-
 ## Navigate
 
-| Key                               | Details                                               |                                        |
-|:----------------------------------|:------------------------------------------------------|:---------------------------------------|
-| ✅ ⌘Cmd ⇧Shift ⌫Delete            | Last Edit Location, Jump back to previous edit        |                                        |
-| ✅ ⌘Cmd ⌥Opt ←                    | Back                                                  |                                        |
-| ⌘Cmd   G                          | Goto Line:Column                                      |                                        |
-| ⇧   F2                            | Previous Highlighted Error                            |                                        |
-| ⌃ ↓                               | Next Method                                           |                                        |
-| ⌃ ↑                               | Previous Method                                       |                                        |
-| ✅  ⌘Cmd ⇧Shift  M                | Move Caret to Matching Brace                          |                                        |
-| ✅  ⌘Cmd [ / ⌘Cmd ]               | Move through navigation history                       |                                        |
-| ⌘Cmd ⌥Opt .                       | Custom Folding…                                       |                                        |
-| ⌥Opt F1                           | Select In…                                            |                                        |
-| ⌥Opt ↖                            | Jump to Navigation Bar                                | Check                                  |
-| ✅ ⌘Cmd B                         | Declaration or Usages                                 | point, Hold Command key and left click |
-| ✅  ⌘Cmd ⌥Opt B                   | Goto Implementation(s)                                | point and left click                   |
-| ⌃Ctrl ⇧Shift B                    | Type Declaration                                      |                                        |
-| ⌘Cmd U                            | Super Method                                          |                                        |
-| ⌘Cmd ⇧Shift  T                    | Test                                                  |                                        |
-| ⌘Cmd ⌥Opt ↖                       | Related Symbol…                                       |                                        |
-| ⌃ H                               | Type Hierarchy                                        |                                        |
+| Key                               | Details                                                         |
+|:----------------------------------|:----------------------------------------------------------------|
+| ✅ ⌘Cmd ⇧Shift ⌫Delete            | Last Edit Location, Jump back to previous edit                  |
+| ✅ ⌘Cmd ⌥Opt ←                    | Back                                                            |
+| ⌘Cmd   G                          | Goto Line:Column                                                |
+| ⇧   F2                            | Previous Highlighted Error                                      |
+| ⌃ ↓                               | Next Method                                                     |
+| ⌃ ↑                               | Previous Method                                                 |
+| ✅  ⌘Cmd ⇧Shift  M                | Move Caret to Matching Brace                                    |
+| ✅  ⌘Cmd [ / ⌘Cmd ]               | Move through navigation history                                 |
+| ⌘Cmd ⌥Opt .                       | Custom Folding…                                                 |
+| ⌥Opt F1                           | Select In…                                                      |
+| ⌥Opt ↖                            | Jump to Navigation Bar                                          |
+| ✅ ⌘Cmd B                         | Declaration or Usages -> point, Hold Command key and left click |
+| ✅  ⌘Cmd ⌥Opt B                   | Goto Implementation(s) -> point and left click                  |
+| ⌃Ctrl ⇧Shift B                    | Type Declaration                                                |
+| ⌘Cmd U                            | Super Method                                                    |
+| ⌘Cmd ⇧Shift  T                    | Test                                                            |
+| ⌘Cmd ⌥Opt ↖                       | Related Symbol…                                                 |
+| ⌃ H                               | Type Hierarchy                                                  |
 
 ✅ ⌃Ctrl ↓    Next Method / Class in package     
 ✅ ⌃Ctrl ↑    Previous Method / Class in package
@@ -109,45 +108,45 @@ tags: [Shortcuts]
 
 ## Find, Search & Edit, Replace in Files
 
-| Key                       | Details                                                         |                                               |
-|:--------------------------|:----------------------------------------------------------------|:----------------------------------------------|
-| ✅ **⇧Shift ⇧Shift**      | Find All                                                        | Common entry point for all menu               |
-| ✅ ⌘Cmd N                 | Class (⌘Cmd ⇧Shift N -> File) (⌘Cmd ⇧Shift ⌥Opt N -> Symbol )   | Can begin from  **⇧⇧**                        |
-| ✅ ⌘Cmd F                 | Find in current file                                            |                                               |
-| ✅ ^Ctrl ⇧Shift F         | Find in Files                                                   |                                               |
-| ⌘Cmd ⇧Shift F             | Find reference                                                  | CHECK                                         |
-| W or ⌥Opt W               | Narrow search on Find While Searching, can be chosen from ⌘Cmd  |                                               |
-| ⌘Cmd R                    | Replace in current file                                         |                                               |
-| ✅ ^Ctrl ⇧Shift R         | Replace in Files                                                |                                               |
-| ✅ ⌘Cmd ⇧Shift V          | Paste from History…                                             |                                               |
-| ⌘Cmd ⌥Opt ⇧Shift V        | Paste as Plain Text                                             |                                               |
-| F3                        | Find Next Occurrence                                            |                                               |
-| ⇧Shift F3                 | Find Previous Occurrence                                        |                                               |
-| ✅⌃Ctrl ⌘Cmd G            | Select All Occurrences                                          |                                               |
-| ⌃Ctrl   G                 | Add Selection for Next Occurrence                               |                                               |
-| ⌃Ctrl ⇧Shift G            | Unselect Occurrence                                             |                                               |
-| ⌘F3                       | Next Occurrence of the Word at Caret                            |                                               |
-| ⌘Cmd ⌥Opt X               | Find by XPath…                                                  |                                               |
-| ⌥Opt F7                   | Find Usage, Window for detailed view of usages                  | Right click, Find usage                       |
-| ✅ Alt + F7               | Find Usages, Find a method where its used                       | Select method, right clik, choose find usages |
-| ⌘Cmd ⌥Opt ⇧Shift F7       | Find Usages Settings…                                           |                                               |
-| ⌘Cmd ⌥Opt F7              | Show Usages                                                     |                                               |
-| ⌘Cmd   F7                 | Find Usages in File                                             |                                               |
-| ⌘Cmd ⇧ShiftF7             | Highlight Usages in File                                        |                                               |
-| ⌃⌥ ↓                      | Next Highlighted Usage                                          |                                               |
-| ⌘Cmd ⌃Ctrl ⌥Opt ↑         | Previous Highlighted Usage                                      |                                               |
-| ✅ ⌘Cmd ⇧Shift 8          | Column Selection Mode (Press twice to toggle)                   |                                               |
-| ⌥Opt ⇧Shift  G            | Add Carets to Ends of Selected Lines                            |                                               |
-| ⌘Cmd   W                  | Extend Selection                                                |                                               |
-| ⌘Cmd ⇧Shift  W            | Shrink Selection                                                |                                               |
-| ⌘Cmd ⇧Shift  U            | Toggle Case                                                     |                                               |
-| ⌘Cmd  ⌃Ctrl ⇧Shift J      | Join Lines                                                      |                                               |
-| ⌘Cmd   D                  | Duplicate Line                                                  |                                               |
-| ⇧Shift ⇥                  | Unindent Line or Selection                                      |                                               |
-| F11                       | Toggle Bookmark                                                 |                                               |
-| ⌘Cmd F11                  | Add Mnemonic Bookmark...                                        |                                               |
-| ⇧Shift F11                | Show Line Bookmarks...                                          |                                               |
-| ⌃Ctrl ⌘Cmd ␣              | Emoji & Symbols                                                 |                                               |
+| Key                       | Details                                                                                     |
+|:--------------------------|:--------------------------------------------------------------------------------------------|
+| ✅ **⇧Shift ⇧Shift**      | Find All    -> **Common entry point for all menu**                                          |
+| ✅ ⌘Cmd N                 | Class (⌘Cmd ⇧Shift N -> File) (⌘Cmd ⇧Shift ⌥Opt N -> Symbol )   Can begin from  **⇧⇧**      |
+| ✅ ⌘Cmd F                 | Find in current file                                                                        |
+| ✅ ^Ctrl ⇧Shift F         | Find in Files                                                                               |
+| ⌘Cmd ⇧Shift F             | Find reference                                                  CHECK                       |
+| W or ⌥Opt W               | Narrow search on Find While Searching, can be chosen from ⌘Cmd                              |
+| ⌘Cmd R                    | Replace in current file                                                                     |
+| ✅ ^Ctrl ⇧Shift R         | Replace in Files                                                                            |
+| ✅ ⌘Cmd ⇧Shift V          | Paste from History…                                                                         |
+| ⌘Cmd ⌥Opt ⇧Shift V        | Paste as Plain Text                                                                         |
+| F3                        | Find Next Occurrence                                                                        |
+| ⇧Shift F3                 | Find Previous Occurrence                                                                    |
+| ✅⌃Ctrl ⌘Cmd G            | Select All Occurrences                                                                      |
+| ⌃Ctrl   G                 | Add Selection for Next Occurrence                                                           |
+| ⌃Ctrl ⇧Shift G            | Unselect Occurrence                                                                         |
+| ⌘F3                       | Next Occurrence of the Word at Caret                                                        |
+| ⌘Cmd ⌥Opt X               | Find by XPath…                                                                              |
+| ⌥Opt F7                   | Find Usage, Window for detailed view of usages -> Right click, Find usage                   |
+| ✅ Alt + F7               | Find Usages, Find a method where its used  -> Select method, right clik, choose find usages |
+| ⌘Cmd ⌥Opt ⇧Shift F7       | Find Usages Settings…                                                                       |
+| ⌘Cmd ⌥Opt F7              | Show Usages                                                                                 |
+| ⌘Cmd   F7                 | Find Usages in File                                                                         |
+| ⌘Cmd ⇧ShiftF7             | Highlight Usages in File                                                                    |
+| ⌃⌥ ↓                      | Next Highlighted Usage                                                                      |
+| ⌘Cmd ⌃Ctrl ⌥Opt ↑         | Previous Highlighted Usage                                                                  |
+| ✅ ⌘Cmd ⇧Shift 8          | Column Selection Mode (Press twice to toggle)                                               |
+| ⌥Opt ⇧Shift  G            | Add Carets to Ends of Selected Lines                                                        |
+| ⌘Cmd   W                  | Extend Selection                                                                            |
+| ⌘Cmd ⇧Shift  W            | Shrink Selection                                                                            |
+| ⌘Cmd ⇧Shift  U            | Toggle Case                                                                                 |
+| ⌘Cmd  ⌃Ctrl ⇧Shift J      | Join Lines                                                                                  |
+| ⌘Cmd   D                  | Duplicate Line                                                                              |
+| ⇧Shift ⇥                  | Unindent Line or Selection                                                                  |
+| F11                       | Toggle Bookmark                                                                             |
+| ⌘Cmd F11                  | Add Mnemonic Bookmark...                                                                    |
+| ⇧Shift F11                | Show Line Bookmarks...                                                                      |
+| ⌃Ctrl ⌘Cmd ␣              | Emoji & Symbols                                                                             |
 
 ✅⌃Ctrl ⌘Cmd G | Select All Occurrences
 ![3.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F3.png)
@@ -281,25 +280,25 @@ Just like moving into method definition(⌘Cmd ⌥Opt B )
 
 ## Window
 
-| Key             | Details                                     |
-|:----------------|:--------------------------------------------|
-| ⌘Cmd M          | Maximize or unmaximize your current tab.    |
-| ⌃ ⌘Cmd =        | Zoom In                                     |
-| ⇧F12            | Restore Default Layout                      |
-| ⇧               | Hide Active Tool Window                     |
-| ⇧ ⌘Cmd F12      | Hide All Windows                            |
-| ⇧ ⌘Cmd F4       | Close Active Tab                            |
-| F12             | Jump to Last Tool Window                    |
-| ⌃ →             | Select Next Tab                             |
-| ⌃ ←             | Select Previous Tab                         |
-| ⌘Cmd F4         | Close Tab                                   |
-| ⌘Cmd   ,        | Preferences…                                |
-| ⌘Cmd   H        | Hide IntelliJ IDEA ⌘Cmd ⌥Opt H Hide Others  |
-| ⌘Cmd   Q        | Quit IntelliJ IDEA                          |
-| ⌘Cmd ⌥Opt Q     | Quit and Close All Windows                  |
+| Key            | Details                                     |
+|:---------------|:--------------------------------------------|
+| ⌘Cmd M         | Maximize or unmaximize your current tab.    |
+| ⌃ ⌘Cmd =       | Zoom In                                     |
+| ⇧F12           | Restore Default Layout                      |
+| ⇧              | Hide Active Tool Window                     |
+| ⇧ ⌘Cmd F12     | Hide All Windows                            |
+| ⇧ ⌘Cmd F4      | Close Active Tab                            |
+| F12            | Jump to Last Tool Window                    |
+| ⌃ →            | Select Next Tab                             |
+| ⌃ ←            | Select Previous Tab                         |
+| ⌘Cmd F4        | Close Tab                                   |
+| ⌘Cmd ,         | Preferences…                                |
+| ⌘Cmd H         | Hide IntelliJ IDEA ⌘Cmd ⌥Opt H Hide Others  |
+| ⌘Cmd Q         | Quit IntelliJ IDEA                          |
+| ⌘Cmd ⌥Opt Q    | Quit and Close All Windows                  |
 
 ✅ ⌘Cmd F12
-Display all methods in a file, on a pop up window
+Display all methods in a file, on a pop-up window
 
 Cmd⌘ 7 Structure
 ![11.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F11.png)
@@ -308,19 +307,20 @@ Cmd⌘ 7 Structure
 ⌘Cmd - Collapse
 ✅ ⌘Cmd ⇧Shift + Expand All
 ⌘Cmd + Expand
+
 ![12.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F12.png)
 
 
 ## Coding Assistance
 
-| Key                               | Details                                       |
-|:----------------------------------|:----------------------------------------------|
-| ⌘Cmd F1                           | See Warning Errors, Press twice for details   |
-| ⌘Cmd J                            | See documentation of a symbol at caret        |
-|                                   | unmaximize your current tab.                  |
-| ⌘Cmd + K/^Ctrl Sh K               | Find instances fwd / backwards                |
-| ⌘Cmd  +⇧Shift+G                   | Select an element and search its occurrences  |
-| ⌘Cmd  ⇧Shift O                    |                                               |
+| Key                   | Details                                       |
+|:----------------------|:----------------------------------------------|
+| ⌘Cmd F1               | See Warning Errors, Press twice for details   |
+| ⌘Cmd J                | See documentation of a symbol at caret        |
+|                       | unmaximize your current tab.                  |
+| ⌘Cmd + K/^Ctrl Sh K   | Find instances fwd / backwards                |
+| ⌘Cmd  +⇧Shift+G       | Select an element and search its occurrences  |
+| ⌘Cmd  ⇧Shift O        |                                               |
 
 
 ##### Surround with 
@@ -328,6 +328,7 @@ Cmd⌘ 7 Structure
 Surround With **⌘Сmd ⌥Opt T**
 ![surround_with.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsurround_with.png)
 
+<!-- 
 ## PDF Reference
 
 <object data="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf" type="application/pdf" width="700px" height="700px">
@@ -335,7 +336,7 @@ Surround With **⌘Сmd ⌥Opt T**
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf">Download PDF</a>.</p>
     </embed>
 </object>
-
+-->
 
 <!-- <table>
   <tr>
