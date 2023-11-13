@@ -108,45 +108,45 @@ Cmd⌘ 7 Structure
 
 ## Find, Search & Edit, Replace in Files
 
-| Key                       | Details                                                                                     |
-|:--------------------------|:--------------------------------------------------------------------------------------------|
-| ✅ **⇧Shift ⇧Shift**      | Find All    -> **Common entry point for all menu**                                          |
-| ✅ ⌘Cmd N                 | Class (⌘Cmd ⇧Shift N -> File) (⌘Cmd ⇧Shift ⌥Opt N -> Symbol )   Can begin from  **⇧⇧**      |
-| ✅ ⌘Cmd F                 | Find in current file                                                                        |
-| ✅ ^Ctrl ⇧Shift F         | Find in Files                                                                               |
-| ⌘Cmd ⇧Shift F             | Find reference                                                  CHECK                       |
-| W or ⌥Opt W               | Narrow search on Find While Searching, can be chosen from ⌘Cmd                              |
-| ⌘Cmd R                    | Replace in current file                                                                     |
-| ✅ ^Ctrl ⇧Shift R         | Replace in Files                                                                            |
-| ✅ ⌘Cmd ⇧Shift V          | Paste from History…                                                                         |
-| ⌘Cmd ⌥Opt ⇧Shift V        | Paste as Plain Text                                                                         |
-| F3                        | Find Next Occurrence                                                                        |
-| ⇧Shift F3                 | Find Previous Occurrence                                                                    |
-| ✅⌃Ctrl ⌘Cmd G            | Select All Occurrences                                                                      |
-| ⌃Ctrl   G                 | Add Selection for Next Occurrence                                                           |
-| ⌃Ctrl ⇧Shift G            | Unselect Occurrence                                                                         |
-| ⌘F3                       | Next Occurrence of the Word at Caret                                                        |
-| ⌘Cmd ⌥Opt X               | Find by XPath…                                                                              |
-| ⌥Opt F7                   | Find Usage, Window for detailed view of usages -> Right click, Find usage                   |
-| ✅ Alt + F7               | Find Usages, Find a method where its used  -> Select method, right clik, choose find usages |
-| ⌘Cmd ⌥Opt ⇧Shift F7       | Find Usages Settings…                                                                       |
-| ⌘Cmd ⌥Opt F7              | Show Usages                                                                                 |
-| ⌘Cmd   F7                 | Find Usages in File                                                                         |
-| ⌘Cmd ⇧ShiftF7             | Highlight Usages in File                                                                    |
-| ⌃⌥ ↓                      | Next Highlighted Usage                                                                      |
-| ⌘Cmd ⌃Ctrl ⌥Opt ↑         | Previous Highlighted Usage                                                                  |
-| ✅ ⌘Cmd ⇧Shift 8          | Column Selection Mode (Press twice to toggle)                                               |
-| ⌥Opt ⇧Shift  G            | Add Carets to Ends of Selected Lines                                                        |
-| ⌘Cmd   W                  | Extend Selection                                                                            |
-| ⌘Cmd ⇧Shift  W            | Shrink Selection                                                                            |
-| ⌘Cmd ⇧Shift  U            | Toggle Case                                                                                 |
-| ⌘Cmd  ⌃Ctrl ⇧Shift J      | Join Lines                                                                                  |
-| ⌘Cmd   D                  | Duplicate Line                                                                              |
-| ⇧Shift ⇥                  | Unindent Line or Selection                                                                  |
-| F11                       | Toggle Bookmark                                                                             |
-| ⌘Cmd F11                  | Add Mnemonic Bookmark...                                                                    |
-| ⇧Shift F11                | Show Line Bookmarks...                                                                      |
-| ⌃Ctrl ⌘Cmd ␣              | Emoji & Symbols                                                                             |
+| Key                  | Details                                                                                     |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| ✅ **⇧Shift ⇧Shift**  | Find All    -> **Common entry point for all menu**                                          |
+| ✅ ⌘Cmd N             | Class (⌘Cmd ⇧Shift N -> File) (⌘Cmd ⇧Shift ⌥Opt N -> Symbol )   Can begin from  **⇧⇧**      |
+| ✅ ⌘Cmd F             | Find in current file                                                                        |
+| ✅ ^Ctrl ⇧Shift F     | Find in Files                                                                               |
+| ⌘Cmd ⇧Shift F        | Find reference                                                  CHECK                       |
+| W or ⌥Opt W          | Narrow search on Find While Searching, can be chosen from ⌘Cmd                              |
+| ⌘Cmd R               | Replace in current file                                                                     |
+| ✅ ^Ctrl ⇧Shift R     | Replace in Files                                                                            |
+| ✅ ⌘Cmd ⇧Shift V      | Paste from History…                                                                         |
+| ⌘Cmd ⌥Opt ⇧Shift V   | Paste as Plain Text                                                                         |
+| F3                   | Find Next Occurrence                                                                        |
+| ⇧Shift F3            | Find Previous Occurrence                                                                    |
+| ✅⌃Ctrl ⌘Cmd G        | Select All Occurrences                                                                      |
+| ⌃Ctrl   G            | Add Selection for Next Occurrence                                                           |
+| ⌃Ctrl ⇧Shift G       | Unselect Occurrence                                                                         |
+| ⌘F3                  | Next Occurrence of the Word at Caret                                                        |
+| ⌘Cmd ⌥Opt X          | Find by XPath…                                                                              |
+| ⌥Opt F7              | Find Usage, Window for detailed view of usages -> Right click, Find usage                   |
+| ✅ Alt + F7           | Find Usages, Find a method where its used  -> Select method, right clik, choose find usages |
+| ⌘Cmd ⌥Opt ⇧Shift F7  | Find Usages Settings…                                                                       |
+| ✅ ⌘Cmd ⌥Opt F7       | Show Usages                                                                                 |
+| ⌘Cmd   F7            | Find Usages in File                                                                         |
+| ⌘Cmd ⇧ShiftF7        | Highlight Usages in File                                                                    |
+| ⌃⌥ ↓                 | Next Highlighted Usage                                                                      |
+| ⌘Cmd ⌃Ctrl ⌥Opt ↑    | Previous Highlighted Usage                                                                  |
+| ✅ ⌘Cmd ⇧Shift 8      | Column Selection Mode (Press twice to toggle)                                               |
+| ⌥Opt ⇧Shift  G       | Add Carets to Ends of Selected Lines                                                        |
+| ⌘Cmd   W             | Extend Selection                                                                            |
+| ⌘Cmd ⇧Shift  W       | Shrink Selection                                                                            |
+| ⌘Cmd ⇧Shift  U       | Toggle Case                                                                                 |
+| ⌘Cmd  ⌃Ctrl ⇧Shift J | Join Lines                                                                                  |
+| ⌘Cmd   D             | Duplicate Line                                                                              |
+| ⇧Shift ⇥             | Unindent Line or Selection                                                                  |
+| F11                  | Toggle Bookmark                                                                             |
+| ⌘Cmd F11             | Add Mnemonic Bookmark...                                                                    |
+| ⇧Shift F11           | Show Line Bookmarks...                                                                      |
+| ⌃Ctrl ⌘Cmd ␣         | Emoji & Symbols                                                                             |
 
 ✅⌃Ctrl ⌘Cmd G | Select All Occurrences
 ![3.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F3.png)
@@ -173,6 +173,9 @@ Select All Occurrences
 Select and Right click opens menu
 
 ![19.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F19.png)
+
+✅ ⌘Cmd ⌥Opt F7
+![findUsages.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FfindUsages.png)
 
 ## Code
 
