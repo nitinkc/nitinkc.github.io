@@ -52,28 +52,26 @@ tags: [Shortcuts]
 | ✅ **F3**                   | Find uses in the same file                                            |
 | ⌘Cmd ⇧Shift F7             | Highlight All Usages                                                     |
 
-Cmd⌘ 7 Structure
-✅ ⌘Cmd E | Recent Files                                                                                                                                                                                                                                                                                                                                                                                                                                        
+- ✅ ⌘Cmd E | Recent Files   
+- ✅  ⌘Cmd E | Move to the last location edited ,Show recently opened Files
 ![4.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F4.png)
 
-✅ ⌘Cmd ⇧Shift E | See edited code in recently opened Files, Recent Locations
+
+- ✅ ⌘Cmd ⇧Shift E | See edited code in recently opened Files, Recent Locations
 ![5.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F5.png)
 
-✅ ⌘Cmd ⇧Shift I  | Quick Definition,See definition of a symbol at caret
+- ✅ ⌘Cmd ⇧Shift I  | Quick Definition,See definition of a symbol at caret
 ![6.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F6.png)
 
-⌘Cmd P | View Parameter Information
+- ⌘Cmd P | View Parameter Information
 ![7.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F7.png)
 
-✅ ⌃Ctrl ⇧Shift P | View Type Info
+- ✅ ⌃Ctrl ⇧Shift P | View Type Info
 ![8.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F8.png)
 
 ![8.1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F8.1.png)
 
-✅  ⌘Cmd + E | Move to the last location edited ,Show recently opened Files
-![9.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F9.png)
-
-✅ ⌃Ctrl `Backtick | Quick Switch Scheme, enter presentation mode, etc
+- ✅ ⌃Ctrl `Backtick | Quick Switch Scheme, enter presentation mode, etc
 
 ![10.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F10.png)
 
@@ -101,9 +99,8 @@ Cmd⌘ 7 Structure
 | ⌘Cmd ⌥Opt ↖                       | Related Symbol…                                                 |
 | ⌃ H                               | Type Hierarchy                                                  |
 
-✅ ⌃Ctrl ↓    Next Method / Class in package     
-✅ ⌃Ctrl ↑    Previous Method / Class in package
-
+- ✅ ⌃Ctrl ↓    Next Method / Class in package     
+- ✅ ⌃Ctrl ↑    Previous Method / Class in package
 ![13.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F13.png)
 
 ## Find, Search & Edit, Replace in Files
@@ -148,33 +145,34 @@ Cmd⌘ 7 Structure
 | ⇧Shift F11           | Show Line Bookmarks...                                                                      |
 | ⌃Ctrl ⌘Cmd ␣         | Emoji & Symbols                                                                             |
 
-✅⌃Ctrl ⌘Cmd G | Select All Occurrences
+- ✅⌃Ctrl ⌘Cmd G | Select All Occurrences
 ![3.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F3.png)
 
-Begin from ⇧⇧
-✅ ⇧Shift ⇧Shift | Find All | Common entry point for all menu
-✅ ⌘Cmd N | Class
-⌘Cmd ⇧Shift N -> File
-⌘Cmd ⇧Shift ⌥Opt N -> Symbol
+`Begin from ⇧⇧`
+
+- ✅ ⇧Shift ⇧Shift | Find All | Common entry point for all menu
+- ✅ ⌘Cmd N | Class
+- ⌘Cmd ⇧Shift N -> File
+- ⌘Cmd ⇧Shift ⌥Opt N -> Symbol
 ![15.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F15.png)
 
-✅ ^Ctrl ⇧Shift F | Find in Files
+- ✅ ^Ctrl ⇧Shift F | Find in Files
 ![16.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F16.png)
 
-✅ ⌘Cmd F | Find in current file
+- ✅ ⌘Cmd F | Find in current file
 ![17.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F17.png)
 
-✅ ⌘Cmd ⇧Shift V | Paste from History…
+- ✅ ⌘Cmd ⇧Shift V | Paste from History…
 ![18.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F18.png)
 
-✅⌃Ctrl ⌘Cmd G
+- ✅⌃Ctrl ⌘Cmd G
 
 Select All Occurrences
 Select and Right click opens menu
 
 ![19.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F19.png)
 
-✅ ⌘Cmd ⌥Opt F7
+- ✅ ⌘Cmd ⌥Opt F7
 ![findUsages.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FfindUsages.png)
 
 ## Code
@@ -216,9 +214,9 @@ Select and Right click opens menu
 | ⌥Opt ⇧Shift  ↑           | Move Line Up                                            |
 | ⌘Cmd ⇧Shift ⌥Opt K       | Convert Java File to Kotlin File                        |
 
-✅  ⌘Cmd B   Declaration or Usages of item
-point, Hold Command key and left click
-Just like moving into method definition(⌘Cmd ⌥Opt B )
+- ✅  ⌘Cmd B   Declaration or Usages of item
+  - point, Hold Command key and left click
+  - Just like moving into method definition(⌘Cmd ⌥Opt B )
 
 ![14.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F14.png)
 
@@ -238,10 +236,10 @@ Just like moving into method definition(⌘Cmd ⌥Opt B )
 | F6                               | Move Members…                                  |
 | F5                               | Copy Class…                                    |
 
-✅ ⌘Cmd ⇧Shift ⌥Opt T | Refactor This - Opens up all the options below
+- ✅ ⌘Cmd ⇧Shift ⌥Opt T | Refactor This - Opens up all the options below
 ![1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F1.png)
 
-✅  ⌘Cmd ⌥Opt V  | Declare the variable
+- ✅  ⌘Cmd ⌥Opt V  | Declare the variable
 ![2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F2.png)
 
 ## Inheritance Hierarchy
@@ -300,16 +298,16 @@ Just like moving into method definition(⌘Cmd ⌥Opt B )
 | ⌘Cmd Q         | Quit IntelliJ IDEA                          |
 | ⌘Cmd ⌥Opt Q    | Quit and Close All Windows                  |
 
-✅ ⌘Cmd F12
+- ✅ ⌘Cmd F12
 Display all methods in a file, on a pop-up window
 
-Cmd⌘ 7 Structure
+- Cmd⌘ 7 Structure
 ![11.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F11.png)
 
-✅ ⌘Cmd ⇧Shift -  Collapse All
-⌘Cmd - Collapse
-✅ ⌘Cmd ⇧Shift + Expand All
-⌘Cmd + Expand
+- ✅ ⌘Cmd ⇧Shift -  Collapse All
+  - ⌘Cmd - Collapse
+- ✅ ⌘Cmd ⇧Shift + Expand All
+  - ⌘Cmd + Expand
 
 ![12.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F12.png)
 
