@@ -1,48 +1,16 @@
-# Add multiple remote Repo
-git remote add bb https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
-git remote add gh https://github.com/nitinkc/git-tests.git
+---
+title:  "Git - Multi Repo projects "
+date:   2023-11-03 14:30:00
+categories: ['Git']
+tags: ['Git']
+---
 
-## Apply actions
-git remote set-url --push gh https://github.com/nitinkc/git-tests.git
-git remote set-url --push bb https://bitbucket.davita.com/scm/\~nichaurasia/design-patterns.git
+Add and update two repositories simultaneously
 
-```editorconfig
-[core]
-repositoryformatversion = 0
-filemode = true
-bare = false
-logallrefupdates = true
-ignorecase = true
-precomposeunicode = true
-[remote "origin"]
-url = https://github.com/nitinkc/git-tests.git
-fetch = +refs/heads/*:refs/remotes/origin/*
-pushurl = https://github.com/nitinkc/git-tests.git
-[branch "main"]
-remote = origin # both #Goes to pushing both
-merge = refs/heads/main
-[remote "bb"]
-url = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
-fetch = +refs/heads/*:refs/remotes/bb/*
-pushurl = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
-[remote "gh"]
-url = https://github.com/nitinkc/git-tests.git
-fetch = +refs/heads/*:refs/remotes/gh/*
-pushurl = https://github.com/nitinkc/git-tests.git
-[remote "both"]
-url = https://github.com/nitinkc/git-tests.git
-url = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
-fetch = +refs/heads/*:refs/remotes/origin/*
-pushurl = https://github.com/nitinkc/git-tests.git
-pushurl = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
 
-[user]
-name = nitin
-email = gs.nitin@gmail.com
-[pull]
-rebase = false
 
-```
+
+{% gist nitinkc/81c53424cf60e8742b30df02a844906c %}
 
 
 ```shell
@@ -64,7 +32,7 @@ git push gh main
 ## Scenario 1
 
 ```shell
-create a new branch <feature/git-squash-commit-test>
+create a new branch feature/git-squash-commit-test
 
 # Sets the default repo to BitBucket
 git push --set-upstream bb feature/git-squash-commit-test
@@ -96,3 +64,102 @@ To https://bitbucket.org/nitinc/git-tests-bb.git
    86870ce..85d75b5  main -> main
 ╭─░▒▓    ~/Downloads/git-tests ─
 ```
+
+`git push <remote-name> <branch-name>`
+
+By default, the branch main is declared with `git init` command als it also sets `remote "origin"` with git re
+
+`git init` creates the following git config
+```editorconfig
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+```
+
+The following remote add command creates the next config `remote "origin"`
+```shell
+git remote set-url <remote_name> <remote_url>
+# Commands provided from git repo
+git remote add origin https://github.com/nitinkc/git-tests.git
+```
+
+```editorconfig
+[remote "origin"]
+	url = https://github.com/nitinkc/git-tests.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+```
+
+When there is a new branch created in workspace/local repository, before pushing it to repo, `-u` or `--set-upstream` 
+option is used which adds an entry into the git config
+
+```shell
+git push -u origin main
+```
+
+```editorconfig
+[branch "main"]
+    remote = origin
+    merge = refs/heads/main
+```
+
+For each subsequent push to a feature branch,
+```shell
+git checkout -b feature/new-feature-branch
+
+git push # fatal: The current branch feature/new-feature-branch has no upstream branch.
+git push --set-upstream origin feature/new-feature-branch
+```
+git config gets one entry
+```editorconfig
+[branch "feature/new-feature-branch"]
+	remote = origin
+	merge = refs/heads/feature/new-feature-branch
+```
+
+Taking the leveragew of the remote created automatically, we can create multiple **remotes** and push explicitly into those
+
+The full command for the push is
+```shell
+git push <remote-name> <branch-name>
+```
+
+We can create a new remote called **bb** by
+
+
+```editorconfig
+[remote "bb"]
+    url = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
+    fetch = +refs/heads/*:refs/remotes/bb/*
+```
+
+Also, set the push url with
+```shell
+git remote set-url --push gh https://github.com/nitinkc/git-tests.git
+```
+
+This will modify the gitconfig as below :-
+```editorconfig
+[remote "bb"]
+	url = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
+	fetch = +refs/heads/*:refs/remotes/bb/*
+	pushurl = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
+
+```
+
+
+
+
+
+# Summary
+
+##### Add multiple remote Repo
+git remote add bb https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
+git remote add gh https://github.com/nitinkc/git-tests.git
+
+##### Apply actions
+git remote set-url --push bb https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
+git remote set-url --push gh https://github.com/nitinkc/git-tests.git
