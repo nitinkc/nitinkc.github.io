@@ -7,6 +7,19 @@ tags: ['Developer tools']
 ---
 {% include toc title="Index" %}
 
+# Make sublime default editor on mac
+
+- Assuming sublime version 4
+- no restart needed
+
+```shell
+brew install duti
+
+duti -s com.sublimetext.4 public.plain-text all 
+duti -s com.sublimetext.4 public.data all
+
+duti -s com.sublimetext.4 public.unix-executable all # set executable scripts to open with subl
+```
 
 # Sublime Editor Settings
 
@@ -21,6 +34,7 @@ Sublime Text -> Preferences -> Color Scheme -> and pick between available Comple
 To install an external theme,
 
 Open Command Pallete `Tools -> Command Pallete` or `cmd+Shift+P` and Execute
+
 ```
 Install Package Control
 ```
