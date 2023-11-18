@@ -13,14 +13,163 @@ tags: [Microservices]
 ### Argumnent Matchers
 `any()` - be generic always, by passing all the arguments as arg matchers or be specific
 
-#### Step 1
+# Annotations
 
-Class level annotations
+### Integration Testing with `@SpringBootTest`:
 
-```java
-@ExtendWith(MockitoExtension.class)
-@MockitoSettings(strictness = Strictness.LENIENT)
-```
+- **Purpose**:
+    - Integration testing using the Spring Boot Testing framework.
+    - Loads the full Spring application context.
+    - Tests the application as if it were running in a real environment.
+
+- **Usage**:
+    - Suitable for end-to-end testing and ensuring components work together.
+    - Higher code coverage as it exercises the entire application stack.
+
+## Unit Testing with `@ExtendWith(MockitoExtension.class)`:
+
+- **Purpose**:
+    - Unit testing using Mockito for mocking dependencies.
+    - Enables Mockito for mocking objects during tests.
+    - Focuses on isolating and testing specific components or classes.
+
+- **Usage**:
+    - Used in conjunction with Mockito annotations like `@Mock`, `@InjectMocks`, etc.
+    - Does not start the Spring context; it's focused on unit testing.
+
+## Mocking Beans with `@MockBean`:
+
+- **Purpose**:
+    - Mocks beans in integration tests or unit tests involving Spring's application context.
+    - Replaces real Spring beans with mock objects for testing purposes.
+
+- **Usage**:
+    - Particularly useful when you want to isolate and test specific components without interacting with real implementations.
+    - Allows control over the behavior of dependencies to simulate different scenarios.
+
+## `@ExtendWith(SpringExtension.class)`:
+
+- **Purpose**:
+    - Enables Spring integration with JUnit 5.
+    - Replaces `@RunWith(SpringRunner.class)` when using JUnit 5.
+
+- **Usage**:
+    - Sets up the Spring context before test methods are executed and closes it afterward.
+    - Used to create a testing environment with a fully configured Spring application context.
+
+## JUnit 5 Annotations:
+
+1. **Test Annotation:**
+    - `@Test`
+        - Identifies a method as a test method.
+
+2. **Lifecycle Annotations:**
+    - `@BeforeAll`
+        - Denotes a method that should be run before all tests in a class.
+    - `@BeforeEach`
+        - Denotes a method that should be run before each test method.
+    - `@AfterEach`
+        - Denotes a method that should be run after each test method.
+    - `@AfterAll`
+        - Denotes a method that should be run after all tests in a class.
+
+3. **Test Assertion Annotations:**
+    - `@Assertions`
+        - Container for multiple assertion annotations like `@assertTrue`, `@assertFalse`, etc.
+
+4. **Parameterized Tests:**
+    - `@ParameterizedTest`
+        - Denotes that the annotated method is a parameterized test.
+    - `@ValueSource`
+        - Provides a single value for a parameterized test.
+    - `@CsvSource`
+        - Provides CSV-formatted values for a parameterized test.
+
+5. **Repeated Tests:**
+    - `@RepeatedTest`
+        - Indicates that the annotated method is a repeated test.
+
+6. **Conditional Test Execution:**
+    - `@Disabled`
+        - Disables a test class or method.
+
+7. **Tagging and Filtering:**
+    - `@Tag`
+        - Allows tagging tests for later filtering.
+    - `@DisplayName`
+        - Defines a custom display name for a test class or method.
+
+## Mockito Annotations:
+
+1. **Mocking Annotations:**
+    - `@Mock`
+        - Creates a mock object.
+    - `@Spy`
+        - Creates a spy (partial mock) object.
+
+2. **Injection Annotations:**
+    - `@InjectMocks`
+        - Injects mock/spy dependencies into the test subject.
+
+3. **Verification Annotations:**
+    - `@MockitoSettings`
+        - Provides additional settings for Mockito.
+    - `@Captor`
+        - Captures argument values for further assertions.
+    - `@VerificationMode`
+        - Configures the verification mode (times, atLeastOnce, etc.).
+
+## Spring Testing Annotations:
+
+1. **Integration Testing:**
+    - `@SpringBootTest`
+        - Loads the Spring application context for integration tests.
+    - `@DataJpaTest`
+        - Configures a test for JPA-based tests.
+
+2. **Dependency Injection:**
+    - `@Autowired`
+        - Injects a bean into a test class or method.
+    - `@MockBean`
+        - Mocks a bean when used with `@SpringBootTest`.
+
+3. **Transaction Management:**
+    - `@Transactional`
+        - Specifies that a test method should be run within a transaction.
+
+4. **Web Testing:**
+    - `@WebMvcTest`
+        - Configures a test for Spring MVC-based tests.
+
+5. **Profile Configuration:**
+    - `@ActiveProfiles`
+        - Specifies which bean definition profiles should be active.
+
+6. **Testing Components:**
+    - `@ComponentScan`
+        - Configures component scanning for the test context.
+
+7. **Property Source Configuration:**
+    - `@TestPropertySource`
+        - Configures properties for the test context.
+
+8. **Testing Annotations from JUnit Jupiter:**
+    - Annotations like `@Test`, `@BeforeEach`, etc., can also be used in Spring tests.
+
+These annotations are commonly used for testing in Java, and their usage may vary based on the testing framework (JUnit, Mockito, Spring Test, etc.) and the specific requirements of your tests.
+
+## Additional Concepts:
+
+- **Argument Matchers with Mockito**:
+    - `anyString()` and `any()` are argument matchers in Mockito.
+    - They are more lenient, allowing matching for any argument of the specified type.
+
+- **`@MockitoSettings(strictness = Strictness.LENIENT)`**:
+    - Configures the strictness level of Mockito.
+    - In lenient mode, Mockito is more permissive with interactions, allowing non-stubbed method calls.
+
+These annotations and concepts collectively provide a comprehensive testing strategy for both unit and integration testing in a Spring Boot application.
+
 
 #### Declaring the Mocks
 ```java
@@ -48,41 +197,6 @@ void setUp() {
     MockitoAnnotations.initMocks(this);
 }
 ```
-
-@MockBean from package `org.springframework.boot.test.mock.mockito`
-@Mock package `org.mockito`;
-
-used for mocking beans in integration tests or unit tests that involve Spring's application context
-
-Bean Mocking: It allows you to replace a real Spring bean in the application context with a mock object for testing purposes. 
-
-This is particularly useful when you want to isolate and test specific components without interacting with the real 
-implementations of certain beans.
-
-Testing: @MockBean is commonly used in integration tests and unit tests where you are testing components that rely on
-other beans or dependencies. 
-
-By using @MockBean, you can control the behavior of these dependencies to simulate different scenarios for testing.
-
-Behavior Control: It allows you to define the behavior of mocked beans using mocking frameworks like Mockito or EasyMock. 
-You can specify what methods should return when invoked and how they should behave during the test.
-
-@MockBean is used to mock the `SomeDependency` bean.
-
-
-The `@ExtendWith(SpringExtension.class)` annotation is used in JUnit 5 to enable the Spring Framework's integration with JUnit for testing. 
-It replaces the JUnit 4 `@RunWith(SpringRunner.class)` when you are using JUnit 5.
-
-Here's what it does:
-
-1. **Spring Integration**: It tells JUnit 5 to integrate with the Spring Framework, allowing you to perform integration 
-testing by loading Spring's application context.
-
-2. **Spring Boot**: When you're using Spring Boot, this annotation is often used to create a testing environment with a 
-fully configured Spring application context, including the application's beans, configurations, and properties.
-
-3. **Setup**: It sets up the Spring context before test methods are executed and closes it afterward. 
-This ensures that you can use the Spring features and components in your tests.
 
 Here's a simple example of how to use `@ExtendWith(SpringExtension.class)`:
 
@@ -125,38 +239,6 @@ Use Argument matchers only on the Mocks
 List<Map<String, Object>> mockDBCall = dataAccessObjectMock.getRecordFromView(anyString(), anyString(), any());
 when(mockDBCall).thenReturn(data);//mockDBCall == data initialized in @BeforeEach void setUp()
 ```
-
-1. **`@SpringBootTest`**:
-   - `@SpringBootTest` is part of the Spring Boot Testing framework and is used for integration testing. 
-     - It starts the Spring application context, 
-     - loads the full Spring application context configuration, 
-     - and tests your application as if it were running in a real environment. 
-     - It's primarily used for end-to-end testing and ensuring that all components of your application work together as expected.
-  - When you use `@SpringBootTest`, it may lead to higher code coverage because it exercises the entire application stack, including controllers, services, and repositories. However, it might also introduce more complex and slower tests compared to unit tests.
-
-2. **`@ExtendWith(MockitoExtension.class)`**:
-   - `@ExtendWith(MockitoExtension.class)` is used with JUnit 5 to enable Mockito for mocking dependencies 
-   - in unit tests. 
-   - Mockito is a library for creating mock objects to isolate the unit under test and focus on testing specific components or classes in isolation.
-   - It's primarily used for unit testing, where you want to isolate a class or component from its dependencies and focus on its behavior in isolation. This type of testing often leads to more focused and faster tests.
-   - When you use `@ExtendWith(MockitoExtension.class)`, you are **not** starting the Spring context, so it's not an integration test.
-
-The code coverage may differ between these two approaches because they serve different testing purposes:
-
-- `@SpringBootTest` is likely to have higher code coverage because it tests the application as a whole and exercises many components.
-- `@ExtendWith(MockitoExtension.class)` focuses on unit testing and is not intended to provide the same level of code coverage as integration tests. It allows you to isolate a specific class or component and stub/mock its dependencies. It's less concerned with the interactions and coverage of the entire application.
-
-when you are providing specific arguments
-Mockito will only match the `when` statement when these exact arguments are used in the actual method call. 
-
-If the actual method call uses different instances of the parameters object, for example, the when statement won't match, 
-and the mock won't be triggered.
-
-You are using anyString() and any() as argument matchers. These matchers are more lenient and will match any argument of the specified type.
-In this case, Mockito will match the when statement for any combination of strings and any object, 
-so it will return mockData for any method call to getRecordFromView.
-
-@MockitoSettings(strictness = Strictness.LENIENT)
 
 ### Test the exception
 
