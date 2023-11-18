@@ -158,7 +158,6 @@ so it will return mockData for any method call to getRecordFromView.
 
 @MockitoSettings(strictness = Strictness.LENIENT)
 
-
 ### Test the exception
 
 ```java
@@ -167,7 +166,6 @@ FutureException exception = org.junit.jupiter.api.Assertions.assertThrows(Future
    myQueryService.getOptionsData(anyString());
    });
 ```
-
 
 ### Mock Data
 
