@@ -7,16 +7,15 @@ tags: [Microservices]
 
 # Mockito with Junit
 
-Class BusinessImplementationBasedOnSomeService is SUT (System Under Test)
+Class `BusinessImplementationBasedOnSomeService` is SUT (System Under Test)
 
-Class SomeService is Dependency (which is mocked). Mocked service is actually tested, but the method that takes the mock in, gets tested.
+Class SomeService is Dependency (which is mocked). 
+
+Mocked service is actually tested, but the method that takes the mock in, gets tested.
 
 
 ### Argumnent Matchers
-any() - be generic always, by passing all the arguments as arg matchers
-or be specific
-
-
+`any()` - be generic always, by passing all the arguments as arg matchers or be specific
 
 #### Step 1
 
@@ -27,10 +26,9 @@ Class level annotations
 @MockitoSettings(strictness = Strictness.LENIENT)
 ```
 
-
 #### Declaring the Mocks
 ```java
-ReportsBigQueryService reportsBigQueryServiceMock = Mockito.mock(ReportsBigQueryService.class);
+BusinessImplementationBasedOnSomeService myMock = Mockito.mock(BusinessImplementationBasedOnSomeService.class);
 ```
 OR
 
@@ -45,12 +43,16 @@ private YourDataAccessObject dataAccessObjectMock;
 // It tells the testing framework to inject the mock objects created with @Mock into the appropriate places within the class under test.
 private YourService yourServiceUnderTest;
 
+@InjectMocks
+private BusinessImplementationBasedOnSomeService sut;
+
 //Initialize the Mocks
 @BeforeEach
 void setUp() {
     MockitoAnnotations.initMocks(this);
 }
 ```
+
 @MockBean
 
 package org.springframework.boot.test.mock.mockito;
