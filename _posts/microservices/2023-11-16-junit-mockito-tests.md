@@ -126,9 +126,25 @@ List<Map<String, Object>> mockDBCall = dataAccessObjectMock.getRecordFromView(an
 when(mockDBCall).thenReturn(data);//mockDBCall == data initialized in @BeforeEach void setUp()
 ```
 
+1. **`@SpringBootTest`**:
+   - `@SpringBootTest` is part of the Spring Boot Testing framework and is used for integration testing. 
+     - It starts the Spring application context, 
+     - loads the full Spring application context configuration, 
+     - and tests your application as if it were running in a real environment. 
+     - It's primarily used for end-to-end testing and ensuring that all components of your application work together as expected.
+  - When you use `@SpringBootTest`, it may lead to higher code coverage because it exercises the entire application stack, including controllers, services, and repositories. However, it might also introduce more complex and slower tests compared to unit tests.
 
-argument might not match exactly with the one used when the `getRecordFromView` method is called in your code. 
-Mockito uses argument matching to determine which method behavior to mock based on the arguments provided.
+2. **`@ExtendWith(MockitoExtension.class)`**:
+   - `@ExtendWith(MockitoExtension.class)` is used with JUnit 5 to enable Mockito for mocking dependencies 
+   - in unit tests. 
+   - Mockito is a library for creating mock objects to isolate the unit under test and focus on testing specific components or classes in isolation.
+   - It's primarily used for unit testing, where you want to isolate a class or component from its dependencies and focus on its behavior in isolation. This type of testing often leads to more focused and faster tests.
+   - When you use `@ExtendWith(MockitoExtension.class)`, you are **not** starting the Spring context, so it's not an integration test.
+
+The code coverage may differ between these two approaches because they serve different testing purposes:
+
+- `@SpringBootTest` is likely to have higher code coverage because it tests the application as a whole and exercises many components.
+- `@ExtendWith(MockitoExtension.class)` focuses on unit testing and is not intended to provide the same level of code coverage as integration tests. It allows you to isolate a specific class or component and stub/mock its dependencies. It's less concerned with the interactions and coverage of the entire application.
 
 when you are providing specific arguments
 Mockito will only match the `when` statement when these exact arguments are used in the actual method call. 
@@ -170,16 +186,14 @@ List<Map<String, Object>> mockEmptyData = Collections.emptyList();
 
 Create from a json file
 ```java
-   List<Map<String, Object>> mockDataFromApi = getMockResponseFromFile("response/idt-patient-profile/dataForTreatmentOrders.json");
+List<Map<String, Object>> mockDataFromApi = getMockResponseFromFile("response/my-data/json-data.json");
 
-        //mocking the DB Call of getDataForTreatmentOrder
-        when(reportsBigQueryServiceMock
-        .getRecordFromView(anyString(), anyString(), anyMap()))
-        .thenReturn(mockDataFromApi);
+//mocking the DB Call of getDataForTreatmentOrder
+when(myServiceMock.getData(anyString(), anyString(), anyMap()))
+   .thenReturn(mockDataFromApi);
 
 private List<Map<String, Object>> getMockResponseFromFile(String path) {
     List<Map<String,Object>> mockDataFromApi = new ArrayList<>();
-
     String response = null;
     try {
         response = getJsonStringFromFile(path);
@@ -204,7 +218,9 @@ private String getJsonStringFromFile(String path) throws IOException {
 
 ```
 
-Get the JSON Response from IntelliJ Debuigger after the DB Call
+## Debugging
+
+Get the JSON Response from IntelliJ Debugger (after the DB Call) or from service request. Use breakpoint to evaluate expression
 ```java
 new com.fasterxml.jackson.databind.ObjectMapper()
         .registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule())
@@ -216,39 +232,17 @@ new com.fasterxml.jackson.databind.ObjectMapper()
 Mock the response to 2 DB Calls
 ```java
 //Get the actual Query data as JSON from DB while debugging
-        List<Map<String, Object>> mockDataFromApi = getMockResponseFromFile("response/idt-patient-profile/dataForTreatmentOrders.json");
+List<Map<String, Object>> mockDataFromApi = getMockResponseFromFile("response/my-data/dataOrders.json");
 
-        List<Map<String, Object>> mockProviderResponse = new ArrayList<Map<String, Object>>() {{
+List<Map<String, Object>> mockProviderResponse = new ArrayList<Map<String, Object>>() {{
             add(new HashMap<String, Object>() {{
-                put("PROVIDER_IDENTIFIER", "15034");
-                put("provider","John Doe");
+                put("KEY_IDENTIFIER", "15034");
+                put("customer","John Doe");
             }});
         }};
 
-        // Mock the behavior of the two DB calls
-        when(reportsBigQueryServiceMock.getRecordFromView(anyString(), anyString(), anyMap()))
-                .thenReturn(mockDataFromApi)//mocking the DB Call of getDataForTreatmentOrder
-                .thenReturn(mockProviderResponse);//mocking the DB Call of private getOrderProvidersFormattedNamesByIds
-
+// Mock the behavior of the two DB calls
+when(reportsBigQueryServiceMock.getRecordFromView(anyString(), anyString(), anyMap()))
+     .thenReturn(mockDataFromApi)//mocking the DB Call of getDataForTreatmentOrder
+     .thenReturn(mockProviderResponse);//mocking the DB Call of private getOrderProvidersFormattedNamesByIds
 ```
-
-
-
-Here's the information formatted in Markdown:
-
-1. **`@SpringBootTest`**:
-    - `@SpringBootTest` is part of the Spring Boot Testing framework and is used for integration testing. It starts the Spring application context, loads the full Spring application context configuration, and tests your application as if it were running in a real environment. It's primarily used for end-to-end testing and ensuring that all components of your application work together as expected.
-    - When you use `@SpringBootTest`, it may lead to higher code coverage because it exercises the entire application stack, including controllers, services, and repositories. However, it might also introduce more complex and slower tests compared to unit tests.
-
-2. **`@ExtendWith(MockitoExtension.class)`**:
-    - `@ExtendWith(MockitoExtension.class)` is used with JUnit 5 to enable Mockito for mocking dependencies in unit tests. Mockito is a library for creating mock objects to isolate the unit under test and focus on testing specific components or classes in isolation.
-    - It's primarily used for unit testing, where you want to isolate a class or component from its dependencies and focus on its behavior in isolation. This type of testing often leads to more focused and faster tests.
-    - When you use `@ExtendWith(MockitoExtension.class)`, you are not starting the Spring context, so it's not an integration test.
-
-The code coverage you observe may differ between these two approaches because they serve different testing purposes:
-
-- `@SpringBootTest` is likely to have higher code coverage because it tests the application as a whole and exercises many components.
-
-- `@ExtendWith(MockitoExtension.class)` focuses on unit testing and is not intended to provide the same level of code coverage as integration tests. It allows you to isolate a specific class or component and stub/mock its dependencies. It's less concerned with the interactions and coverage of the entire application.
-
-The choice between these testing approaches depends on your testing goals and the specific scenarios you want to cover. Integration tests with `@SpringBootTest` are suitable for testing the overall behavior of the application, while unit tests with `@ExtendWith(MockitoExtension.class)` are suitable for isolating and testing specific components in isolation.
