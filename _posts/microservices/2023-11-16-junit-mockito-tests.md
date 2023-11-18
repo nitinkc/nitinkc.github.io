@@ -77,6 +77,7 @@ tags: [Microservices]
         - Denotes a method that should be run after each test method.
     - `@AfterAll`
         - Denotes a method that should be run after all tests in a class.
+
 ```java
 @BeforeAll
 static void setUpBeforeAll() {
@@ -101,6 +102,7 @@ static void tearDownAfterAll() {
 3. **Test Assertion Annotations:**
     - `@Assertions`
         - Container for multiple assertion annotations like `@assertTrue`, `@assertFalse`, etc.
+
 ```java
 @Test
 void testAssertions() {
@@ -115,6 +117,7 @@ void testAssertions() {
         - Provides a single value for a parameterized test.
     - `@CsvSource`
         - Provides CSV-formatted values for a parameterized test.
+
 ```java
 @ParameterizedTest
 @ValueSource(ints = {1, 2, 3})
@@ -125,6 +128,7 @@ void testWithParameter(int value) {
 5. **Repeated Tests:**
     - `@RepeatedTest`
         - Indicates that the annotated method is a repeated test.
+
 ```java
 @RepeatedTest(3)
 void repeatedTest() {
@@ -134,6 +138,7 @@ void repeatedTest() {
 6. **Conditional Test Execution:**
     - `@Disabled`
         - Disables a test class or method.
+
 ```java
 @Test
 @Disabled("Not implemented yet")
@@ -146,6 +151,7 @@ void disabledTest() {
         - Allows tagging tests for later filtering.
     - `@DisplayName`
         - Defines a custom display name for a test class or method.
+
 ```java
 @Test
 @Tag("slow")
@@ -160,6 +166,7 @@ void slowTest() {
         - Creates a mock object.
     - `@Spy`
         - Creates a spy (partial mock) object.
+
 ```java
 @Mock
 private MyService myService;
@@ -170,6 +177,7 @@ private MyComponent myComponent;
 2. **Injection Annotations:**
     - `@InjectMocks`
         - Injects mock/spy dependencies into the test subject.
+
 ```java
 @InjectMocks
 private MyController myController;
@@ -181,6 +189,7 @@ private MyController myController;
         - Captures argument values for further assertions.
     - `@VerificationMode`
         - Configures the verification mode (times, atLeastOnce, etc.).
+
 ```java
 @Captor
 private ArgumentCaptor<String> stringCaptor;
@@ -198,6 +207,7 @@ void lenientMocking() {
         - Loads the Spring application context for integration tests.
     - `@DataJpaTest`
         - Configures a test for JPA-based tests.
+
 ```java
 @SpringBootTest
 class MyIntegrationTest {
@@ -209,6 +219,7 @@ class MyIntegrationTest {
         - Injects a bean into a test class or method.
     - `@MockBean`
         - Mocks a bean when used with `@SpringBootTest`.
+
 ```java
 @Autowired
 private MyService myService;
@@ -219,6 +230,7 @@ private ExternalService externalService;
 3. **Transaction Management:**
     - `@Transactional`
         - Specifies that a test method should be run within a transaction.
+
 ```java
 @Transactional
 @Test
@@ -229,6 +241,7 @@ void transactionalTest() {
 4. **Web Testing:**
     - `@WebMvcTest`
         - Configures a test for Spring MVC-based tests.
+
 ```java
 @WebMvcTest(MyController.class)
 class MyControllerTest {
@@ -238,6 +251,7 @@ class MyControllerTest {
 5. **Profile Configuration:**
     - `@ActiveProfiles`
         - Specifies which bean definition profiles should be active.
+
 ```java
 @ActiveProfiles("test")
 class MyProfileTest {
@@ -247,6 +261,7 @@ class MyProfileTest {
 6. **Testing Components:**
     - `@ComponentScan`
         - Configures component scanning for the test context.
+
 ```java
 @ComponentScan(basePackages = "com.example")
 class MyComponentScanTest {
@@ -256,6 +271,7 @@ class MyComponentScanTest {
 7. **Property Source Configuration:**
     - `@TestPropertySource`
         - Configures properties for the test context.
+
 ```java
 @TestPropertySource(locations = "classpath:test.properties")
 class MyPropertySourceTest {
@@ -264,6 +280,7 @@ class MyPropertySourceTest {
 ```
 8. **Testing Annotations from JUnit Jupiter:**
     - Annotations like `@Test`, `@BeforeEach`, etc., can also be used in Spring tests.
+
 ```java
 @Test
 @DisplayName("Custom Test Name")
@@ -271,7 +288,6 @@ void customTestName() {
     // Test logic with a custom display name
 }
 ```
-
 
 ## Additional Concepts:
 
@@ -410,7 +426,6 @@ private String getJsonStringFromFile(String path) throws IOException {
     File file = new File(Objects.requireNonNull(classLoader.getResource(path)).getFile());
     return FileUtils.readFileToString(file, "UTF-8");
 }
-
 ```
 
 ## Debugging
