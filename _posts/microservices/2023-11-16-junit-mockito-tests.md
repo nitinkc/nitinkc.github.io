@@ -160,8 +160,8 @@ void slowTest() {
 }
 ```
 ## Mockito Annotations:
-
-1. **Mocking Annotations:**
+ 
+1.**Mocking Annotations:**
     - `@Mock`
         - Creates a mock object.
     - `@Spy`
