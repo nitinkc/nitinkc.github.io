@@ -109,3 +109,7 @@ Classic screen most used features
 
 Final look 
 ![new_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fnew_intelliJ.png)
+
+
+# Show ByteCode
+![showByteCode.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FshowByteCode.png)
