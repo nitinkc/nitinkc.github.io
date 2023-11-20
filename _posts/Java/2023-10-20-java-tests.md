@@ -9,11 +9,9 @@ tags: ['Java']
 
 # Type inference
 
-removes the noise from the code and type inference can be used. 
-
-IDE's provides the hover and know the type of the variables.
-
-allows the compiler to know the type about
+- helps remove the noise from the code
+- IDE's provides the hover and know the type of the variables.
+- allows the compiler to know the type about
 
 ```java
 var test = "test";
@@ -28,7 +26,7 @@ error: cannot find symbol
   location: variable test of type String
 ```
 
-notice in the byte code `LOCALVARIABLE test Ljava/lang/String; L1 L2 1`
+notice in the [byte code `LOCALVARIABLE test Ljava/lang/String; L1 L2 1`](https://nitinkc.github.io/shortcuts/intelliJ-Debug-tricks/#show-bytecode)
 ```java
  public static main([Ljava/lang/String;)V
    L0
@@ -45,9 +43,9 @@ notice in the byte code `LOCALVARIABLE test Ljava/lang/String; L1 L2 1`
     MAXLOCALS = 2
 ```
 
-Use type inference carefully
+### Use type inference carefully
 
-Use case : When the response is received from a call of a method or a service, use type inference because its type 
+**Use case** : When the response is received from a call of a method or a service, use type inference because its type 
 is determined by the return type of the method or the service being called.
 
 # Arrays asList
@@ -64,26 +62,25 @@ try{
 }
 ```
 
-Instead of using Arrays.asList use List.of(), the immutable variant. Similarly use Set.of and Map.of.
+Instead of using `Arrays.asList` use `List.of()`, the immutable variant. Similarly, use `Set.of` and `Map.of`.
 
 * The Set's of does not provide duplicate
 * the of methods does not permit nulls
 
 # Streams Purity - Shared Mutability
 
-The execution is always lazy in Java or C#. For Kotlin and Scala you can choose between eager adn lazy
+- The execution is always lazy in Java or C#. 
+  - For Kotlin and Scala you can choose between eager and lazy
+- Functional programming relies on lazy evaluation for efficiency
+- Lazy evaluation relies on **purity of functions** for correctness.
 
-Functional programming relies on lazy evaluation for efficiency
+Programmers need to make sure that Lambdas are pure
 
-Lazy evaluation relies on purity of functions for correctness.
-
-Programmers need to make sure that Lambda are pure
-
-Rule for purity:-
+### Rule for purity
 
 Rule 1 is necessary but not sufficient
-1. No shared mutability. The function does not make any change that is visible outside
-2. the function does not depend on anything that may change from outside
+1. **No shared mutability** :  The function does not make any change that is visible outside
+2. The function does not depend on anything that may change from outside
 
 ### Parallels
 
@@ -105,7 +102,7 @@ Reactive streams segment the pipeline for different threading model
 
 Do not do anything serious in the constructor, especially do not call virtual method
 
-Lesson from effective Java: Make the constructor simple and private and make the Factory method to create it. By the 
+**Lesson from effective Java**: Make the constructor simple and private and make the Factory method create it. By the 
 time you get to the Factory method, the constructor would have been completed.
 
 
@@ -154,8 +151,6 @@ It is better to use toList directly in the stream rather than
 .collect(Collectors.toUnmodifiableList())//Immutable
 ```
 
-
-
 # Records
 
 ```java
@@ -197,17 +192,21 @@ In Domain Driven Design, the value objects are expected to be immutable
 
 # Exceptions
 
-### catch expressions (introduced in Java 16) and 
-* **Use Case** : well-suited for simple exception handling cases without complex logic or control flow change
+### catch expressions (introduced in Java 16) and
+
+**Use Case** : well-suited for simple exception handling cases without complex logic or control flow change
 
 * Catch expressions are limited to a single expression, so cannot use control flow statements directly within the catch expression.
+
 ```java
 // Using Catch Expressions (Java 16+)
 try {
     int result = 10 / 0; // ArithmeticException
 } catch (ArithmeticException e) -> System.err.println("Arithmetic Exception occurred: " + e.getMessage());
 ```
+
 * Encapsulate any control flow logic within a separate method or code block and call it from catch expression
+
 ```java
 try {
     int result = performComplexOperation();
@@ -220,6 +219,7 @@ private void logAndThrow(CustomException e) {
     throw new AnotherException();
 }
 ```
+
 * Catch Expressions Encapsulating Control Flow
 ```java
 try {
@@ -228,7 +228,6 @@ try {
     System.err.println("Custom Exception occurred: " + e.getMessage());
     return; // Encapsulating control flow
 }
-
 ```
 
 ### catch statements (traditional approach)
