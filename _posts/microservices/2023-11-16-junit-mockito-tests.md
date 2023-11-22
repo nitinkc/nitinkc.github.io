@@ -5,31 +5,26 @@ categories: [Microservices]
 tags: [Microservices]
 ---
 
-# Mockito with Junit
-
-- Class `MyService` is SUT (System Under Test)
-- Class `SomeService` is Dependency (which is mocked). 
-
-### Argumnent Matchers
-`any()` - be generic always, by passing all the arguments as arg matchers or be specific
-
-# Annotations
-
 ### Integration Testing with `@SpringBootTest`:
 
-- **Purpose**:
-    - Integration testing using the Spring Boot Testing framework.
+**Purpose**:
     - Loads the full Spring application context.
     - Tests the application as if it were running in a real environment.
 
-- **Usage**:
+ **Usage**:
     - Suitable for end-to-end testing and ensuring components work together.
     - Higher code coverage as it exercises the entire application stack.
 
-## Unit Testing with `@ExtendWith(MockitoExtension.class)`:
+```java
+@SpringBootTest
+@SpringBootTest(classes = BigQueryTestConfiguration.class)
+@ExtendWith(SpringExtension.class)
+class MyIntegrationTest {
+}
+```
 
+### Unit Testing with `@ExtendWith(MockitoExtension.class)`:
 - **Purpose**:
-    - Unit testing using Mockito for mocking dependencies.
     - Enables Mockito for mocking objects during tests.
     - Focuses on isolating and testing specific components or classes.
 
@@ -37,7 +32,14 @@ tags: [Microservices]
     - Used in conjunction with Mockito annotations like `@Mock`, `@InjectMocks`, etc.
     - Does not start the Spring context; it's focused on unit testing.
 
-## Mocking Beans with `@MockBean`:
+```java
+@ExtendWith(MockitoExtension.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class MyClassTest {
+}
+```
+
+### Mocking Beans with `@MockBean`:
 
 - **Purpose**:
     - Mocks beans in integration tests or unit tests involving Spring's application context.
@@ -456,3 +458,17 @@ when(reportsBigQueryServiceMock.getRecordFromView(anyString(), anyString(), anyM
      .thenReturn(mockDataFromApi)//mocking the DB Call of getDataForTreatmentOrder
      .thenReturn(mockProviderResponse);//mocking the DB Call of private getOrderProvidersFormattedNamesByIds
 ```
+
+
+
+
+
+# Mockito with Junit
+
+- Class `MyService` is SUT (System Under Test)
+- Class `SomeService` is Dependency (which is mocked).
+
+### Argumnent Matchers
+`any()` - be generic always, by passing all the arguments as arg matchers or be specific
+
+# Annotations
