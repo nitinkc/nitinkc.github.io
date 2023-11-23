@@ -23,6 +23,28 @@ class MyIntegrationTest {
 }
 ```
 
+Here's a simple example of how to use `@ExtendWith(SpringExtension.class)`:
+
+```java
+@ExtendWith(SpringExtension.class) // Enable Spring integration with JUnit 5
+@SpringBootTest // Load the Spring Boot application context
+public class MyServiceTest {
+
+    @Autowired
+    private MyService myService;
+
+    @Test
+    public void myServiceMethodTest() {
+        // Test myService that depends on Spring beans
+        String result = myService.myServiceMethod();
+
+        // Assertions
+        assertEquals("Expected Result", result);
+    }
+}
+```
+
+
 ### Unit Testing with `@ExtendWith(MockitoExtension.class)`:
 - **Purpose**:
     - Enables Mockito for mocking objects during tests.
@@ -161,7 +183,8 @@ void slowTest() {
     // Test logic for slow tests
 }
 ```
-## Mockito Annotations:
+
+# Mockito Annotations:
  
 1.**Mocking Annotations:**
     - `@Mock`
@@ -202,7 +225,8 @@ void lenientMocking() {
     // Test logic with lenient mock settings
 }
 ```
-## Spring Testing Annotations:
+
+# Spring Testing Annotations:
 
 1. **Integration Testing:**
     - `@SpringBootTest`
@@ -331,26 +355,6 @@ void setUp() {
 }
 ```
 
-Here's a simple example of how to use `@ExtendWith(SpringExtension.class)`:
-
-```java
-@ExtendWith(SpringExtension.class) // Enable Spring integration with JUnit 5
-@SpringBootTest // Load the Spring Boot application context
-public class MyServiceTest {
-
-    @Autowired
-    private MyService myService;
-
-    @Test
-    public void myServiceMethodTest() {
-        // Test myService that depends on Spring beans
-        String result = myService.myServiceMethod();
-
-        // Assertions
-        assertEquals("Expected Result", result);
-    }
-}
-```
 
 # Common Errors
 
