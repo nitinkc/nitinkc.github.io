@@ -4,8 +4,27 @@ date:   2023-11-16 18:55:00
 categories: [Microservices]
 tags: [Microservices]
 ---
+{% include toc title="Index" %}
 
-### Integration Testing with `@SpringBootTest`:
+### Unit Testing 
+with `@ExtendWith(MockitoExtension.class)`
+- **Purpose**:
+    - Enables Mockito for mocking objects during tests.
+    - Focuses on isolating and testing specific components or classes.
+
+- **Usage**:
+    - Used in conjunction with Mockito annotations like `@Mock`, `@InjectMocks`, etc.
+    - Does not start the Spring context; it's focused on unit testing.
+
+```java
+@ExtendWith(MockitoExtension.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class MyClassTest {
+}
+```
+
+### Integration Testing 
+with `@SpringBootTest`
 
 **Purpose**:
     - Loads the full Spring application context.
@@ -23,13 +42,22 @@ class MyIntegrationTest {
 }
 ```
 
-Here's a simple example of how to use `@ExtendWith(SpringExtension.class)`:
+##### `@ExtendWith(SpringExtension.class)`:
+
+- **Purpose**:
+    - Enables Spring integration with JUnit 5.
+    - Replaces `@RunWith(SpringRunner.class)` when using JUnit 5.
+
+- **Usage**:
+    - Sets up the Spring context before test methods are executed and closes it afterward.
+    - Used to create a testing environment with a fully configured Spring application context.
+
+Simple example of how to use `@ExtendWith(SpringExtension.class)`:
 
 ```java
 @ExtendWith(SpringExtension.class) // Enable Spring integration with JUnit 5
 @SpringBootTest // Load the Spring Boot application context
 public class MyServiceTest {
-
     @Autowired
     private MyService myService;
 
@@ -44,46 +72,9 @@ public class MyServiceTest {
 }
 ```
 
+# JUnit 5 Annotations:
 
-### Unit Testing with `@ExtendWith(MockitoExtension.class)`:
-- **Purpose**:
-    - Enables Mockito for mocking objects during tests.
-    - Focuses on isolating and testing specific components or classes.
-
-- **Usage**:
-    - Used in conjunction with Mockito annotations like `@Mock`, `@InjectMocks`, etc.
-    - Does not start the Spring context; it's focused on unit testing.
-
-```java
-@ExtendWith(MockitoExtension.class)
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class MyClassTest {
-}
-```
-
-### Mocking Beans with `@MockBean`:
-
-- **Purpose**:
-    - Mocks beans in integration tests or unit tests involving Spring's application context.
-    - Replaces real Spring beans with mock objects for testing purposes.
-
-- **Usage**:
-    - Particularly useful when you want to isolate and test specific components without interacting with real implementations.
-    - Allows control over the behavior of dependencies to simulate different scenarios.
-
-## `@ExtendWith(SpringExtension.class)`:
-
-- **Purpose**:
-    - Enables Spring integration with JUnit 5.
-    - Replaces `@RunWith(SpringRunner.class)` when using JUnit 5.
-
-- **Usage**:
-    - Sets up the Spring context before test methods are executed and closes it afterward.
-    - Used to create a testing environment with a fully configured Spring application context.
-
-## JUnit 5 Annotations:
-
-1. **Test Annotation:**
+### **Test Annotation:**
     - `@Test`
         - Identifies a method as a test method.
 ```java
@@ -92,7 +83,7 @@ class MyClassTest {
        // Test logic
    }
 ```
-2. **Lifecycle Annotations:**
+### **Lifecycle Annotations:**
     - `@BeforeAll`
         - Denotes a method that should be run before all tests in a class.
     - `@BeforeEach`
@@ -123,7 +114,8 @@ static void tearDownAfterAll() {
     // Teardown logic after all tests
 }
 ```
-3. **Test Assertion Annotations:**
+
+### **Test Assertion Annotations:**
     - `@Assertions`
         - Container for multiple assertion annotations like `@assertTrue`, `@assertFalse`, etc.
 
@@ -134,7 +126,7 @@ void testAssertions() {
     assertFalse(false, "Assertion message for false condition");
 }
 ```
-4. **Parameterized Tests:**
+### **Parameterized Tests:**
     - `@ParameterizedTest`
         - Denotes that the annotated method is a parameterized test.
     - `@ValueSource`
@@ -149,7 +141,7 @@ void testWithParameter(int value) {
     // Test logic with parameter
 }
 ```
-5. **Repeated Tests:**
+### **Repeated Tests:**
     - `@RepeatedTest`
         - Indicates that the annotated method is a repeated test.
 
@@ -159,7 +151,7 @@ void repeatedTest() {
     // Test logic to be repeated 3 times
 }
 ```
-6. **Conditional Test Execution:**
+### **Conditional Test Execution:**
     - `@Disabled`
         - Disables a test class or method.
 
@@ -170,7 +162,7 @@ void disabledTest() {
     // Test logic (disabled)
 }
 ```
-7. **Tagging and Filtering:**
+### **Tagging and Filtering:**
     - `@Tag`
         - Allows tagging tests for later filtering.
     - `@DisplayName`
@@ -186,7 +178,7 @@ void slowTest() {
 
 # Mockito Annotations:
  
-1.**Mocking Annotations:**
+### **Mocking Annotations:**
     - `@Mock`
         - Creates a mock object.
     - `@Spy`
@@ -199,7 +191,7 @@ private MyService myService;
 @Spy
 private MyComponent myComponent;
 ```
-2. **Injection Annotations:**
+### **Injection Annotations:**
     - `@InjectMocks`
         - Injects mock/spy dependencies into the test subject.
 
@@ -207,7 +199,7 @@ private MyComponent myComponent;
 @InjectMocks
 private MyController myController;
 ```
-3. **Verification Annotations:**
+### **Verification Annotations:**
     - `@MockitoSettings`
         - Provides additional settings for Mockito.
     - `@Captor`
@@ -228,7 +220,7 @@ void lenientMocking() {
 
 # Spring Testing Annotations:
 
-1. **Integration Testing:**
+### **Integration Testing:**
     - `@SpringBootTest`
         - Loads the Spring application context for integration tests.
     - `@DataJpaTest`
@@ -240,7 +232,7 @@ class MyIntegrationTest {
     // Integration test logic
 }
 ```
-2. **Dependency Injection:**
+### **Dependency Injection:**
     - `@Autowired`
         - Injects a bean into a test class or method.
     - `@MockBean`
@@ -253,7 +245,7 @@ private MyService myService;
 @MockBean
 private ExternalService externalService;
 ```
-3. **Transaction Management:**
+### **Transaction Management:**
     - `@Transactional`
         - Specifies that a test method should be run within a transaction.
 
@@ -264,7 +256,7 @@ void transactionalTest() {
     // Test logic within a transaction
 }
 ```
-4. **Web Testing:**
+### **Web Testing:**
     - `@WebMvcTest`
         - Configures a test for Spring MVC-based tests.
 
@@ -274,7 +266,7 @@ class MyControllerTest {
     // Web testing logic
 }
 ```
-5. **Profile Configuration:**
+### **Profile Configuration:**
     - `@ActiveProfiles`
         - Specifies which bean definition profiles should be active.
 
@@ -284,7 +276,7 @@ class MyProfileTest {
     // Test logic with the "test" profile active
 }
 ```
-6. **Testing Components:**
+### **Testing Components:**
     - `@ComponentScan`
         - Configures component scanning for the test context.
 
@@ -294,7 +286,7 @@ class MyComponentScanTest {
     // Test logic with custom component scanning
 }
 ```
-7. **Property Source Configuration:**
+### **Property Source Configuration:**
     - `@TestPropertySource`
         - Configures properties for the test context.
 
@@ -304,7 +296,7 @@ class MyPropertySourceTest {
     // Test logic with properties from test.properties
 }
 ```
-8. **Testing Annotations from JUnit Jupiter:**
+# **Testing Annotations from JUnit Jupiter:**
     - Annotations like `@Test`, `@BeforeEach`, etc., can also be used in Spring tests.
 
 ```java
@@ -315,9 +307,9 @@ void customTestName() {
 }
 ```
 
-## Additional Concepts:
+# Additional Concepts:
 
-- **Argument Matchers with Mockito**:
+### **Argument Matchers with Mockito**:
     - `anyString()` and `any()` are argument matchers in Mockito.
     - They are more lenient, allowing matching for any argument of the specified type.
 
@@ -328,7 +320,7 @@ void customTestName() {
 These annotations and concepts collectively provide a comprehensive testing strategy for both unit and integration testing in a Spring Boot application.
 
 
-#### Declaring the Mocks
+### Declaring the Mocks
 ```java
 BusinessImplementationBasedOnSomeService myMock = Mockito.mock(BusinessImplementationBasedOnSomeService.class);
 ```
@@ -434,7 +426,7 @@ private String getJsonStringFromFile(String path) throws IOException {
 }
 ```
 
-## Debugging
+# Debugging
 
 Get the JSON Response from IntelliJ Debugger (after the DB Call) or from service request. Use breakpoint to evaluate expression
 ```java
@@ -463,10 +455,6 @@ when(reportsBigQueryServiceMock.getRecordFromView(anyString(), anyString(), anyM
      .thenReturn(mockProviderResponse);//mocking the DB Call of private getOrderProvidersFormattedNamesByIds
 ```
 
-
-
-
-
 # Mockito with Junit
 
 - Class `MyService` is SUT (System Under Test)
@@ -475,4 +463,3 @@ when(reportsBigQueryServiceMock.getRecordFromView(anyString(), anyString(), anyM
 ### Argumnent Matchers
 `any()` - be generic always, by passing all the arguments as arg matchers or be specific
 
-# Annotations
