@@ -22,18 +22,33 @@ Mockito with Junit
 | **Application Context**       | Not required (Mocks are manually injected).                                   | Automatically loads Spring application context.                             |
 | **Dependency Injection**      | Manual (Mocks injected using `@InjectMocks`)                                  | Automatic (Spring Boot injects mocks using or `@Autowired` or `@MockBean`). |
 
+### Autowired vs InjectMock
+
+**`@Autowired`:**
+- Use `@Autowired` when Spring should inject real beans (actual instances managed by the Spring container) into Spring-managed components.
+- It's a **Spring Framework annotation** for automatic dependency injection in Spring-managed components (e.g., services, controllers, and repositories).
+- Spring injects the dependency into the field or constructor of the class when `@Autowired` is used.
+- Commonly employed in **integration tests** or when testing Spring components that rely on other Spring-managed beans.
+
+**`@InjectMocks`:**
+- Use `@InjectMocks` when Mockito should inject mocks into the fields of your test class for unit testing.
+- It's a **Mockito annotation** used to automatically inject mocked dependencies into the fields of a test class.
+- Especially useful when **testing a class in isolation** and controlling the behavior of its dependencies.
+- Typically applied in unit tests when mocking the dependencies of the class under test.
+
+### Mock vs MockBean
+
+**`@Mock`:**
+- Part of the **Mockito framework** and used for creating mock objects in **unit tests**.
+- Mockito creates a mock for each field annotated with `@Mock` and injects the mocks into fields annotated with `@InjectMocks`.
+
+**`@MockBean`:**
+- Used in **Spring Boot tests**, particularly for **integration testing**.
+- When using `@MockBean`, you create a mock of a Spring bean.
+- It's beneficial when replacing a real bean with a mock in the Spring application context during the test.
+
 ### Unit Testing 
-with `@ExtendWith(MockitoExtension.class)`
-
-{% gist nitinkc/331712fb268a8922178daee046c2d24f %}
-
-**Purpose**:
-
-- Enables Mockito for mocking objects during tests. 
-- Focuses on isolating and testing specific components or classes.
-
-**Usage**:
-
+- with `@ExtendWith(MockitoExtension.class)`
 - Used in conjunction with Mockito annotations like `@Mock`, `@InjectMocks`, etc.
 - Does not start the Spring context; it's focused on unit testing.
 
@@ -43,30 +58,35 @@ with `@ExtendWith(MockitoExtension.class)`
 class MyClassTest {
 }
 ```
+{% gist nitinkc/331712fb268a8922178daee046c2d24f %}
 
 ### Integration Testing
-with `@SpringBootTest` & `@ExtendWith(SpringExtension.class)` with JUnit5
-    - When @SpringBootTest is used, it implicitly includes @ExtendWith(SpringExtension.class)
+
+- **Annotations:**
+  - Use `@SpringBootTest` and `@ExtendWith(SpringExtension.class)` with JUnit 5 for integration testing.
+  - When `@SpringBootTest` is applied, it implicitly includes `@ExtendWith(SpringExtension.class)`.
+
+- **Context Loading:**
+  - `@SpringBootTest` loads the full Spring application context.
+  - Enables Spring integration with JUnit 5, creating a testing environment with a fully configured Spring application context.
+
+- **JUnit 5 Compatibility:**
+  - Replaces the usage of `@RunWith(SpringRunner.class)` when utilizing JUnit 5.
+
+- **Testing Environment:**
+  - Tests the application as if it were running in a real environment.
+  - Suitable for end-to-end testing, ensuring that various components work together seamlessly.
+
+- **Code Coverage:**
+  - Offers higher code coverage as it exercises the entire application stack.
+
+- **Context Management:**
+  - Sets up the Spring context before test methods are executed and closes it afterward.
 
 If you are using both Spring and Mockito in the same test class
 ensure that you initialize Mockito annotations using `MockitoAnnotations.openMocks(this)` in the `@BeforeEach` method to
 correctly set up the mocks.
 {: .notice--info}
-{% gist nitinkc/90f1d2e8313a18608fe6fa4c9cac279a %}
-
-**Purpose**:
-
-- Loads the full Spring application context.
-- Enables Spring integration with JUnit 5.
-- Replaces `@RunWith(SpringRunner.class)` when using JUnit 5.
-- Tests the application as if it were running in a real environment.
-
- **Usage**:
-
-- Suitable for end-to-end testing and ensuring components work together.
-- Higher code coverage as it exercises the entire application stack.
-- Sets up the Spring context before test methods are executed and closes it afterward.
-- Used to create a testing environment with a fully configured Spring application context.
 
 ```java
 @SpringBootTest // Load the Spring Boot application context
@@ -76,6 +96,8 @@ correctly set up the mocks.
 class MyIntegrationTest {
 }
 ```
+
+{% gist nitinkc/90f1d2e8313a18608fe6fa4c9cac279a %}
 
 # JUnit 5 Annotations:
 
@@ -112,7 +134,7 @@ void testAssertions() {
 }
 ```
 
-### Test the exception
+### **Test exceptions**
 
 ```java
 // Call the method under test
@@ -271,16 +293,24 @@ class MyPropertySourceTest {
 }
 ```
 
-###  Argument Matchers:
+### **Test Static Methods**
+
+With Junit 3+ Static methods can be tested with
+```java
+MockedStatic<UuidUtils> utilities = Mockito.mockStatic(UuidUtils.class)
+```
+
+{% gist nitinkc/3436fd1f2aa6e4c78ca7bf9dc8392e60 %}
+
+
+###  Argument Matchers
 
 - `anyString()` and `any()` are argument matchers in Mockito.
 - `any()` - be generic always, by passing all the arguments as arg matchers or be specific
 - They are more lenient, allowing matching for any argument of the specified type.
-- **`@MockitoSettings(strictness = Strictness.LENIENT)`**:
+- `@MockitoSettings(strictness = Strictness.LENIENT)`:
     - Configures the strictness level of Mockito.
     - In lenient mode, Mockito is more permissive with interactions, allowing non-stubbed method calls.
-
-**Common Errors**
 
 **Use Argument matchers only on the Mocks**
 
@@ -290,15 +320,14 @@ List<Map<String, Object>> mockDBCall = dataAccessObjectMock.getRecordFromView(an
 when(mockDBCall).thenReturn(data);//mockDBCall == data initialized in @BeforeEach void setUp()
 ```
 
-**DO NOT** use the argument Matchers on SUT, or injectableMocks
+**DO NOT** use the argument Matchers on SUT, or injectableMocks and Do no mix hardcoded values with arg matchers
 
 ```java
 // Call the method under test
 List<Map<String, Object>> result = yourServiceUnderTest.getDataById(anyString(), "sample", "facility");
-```
 
-```java
-org.mockito.exceptions.misusing.InvalidUseOfMatchersException: 
+//Logs
+org.mockito.exceptions.misusing.InvalidUseOfMatchersException:
 Invalid use of argument matchers!
 ```
 
@@ -321,28 +350,3 @@ new com.fasterxml.jackson.databind.ObjectMapper()
         .writerWithDefaultPrettyPrinter() 
         .writeValueAsString(data);
 ```
-
-
-
-### Autowired vs InjectMock
-
-`@Autowired`:
-- Use `@Autowired` when you want Spring to inject real beans (actual instances managed by the Spring container)into Spring-managed components.
-- **Sring Framework annotation** used for automatic dependency injection, used in Spring-managed components, such as services, controllers, and repositories.
-- When you use @Autowired, Spring injects the dependency into the field or constructor of the class.
-- This is commonly used in **integration tests** or when you are testing Spring components that rely on other Spring-managed beans.
-
-`@InjectMocks` 
-- Use `@InjectMocks` when you want Mockito to inject mocks into the fields of your test class for the purpose of unit testing,
-  particularly when you're testing a class in isolation and want to control the behavior of its dependencies.
-- **Mockito annotation** used to automatically inject mocked dependencies into the fields of a test class.
-- It is typically used in **unit tests** when you want to mock the dependencies of the class under test.
-
-### Mock and MockBean
-
-`@Mock` : @Mock is part of the Mockito framework, which is used for creating mock objects in **unit tests**.
-- Mockito will create a mock for each field annotated with @Mock and inject the mocks into the fields annotated with `@InjectMocks`.
-
-`@MockBean` : @MockBean is used in the context of Spring Boot tests, especially for **integration testing**.
-- When you use @MockBean, you are creating a mock of a Spring bean. 
-- This is useful when you want to replace a real bean with a mock in the Spring application context during the test.
