@@ -62,26 +62,26 @@ class MyClassTest {
 
 ### Integration Testing
 
-- **Annotations:**
-  - Use `@SpringBootTest` and `@ExtendWith(SpringExtension.class)` with JUnit 5 for integration testing.
-  - When `@SpringBootTest` is applied, it implicitly includes `@ExtendWith(SpringExtension.class)`.
+**Annotations:**
+- Use `@SpringBootTest` and `@ExtendWith(SpringExtension.class)` with JUnit 5 for integration testing.
+- When `@SpringBootTest` is applied, it implicitly includes `@ExtendWith(SpringExtension.class)`.
 
-- **Context Loading:**
-  - `@SpringBootTest` loads the full Spring application context.
-  - Enables Spring integration with JUnit 5, creating a testing environment with a fully configured Spring application context.
+**Context Loading:**
+- `@SpringBootTest` loads the full Spring application context.
+- Enables Spring integration with JUnit 5, creating a testing environment with a fully configured Spring application context.
 
-- **JUnit 5 Compatibility:**
-  - Replaces the usage of `@RunWith(SpringRunner.class)` when utilizing JUnit 5.
+**JUnit 5 Compatibility:**
+- Replaces the usage of `@RunWith(SpringRunner.class)` when utilizing JUnit 5.
 
-- **Testing Environment:**
-  - Tests the application as if it were running in a real environment.
-  - Suitable for end-to-end testing, ensuring that various components work together seamlessly.
+**Testing Environment:**
+- Tests the application as if it were running in a real environment.
+- Suitable for end-to-end testing, ensuring that various components work together seamlessly.
 
-- **Code Coverage:**
-  - Offers higher code coverage as it exercises the entire application stack.
+**Code Coverage:**
+- Offers higher code coverage as it exercises the entire application stack.
 
-- **Context Management:**
-  - Sets up the Spring context before test methods are executed and closes it afterward.
+**Context Management:**
+- Sets up the Spring context before test methods are executed and closes it afterward.
 
 If you are using both Spring and Mockito in the same test class
 ensure that you initialize Mockito annotations using `MockitoAnnotations.openMocks(this)` in the `@BeforeEach` method to
