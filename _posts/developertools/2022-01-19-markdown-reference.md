@@ -15,12 +15,10 @@ right side Index bar (on this blog)
 {% raw  %}
 `{% include toc title="Index" %}`
 {% endraw %}
+OR
 
- OR
-
-simply add `toc: true` on the [front matter](https://jekyllrb.com/docs/front-matter/). 
-
-Has some issues when the page is long
+simply add `toc: true` on the [front matter](https://jekyllrb.com/docs/front-matter/).
+**Has some issues when the page is long**
 {: .notice--danger}
 
 ## Include gists as
@@ -34,7 +32,6 @@ Include code as a gist into the Jekyll post. Uses jekyll-gist plugin.
 
 If you're building your pages with markdown, use the following examples to generate internal links.
 
-
 ```markdown
 {% raw  %}
 [Link title]({{ site.baseurl }}{% link index.html %})
@@ -45,20 +42,19 @@ If you're building your pages with markdown, use the following examples to gener
 {% endraw %}
 ```
 
-## Include Hyper links
+## Hyperlinks : Open link in another tab
+[Try me for another Tab](https://www.google.com/){:target="_blank"}
 
-### Open link in another tab
-[Link title](https://www.google.com/){:target="_blank"}
 {% raw %}
 `[Link title](https://www.google.com/){:target="_blank"}`
 {% endraw %}
 
-### Hyperlink Open link in same tab
-[Link title](https://www.google.com/)
+## Hyperlink : Open link in same tab
+[Try me for same Tab](https://www.google.com/)
+
 {% raw %}
 `[Link title](https://www.google.com/)`
 {% endraw %}
-
 
 ## Use a picture in a post from specific folder
 {% raw  %}
@@ -67,25 +63,23 @@ If you're building your pages with markdown, use the following examples to gener
 
 ## Resize an image
 {% raw  %}
-<img src="assets/images/image.png" width="300" height="200">
+`<img src="assets/images/image.png" width="300" height="200">`
 {% endraw %}
 
 ## Escape Liquid template tags in Jekyll posts
 
-* Use raw tag 
-    * to begin `{{ "{% raw " }}%}` and end with `{{ "{% endraw " }}%} `
+* to begin `{{ "{% raw " }}%}` and end with `{{ "{% endraw " }}%} `
 * Another way to escape `{{ "{{ tag " }}}}`
 
-Use backtick quotes (\`) to display a liquid tag as a span of code .
+Use backtick quotes `(\`)` to display a liquid tag as a span of code .
 
 ## Insert Table
 
 ```markdown
-
-| Column Header 1 | Column Header 1  | 
-| :----  		| :---    |      
-| ⌘E    	| Move to the last location you edited.	|
-| ⌘  + 1  	|It activates the quick fix.|
+| Column Header 1  | Column Header 1                       | 
+|:-----------------|:--------------------------------------|      
+| ⌘E     	       | Move to the last location you edited. |
+| ⌘  + 1  	       | It activates the quick fix.           |
 ```
 
 ## Add Sidebar Navigation
