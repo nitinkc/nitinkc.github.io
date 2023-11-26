@@ -1,7 +1,7 @@
 ---
 # layout: static
 title:  "IntelliJ Idea Debug"
-date:   2021-11-03 21:55:00
+date:   2023-11-10 21:55:00
 categories: Shortcuts
 tags: [Shortcuts]
 ---

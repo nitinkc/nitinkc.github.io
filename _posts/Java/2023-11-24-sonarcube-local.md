@@ -20,7 +20,7 @@ docker run -d \
 
 **Local project**
 - Open sonarcube and create a new Local project
-(http://localhost:9000/projects)[http://localhost:9000/projects]
+[http://localhost:9000/projects](http://localhost:9000/projects)
 - provide project display name, project key, main branch name
 
 **Set up project for Clean as You Code**
