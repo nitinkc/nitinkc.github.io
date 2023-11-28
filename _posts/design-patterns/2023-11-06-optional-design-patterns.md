@@ -1,6 +1,6 @@
 ---
 title:  "Optional As a Design Pattern"
-date:   2023-11-06 08:30:00
+date:   2023-11-27 08:30:00
 categories: ['Java','Design Patterns']
 tags: ['Java']
 ---
@@ -14,8 +14,8 @@ tags: ['Java']
 > Do not return a null, instead return an empty *collection* - Effective Java
 
 var has strict type checking
-```java
 
+```java
 var a = SampleData.getSimpleEmployees();
 //a = "Nitin";//Strict type checking
 ```
@@ -29,8 +29,7 @@ var a = SampleData.getSimpleEmployees();
 ```java
 var result = getName();
 String str = result.orElse("not found");//Default Value
-        
- str = result.orElseGet(String::new);//Empty String
+str = result.orElseGet(String::new);//Empty String
         
 str = result.orElseThrow();//if at all you need to use get, then use orThrow instead
 
@@ -39,6 +38,11 @@ str = result.orElseThrow();//if at all you need to use get, then use orThrow ins
 
 
 ## Do's and Dont's
+
+* Do not use optional as a parameter 
+
+* use `optional.orElse()` instead of `optional.get()`. 
+  * If there is really a need to use `get()`, use `optional.orElseThrow()` to know the real reason of blowing up
 
 * If a method may or may not have a single value as a result, **then use Optional**.
 ```java
@@ -51,7 +55,9 @@ public static Optional<String> getName() {
     return Optional.empty();
   }
 ```
+
 * If the result is a collection, then don't use Optional, instead return empty collection
+
 ```java
 public static Optional<String> getName() {
     if(fakeService.getRandNumber() < 3) {
@@ -65,6 +71,7 @@ public static Optional<String> getName() {
 ```
 
 * Don't use Optional<T> as a parameter to methods. If needed, use overloading instead.
+
 ```java
     public static void methodName(String str)
     public static void methodName(Optional<String> name); //Anti-pattern - DO NOT DO THIS
@@ -78,6 +85,7 @@ methodName(Optional.of(str));
 ```
 
 Instead use overloading
+
 ```java
   //A good design has empathy
   public static void methodName() {

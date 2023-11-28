@@ -11,13 +11,32 @@ Exception handling is fundamentally an imperative style of programming idea.
 
 Functional programming and Exception handling are mutually exclusive
 
+For Functional programming, Deal with the errors downstream and treat errors as another form of data. 
+The failed data vs success data.
+
+Do not blow up the pipeline
+
+
+In Reactive streams
+
+```java
+reactiveStream
+        .map()
+        .filter(interfaceThatSupportsException)
+        .map()
+        .subscribe(
+                data -> handleData(data),//Data Channel
+                 err -> handleErr(err), //error channel
+                () -> done() //Complete channel
+        )
+```
 
 # Unchecked Exception:
 
 * Handling is NOT verified during Compile time.
-* These exceptions occurs because of bad programming.
+* These exceptions occur because of bad programming.
 * The program won’t give a compilation error.
-* All Unchecked exceptions are direct sub classes of RuntimeException class.
+* All Unchecked exceptions are direct sub-classe of `RuntimeException` class.
 
 Java exceptions are **objects** that represent abnormal conditions or error situations during the execution of a program. 
 
@@ -69,19 +88,6 @@ Custom exceptions are handled in a similar way to built-in exceptions.
    
 Handling exceptions in Java is typically done using try, catch, and finally blocks.
 
-# Try-Catch-Finally
-
-Try with finally and without catch is allowed 
-
-```java
-try{
-   result = divident/divisor;
-}finally {
-   System.out.println("This will always run");
-}
-```
-
-
 # Try with resources
 Resources are automatically closed at the end of the try block with `try-with-resources`. 
 This simplifies resource management and reduces the likelihood of resource leaks.
@@ -114,7 +120,6 @@ try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
     e.printStackTrace();
 }
 ```
-
 
 ### Database Connection :
 ```java
@@ -180,7 +185,6 @@ class CustomException extends Exception {
 }
 ```
 
-
 # Finally Block
 
 The `finally` block is used to execute code that should be run regardless of whether an exception is thrown or not. 
@@ -193,5 +197,17 @@ try {
     // Exception handling
 } finally {
     // Code to be executed whether an exception occurs or not
+}
+```
+
+##### Try-Finally
+
+Try with finally and without catch is allowed
+
+```java
+try{
+   result = divident/divisor;
+}finally {
+   System.out.println("This will always run");
 }
 ```
