@@ -133,3 +133,52 @@ Notice [emphasized](#notices-with-theme) with the `{: .notice--success}` class.
 
 Notice [emphasized](#notices-with-theme) with the `{: .notice--danger}` class.
 {: .notice--danger}
+
+# Writing Math Equations
+
+Traditional using subscript and super script
+
+{% raw %}
+log<sub>base</sub>index = power
+
+base<sup>power</sup> = index
+{% endraw %}
+
+
+`log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>`
+{% raw %}
+log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>
+{% endraw %}
+
+# Using Lib
+From [https://yihui.org/en/2018/07/latex-math-markdown/](https://yihui.org/en/2018/07/latex-math-markdown/)
+
+
+{% raw %}
+
+$$ log{_a}{n} $$
+
+
+
+$$
+y = ax^2 + bx + c,
+$$
+
+while this $a > 0$ is inline math mode.
+
+$$
+\vec{u} \otimes \vec{v} = \mathbf{M}
+$$
+
+$$
+\log \left[1 + \left( \frac{x + \sin y}{z} -
+\sqrt{a} \right)^b \right]
+$$
+
+$$
+\frac{\frac12 - 2}{5 + \frac43} -
+\frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43}
+= 0
+$$
+
+{% endraw %} 
