@@ -24,6 +24,11 @@ System.out.println(Integer.toBinaryString(235));
 `x & (x - 1)`
 ```
 
+**the Nth bit is set**
+```java
+1 << n
+```
+
 # Bitwise Operators
 - `AND (&)`: 1 if both bits are 1; otherwise, it's 0. Product of zero with anything is a zero
 - `OR (|)`: 1 if either of the bits is 1; otherwise, it's 0. behaves like an addition
@@ -85,21 +90,9 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 
 {% gist nitinkc/c2b08480ddf73b06f2ad1df65be5483d %}
 
-## More Examples
+# Examples
 
-
-
-1. **Finding Unique Numbers:** If you XOR all numbers in an array, duplicate numbers will cancel each other out,
-   leaving you with the unique number. Use this trick to **find Unique numbers** in an Array with O(1) space and O(n) time complexity.'
-    2. To find all uniques, use a **set** (On adding in set, if false, remove) as well, but it will use O(n) space and time complexity.
-
-2. **Swapping Numbers:** You can swap two numbers using XOR without using a temporary variable: `a = a ^ b; b = a ^ b; a = a ^ b;`
-
-3. **Finding Missing Number:** You can find a missing number in a sequence by XORing all numbers with the sequence from 1 to n. The result will be the missing number.
-
-
-
-1. **Checking if a Number is Even or Odd:**
+### **Checking if a Number is Even or Odd:**
    ```java
    boolean isEven = (num & 1) == 0; // true if even, false if odd
    ```
@@ -107,7 +100,7 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
 while odd numbers have it set to 1. 
 Thus **extract the LSB** of the number and if the result is 0, the number is even; if it's 1, the number is odd.
 
-2. **Swapping Two Numbers:**
+### **Swapping Two Numbers:**
 
    ```java
    a = a ^ b;
@@ -119,7 +112,7 @@ Thus **extract the LSB** of the number and if the result is 0, the number is eve
 When you XOR a value twice with the same number, it returns the original value (XOR is its own inverse). 
 The sequence of operations effectively swaps the values of `a` and `b`.
 
-3. **Finding the Missing Number:**
+### **Finding the Missing Number:**
 
    ```java
    int findMissing(int[] nums) {
@@ -135,7 +128,7 @@ The sequence of operations effectively swaps the values of `a` and `b`.
 It XORs each index `i` and corresponding value `nums[i]`, along with the indices themselves (0 to n-1), 
 and finally with `n`. This effectively cancels out all the numbers that are present, leaving only the missing number.
 
-4. **Counting Set Bits (1s) in an Integer:**
+### **Counting Set Bits (1s) in an Integer:**
 
 - `(x & 1)` can either be Zero or 1
 - returns `1` if the Least Significant Bit (LSB) of `x` is 1 else `0`.
@@ -167,7 +160,7 @@ int countSetBits(int num) {
 In each iteration, it flips the **least significant set bit** to 0 by performing a bitwise AND operation with `num - 1`. 
 This effectively counts and removes one set bit in each iteration.
 
-5. **Finding Power of 2:**
+### **Finding Power of 2:**
 
    ```java
    boolean isPowerOf2(int num) {
@@ -177,7 +170,7 @@ This effectively counts and removes one set bit in each iteration.
 
    Explanation: This code checks if a number is a power of 2. A binary representation of a power of 2 has only one bit set. When you subtract 1 from a power of 2, all the lower bits are set to 1. Performing a bitwise AND with the original number and its decremented value will result in 0 if it's a power of 2.
 
-6. **Toggle Nth Bit:**
+### **Toggle Nth Bit:**
 
    ```java
    int toggleNthBit(int num, int n) {
@@ -185,16 +178,18 @@ This effectively counts and removes one set bit in each iteration.
    }
    ```
 
-   Explanation: This code toggles the Nth bit of a number by performing a bitwise XOR with a number where only the Nth bit is set (achieved using left shift). This operation flips the value of the Nth bit while leaving other bits unchanged.
+   Explanation: This code toggles the Nth bit of a number by performing a bitwise XOR with a number 
+   **where only the Nth bit is set** (achieved using left shift). This operation flips the value of the Nth bit while leaving other bits unchanged.
 
-7. **Finding Maximum and Minimum:**
+### **Finding Maximum and Minimum:**
 
    ```java
    int max = b ^ ((a ^ b) & -(a < b ? 1 : 0));
    int min = a ^ ((a ^ b) & -(a < b ? 1 : 0));
    ```
 
-   Explanation: These code snippets find the maximum and minimum of two numbers (`a` and `b`) using bitwise operations. The expression `(a < b ? 1 : 0)` evaluates to 1 if `a` is less than `b`, and 0 otherwise. The bitwise AND operation with `-1` (all bits set) or `0` (all bits cleared) determines whether the maximum or minimum value is selected.
+   Explanation: The expression `(a < b ? 1 : 0)` evaluates to 1 if `a` is less than `b`, and 0 otherwise. 
+   The bitwise AND operation with `-1` (all bits set) or `0` (all bits cleared) determines whether the maximum or minimum value is selected.
 
 These explanations should help clarify how each bitwise operation is being used and why these tricks are effective for solving specific problems. Remember that while these techniques might not be the most intuitive at first, they can provide efficient solutions to various coding challenges.
 
