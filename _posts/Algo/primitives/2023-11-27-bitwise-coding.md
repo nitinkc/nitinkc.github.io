@@ -1,36 +1,85 @@
 ---
-title:  "Bitwise Operator"
-date:   2022-01-02 23:30:00
-categories: Algorithms
-tags: [Algorithms]
+title:  "Bitwise Operators"
+date:   2023-11-27 08:30:00
+categories: ['Algorithms']
+tags: ['Algorithms']
 ---
+
+{% include toc title="Index" %}
+
+**Bit representation**
+
+```java
+int x = 0b11101011;//Bit representation of an integer 235   
+```
+
+# Checking the LSB of a number to be 1
+
+`(x & 1)` can eityher be Zero or 1 
+- returns `1` if the Least Significant Bit (LSB) of `x` is 1 else `0`.
+
+{% gist nitinkc/21506427325bbe9cad52867af3134ca0 %}
+
+```java
+if ((x & 1) == 1) {
+    count++;
+}
+```
+can be replaced with 
+
+```java
+count += (x & 1);
+```
+
+
+# XOR 
+
+The XOR operation returns `1` for bits that are different and `0` for bits that are the same.
+
+The expression x & (x - 1) is a bitwise operation commonly used to unset the rightmost set bit (1) in the binary representation of the integer x. Here's how it works:
+
+Subtracting 1 from x flips the rightmost set bit and sets all the bits to its right to 1.
+Performing the bitwise AND operation with x and x - 1 results in all bits being preserved except for the rightmost set bit, which becomes 0.
+In other words, this operation effectively removes the rightmost (lowest-order) 1-bit in the binary representation of x. 
 
 {% include toc title="Index" %}
 
 ## Bitwise Operators
 
 - `AND (&)`: 1 if both bits are 1; otherwise, it's 0. Product of zero with anything is a zero
-
 - `OR (|)`: 1 if either of the bits is 1; otherwise, it's 0. behaves like an addition
-
 - `XOR (^)`: The result is 1 if the bits are different; otherwise, for same bits it's 0. If both are same => FLASE, else True
-
 - `NOT (~)`: Changes 1 to 0 and 0 to 1.
-
-- `Left Shift (<<)`: Shifts the bits of the operand to the left by a specified number of positions.
-
-- `Right Shift (>>)`: Shifts the bits of the operand to the right by a specified number of positions.
-
+- `Left Shift (<<)`: Shifts th
+  - This operator shifts the bits to the left.
+  - The vacant positions on the right are filled with zeros.
+  - It effectively **multiplies** the operand by 2 raised to the power of the right operand.
+- NO `<<<`
+- `Signed Right Shift (>>)`: Shifts the bits of the operand to the right by a specified number of positions.
+  - It fills the vacant positions on the left with the sign bit (the leftmost bit) to preserve the sign of the number.
+  - If the number is positive, it fills with 0, and if negative, it fills with 1.
+  - Divides the number by 2
+  - ```java
+    int x = -8;
+    int result = x >> 1; // result is -4
+   ```
+- `Unsigned Right Shift (>>>)`
+  - It fills the vacant positions on the left with zeros, regardless of the sign bit.
+  - It is used for logical right shifts, and it treats the operand as an unsigned quantity.
+  - ```java
+    int x = -8;
+    int result = x >>> 1; // result is 2147483644
+   ```
 ## XOR (Cancels each other)
 
-Thus, if 2 similar things are XOR'd, it will return False. XORing two identical numbers results in 0, 
+Thus, if 2 similar things are XOR'd, it will return False. XORing two identical numbers results in 0,
 while XORing any number with 0 results in the same number.
 
 
 To find all uniques, use a **set** (On adding in set, if false, remove) as well, but it will use O(n) space and time complexity.
 
-1. **Finding Unique Numbers:** If you XOR all numbers in an array, duplicate numbers will cancel each other out, 
-leaving you with the unique number. Use this trick to **find Unique numbers** in an Array with O(1) space and O(n) time complexity.'
+1. **Finding Unique Numbers:** If you XOR all numbers in an array, duplicate numbers will cancel each other out,
+   leaving you with the unique number. Use this trick to **find Unique numbers** in an Array with O(1) space and O(n) time complexity.'
 
 2. **Swapping Numbers:** You can swap two numbers using XOR without using a temporary variable: `a = a ^ b; b = a ^ b; a = a ^ b;`
 
@@ -138,3 +187,4 @@ The logic is used for finding a unique element among duplicates (Stolen Drone pr
    Explanation: These code snippets find the maximum and minimum of two numbers (`a` and `b`) using bitwise operations. The expression `(a < b ? 1 : 0)` evaluates to 1 if `a` is less than `b`, and 0 otherwise. The bitwise AND operation with `-1` (all bits set) or `0` (all bits cleared) determines whether the maximum or minimum value is selected.
 
 These explanations should help clarify how each bitwise operation is being used and why these tricks are effective for solving specific problems. Remember that while these techniques might not be the most intuitive at first, they can provide efficient solutions to various coding challenges.
+

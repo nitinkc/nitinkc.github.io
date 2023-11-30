@@ -7,33 +7,6 @@ tags: [Algorithms]
 
 {% include toc title="Index" %}
 
-
-## Character
-
-While comparing individual characters of a String, this comes handy.
-```java
-Character.toLowerCase('A')
-``` 
-
-Note: To uniformaly handle even an odd length Strings, use While loop with the condition  `start < end` with pointers running from both end 
-
-{% gist nitinkc/677d996fd8fab0b033c8339e4fe6ae6d %}
-
-
-Identify if a character is alphanumeric or Skipping punctuation marks 
-```java
-Character.isLetterOrDigit(str.charAt(i))
-```
-{% gist nitinkc/eb96b7d58398b277e97e8df6b6f22e0a %}
-
-```java
-char c = '9';
-Character.isDigit(c)//True
-c = 'S';
-Character.isLetter(c)
-```
-
-
 ## String 
 
 ##### From String to char array
