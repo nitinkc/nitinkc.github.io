@@ -1,41 +1,34 @@
 ---
-title:  "Coding Hints"
+title:  "Bitwise Operators"
 date:   2023-11-27 08:30:00
 categories: ['Coding']
 tags: ['Coding']
 ---
 
-
-**The Log Formula**
-
-$$ \log_{base}{index} = {power} $$
-
-For Example : $$ \log_{10}{100} = 2 $$
-
-**The Exponent formula**
-
-$$ base^{power} = index $$
-
-For Example :  $$ 10^{3} = 1000 $$
-
-# Counting the number of digits
-
-$$
-\text{number of digits, n} = \lfloor \log_{10}(x) \rfloor + 1 \text{, where x is an integer number}
-$$
+**Bit representation**
 
 ```java
-int i = 123456789;
-int numOfDigits = (int) Math.floor(Math.log10(i)) + 1;
+int x = 0b11101011;//Bit representation of an integer 235   
 ```
 
-Extracts Least Significant Bit
+# Checking the LSB of a number to be 1
 
-Since the binary representation of 1 is 000...01 (with all other bits being zero), this operation effectively extracts the least significant bit of x. If the least significant bit of x is 1, the result is 1; otherwise, it's 0.
+`(x & 1)` can eityher be Zero or 1 
+- returns `1` if the Least Significant Bit (LSB) of `x` is 1 else `0`.
+
+{% gist nitinkc/21506427325bbe9cad52867af3134ca0 %}
 
 ```java
-x & 1
+if ((x & 1) == 1) {
+    count++;
+}
 ```
+can be replaced with 
+
+```java
+count += (x & 1);
+```
+
 
 XOR 
 

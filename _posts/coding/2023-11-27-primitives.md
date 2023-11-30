@@ -1,0 +1,36 @@
+---
+title:  "Primitives"
+date:   2023-11-27 08:30:00
+categories: ['Coding']
+tags: ['Coding']
+---
+
+| **The Log Formula**                    | **The Exponent formula**          |
+|:---------------------------------------|:----------------------------------|
+| $$ \log_{base}{index} = {power} $$     | $$ base^{power} = index $$        |
+| **Example** : $$ \log_{10}{100} = 2 $$ | **Example** :  $$ 10^{2} = 100 $$ |
+
+
+**The Log Formula :**
+
+$$ \log_{base}{index} = {power} $$
+
+**The Exponent formula :**
+
+$$ base^{power} = index $$
+
+# Counting the number of digits
+
+$$
+\text{number of digits, n} = \lfloor \log_{10}(x) \rfloor + 1 \text{, where x is an integer number}
+$$
+
+```java
+int i = 123456789;
+int numOfDigits = (int) Math.floor(Math.log10(i)) + 1;
+```
+
+
+```java
+int numberOfDigits = (int) Math.floor(Math.log10(num)) + 1;
+```
