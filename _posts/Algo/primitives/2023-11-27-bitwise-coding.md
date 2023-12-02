@@ -54,6 +54,8 @@ System.out.println(Integer.toBinaryString(235));
       int x = -8;//11111111111111111111111111111000
       int result = x >>> 1; // result is 2147483644, 01111111111111111111111111111100
       ```
+- Negative number is represented in 2's complement
+  $$ \text(2's complement) = \text(invert the bits of original) + 1 $$
 
 ## XOR (Cancels each other)
 
