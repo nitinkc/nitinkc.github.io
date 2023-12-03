@@ -185,10 +185,10 @@ kramdown:
   enable_coderay: false
   parse_block_html: false
   parse_span_html: false
-  # syntax_highlighter: coderay
-  # syntax_highlighter_opts:
-  #   line_numbers: table
-  #   bold_every: 5
+#  syntax_highlighter: coderay
+#  syntax_highlighter_opts:
+#    line_numbers: table
+#    bold_every: 5
 
 # Sass/SCSS
 sass:

@@ -7,92 +7,143 @@ tags: ['Algorithms']
 
 {% include toc title="Index" %}
 
-**Bit representation**
+# Summary
 
-```java
-int x = 0b11101011;//Bit representation of an integer 235
-System.out.println(Integer.toBinaryString(235));
-```
+| **Concept**                           | **Code Snippet**                                          | **Mnemonic**                                    |
+|---------------------------------------|-----------------------------------------------------------|-------------------------------------------------|
+| **Bit representation**                | `short x = 0b11101011;`<br>`Integer.toBinaryString(235)`  | None (Direct representation)                    |
+| **Negative number**                   | `int y = -2;//11111111111111111111111111111110 -> 32 bit` | 2's complement $$ (X' = \text{invert}(X) + 1) $$ |
+| **Extracts the LSB of a number**      | `(number & 1)`                                            | None (Direct operation)                         |
+| **Clear/Unset the rightmost set bit** | `x & (x - 1)`                                             | Clear the **Least Significant Set Bit**         |
+| **Extracts the rightmost set bit**    | `x & ~(x - 1)`                                            | Extract the **Rightmost Set Bit**               |
+| **The Nth bit is set**                | `1 << n`                                                  | Set the **Nth Bit**                             |
+| **XOR #1 Cancels when same**          | `(x^x);//0` <br> (x^(~x));//-1`                           |                                                 |
+| **XOR #2 Adding Without Carrying**    |                                                           | **Ex**clude **OR** -> `Add excluding Carry`     |
+| **Parity = 1 When #1's Odd**          | ```x = (x & (x-1));```<br>```parity = (parity ^ 1);```    | Parity = 1 When #1's Odd                        |
 
-**Extracts the LSB of a number**
-```java
-(number & 1)
-```
+### **Bit representation**
 
-**Unset the rightmost set bit** : flip the **least significant set bit** to 0
-```java
-`x & (x - 1)`
-```
+- ```java
+  short x = 0b11101011;//Bit representation of an integer 235
+  System.out.println(Integer.toBinaryString(235));//Converts the 16 bit short to 32 bit int
+  ```
+- `short` is `16-bit signed integer` - from $$ 2^{16} = -32,768 \text{ to 32,767 (inclusive)} $$
+- `int` is `32-bit signed integer`. The size of an int in Java is fixed at 32 bits. (regardless of the underlying hardware architecture)
+- `long` is `64-bit signed integer` in Java.
 
-**the Nth bit is set**
-```java
-1 << n
-```
+### **Negative number**
 
-# Bitwise Operators
-- `AND (&)`: 1 if both bits are 1; otherwise, it's 0. Product of zero with anything is a zero
-- `OR (|)`: 1 if either of the bits is 1; otherwise, it's 0. behaves like an addition
-- `XOR (^)`: The result is `1 | TRUE` if the bits are **different**; otherwise, for same bits it's 0.
-- `NOT (~)`: Changes 1 to 0 and 0 to 1.
-- `Left Shift (<<)`: Shifts th
-    - This operator shifts the bits to the left.
-    - The vacant positions on the right are filled with zeros.
-    - It effectively **multiplies** the operand by 2 raised to the power of the right operand.
-- NO `<<<`
-- `Signed Right Shift (>>)`: Shifts the bits of the operand to the right by a specified number of positions.
-    - It fills the vacant positions on the left with the sign bit (the leftmost bit) to preserve the sign of the number.
-    - If the number is positive, it fills with 0, and if negative, it fills with 1.
-    - **Divides** the number by 2
-    - ```java
+is represented in $$ \textbf {2's complement} X′ = invert(X) + 1 $$
+- ```java
+    int y = -2;//11111111111111111111111111111110 -> 32 bit
     int x = -8;//11111111111111111111111111111000
-    int result = x >> 1; // result is -4, 11111111111111111111111111111100
+    x = x >> 1; //Divide by 2 -> -4, 11111111111111111111111111111100
+    x = x << 1;//Multiply by 2
    ```
-- `Unsigned Right Shift (>>>)`
-    - It fills the vacant positions on the left with zeros, regardless of the sign bit.
-    - It is used for **logical right shifts**, and it treats the operand as an unsigned quantity.
-    - ```java
-      int x = -8;//11111111111111111111111111111000
-      int result = x >>> 1; // result is 2147483644, 01111111111111111111111111111100
-      ```
-- Negative number is represented in 2's complement
-  $$ \text(2's complement) = \text(invert the bits of original) + 1 $$
 
-## XOR (Cancels each other)
+### **Extracts the LSB of a number**
+- ```java
+  (number & 1)
+  ```
 
-- If 2 similar things are XOR'd, it will return False.
-- XORing two identical numbers results in 0,
-while XORing any number with 0 results in the same number.
-
-The XOR operation returns `1` for bits that are different and `0` for bits that are the same.
-
-
-Subtracting 1 from x flips the rightmost set bit and sets all the bits to its right to 1.
-Performing the bitwise AND operation with x and x - 1 results in all bits being preserved except for the rightmost set bit, which becomes 0.
+### **Clear/Unset the rightmost set bit** :
+- flip the **least significant set bit** to 0
+-turns the Rightmost 1, from LSB, to zero
+- ```java
+  `x & (x - 1)`
+  ```
+- Subtracting 1 from x flips the rightmost set bit and sets all the bits to its right to 1.
+- Performing the bitwise AND operation with x and x - 1 results in all bits being preserved except for the rightmost set bit, which becomes 0.
 In other words, this operation effectively removes the rightmost (lowest-order) 1-bit in the binary representation of x.
 
-### The XOR Trick
+### **Extracts the rightmost set bit** :
+- extracts the Rightmost 1, from LSB,without changing it.
+- ```java
+  x & ~(x - 1)
+  ```
 
-Same variables cancels the effect of each other if the bitwise XOR is used.
+### **the Nth bit is set**
+- ```java
+  1 << n
+  ```
 
+### **XOR Trick(Cancels each other Or Adding Without Carrying)**
+- Same variables cancels the effect(**Ex**clude) of each other if the bitwise XOR is used.
+- If 2 similar things are XOR'd, returns `0|False`. XORing **two identical numbers results in 0**. `8^8 = 0`
+- while XORing any number with 0 results in the same number.
+- XORing two integers gives **the sum without carry**. used in bitwise addition
+- This is because XOR is essentially an addition operation without carrying over to the next bit.
+- **Mnemonic** : **Ex**clude **OR** -> OR is Addition, thus XOR is `Adding Without Carrying`
 ```java
-// Use of XOR (both flags are boolean) - Exactly one is True
-if (flag2 ^ flag4)
+// Use of XOR (both flags are boolean) and Exactly one is True
+if (flag1 ^ flag2)
 //is equivalent to
-(flag2 && !flag4) || (!flag2 && flag4);
-```
-
-```java
-// Works only with integer, in its native form, for others change it into its equivalent binary representation.
-a = a^b;
-b = a^b; //a^b^b yields a
-a = a^b;//a^b^a = b(b is recently converted to a)
+(flag1 && !flag2) || (!flag1 && flag2);
 ```
 
 The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake)
 
 {% gist nitinkc/c2b08480ddf73b06f2ad1df65be5483d %}
 
+
+
+# Bitwise Operators
+
+Truth Table
+
+|  A  | B  | A & B | A \| B | A ^ B |  ¬A  | 
+|:---:|:--:|:-----:|:------:|:-----:|:----:|
+|  0  | 0  |   0   |   0    |   0   |  1   | 
+|  0  | 1  |   0   |   1    |   1   |  1   | 
+|  1  | 0  |   0   |   1    |   1   |  0   | 
+|  1  | 1  |   1   |   1    |   0   |  0   | 
+
+
+`NOT (~)`: Changes 1 to 0 and 0 to 1.
+
+`AND (&)`: 1 if both bits are 1; otherwise, it's 0. Product of zero with anything is a zero
+
+`OR (|)`: 1 if either of the bits is 1; otherwise, it's 0. behaves like an addition
+
+`XOR (^)`: If the bits are **different**, the result is `1 | TRUE` ; otherwise, for same bits it's 0.
+```java
+int x = -13;
+System.out.println(x^x);//0
+System.out.println(x^(~x));//-1
+```
+
+`Left Shift (<<)`: Shifts the bits to the left by a specified number of positions (n) `value << n`.
+- The vacant positions on the right are filled with zeros.
+- it effectively **multiplies** the operand by $$ {2^n} $$.
+
+NO UNSIGNED LEFT SHIFT `<<<`
+{: .notice--info}
+
+`Signed Right Shift (>>)`: Shifts the bits of the operand to the right by a specified number of positions.
+- It fills the vacant positions on the left with the sign bit (the leftmost bit) to preserve the sign of the number.
+- If the number is positive, it fills with 0, and if negative, it fills with 1.
+- **Divides** the number by $$ {2^n} $$.
+
+```java
+ int x = -8;//11111111111111111111111111111000
+ int result = x >> 1; // result is -4, 11111111111111111111111111111100
+```
+
+`Unsigned Right Shift (>>>)`
+- It fills the vacant positions on the left with zeros, regardless of the sign bit.
+- It is used for **logical right shifts**, and it treats the operand as an unsigned quantity.
+- ALWAYS use this for the while loop, else infinite loop for negative numbers
+```java
+int x = -8;//11111111111111111111111111111000
+int result = x >>> 1; // result is 2147483644, 01111111111111111111111111111100
+while (x != 0) {
+    //Some Logic
+    x = x >>> 1;//Use Unsigned Right Shift for negative numbers, else infinite loop for negative numbers
+}
+```
+
 # Examples
+
 
 ### **Checking if a Number is Even or Odd:**
    ```java
@@ -104,11 +155,12 @@ Thus **extract the LSB** of the number and if the result is 0, the number is eve
 
 ### **Swapping Two Numbers:**
 
-   ```java
-   a = a ^ b;
-   b = a ^ b;
-   a = a ^ b;
-   ```
+```java
+// Works only with integer, in its native form, for others change it into its equivalent binary representation.
+a = a^b;
+b = a^b; //a^b^b yields a
+a = a^b;//a^b^a = b(b is recently converted to a)
+```
 
    Explanation: This code uses XOR to swap the values of `a` and `b` without using a temporary variable. 
 When you XOR a value twice with the same number, it returns the original value (XOR is its own inverse). 
@@ -193,5 +245,55 @@ This effectively counts and removes one set bit in each iteration.
    Explanation: The expression `(a < b ? 1 : 0)` evaluates to 1 if `a` is less than `b`, and 0 otherwise. 
    The bitwise AND operation with `-1` (all bits set) or `0` (all bits cleared) determines whether the maximum or minimum value is selected.
 
-These explanations should help clarify how each bitwise operation is being used and why these tricks are effective for solving specific problems. Remember that while these techniques might not be the most intuitive at first, they can provide efficient solutions to various coding challenges.
+### **Parity = 1 When #1's Odd**
+```java
+ while (x != 0){
+   x = (short) (x & (x-1));//Changes the 1 from LSB to zero, and count
+   count++;//Either count the number of 1's and see if its even or odd.
+   parity = (short) (parity ^ 1);//Keep flipping the parity, when even its 0, when odd, its 1
+}
+```
+
+### **Adding two numbers bitwise**
+- Get the Carry Bit with AND`&` operator
+- Get the sum without carry with XOR`^`
+- Take the Carry to the next Left bit (from LSB)
+- **Mnemonic** : `Add  1 Right 2 Left`
+  {% gist nitinkc/008921af628eb9efee46420cdd94c5e5 %}
+
+
+### **Multiplying 2 numbers in Binary**
+
+{% gist nitinkc/f2029ae09d2ed8862638893bf5c6e8dc %}
+
+```markdown
+11     (3 in decimal)
+×  10  (2 in decimal)
+------
+ 00  (This is 11 multiplied by the rightmost bit of 0)
+11x   (This is 11 multiplied by the leftmost bit of 0, shifted one position to the left)
+------
+110    (6 in decimal)
+```
+
+
+|  Iteration   |   num1 (binary)   |  num2 (binary)   |   result (binary)   | Operation                                                  |
+|:------------:|:-----------------:|:----------------:|:-------------------:|:-----------------------------------------------------------|
+|      1       |        11         |        10        |          0          | Check LSB of num1 (11) (1 & 1) == 1 (True)                 |
+|              |                   |                  |                     | - result = add(result, num2) = add(0, 10) = 10             |
+|              |                   |                  |                     | - Right shift num1 (num1 >>>= 1) => num1 = 01 (binary)     |
+|              |                   |                  |                     | - Left shift num2 (num2 <<= 1) => num2 = 100 (binary)      |
+| -----------  | ----------------  | ---------------  | ------------------  | -----------------------------------------------            |
+|      2       |         1         |       100        |         10          | Check LSB of num1 (01) (1 & 1) == 1 (True)                 |
+|              |                   |                  |                     | - result = add(result, num2) = add(10, 100) = 110          |
+|              |                   |                  |                     | - Right shift num1 (num1 >>= 1) => num1 = 00 (binary)      |
+|              |                   |                  |                     | - Left shift num2 (num2 <<= 1) => num2 = 1000 (binary)     |
+| -----------  | ----------------  | ---------------  | ------------------  | -----------------------------------------------            |
+|      3       |         0         |       1000       |         110         | Check LSB (0 & 1) == 0 (False)                             |
+|              |                   |                  |                     | - No addition in this iteration                            |
+|              |                   |                  |                     | - Right shift num1 (num1 >>= 1) => num1 = 0 (binary)       |
+|              |                   |                  |                     | - Left shift num2 (num2 <<= 1) => num2 = 10000 (binary)    |
+| -----------  | ----------------  | ---------------  | ------------------  | -----------------------------------------------            |
+|    Final     |         0         |      10000       |         110         | Algorithm terminates : num1 becomes 0  `while (num1 != 0)` |
+
 
