@@ -90,3 +90,10 @@ However, object == null to be more natural to read and understand.
 Modern IDEs often help prevent such mistakes by showing a warning when an assignment is used inside a conditional expression. 
 So, whether to use null == object or object == null is largely a matter of personal preference and coding standards within a team. 
 Both forms are correct and serve the same purpose.
+
+## Optional ofNullable
+Instead of using then else statement, use of optional can be handy
+
+```java
+Optional.ofNullable(str1).orElse(str2)
+```

@@ -55,15 +55,3 @@ col = list.get(i).size();
 
 {% gist nitinkc/79da313a1da762bfc0c791a1f3843305 %}
 
-
-### The Arrays Class
-
-```
-List<Integer> a = Arrays.asList(1,2,3);
-
-//Printing an ArrayList as ann Integer
-Arrays.toString(a);//op: [1,2,3]
-
-//Converting an ArrayList into Array <ArrayList.toArray()>
-int[] result = a.toArray();
-```

@@ -37,11 +37,15 @@ System.nanoTime();
 
 ### Random
 ```java
-import java.util.Random
+import java.util.Random;
+
+// Math.random() - returns a double value with a positive sign, greater than or equal to 0.0 and less than 1.0
+ double randomValue = Math.random();//  0.0 and less than 1.0.
+System.out.println("Random value: " + randomValue);
 
 Random generator = new Random(); //or new Random(123), 123 being the seed
-generator.nextInt(5);//range 0 to 5, add 1 to get range 1 to 6 (dices)
-/* Eg: int throw = generator.nextInt(6) + 1; */
+//generator.nextInt(5);//range 0 to 5, add 1 to get range 1 to 6 (dices)
+int throw = generator.nextInt(5) + 1;
 
 generator.nextInt(); // 2^31 to 2^31 -1
 generator.nextDouble();//Range: 0.0 to 1.1
