@@ -59,14 +59,13 @@ public static Optional<String> getName() {
 * If the result is a collection, then don't use Optional, instead return empty collection
 ```java
 public static Optional<String> getName() {
-    if(fakeService.getRandNumber() < 3) {
-      return Optional.of("Name");
-    }
-
-    //return null; //ABSOLUTELY NO. it works but it's NASTY CODE
-    return Optional.empty();
+  if(fakeService.getRandNumber() < 3) {
+    return Optional.of("Name");
   }
 
+  //return null; //ABSOLUTELY NO. it works but it's NASTY CODE
+  return Optional.empty();
+}
 ```
 
 * Don't use Optional<T> as a parameter to methods. If needed, use overloading instead.
