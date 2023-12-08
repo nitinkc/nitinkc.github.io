@@ -57,7 +57,6 @@ public static Optional<String> getName() {
 ```
 
 * If the result is a collection, then don't use Optional, instead return empty collection
-
 ```java
 public static Optional<String> getName() {
     if(fakeService.getRandNumber() < 3) {
