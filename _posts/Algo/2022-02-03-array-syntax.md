@@ -15,13 +15,12 @@ tags: [Algorithms]
 ### Array List API
 ```java
 list.add (10) // Appends the specified element to the end of this list. Returns boolean
-list.add(3, 10) //Inserts at index 3 Shifts current and subsequent elements to the right (adds one to their indices)
-int indx =  list.indexOf(10) //index of the first occurrence of the element in the list, or -1 if this list does not contain the element.
+list.add(3, 10) //Inserts at index 3 Shifts current and subsequent elements to the right (adds one to their indices)int indx =  list.indexOf(10) //index of the first occurrence of the element in the list, or -1 if this list does not contain the element.
 int data = list.get(3) //Returns the element at the specified position in this list.
 ListIterator listIterator() //Bi directional iterator
 
 list.set(3, 10) //Replaces the element at the specified position .Returns the previous element 
-list.remove(3) //Removes the element at the specified position in this list.
+        list.remove(3) //Removes the element at the specified position in this list.
 list.remove(10) //Removes the first occurrence of the specified element from this list, if it is present.
 ```
 ### 1D Arrays
@@ -54,4 +53,3 @@ col = list.get(i).size();
 ```
 
 {% gist nitinkc/79da313a1da762bfc0c791a1f3843305 %}
-
