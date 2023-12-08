@@ -62,9 +62,21 @@ In other words, this operation effectively removes the rightmost (lowest-order) 
   ```
 
 ### **the Nth bit is set**
-- ```java
-  1 << n
-  ```
+Bit mask technique
+```java
+1 << n //Set the nth bit from LSB, to be used as bit mask
+
+int number = 10;
+int n = 2;      // Set the 2nd bit from LSB (0-based index)
+        
+// Using bitwise OR to set the nth bit from LSB
+int result = number | (1 << n);
+```
+
+the program sets the 2nd bit (0-based index) from the least significant bit (LSB) of the number 10. 
+The 1 << n expression creates a mask with only the nth bit set, and then the bitwise OR operation combines 
+this mask with the original number, setting the specified bit. The output will show the binary representation of both the original number and the result after setting the nth bit from LSB.
+
 
 ### **XOR Trick(Cancels each other Or Adding Without Carrying)**
 - Same variables cancels the effect(**Ex**clude) of each other if the bitwise XOR is used.
