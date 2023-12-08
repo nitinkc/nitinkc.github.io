@@ -69,31 +69,28 @@ public static Optional<String> getName() {
 ```
 
 * Don't use Optional<T> as a parameter to methods. If needed, use overloading instead.
-
 ```java
-    public static void methodName(String str)
-    public static void methodName(Optional<String> name); //Anti-pattern - DO NOT DO THIS
-```
-Optional in the argument will force/punish the programmers/users when the method is invoked
+public static void methodName(String str)
 
+public static void methodName(Optional<String> name); //Anti-pattern - DO NOT DO THIS
+```
+  - Optional in the argument will force/punish the programmers/users when the method is invoked
 ```java
 methodName(Optional.empty());
 OR
 methodName(Optional.of(str));
 ```
 
-Instead use overloading
-
+  - Instead use overloading
 ```java
-  //A good design has empathy
-  public static void methodName() {
-    //use the default value
-  }
+//A good design has empathy
+public static void methodName() {
+  //use the default value
+}
 
-  public static void methodName(String name) {
-    //use the given name
-  }
+public static void methodName(String name) {
+  //use the given name
+}
 ```
 
-* There is little reason to use Optional as a field.
-
+* There is no reason to use Optional as a field.
