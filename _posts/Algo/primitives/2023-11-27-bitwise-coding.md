@@ -8,17 +8,17 @@ tags: ['Algorithms']
 
 # Summary
 
-| **Concept**                             | **Code Snippet**                                      | **Mnemonic**                                        |
-|:----------------------------------------|:------------------------------------------------------|:----------------------------------------------------|
-| **Bit representation**                  | short x = 0b11101011;<br>Integer.toBinaryString(235)  | None (Direct representation)                        |
-| **Negative number**                     | int y = -2;<br>11111111111111111111111111111110 -> 32 bit | 2's complement $$ (X' = \text{invert}(X) + 1) $$    |
-| **Extracts the LSB of a number**        | (number & 1)                                          | None (Direct operation)                             |
-| **Clear/Unset the rightmost set bit**   | x & (x - 1)                                           | Clear the **Least Significant Set Bit**             |
-| **Extracts upto the rightmost set bit** | x & ~(x - 1)                                          | Extract the **Rightmost Set Bit**                   |
-| **The Nth bit is set**                  | 1 << n                                                | Set the **Nth Bit**                                 |
-| **XOR #1 Cancels when same**            | (x^x);//0 <br> (x^(~x));//-1                          |                                                     |
-| **XOR #2 Adding Without Carrying**      |                                                       | **Ex**clude **OR** -> `Add excluding Carry`         |
-| **Parity = 1 When #1's Odd**            | x = (x & (x-1)); <br> parity = (parity ^ 1);          | Parity = 1 When #1's Odd                            |
+| **Concept**                           | **Code Snippet**                                                              | **Mnemonic**                                                                                                                                |
+|:--------------------------------------|:------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Bit representation**                | `short x = 0b11101011;`<br>`Integer.toBinaryString(235)`                      |                                                                                                                                             |
+| **Negative number**                   | `int positiveNum= 0b00101100;//44`<br>`int twoScomplement = 0b11010100;`      | 2's complement $$ (X' = \text{invert}(X) + 1) $$  <br>**Flip all the bits after the First 1 from LSB (rightmost Setbit), Go Left to Right** |
+| **Extracts the LSB of a number**      | `(number & 1)`                                                                |                                                                                                                                             |
+| **Clear/Unset the rightmost set bit** | `x & (x - 1)`                                                                 | Clear the **Least Significant Set Bit**                                                                                                     |
+| **Extracts the rightmost set bit**    | `x & ~(x - 1)` isolates the rightmost 1-bit of y and sets all other bits to 0 |                                                                                                            |
+| **Set the Nth bit** Bitmask           | `1 << n`                                                                      | Set the **Nth Bit**                                                                                                                         |
+| **XOR #1 Cancels when same**          | `(x^x);//0` <br> `(x^(~x));//-1`                                              |                                                                                                                                             |
+| **XOR #2 Adding Without Carrying**    |                                                                               | **Ex**clude **OR** -> `Add excluding Carry`                                                                                                 |
+| **Parity = 1 When #1's Odd**          | `x = (x & (x-1));` <br> `parity = (parity ^ 1);`                              | Parity = 1 When #1's Odd                                                                                                                    |
 
 ### **Bit representation**
 
