@@ -73,18 +73,18 @@ int n = 2;      // Set the 2nd bit from LSB (0-based index)
 // Using bitwise OR to set the nth bit from LSB
 int result = number | (1 << n);
 ```
-
-the program sets the 2nd bit (0-based index) from the least significant bit (LSB) of the number 10. 
-The 1 << n expression creates a mask with only the nth bit set, and then the bitwise OR operation combines 
-this mask with the original number, setting the specified bit. The output will show the binary representation of both the original number and the result after setting the nth bit from LSB.
-
+sets the 2nd bit (0-based index) from the least significant bit (LSB) of the number 10. 
+- The `1 << n` expression creates a mask with only the nth bit set, 
+- the bitwise OR operation combines this mask with the original number, setting the specified n<sup>th</sup> bit.
 
 ### **XOR Trick(Cancels each other Or Adding Without Carrying)**
-- Same variables cancels the effect(**Ex**clude) of each other if the bitwise XOR is used.
-- If 2 similar things are XOR'd, returns `0|False`. XORing **two identical numbers results in 0**. `8^8 = 0`
-- while XORing any number with 0 results in the same number.
-- XORing two integers gives **the sum without carry**. used in bitwise addition
-- This is because XOR is essentially an addition operation without carrying over to the next bit.
+- XOR is essentially an addition operation without carrying over to the next bit
+- Same variables cancels the effect.
+- If 2 similar objects are XOR'd, it returns `0|False`. 
+  - XORing **two identical numbers results in 0**. `8^8 = 0`
+- XORing any number with 0 results in the same number.`a^0 = a`
+- XORing two integers gives **the sum without carry**. 
+  - trick used in bitwise addition
 - **Mnemonic** : **Ex**clude **OR** -> OR is Addition, thus XOR is `Adding Without Carrying`
 ```java
 // Use of XOR (both flags are boolean) and Exactly one is True
@@ -96,8 +96,6 @@ if (flag1 ^ flag2)
 The logic is used for finding a unique element among duplicates (Stolen Drone problem (21) in Interview cake)
 
 {% gist nitinkc/c2b08480ddf73b06f2ad1df65be5483d %}
-
-
 
 # Bitwise Operators
 
@@ -161,7 +159,7 @@ while (x != 0) {
    ```java
    boolean isEven = (num & 1) == 0; // true if even, false if odd
    ```
-   Explanation: In binary representation, even numbers have their least significant bit (LSB) set to 0, 
+   **Explanation**: In binary representation, even numbers have their least significant bit (LSB) set to 0, 
 while odd numbers have it set to 1. 
 Thus **extract the LSB** of the number and if the result is 0, the number is even; if it's 1, the number is odd.
 
@@ -173,8 +171,7 @@ a = a^b;
 b = a^b; //a^b^b yields a
 a = a^b;//a^b^a = b(b is recently converted to a)
 ```
-
-   Explanation: This code uses XOR to swap the values of `a` and `b` without using a temporary variable. 
+   **Explanation**: This code uses XOR to swap the values of `a` and `b` without using a temporary variable. 
 When you XOR a value twice with the same number, it returns the original value (XOR is its own inverse). 
 The sequence of operations effectively swaps the values of `a` and `b`.
 
@@ -189,8 +186,7 @@ The sequence of operations effectively swaps the values of `a` and `b`.
        return result;
    }
    ```
-
-   Explanation: This code finds the missing number in an array containing elements from 0 to n. 
+   **Explanation**: This code finds the missing number in an array containing elements from 0 to n. 
 It XORs each index `i` and corresponding value `nums[i]`, along with the indices themselves (0 to n-1), 
 and finally with `n`. This effectively cancels out all the numbers that are present, leaving only the missing number.
 
@@ -222,7 +218,7 @@ int countSetBits(int num) {
 }
 ```
 
-   Explanation: This code uses Brian Kernighan's algorithm to count the number of set bits (1s) in an integer.
+   **Explanation**: This code uses Brian Kernighan's algorithm to count the number of set bits (1s) in an integer.
 In each iteration, it flips the **least significant set bit** to 0 by performing a bitwise AND operation with `num - 1`. 
 This effectively counts and removes one set bit in each iteration.
 
@@ -234,7 +230,7 @@ This effectively counts and removes one set bit in each iteration.
    }
    ```
 
-   Explanation: This code checks if a number is a power of 2. A binary representation of a power of 2 has only one bit set. When you subtract 1 from a power of 2, all the lower bits are set to 1. Performing a bitwise AND with the original number and its decremented value will result in 0 if it's a power of 2.
+   **Explanation**: checks if a number is a power of 2. A binary representation of a power of 2 has only one bit set. When you subtract 1 from a power of 2, all the lower bits are set to 1. Performing a bitwise AND with the original number and its decremented value will result in 0 if it's a power of 2.
 
 ### **Toggle Nth Bit:**
 
@@ -244,7 +240,7 @@ This effectively counts and removes one set bit in each iteration.
    }
    ```
 
-   Explanation: This code toggles the Nth bit of a number by performing a bitwise XOR with a number 
+   **Explanation**: toggles the Nth bit of a number by performing a bitwise XOR with a number 
    **where only the Nth bit is set** (achieved using left shift). This operation flips the value of the Nth bit while leaving other bits unchanged.
 
 ### **Finding Maximum and Minimum:**
@@ -254,7 +250,7 @@ This effectively counts and removes one set bit in each iteration.
    int min = a ^ ((a ^ b) & -(a < b ? 1 : 0));
    ```
 
-   Explanation: The expression `(a < b ? 1 : 0)` evaluates to 1 if `a` is less than `b`, and 0 otherwise. 
+   **Explanation**: The expression `(a < b ? 1 : 0)` evaluates to 1 if `a` is less than `b`, and 0 otherwise. 
    The bitwise AND operation with `-1` (all bits set) or `0` (all bits cleared) determines whether the maximum or minimum value is selected.
 
 ### **Parity = 1 When #1's Odd**
