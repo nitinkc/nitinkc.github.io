@@ -5,6 +5,7 @@ categories: ['Algorithms']
 tags: ['Algorithms']
 ---
 
+{% include toc title="Index" %}
 
 # Summary
 
