@@ -125,7 +125,19 @@ System.out.println(x^(~x));//-1
 `Left Shift (<<)`: Shifts the bits to the left by a specified number of positions (n) `value << n`.
 - The vacant positions on the right are filled with zeros.
 - it effectively **multiplies** the operand by $$ {2^n} $$.
+- x = x << 32; with an int variable x, this will result in x being assigned the value 0. 
+  - This is because the bits that are shifted beyond the 32nd position will be discarded, and the result will be 0.
+- If you try to left-shift an int value x by 33 bits (x << 33), it will be equivalent to a left shift by (33 % 32) bits, which is 1 bit.
+- ```java
+    int x = 5;
+    x = x << 33;
+    System.out.println(x); // Outputs 10
 
+    // Explanation: 5 in binary is 0000 0000 0000 0000 0000 0000 0000 0101
+    // Left-shifting by 33 bits effectively becomes a left shift by 1 bit:
+    // 0000 0000 0000 0000 0000 0000 0000 1010, which is 10 in decimal.
+    }
+    ```
 NO UNSIGNED LEFT SHIFT `<<<`
 {: .notice--info}
 
@@ -153,7 +165,6 @@ while (x != 0) {
 ```
 
 # Examples
-
 
 ### **Checking if a Number is Even or Odd:**
    ```java
@@ -233,23 +244,19 @@ This effectively counts and removes one set bit in each iteration.
    **Explanation**: checks if a number is a power of 2. A binary representation of a power of 2 has only one bit set. When you subtract 1 from a power of 2, all the lower bits are set to 1. Performing a bitwise AND with the original number and its decremented value will result in 0 if it's a power of 2.
 
 ### **Toggle Nth Bit:**
-
    ```java
    int toggleNthBit(int num, int n) {
        return num ^ (1 << n);
    }
    ```
-
    **Explanation**: toggles the Nth bit of a number by performing a bitwise XOR with a number 
    **where only the Nth bit is set** (achieved using left shift). This operation flips the value of the Nth bit while leaving other bits unchanged.
 
 ### **Finding Maximum and Minimum:**
-
    ```java
    int max = b ^ ((a ^ b) & -(a < b ? 1 : 0));
    int min = a ^ ((a ^ b) & -(a < b ? 1 : 0));
    ```
-
    **Explanation**: The expression `(a < b ? 1 : 0)` evaluates to 1 if `a` is less than `b`, and 0 otherwise. 
    The bitwise AND operation with `-1` (all bits set) or `0` (all bits cleared) determines whether the maximum or minimum value is selected.
 
@@ -268,7 +275,6 @@ This effectively counts and removes one set bit in each iteration.
 - Take the Carry to the next Left bit (from LSB)
 - **Mnemonic** : `Add  1 Right 2 Left`
   {% gist nitinkc/008921af628eb9efee46420cdd94c5e5 %}
-
 
 ### **Multiplying 2 numbers in Binary**
 
