@@ -151,34 +151,25 @@ log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>
 {% endraw %}
 
 # Using Lib
-From [https://yihui.org/en/2018/07/latex-math-markdown/](https://yihui.org/en/2018/07/latex-math-markdown/)
-
-
-{% raw %}
-
-$$ log{_a}{n} $$
+- From [https://yihui.org/en/2018/07/latex-math-markdown/](https://yihui.org/en/2018/07/latex-math-markdown/)
+- Cheatsheet - html [https://quickref.me/latex.html](https://quickref.me/latex.html)
+- Cheatsheet - pdf [https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf](https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf)
 
 
 
-$$
-y = ax^2 + bx + c,
-$$
+# $$ \LaTeX $$ Summary
 
-while this $a > 0$ is inline math mode.
-
-$$
-\vec{u} \otimes \vec{v} = \mathbf{M}
-$$
-
-$$
-\log \left[1 + \left( \frac{x + \sin y}{z} -
-\sqrt{a} \right)^b \right]
-$$
-
-$$
-\frac{\frac12 - 2}{5 + \frac43} -
-\frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43}
-= 0
-$$
-
-{% endraw %} 
+| Math Expression                                                                                                  | Rendered Output                                                                                         |
+|------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| ```t $$ log{_a}{n} $$ ```                                                                                        | $$ log{_a}{n} $$                                                                                        |
+| ```t $$ y = ax^2 + bx + c, $$ ```                                                                                | $$ y = ax^2 + bx + c, $$                                                                                |
+| ```t $$ x^{n+1} $$ ```                                                                                           | $$ x^{n+1} $$                                                                                           |
+| ```t $$ \frac{a+b}{2} $$ ```                                                                                     | $$ \frac{a+b}{2} $$                                                                                     |
+| ```t $$ \sqrt[n]{a^2+b^2} $$ ```                                                                                 | $$ \sqrt[n]{a^2+b^2} $$                                                                                 |
+| ```t $$ x_1, \ldots, x_n $$ ```                                                                                  | $$ x_1, \ldots, x_n $$                                                                                  |
+| ```t $$ x_1 + \cdots + x_n $$ ```                                                                                | $$ x_1 + \cdots + x_n $$                                                                                |
+| ```t $$ \left( a + \frac{1}{2} \right)^2 $$ ```                                                                  | $$ \left( a + \frac{1}{2} \right)^2 $$                                                                  |
+| ```t while this $$ a > 0 $$ is inline math mode. ```                                                             | while this $$ a > 0 $$ is inline math mode.                                                             |
+| ```t $$ \vec{u} \otimes \vec{v} = \mathbf{M} $$  ```                                                             | $$ \vec{u} \otimes \vec{v} = \mathbf{M} $$                                                              |
+| ```t $$ \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] $$ ```                           | $$ \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] $$                           |
+| ```t $$ \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 $$ ``` | $$ \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 $$ |
