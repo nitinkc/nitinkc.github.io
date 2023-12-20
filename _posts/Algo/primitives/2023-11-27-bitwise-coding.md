@@ -109,26 +109,24 @@ Truth Table
 |  1  | 1  |   1   |   1    |   0   |  0   | 
 
 
-`NOT (~)`: Changes 1 to 0 and 0 to 1.
-
-`AND (&)`: 1 if both bits are 1; otherwise, it's 0. Product of zero with anything is a zero
-
-`OR (|)`: 1 if either of the bits is 1; otherwise, it's 0. behaves like an addition
-
-`XOR (^)`: If the bits are **different**, the result is `1 | TRUE` ; otherwise, for same bits it's 0.
-```java
-int x = -13;
-System.out.println(x^x);//0
-System.out.println(x^(~x));//-1
-```
-
-`Left Shift (<<)`: Shifts the bits to the left by a specified number of positions (n) `value << n`.
+- `NOT (~)`: Changes 1 to 0 and 0 to 1.
+- `AND (&)`: 1 if both bits are 1; otherwise, it's 0. Product of zero with anything is a zero
+- `OR (|)`: 1 if either of the bits is 1; otherwise, it's 0. behaves like an addition
+- `XOR (^)`: If the bits are **different**, the result is `1 | TRUE` ; otherwise, for same bits it's 0.
+    ```java
+    int x = -13;
+    System.out.println(x^x);//0
+    System.out.println(x^(~x));//-1
+    ```
+  
+##### `Left Shift (<<)`
+- Shifts the bits to the left by a specified number of positions (n) `value << n`.
 - The vacant positions on the right are filled with zeros.
 - it effectively **multiplies** the operand by $$ {2^n} $$.
 - x = x << 32; with an int variable x, this will result in x being assigned the value 0. 
   - This is because the bits that are shifted beyond the 32nd position will be discarded, and the result will be 0.
 - If you try to left-shift an int value x by 33 bits (x << 33), it will be equivalent to a left shift by (33 % 32) bits, which is 1 bit.
-- ```java
+  ```java
     int x = 5;
     x = x << 33;
     System.out.println(x); // Outputs 10
@@ -138,10 +136,12 @@ System.out.println(x^(~x));//-1
     // 0000 0000 0000 0000 0000 0000 0000 1010, which is 10 in decimal.
     }
     ```
+  
 NO UNSIGNED LEFT SHIFT `<<<`
 {: .notice--info}
 
-`Signed Right Shift (>>)`: Shifts the bits of the operand to the right by a specified number of positions.
+##### `Signed Right Shift (>>)`
+- Shifts the bits of the operand to the right by a specified number of positions.
 - It fills the vacant positions on the left with the sign bit (the leftmost bit) to preserve the sign of the number.
 - If the number is positive, it fills with 0, and if negative, it fills with 1.
 - **Divides** the number by $$ {2^n} $$.
@@ -151,10 +151,11 @@ NO UNSIGNED LEFT SHIFT `<<<`
  int result = x >> 1; // result is -4, 11111111111111111111111111111100
 ```
 
-`Unsigned Right Shift (>>>)`
+##### `Unsigned Right Shift (>>>)`
 - It fills the vacant positions on the left with zeros, regardless of the sign bit.
 - It is used for **logical right shifts**, and it treats the operand as an unsigned quantity.
 - ALWAYS use this for the while loop, else infinite loop for negative numbers
+
 ```java
 int x = -8;//11111111111111111111111111111000
 int result = x >>> 1; // result is 2147483644, 01111111111111111111111111111100
