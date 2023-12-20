@@ -150,12 +150,12 @@ base<sup>power</sup> = index
 log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>
 {% endraw %}
 
-# Using Lib
+# $$ \LaTeX $$ - Using Lib
 - From [https://yihui.org/en/2018/07/latex-math-markdown/](https://yihui.org/en/2018/07/latex-math-markdown/)
 - Cheatsheet - html [https://quickref.me/latex.html](https://quickref.me/latex.html)
 - Cheatsheet - pdf [https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf](https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf)
 
-
+[https://nitinkc.github.io/developer%20tools/LaTex/](https://nitinkc.github.io/developer%20tools/LaTex/)
 
 # $$ \LaTeX $$ Summary
 
