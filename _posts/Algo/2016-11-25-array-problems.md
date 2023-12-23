@@ -7,17 +7,32 @@ tags: [Algorithms]
 
 {% include toc title="Index" %}
 
-### Two Pointer Technique
 For Arrays, Strings and Lists
-
 * For Array, length is a field - `array.length`
-* For String, length is a method - `str.length()` 
+* For String, length is a method - `str.length()`
 * List length is a method = `list.size()`
 
+### Single Pointer Technique
+- Iterate through left
+- Iterate through RIGHT (
+  - `int idx = (arr.length-1)`
+  - `int idx = list.size()-1`
+- Use an ADDITIONAL ARRAY of same size (Space complexity O(N), where N = size of the array
+- Optimize the additional Array to use a single variable
 
-##### One Fast runner the other one runs slow.
+### Two Pointer Technique
 
-##### One begins from start, other from the end.
+
+- One begins from left/start, other from the right end.
+- The while 
+```java
+int left = 0, right = str.length() - 1;
+while(left < right){
+    left++;
+    right--;
+}
+```
+
 {% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
 
 
@@ -43,6 +58,9 @@ Approach 2 : Two pointer Approach - Test only those possible combinations that m
 Approach 3 : Hash map and variant approach
 
 {% gist nitinkc/216dfdbb277577d5285334cf82c6f626 %}
+
+
+##### One Fast runner the other one runs slow.
 
 
 ### Left & Right Array approach

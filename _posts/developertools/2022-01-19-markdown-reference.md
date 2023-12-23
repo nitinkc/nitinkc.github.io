@@ -42,14 +42,16 @@ If you're building your pages with markdown, use the following examples to gener
 {% endraw %}
 ```
 
-## Hyperlinks : Open link in another tab
+## Hyperlinks
+
+- Open link in another tab
 [Try me for another Tab](https://www.google.com/){:target="_blank"}
 
 {% raw %}
 `[Link title](https://www.google.com/){:target="_blank"}`
 {% endraw %}
 
-## Hyperlink : Open link in same tab
+- Open link in same tab
 [Try me for same Tab](https://www.google.com/)
 
 {% raw %}
@@ -159,17 +161,20 @@ log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>
 
 # $$ \LaTeX $$ Summary
 
-| Math Expression                                                                                                  | Rendered Output                                                                                         |
-|------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| ```t $$ log{_a}{n} $$ ```                                                                                        | $$ log{_a}{n} $$                                                                                        |
-| ```t $$ y = ax^2 + bx + c, $$ ```                                                                                | $$ y = ax^2 + bx + c, $$                                                                                |
-| ```t $$ x^{n+1} $$ ```                                                                                           | $$ x^{n+1} $$                                                                                           |
-| ```t $$ \frac{a+b}{2} $$ ```                                                                                     | $$ \frac{a+b}{2} $$                                                                                     |
-| ```t $$ \sqrt[n]{a^2+b^2} $$ ```                                                                                 | $$ \sqrt[n]{a^2+b^2} $$                                                                                 |
-| ```t $$ x_1, \ldots, x_n $$ ```                                                                                  | $$ x_1, \ldots, x_n $$                                                                                  |
-| ```t $$ x_1 + \cdots + x_n $$ ```                                                                                | $$ x_1 + \cdots + x_n $$                                                                                |
-| ```t $$ \left( a + \frac{1}{2} \right)^2 $$ ```                                                                  | $$ \left( a + \frac{1}{2} \right)^2 $$                                                                  |
-| ```t while this $$ a > 0 $$ is inline math mode. ```                                                             | while this $$ a > 0 $$ is inline math mode.                                                             |
-| ```t $$ \vec{u} \otimes \vec{v} = \mathbf{M} $$  ```                                                             | $$ \vec{u} \otimes \vec{v} = \mathbf{M} $$                                                              |
-| ```t $$ \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] $$ ```                           | $$ \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] $$                           |
-| ```t $$ \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 $$ ``` | $$ \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 $$ |
+keep the expressions between `$$`
+
+| Math Expression                                                   | Rendered Output                                                                                         |
+|-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| log{_a}{n}                                                     | $$ log{_a}{n} $$                                                                                        |
+| y = ax^2 + bx + c                                              | $$ y = ax^2 + bx + c, $$                                                                                |
+| x^{n+1}                                                        | $$ x^{n+1} $$                                                                                           |
+| \frac{a+b}{2}                                                  | $$ \frac{a+b}{2} $$                                                                                     |
+| \sqrt[n]{a^2+b^2}                                              | $$ \sqrt[n]{a^2+b^2} $$                                                                                 |
+| x_1, \ldots, x_n                                               | $$ x_1, \ldots, x_n $$                                                                                  |
+| x_1 + \cdots + x_n                                             | $$ x_1 + \cdots + x_n $$                                                                                |
+| \left( a + \frac{1}{2} \right)^2                               | $$ \left( a + \frac{1}{2} \right)^2 $$                                                                  |
+| while this $$ a > 0 $$ is inline math mode.                    | while this $$ a > 0 $$ is inline math mode.                                                             |
+| \vec{u} \otimes \vec{v} = \mathbf{M}                           | $$ \vec{u} \otimes \vec{v} = \mathbf{M} $$                                                              |
+| \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] | $$ \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] $$                           |
+| \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 | $$ \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 $$ |
+| \xrightarrow[under]{over}                                      | $$ \xrightarrow[under]{over} $$                                                                         |

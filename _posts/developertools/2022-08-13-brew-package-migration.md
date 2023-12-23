@@ -23,6 +23,14 @@ Run the following to install the packages from [BrewFile](https://github.com/nit
 brew bundle install --global #--global -> Read the Brewfile from ~/.Brewfile.
 ```
 
+### Brew maintenance
+
+```shell
+brew update && brew outdated && brew upgrade && brew cleanup
+
+# or create alias for repetitive usages
+buou='brew update && brew outdated && brew upgrade && brew cleanup'
+```
 ### Common Brew packages used
 
 | Tool             | Details                                                               | 
