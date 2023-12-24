@@ -1,16 +1,13 @@
 ---
-title:  "Git - Multi Repo projects"
+title:  "Git config- Multi Repo projects"
 date:   2023-11-13 14:30:00
 categories: ['Git']
 tags: ['Git']
 ---
 {% include toc title="Index" %}
 
-# gitconfig
-
-
 ### git init
-`git init` creates the following entry in config file
+`git init` creates the following entry in config file in `.git` folder
 
 ```dotenv
 [core]
@@ -36,7 +33,7 @@ git remote add origin https://github.com/nitinkc/git-tests.git
 ```
 
 ### 2. remote set-url
-The remote repo can be set to another repo if needed
+The remote repo can be **set to another repo** if needed
 - if the project already exists. This will **replace** the old remote
 ```shell
 # If the project is already a git project and you want to set github repo to the existing project
@@ -80,6 +77,7 @@ git branch --set-upstream-to=<remote>/<remote-branch> <local-branch>
 Or set up a new branch with `-u` or `--set-upstream`
 ```shell
 git push -u <remote-name> your-new-branch
+git push --set-upstream origin feature/intermittant-failures
 ```
 
 then the simple command will do the job
