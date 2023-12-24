@@ -22,7 +22,7 @@ tags: ['Git']
 	precomposeunicode = true
 ```
 
-### remote add
+### 1. remote add
 The following `remote add` creates the next config `remote "origin"`
 ```shell
 # Commands provided from git repo
@@ -35,15 +35,15 @@ git remote add origin https://github.com/nitinkc/git-tests.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 ```
 
-### remote set-url
-The remote repo can be set to another repo is needed, or if the project already exists. This will **replace** the old remote
+### 2. remote set-url
+The remote repo can be set to another repo if needed
+- if the project already exists. This will **replace** the old remote
 ```shell
 # If the project is already a git project and you want to set github repo to the existing project
 git remote set-url <remote_name> <remote_url>
 git remote set-url origin https://github.com/nitinkc/x.git
 ```
-
-replacing the old repo `git-tests.git` with the new one `x.git`
+- replacing the old repo `git-tests.git` with the new one `x.git`
 
 ```editorconfig
 [remote "origin"]
@@ -51,7 +51,7 @@ replacing the old repo `git-tests.git` with the new one `x.git`
 	fetch = +refs/heads/*:refs/remotes/origin/*
 ```
 
-##### --push switch
+##### 3. The `push` switch
 ```shell
 git remote set-url --push origin https://github.com/nitinkc/git-tests.git
 ```

@@ -24,7 +24,7 @@ git checkout -b feature/<branch-name>
 # Make your changes  and commit the files
 git commit -m <file names>
 # Add the branch remotely
-git push -u origin <branch> # (-u short for --set-upstream) option)
+git push -u origin <branch> # (-u short for --set-upstream option)
 ```
 # Swith commits
 
