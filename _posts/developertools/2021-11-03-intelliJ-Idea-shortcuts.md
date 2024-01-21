@@ -220,6 +220,31 @@ Select and Right click opens menu
 
 ![14.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F14.png)
 
+##### Code selection
+press `⌥Opt ↑`/ `⌥Opt ↓`to extend or shrink Selection
+
+[https://www.jetbrains.com/help/idea/working-with-source-code.html#editor_code_selection](https://www.jetbrains.com/help/idea/working-with-source-code.html#editor_code_selection)
+
+![](https://resources.jetbrains.com/help/img/idea/2023.3/java_selection.animated.gif)
+
+
+##### Move Code Fragments
+
+To move a line up or down, press `⌥Opt ⇧Shift ↑` or `⌥Opt ⇧Shift ↓` respectively.
+
+To move (swap) a code element to the left or to the right, place the caret at it, or select it and press 
+* `⌘Сmd ⌥Opt ⇧Shift ←` for left or 
+* `⌘Сmd ⌥Opt ⇧Shift →` for right.
+
+##### Collapse
+
+Collapse a code fragment
+* `⌘Сmd -` / `⌘Сmd =`
+If you want to collapse all regions in the file
+* `⌘Сmd ⇧Shift -` / `⌘Сmd ⇧Shift =`
+
+![collapse.gif](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fcollapse.gif)
+
 ### Refactor
 
 | Key                              | Details                                        |
@@ -329,15 +354,15 @@ Display all methods in a file, on a pop-up window
 Surround With **⌘Сmd ⌥Opt T**
 ![surround_with.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsurround_with.png)
 
-<!-- 
+
 ## PDF Reference
 
-<object data="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf" type="application/pdf" width="700px" height="700px">
+<object data="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf" 
+        type="application/pdf" width="700px" height="700px">
     <embed src="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf">
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://nitinkc.github.io/assets/media/IntelliJ_Idea_shortcuts.pdf">Download PDF</a>.</p>
     </embed>
 </object>
--->
 
 <!-- <table>
   <tr>

@@ -8,7 +8,9 @@ tags: ['Developer tools']
 {% include toc title="Index" %}
 
 ## Upgrading the Macbook Pro : (13-inch, Mid 2012)
-##### Processor : 2.5 GHz Intel Core i5
+
+* Processor : 2.5 GHz Intel Core i5
+
 I was planning to buy a new Macbook as the one which was gifted by one of my best friends became really slow.
 
 I just checked a few videos on Youtube and found out that just by replacing and changing my HDD to SSD, it will boost up the performance.
@@ -19,7 +21,6 @@ Opening up the Macbook Pro flap needs special tools, so i ordered a universal to
 
 I upgraded
  *   RAM from the original 4GB to 16 GB - Crucial 16GB Kit (8GBx2) DDR3L 1600 SODIMM Memory for Mac System(CT2K8G3S160BM )- (Crucible RAM - https://www.amazon.com/gp/product/B008LTBJFW/ref=od_aui_detailpages01?ie=UTF8&psc=1)
-
  *  Replaced the original HDD with Samsung SSD - Samsung 850 EVO - 500GB - 2.5-Inch SATA III Internal SSD (MZ-75E500B/AM) (https://www.amazon.com/gp/product/B00OBRE5UE/ref=od_aui_detailpages01?ie=UTF8&psc=1)
 
 The hard disk that came out cam be used as an external drive using an enclosure. The best one that i liked is
