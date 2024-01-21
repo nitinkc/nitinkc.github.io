@@ -37,43 +37,44 @@ Query Optimizer optimizes the Query executed by a developer
 - Designed to work with complex data objects
 - usually implemented using Relational DB
 
+# Relational Database Management System (RDBMS)
 
-PostgreSQL, Cassandra, and Neo4j are different types of databases, each designed to serve specific use cases and requirements. Here's an overview of their characteristics and common use cases:
 
-PostgreSQL:
+## PostgreSQL:
 
-Type: Relational Database Management System (RDBMS).
-Use Cases:
 General-purpose relational database.
-Suitable for applications where data consistency and ACID compliance are crucial.
+
+Suitable for applications where **data consistency and ACID compliance are crucial**.
 Commonly used for transactional systems, data warehousing, and applications requiring complex queries.
-Cassandra:
-
-Type: NoSQL Database, specifically a wide-column store.
-Use Cases:
-Distributed, highly scalable systems requiring high write and read throughput.
-Suitable for time-series data, sensor data, event logging, and other scenarios where scalability and fault tolerance are critical.
-Widely used in large-scale, distributed environments.
-Neo4j:
-
-Type: Graph Database.
-Use Cases:
-Applications with complex relationships and graph structures.
-Suitable for scenarios where the relationships between data points are as important as the data itself.
-Often used in social networks, recommendation engines, fraud detection, and any domain where relationships play a central role.
-Comparison:
-
-PostgreSQL:
 
 Offers strong ACID compliance.
 Well-suited for complex queries and relational data modeling.
-Not designed for horizontal scalability but excels in vertical scalability.
-Cassandra:
+Not designed for horizontal scalability but excels in vertical scalability
+
+
+## Cassandra
+NoSQL Database, specifically a wide-column store.
+
+Distributed, highly scalable systems requiring **high write and read throughput**.
+
+Suitable for time-series data, sensor data, event logging, and other scenarios where scalability and fault tolerance are critical.
+Widely used in large-scale, distributed environments.
 
 Designed for high availability, fault tolerance, and scalability.
 No single point of failure, making it suitable for distributed architectures.
 Sacrifices some consistency (eventual consistency) for high availability and partition tolerance.
-Neo4j:
+
+
+
+## Neo4j
+
+Graph Database.
+
+Applications with complex relationships and graph structures.
+
+Suitable for scenarios where the relationships between data points are as important as the data itself.
+
+Often used in social networks, recommendation engines, fraud detection, and any domain where relationships play a central role.
 
 Optimized for traversing and querying graph structures.
 Ideal for scenarios where relationships and connections between data points are crucial.

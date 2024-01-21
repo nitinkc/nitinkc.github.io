@@ -57,11 +57,11 @@ R + W > N where,
 - N = Total Number of replicas
 
 
-| Level                     | Consistency                          | Efficiency                           |
+| Consistency Level         | Consistency                          | Efficiency                           |
 |:--------------------------|:-------------------------------------|:-------------------------------------|
 | Linearizable/Serializable | Highest                              | Lowest                               |
 | Causal Consistency        | Linealizable > **Causal** > Eventual | Linealizable < **Causal** < Eventual |
 | Quorun                    | Configurable                         | Configurable                         |
 | Eventual Consistency      | Lowest                               | Highest                              |
 
-Check (Transaction Isolation Level)[]
+Check [Transaction Isolation Level](https://nitinkc.github.io/system%20design/Transaction-Isolation-levels/)

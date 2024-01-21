@@ -57,6 +57,8 @@ Example:
 - If A rolls back, B has read data that was never committed, resulting in inconsistency.
 
 ##### Non-Repeatable Reads
+a transaction reads the same row twice but gets different data each time
+
 A non-repeatable read occurs when a transaction reads a value and, during the course of the transaction, 
 **the same value is modified by another transaction** before the first transaction is completed.
 
@@ -106,6 +108,10 @@ tolerable.
 
 **Description**: Guarantees that a transaction can re-read its own reads and won't see changes committed by other 
 transactions. 
+- Each transaction has its copy of data where they update the data
+- Once the transactions are committed then only the updates are persisted in the database.This is known as **Snapshot Isolation**.
+- If two of the transaction concurrently change the same key to different values 
+  - if the transaction is rolled back, then it is called **Optimistic Concurrency Control**.
 - Prevents dirty reads and non-repeatable reads but **allows phantom reads**.
 
 **Use Case**: Appropriate when consistency within a transaction is critical.
@@ -124,8 +130,10 @@ Optimistic Concurrency Control we expect that concurrent transactions won’t ch
 So if that happens we rollback one transaction.
 
 
-For Efficiency
-`Read Uncommitted > Read Committed > Repeatable Read > Serializable`
+| Isolation         | Efficiency         | Isolation Level      | Implementation                 | Explanation                                                    |
+|:------------------|:-------------------|:---------------------|:-------------------------------|:---------------------------------------------------------------|
+| Least Isolated(4) | Most Efficient(1)  | **Read UnCommitted** | Single Data Entry              | mains a single entry in DB and overrides <br/> upon updates    |
+| 3                 | 2                  | **Read Committed**   | Changes into Local Copy        | local values of a Tx is kept until committed in the end        |
+| 2                 | 3                  | **Repeatable Read**  | Versioning of unchanged values | maintains all the version of changes                           |
+| Most Isolated(1)  | Least Efficient(4) | **Serializable**     | Queued Locks                   | Causal Ordering. Same Key Tx's must be ordered else concurrent |
 
-For Isolation
-`Read Uncommitted < Read Committed < Repeatable Read < Serializable`
