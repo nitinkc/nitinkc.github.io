@@ -17,7 +17,7 @@ tags: [System Design]
 * 5G - to be introduced
 
 Assume a good quality image of 1 MB
- * Thumbnail is 1/10th of the actual image -> 10 KB
+ * Thumbnail is 1/10th of the actual image -> 100 KB
 
 
 | **HORIZONTAL**                     | **VERTICAL** | Notes                                                         |
