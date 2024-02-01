@@ -9,6 +9,7 @@ tags: [Spring Microservices, CRUD]
 # Stereotype Annotations
 
 [All Annotations](https://springframework.guru/spring-framework-annotations/)
+{: .notice--success}
 
 Basic philosophy of Spring Boot : Conventions over configurations
 {: .notice--info}
@@ -38,6 +39,8 @@ Basic philosophy of Spring Boot : Conventions over configurations
 # REST APIs
 
 [https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris](https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris)
+{: .notice--success}
+
 ```shell
 Retrieve all Users - GET /users
 Create a User - POST /users
@@ -115,6 +118,7 @@ components.
 # @Autowired & Dependency Injection
 
 [https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/](https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/)
+{: .notice--success}
 
 Eliminates the need of creating a new object and hence the need of constructors from the components
 `StudentService studentService = new StudentService();`
@@ -156,6 +160,9 @@ public class HealthCheckController {
 
 # GET Request
 
+[https://nitinkc.github.io/spring/microservices/GET-rest-calls/](https://nitinkc.github.io/spring/microservices/GET-rest-calls/)
+{: .notice--success}
+
 ```java
 @RequestMapping(method = RequestMethod.GET, 
         path = "/student/{studentId}")
@@ -184,11 +191,12 @@ public HelloWorldReturnBean helloWorldReturnBean() {
 ```
 
 [Path Variable vs Request Param](https://nitinkc.github.io/spring/microservices/spring-request-parameter/)
+{: .notice--success}
 
 ### Validation 
 
 [Validations in Detail](https://nitinkc.github.io/spring/microservices/spring-validations/)
-{: .notice--danger}
+{: .notice--success}
 
 ##### Request Validation
 
@@ -234,7 +242,7 @@ public class StudentRequestBody {
 # POST Request
 
 [POST Request in Detail](https://nitinkc.github.io/spring/microservices/POST-Requests/)
-{: .notice--danger}
+{: .notice--success}
 
 ```java
 
@@ -419,10 +427,11 @@ public List<StudentDto> getStudentByIds(List<Integer> studentIdList) {
 
 ##### Jackson Mapper
 [Jackson Mapper in Detail](https://nitinkc.github.io/spring/microservices/jackson-mapper-details/)
-{: .notice--danger}
+{: .notice--success}
 
 ##### Map Struct
 [Map Struct in Detail](https://nitinkc.github.io/spring/microservices/mapstruct-mapper-details/)
+{: .notice--success}
 
 The simple one is Jackson mapper, with lot of control 
 ```java
@@ -449,8 +458,10 @@ Spring Data JPA is an implementation of Java Persistence API
 # Custom Exceptions
 
 [Java Exceptions](https://nitinkc.github.io/java/exceptions/)
+{: .notice--success}
 
 [Spring Exceptions](https://nitinkc.github.io/spring/microservices/spring-exception-404/)
+{: .notice--success}
 
 Use `@ControllerAdvice` or `@RestControllerAdvice` for Global exception handling.
 
@@ -460,68 +471,6 @@ The primary difference is in the **type of responses** they handle.
 XML),
 * while @ControllerAdvice is used in 
 traditional web applications, where responses often include both views and data.
-
-
-### @ResponseStatus
-
-Use `@ResponseStatus(HttpStatus.NOT_FOUND)` to denote the exception code
-
-The custom exception class can extend Exception or RunTimeException. The `@ResponseStatus` of Global Exception class 
-(The one with `@ControllerAdvice`) **takes precedence** if it's used in both
-```java
-@ResponseStatus(HttpStatus.NO_CONTENT)//200 series, //Seems Optional, the one in the Global exceptional handler takes precedence
-public class StudentNotFoundException extends Exception {
-    public StudentNotFoundException(String message) {
-        super(message);
-    }
-}
-```
-
-If the requirement is to send the exception in business defined format, like below
-
-```json
-{
-    "errorCode": "122 :: ERROR: Student is not present in the DB",
-    "errorMessage": "The Student with Id 1009 does not exist",
-    "requestedURI": "/student/db/1009"
-}
-```
-
-Then the Custom Response class can be defined and be called into the GlobalException handler class
-```java
-public class ExceptionResponse {//Use Getters and Setters to avoid HttpMediaTypeNotAcceptableException
-    private String errorCode;
-    private String errorMessage;
-    private String requestedURI;
-    ...
-}
-```
-
-Finally, we can take leverage of Global Exception handling.
-
-```java
-//@RestControllerAdvice
-@ControllerAdvice
-public class GlobalExceptionHandler {
-    @ExceptionHandler(value = {StudentNotFoundException.class}) //Write the handler when such exception occurs
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ExceptionResponse handleStudentExceptions(//Method that executes upon encountering StudentNotFoundException
-           StudentNotFoundException exception, final HttpServletRequest request) {
-        //Set the desired fields
-        ExceptionResponse error = ExceptionResponse.builder()
-                .errorMessage(exception.getMessage())
-                .requestedURI(request.getRequestURI())
-                .exceptionType(exception.getClass().getSimpleName())
-                .methodName(request.getMethod())
-                .errorCode(ERR_122.getErrorCode()+" :: "+ERR_122.getErrorMessage())
-                .thrownByMethod(exception.getStackTrace()[0].getMethodName())//Method Name
-                .thrownByClass(exception.getStackTrace()[0].getClassName())//Class name, even the filename can be used
-                .build();
-
-        return error;
-    }
-}
-```
 
 
 # app.yml/app.props
