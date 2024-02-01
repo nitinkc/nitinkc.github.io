@@ -157,7 +157,8 @@ log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>
 - Cheatsheet - html [https://quickref.me/latex.html](https://quickref.me/latex.html)
 - Cheatsheet - pdf [https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf](https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf)
 
-[https://nitinkc.github.io/developer%20tools/LaTex/](https://nitinkc.github.io/developer%20tools/LaTex/)
+[https://nitinkc.github.io/develope| x^{n+1}                                                        | $$ x^{n+1} $$                                                                                           |
+| \frac{a+b}{2}                    r%20tools/LaTex/](https://nitinkc.github.io/developer%20tools/LaTex/)
 
 # $$ \LaTeX $$ Summary
 
@@ -167,8 +168,7 @@ keep the expressions between `$$`
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | log{_a}{n}                                                     | $$ log{_a}{n} $$                                                                                        |
 | y = ax^2 + bx + c                                              | $$ y = ax^2 + bx + c, $$                                                                                |
-| x^{n+1}                                                        | $$ x^{n+1} $$                                                                                           |
-| \frac{a+b}{2}                                                  | $$ \frac{a+b}{2} $$                                                                                     |
+| $$ \frac{a+b}{2} $$                                                                                     |
 | \sqrt[n]{a^2+b^2}                                              | $$ \sqrt[n]{a^2+b^2} $$                                                                                 |
 | x_1, \ldots, x_n                                               | $$ x_1, \ldots, x_n $$                                                                                  |
 | x_1 + \cdots + x_n                                             | $$ x_1 + \cdots + x_n $$                                                                                |

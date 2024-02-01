@@ -3,8 +3,8 @@ title:  "Savepoint"
 date:   2023-08-02 14:03:00
 categories: ['SQL']
 tags: ['SQL']
-toc: true
 ---
+{% include toc title="Index" %}
 
 [Oracle Live SQL](https://livesql.oracle.com/apex/livesql/s/ehw922orljedhs8ikbguduh0)
 

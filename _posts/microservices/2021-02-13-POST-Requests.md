@@ -4,21 +4,24 @@ title:  "POST - API Cases"
 date:   2021-02-13 02:15:00
 categories: Spring Microservices
 tags: [CRUD]
-toc: true
 ---
+{% include toc title="Index" %}
 
 ## Post Mapping with request Body
 
 Code sample for a POST request using Spring Boot. Sample code converts Temperature from Farenheit to Celcius.
 
-In all the examples below, ```ResponseEntity.ok()``` method is used, that takes in the response body as its argument.
+In all the examples below, `ResponseEntity.ok()` method is used, that takes in the response body as its argument.
+
 ```java
  public static <T> ResponseEntity<T> ok(T body)
  ``` 
 
-**Scenario 1**: Convert the temperature given in Request Body of POST call.
-
+##### Scenario 1
+Convert the temperature given in Request Body of POST call.
+```shell
 POST : http://localhost:8100/temperature-converter/value
+```
 
 Request Body :
 ```json
@@ -36,9 +39,12 @@ Controller:
 
 ```
 
-Notice **ResponseEntity<Double>** to return a Double Value. **@RequestBody Map<String, Double> value** captures the request body in a map and is extracted using the map key.
+Notice **ResponseEntity<Double>** to return a Double Value. 
+**@RequestBody Map<String, Double> value** captures the request body in a map and is extracted using the map key.
 
-**Scenario 2**: Convert **List of temperatures** given in Request Body of POST call and return converted List
+##### Scenario 2: 
+
+Convert **List of temperatures** given in Request Body of POST call and return converted List
 
 POST : http://localhost:8100/temperature-converter/values
 

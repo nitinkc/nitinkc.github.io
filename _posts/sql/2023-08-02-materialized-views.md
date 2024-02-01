@@ -3,8 +3,8 @@ title:  "Materialized views"
 date:   2023-08-02 14:25:00
 categories: ['SQL']
 tags: ['SQL']
-toc: true
 ---
+{% include toc title="Index" %}
 
 
 Materialized views in Oracle (Scheduled Queries in GCP BigQuery) can be scheduled for regular refreshes. 

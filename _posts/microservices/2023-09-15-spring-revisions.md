@@ -3,7 +3,6 @@ title:  "Spring Boot Revisions"
 date:   2023-09-15 11:50:00
 categories: Spring Microservices
 tags: [Spring Microservices, CRUD]
-toc: true
 ---
 {% include toc title="Index" %}
 

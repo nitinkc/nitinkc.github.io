@@ -4,8 +4,8 @@ title:  "Spring Data JPA"
 date:   2022-02-09 20:55:00
 categories: Spring Microservices
 tags: [CRUD]
-toc: true
 ---
+{% include toc title="Index" %}
 
 # CRUD Rest Calls
 

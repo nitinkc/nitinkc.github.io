@@ -3,8 +3,9 @@ title:  "Serialization"
 date:   2022-08-03 18:16:00
 categories: ['Java']
 tags: ['Java']
-toc: true
 ---
+{% include toc title="Index" %}
+
 
 To serialize an object means to convert its state to a byte stream. this byte stream can be saved to disk or can be transferred over an internet
 

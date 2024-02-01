@@ -1,3 +1,11 @@
+---
+title:  "Exception Handling in Spring"
+date:   2023-09-15 21:30:00
+categories: Spring Microservices
+tags: [Spring Microservices]
+---
+{% include toc title="Index" %}
+
 # Exception upon Resource not found
 
 If the data doesn't exist, a custom exception can be thrown
@@ -27,7 +35,7 @@ public class UserNotFoundException extends RuntimeException {
 }
 ```
 
-# Generic Exception
+# Generic Exception and Controller Advise
 
 Similar format of exception for all the Classes.
 ```java

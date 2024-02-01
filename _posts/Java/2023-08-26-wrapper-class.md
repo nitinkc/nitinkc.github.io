@@ -3,10 +3,9 @@ title:  "Wrapper Classes"
 date:   2023-01-03 02:30:00
 categories: ['Java']
 tags: ['Java']
-toc: true
 ---
+{% include toc title="Index" %}
 
-Certainly! Here's the information presented in Markdown format:
 
 ### Difference between `parse` and `valueOf` Methods
 

@@ -3,8 +3,8 @@ title:  "DELETE REST Calls"
 date:   2023-09-15 21:30:00
 categories: Spring Microservices
 tags: [CRUD]
-toc: true
 ---
+{% include toc title="Index" %}
 
 # DELETE Rest Call
 
@@ -43,4 +43,4 @@ public User deleteUserById(@PathVariable int id) throws UserNotFoundException {
 ```
 Delete a user by passing its ID to a delete postman request-
 
-{{address}}{{port}}/api/hardCodedData/user/1
+`{{address}}{{port}}/api/hardCodedData/user/1`
