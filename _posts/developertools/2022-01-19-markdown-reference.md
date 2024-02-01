@@ -21,6 +21,18 @@ simply add `toc: true` on the [front matter](https://jekyllrb.com/docs/front-mat
 **Has some issues when the page is long**
 {: .notice--danger}
 
+OR
+
+## Contents
+{% raw  %}
+{:.no_toc}
+{% endraw %}
+
+Will be replaced with the ToC, excluding the "Contents" header
+{% raw  %}
+{:toc}
+{% endraw %}
+
 ## Include gists as
 
 Include code as a gist into the Jekyll post. Uses jekyll-gist plugin.

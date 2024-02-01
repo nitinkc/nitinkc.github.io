@@ -37,6 +37,7 @@ Basic philosophy of Spring Boot : Conventions over configurations
 
 # REST APIs
 
+[https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris](https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris)
 ```shell
 Retrieve all Users - GET /users
 Create a User - POST /users
@@ -47,7 +48,7 @@ Create a posts for a User - POST /users/{id}/posts
 Retrieve details of a post - GET /users/{id}/posts/{post_id}
 ```
 
-# Appliation Yaml settings
+# Application Yaml settings
 Set a desired Port
 
 ```shell
@@ -57,6 +58,16 @@ server.port=8089
 # Scans
 
 ## ComponentScan
+
+**Component Scan** :
+
+By default, the package containing the main method is scanned. In addition to it, to scan other
+packages, following annotation is used.
+
+```java
+@ComponentScan(basePackages = {"com.spring5.concepts","com.spring5.services"})
+``` 
+
 
 `@ComponentScan` is used to specify the packages that Spring should scan to discover Spring-managed components like 
 beans, controllers, services, etc.
@@ -103,6 +114,8 @@ components.
 
 # @Autowired & Dependency Injection
 
+[https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/](https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/)
+
 Eliminates the need of creating a new object and hence the need of constructors from the components
 `StudentService studentService = new StudentService();`
 ```java
@@ -120,138 +133,10 @@ automatically inject the required dependency (another Spring bean) at runtime.
 
 * You don't need to create or instantiate the dependent object manually; Spring takes care of it.
 
-#### Types of Injection:
-
-##### Field Injection
-AVOID THIS
-{: .notice--danger}
-it's generally not recommended because it makes testing and mocking dependencies more challenging. 
-
-Constructor injection is preferred for better testability.
-
-You can annotate a class field directly with @Autowired. Spring will find the appropriate 
-bean to inject based on the field's type.
-
-```java
-@Service
-public class StudentServiceWithDb {
-  @Autowired
-  private StudentRepository studentRepository;
-
-  @Autowired
-  private StudentMapper studentMapper;
-
-  // Other methods of StudentServiceWithDb
-}
-```
-
-##### Setter Injection
-AVOID THIS
-{: .notice--danger}
-Like field injection, it's less recommended than constructor injection for the same reasons—it can make testing and mocking dependencies more complex.
-
-Annotate a setter method with @Autowired. Spring will call this method and pass the required dependency when 
-initializing the bean.
-
-```java
-@Service
-public class StudentServiceWithDb {
-  private StudentRepository studentRepository;
-  private StudentMapper studentMapper;
-
-  //Setter Injection
-  @Autowired
-  public void setStudentRepository(StudentRepository studentRepository) {
-    this.studentRepository = studentRepository;
-  }
-
-  @Autowired
-  public void setStudentMapper(StudentMapper studentMapper) {
-    this.studentMapper = studentMapper;
-  }
-
-  // Other methods of StudentServiceWithDb
-}
-```
-##### Constructor Injection
-
-Annotate a constructor with @Autowired. Spring will use this constructor to create 
-the bean and pass the required dependencies as constructor arguments.
-
-> Constructor injection is considered a best practice 
-
-because it ensures that a bean is fully initialized when created.
-
-```java
-@Service
-public class StudentServiceWithDb {
-
-    private final StudentRepository studentRepository;
-    private final StudentMapper studentMapper;
-
-    @Autowired // Constructor Injection
-    public StudentServiceWithDb(StudentRepository studentRepository, StudentMapper studentMapper) {
-        this.studentRepository = studentRepository;
-        this.studentMapper = studentMapper;
-    }
-
-    // Other methods of StudentServiceWithDb
-}
-```
-Dependency Resolution: If there are multiple beans of the same type that can be injected, Spring will perform
-dependency resolution based on the bean's name (if provided) or type.
-
-You can also use `@Qualifier` in conjunction  
-with `@Autowired` to specify which bean to inject if there are multiple candidates.
-
-```java
-public interface PaymentService {
-    String processPayment();
-}
-```
-
-The two implementations are
-
-```java
-@Service("creditCardService")
-public class CreditCardPaymentService implements PaymentService{
-    @Override
-    public String processPayment() {
-        return "Paid via credit card";
-    }
-}
-```
-```java
-@Service("onlineBankingService")
-public class OnlineBankingService implements PaymentService{
-    @Override
-    public String processPayment() {
-        return "Paid via Online Banking";
-    }
-}
-```
-The use of `@Qualifier` 
-
-```java
-@RestController
-@RequestMapping("/payment")
-public class PaymentController {
-    private PaymentService creditCardpaymentService;
-    private PaymentService onlineBankingpaymentService;
-
-    @Autowired
-    public PaymentController(@Qualifier("creditCardService") PaymentService creditCardPaymentService,
-                             @Qualifier("onlineBankingService") PaymentService onlineBankingpaymentService) {
-        this.creditCardpaymentService = creditCardPaymentService;
-        this.onlineBankingpaymentService = onlineBankingpaymentService;
-    }
-    // Other methods of PaymentController
-}
-```
 
 # Sequence of execution
 
-Postman/client -> Controller -> Service -> Repository -> Service -> Controller
+Postman/browser/client -> Controller -> Service -> Repository -> Service -> Controller
 {: .notice--info}
 
 # Controller Vs RestController
@@ -298,41 +183,7 @@ public HelloWorldReturnBean helloWorldReturnBean() {
 }
 ```
 
-### Path variable
-
-http://localhost:8089/api/v0/hello-world/pathVariable/{var_name}
-{: .notice--info}
-
-Read the Path Variable with `@PathVariable` in the method parameter
-```java
-@GetMapping("/student/{studentId}")
-public ResponseEntity<Student> getStudentById(@PathVariable Long studentId) {
-    return ResponseEntity.ok(studentService.getStudentById(userId));
-}
-```
-```java
-@GetMapping(path = "/pathVariable/{var_name}")
-public String helloWorldPathVariable(@PathVariable("var_name") String name) {
-    return String.format("The Value returned is %s", name);
-```
-
-### RequestParam
-
-/jpa/students/pagination?page_size=5&pageNo=1&sortBy=email
-{: .notice--info}
-
-Check the `required` and `defaultValue` arguments of RequestParam Annotation
-
-```java
-// Retrieve all users page by page
-@GetMapping(path = "/students/pagination")
-public List<Student> 
-    retrieveAllUsersPagination(@RequestParam(defaultValue = "0") Integer pageNo,
-                               @RequestParam(value = "page_size",required = false, defaultValue = "10") Integer pageSize,
-                               @RequestParam(defaultValue = "id") String sortBy) {
-        ...
-}
-```
+Path Variable vs Request Param
 
 ### Validation 
 
