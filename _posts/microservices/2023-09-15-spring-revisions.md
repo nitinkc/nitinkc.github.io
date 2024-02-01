@@ -168,9 +168,9 @@ OR
         produces = { "application/json", MediaType.APPLICATION_XML_VALUE})
 ```
 
-Between value and path attribute, value is commonly used to describe the path  
+Between `value` and `path` attribute, **value** is commonly used to describe the path  
 
-Shortened GetMapping
+**Shortened GetMapping**
 ```java
 @GetMapping(path="/getMapping")
 ```
@@ -183,7 +183,7 @@ public HelloWorldReturnBean helloWorldReturnBean() {
 }
 ```
 
-Path Variable vs Request Param
+[Path Variable vs Request Param](https://nitinkc.github.io/spring/microservices/spring-request-parameter/)
 
 ### Validation 
 
@@ -447,6 +447,10 @@ public class Filters {
 Spring Data JPA is an implementation of Java Persistence API
 
 # Custom Exceptions
+
+[Java Exceptions](https://nitinkc.github.io/java/exceptions/)
+
+[Spring Exceptions](https://nitinkc.github.io/spring/microservices/spring-exception-404/)
 
 Use `@ControllerAdvice` or `@RestControllerAdvice` for Global exception handling.
 
