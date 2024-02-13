@@ -11,8 +11,7 @@ tags: [Spring Microservices, CRUD]
 [All Annotations](https://springframework.guru/spring-framework-annotations/)
 {: .notice--success}
 
-Basic philosophy of Spring Boot : Conventions over configurations
-{: .notice--info}
+Basic philosophy of Spring Boot : **Conventions over configurations**
 
 ##### @Component
 * **Purpose**: Marks a class as a Spring component or bean.
@@ -49,13 +48,6 @@ Delete a User - DELETE /users/{id} -> /users/1
 Retrieve all posts for a User - GET /users/{id}/posts
 Create a posts for a User - POST /users/{id}/posts
 Retrieve details of a post - GET /users/{id}/posts/{post_id}
-```
-
-# Application Yaml settings
-Set a desired Port
-
-```shell
-server.port=8089
 ```
 
 # Scans
@@ -245,11 +237,10 @@ public class StudentRequestBody {
 {: .notice--success}
 
 ```java
-
-@RequestMapping(method = RequestMethod.POST) OR
+@RequestMapping(method = RequestMethod.POST) 
+//OR
 @PostMapping("/students")
 ```
-Read the Request Body using `@RequestBody` in the method parameter into either a Map, for simple structures or a class for complex
 
 ### With Map as Request Body
 
@@ -259,9 +250,7 @@ if request body is like below, a map can be used
   "values":["10","12.5","50","100"]
 }
 ```
-
-Curl Request
-
+**Curl Request**
 ```shell
 curl --location 'localhost:8090/student/db/studentIdsByMap' \
 --header 'Content-Type: application/json' \
@@ -269,6 +258,7 @@ curl --location 'localhost:8090/student/db/studentIdsByMap' \
     "values": ["1","2","3","4","5",""]
 }'
 ```
+Read the Request Body using `@RequestBody` in the method parameter into either a Map, for simple structures or a class for complex
 
 ```java
 @PostMapping(path = "/studentIdsByMap",
@@ -288,8 +278,7 @@ public List<StudentDto> getStudentByIdsByMap(@RequestBody Map<String,List<Intege
   "studentIds": ["1","2","3","4","5"]
 }
 ```
-Curl Request
-
+**Curl Request**
 ```shell
 curl --location 'localhost:8090/student/db/studentIdsByClassName' \
 --header 'Content-Type: application/json' \
@@ -299,7 +288,6 @@ curl --location 'localhost:8090/student/db/studentIdsByClassName' \
     "studentIds": ["1","2","3","4","5"]
 }'
 ```
-
 Corresponding Java class to catch the request Body
 
 ```java
@@ -310,7 +298,7 @@ public class StudentRequestBody {
     private String greeting;
 }
 ```
-Controller
+Controller with **@RequestBody**
 ```java
 @PostMapping(path = "/studentIdsByClassName",
             consumes = {MediaType.APPLICATION_JSON_VALUE},
@@ -473,7 +461,13 @@ XML),
 traditional web applications, where responses often include both views and data.
 
 
-# app.yml/app.props
+# app.yml/app.props - Application Yaml settings
+
+Set a desired Port
+
+```shell
+server.port=8089
+```
 
 ### HikariCP
 HikariCP, often referred to simply as Hikari, is a popular and high-performance connection pool library for Java applications.

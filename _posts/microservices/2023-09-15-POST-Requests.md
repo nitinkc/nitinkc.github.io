@@ -1,6 +1,6 @@
 ---
 # layout: static
-title:  "POST - API Cases"
+title:  "POST API"
 date:   2023-09-15 02:15:00
 categories: Spring Microservices
 tags: [CRUD]
@@ -18,19 +18,22 @@ In all the examples below, `ResponseEntity.ok()` method is used, that takes in t
  ``` 
 
 ##### Scenario 1
-Convert the temperature given in Request Body of POST call.
+**Convert the temperature given in Request Body of POST call.**
 ```shell
 POST : http://localhost:8100/temperature-converter/value
 ```
 
-Request Body :
+**Request Body :**
 ```json
 {
     "value":"10"
 }
 ```
+**Controller:**
 
-Controller:
+**_@RequestBody Map<String, Double> value_** captures the request body in a map and is extracted using the map key.
+
+**_ResponseEntity\<Double\>_** to return a Double Value
 ```java
 @PostMapping(path = "/temperature-converter/value")
     public ResponseEntity<Double> convertTemperature(@RequestBody Map<String, Double> value) {
@@ -39,23 +42,19 @@ Controller:
 
 ```
 
-Notice **ResponseEntity<Double>** to return a Double Value. 
-**@RequestBody Map<String, Double> value** captures the request body in a map and is extracted using the map key.
-
 ##### Scenario 2: 
 
 Convert **List of temperatures** given in Request Body of POST call and return converted List
 
 POST : http://localhost:8100/temperature-converter/values
 
-Request Body :
+**Request Body :**
 ```json
 {
     "values":["10","12.5","50","100"]
 }
 ```
-
-Controller:
+**Controller:**
 ```java
 @PostMapping(path = "temperature-converter/values")
     public ResponseEntity<List<Double>> convertTemperatures(@RequestBody Map<String, List<Double>> body) {
@@ -67,11 +66,12 @@ Controller:
 
 Notice the response entity returning a List of converted temperatures.
 
-**Scenario 3**: Convert **List of temperatures** given in Request Body with the Temperature units of POST call and return converted List
-
+##### Scenario 3: 
+Convert **List of temperatures** given in Request Body with the Temperature units of POST call and return converted List
+```shell
 POST : http://localhost:8100/temperature-converter/
-
-Request Body :
+```
+**Request Body :**
 ```json
 {
     "from":"F",
@@ -79,8 +79,8 @@ Request Body :
     "values":["10","12.5","50","111"]
 }
 ```
+**Controller:** This time, the request body is directly mapped with the Object
 
-Controller:
 ```java
 @PostMapping(path = "temperature-converter/")
     public ResponseEntity<List<Double>> convertTemperaturesUsingObject(@RequestBody Temperature value) {
@@ -88,13 +88,20 @@ Controller:
     }
 ```
 
-This time, the request body is directly mapped with the Object
 
-# POST Rest Calls
+# POST - Create Data
 
-### Creating a List of Objects for the Demo Purposes
+**Controller Class**
+```java
+//Add a new User
+@PostMapping("/users")
+public void addNewUser(@RequestBody User user){
+    userDAOService.save(user);
 
-In DAOService Class
+}
+```
+
+**DAOService Class**
 ```java
 //Save a new User
 public void save(User user) {
@@ -106,31 +113,24 @@ public void save(User user) {
 }
 ```
 
-in Controller Class
-```java
-//Add a new User
-@PostMapping("/users")
-public void addNewUser(@RequestBody User user){
-    userDAOService.save(user);
-
-}
+In Postman, create a POST call
+```shell
+{{address}}{{port}}/api/hardCodedData/users
 ```
 
-In Postman, create a POST call
-
-{{address}}{{port}}/api/hardCodedData/users
-
-with Request Body RAW and JSON
+with Request Body - resembling User class
 ```json
 {
 "name": "Kid",
 "dob": "2019-12-08T01:19:11.760+0000"
 }
 ```
-
 Returns 200 OK
+{: .notice--info}
 
-### POST Method enhancement to return HTTP Status Code adn URI
+### POST Method enhancement 
+
+to return HTTP Status Code and URI
 
 ```java
 //Add a new User
@@ -147,6 +147,5 @@ public ResponseEntity<Object> addNewUser(@RequestBody User user){
     return ResponseEntity.created(location).build();
 }
 ```
-Send post request
-
 Returns 201 Created
+{: .notice--info} 

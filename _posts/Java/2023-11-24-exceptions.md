@@ -1,5 +1,5 @@
 ---
-title:  "Exceptions"
+title:  "Exceptions in Java"
 date:   2023-11-24 23:23:00
 categories: ['Java']
 tags: ['Java']
@@ -7,38 +7,32 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
-Exception handling is fundamentally an imperative style of programming idea.
+Exception handling is fundamentally an **imperative style** of programming idea.
 
-Functional programming and Exception handling are mutually exclusive
+**Functional programming and Exception handling are mutually exclusive**
 
-For Functional programming, Deal with the errors downstream and treat errors as another form of data. 
-The failed data vs success data.
+For Functional programming, 
+- Deal with the errors downstream and 
+- treat errors as another form of data. 
+
+##### The failed data vs success data.
 
 Do not blow up the pipeline
 
-
-In Reactive streams
+In Reactive streams, errors are dealt in a separate channel
 
 ```java
 reactiveStream
-        .map()
-        .filter(interfaceThatSupportsException)
-        .map()
-        .subscribe(
-                data -> handleData(data),//Data Channel
-                 err -> handleErr(err), //error channel
-                () -> done() //Complete channel
-        )
+    .map()
+    .filter(interfaceThatSupportsException)
+    .map()
+    .subscribe(
+            data -> handleData(data),//Data Channel
+            err -> handleErr(err), //error channel
+            () -> done() //Complete channel
+    )
 ```
-
-# Unchecked Exception:
-
-* Handling is NOT verified during Compile time.
-* These exceptions occur because of bad programming.
-* The program won’t give a compilation error.
-* All Unchecked exceptions are direct sub-classe of `RuntimeException` class.
-
-Java exceptions are **objects** that represent abnormal conditions or error situations during the execution of a program. 
+Java exceptions are **objects** that represent abnormal conditions or error situations during the execution of a program.
 
 Exceptions are categorized into **two main types**: 
 
@@ -59,7 +53,12 @@ are not expected to be recovered during normal program execution.
 
 They are not required to be caught or declared explicitly.
 
-Common unchecked Exceptions
+* The program won’t give a compilation error.
+* Handling is NOT verified during Compile time.
+* These exceptions occur because of bad programming.
+* All Unchecked exceptions are direct sub-class of `RuntimeException` class.
+
+##### Common unchecked Exceptions
 
 1. ArithmaticException : divide by zero
 2. ArrayIndexOutOfBounds : illegal index access

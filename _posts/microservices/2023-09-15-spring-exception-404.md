@@ -23,9 +23,10 @@ public User retrieveUserById(@PathVariable int id) throws UserNotFoundException 
 }
 ```
 
-If a custom response code is to be sent, use @ResponseStatus(HttpStatus.NOT_FOUND)
 
 ##### Custom Exception
+If a custom response code is to be sent, use `@ResponseStatus(HttpStatus.NOT_FOUND)`
+
 ```java
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class UserNotFoundException extends RuntimeException {
@@ -35,13 +36,13 @@ public class UserNotFoundException extends RuntimeException {
 }
 ```
 
-# Generic Exception and Controller Advise
+# Generic Exception and Controller Advice
 
 Similar format of exception for all the Classes.
 ```java
-@RestController
+@RestControllerAdvice
 @ControllerAdvice
-public class CustomizedResponseEntiryExceptionHandler extends ResponseEntityExceptionHandler {
+public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<Object> handleAllException(Exception ex, WebRequest request){
@@ -55,8 +56,9 @@ public class CustomizedResponseEntiryExceptionHandler extends ResponseEntityExce
 
 Use `@ResponseStatus(HttpStatus.NOT_FOUND)` to denote the exception code
 
-The custom exception class can extend Exception or RunTimeException. The `@ResponseStatus` of Global Exception class
-(The one with `@ControllerAdvice`) **takes precedence** if it's used in both
+The custom exception class can extend Exception or RunTimeException. 
+
+The `@ResponseStatus` of Global Exception class (The one with `@ControllerAdvice`) **takes precedence** if it's used in both
 ```java
 @ResponseStatus(HttpStatus.NO_CONTENT)//200 series, //Seems Optional, the one in the Global exceptional handler takes precedence
 public class StudentNotFoundException extends Exception {
