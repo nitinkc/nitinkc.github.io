@@ -37,3 +37,27 @@ cd spring-microservices
 git submodule init
 git submodule update 
 ```
+
+## Clone all projects
+```
+git clone --recurse-submodules -j8 https://github.com/nitinkc/SpringBootProjects.git
+```
+
+## Update all the submodles
+```
+git pull --recurse-submodules
+```
+
+
+## Add new projects using the following command
+```
+git submodule add <GitHub Repo>
+```
+
+
+### In case the projects needs be deleted
+
+* Delete the entry from .gitmodules file
+* delete the entry from .git/config file
+* delete the project folder from .git/modules/<git-project-name>
+* Commit and push the changes on github

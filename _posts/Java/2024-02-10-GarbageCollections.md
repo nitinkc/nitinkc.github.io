@@ -7,22 +7,20 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
-Java is a "managed Language". Java works out when objects are no longer needed
+Garbage collection is the process to free up the memory.
 
-Garbage collection with List in 1959!!
+Garbage collection - concept with Lisp in 1959!!
 
-Garbage collection is the process to free up the memory
+Java is a "managed Language". Java works out when objects are no longer needed and marks them for GC.
 
 Any object on the heap which cannot be reached through a reference 
-from **the stack or from the metaspace** is **"Eligible for Garbace Collection"**
+from **the stack or from the metaspace** is **"Eligible for Garbage Collection"**
 
 # The System.gc() method
 
-Suggestion to run the Garbage collection process and not a command
+**Suggestion** to run the Garbage collection process and **not a command**
 
 Not a good idea to call and let JVM Decide when it's right.
-
-
 
 
 # Generational Garbage Collection 
@@ -36,11 +34,11 @@ Young generation has 3 spaces
 * S0 - Survivor 0
 * S1 - Survivor 1
 
-The Visual VM Plugin
+The Visual GC Plugin of Visual VM
 ![visualvm-plugin.png](..%2F..%2Fassets%2Fimages%2Fvisualvm-plugin.png)
 
+Heap Spaces as shwon in the Visual VM for a running process
 ![gc-spaces.png](..%2F..%2Fassets%2Fimages%2Fgc-spaces.png)
-
 
 # Monitoring Garbage Collections
 
@@ -51,6 +49,7 @@ The Visual VM Plugin
 `-XX:SurvivorRatio=n`
 
 `-XX:MaxTenuringThreshold=n`
+
 ```log
 [0.008s][info][gc] Using G1
 [0.216s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 25M->17M(516M) 10.468ms
@@ -75,12 +74,15 @@ The Visual VM Plugin
 
 # Selecting a Garbage Collector Algo
 
-The virtual machine then has three types of collector called 
-Serial - Single Threaded `-XX:+UseSerialGC`
-Parallel - `-XX:+UseParallelGC`
+The virtual machine then has **three** types of collector called 
+
+Serial - Single Threaded `-XX:+UseSerialGC` <br>
+Parallel - `-XX:+UseParallelGC` <br>
 Mostly Concurrent garbage collector.
 * Mark Sweep Collector - `-XX:+UseConcMarkSweepGC`
-* G1 Garbage Collector - `-XX:+UseG1GC` & `-XX:ConcGCThreads=n` `-XX:InitiatingHeapOccupancyPercent=n`
+* G1 Garbage Collector - 
+  * `-XX:+UseG1GC` `-XX:ConcGCThreads=n`
+  * `-XX:InitiatingHeapOccupancyPercent=n`
 
 # G1 Garbage Collector
 
@@ -88,5 +90,5 @@ String Deduplication
 
 `-XX:UseStringDeDuplication`
 
-The serial collector uses a single thread to perform all of the garbage collection work.
+The serial collector uses a single thread to perform all the garbage collection work.
 

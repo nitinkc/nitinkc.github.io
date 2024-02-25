@@ -113,3 +113,6 @@ Final look
 
 # Show ByteCode
 ![showByteCode.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FshowByteCode.png)
+
+# Flatten the package
+![flattenPackages.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FflattenPackages.png)

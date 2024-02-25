@@ -1,13 +1,11 @@
 ---
 # layout: static
-title:  "Spring Data JPA"
+title:  "Spring Data JPA & CRUD - GET PUT POST DELETE"
 date:   2022-02-09 20:55:00
 categories: Spring Microservices
 tags: [CRUD]
 ---
 {% include toc title="Index" %}
-
-# CRUD Rest Calls
 
 ## Using JpaRepository
 
@@ -105,6 +103,7 @@ In Postman, create a POST call **{{address}}{{port}}/api/jpa/student** with Requ
 See notes of the Restful Web
 
 > Returns 200 OK
+> 
 > Returns 201 Created
 
 
