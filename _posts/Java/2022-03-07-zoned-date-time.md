@@ -5,7 +5,12 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-# Modern Java Date Time Calander Library
+Current Formatted Date using ZonedDateTime
+```java
+String formattedCurrentTimeStamp = ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS a z(O)"));
+```
+
+# Modern Java Date Time Calendar Library
 
 From `java.time` package
 
@@ -165,7 +170,8 @@ public static Timestamp currentTimestamp() {
 |   n    | 987654321                                      | nano-of-second             |
 |   N    | 1234000000                                     | nano-of-day                |
 |        |                                                |                            |
-|   V    | America/Los_Angeles; Z; -08:30                 | time-zone ID               |
+|   v    | America/Los_Angeles                            | time-zone ID               |
+|   Z    | -08:30                                         |                            |
 |   z    | Pacific Standard Time; PST                     | time-zone name             |
 |   O    | GMT+8; GMT+08:00; UTC-08:00;                   | localized zone-offset      |
 |   X    | Z; -08; -0830; -08:30; -083015; -08:30:15;     | zone-offset 'Z' for zero   |

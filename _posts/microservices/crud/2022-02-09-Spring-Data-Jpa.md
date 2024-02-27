@@ -5,6 +5,7 @@ date:   2022-02-09 20:55:00
 categories: Spring Microservices
 tags: [CRUD]
 ---
+
 {% include toc title="Index" %}
 
 ## Using JpaRepository
@@ -24,29 +25,23 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 public class StudentController {
 	@Autowired
 	private StudentRepository studentRepository;
-
 	// Retrieve all users, bypassing service
 	@GetMapping(path = "/students")
 	public List<Student> retrieveAllUsers() {
-		System.err.println("###################################### Retrieving All Users ######################################");
 		return studentRepository.findAll();
 	}
 }
 ```
 
-Verify the data retrieval from GET Request
-```
-http://localhost:8080/jpa/users
-```
-##### Get a student based on id (from get request parameter)
+##### Get a student based on id 
 
-With support of the use of Java 8 OPTIONAL, Null values can be easily avoided. The Service Layer is avoided for simplicity. 
+With support of the use of Java 8 OPTIONAL, Null values can be easily avoided.
 
 ```java
 // Retrieve specific users
-@GetMapping(path = "/student/{id}")
+@GetMapping(path = "/student/{id}")//from get request parameter
 public Student retrieveUserById(@PathVariable("id") @NotBlank Long id) {
-    Optional<Student> optional = studentRepository.findById(id);//To Accomodate Null return
+    Optional<Student> optional = studentRepository.findById(id);//To Accommodate Null return
 
     if (!optional.isPresent()){
         throw new StudentNotFoundException("id:" + id);
@@ -55,9 +50,6 @@ public Student retrieveUserById(@PathVariable("id") @NotBlank Long id) {
     Student foundStudent = optional.get();
     return foundStudent;
 }
-```
-```
-http://localhost:8089/api/hardCodedData/user/1
 ```
 
 Another Approach
@@ -72,8 +64,6 @@ public Student retrieveUserById(@PathVariable("id") @NotBlank Long id) {
 ```
 
 ## POST Rest Calls (Creating a new Entity)
-
-### Saving a new Entry
 
 Doing this in Controller Class is not recommended. Service Layer is avoided for simplicity.
 ```java
@@ -100,19 +90,13 @@ In Postman, create a POST call **{{address}}{{port}}/api/jpa/student** with Requ
 }
 ```
 
-See notes of the Restful Web
-
-> Returns 200 OK
-> 
-> Returns 201 Created
-
 
 ## PUT Request (modifying an existing Value) 
 
 Use of Java 8 Map.
 
 In this approach, A PUT Request can also be used to Create a new entry in case the passed id DOES NOT Exist in the DB.
-
+**Not recommended** to save, if ID doesn't exist as **id would not be known** for a new entry
 ```java
 @PutMapping("/student/{id}")
 public Student modifyValue(@RequestBody Student newStudent, @PathVariable Long id){
@@ -122,7 +106,7 @@ public Student modifyValue(@RequestBody Student newStudent, @PathVariable Long i
                 student.setDob(newStudent.getDob());
                 return studentRepository.save(student);
             })
-            .orElseGet(() -> {
+            .orElseGet(() -> {//Not recommended to save, if doesn't exist as ID WILL not be known for a new entry
                 newStudent.setId(id);
                 return studentRepository.save(newStudent);
             });

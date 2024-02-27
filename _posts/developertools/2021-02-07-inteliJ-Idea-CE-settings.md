@@ -107,7 +107,7 @@ Classic screen most used features
 ##### Customize the Toolbar
 ![customize_toolbar_new_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fcustomize_toolbar_new_intelliJ.png)
 
-Final look 
+# Final look 
 ![new_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fnew_intelliJ.png)
 
 
@@ -116,3 +116,16 @@ Final look
 
 # Flatten the package
 ![flattenPackages.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FflattenPackages.png)
+
+# Enable Auto restart with Devtools
+
+Put the dependency in the gradle/maven file
+
+```shell
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '3.2.3'
+```
+Make the following changes in the intelliJ settings
+![autoRestart1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FautoRestart1.png)
+
+![autoRestart2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FautoRestart2.png)

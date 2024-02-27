@@ -137,7 +137,7 @@ Postman/browser/client -> Controller -> Service -> Repository -> Service -> Cont
 
 # Controller Vs RestController
 
-Controller needs `@ResponseBody` with method name
+`@Controller` on a Controller class needs `@ResponseBody` with method name
 ```java
 @Controller
 @RequestMapping(method= RequestMethod.GET, path = "/health",

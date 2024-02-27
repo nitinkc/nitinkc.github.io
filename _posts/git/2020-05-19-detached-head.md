@@ -17,7 +17,7 @@ git checkout 957833d728b3249d22a3b3160f3a48b72c576d91
 git checkout -b temp
 git checkout master
 git merge temp
-// delete branch locally
+# delete branch locally
 git branch -d temp
 ```
 
@@ -48,16 +48,22 @@ git clone --recurse-submodules -j8 https://github.com/nitinkc/SpringBootProjects
 git pull --recurse-submodules
 ```
 
-
 ## Add new projects using the following command
 ```
 git submodule add <GitHub Repo>
 ```
 
-
 ### In case the projects needs be deleted
 
+```shell
+git submodule deinit -f -- my-project #provide the project to ve removed
+git rm --cached my-project                                        
+```
 * Delete the entry from .gitmodules file
+* Commit and push the changes on github
+
+Cleaning the local .git repo. 
 * delete the entry from .git/config file
 * delete the project folder from .git/modules/<git-project-name>
-* Commit and push the changes on github
+
+Instead of this, just commit the .gitmodules changes and re-clone the project

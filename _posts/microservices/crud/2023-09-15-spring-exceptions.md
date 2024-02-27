@@ -8,7 +8,7 @@ tags: [Spring Microservices]
 
 # Exception upon Resource not found
 
-If the data doesn't exist, a custom exception can be thrown
+If the data doesn't exist, a custom exception can be thrown if needed
 ```java
 //Retrieve specific users
 @GetMapping(path = "/user/{id}")
@@ -25,6 +25,7 @@ public User retrieveUserById(@PathVariable int id) throws UserNotFoundException 
 
 
 ##### Custom Exception
+
 If a custom response code is to be sent, use `@ResponseStatus(HttpStatus.NOT_FOUND)`
 
 ```java
