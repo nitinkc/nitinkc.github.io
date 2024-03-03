@@ -52,6 +52,22 @@ public class Employee {
 }
 ```
 
+# Date Deserializer 
+
+if the datetime column iof the DV is sent as a String, 
+```json5
+{
+  "drawDatelocaltzdt": "2023-08-04T12:15:00",
+}
+```
+Deserialize the properly date formatted String as 
+
+```java
+@JsonProperty("drawDatelocaltzdt")
+@JsonDeserialize(using = LocalDateTimeDeserializer.class)
+private LocalDateTime drawDatelocaltzdt;
+```
+
 ## JsonInclude
 
 Exclude NULL or EMPTY

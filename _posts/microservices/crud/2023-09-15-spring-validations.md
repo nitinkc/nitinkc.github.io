@@ -9,7 +9,7 @@ tags: [Spring Microservices, Spring Boot]
 
 # Validations
 
-Both the dependencies are required for the vaidations to work well
+Both the dependencies are required for the validations to work well
 ```shell
 // https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api
 implementation group: 'jakarta.validation', name: 'jakarta.validation-api', version: '3.1.0-M1'
