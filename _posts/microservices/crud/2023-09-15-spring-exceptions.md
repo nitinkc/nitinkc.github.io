@@ -6,52 +6,83 @@ tags: [Spring Microservices]
 ---
 {% include toc title="Index" %}
 
-# Exception upon Resource not found
 
 If the data doesn't exist, a custom exception can be thrown if needed
 ```java
 //Retrieve specific users
 @GetMapping(path = "/user/{id}")
 public User retrieveUserById(@PathVariable int id) throws UserNotFoundException {
-    User user = userDAOService.findById(id);
+    Optional<User> user = userRepository.findById(id);
 
-    //If user is not found
-    if(user == null){
-        throw new UserNotFoundException("User with id" + id +" is not found");
-    }
-    return user;
+    return user.orElseThrow(
+            () -> new UserNotFoundException("User with id " + id + " is not found"));
 }
 ```
 
+##### Custom Business Exception
 
-##### Custom Exception
-
-If a custom response code is to be sent, use `@ResponseStatus(HttpStatus.NOT_FOUND)`
+The `UserNotFoundException` can be defined as
 
 ```java
-@ResponseStatus(HttpStatus.NOT_FOUND)
+//@ResponseStatus(HttpStatus.NOT_FOUND)//Seems Optional, the one in the Global exceptional handler takes precedence
 public class UserNotFoundException extends RuntimeException {
+    public UserNotFoundException(String message) {
+        super(message);
+    }
+}
+
+//Or Make a generic exception and use it by extending
+public class UserNotFoundException extends BusinessException {
     public UserNotFoundException(String message) {
         super(message);
     }
 }
 ```
 
-# Generic Exception and Controller Advice
+# Global Exception Handler
 
-Similar format of exception for all the Classes.
+Similar format of exception for all the Exception Classes.
+
+The `ResponseEntityExceptionHandler` class in Spring MVC is designed to handle exceptions and provide appropriate 
+responses. By extending ResponseEntityExceptionHandler, you inherit its functionality and can override methods 
+to customize the exception handling behavior.
+
+However, **it's not strictly necessary** to extend ResponseEntityExceptionHandler to create a global exception 
+handler. You can create a global exception handler without extending ResponseEntityExceptionHandler, 
+but you would need to handle the response creation manually.
+
 ```java
-@RestControllerAdvice
+//@RestControllerAdvice
 @ControllerAdvice
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
-
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<Object> handleAllException(Exception ex, WebRequest request){
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
         return  new ResponseEntity(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
+
+@ControllerAdvice
+@Slf4j
+@Order(Ordered.HIGHEST_PRECEDENCE) // Set the highest precedence
+public class ValidationExceptionHandler {
+    ...
+}
 ```
+# Difference between RestControllerAdvice and ControllerAdvice
+
+`@ControllerAdvice`
+
+- Targets all Spring MVC controllers, including those that return views (ModelAndView).
+It is typically used in applications where controllers return both views and data (JSON/XML responses).
+The handler methods in a class annotated with @ControllerAdvice can return a variety of objects including ModelAndView, ResponseEntity, HttpHeaders, HttpEntity, etc., providing flexibility in response handling.
+
+`@RestControllerAdvice`
+
+- Targets only classes annotated with `@RestController` or those that return `@ResponseBody`.
+- It is specifically designed for RESTful web services where controllers exclusively produce data in the form of JSON or XML responses.
+- The handler methods in a class annotated with @RestControllerAdvice typically return response entities like ResponseEntity or plain objects (which are automatically serialized to JSON/XML), 
+as they are designed to handle data-centric exceptions in a RESTful context.
 
 ### @ResponseStatus
 
@@ -92,25 +123,97 @@ public class ExceptionResponse {//Use Getters and Setters to avoid HttpMediaType
 Finally, we can take leverage of Global Exception handling.
 
 ```java
-//@RestControllerAdvice
-@ControllerAdvice
-public class GlobalExceptionHandler {
-    @ExceptionHandler(value = {StudentNotFoundException.class}) //Write the handler when such exception occurs
+@Slf4j
+@RestControllerAdvice
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+    //Handling 2 exception classes. Notice the parameter of handleNotFoundExceptions method (BusinessException exception)
+    @ExceptionHandler(value = {UserNotFoundException.class, StudentNotFoundException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ExceptionResponse handleStudentExceptions(//Method that executes upon encountering StudentNotFoundException
-           StudentNotFoundException exception, final HttpServletRequest request) {
-        //Set the desired fields
+    public ResponseEntity<ExceptionResponse> handleNotFoundExceptions(BusinessException exception, final HttpServletRequest request) {
         ExceptionResponse error = ExceptionResponse.builder()
+                .from("From Exception Response")
                 .errorMessage(exception.getMessage())
                 .requestedURI(request.getRequestURI())
                 .exceptionType(exception.getClass().getSimpleName())
                 .methodName(request.getMethod())
-                .errorCode(ERR_122.getErrorCode()+" :: "+ERR_122.getErrorMessage())
-                .thrownByMethod(exception.getStackTrace()[0].getMethodName())//Method Name
-                .thrownByClass(exception.getStackTrace()[0].getClassName())//Class name, even the filename can be used
+                .errorCode(ErrorCodes.ERR_122.getErrorCode()+" :: "+ ErrorCodes.ERR_122.getErrorMessage())
+                .thrownByMethod(exception.getStackTrace()[0].getMethodName())
+                .thrownByClass(exception.getStackTrace()[0].getClassName())
+                .timestamp(ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS a z(O)")))
                 .build();
 
-        return error;
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
+}
+```
+
+Sample response from a properly handled exception
+```json5
+{
+    "from": "From Exception Response",
+    "errorCode": "122 :: ERROR: Entity is not present in the DB",
+    "errorMessage": "User with id a0eebc99-9c0b-4ef8-bb6d-06bb9bdddddd is not found",
+    "methodName": "GET",
+    "requestedURI": "/users/a0eebc99-9c0b-4ef8-bb6d-6bb9bdddddd",
+    "thrownByMethod": "lambda$findById$0",
+    "thrownByClass": "com.spring.reference.service.UserService",
+    "exceptionType": "UserNotFoundException",
+    "timestamp": "2024-03-03 22:24:38.477 PM MST(GMT-7)"
+}
+```
+
+# Handling Validation Errors
+
+pass incorrect email to invoke tghe exception
+
+`/test/email?email=ab.cdef.gmail.com`
+
+
+```java
+ @GetMapping("/email")
+public String testEmail(@Valid @Email(message = "Please provide a valid email address")
+                        @RequestParam(value = "email") String email,
+                        @RequestParam(value = "greet", required = false, defaultValue = "No Val from Request") String greet,
+                        @RequestParam(value = "count", required = false, defaultValue = "-1") Integer count) {
+
+    StringBuilder sb= new StringBuilder();
+    sb.append(email).append(" email OK").append("\nCount is ").append(count).append("\n").append(greet);
+    return sb.toString();
+}
+```
+
+Handle the `ConstraintViolationException`
+
+```java
+@ExceptionHandler(ConstraintViolationException.class)
+protected ResponseEntity<MyExceptionResponse> handleRequestParamNotValid(Exception exception, final HttpServletRequest request) {
+
+    MyExceptionResponse error = MyExceptionResponse.builder()
+            .from("Validation Exception Response from handleRequestParamNotValid")
+            .errorMessage(exception.getMessage())
+            .requestedURI(request.getRequestURI())
+            .exceptionType(exception.getClass().getSimpleName())
+            .methodName(request.getMethod())
+            .errorCode(ErrorCodes.ERR_122.getErrorCode()+" :: "+ ErrorCodes.ERR_122.getErrorMessage())
+            .thrownByMethod(exception.getStackTrace()[0].getMethodName())
+            .thrownByClass(exception.getStackTrace()[0].getClassName())
+            .timestamp(ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS a z(O)")))
+            .build();
+
+    return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+}
+```
+
+```json5
+{
+    "from": "Validation Exception Response from handleRequestParamNotValid",
+    "errorCode": "122 :: ERROR: Entity is not present in the DB",
+    "errorMessage": "testEmail.email: Please provide a valid email address",
+    "methodName": "GET",
+    "requestedURI": "/test/email",
+    "thrownByMethod": "invoke",
+    "thrownByClass": "org.springframework.validation.beanvalidation.MethodValidationInterceptor",
+    "exceptionType": "ConstraintViolationException",
+    "timestamp": "2024-03-03 23:05:04.961 PM MST(GMT-7)"
 }
 ```

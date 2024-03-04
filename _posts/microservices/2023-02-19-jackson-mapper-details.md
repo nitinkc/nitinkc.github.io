@@ -7,6 +7,17 @@ tags: [Spring Microservices, Spring Boot]
 
 {% include toc title="Index" %}
 
+# Dependencies
+
+```yaml
+//Jackson Mapper
+implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
+implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.17.0-rc1'
+```
 ### Problem 
 Get rid of the empty objects as pointed
 
@@ -39,35 +50,51 @@ The class that contains List of Address is
 public class Employee {
     @JsonProperty("name")
     private String name;
+
     @JsonProperty("dateOfBirth")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = DateOfBirthFilter.class)
     private Date dob;
+
+    @JsonProperty("datelocaltzdt")
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime datelocaltzdt;
+
     @JsonProperty("phones")
     @JsonInclude(content = JsonInclude.Include.CUSTOM, contentFilter = PhoneFilter.class)
     private Map<String, String> phones;
+
     @JsonProperty("addresses")
     @JsonInclude(value = JsonInclude.Include.CUSTOM, contentFilter = EmptyListFilter.class)
+    //@JsonInclude(JsonInclude.Include.NON_EMPTY)
     private List<Address> addresses;
 }
 ```
 
 # Date Deserializer 
 
-if the datetime column iof the DV is sent as a String, 
+if the datetime column of the DB is sent as a String, 
 ```json5
 {
-  "drawDatelocaltzdt": "2023-08-04T12:15:00",
+  "datelocaltzdt": "2023-08-04T12:15:00"
 }
 ```
-Deserialize the properly date formatted String as 
+
+Deserialize the properly date formatted String as LcoalDatetime class.
 
 ```java
-@JsonProperty("drawDatelocaltzdt")
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+
+@JsonProperty("datelocaltzdt")
 @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-private LocalDateTime drawDatelocaltzdt;
+private LocalDateTime datelocaltzdt;
 ```
 
+Helpful in sorting the deserialized data based on chronological order
+
+```java
+Collections.sort(data, Comparator.comparing(Employee::getDatelocaltzdt).reversed());
+```
 ## JsonInclude
 
 Exclude NULL or EMPTY
