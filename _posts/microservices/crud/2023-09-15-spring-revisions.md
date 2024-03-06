@@ -224,7 +224,7 @@ In the DTO Class (Using Lombok)
 @Data
 public class StudentRequestBody {
     private int count;
-    @JsonProperty("studentIds")//If the name in the request bofy differs from variable name
+    @JsonProperty("studentIds")//If the name in the request body differs from variable name
     private List<String> studentIdList;
     @Email(message = "Incorrect EmailID received from DB")
     private String emailId;
@@ -498,3 +498,6 @@ Another method by @Value Annotation
 @Value("${custom.value}")
 private String customVal;
 ```
+
+# Rest Template
+

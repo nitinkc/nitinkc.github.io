@@ -1,6 +1,6 @@
 ---
 # layout: static
-title:  "Spring Path Parameter & Request Parameter"
+title:  "Spring Path variable & Request Parameter"
 date:   2023-09-15 20:04:00
 categories: "Spring Microservices"
 tags: ["Spring Microservices", Spring Boot]

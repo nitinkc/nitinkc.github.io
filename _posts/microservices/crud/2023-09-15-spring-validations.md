@@ -6,8 +6,17 @@ tags: [Spring Microservices, Spring Boot]
 ---
 {% include toc title="Index" %}
 
+##### Validations applied?
 
-# Validations
+**Validation at Request Body/Path Param/Request Param or Response Body**
+
+Validation annotations like `@Pattern`,`@NotNull`, etc., are typically used to validate **input parameters or fields**
+of Java objects **before** they are processed by the application logic.
+
+Validations are **NOT** automatically applied to the response body (for ex, if the email field to be sent to UI, is a proper email),
+it can be done manually
+
+##### Dependencies
 
 Both the dependencies are required for the validations to work well
 ```shell
@@ -17,31 +26,25 @@ implementation group: 'jakarta.validation', name: 'jakarta.validation-api', vers
 implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '8.0.1.Final'
 ```
 
-Validation annotations like `@Pattern`,`@NotNull`, etc., are typically used to validate input parameters or fields 
-of Java objects before they are processed by the application logic. 
+- The `@NotBlank` annotation is part of the `javax.validation.constraints` package, which is a standard part of the Java Bean Validation (JSR 380) specification.
+- The implementation of  the rules specified by the Bean Validation specification (including the actual validation logic for annotations like `@NotBlank`), is provided by validation frameworks like Hibernate Validator.
 
-They are not automatically applied to the response body.
+##### @Valid
 
-
-Use of @Valid in the Controller class forces a validation check. The validation is defined in the Entity class
-
-The @NotBlank annotation is part of the `javax.validation.constraints` package, 
-which is a standard part of the Java Bean Validation (JSR 380) specification. 
-
-However, the implementation of this specification, including the actual validation logic for annotations 
-like @NotBlank, is provided by validation frameworks like Hibernate Validator.
-
-Hibernate Validator is one such implementation of the rules specified by the Bean Validation specification 
+Use of `@Valid` in the Controller class forces a validation check. The validation is defined in the Entity class
 
 
-in Controller
+**in Controller**
 ```java
 //Add a new User
 @PostMapping("/users")
-public ResponseEntity<Object> addNewUser(@Valid  @RequestBody User user){
+public ResponseEntity<Object> addNewUser(@Valid  @RequestBody User user)
 ```
 
-User Entity Class (Using Lombok)
+**User Entity Class (Using Lombok)**
+
+`@ValidPhoneNumber`is a user defined Validator mentioned in the end of this blog.
+
 ```java
 @Data
 public class User {
@@ -50,6 +53,7 @@ public class User {
 
     @NotBlank(message = "Name is required")
     @Size(min=3,message = "Names should be at-least 3 characters long")
+    @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "Name must contain only alphabetical characters")
     private String name;
 
     @Past(message = "DOB Cannot be in the Future")
@@ -64,7 +68,7 @@ public class User {
 }
 ```
 
-Exception for Failed Validations in the customized response entity exception handler
+**`MethodArgumentNotValidException` for Failed Validations and exception handler**
 ```java
 @ExceptionHandler(MethodArgumentNotValidException.class)
 public ResponseEntity<MyExceptionResponse> handleValidationExceptions(MethodArgumentNotValidException ex, final HttpServletRequest request) {
@@ -91,7 +95,35 @@ public ResponseEntity<MyExceptionResponse> handleValidationExceptions(MethodArgu
 }
 ```
 
-Explore the following validations
+**For a request body with**
+
+```json5
+{
+    "name" : "hh",
+    "dob" : "2070-01-31",
+    "email": "test.test.com",
+    "phone":"333 333 33333"
+}
+```
+
+**All validation will be invoked for the user model**
+
+```json5
+{
+    "from": "ExceptionResponse",
+    "errorCode": "140 :: Error: :: Validation Error",
+    "errorMessage": "{phone=Can be in the format {1111111111, (111) 111 1111, 111-111-1111}, dob=DOB Cannot be in the Future, name=Names should be at-least 2 characters long, email=Please provide a valid email address}",
+    "methodName": "POST",
+    "requestedURI": "/users/add",
+    "thrownByMethod": "resolveArgument",
+    "thrownByClass": "org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor",
+    "exceptionType": null,
+    "timestamp": "2024-03-04 00:52:39.455 AM MST(GMT-7)"
+}
+```
+
+
+##### Explore 
 
 ```java
 @NotNull
@@ -132,29 +164,3 @@ public class ExampleRequest {
 }
 ```
 
-For a request body with 
-
-```json5
-{
-    "name" : "hh",
-    "dob" : "2070-01-31",
-    "email": "test.test.com",
-    "phone":"333 333 33333"
-}
-```
-
-All validation will be invoked for the user model
-
-```json5
-{
-    "from": "ExceptionResponse",
-    "errorCode": "140 :: Error: :: Validation Error",
-    "errorMessage": "{phone=Can be in the format {1111111111, (111) 111 1111, 111-111-1111}, dob=DOB Cannot be in the Future, name=Names should be at-least 2 characters long, email=Please provide a valid email address}",
-    "methodName": "POST",
-    "requestedURI": "/users/add",
-    "thrownByMethod": "resolveArgument",
-    "thrownByClass": "org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor",
-    "exceptionType": null,
-    "timestamp": "2024-03-04 00:52:39.455 AM MST(GMT-7)"
-}
-```

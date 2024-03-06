@@ -164,10 +164,9 @@ Sample response from a properly handled exception
 
 # Handling Validation Errors
 
-pass incorrect email to invoke tghe exception
+[https://nitinkc.github.io/spring/microservices/spring-validations/](https://nitinkc.github.io/spring/microservices/spring-validations/)
 
-`/test/email?email=ab.cdef.gmail.com`
-
+if incorrect email is sent `/test/email?email=ab.cdef.gmail.com` for the API
 
 ```java
  @GetMapping("/email")

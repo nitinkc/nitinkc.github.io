@@ -14,8 +14,8 @@ Code sample for a POST request using Spring Boot. Sample code converts Temperatu
 In all the examples below, `ResponseEntity.ok()` method is used, that takes in the response body as its argument.
 
 ```java
- public static <T> ResponseEntity<T> ok(T body)
- ``` 
+public static <T> ResponseEntity<T> ok(T body)
+``` 
 
 ##### Scenario 1
 **Convert the temperature given in Request Body of POST call.**
@@ -36,10 +36,11 @@ POST : http://localhost:8100/temperature-converter/value
 **_ResponseEntity\<Double\>_** to return a Double Value
 ```java
 @PostMapping(path = "/temperature-converter/value")
-    public ResponseEntity<Double> convertTemperature(@RequestBody Map<String, Double> value) {
-        return ResponseEntity.ok(temperatureConvertorService.convertTemperatureValue(value.get("value")));
-    }
-
+public ResponseEntity<Double> convertTemperature(@RequestBody Map<String, Double> value) {
+    return ResponseEntity
+            .status(HttpStatus.OK)
+            .body(temperatureConvertorService.convertTemperatureValue(value.get("value")));    
+}
 ```
 
 ##### Scenario 2: 
