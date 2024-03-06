@@ -1,6 +1,6 @@
 ---
 title:  "Rest Template"
-date:   2023-01-31 03:53:00
+date:   2024-04-06 03:53:00
 categories: [Microservices]
 tags: [Microservices]
 ---
