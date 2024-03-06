@@ -2,7 +2,7 @@
 title:  "Rest Template"
 date:   2024-04-06 03:53:00
 categories: [Microservices]
-tags: [Microservices]
+tags: [Spring Microservices, CRUD]
 ---
 
 {% include toc title="Index" %}
@@ -12,6 +12,7 @@ tags: [Microservices]
 ResponseEntity<WordResponse[]> response = 
         restTemplate.getForEntity(URL, WordResponse[].class, uriVariables);
 ```
+
 For POST method with `ParameterizedTypeReference`
 
 ```java
