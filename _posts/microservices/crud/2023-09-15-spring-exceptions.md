@@ -6,6 +6,9 @@ tags: [Spring Microservices]
 ---
 {% include toc title="Index" %}
 
+[Simple Global Exception Handler Project with Notes](https://github.com/nitinkc/SpringBoot-GlobalExceptionHandling)
+
+[SpringBoot Reference Project with more complexities](https://github.com/nitinkc/SpringBoot-reference)
 
 If the data doesn't exist, a custom exception can be thrown if needed
 ```java
@@ -214,5 +217,52 @@ protected ResponseEntity<MyExceptionResponse> handleRequestParamNotValid(Excepti
     "thrownByClass": "org.springframework.validation.beanvalidation.MethodValidationInterceptor",
     "exceptionType": "ConstraintViolationException",
     "timestamp": "2024-03-03 23:05:04.961 PM MST(GMT-7)"
+}
+```
+
+# Ordered.HIGHEST_PRECEDENCE
+
+If there are two handlers for an exception in two separate classes, the one with higher precedence will execute first.
+
+Example for `BadInputException`, the one from `ValidationExceptionHandler` takes priority
+```java
+@ControllerAdvice
+@Slf4j
+@Order(Ordered.HIGHEST_PRECEDENCE) // Set the highest precedence
+public class ValidationExceptionHandler {
+    @ExceptionHandler(BadInputException.class)
+    public ResponseEntity<Object> handleAllExceptions(BadInputException ex, WebRequest request) {
+        String errorMessage = " An error occurred:"  + ex.getMessage() + "\n" +
+                "With description :: " + request.getDescription(true);
+        
+        return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+```
+
+Same exception is handled in another class
+```java
+@Slf4j
+@RestControllerAdvice
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+    
+    //Handling 2 exception classes. Notice the parameter of handleNotFoundExceptions method (BusinessException exception)
+    @ExceptionHandler(value = {WordsNotFoundException.class, BadInputException.class})
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<MyExceptionResponse> handleNotFoundExceptions(Exception exception, final HttpServletRequest request) {
+        MyExceptionResponse error = MyExceptionResponse.builder()
+                .from("From Exception Response")
+                .errorMessage(exception.getMessage())
+                .requestedURI(request.getRequestURI())
+                .exceptionType(exception.getClass().getSimpleName())
+                .methodName(request.getMethod())
+                .errorCode(ErrorCodes.ERR_122.getErrorCode() + " :: " + ErrorCodes.ERR_122.getErrorMessage())
+                .thrownByMethod(exception.getStackTrace()[0].getMethodName())
+                .thrownByClass(exception.getStackTrace()[0].getClassName())
+                .timestamp(ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS a z(O)")))
+                .build();
+
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
 }
 ```
