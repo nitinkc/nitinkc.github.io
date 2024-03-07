@@ -17,17 +17,27 @@ Validations are **NOT** automatically applied to the response body (for ex, if t
 it can be done manually
 
 ##### Dependencies
+- The `@NotBlank` annotation is part of the `javax.validation.constraints` package, which is a standard part of the Java Bean Validation (JSR 380) specification.
+- The implementation of  the rules specified by the Bean Validation specification (including the actual validation logic for annotations like `@NotBlank`), is provided by validation frameworks like Hibernate Validator.
 
 Both the dependencies are required for the validations to work well
-```shell
+```groovy
 // https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api
 implementation group: 'jakarta.validation', name: 'jakarta.validation-api', version: '3.1.0-M1'
 // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
 implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '8.0.1.Final'
 ```
 
-- The `@NotBlank` annotation is part of the `javax.validation.constraints` package, which is a standard part of the Java Bean Validation (JSR 380) specification.
-- The implementation of  the rules specified by the Bean Validation specification (including the actual validation logic for annotations like `@NotBlank`), is provided by validation frameworks like Hibernate Validator.
+### @Validated and @Valid
+A brief summary of the differences between @Validated and @Valid:
+
+**`@Validated`**: Spring-specific, enables method-level validation, and supports method parameter 
+and return value validation.
+
+`**@Valid**`: Standard Java EE annotation, primarily used for validating bean properties and method parameters at 
+the field or method level.
+
+In summary, @Validated is a useful annotation for enabling method-level validation in Spring MVC controllers, allowing you to validate method parameters and return values with ease.
 
 ##### @Valid
 
@@ -164,3 +174,108 @@ public class ExampleRequest {
 }
 ```
 
+# @Validated
+
+```java
+@PostMapping("/admin/add")
+public ResponseEntity<AdminDTO> createAdmin(@Validated(AdminDTO.AdminValidation.class) @RequestBody AdminDTO adminDTO) {
+    // Business logic to create an admin
+    return ResponseEntity.ok(adminDTO);
+}
+```
+
+The AdminValidation interface is a marker interface used for defining a validation group in Bean Validation (JSR 380)
+
+
+```java
+@Data
+public class AdminDTO {
+
+    @NotBlank(message = "Username cannot be blank", groups = AdminValidation.class)
+    private String username;
+
+    @NotBlank(message = "Password cannot be blank", groups = AdminValidation.class)
+    @Size(min = 8, message = "Password must be at least 8 characters long", groups = AdminValidation.class)
+    private String password;
+
+    // Other fields, constructors, getters, and setters
+
+    // Define validation group for admin DTO
+    public interface AdminValidation {}
+}
+```
+
+```json5
+{
+    "username": "",
+    "password":"12345"
+}
+```
+
+```json5
+{
+    "from": "ExceptionResponse from MethodArgumentNotValidException",
+    "errorCode": "140 :: Error: :: Validation Error",
+    "errorMessage": "{password=Password must be at least 8 characters long, username=Username cannot be blank}",
+    "methodName": "POST",
+    "requestedURI": "/users/admin/add",
+    "thrownByMethod": "resolveArgument",
+    "thrownByClass": "org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor",
+    "exceptionType": null,
+    "timestamp": "2024-03-07 01:15:47.356 AM MST(GMT-7)"
+}
+```
+
+# Complex Validators
+
+```java
+@Documented
+@Constraint(validatedBy = PasswordConstraintValidator.class)
+@Target({ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface PasswordConstraint {
+    String message() default "Password must contain at least two numbers and one special character (excluding '@')";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
+}
+```
+
+The PasswordConstraintValidator class
+
+```java
+public class PasswordConstraintValidator implements ConstraintValidator<PasswordConstraint, String> {
+
+    @Override
+    public void initialize(PasswordConstraint constraintAnnotation) {}
+
+    @Override
+    public boolean isValid(String password, ConstraintValidatorContext constraintValidatorContext) {
+        if (password == null) {
+            return false;
+        }
+
+        // At least two numbers and one special character (excluding '@')
+        String regex = "^(.*[0-9]){2,}.*[^A-Za-z0-9@]{1,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+
+        return matcher.matches();
+    }
+}
+```
+
+The newly created annotation can be applied as
+```java
+public class AdminDTO {
+
+    @NotBlank(message = "Username cannot be blank", groups = AdminValidation.class)
+    private String username;
+
+    @NotBlank(message = "Password cannot be blank", groups = AdminValidation.class)
+    @Size(min = 8, message = "Password must be at least 8 characters long", groups = AdminValidation.class)
+    @PasswordConstraint(message = "Password must contain at least two numbers and one special character (excluding '@')", groups = AdminValidation.class)
+    private String password;
+
+    // Other fields, constructors, getters, and setters
+}
+```
