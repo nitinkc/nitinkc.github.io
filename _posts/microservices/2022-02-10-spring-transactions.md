@@ -10,17 +10,28 @@ tags: ["Spring Microservices", Spring Boot]
 
 # Spring Transactions
 
+Transactions typically group related operations that should be treated as a single unit of work, allowing for 
+atomicity, consistency, isolation, and durability (ACID properties).
+
+Spring transactions are commonly used for operations within a single database (could be distributed db). In fact, this is one of the most common
+use cases for Spring's transaction management features.
+
+Spring provides robust support for transaction management in relational databases, NoSQL databases, and other 
+data access technologies. Whether you're using JDBC, JPA (Java Persistence API), Hibernate, or Spring Data JPA, 
+Spring's transaction management can be applied to ensure data integrity and consistency within a single database.
+
+[https://github.com/nitinkc/Spring-Transactions](https://github.com/nitinkc/Spring-Transactions/tree/master/src/main/java/com/learn/transaction/myAdmissionService)
 
 ## Admission Service Example
+
+All are within one DB, inserting data into multiple tables within one DB
 
 1. Register a Student
 2. Register Student in Department
 3. Register Student in Hostel (Optional and based on Gender)
 4. Register Student in a Society (Optional)
 
-[https://github.com/nitinkc/Spring-Transactions](https://github.com/nitinkc/Spring-Transactions/tree/master/src/main/java/com/learn/transaction/myAdmissionService)
-
-In the above Example, the transaction is propagated in the same order as mentioned above.
+The transaction is propagated in the same order as mentioned above.
 
 ## Transaction Propagation
 
@@ -28,35 +39,51 @@ In the above Example, the transaction is propagated in the same order as mention
 
 [Tx Propagation](https://www.javainuse.com/spring/boot-transaction-propagation)
 
-Let's consider a transaction : Student Service -> Department Service
+Let's consider a transaction : `Student Service -> Department Service`
 
-**REQUIRED** (Default Transaction Propagation) - Always executes in a transaction. If there is any existing transaction it uses it. 
-If none exists then only a new one is created
+##### **REQUIRED** (Default Transaction Propagation)
 
-If Student Service does not have a Transactional Annotation, and Department Service has REQUIRED, then a new Tx will be created.
+This is the default propagation behavior if not specified explicitly.
+It always executes in a transaction. If there is an existing transaction, it participates in it; otherwise, it creates a new one.
 
 
-**MANDATORY** - Always executes in a transaction. If there is any existing transaction it is used. If there is no existing transaction it will throw an exception.
+If StudentService is not annotated with `@Transactional`, and DepartmentService is annotated with 
+`@Transactional(propagation = Propagation.REQUIRED)`, then a new transaction will be created by DepartmentService if none exists.
 
-If Student Service does not have a Transactional Annotation, and Department Service has 
+
+##### **MANDATORY** 
+It always executes in a transaction. It requires an existing transaction; otherwise, it throws an exception.
+
+If StudentService is not annotated with `@Transactional`, and DepartmentService is annotated with 
+`@Transactional(propagation = Propagation.MANDATORY)`, and if DepartmentService is invoked without an existing
+transaction, it will throw an exception.
+
 ```java
-@Transactional(propagation = Propagation.MANDATORY)
-```
-then the exception 
-```java
-nested exception is org.springframework.transaction.IllegalTransactionStateException: No existing transaction found for transaction marked with propagation 'mandatory'] with root cause
-org.springframework.transaction.IllegalTransactionStateException: No existing transaction found for transaction marked with propagation 'mandatory' 
+nested exception is org.springframework.transaction.IllegalTransactionStateException: 
+    No existing transaction found for transaction marked with propagation 'mandatory'] with root cause
+org.springframework.transaction.IllegalTransactionStateException: 
+    No existing transaction found for transaction marked with propagation 'mandatory' 
 ```
 
-**NEVER** - Always executes with out any transaction. It throws an exception if there is an existing transaction
-If Student Service has a Transactional Annotation, and Department Service has 
-```java
-@Transactional(propagation = Propagation.NEVER)
-```
-Then there should be an exception. In the Replicated Example, appears that the default save method of JPA creates an internal Tx which is why it works.
+##### **NEVER**
+It executes without any transaction context. It throws an exception if an existing transaction is found.
+If StudentService has a transactional annotation and DepartmentService is annotated with 
+`@Transactional(propagation = Propagation.NEVER)`, and if DepartmentService is invoked within a 
+transactional context, it will throw an exception.
 
-**REQUIRES_NEW** : Always executes in a new transaction. If there is any existing transaction it gets suspended.
-Irrespective of the Calling method, the new Transaction is created. If the calling method has a Tx, then its suspended and gets resumed after the called Tx is completed.
+Then there should be an exception. In the Replicated Example, appears that the default save method of 
+JPA creates an internal Tx which is why it works.
+
+
+##### **REQUIRES_NEW** 
+It always executes in a new transaction. It suspends the existing transaction if any.
+
+Irrespective of the Calling method, the new Transaction is created. 
+If the calling method has a Tx, then its suspended and gets resumed after the called Tx is completed.
+
+If StudentService is called within a transaction, and it invokes DepartmentService 
+annotated with `@Transactional(propagation = Propagation.REQUIRES_NEW)`, the existing transaction in StudentService
+is suspended, and a new transaction is created for the execution of DepartmentService.
 
 
 ```java
@@ -72,6 +99,7 @@ Irrespective of the Calling method, the new Transaction is created. If the calli
 20-02-02 Sun 01:17:18.417 DEBUG JpaTransactionManager Creating new transaction with name [com.learn.transaction.myAdmissionService.daoService.SocietyService.saveSociety]: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT
 20-02-02 Sun 01:17:18.432 DEBUG JpaTransactionManager Committing JPA transaction on EntityManager [SessionImpl(1422485332<open>)]
 ```
+
 ## Isolation - For Concurrent Transactions
 
 The default transaction isolation taken is that of the underlying database.
