@@ -39,6 +39,20 @@ The transaction is propagated in the same order as mentioned above.
 
 [Tx Propagation](https://www.javainuse.com/spring/boot-transaction-propagation)
 
+**Method-Level @Transactional**
+
+- method should execute within a transaction.
+- Transactional behavior is applied only to the annotated method. Other methods within the same class are not affected.
+- This allows for fine-grained control over transactional behavior, 
+  - enables to specify different transactional settings for different methods within the same class.
+
+**Class-Level @Transactional:**
+
+- When you annotate a class with @Transactional, all **public methods** of that class become transactional 
+  - unless they are annotated with @Transactional themselves (which would override the class-level annotation).
+- This provides a convenient way to apply a default transactional behavior to all methods in the class without explicitly annotating each method.
+- It's important to note that if a method within the class is annotated with @Transactional, **it overrides the class-level annotation** for that specific method.
+
 Let's consider a transaction : `Student Service -> Department Service`
 
 ##### **REQUIRED** (Default Transaction Propagation)
