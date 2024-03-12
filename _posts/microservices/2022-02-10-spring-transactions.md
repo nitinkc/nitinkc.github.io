@@ -58,8 +58,8 @@ Let's consider a transaction : `Student Service -> Department Service`
 ##### **REQUIRED** (Default Transaction Propagation)
 
 This is the default propagation behavior if not specified explicitly.
-It always executes in a transaction. If there is an existing transaction, it participates in it; otherwise, it creates a new one.
-
+- It always executes in a transaction. 
+If there is an existing transaction, it participates in it; otherwise, it creates a new one.
 
 If StudentService is not annotated with `@Transactional`, and DepartmentService is annotated with 
 `@Transactional(propagation = Propagation.REQUIRED)`, then a new transaction will be created by DepartmentService if none exists.
