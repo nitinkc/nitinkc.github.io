@@ -27,7 +27,10 @@ uriVariables.put("max", (String) requestBody.get("max"));
 
 ```java
 ResponseEntity<WordResponse[]> response = 
-        restTemplate.getForEntity(URL, WordResponse[].class, uriVariables);
+        restTemplate.getForEntity(
+                URL, 
+                WordResponse[].class, 
+                uriVariables);
 ```
 
 ## .exchange with Uri variables
@@ -66,8 +69,11 @@ ParameterizedTypeReference<Map<String, Object>> responseType =
         new ParameterizedTypeReference<Map<String, Object>>() {};
 
 // Send the POST request to the server
-ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(URL, HttpMethod.POST,
-        requestEntity,responseType);
+ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(
+        URL, 
+        HttpMethod.POST,
+        requestEntity,
+        responseType);
 ```
 
 Upload a file
