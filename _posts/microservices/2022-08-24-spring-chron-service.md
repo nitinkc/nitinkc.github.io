@@ -6,6 +6,8 @@ tags: [Spring Microservices, Spring Boot]
 ---
 
 # Scheduling with Cron
+
+using `@Scheduled` annotation on the method
 ```java
 @Component
 @Slf4j
@@ -21,16 +23,15 @@ public class ChronService {
 }
 ```
 
-
-in Application yml file
-
+# Application yml file
+create crom expression using [https://crontab.guru/](https://crontab.guru/#0_1_*_*_1-7)
 ```yaml
 report:
     cron-expr:  0 0/2 * * * ? #run every 2 min
     #0 1 * * 1-7  #At 01:00 AM GMT or 8 PM Central Time on every day-of-week from Monday through Sunday.
 ```
 
-[https://crontab.guru/](https://crontab.guru/#0_1_*_*_1-7)
+
 
 # Async Scheduling
 
