@@ -50,3 +50,10 @@ public class MemoryIssuesApplication {
     }
 }
 ```
+Method scheduled to run periodically
+```java
+//@Scheduled(fixedDelay = 1000)
+public void runTask() {
+CompletableFuture.runAsync(this::myScheduledMethod);
+}
+```
