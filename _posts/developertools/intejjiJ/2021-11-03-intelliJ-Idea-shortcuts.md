@@ -10,7 +10,14 @@ tags: [Shortcuts]
 
 # Shortcut Keys
 
-**LEGEND :** &emsp; **⌘** Cmd &emsp; **⇧** Shift &emsp; **^** Ctrl  &emsp; **⌥** Opt  &emsp; **⎋** Esc  &emsp; **↵** Return &emsp;  **⌫** Delete 
+**LEGEND :** &emsp; 
+**⌘** Cmd &emsp; 
+**⇧** Shift &emsp; 
+**^** Ctrl  &emsp; 
+**⌥** Opt  &emsp; 
+**⎋** Esc  &emsp; 
+**↵** Return &emsp;  
+**⌫** Delete 
 {: .notice--success}
 
 ## Help
