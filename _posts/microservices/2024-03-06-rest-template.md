@@ -8,10 +8,10 @@ tags: [Spring Microservices, CRUD]
 {% include toc title="Index" %}
 
 Both Uri Variables and Request Entities are maps
-The Uri variables needed for call like
 
-final String DATA_MUSE_URL_NEEDING_URI_VARIABLES = "https://api.datamuse.com/words?ml={word}&max={max}";
 
+# With UriVariables
+The Uri variables needed for call like `https://api.datamuse.com/words?ml={word}&max={max}`
 
 ```java
 Map<String, String> uriVariables = new HashMap<>();
@@ -19,11 +19,7 @@ uriVariables.put("word", (String) requestBody.get("word"));
 uriVariables.put("max", (String) requestBody.get("max"));
 ```
 
-# For GET
-
-
-## .getForEntity 
-
+## GET .getForEntity 
 
 ```java
 ResponseEntity<WordResponse[]> response = 
@@ -50,10 +46,13 @@ ResponseEntity<WordResponse[]> response = restTemplate.exchange(
 ```
 
 
-# For POST with request entity
+# With request entity
+Create request header with the Request body/entity which is a map and is collected from the method parameter
+```java
+public List<String> getData(@RequestBody Map<String,Object> requestBody){ ... }
+```
 
-Create request header
-
+HTTP Entity is created with the headers and request body.
 ```java
 HttpHeaders headers = new HttpHeaders();
 headers.setContentType(MediaType.APPLICATION_JSON);
@@ -61,7 +60,7 @@ headers.setContentType(MediaType.APPLICATION_JSON);
 HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
 ```
 
-## with `ParameterizedTypeReference`
+## POST with `ParameterizedTypeReference`
 
 ```java
 // Create parameterized type reference for Map<String, Object>
@@ -76,7 +75,7 @@ ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(
         responseType);
 ```
 
-Upload a file
+# Upload a file
 
 ```java
 private RestTemplate restTemplate;
