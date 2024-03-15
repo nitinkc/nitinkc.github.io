@@ -9,5 +9,4 @@ tags: ['Java']
 
 Use icon Assist : **⌥ Opt** + I or Help -> Icon Asist
 
-
-![eclipse_mat.png](..%2F..%2F..%2Fassets%2Fimages%2Feclipse_mat.png)
+![eclipse_mat.png](../../../assets/images/eclipse_mat.png)
