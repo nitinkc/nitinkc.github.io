@@ -18,6 +18,7 @@ tags: [Shortcuts]
 **⎋** Esc  &emsp; 
 **↵** Return &emsp;  
 **⌫** Delete 
+
 {: .notice--success}
 
 ## Help
