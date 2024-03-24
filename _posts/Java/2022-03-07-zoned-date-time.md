@@ -4,66 +4,104 @@ date:   2022-03-08 00:27:00
 categories: ['Java']
 tags: ['Java']
 ---
+{% include toc title="Index" %}
 
-Current Formatted Date using ZonedDateTime
+**Current Formatted Date, from the server running JVM, using ZonedDateTime**
 ```java
-String formattedCurrentTimeStamp = ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS a z(O)"));
+String formattedCurrentTimeStamp = ZonedDateTime.now()
+        .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS a z(O)"));
+//2024-03-23 23:14:34.984 PM MDT(GMT-6)
+```
+
+**Convert from UTC to EST/EDT**
+- First convert the Input String into ZonedDateTime using parse
+- Manipulate the zoneDateTime object
+- Convert the zonedDateTimeObject into the Output String using the required format
+
+[Difference between Parse and Format](https://nitinkc.github.io/algorithms/Drills/#difference-between-parse-and-format)
+
+```java
+//Convert the input time to city timeZone ()
+ZonedDateTime zdtBasedOnCity = zonedDateTimeInUtc.withZoneSameInstant(ZoneId.of(cityTimeZone));
+
+//Or
+zdtBasedOnCity = zonedDateTime
+        .with(LocalTime.MAX)
+        .withZoneSameInstant(ZoneId.of(ZoneOffset.UTC.getId()))
+        .truncatedTo(ChronoUnit.MILLIS);
+```
+{% gist nitinkc/ee92e4e37a323bfe0785a5c3ce4f628e %}
+
+```java
+String inputDateTimePattern = "yyyy-MM-dd HH:mm:ssX"; //"yyyy-MM-dd HH:mm:ss.SSSSSSX";
+String outputDateTimeFormat = "MM/dd/yyyy HH:mm z";
+String toTimeZone = "America/New_York";
+
+String startTime = "2024-03-10 04:00:00+00"; // Start time in GMT
+String endTime = "2024-03-10 07:00:00+00";   // End time in GMT
+
+//03/09/2024 23:00 EST
+System.out.println(getFormattedOutputDateTimeString
+        (startTime,inputDateTimePattern, outputDateTimeFormat, toTimeZone));
+
+//03/10/2024 03:00 EDT
+System.out.println(getFormattedOutputDateTimeString
+        (endTime, inputDateTimePattern, outputDateTimeFormat,toTimeZone ));
 ```
 
 # Modern Java Date Time Calendar Library
 
 From `java.time` package
 
-The LocalDateTime class represents a date and time without a time zone, while the ZonedDateTime class represents a date and time with a time zone.
+The `LocalDateTime` class represents a date and time without a time zone,
+while the `ZonedDateTime` class represents a date and time with a time zone.
 
-* LocalDate     : A date without a time-zone in the ISO-8601 calendar system, eg `2023-03-12`
-* LocalDateTime : A date-time without a time-zone in the ISO-8601 calendar system, eg. `2023-03-12T10:15:30}`
-  * `LocalDateTime.now()` returns the current date and time in the local time zone
-  * `LocalDateTime.of()`  takes LocalDate and LocalTime object
-* ZonedDateTime : A date-time with a time-zone in the ISO-8601 calendar system, eg. `2007-12-03T10:15:30+01:00 Europe/Paris}`.
-  * `ZonedDateTime.now()` returns the current date and time in the system default time zone.
-  * `ZonedDateTime.of()` takes LocalDateTime object and a ZoneId
+* ZonedDateTime : A date-time with a time-zone in the ISO-8601 calendar system, 
+eg. `2007-12-03T10:15:30+01:00 Europe/Paris}`.
 
-> toInstant connects ZonedDateTime wtih sql Timestamp
+**When would you use OffsetDateTime instead of ZonedDateTime?** 
 
-When would you use OffsetDateTime instead of ZonedDateTime? If you are writing complex software that models its own rules for date and time calculations based on geographic locations, or if you are storing time-stamps in a database that track only absolute offsets from Greenwich/UTC time, then you might want to use OffsetDateTime.
-
-
-`parse` takes a string and returns the DataType of the Class being parsed, for example, LocalDate.parse returns LocalDate
-```java
-LocalDate startLocalDate = LocalDate.parse("2023-10-30");//yyyy-mm-dd format by default
-```
-
-`format` takes a DateTimeFormatter and returns a String
-```java
-String format = startLocalDate.format(DateTimeFormatter.ofPattern("dd-MMM-YYYY"));
-```
+If you are writing complex software that models its own rules for date and time calculations based on geographic locations, 
+or if you are storing time-stamps in a database that track only absolute offsets from Greenwich/UTC time, 
+then you might want to use OffsetDateTime.
 
 ## LocalDate
 {% gist nitinkc/79309bfcaf2b3f44c993e827cecd5814 %}
-
 
 ## LocalDateTime
 {% gist nitinkc/cae344eab0c8d789d2013665eefd9272 %}
 
 ## ZonedDateTime
+**Parse Input String into ZonedDate time**
 {% gist nitinkc/c82dd66846fe166d5ac5d7d40b9d87ff %}
 
-### ZonedDateTime.of
+**Format ZonedDateTime into desired output String format (to be used as json strings)**
+{% gist nitinkc/4621ddf2c4efa980dfe32b89aa63bb1e %}
 
-Zoned-Date-time needs LocalDate, LocalTime and ZoneId (zone id can be anything) as parameters
-
-### ZoneOffset
-
-
-### ZoneId.of
+### ZoneId vs ZoneOffset
 
 ```java
-String ist = ZoneOffset.SHORT_IDS.get("IST");//Asia/Kolkata
-ZoneId zoneId = ZoneId.of(ist);//Asia/Kolkata
-zoneId.getRules().getStandardOffset(Instant.now()).toString();//+05:30
+//TimeZone
+ZoneId zone    = ZoneId.systemDefault();//Uses Z for UTC
+ZoneId india   = ZoneId.of("Asia/Kolkata");//UTC+05:30
+ZoneId chicago = ZoneId.of("US/Central");
+ZoneId ny      = ZoneId.of("UTC-05:00");
 ```
+**ZoneId**
+- Represents a time zone identifier, such as "America/New_York" or "Europe/London".
+- It provides a way to identify regions with distinct rules for adjusting time, 
+including daylight saving time (DST) rules.
+- ZoneId is used to create ZonedDateTime instances, which represent a specific date and time in a particular time zone.
 
+**ZoneOffset**
+- Represents a fixed offset from UTC, such as +03:00 or -08:00.
+- It **_does not handle_** daylight saving time or historical changes in time zone rules; 
+it simply represents a constant time difference from UTC.
+```java
+String ist = ZoneOffset.SHORT_IDS.get("IST");//Asia/Kolkata
+//Get zoneOffset from Zone Id
+ZoneOffset standardOffset =  zoneId.getRules().getStandardOffset(Instant.now()).toString();//+05:30
+```
 # A case with Z
 As per [Java 17 documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html)
 
@@ -75,7 +113,7 @@ For ZoneDateTime
 
 
 ## Date comparison with ZonedDateTime 
-It is easy to compare the dates with Zoned Date Time
+It is easy to compare the dates with `ZonedDateTime`
 
 {% gist nitinkc/7e3dc6cb2ac498e478a8a1d92b3537f9 %}
 
@@ -83,7 +121,9 @@ It is easy to compare the dates with Zoned Date Time
 
 Working with Legacy DB that uses Timestamp
 
-Java provides a way to convert between ZonedDateTime and Timestamp using the 
+> toInstant connects ZonedDateTime with sql Timestamp
+
+Java provides a way to convert between ZonedDateTime and Timestamp using the `toInstant()`
 
 ```java
 //converts a ZonedDateTime to a Timestamp
@@ -92,25 +132,25 @@ Timestamp timestamp = Timestamp.from(ZonedDateTime.now(ZoneOffset.UTC).toInstant
 //converts a Timestamp to a ZonedDateTime
 ZonedDateTime zonedDateTime = timestamp.toInstant().atZone(ZoneOffset.UTC);
 ```
-## from SQL Timestamp
 
-### SQL Timestamp to LocalDate
+# from SQL Timestamp
 
-### SQL Timestamp to LocalDateTime
+SQL Timestamp to LocalDate
+
+SQL Timestamp to LocalDateTime
 
 ### SQL Timestamp to ZonedDateTime 
 
-Often the timestamp conversion is needed to and from DB time stamp column
+Often the timestamp conversion is needed to and from DB timestamp column
 
 {% gist nitinkc/bdb6c5617386b920c5ca1d4aacc708b7 %}
-
 
 ## to SQL Timestamp
 
 SQL Timestamp has Date and Time component. Thus, LocalDateTime is the connecting medium.
 
 ### LocalDate to SQL Timestamp
-Instead of just using Date, convert the Date into DateTime by using startOfDay or andOfDay to properly 
+Instead of just using Date, convert the Date into DateTime by using `startOfDay` or `endOfDay` to properly 
 convert into SQL Timestamp
 
 ### LocalDateTime to SQL Timestamp
@@ -122,7 +162,7 @@ convert into SQL Timestamp
 
 ```java
 public static Timestamp fromDate(ZonedDateTime date) {
-        return Optional.of(Timestamp.valueOf(date.toLocalDateTime())).orElse(null);
+    return Optional.of(Timestamp.valueOf(date.toLocalDateTime())).orElse(null);
 }
 ```
 
