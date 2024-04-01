@@ -50,6 +50,38 @@ Create a posts for a User - POST /users/{id}/posts
 Retrieve details of a post - GET /users/{id}/posts/{post_id}
 ```
 
+## Config
+
+{% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
+
+## Banner
+
+[Spring Boot banner generator](https://springhow.com/spring-boot-banner-generator/)
+
+For Ascii banner, put the ASCII Art in banner.txt in and it will be taken
+[Sample file](https://github.com/nitinkc/spring-5-restful-web/blob/master/src/main/resources/banner.txt)
+
+to turn off the banner
+```yaml
+spring:
+  main:
+    banner-mode: "off"
+```
+For image banner, put the logo.png file and
+
+```yaml
+spring:
+  banner:
+    image:
+      location: logo.png
+```
+
+## Initial Data Setup
+
+keep the sql script in the resources folder by the name `data.sql`
+
+[Sample Data file](https://github.com/nitinkc/spring-data-jpa/blob/master/src/main/resources/data.sql)
+
 # Scans
 
 ## ComponentScan
