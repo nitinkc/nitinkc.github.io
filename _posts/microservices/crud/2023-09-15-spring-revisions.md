@@ -13,46 +13,36 @@ tags: [Spring Microservices, CRUD]
 
 Basic philosophy of Spring Boot : **Conventions over configurations**
 
-##### @Component
+**@Component**
 * **Purpose**: Marks a class as a Spring component or bean.
-* **Use Case**: Generally used as a generic stereotype for any Spring-managed component.
 * **Commonly Used in**: Utility classes, business logic classes, and other non-specialized components.
 
-##### @Controller 
+**@Controller** 
 * **Purpose**: Marks a class as a Spring MVC controller.
 * **Use Case**: Used for classes that handle HTTP requests in a Spring MVC web application.
 * **Commonly Used in**: Classes that define request mappings, handle user input, and return views or data to the client.
   
-##### @Service
+**@Service**
 * **Purpose**: Marks a class as a service or business logic component.
 * **Use Case**: Typically used for classes that contain the business logic of the application.
 * **Commonly Used in**: Service layer classes that encapsulate business rules, data processing, and interactions with 
   repositories or other services.
 
-##### @Repository
+**@Repository**
 * **Purpose**: Marks a class as a Spring Data repository.
 * **Use Case**: Used for classes that interact with a database or external data source.
 * **Commonly Used in**: Data access objects (DAOs) that perform CRUD (Create, Read, Update, Delete) operations on 
   entities.
 
-# REST APIs
-
-[https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris](https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris)
-{: .notice--success}
-
-```shell
-Retrieve all Users - GET /users
-Create a User - POST /users
-Retrieve one User - GET /users/{id} -> /users/1
-Delete a User - DELETE /users/{id} -> /users/1
-Retrieve all posts for a User - GET /users/{id}/posts
-Create a posts for a User - POST /users/{id}/posts
-Retrieve details of a post - GET /users/{id}/posts/{post_id}
-```
-
 ## Config
 
-{% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
+app.yml/app.props - Application Yaml settings
+
+Set a desired Port
+```shell
+server.port=8089
+```
+
 
 ## Banner
 
@@ -84,8 +74,6 @@ keep the sql script in the resources folder by the name `data.sql`
 
 # Scans
 
-## ComponentScan
-
 **Component Scan** :
 
 By default, the package containing the main method is scanned. In addition to it, to scan other
@@ -105,13 +93,13 @@ beans, controllers, services, etc.
         "com.flowers"
 })
 ```
-## Entity Scan
+
+**Entity Scan** :
 
 `@EntityScan` is specific to Spring Data JPA. 
 * It's used to specify the packages where JPA entities are located.
 * This is important because Spring Data JPA needs to know where the entity classes are in order to create 
  repositories  and perform CRUD operations.
-
 
 ```java
 @EntityScan(basePackages = {"com.learningJPA.dSpringDataRepository"
@@ -120,7 +108,7 @@ beans, controllers, services, etc.
 }) 
 ```
 
-## SpringBootApplication ScanBasePackages:
+**SpringBootApplication ScanBasePackages:**
 
 `@SpringBootApplication` is a meta-annotation that combines several annotations, including @ComponentScan.
 * scanBasePackages within @SpringBootApplication allows you to specify the base packages to scan for Spring 
@@ -166,6 +154,21 @@ automatically inject the required dependency (another Spring bean) at runtime.
 
 Postman/browser/client -> Controller -> Service -> Repository -> Service -> Controller
 {: .notice--info}
+
+# REST APIs
+
+[https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris](https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris)
+{: .notice--success}
+
+```shell
+Retrieve all Users - GET /users
+Create a User - POST /users
+Retrieve one User - GET /users/{id} -> /users/1
+Delete a User - DELETE /users/{id} -> /users/1
+Retrieve all posts for a User - GET /users/{id}/posts
+Create a posts for a User - POST /users/{id}/posts
+Retrieve details of a post - GET /users/{id}/posts/{post_id}
+```
 
 # Controller Vs RestController
 
@@ -492,15 +495,6 @@ XML),
 * while @ControllerAdvice is used in 
 traditional web applications, where responses often include both views and data.
 
-
-# app.yml/app.props - Application Yaml settings
-
-Set a desired Port
-
-```shell
-server.port=8089
-```
-
 ### HikariCP
 HikariCP, often referred to simply as Hikari, is a popular and high-performance connection pool library for Java applications.
 
@@ -533,3 +527,6 @@ private String customVal;
 
 # Rest Template
 
+
+### Application Yaml settings
+{% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
