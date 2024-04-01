@@ -1,5 +1,5 @@
 ---
-title:  "Spring Boot Revisions"
+title:  "Spring Boot Reference"
 date:   2023-09-15 11:50:00
 categories: Spring Microservices
 tags: [Spring Microservices, CRUD]
