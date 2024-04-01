@@ -35,14 +35,12 @@ Basic philosophy of Spring Boot : **Conventions over configurations**
   entities.
 
 ## Config
-
-app.yml/app.props - Application Yaml settings
+[app.yml/app.props - Application Yaml settings](https://nitinkc.github.io/spring/microservices/spring-revisions/#application-yaml-settings)
 
 Set a desired Port
 ```shell
 server.port=8089
 ```
-
 
 ## Banner
 
@@ -526,7 +524,7 @@ private String customVal;
 ```
 
 # Rest Template
-
+[Rest Template](https://nitinkc.github.io/microservices/rest-template/)
 
 ### Application Yaml settings
 {% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
