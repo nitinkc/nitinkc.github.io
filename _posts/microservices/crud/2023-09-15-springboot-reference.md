@@ -524,6 +524,7 @@ private String customVal;
 ```
 
 # Rest Template
+Refer the following page for details
 [Rest Template](https://nitinkc.github.io/microservices/rest-template/)
 
 ### Application Yaml settings

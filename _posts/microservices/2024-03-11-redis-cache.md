@@ -7,6 +7,17 @@ tags: [Spring Microservices, CRUD]
 
 {% include toc title="Index" %}
 
+**Redis**
+
+Run Docker
+
+```shell
+docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+```
+Access the Redis UI
+
+[http://localhost:8001/redis-stack/browser](http://localhost:8001/redis-stack/browser)
+
 # Redis Caching Dependency
 
 ```properties
@@ -70,7 +81,7 @@ Service methods often encapsulate complex logic, including data retrieval from r
 By caching the results of service methods, you can improve the performance of your application by avoiding redundant
 computations or database queries for frequently accessed data.
 
-## Caching wiht Repository Methods:
+## Caching with Repository Methods:
 
 While repository methods are primarily responsible for interacting with the database, you can still use `@Cacheable` 
 in repository methods to cache the results of database queries.
