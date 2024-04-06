@@ -6,12 +6,14 @@ tags: [Spring Microservices, Spring Boot]
 ---
 
 
-
-```shell
+```properties
+## Actuator Settings
 management.endpoints.web.exposure.include=health,info, metrics
 management.endpoint.health.show-details=always
+management.endpoint.health.enabled=true
 ```
 
+## Custom Component for health checker
 
 ```java
 @Component("redis-health")
@@ -40,12 +42,35 @@ public class RedisHealthIndicator implements HealthIndicator {
 http://localhost:8080/actuator/health/redis-health](http://localhost:8080/actuator/health/redis-health)
 
 
-```json5
-{
+
+
+```json
+"redis": {
+"status": "UP",
+"details": {
+    "version": "7.2.4"
+    }
+},
+"redis-health": {
 "status": "UP",
 "details": {
     "status": "OK",
-    "message": "Redis connection successful"
-    }
+    "message": "Redis connection successful",
+    "version": "7.2.4",
+    "os": "Linux 6.6.16-linuxkit x86_64",
+    "tcp_port": "6379"
+  }
 }
 ```
+
+The "redis" entry is provided by default by Spring Boot Actuator when it detects that Redis is available as a dependency 
+It checks if the Redis connection is up by pinging the Redis server.
+
+The "redis-health" entry is my custom health indicator RedisHealthIndicator. 
+This indicator checks the health of the Redis connection in more detail, providing additional information 
+such as the version of Redis and a custom message indicating that the connection to Redis was successful.
+
+If you only want to see one entry, you can choose to use either the default health indicator provided by 
+Spring Boot Actuator or your custom health indicator, depending on your requirements. 
+
+If you prefer to use only your custom health indicator, you can disable the default health indicators provided by Spring Boot Actuator.
