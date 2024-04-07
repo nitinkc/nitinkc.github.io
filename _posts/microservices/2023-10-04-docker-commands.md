@@ -299,3 +299,14 @@ Check the version numebr increment in the git workflow `docker-publish.yml` file
 {% gist nitinkc/7965906df336c8d19ff5315e0f1f0549 %}
 
 
+# Docker compose with SpringBoot
+
+**Project Readme**
+
+[https://github.com/nitinkc/DockerConcepts/tree/master/6-dockerCompose-springboot-redis/visits#readme](https://github.com/nitinkc/DockerConcepts/tree/master/6-dockerCompose-springboot-redis/visits#readme)
+
+The `docker-compose` file which uses the Dockerfile to build and execute the `Dockerfile`
+
+[https://github.com/nitinkc/DockerConcepts/blob/master/6-dockerCompose-springboot-redis/visits/docker-compose.yaml](https://github.com/nitinkc/DockerConcepts/blob/master/6-dockerCompose-springboot-redis/visits/docker-compose.yaml)
+
+[https://github.com/nitinkc/DockerConcepts/blob/master/6-dockerCompose-springboot-redis/visits/Dockerfile](https://github.com/nitinkc/DockerConcepts/blob/master/6-dockerCompose-springboot-redis/visits/Dockerfile)
