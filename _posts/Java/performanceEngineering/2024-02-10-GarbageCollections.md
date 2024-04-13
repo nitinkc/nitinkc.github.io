@@ -25,6 +25,8 @@ Not a good idea to call and let JVM Decide when it's right.
 
 # Generational Garbage Collection 
 
+[Check Java Memory](https://nitinkc.github.io/java/JavaMemory/)
+
 Heap is divided into young and old generation space
 
 New objects are created in young generation
@@ -74,7 +76,7 @@ Heap Spaces as shwon in the Visual VM for a running process
 
 # Selecting a Garbage Collector Algo
 
-The virtual machine then has **three** types of collector called 
+The virtual machine then has **three** types of collector algo called 
 
 Serial - Single Threaded `-XX:+UseSerialGC` <br>
 Parallel - `-XX:+UseParallelGC` <br>
