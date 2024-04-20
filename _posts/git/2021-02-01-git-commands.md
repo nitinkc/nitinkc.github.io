@@ -149,7 +149,8 @@ bring back into the other branch
 
 It safer to run `git stash apply` as it does not remove stashed changes instead of `git stash pop`. Conflicts might also occur.
 
- ## Links
+ 
+# Links
 
  [https://ndpsoftware.com/git-cheatsheet.html#loc=workspace](https://ndpsoftware.com/git-cheatsheet.html#loc=workspace)
 

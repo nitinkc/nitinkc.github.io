@@ -1,22 +1,37 @@
 ---
-title:  "Git Rebase"
+title:  "Git Rebase Squash and Fast forward"
 date:   2023-11-07 11:30:00
 categories: ['Git']
 tags: ['Git']
 ---
 
 {% include toc title="Index" %}
+To combine multiple commits (squash) from the feature branch into one while merging into the develop branch,
+an `squash merge` or `interactive rebase`  approach can be used.
 
-# Fast-Forward
+# Using IntelliJ Squash
 
-When the merge from branch A happens with Branch B, and Branch B does not have new commits, the fast forward merge happens. 
-You get message "You have performed a fast-forward merge."
+Remove unnecessary commits by squashing intermediate commits into one.
 
-If both the branches to be merged has changes, Recursive merge happens.
+![squash_intelliJ.png](..%2F..%2Fassets%2Fimages%2Fgit%2Fsquash_intelliJ.png)
 
-[//]: # (![rebase.png]&#40;..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png&#41;)
+# Interactive Rebase
 
-<img src="..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png" width="300" height="300">
+```shell
+git rebase -i develop
+
+# pick or squash
+pick abc123 First commit message
+squash def456 Second commit message
+squash hij789 Third commit message
+
+```
+
+### Using IntelliJ
+![IntelliJRebase.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FIntelliJRebase.png)
+
+Squash the unwanted commits 
+![intelliJInteractiverebase.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FintelliJInteractiverebase.png)
 
 # Rebase
 An alternate to merge is Rebase. Rebase is used to integrate changes from one branch to another
@@ -24,15 +39,24 @@ An alternate to merge is Rebase. Rebase is used to integrate changes from one br
 ## When to use Rebase?
 When your feature branch is local and changing history will not affect others.
 
-- Use `git rebase` when you want to update your feature branch with the latest changes from the main branch (usually `master` or `main`).
+- Use `git rebase` when you want to update your feature branch with the latest changes from the main branch (usually `main` or `develop`).
 - It's suitable when you desire a linear commit history for your branch, making it easier to understand the sequence of changes.
-- This approach is best when working on a local feature branch, and changing history won't impact other team members.
 
-> Note: `git rebase` should be used with caution in collaborative environments where rewriting history may affect others. 
+> Note: `git rebase` should be used with caution in collaborative environments where rewriting history may affect others.
 > In such cases, consider using `git merge` to incorporate changes from the main branch.
 
-# Using IntelliJ Squash
+# Fast-Forward
 
-Remove unnecessary commits by squashing intermediate commits into one.
+When the merge from branch A happens with Branch B, and Branch B does not have new commits, the fast forward merge happens.
+You get message "You have performed a fast-forward merge."
 
-![squash_intelliJ.png](..%2F..%2Fassets%2Fimages%2Fgit%2Fsquash_intelliJ.png)
+If both the branches to be merged has changes, Recursive merge happens.
+
+```shell
+git checkout develop
+git merge --no-ff feature/new-feature
+
+```
+
+<img src="..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png" width="300" height="300">
+
