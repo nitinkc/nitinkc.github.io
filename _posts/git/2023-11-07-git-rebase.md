@@ -15,7 +15,10 @@ Remove unnecessary commits by squashing intermediate commits into one.
 
 ![squash_intelliJ.png](..%2F..%2Fassets%2Fimages%2Fgit%2Fsquash_intelliJ.png)
 
-# Interactive Rebase
+# Rebase
+An alternate to merge is Rebase. Rebase is used to integrate changes from one branch to another
+
+### Interactive Rebase
 
 ```shell
 git rebase -i develop
@@ -24,7 +27,14 @@ git rebase -i develop
 pick abc123 First commit message
 squash def456 Second commit message
 squash hij789 Third commit message
+```
 
+If the changes are pushed into the feature branch on the server, then do an interactive rebase with remote/develop
+
+```shell
+git rebase -i origin/develop
+# squash the commits and then force push
+git push --force
 ```
 
 ### Using IntelliJ
@@ -33,8 +43,6 @@ squash hij789 Third commit message
 Squash the unwanted commits 
 ![intelliJInteractiverebase.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FintelliJInteractiverebase.png)
 
-# Rebase
-An alternate to merge is Rebase. Rebase is used to integrate changes from one branch to another
 
 ## When to use Rebase?
 When your feature branch is local and changing history will not affect others.
@@ -44,6 +52,7 @@ When your feature branch is local and changing history will not affect others.
 
 > Note: `git rebase` should be used with caution in collaborative environments where rewriting history may affect others.
 > In such cases, consider using `git merge` to incorporate changes from the main branch.
+
 
 # Fast-Forward
 
@@ -55,7 +64,6 @@ If both the branches to be merged has changes, Recursive merge happens.
 ```shell
 git checkout develop
 git merge --no-ff feature/new-feature
-
 ```
 
 <img src="..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png" width="300" height="300">
