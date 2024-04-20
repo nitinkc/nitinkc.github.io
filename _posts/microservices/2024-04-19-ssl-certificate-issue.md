@@ -9,4 +9,5 @@ Caused by: javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.s
 
 ![sslIssueFix.png]({{ site.url }}/assets/images/sslIssueFix.png)
 
+# Postman Settings
 ![disableSecurity.png]({{ site.url }}/assets/images/disableSecurity.png)
