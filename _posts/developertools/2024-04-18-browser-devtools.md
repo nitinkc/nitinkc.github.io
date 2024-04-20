@@ -5,7 +5,5 @@ categories: ['Developer tools']
 tags: ['Developer tools']
 ---
 
-{% include toc title="Index" %}
-
-Hide the Overtab to reclaim some space
+Hide the Overview tab to reclaim some space
 ![devTools.png]({{ site.url }}/assets/images/devTools.png)
