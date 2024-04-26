@@ -7,6 +7,8 @@ tags: [Spring Microservices, Spring Boot]
 
 Caused by: javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 
+# Application
+
 ![sslIssueFix.png]({{ site.url }}/assets/images/sslIssueFix.png)
 
 # Postman Settings
@@ -15,5 +17,3 @@ Turn On/Off based on the certificate
 
 ![sslPemFileinPostman.png]({{ site.url }}/assets/images/sslPemFileinPostman.png)
 
-# Application 
-![disableSecurity.png]({{ site.url }}/assets/images/disableSecurity.png)
