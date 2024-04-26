@@ -12,6 +12,7 @@ Caused by: javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.s
 # Postman Settings
 
 Turn On/Off based on the certificate
+
 ![disableSecurity.png]({{ site.url }}/assets/images/disableSecurity.png)
 
-![sslPemFileinPostman.png](..%2F..%2Fassets%2Fimages%2FsslPemFileinPostman.png)
+![sslPemFileinPostman.png]({{ site.url }}/assets/images/sslPemFileinPostman.png)
