@@ -13,6 +13,7 @@ Caused by: javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.s
 
 Turn On/Off based on the certificate
 
-![disableSecurity.png]({{ site.url }}/assets/images/disableSecurity.png)
-
 ![sslPemFileinPostman.png]({{ site.url }}/assets/images/sslPemFileinPostman.png)
+
+# Application 
+![disableSecurity.png]({{ site.url }}/assets/images/disableSecurity.png)
