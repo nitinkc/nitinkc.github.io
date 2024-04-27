@@ -1,13 +1,15 @@
 ---
-title:  "Security Certificate Issue"
+title:  "ssl Security Certificate Issue"
 date:   2024-04-19 21:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 
-Caused by: javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+Solution for the issue 
+Caused by: `javax.net.ssl.SSLHandshakeException`: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 
-Cert issue for Mac and Windows users when opening GKE URLs from UI:
+Certificate issue for Mac and Windows users when opening GKE URLs from UI:
+![postmanSsl.png]({{ site.url }}/assets/images/postmanSsl.png)
 
 # Update Postman Certificate Authority (Mac)
 
@@ -37,18 +39,18 @@ Turn On/Off based on the certificate
 
 ![sslPemFileinPostman.png]({{ site.url }}/assets/images/sslPemFileinPostman.png)
 
-
 # Install the certificate in JDK
 
 When developing microservice that needs connection to GKE endpoints, 
 the local machines need have cert imported to java keystore.
 
-path: /Library/Java/JavaVirtualMachines/jdk-11.0.8.jdk/Contents/Home/lib/security/cacerts.
+path of jdk installation: /Library/Java/JavaVirtualMachines/jdk-11.0.8.jdk/Contents/Home/lib/security/cacerts.
 
-please execute this command with the path added in it:
+please execute the command with the path added in it:
 
 ```shell
-sudo keytool -import -file /Users/${UserName}/Documents/My_Enterprise_Root_CA.cer -keystore /Users/${UserName}/Library/Java/JavaVirtualMachines/corretto-21.0.3/Contents/Home/lib/security/cacerts
+sudo keytool -import -file /Users/${UserName}/Documents/My_Enterprise_Root_CA.cer \
+-keystore /Users/${UserName}/Library/Java/JavaVirtualMachines/corretto-21.0.3/Contents/Home/lib/security/cacerts
 ```
 
 it will ask for 2 passwords then
