@@ -5,20 +5,22 @@ categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 
-Solution for the issue 
-Caused by: `javax.net.ssl.SSLHandshakeException`: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+Solution for the issue on Local microservice testing
+Caused by: `javax.net.ssl.SSLHandshakeException`: PKIX path building failed: `sun.security.provider.certpath.SunCertPathBuilderException`: 
+unable to find valid certification path to requested target
 
 Certificate issue for Mac and Windows users when opening GKE URLs from UI:
 ![postmanSsl.png]({{ site.url }}/assets/images/postmanSsl.png)
 
 # Update Postman Certificate Authority (Mac)
 
-Update CA Certificate for Windows
-Download  certificate
-Double-click on certificate -> Current User -> Select Place all certificates in the following store - > Click on Browse → Select Trusted Root Certification Authorities → Click Next → Finish
-
 Download the certificate from the web browser
 ![sslDownload.png]({{ site.url }}/assets/images/sslDownload.png)
+
+##### Update CA Certificate for Windows
+- Download  certificate
+- Double-click on certificate → Current User → Select Place all certificates in the following store → Click on Browse 
+→ Select Trusted Root Certification Authorities → Click Next → Finish
 
 For Mac double-click and it will install or open `Key Chain Access`
 ![ssl-keychain.png]({{ site.url }}/assets/images/ssl-keychain.png)
