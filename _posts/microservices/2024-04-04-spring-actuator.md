@@ -5,9 +5,9 @@ categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 
+## Actuator Settings
 
 ```properties
-## Actuator Settings
 management.endpoints.web.exposure.include=health,info, metrics
 management.endpoint.health.show-details=always
 management.endpoint.health.enabled=true
@@ -37,12 +37,8 @@ public class RedisHealthIndicator implements HealthIndicator {
 
 [http://localhost:8080/actuator](http://localhost:8080/actuator)
 
-
 ## Check Health for Redis custom-url
 http://localhost:8080/actuator/health/redis-health](http://localhost:8080/actuator/health/redis-health)
-
-
-
 
 ```json
 "redis": {
