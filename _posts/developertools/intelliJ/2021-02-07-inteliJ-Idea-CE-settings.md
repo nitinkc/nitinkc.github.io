@@ -133,6 +133,9 @@ Make the following changes in the intelliJ settings
 # Enable SonarCube
 Install the SonarLint plugin and configure it in IntelliJ
 
-![sonar1.png](..%2F..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar1.png)
-![sonar2.png](..%2F..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar2.png)
-![sonar3.png](..%2F..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar3.png)
+![sonar1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar1.png)
+
+Add & Configure the Connection
+![sonar2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar2.png)
+Set the Token, instead of user/password
+![sonar3.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar3.png)
