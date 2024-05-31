@@ -139,3 +139,8 @@ Add & Configure the Connection
 ![sonar2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar2.png)
 Set the Token, instead of user/password
 ![sonar3.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar3.png)
+
+# Enable Google Code Format
+![google-format1.png](.%2F..%2Fassets%2Fimages%2FintelliJ%2Fgoogle-format1.png)
+
+![google-format2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fgoogle-format2.png)
