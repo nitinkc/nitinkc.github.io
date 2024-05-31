@@ -276,6 +276,8 @@ ENTRYPOINT exec java -jar $APP_HOME/build/libs/$JAR_NAME
 The Automation can be done via circle-ci, github-work flow or any other automation engines
 
 ### Gradle Project
+Automatically publish image to dockerhub with github actions
+[using dockerhub](https://github.com/nitinkc/SpringBoot-reference/blob/main/.github/workflows/docker-publish.yml)
 
 The docker file takes care of compiling and generating the jar file
 [Multistage Docker file](https://github.com/nitinkc/docker-multistage-gradle/blob/main/Dockerfile)
