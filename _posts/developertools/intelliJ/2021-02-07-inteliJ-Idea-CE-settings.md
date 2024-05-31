@@ -129,3 +129,10 @@ Make the following changes in the intelliJ settings
 ![autoRestart1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FautoRestart1.png)
 
 ![autoRestart2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FautoRestart2.png)
+
+# Enable SonarCube
+Install the SonarLint plugin and configure it in IntelliJ
+
+![sonar1.png](..%2F..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar1.png)
+![sonar2.png](..%2F..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar2.png)
+![sonar3.png](..%2F..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar3.png)
