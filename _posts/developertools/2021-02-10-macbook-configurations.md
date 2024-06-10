@@ -17,15 +17,12 @@ Installing the following tools and configuring them ensures maximum ease of deve
 1. Install Brew Package manager
 2. Create personalized [profiles and configure alias](https://github.com/nitinkc/SystemEnvironment/tree/master/mac)
 
-
-| Tool              | Details                                                                                             | 
-|:------------------|:----------------------------------------------------------------------------------------------------|   
-| Iterm             | [Configuring iTerm]({% post_url /developertools/2021-02-01-iterm2-zsh-config %})                    |
-| Profile Settings  | [Set Local profile, alias etc.]({% post_url /developertools/2023-07-12-profile-settings %})         |
-| IntelliJ	Settings | [Configuring IntelliJ]({% post_url /developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings %}) |
-| Git Config        | [Configuring global git config]({% post_url /git/2022-03-16-multiple-git-config %})                 |
-| Sublime	         | [Configuring Sublime Editor]({% post_url /developertools/2021-03-24-sublime-settings %})            |
-| Brew Package      | [Migrating brew packages]({% post_url /developertools/2022-08-13-brew-package-migration%} )         |
+- Iterm              [Configuring iTerm]({% post_url /developertools/2021-02-01-iterm2-zsh-config %})                    
+- Profile Settings   [Set Local profile, alias etc.]({% post_url /developertools/2023-07-12-profile-settings %})         
+- IntelliJ Settings  [Configuring IntelliJ]({% post_url /developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings %}) 
+- Git Config         [Configuring global git config]({% post_url /git/2022-03-16-multiple-git-config %})                 
+- Sublime	          [Configuring Sublime Editor]({% post_url /developertools/2021-03-24-sublime-settings %})           
+- Brew Package       [Migrating brew packages]({% post_url /developertools/2022-08-13-brew-package-migration%} )         
                 
 The following tools helps making the develop environment much more conducive to work. 
 

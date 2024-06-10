@@ -144,3 +144,6 @@ Set the Token, instead of user/password
 ![google-format1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fgoogle-format1.png)
 
 ![google-format2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fgoogle-format2.png)
+
+# Enable Font Zoom/Font Size change
+![font-zoom.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Ffont-zoom.png)

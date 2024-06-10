@@ -119,14 +119,14 @@ sidebar:
 ```
 ## INCLUDE TIME
 
-| Column Header 1                                                         | Column Header 1                          <br/> | Format   |
-|:------------------------------------------------------------------------|:-----------------------------------------------|:---------| 
-| Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} | {{ site.time  }}                               |          |
-| {% raw  %}`{{ 'now'                                                     | date: "%Y/%m/%d" }}`{% endraw %}               | {{ 'now' | date: "%Y/%m/%d" }} |
-| {% raw  %}`{{ 'now'                                                     | date_to_rfc822 }}`{% endraw %}                 | {{ 'now' | date_to_rfc822 }} |
-| {% raw  %}`{{ 'now'                                                     | date: "%C" }}`{% endraw %}                     | {{ 'now' | date: "%C" }} |
-| {% raw  %}`{{ 'now'                                                     | date: "%c" }}`{% endraw %}                     | {{ 'now' | date: "%c" }} |
-| {% raw  %}`{{ 'now'                                                     | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}  | {{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}|
+| Column Header 1                                                         | Column Header 1                          <br/> |
+|:------------------------------------------------------------------------|:-----------------------------------------------|
+| Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} | {{ site.time  }}                               |
+| {% raw  %}`{{ 'now'                                                     | date: "%Y/%m/%d" }}`{% endraw %}               |
+| {% raw  %}`{{ 'now'                                                     | date_to_rfc822 }}`{% endraw %}                 |
+| {% raw  %}`{{ 'now'                                                     | date: "%C" }}`{% endraw %}                     |
+| {% raw  %}`{{ 'now'                                                     | date: "%c" }}`{% endraw %}                     |
+| {% raw  %}`{{ 'now'                                                     | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}  |
 
 ## Notices with theme
 
