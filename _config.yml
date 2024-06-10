@@ -218,6 +218,9 @@ whitelist:
   - jekyll-include-cache
   - jekyll-seo-tag
   - jekyll-remote-theme
+  - jekyll-plantuml
+  - jekyll-plantuml-embed
+  - jekyll-spaceship
 
 
 # Archives
