@@ -14,8 +14,8 @@ source "https://rubygems.org"
 #gem "minima", "~> 2.0"
 gem "minimal-mistakes-jekyll"
 gem 'faraday', '~> 0.17.3'
-# gem 'jekyll-plantuml-base64', '~> 0.1.4.36.1'
-gem "jekyll-plantuml"
+gem 'jekyll-plantuml'
+
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
@@ -32,7 +32,8 @@ group :jekyll_plugins do
   gem "jekyll-data"
   gem "octopress-debugger"
   gem "kramdown-syntax-coderay"
-  gem 'jekyll-plantuml'
+  gem 'jekyll-spaceship'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
