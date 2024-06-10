@@ -32,6 +32,7 @@ group :jekyll_plugins do
   gem "jekyll-data"
   gem "octopress-debugger"
   gem "kramdown-syntax-coderay"
+  gem 'jekyll-plantuml'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
