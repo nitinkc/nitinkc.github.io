@@ -15,6 +15,9 @@ teaser                : # path of fallback teaser image, e.g. "/assets/images/50
 logo                  :  /assets/images/Coloured.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title         : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs           : true # true, false (default)
+url                 : https://nitinkc.github.io/
+#baseurl             : '/'
+repository          : nitinkc/nitinkc.github.io.git
 
 # Outputting
 permalink: /:categories/:title/
