@@ -208,8 +208,6 @@ plugins:
   - octopress-debugger
   - jekyll-seo-tag
   - jekyll-remote-theme
-  - jekyll-plantuml
-  - jekyll-plantuml-embed
   - jekyll-spaceship
 
 # mimic GitHub Pages with --safe
@@ -221,8 +219,6 @@ whitelist:
   - jekyll-include-cache
   - jekyll-seo-tag
   - jekyll-remote-theme
-  - jekyll-plantuml
-  - jekyll-plantuml-embed
   - jekyll-spaceship
 
 
@@ -346,7 +342,7 @@ jekyll-spaceship:
       custom: ['@startmermaid', '@endmermaid']
     config:
       theme: default
-    src: https://mermaid.ink/svg/
+    src: https://mermaid.ink/img/
   media-processor:
     default:
       id: 'media-{id}'
