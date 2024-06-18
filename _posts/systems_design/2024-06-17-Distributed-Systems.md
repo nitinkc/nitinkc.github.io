@@ -25,3 +25,15 @@ Distributed Systems is a collection of independent computers that appear to its 
 | Messaging       | KAfka, RabbitMq, Google PubSub             ||
 
 
+# Lambda Architecture
+Wrong Answers fast
+
+Right answers slow
+
+
+# Synchronization
+
+Network time protocols
+
+Vector clocks
+

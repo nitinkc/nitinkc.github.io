@@ -6,6 +6,23 @@ tags: [System Design]
 ---
 {% include toc title="Index" %}
 
+Means of loosely coupling sub-systems
+
+Messages consumed by subscribers and created by one or more producers
+
+Message are organized into topics. Producers put messages into topic.
+
+Processed by Broker (Kafka, RabbitMQ)
+
+persistent over short term.
+
+### Messages
+immutable array of bytes
+
+topic -> feed of messages
+
+See : Topic Partitioningn 
+
 Queue helps keeping track of requests and redirect in case of a failure
 
 - Asynchronous requests
@@ -35,6 +52,8 @@ Routing Alge decides where to send messages from exchange
 
 Routing algo depends on exchange type and rules called "bindings"
 
+
+# Why is kafka fast
 ![](https://www.youtube.com/watch?v=UNUz1-msbOM)
 Kafka is optimized for high Throughput. 
 

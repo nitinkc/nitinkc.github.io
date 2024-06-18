@@ -78,3 +78,9 @@ Hash the serverId along with the requestId
 | like Acamai                | ^^                                                                    |
 | Load Balancers             | Distribute persistent connection evenly across backend servers        |
 | like Google Load Balancers | ^^                                                                    |
+
+# Guaranteed Strong Consistency
+$$ R + W > N  $$
+𝑅 : is the number of replicas that agreed on read,
+𝑊 : is the number of replicas that successfully take a write, and
+𝑁 : is the total number of replicas,

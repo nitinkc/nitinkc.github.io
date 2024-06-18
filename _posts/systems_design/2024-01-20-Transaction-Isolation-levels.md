@@ -137,3 +137,4 @@ So if that happens we rollback one transaction.
 | 2                 | 3                  | **Repeatable Read**  | Versioning of unchanged values | maintains all the version of changes                           |
 | Most Isolated(1)  | Least Efficient(4) | **Serializable**     | Queued Locks                   | Causal Ordering. Same Key Tx's must be ordered else concurrent |
 
+# Distributed Transactions

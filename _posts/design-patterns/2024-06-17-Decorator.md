@@ -7,6 +7,6 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
-Decorator/Wrapper Patrtern
+Decorator/Wrapper Pattern
 
 hint, both is-a and has-a relationship with the type is it trying to decorate
