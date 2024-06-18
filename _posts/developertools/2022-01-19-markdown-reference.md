@@ -190,3 +190,7 @@ keep the expressions between `$$`
 | \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] | $$ \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] $$                           |
 | \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 | $$ \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 $$ |
 | \xrightarrow[under]{over}                                      | $$ \xrightarrow[under]{over} $$                                                                         |
+
+### LaTex, Table, Media, Math, Plant UML
+
+[Jeykll Spaceship](https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#table-of-contents)

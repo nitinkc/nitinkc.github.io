@@ -1,0 +1,27 @@
+---
+title:  "Containers vs Virtual Machine"
+date:   2024-06-13 11:02:00
+categories: [System Design]
+tags: [System Design]
+---
+{% include toc title="Index" %}
+
+![](https://www.youtube.com/watch?v=Jz8Gs4UHTO8&t=307s)
+Bare Metal : Physical computer/server 
+
+Virtual Machine : Emulation of physical machines
+hardware -> Host operating system -> Hypervisor -> virtual machines
+
+hardware -> bare metal hypervisor -> virtual machines
+- high performance
+- high cost of hardawre that supports bare metal hypervisor
+
+Virtual machines are vulnerable to noise neighbour problems
+
+
+Containerization : light weight Virtulization
+
+hardware -> host operating system -> container Engine -> containers
+
+Containers
+

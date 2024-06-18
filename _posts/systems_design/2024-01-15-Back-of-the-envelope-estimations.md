@@ -39,12 +39,34 @@ Assume a good quality image of 1 MB
 
 # QPS - Queries per second
 
-Peak QPS = 2 times QPS
+Peak QPS = 2 to 5 times QPS
 
 ### Time Estimations
 
-1 Day has $$ \textrm{86400 seconds} = 24\times 60\times 60 \approx 90K secs $$
+1 Day has $ \textrm{86400 seconds} = 24\times 60\times 60 \approx 90K secs $
 
 100 Million load per day 
 
-Load per second = $$ 100\times10^6 \divide 90\times 10^3 = 1111.11 \approx 1200 $$. Denominator is slightly increased to 90K so for lesser denominator the output will increase
+
+$ \text{Load per second} = \frac{100 \times 10^6}{90 \times 10^3} = \frac{100{,}000{,}000}{90{,}000} = 1111.11\overline{1} \approx 1200 $ 
+
+
+Denominator is slightly increased to 90K so for lesser denominator the output will increase
+
+# Estimates
+
+1. DAU : Daily Average Users eg. 300 million MAU
+2. Usage per DAU = 10 -25% make a post  (QPS : Queries per second)
+3. Scale Factor : estimate how much higher the traffic would peak, compared to the average
+
+![](https://www.youtube.com/watch?v=UC5xf8FbdJc)
+
+### Latency Numbers : 
+
+Billion is $ 10^9 $
+nanosecond is 1 billionth of a second
+
+Million is $ 10^6 $
+microsecond is 1 millionth of a second
+
+![](https://www.youtube.com/watch?v=FqR5vESuKe0)

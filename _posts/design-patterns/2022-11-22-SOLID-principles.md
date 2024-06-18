@@ -31,10 +31,13 @@ Supplier<LocalDate> s2 = () -> LocalDate.now();
 **O -> Open closed principle**
 * Open to Extension
 * Closed for modification
+* new classes rather than modifying existing one after code reached steady state
+
 * Extend vs implement
 * Eg : Strategy design pattern, Template design pattern
 
 **L -> Liskov substitution principle**
+- Same as POLYMORPHISM.
 * subclasses should be able to be used interchangeably with their base class
 * Overriding methods should not violate the behavior expected from the superclass
 ```java
