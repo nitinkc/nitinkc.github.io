@@ -1,8 +1,8 @@
 ---
 title:  "Java Memory"
 date:   2024-02-10 01:23:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java',"Performance Engineering"]
+tags: ['Java',"Performance Engineering"]
 ---
 
 {% include toc title="Index" %}

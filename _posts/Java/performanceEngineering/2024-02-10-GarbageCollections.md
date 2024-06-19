@@ -1,8 +1,8 @@
 ---
 title:  "Garbage Collections"
 date:   2024-02-11 00:12:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java',"Performance Engineering"]
+tags: ['Java',"Performance Engineering"]
 ---
 
 {% include toc title="Index" %}

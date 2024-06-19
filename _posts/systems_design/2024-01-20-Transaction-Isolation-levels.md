@@ -48,6 +48,10 @@ After a user completes an online purchase (which involves a series of database t
 
 **Durability**: Committed transactions persist even after system failures.
 
+
+![](https://www.youtube.com/watch?v=GAe5oB742dw)
+
+
 ##### Dirty Reads
 A dirty read occurs when one transaction reads uncommitted changes made by another transaction.
 

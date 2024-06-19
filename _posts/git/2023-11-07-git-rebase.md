@@ -1,5 +1,5 @@
 ---
-title:  "Git Rebase Squash and Fast forward"
+title:  "Git Merge, Rebase Squash and Fast forward"
 date:   2023-11-07 11:30:00
 categories: ['Git']
 tags: ['Git']
@@ -67,4 +67,7 @@ git merge --no-ff feature/new-feature
 ```
 
 <img src="..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png" width="300" height="300">
+
+![](https://www.youtube.com/watch?v=0chZFIZLR_0)
+
 
