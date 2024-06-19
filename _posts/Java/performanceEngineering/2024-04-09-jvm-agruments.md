@@ -1,8 +1,8 @@
 ---
 title:  "JVM Arguments"
 date:   2024-04-09 12:30:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java',"Performance Engineering"]
+tags: ['Java',"Performance Engineering"]
 ---
 
 
