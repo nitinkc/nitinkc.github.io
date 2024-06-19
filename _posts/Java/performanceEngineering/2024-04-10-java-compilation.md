@@ -1,8 +1,8 @@
 ---
 title:  "Java Compilation"
 date:   2024-04-10 00:10:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java',"Performance Engineering"]
+tags: ['Java',"Performance Engineering"]
 ---
 
 

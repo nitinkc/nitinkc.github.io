@@ -1,8 +1,8 @@
 ---
 title:  "Java Systems Stats"
 date:   2023-10-17 08:30:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java',"Performance Engineering"]
+tags: ['Java',"Performance Engineering"]
 ---
 {% include toc title="Index" %}
 ## Stats
