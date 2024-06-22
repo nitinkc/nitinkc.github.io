@@ -32,9 +32,8 @@ Top pick for Web API's
 
 ![](https://www.youtube.com/watch?v=yWzKJPw_VzM)
 
+# Webhooks 
 
-
-# Webhooks
 Webhooks are a powerful way to enable real-time communication between systems. 
 
 They allow one system to send automated notifications or data updates to another system when certain events occur, 
@@ -50,10 +49,8 @@ without the need for the receiving system to continually check (constant polling
 ![](https://www.youtube.com/watch?v=x_jjhcDrISk)
 
 
-# Web socket
-- persistent, low latency bi-directional data exchange
-- facilitate realtime data exchange
-- ideal for applications where instant updates are critical, like chat applications, online gaming, trading platforms
+# Web socket - persistent bidirectional full duplex connections
+
 
 
 # gRPC
