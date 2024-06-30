@@ -203,3 +203,18 @@ SELECT * FROM employees
 WHERE last_name = 'Smith' AND first_name = 'John';
 ```
 
+@startuml
+actor PeerA
+actor PeerB
+
+PeerA -> DirectoryServer : Request for peers
+DirectoryServer --> PeerA : Respond with PeerB info
+
+PeerA -> PeerB : Initiate Handshake
+PeerB -> PeerA : Acknowledge Handshake
+
+PeerA -> PeerB : Establish Session (Agree on protocol, ports, etc.)
+
+PeerA -> PeerB : Data Exchange
+PeerB -> PeerA : Data Exchange
+@enduml
