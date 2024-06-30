@@ -83,3 +83,59 @@ WHERE last_name = 'Smith';
 SELECT * FROM employees
 WHERE last_name = 'Smith' AND first_name = 'John';
 ```
+
+# DB Index
+A database index is an efficient **lookup table** that allows a database to find data much faster.
+
+```markdown
++------------------------+      +------------------------+
+|      INDEX TABLE       |      |     DATABASE TABLE     |
++--------+---------------+      +--------+---------------+
+|  Key   |    Pointer    |      |   Col1 |      Col2     |
++--------+---------------+      +--------+---------------+
+|   A    |      --->     |      |   A    |      Data1    |
+|        |               |      +--------+---------------+
+|   B    |      --->     |      |   B    |      Data2    |
+|        |               |      +--------+---------------+
+|   C    |      --->     |      |   C    |      Data3    |
+|        |               |      +--------+---------------+
+|   D    |      --->     |      |   D    |      Data4    |
+|        |               |      +--------+---------------+
+|   E    |      --->     |      |   E    |      Data5    |
++--------+---------------+      +--------+---------------+
+```
+
+- index helps to avoid full scan for a single row in a massive table
+- with index, the pointer helps to get the exact address of the indexed column
+
+An index on a non-primary column allows the database to quickly locate rows based on the indexed column's values, without scanning the entire table
+
+- columns that are frequently used in WHERE clauses, JOIN conditions, or ORDER BY clauses are good candidates for indexing. 
+
+```plantuml
+entity "Employees" as Employees {
+    + employee_id : INT
+    --
+    first_name : VARCHAR(50)
+    last_name : VARCHAR(50)
+    email : VARCHAR(100)
+    department : VARCHAR(50)
+    hire_date : DATE
+    --
+    PRIMARY KEY(employee_id)
+}
+```
+Creating index for Employees Table 
+```sql
+CREATE INDEX idx_department ON employees(department);
+       
+-- Analyze Query Performance
+EXPLAIN SELECT * FROM employees WHERE department = 'Sales';
+```
+
+Composite Index
+```sql
+CREATE INDEX idx_first_last_name ON employees(first_name, last_name);
+-- Analyze Query Performance
+EXPLAIN SELECT * FROM employees WHERE first_name = 'John' AND last_name = 'Doe';
+```
