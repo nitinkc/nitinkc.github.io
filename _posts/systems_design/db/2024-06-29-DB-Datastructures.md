@@ -11,15 +11,17 @@ tags: [System Design]
 ![](https://www.youtube.com/watch?v=W_v05d_2RTo)
 
 # Skip List
-
+[https://nitinkc.github.io/system%20design/SkipLists/](https://nitinkc.github.io/system%20design/SkipLists/)
 
 # Hash index: 
 a very common implementation of the “Map” data structure (or “Collection”)
 
 # SSTable - Sorted String Tables
+(https://nitinkc.github.io/system%20design/SSTables/)[https://nitinkc.github.io/system%20design/SSTables/]
+
 
 # LSM tree: Skiplist + SSTable
-
+[https://nitinkc.github.io/system%20design/LSM-Tree/](https://nitinkc.github.io/system%20design/LSM-Tree/)
 
 # B-tree: 
 disk-based solution. Consistent read/write performance
