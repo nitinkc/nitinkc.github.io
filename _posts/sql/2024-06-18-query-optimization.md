@@ -1,5 +1,5 @@
 ---
-title:  "Query Optimization"
+title:  "SQL/Query Optimization"
 date:   2024-06-18 14:25:00
 categories: ['SQL']
 tags: ['SQL']
@@ -12,13 +12,13 @@ tags: ['SQL']
 
 [Query Execution Plan](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#visualizing-a-sql-query)
 
-
+# Indexing
 Indices can be saved in B-Trees or Bitmap Index
 
 For where clause, comparisons should be  SARGABLE - **S**earch **ARG**ument **ABLE**
 - refers to queries that can use indices for faster execution
 
-B-Tree Index
+# B-Tree Index
 
 B-Tree indices are commonly used for columns with a wide range of values and support equality and range queries efficiently.
 
@@ -112,19 +112,22 @@ An index on a non-primary column allows the database to quickly locate rows base
 
 - columns that are frequently used in WHERE clauses, JOIN conditions, or ORDER BY clauses are good candidates for indexing. 
 
-```plantuml
+@startuml
+
 entity "Employees" as Employees {
-    + employee_id : INT
-    --
-    first_name : VARCHAR(50)
-    last_name : VARCHAR(50)
-    email : VARCHAR(100)
-    department : VARCHAR(50)
-    hire_date : DATE
-    --
-    PRIMARY KEY(employee_id)
++ employee_id : INT
+--
+first_name : VARCHAR(50)
+last_name : VARCHAR(50)
+email : VARCHAR(100)
+department : VARCHAR(50)
+hire_date : DATE
+--
+PRIMARY KEY(employee_id)
 }
-```
+
+@enduml
+
 Creating index for Employees Table 
 ```sql
 CREATE INDEX idx_department ON employees(department);
