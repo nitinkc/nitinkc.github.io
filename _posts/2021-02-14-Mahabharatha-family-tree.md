@@ -10,6 +10,7 @@ tags: [Miscellaneous]
 
 ![]({{ site.url }}/assets/images/mahabharat_1.png)
 
+Image 2:
 ![]({{ site.url }}/assets/images/mahabharat_2.png)
 
 # Mahabharata Family Tree
@@ -50,7 +51,7 @@ Additional Lineages and Connections
 - Yayati: Ancestor of Puru and Yadu
 
 
-```mermaid
+```mermaid!
 graph TD
     Brihaspati -->|Father of| Kacha
     Brihaspati -->|Husband of| Tara
@@ -91,9 +92,4 @@ graph TD
     Vishwamitra -->|Encounters| Urvashi
     Vishwamitra -->|Encounters| Menaka
     Vishwamitra -->|Entraps|`KingDushyant`
-    `
 ```
-प्रारभ्यते न खलु विघ्न-भयेन नीचैः
-प्रारभ्य विघ्न-विहता विरमन्ति मध्याः ।
-विघ्नैः सहस्र-गुणितैर् अपि हन्यमानाः
-प्रारब्धम् उत्तम-गुणा न परित्यजन्ति ॥ २४४ ॥

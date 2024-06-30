@@ -81,14 +81,12 @@ Complexity in Testing and Debugging: Distributed and event-driven nature can com
 
 # Example with Google Cloud Functions (Java)
 
-Go to Google Cloud Console and navigate to Cloud Functions.
+- Go to Google Cloud Console and navigate to Cloud Functions.
+- Create a new function and choose a runtime (e.g., Java 11).
+- Configure the trigger type to HTTP.
+- Write Function Code:
 
-Create a new function and choose a runtime (e.g., Java 11).
-
-Configure the trigger type to HTTP.
-Write Function Code:
-
-Below is a basic example of a Java Cloud Function that handles an HTTP POST request and returns a response.
+Java Cloud Function code that handles an HTTP POST request and returns a response.
 ```java
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
@@ -102,7 +100,7 @@ public class HelloWorld implements HttpFunction {
   private static final Gson gson = new Gson();
 
   @Override
-  public String service(HttpRequest request, HttpResponse response) throws IOException {
+  public MyResponse service(HttpRequest request, HttpResponse response) throws IOException {
     // Parse the incoming JSON body
     String requestBody = request.getReader().lines().reduce("", (s1, s2) -> s1 + s2);
     String name = gson.fromJson(requestBody, MyRequest.class).getName();
@@ -115,20 +113,21 @@ public class HelloWorld implements HttpFunction {
     response.setStatusCode(200);
     PrintWriter writer = new PrintWriter(response.getWriter());
     writer.print(gson.toJson(responseBody));
+    return responseBody;
   }
 
   // Define request and response classes
   @Getter
   @Setter
   @AllArgsConstructor    
-  static class MyRequest {
+  class MyRequest {
     private String name;
   }
 
   @Getter
   @Setter
   @AllArgsConstructor
-  static class MyResponse {
+  class MyResponse {
     private String message;
   }
 }
