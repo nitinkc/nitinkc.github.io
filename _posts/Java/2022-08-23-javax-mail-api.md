@@ -15,7 +15,7 @@ Set up the properties either from the properties file or via final variables
 private static final String EMAIL_HOST = "xxxx.xxxx.com";
 private static final int EMAIL_PORT = 25;
 private static final String EMAIL_FROM = "test.test@test.com";
-private static final String PERSONAL_NAME = "Automatic Report Sending Service"
+private static final String PERSONAL_NAME = "Automatic Report Sending Service";
 ```
 
 We can create a method that can be used to send emails from service `sendJavaEmail(String to, String subject, String msg, String pathToAttachment)`
