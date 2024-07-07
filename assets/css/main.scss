@@ -3,8 +3,7 @@
 ---
 
 @charset "utf-8";
-// @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin from the config.yml
-@import "minimal-mistakes"; // main partials
+
 
 // Site Customization
 // $primary-color: #2d3cc7 !default;
@@ -33,6 +32,10 @@ $my-custom-font-family: Times, serif, -apple-system, BlinkMacSystemFont, Roboto,
 //$global-font-family: $sans-serif !default;
 $global-font-family: $my-custom-font-family !default;
 $header-font-family: $helvetica !default;
+
+//Keep the imports below the Variable names
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin from the config.yml
+@import "minimal-mistakes"; // main partials
 
 #main {
   max-width: unset !important;
