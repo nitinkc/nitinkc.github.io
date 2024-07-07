@@ -4,20 +4,21 @@
 
 @charset "utf-8";
 
+
 // Site Customization
 // $primary-color: #2d3cc7 !default;
 // $primary-color: #b51b58 !default;
 // $primary-color: #1bb582 !default;
 // $link-color: $primary-color;
 // $link-color-visited: #b51b58 !default;
-$intro-transition  : true;
-$global-transition : none;
+$intro-transition: true;
+$global-transition: none;
 
 /* Colors Air Skin*/
 //$background-color: #eeeeee !default;
 $text-color: #222831 !default;
 $muted-text-color: #393e46 !default;
-$primary-color: #b51b58 !default;//#0092ca Blue
+$primary-color: #b51b58 !default; //#0092ca Blue
 $border-color: mix(#fff, #393e46, 75%) !default;
 $footer-background-color: $primary-color !default;
 $link-color: #393e46 !default;
@@ -27,229 +28,212 @@ $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
 
 // Custom Font for the
 $helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
-$my-custom-font-family: Times, serif,-apple-system,BlinkMacSystemFont,Roboto,"roboto slab","droid serif","segoe ui",system-ui,Arial,sans-serif;
+$my-custom-font-family: Times, serif, -apple-system, BlinkMacSystemFont, Roboto, "roboto slab", "droid serif", "segoe ui", system-ui, Arial, sans-serif;
 //$global-font-family: $sans-serif !default;
 $global-font-family: $my-custom-font-family !default;
 $header-font-family: $helvetica !default;
 
-// @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin from the config.yml
+//Keep the imports below the Variable names
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin from the config.yml
 @import "minimal-mistakes"; // main partials
 
 #main {
-    max-width: unset !important;
-  }
-  
-  .taxonomy__section .list__item { margin-top: 2em; }
-  .taxonomy__section .list__item:nth-child(1) {
+  max-width: unset !important;
+}
+
+.taxonomy__section .list__item {
+  margin-top: 2em;
+}
+
+.taxonomy__section .list__item:nth-child(1) {
+  margin-top: 0.5em;
+}
+
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+
+.taxonomy__index a {
+  text-transform: uppercase;
+  font-size: 0.70em;
+}
+
+.archive__item-title a {
+  color: $text-color;
+}
+
+.archive__item-title a:hover {
+  color: $link-color;
+}
+
+.archive__subtitle::after {
+  background: $primary-color;
+  content: '';
+  display: block;
+  height: 2px;
+  margin: 0.75em auto 0 auto;
+  position: relative;
+  width: 4em;
+}
+
+.archive__subtitle {
+  font-size: $type-size-5;
+  color: $muted-text-color;
+  font-weight: 800;
+  letter-spacing: .25em;
+  line-height: 1.65;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 0px solid #bfbfbf;
+
+  + .list__item .archive__item-title {
     margin-top: 0.5em;
   }
-  
-  .page__footer {
-    color: #fff !important; // override
-  }
-  
-  .page__footer-follow .social-icons .svg-inline--fa {
-    color: inherit;
-  }
+}
 
-  .taxonomy__index a {
-    text-transform: uppercase;
-    font-size: 0.70em;
+// kbd {
+//   border: 1px solid #aaa;
+//   -moz-border-radius: $border-radius;
+//   -webkit-border-radius: $border-radius;
+//   border-radius: $border-radius;
+//   -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+//   -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+//   box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+//   background-color: $code-background-color;
+//   background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee);
+//   background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee);
+//   background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee);
+//   background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee);
+//   padding: 0.1em 0.3em;
+//   font-family: inherit;
+//   font-size: $type-size-6;
+// }
+
+.site-title {
+  align-self: stretch;
+  -webkit-box-align: center;
+  align-items: center;
+  z-index: 20;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  // text-transform: uppercase;
+  font-size: 1.3em;
+}
+
+.masthead__menu-item {
+  display: block;
+  list-style-type: none;
+  white-space: nowrap;
+  font-weight: 200;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+
+  &--lg {
+    padding-right: 2em;
+    font-weight: 700;
   }
-  
-  .archive__item-title a {
-    color: $text-color;
+}
+
+.masthead__inner-wrap {
+  max-width: none;
+}
+
+.masthead {
+  // border-bottom: 4px solid #2053b8;
+}
+
+.page__title {
+  margin-top: 0;
+  font-weight: 800;
+  //letter-spacing: .15em;
+  line-height: 1.65;
+  //margin: 0 0 1em 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #B00020;
+  text-decoration: underline;
+  font-family: 'Arial', sans-serif;
+
+  & + .page__meta {
+    margin-top: -0.5em;
   }
-  
-  .archive__item-title a:hover {
-    color: $link-color;
-  }
-  
-  .archive__subtitle::after {
-    background: $primary-color;
-    content: '';
-    display: block;
-    height: 2px;
-    margin: 0.75em auto 0 auto;
-    position: relative;
-    width: 4em;
-  }
-  
-  .archive__subtitle {
-    font-size: $type-size-5;
-    color: $muted-text-color;
-    font-weight: 800;
-    letter-spacing: .25em;
-    line-height: 1.65;
-    text-transform: uppercase;
-    text-align: center;
-    border-bottom: 0px solid #bfbfbf;
-  
-    + .list__item .archive__item-title {
-      margin-top: 0.5em;
-    }
-  }
-  
-  // kbd {
-  //   border: 1px solid #aaa;
-  //   -moz-border-radius: $border-radius;
-  //   -webkit-border-radius: $border-radius;
-  //   border-radius: $border-radius;
-  //   -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
-  //   -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
-  //   box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
-  //   background-color: $code-background-color;
-  //   background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee);
-  //   background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee);
-  //   background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee);
-  //   background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee);
-  //   padding: 0.1em 0.3em;
-  //   font-family: inherit;
-  //   font-size: $type-size-6;
-  // }
-  
-  .site-title {
-    align-self: stretch;
-    -webkit-box-align: center;
-    align-items: center;
-    z-index: 20;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    // text-transform: uppercase;
-    font-size: 1.3em;
-  }
-  
-  .masthead__menu-item {
-    display: block;
-    list-style-type: none;
-    white-space: nowrap;
-    font-weight: 200;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-  
-    &--lg {
-      padding-right: 2em;
-      font-weight: 700;
-    }
-  }
-  
-  .masthead__inner-wrap {
-    max-width: none;
-  }
-  
-  .masthead {
-    // border-bottom: 4px solid #2053b8;
+}
+
+.sidebar__right {
+  margin-bottom: 1em;
+
+  @include breakpoint($large) {
+    position: sticky !important; /* added to make toc scroll with page */
+    float: right !important; /* added to make toc scroll with page */
+    top: 0;
+    right: 0;
+    width: $right-sidebar-width-narrow;
+    //margin-right: -1 * $right-sidebar-width-narrow;
+    padding-left: 1em;
+    padding-top: 1em !important; /* added to make toc scroll with page */
+    z-index: 10;
+    width: 300px;
   }
 
-  .page__title{
-    margin-top: 0;
-    font-weight: 800;
-    //letter-spacing: .15em;
-    line-height: 1.65;
-    //margin: 0 0 1em 0;
-    text-transform: uppercase;
-    text-align: center;
-    color: #B00020;
-    text-decoration: underline;
-    font-family: 'Arial', sans-serif;
-    & + .page__meta {
-      margin-top: -0.5em;
-    }
+  .toc {
+    //text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
-    .sidebar__right {
-      margin-bottom: 1em;
+  .toc__menu li ul > li a {
+    font-weight: normal
+  }
 
-      @include breakpoint($large) {
-        position: sticky !important; /* added to make toc scroll with page */
-        float: right !important; /* added to make toc scroll with page */
-        top: 0;
-        right: 0;
-        width: $right-sidebar-width-narrow;
-        //margin-right: -1 * $right-sidebar-width-narrow;
-        padding-left: 1em;
-        padding-top: 1em !important; /* added to make toc scroll with page */
-        z-index: 10;
-        width: 300px;
-      }
+  .toc__menu a {
+    font-weight: normal;
+    padding: 0.25rem 0.75rem;
+  }
+}
 
-      .toc {
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
+//.sidebar.sticky {
+//  background-color:$primary-color;
+//}
 
-    .toc__menu li ul > li a {
-        font-weight: normal
-      }
+p > code, a > code, li > code, figcaption > code, td > code {
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+}
 
-      .toc__menu a {
-        font-weight: normal;
-        padding: 0.25rem 0.75rem;
-      }
-    }
+ul li::marker {
+  color: #d33a2c; /* Set the color of the bullet points */
+}
 
-    // .sidebar.sticky {
-    //   background-color:$primary-color;
-    // }
+.page__content > ul > li,
+.page__content > ol > li {
+  margin-bottom: 0.15em;
+  font-style: oblique;
+  line-height: calc(1.5em + .2vw);
+  word-break: break-word;
+}
 
-    p>code,a>code,li>code,figcaption>code,td>code {
-    //     background: #B00020;
-    //     color: #fff;
-
-    //     padding: 2px 4px;
-        font-size: 90%;
-        color: #c7254e;
-        background-color: #f9f2f4;
-    }
-
-    // ul {
-    //     list-style: none; /* Remove default bullets */
-    // }
-
-    ul li::marker {
-        color: #d33a2c; /* Set the color of the bullet points */
-    }
-
-    .page__content > ul > li,
-    .page__content > ol > li {
-        margin-bottom: 0.15em;
-        font-style: oblique;
-        line-height: calc(1.5em + .2vw);
-         word-break: break-word;
-    }
-
-    h1{
-    // color: #CC0000;
-    }
+h1 {
+  color: #CC0000;
+}
 
 
-    $type-size-5b: 0.9em !default;
-    // This changes the code box
-    .highlight {
-      margin: 0;
-    //   padding: 0.5em;
-      font-family: $monospace;
-      //font-size: $type-size-5b;
-      line-height: 1.8;
-    }
+$type-size-5b: 0.9em !default;
+// This changes the code box
+.highlight {
+  margin: 0;
+  //   padding: 0.5em;
+  font-family: $monospace;
+  //font-size: $type-size-5b;
+  line-height: 1.8;
+}
 
 .page__content p {
-     margin: 0 0 0.15em;
+  margin: 0 0 0.15em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 0.5em 0 0.5em;
+  margin: 0.5em 0 0.5em;
 }
-
-#c1 { //For the borders of the Clock
-    border-top: 4px solid $primary-color;
-    border-bottom: 4px solid $primary-color;
-}
-
-// For Latex
-// code {
-//   background: lightgray;
-// }
 
 .fluid-width-video-wrapper {
   padding-top: 25.25% !important;

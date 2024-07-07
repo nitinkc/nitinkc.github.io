@@ -3,7 +3,7 @@
 # For example, you can have one property to handle comment submission and
 # another one to handle posts.
 # To encrypt strings use the following endpoint:
-# https://api.staticman.net/v2/encrypt/{TEXT TO BE ENCRYPTED}
+# https://{your Staticman API URL}/v[2|3]/encrypt/{TEXT TO BE ENCRYPTED}
 
 comments:
   # (*) REQUIRED
@@ -51,22 +51,22 @@ comments:
   # Otherwise, entries will be published to the main branch automatically.
   moderation: true
 
-  # Akismet spam detection.
-  # akismet:
-  #   enabled: true
-  #   author: "name"
-  #   authorEmail: "email"
-  #   authorUrl: "url"
-  #   content: "message"
-  #   type: "comment"
+    # Akismet spam detection.
+    # akismet:
+    #   enabled: true
+    #   author: "name"
+    #   authorEmail: "email"
+    #   authorUrl: "url"
+    #   content: "message"
+    #   type: "comment"
 
-  # Name of the site. Used in notification emails.
-  # name: "Your Site"
+    # Name of the site. Used in notification emails.
+    # name: "Your Site"
 
-  # Notification settings. When enabled, users can choose to receive notifications
-  # via email when someone adds a reply or a new comment. This requires an account
-  # with Mailgun, which you can get for free at http://mailgun.com.
-  # notifications:
+    # Notification settings. When enabled, users can choose to receive notifications
+    # via email when someone adds a reply or a new comment. This requires an account
+    # with Mailgun, which you can get for free at http://mailgun.com.
+    # notifications:
     # Enable notifications
     # enabled: true
 
@@ -78,7 +78,7 @@ comments:
     # (!) ENCRYPTED
     #
     # Mailgun domain (encrypted)
-    # domain: ""
+  # domain: ""
 
   # (*) REQUIRED
   #
