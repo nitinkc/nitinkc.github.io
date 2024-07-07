@@ -167,26 +167,25 @@ $header-font-family: $helvetica !default;
     float: right !important; /* added to make toc scroll with page */
     top: 0;
     right: 0;
-    width: $right-sidebar-width-narrow;
+    width: $right-sidebar-width;//400px
     //margin-right: -1 * $right-sidebar-width-narrow;
     padding-left: 1em;
     padding-top: 1em !important; /* added to make toc scroll with page */
     z-index: 10;
-    width: 300px;
   }
 
   .toc {
     //text-transform: uppercase;
-    letter-spacing: 1px;
+    //letter-spacing: 1px;
   }
 
   .toc__menu li ul > li a {
-    font-weight: normal
+    //font-weight: normal
   }
 
   .toc__menu a {
-    font-weight: normal;
-    padding: 0.25rem 0.75rem;
+    //font-weight: normal;
+    //padding: 0.25rem 0.75rem;
   }
 }
 
