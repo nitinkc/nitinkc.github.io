@@ -70,3 +70,13 @@ Million is $ 10^6 $
 microsecond is 1 millionth of a second
 
 ![](https://www.youtube.com/watch?v=FqR5vESuKe0)
+
+
+# Levels of Availability
+| Availability (%)   | Downtime per Year | Examples of Suitable Applications                            |
+|:-------------------|:------------------|:-------------------------------------------------------------|
+| 99.00% (Two 9's)   | ~3.65 days        | Non-critical applications, occasional downtime acceptable    |
+| 99.90% (Three 9's) | ~8.76 hours       | Internal business applications, moderate uptime requirement  |
+| 99.99% (Four 9's)  | ~52.6 minutes     | Customer-facing applications, e-commerce sites               |
+| 99.999% (Five 9's) | ~5.26 minutes     | Mission-critical applications, financial services            |
+| 99.9999% (Six 9's) | ~31.5 seconds     | Highly critical systems, emergency services                  |

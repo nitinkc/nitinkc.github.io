@@ -1,5 +1,5 @@
 ---
-title:  "Locking mechanism"
+title:  "DB Locking mechanism"
 date:   2024-06-30 11:02:00
 categories: [System Design]
 tags: [System Design]

@@ -13,13 +13,11 @@ Despite the name, servers are still used, but developers don't have to manage th
 
 One of the most popular serverless architectures is **Function as a Service** (FaaS)
 
-Each function will perform a specific task when triggered by an event, such as an incoming email or an HTTP reques
+When a function is invoked (triggered by an event), the cloud provider 
+- either executes the function on a running server
+- or, if there is no server currently running, it spins up a new server to execute the function.
 
-When a function is invoked, the cloud provider 
-- either executes the function on a running server, 
-- - or, if there is no server currently running, it spins up a new server to execute the function.
-
-@startuml
+```plantuml!
 actor User
 actor EventSource as ES
 
@@ -34,7 +32,7 @@ note right of Function
 Stateless, ephemeral function
 executed on demand.
 end note
-@enduml
+```
 
 
 # Key Characteristics
@@ -61,27 +59,12 @@ end note
 # Serverless Platforms
 - AWS Lambda: A service that lets you run code without provisioning or managing servers.
 - Google Cloud Functions: A lightweight, event-based asynchronous compute solution.
-- Azure Functions: A solution for easily running small pieces of code in the cloud.
-- IBM Cloud Functions: Based on Apache OpenWhisk, it allows event-driven programming on the IBM Cloud.
-
-# Use Cases
-- Microservices: Serverless is ideal for breaking down applications into small, manageable services.
-- Real-Time File/Stream Processing: Functions can be triggered by data changes in storage or streams.
-- Web Applications: Backend services for web applications can be implemented as serverless functions.
-- Scheduled Tasks: Cron jobs or scheduled maintenance tasks can be handled efficiently.
-- Chatbots and Voice Assistants: Serverless can power chatbots and voice interfaces with event-driven functions.
 
 # Advantages
 - Reduced Operational Complexity: No need to manage infrastructure.
 - Cost Efficiency: Pay-as-you-go pricing model.
 - Scalability: Automatic scaling based on demand.
 - Faster Time to Market: Focus on writing code rather than managing servers.
-
-# Disadvantages
-- Cold Start Latency: Functions may experience latency when invoked for the first time.
-- Limited Execution Duration: Functions typically have a maximum execution timeout.
-- Vendor Lock-In: Applications may become dependent on a specific cloud provider's implementation.
-- Complexity in Testing and Debugging: Distributed and event-driven nature can complicate testing and debugging.
 
 # Example with Google Cloud Functions (Java)
 
@@ -121,18 +104,14 @@ public class HelloWorld implements HttpFunction {
   }
 
   // Define request and response classes
-  @Getter
-  @Setter
-  @AllArgsConstructor    
+  @Data
   class MyRequest {
-    private String name;
+      private String name;
   }
-
-  @Getter
-  @Setter
-  @AllArgsConstructor
-  class MyResponse {
-    private String message;
+  
+  @Data
+  class MyResponse { 
+        private String message;
   }
 }
 
@@ -153,8 +132,6 @@ Response
   "message": "Hello, Alice! Your HTTP request was successful!"
 }
 ```
-
-
 
 # Serverless Architecture vs. Container Architecture
 
@@ -196,5 +173,6 @@ Response
 
 ## Conclusion
 
-- **Serverless architecture** is ideal for event-driven applications, microservices, and workloads that require automatic scaling without the need for managing infrastructure.
-- **Container architecture** is suitable for applications that need consistent environments, full control over the runtime, and efficient resource utilization with container orchestration.
+**Serverless architecture** is ideal for event-driven applications, microservices, and workloads that require automatic scaling without the need for managing infrastructure.
+ 
+**Container architecture** is suitable for applications that need consistent environments, full control over the runtime, and efficient resource utilization with container orchestration.

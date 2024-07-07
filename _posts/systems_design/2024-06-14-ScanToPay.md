@@ -22,7 +22,7 @@ Consumer Scans and pays
 
 Consumer opens up digital wallet app and scans the code
 
-Total amout is displayed adn consumer clicks the pay button
+Total amount is displayed adn consumer clicks the pay button
 Wallet app notifies the PSP that the QR code has been paid
 
 the PSP notifies the merchant that the consumer has paid the given QR Code

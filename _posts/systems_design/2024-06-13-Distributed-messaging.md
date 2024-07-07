@@ -21,7 +21,7 @@ immutable array of bytes
 
 topic -> feed of messages
 
-See : Topic Partitioningn 
+See : Topic Partitioning
 
 Queue helps keeping track of requests and redirect in case of a failure
 
