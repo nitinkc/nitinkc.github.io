@@ -12,6 +12,47 @@ tags: ['SQL']
 
 [Query Execution Plan](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#visualizing-a-sql-query)
 
+## explain plan, performance tuning.
+
+The EXPLAIN PLAN statement displays execution plans chosen by the Oracle optimizer for SELECT, UPDATE, INSERT, and DELETE statements. 
+
+A statement's execution plan is the sequence of operations Oracle performs to run the statement.
+
+## Syntax for finding indexes in tuning.
+
+Indexes are special lookup tables that the database search engine can use to speed up data retrieval. 
+
+An index is a pointer to data in a table.
+
+> Indexes are a performance drag when the time comes to modify records.
+
+
+Multiple Conditions : AND <br>
+``` sql
+SELECT * from EMP WHERE salary > 10000 AND dateofjoining > ‘1-Jan-1990’ ;
+```
+
+Range Selection - BETWEEN
+``` sql
+SELECT * from EMP WHERE salary between 9000 AND 20000;
+```
+
+Exact List Matching
+```sql
+SELECT * from EMP WHERE employeeID IN (3001,  3002);
+```
+
+### Full table scan
+
+- A full table scan occurs when an index is either not used or there is no index on the table(s)
+- Full table scans should be avoided when reading large tables.For example, a full table scan is performed when a table that does not have an index is read
+-  FTS will be performed even though an index is present on that table.
+  +  If a query does have a WHERE clause, but none of the columns in that WHERE clause match.
+  +  when WHERE clause prevents the use of an index like below.
+  +  If the NOT EQUAL (the “<>“) operator is used.
+  +  If the NOT operator is used.
+  +  If the wildcard operator is used in the first position of a comparison string. An example is “WHERE NAME LIKE ‘%INTERVIEW%'”.
+
 # DB Index
 A database index is like an efficient **lookup table** that allows a database to find data much faster. It uses Data structues like B-Tree, HashMap, Bitmaps etc.
 

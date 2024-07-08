@@ -1,5 +1,5 @@
 ---
-title:  "Git Merge, Rebase Squash and Fast forward"
+title:  "Git Merge, Rebase, Squash and Fast forward"
 date:   2023-11-07 11:30:00
 categories: ['Git']
 tags: ['Git']
