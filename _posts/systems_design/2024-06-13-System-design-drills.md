@@ -65,9 +65,6 @@ Consistent hashing : distribute load among nodes
   - Algorithms: Paxos, Raft
 - **Quorum-Based Decision-Making**: Ensures that a majority of nodes agree on a decision to maintain consistency.
 
-## Consensus Algorithms
-- **Raft**: Consensus algorithm for managing a replicated log.
-
 # Failure Detection and Recovery
 - **Gossip Protocol**: Nodes periodically exchange state information to detect failures.
 - **Sloppy Quorum**: Allows temporary inconsistencies by accepting writes and reads from a subset of nodes.
@@ -85,7 +82,12 @@ Request cohorting/condensing
 Client side rate limiting
 
 
+## Consensus Algorithms
+**Raft**: Consensus algorithm for managing a replicated log.
 
+**Paxos**: 
+  - Used by Apache Zookeeper (used for distributed locking)
+  - Google Chubby - for distributed locking and maintaining order in distributed logs
 
 # Storage and Databases
 - **SQL Databases**: Traditional relational databases that provide ACID transactions.
