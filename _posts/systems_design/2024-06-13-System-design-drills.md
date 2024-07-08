@@ -1,5 +1,5 @@
 ---
-title:  "Basics"
+title:  "System Design Drills"
 date:   2024-06-13 11:02:00
 categories: [System Design]
 tags: [System Design]

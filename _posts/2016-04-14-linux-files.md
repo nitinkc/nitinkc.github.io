@@ -1,5 +1,5 @@
 ---
-title:  "Linux Files"
+title:  "Linux Files & Commands"
 date:   2016-04-14 20:11:00
 categories: ['Developer tools']
 tags: ['Developer tools']
@@ -22,43 +22,47 @@ tags: ['Developer tools']
 | /proc                           | processes running on the system.  Many of these entries can be viewed. Eg. `/proc/cpuinfo`. This entry will tell you what the kernel thinks of your CPU.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | /media <br> /mnt                | The /media directory is used for mount points. This process of attaching (*devices attached to the file system tree in various places*) a device to the tree is called **mounting**. For a device to be available, it must first be mounted. <br><br>When your system boots, it reads a list of mounting instructions in the file /etc/fstab, which describes which device is mounted at which mount point in the directory tree. This takes care of the hard drives, but you may also have devices that are considered temporary, such as CD-ROMs and floppy disks. Since these are removable, they do not stay mounted all the time. The /media directory is used by the automatic device mounting mechanisms found in modern desktop oriented Linux distributions. <br><br>On systems that require manual mounting of removable devices, the **/mnt** directory provides a convenient place for **mounting these temporary devices**. You will often see the directories /mnt/floppy and /mnt/cdrom. To see what devices and mount points are used, type mount. |
 
-
-##### Linux
-
-- Commands to see processes
+### Commands to see processes
     + top
     + ps -ef
     + GUI : System monitor (GNOME, KDE System -> Monitor)
     + kill -9 to terminate.
-- Error in file access. (File Permission)
+
+### Error in file access. (File Permission)
     + Ownership permission (ugo -> USER, GROUP & OTHER)
     + Viewing Permission (r=4; w=2; x=1)
     + eg: 700 (rwx for u, none got g,o)
-    + chmod for changing file permission (chmod 771 file.exe)
-- what is there in exe Folder.
+    + chmod for changing file permission (chmod 771 file.sh)
+
+### what is there in exe Folder.
     + *[Important Linux Files]({% post_url 2016-04-14-linux-files %})*.
-- grep : Search a pettern in File.
-    + `grep ‘pattern to search’ file1 file2`
-    + `grep -i -n ‘administrator’  file1.txt`
-    + Ignoring the case ( -i)
-    + Displaying line Numbers  ( -n )
-- How can u find a pattern and how to do recursively
-    + grep -r "texthere" .
-    + Recursively search "texthere" in PWD.
-- Given directory hierarchy. Find a file.
-    + `find / -name 'program.c' 2>errors.txt`
-        * Start searching from the root directory (i.e / directory)
-        * `-name` : Given search text is the filename rather than any other attribute of a file
-        * `'program.c'` Search text that we have entered. Always enclose the filename in single quotes.. why to do this is complex.. so simply do so.
-        * `$ find /mp3collection -name '*.mp3' -size -5000k` find in /mp3collection, only those mp3 files that have a size less than 5000 Kilobytes ( < 5MB)
-        * `$ find / -size +10000k` search from the / directory for any file that is larger than 10000k (> 10MB)
-- how do u connect to remove server securely.
+
+### grep : Search a pattern in File.
+  + `grep ‘pattern to search’ file1 file2`
+  + `grep -i -n ‘administrator’  file1.txt`
+  + Ignoring the case ( -i)
+  + Displaying line Numbers  ( -n )
+
+**Find a pattern recursively**
+  + grep -r "texthere" .
+  + Recursively search "texthere" in PWD.
+
+**Given directory hierarchy - Find a file**
+
+`find / -name 'program.c' 2>errors.txt`
+  - Start searching from the root directory (i.e / directory)
+  - `-name` : Given search text is the filename rather than any other attribute of a file
+  - `'program.c'` Search text that we have entered. Always enclose the filename in single quotes.. why to do this is complex.. so simply do so.
+  - `$ find /mp3collection -name '*.mp3' -size -5000k` find in /mp3collection, only those mp3 files that have a size less than 5000 Kilobytes ( < 5MB)
+  - `$ find / -size +10000k` search from the / directory for any file that is larger than 10000k (> 10MB)
+
+### connect to remove server securely.
     + `ssh remote_username@remote_host`
     + SSH keys should be generated on the computer you wish to log in from. This is usually your local computer. Enter the following into the command line. `ssh-keygen -t rsa`
-- remove the file from remote server
+
+**remove a file from remote server**
     + `ssh username@domain.com 'rm /some/where/some_file.war'`
 
-
-- diff : compare the two files.
+### diff : compare the two files.
     + cmp returns first occurrence of difference
     + diff returns all differences
