@@ -42,16 +42,22 @@ Design for **Low Latency** & **High Throughput**
 
 # Load Balancing
 Distribute incoming network traffic across multiple servers.(to ensure no single server becomes overwhelmed)
+
+Consistent hashing : distribute load among nodes
+
+
+
 - Tools: HAProxy, NGINX, AWS ELB (Elastic Load Balancing)
 
-# Rate Limiting
+# Distributed Rate Limiting
 - **Rate Limiting**: Control the rate of requests sent or received by a system to prevent abuse.
   - Token Bucket
   - Leaky Bucket
   - Fixed Window Counter
   - Sliding Window log (improvement on Fixed Window Counter)
   - Sliding Window Counter (mixed of above 2)
-  - Tools: Kong, Envoy
+  - [The Timer wheel]()
+
 
 # Fault Tolerance and Recovery
 - **Replication**: Data is copied across multiple nodes to ensure availability.
@@ -66,6 +72,20 @@ Distribute incoming network traffic across multiple servers.(to ensure no single
 - **Gossip Protocol**: Nodes periodically exchange state information to detect failures.
 - **Sloppy Quorum**: Allows temporary inconsistencies by accepting writes and reads from a subset of nodes.
 - **Hinted Handoff**: Temporarily stores data on an available node if the target node is down.
+
+### Metrics to detect failing/troubled nodes
+1. Average Response Time
+2. Age of messages in the message Queue
+3. Increasing messages in Dead Letter Queue
+
+Request Collapsing
+
+Request cohorting/condensing
+
+Client side rate limiting
+
+
+
 
 # Storage and Databases
 - **SQL Databases**: Traditional relational databases that provide ACID transactions.

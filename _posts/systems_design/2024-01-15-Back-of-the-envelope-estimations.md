@@ -15,6 +15,9 @@ tags: [System Design]
 * 4G/LTE - 30MBps to 100MBPS
 * LAN - 1 GBPS
 * 5G - to be introduced
+* 40Gbps (5GBps - GigaBytes per second) - network throughput for a good data center
+    - if i have a file of 5GB, it will take a second to transfer the file from one one node to the other
+
 
 Assume a good quality image of 1 MB
  * Thumbnail is 1/10th of the actual image -> 100 KB
