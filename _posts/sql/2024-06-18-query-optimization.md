@@ -96,7 +96,7 @@ EXPLAIN SELECT * FROM employees WHERE first_name = 'John' AND last_name = 'Doe';
 ```
 
 # Types of Database Indexes
-###  based on Key Attributes:
+### Key Attributes based:
 **Primary Index**: Automatically created when a primary key constraint is defined on a table. 
 
 **Clustered Index**
@@ -148,26 +148,25 @@ Clustered .. Employees
 @enduml
 
 
-### based on Data Coverage:
-Dense index: Has an entry for every search key value in the table. Suitable for situations where the data has a small number of distinct search key values or when fast access to individual records is required.
+### Data Coverage based:
+**Dense index**: Has an entry for every search key value in the table. Suitable for situations where the data has a small number of distinct search key values or when fast access to individual records is required.
 
-Sparse index: Has entries only for some of the search key values. Suitable for situations where the data has a large number of distinct search key values.
+**Sparse index**: Has entries only for some of the search key values. Suitable for situations where the data has a large number of distinct search key values.
 
-Specialized Index Types:
+**Specialized Index Types**:
 Bitmap Index: Excellent for columns with low cardinality (few distinct values). Common in data warehousing.
 
-Hash Index: A index that uses a hash function to map values to specific locations. Great for exact match queries.
+**Hash Index**: A index that uses a hash function to map values to specific locations. Great for exact match queries.
 
-Filtered Index: Indexes a subset of rows based on a specific filter condition. Useful to improve query speed on commonly filtered columns.
+**Filtered Index**: Indexes a subset of rows based on a specific filter condition. Useful to improve query speed on commonly filtered columns.
 
-Covering Index: Includes all the columns required by a query in the index itself, eliminating the need to access the underlying table data.
+**Covering Index**: Includes all the columns required by a query in the index itself, eliminating the need to access the underlying table data.
 
-Function-based index: Indexes that are created based on the result of a function or expression applied to one or more columns of a table.
+**Function-based index**: Indexes that are created based on the result of a function or expression applied to one or more columns of a table.
 
-Full-Text Index: A index designed for full-text search, allowing for efficient searching of text data.
+**Full-Text Index**: A index designed for full-text search, allowing for efficient searching of text data.
 
-Spatial Index: Used for indexing geographical data types.
-
+**Spatial Index**: Used for indexing geographical data types.
 
 # Datastructures used in Indexing
 Indices can be saved in 
@@ -178,7 +177,7 @@ Indices can be saved in
 For where clause, comparisons should be  SARGABLE - **S**earch **ARG**ument **ABLE**
 - refers to queries that can use indices for faster execution
 
-# B-Tree Index
+## B-Tree Index
 
 B-Tree indices are commonly used for columns with a wide range of values and support equality and range queries efficiently.
 
@@ -196,7 +195,7 @@ SELECT * FROM employees
 WHERE last_name = 'Smith' AND first_name = 'John';
 ```
 
-Bitmap Index
+## Bitmap Index
 
 Bitmap indices are more efficient for columns with a low cardinality, such as gender or status columns.
 
@@ -243,19 +242,3 @@ WHERE last_name = 'Smith';
 SELECT * FROM employees
 WHERE last_name = 'Smith' AND first_name = 'John';
 ```
-
-@startuml
-actor PeerA
-actor PeerB
-
-PeerA -> DirectoryServer : Request for peers
-DirectoryServer --> PeerA : Respond with PeerB info
-
-PeerA -> PeerB : Initiate Handshake
-PeerB -> PeerA : Acknowledge Handshake
-
-PeerA -> PeerB : Establish Session (Agree on protocol, ports, etc.)
-
-PeerA -> PeerB : Data Exchange
-PeerB -> PeerA : Data Exchange
-@enduml

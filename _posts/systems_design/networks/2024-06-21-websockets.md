@@ -8,17 +8,15 @@ tags: [System Design]
 
 # Problems with http
 
-HTTP Polling
-
+**HTTP Polling**
 - Short Polling - client sends request to the server in fixed time intervals
 
 Chances of lots of empty responses
 
-Long polling
+**Long polling**
 - wait for responses for a longer duration
 
-
-Server Sent Events  (SSE)
+**Server Sent Events  (SSE)**
 
 unidirectional connection - server can push as much data as possible but its just unidirectional connection from server to the client
 
@@ -33,14 +31,14 @@ HTTP 101 Switching Protocols
 
 The first connection will be the HTTP handshake request with an upgrade header
 
-```http request
+```shell
 Connection: Upgrade
 
 response
 Upgrade: websocket
 Status Code: 101 Switching Protocols
 ```
-then the persistemnt connection is estabished
+then the persistent connection is established
 ![webSockets.png](..%2F..%2Fassets%2Fimages%2FwebSockets.png)
 
 ## How WebSockets Work:
@@ -59,21 +57,40 @@ then the persistemnt connection is estabished
 
 # Close a WebSocket Connection
 
-**Initiation**: Either the client or the server can initiate the close handshake by sending a close frame. This frame is identified by an opcode of 0x8.
+**Initiation**: Either the client or the server can initiate the close handshake by sending a close frame. This frame is identified by an opcode of `0x8`.
 
 **Close Frame**: The close frame may include an optional payload with a close code and a reason for closure. The close code is a 2-byte unsigned integer that indicates the reason for closure. Some common close codes are:
 
-- 1000 (Normal Closure): Indicates a normal closure, meaning the purpose for which the connection was established has been fulfilled.
-- 1001 (Going Away): Indicates that an endpoint is "going away", such as a server going down or a browser navigating away from the page.
-- 1002 (Protocol Error): Indicates a protocol error was encountered.
-- 1003 (Unsupported Data): Indicates that the received data type cannot be accepted (e.g., an endpoint that only understands text data received a binary message).
-- 1006 (Abnormal Closure): Indicates that the connection was closed abnormally (used internally and not sent on the wire).
+| Close Code  | Meaning                                                                                                                                 |
+|:------------|:----------------------------------------------------------------------------------------------------------------------------------------|
+| 1000        | Indicates a normal closure, meaning the purpose for which the connection was established has been fulfilled.                            |
+| 1001        | Indicates that an endpoint is "going away", such as a server going down or a browser navigating away from the page.                     |
+| 1002        | Indicates a protocol error was encountered.                                                                                             |
+| 1003        | Indicates that the received data type cannot be accepted (e.g., an endpoint that only understands text data received a binary message). |
+| 1006        | Indicates that the connection was closed abnormally (used internally and not sent on the wire).                                         |
+
 
 **Response**: Upon receiving a close frame, the other party (client or server) should respond with its own close frame if it hasn't already sent one. This acknowledges the close request and allows both parties to gracefully close the connection.
 
 **Closing the Connection**: After sending and receiving the close frames, the underlying TCP connection is closed. This ensures that all resources related to the WebSocket connection are properly released.
 
-    
+ ```plantuml!
+actor Client
+actor Server
+
+Client -> Server : WebSocket Handshake
+Server --> Client : WebSocket Handshake Response
+
+Client <-> Server : WebSocket Connection (Full-duplex)
+
+Client -> Server : Data Frame
+Server -> Client : Data Frame
+
+Client -> Server : Close Frame (Opcode: 0x8, Optional Payload)
+Server --> Client : Close Frame (Acknowledge)
+
+Client <-> Server : TCP Connection Closure
+```   
 
 
 

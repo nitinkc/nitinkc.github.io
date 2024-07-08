@@ -521,13 +521,13 @@ for (int i = 0; i < stack.size(); i++) {
 
 - `Left Shift (<<)`: Shifts the bits to the left by a specified number of positions (n) value << n.
   - The vacant positions on the right are filled with zeros.
-  - it effectively **multiplies** the operand by $$ {2^n} $$.
+  - it effectively **multiplies** the operand by `2^n`
 
 
 - `Signed Right Shift (>>)`: Shifts the bits of the operand to the right by a specified number of positions.
   - It fills the vacant positions on the left with the sign bit (the leftmost bit) to preserve the sign of the number.
   - If the number is positive, it fills with 0, and if negative, it fills with 1.
-  - **Divides** the number by $$ {2^n} $$.
+  - **Divides** the number by `2^n`
 
 - `Unsigned Right Shift (>>>)`
   - It fills the vacant positions on the left with zeros, regardless of the sign bit.
