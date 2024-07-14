@@ -115,14 +115,14 @@ Arrays.fill(array, Boolean.FALSE);//Initialize entire Array
 boolean containsValue = map.containsValue(3);
 boolean containsKey = map.containsKey("Harry");// returns true if the key is in the map, false otherwise
 ```
-
 - getOrDefault
 ```java
 for (String str: list){
     map.put(str, map.getOrDefault(str,0) + 1);//count number of occurances
 }
 ```
-- traditional
+
+- traditional  
 ```java
   for (String str: namesList) {
      if(treeMap.containsKey(str))
@@ -132,7 +132,7 @@ for (String str: list){
   }
 ```
 
-- put
+- put 
 ```java
 Map<Integer,Integer> map = new HashMap<>();
 map.putIfAbsent(key, value);
