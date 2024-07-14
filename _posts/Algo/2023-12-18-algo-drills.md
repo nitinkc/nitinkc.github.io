@@ -131,6 +131,7 @@ for (String str: list){
          treeMap.put(str,1);
   }
 ```
+
 - put
 ```java
 Map<Integer,Integer> map = new HashMap<>();
