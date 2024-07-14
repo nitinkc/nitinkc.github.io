@@ -131,7 +131,7 @@ for (String str: list){
          treeMap.put(str,1);
   }
 ```
--put
+- put
 ```java
 Map<Integer,Integer> map = new HashMap<>();
 map.putIfAbsent(key, value);
@@ -142,6 +142,7 @@ map.put(1, 200); // Updates the value associated with key 1 to 200, returns 100
 map.putIfAbsent(1, 100); // Inserts the key-value pair (1, 100)
 map.putIfAbsent(1, 200); // Does nothing because key 1 already exists, returns 100
 ```
+
 - Remove from Map
 ```java
 /* removes the key/value pair for this key if present. Does nothing if the key is not present. */
