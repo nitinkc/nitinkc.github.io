@@ -6,7 +6,7 @@ tags: [System Design]
 ---
 {% include toc title="Index" %}
 
-Measure of how **up-to-date* a piece of data is in a distributed systems.
+Measure of how **up-to-date* a piece of data is in a distributed systems with geographically distributed nodes.
 
 **Consistency Levels**
 
@@ -65,3 +65,6 @@ R + W > N where,
 | Eventual Consistency      | Lowest                               | Highest                              |
 
 Check [Transaction Isolation Level](https://nitinkc.github.io/system%20design/Transaction-Isolation-levels/)
+
+[Two Generals' Paradox](https://en.wikipedia.org/wiki/Two_Generals%27_Problem)
+![](https://www.youtube.com/watch?v=IP-rGJKSZ3s)

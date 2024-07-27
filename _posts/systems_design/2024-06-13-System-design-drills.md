@@ -25,15 +25,6 @@ Design for **Low Latency** & **High Throughput**
 > [system-design-101](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#http-status-codes)
 
 # HTTP Status Codes
-- HTTP 401 -> Invalid
-- Http 429 -> Too Many Requests (used in Rate limiting algo)
-- Http 301 -> Redirect (Moved Permanently, stores in cache, less server load)
-  - Clients should update their bookmarks.
-- HTTP 302 -> Found (Temporary Redirect) - Redirect (used to track click rates) 
-  - The resource requested is temporarily under a different URL. The client should use the original URL for future requests.
-- HTTP 503 -> Service Unavailable
-- HTTP 101 -> Changed Protocol (used in WebSockets)
-  - The server is switching protocols as requested by the client. This is often used to switch to WebSocket protocol.
 
 # Service Discovery
 - **Zookeeper Service Discovery** Often used for distributed coordination, Zookeeper also serves as a service registry and can be used for service discovery.
@@ -56,7 +47,7 @@ Consistent hashing : distribute load among nodes
   - Fixed Window Counter
   - Sliding Window log (improvement on Fixed Window Counter)
   - Sliding Window Counter (mixed of above 2)
-  - [The Timer wheel]()
+  - [The Timer wheel](https://nitinkc.github.io/system%20design/Rate-limiting/#timer-wheel-algorithm)
 
 
 # Fault Tolerance and Recovery
@@ -82,12 +73,6 @@ Request cohorting/condensing
 Client side rate limiting
 
 
-## Consensus Algorithms
-**Raft**: Consensus algorithm for managing a replicated log.
-
-**Paxos**: 
-  - Used by Apache Zookeeper (used for distributed locking)
-  - Google Chubby - for distributed locking and maintaining order in distributed logs
 
 # Storage and Databases
 - **SQL Databases**: Traditional relational databases that provide ACID transactions.
@@ -151,6 +136,15 @@ Problems with Distributed Databases Running in Multiple Nodes
 - **Consensus-Based Distributed Databases**: Ensure consistency across distributed nodes.
   - Examples: **YugabyteDB**, **CockroachDB**
 - Keep copies of data (master-slave design)
+
+
+## Consensus Algorithms
+**Raft**: Consensus algorithm for managing a replicated log.
+
+**Paxos**:
+- Used by Apache Zookeeper (used for distributed locking)
+- Google Chubby - for distributed locking and maintaining order in distributed logs
+
 
 ## Data Center and Transaction Processing
 - **Typical Data Center Node**: Can support a few thousand transactions per second.

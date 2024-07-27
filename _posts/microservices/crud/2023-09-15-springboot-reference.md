@@ -529,3 +529,45 @@ Refer the following page for details
 
 ### Application Yaml settings
 {% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
+
+
+# CommandLineRunner
+[https://nitinkc.github.io/spring/microservices/CommandLineRunner/](https://nitinkc.github.io/spring/microservices/CommandLineRunner/)
+```java
+@Component
+@Slf4j
+@RequiredArgsConstructor
+@Order(value = 1)
+@ConditionalOnExpression("${dateExpiration:false}")
+public class RutWhileBooting implements CommandLineRunner {
+
+    private final LicenseService licenseService;
+    @Override
+    public void run(String... args) throws Exception {
+        log.info("Starting Runner : ExpiryDate");
+        //Do processing
+        licenseService.runJob();
+    }
+}
+```
+
+# Scheduling a Job
+[https://nitinkc.github.io/spring/microservices/spring-scheduler/](https://nitinkc.github.io/spring/microservices/spring-scheduler/)
+use `@EnableScheduling` on the application main class
+
+```java
+@Component
+@AllArgsConstructor
+public class DailyTaskScheduler {
+    private final MyService myService;
+
+    @Scheduled(cron = "0 0 0 * * *") // Executes at midnight every day
+    //@Scheduled(fixedRate = 5000) // Executes every 5 seconds (5000 milliseconds) for testing
+    public void runDailyTask() {
+        myService.runJob();
+    }
+```
+
+# Metric logging - Prometheus and micrometer
+
+[Prometheus and micrometer](https://nitinkc.github.io/spring/microservices/Prometheus-micrometer/)

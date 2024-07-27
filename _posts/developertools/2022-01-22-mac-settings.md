@@ -6,19 +6,17 @@ categories: ['Developer tools','MacBook']
 tags: ['Developer tools','Macbook']
 ---
 
-# Necessasary UI Settings
+# Necessary UI Settings
 All the [commands can be located here.](https://github.com/nitinkc/SystemEnvironment/blob/master/mac/mac_defaults.sh)
+
 ### Show Full directory path on Finder:
-
-File path at the top of the tool bar on finder window
-
+File path at the top of the toolbar on finder window
 ```sh
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true; killall Finder
 ```
 Execute the command on terminal and the file path would appear like :-
 
 ![]({{ site.url }}/assets/images/filePath.png)
-
 
 ### Disable warning when changing file extensions:
 
@@ -129,14 +127,11 @@ PS1 – Default interactive prompt
 
 ```shell
 echo $PS1
-
 export PS1="\W]\$ "
 ```
 
-\W   The basename of $PWD.
+`\W`  The basename of $PWD.
 
-\$   If you are not root, inserts a "$"; if you are root, you get a "#"  (root uid = 0)
+`\$`   If you are not root, inserts a `$`; if you are root, you get a `#`  (root uid = 0)
 
-This change can be made permanent by placing the "export" definition in your ~/.bashrc or profile file.
-
-
+This change can be made permanent by placing the "export" definition in your `~/.bashrc` or `.profile` file.

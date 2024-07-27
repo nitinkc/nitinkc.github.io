@@ -6,6 +6,10 @@ tags: ['Java',"Performance Engineering"]
 ---
 
 # Java Memory Leaks
+
+A memory leak happens **only if the allocated objects can't be garbage-collected** because they are referenced from somewhere in the running application.
+While allocation profiling doesn't tell us anything about the garbage collection, it can still give us hints for further investigation.
+
 Regular profiling and memory analysis are essential to detect and resolve memory leaks in Java applications.
 
 using the  memory analyzer tool or Visual VM, figured out the large memory objects

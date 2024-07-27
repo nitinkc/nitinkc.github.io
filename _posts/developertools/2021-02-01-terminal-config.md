@@ -1,5 +1,5 @@
 ---
-title:  "MacBook : iTerm2 Set up with zsh on Mac"
+title:  "Terminal Setup"
 date:   2021-02-01 14:00:00
 categories: ['Developer tools','MacBook']
 tags: ['Developer tools','Macbook']
@@ -7,15 +7,13 @@ tags: ['Developer tools','Macbook']
 
 {% include toc title="Index" %}
 
-## Setting Mac Terminal environment for Development
-
-
 ### Unix shell and Framework installation
 
-Between iTerm and Hyper, iTerm is preferred here. Download and install iTerm
-
+Install any of the available shell
 ```sh
 brew install --cask iterm2 
+brew install --cask wezterm
+brew install --cask alacritty
 ```
 
 Instead of using the Mac default Bash shell, preferred here is zsh with multiple plugin support.
@@ -28,20 +26,19 @@ zsh --version
 ```
 
 with zsh installed, the default profile will be from .zshrc file, where customized profiles can be added
-
-* Make zsh as system’s default shell
+- Make zsh as system’s default shell
 
 ```sh
 chsh -s $(which zsh)
 ```
-* Verify:
+- Verify:
 
 ```sh
 echo $SHELL
-expected result: /bin/zsh
 ```
+expected result: **/bin/zsh**
 
-* Install oh-my-zsh using [this link](https://ohmyz.sh/#install)
+- Install oh-my-zsh using [https://ohmyz.sh/#install](https://ohmyz.sh/#install)
 
 ### Install Powerline 10k
 
@@ -56,17 +53,10 @@ OR
 
 Edit `~/.zshrc` and `set ZSH_THEME="powerlevel10k/powerlevel10k"`.
 
-### Exa instead of ls
+### Eza instead of ls
+[https://formulae.brew.sh/formula/eza](https://formulae.brew.sh/formula/eza)
 ```sh
-brew install exa
-```
-Add this to .zshrc file
-
-```shell
-if [ -x "$(command -v exa)" ]; then
-    alias ls="exa"
-    alias la="exa --long --all --group"
-fi
+brew install eza
 ```
 
 ### Install zshrc plugins
@@ -103,12 +93,34 @@ Follow the documentation for further instructions.
 * [Zsh Completions](https://github.com/zsh-users/zsh-completions/#Manual%20installation)
 * [Zsh history substring](https://github.com/zsh-users/zsh-history-substring-search)
 * [Zsh Apple touchbar](https://github.com/zsh-users/zsh-apple-touchbar)
-
-[Time Warrior](https://timewarrior.net/docs/install/)
+- [Time Warrior](https://timewarrior.net/docs/install/)
 
 ```sh
 brew install timewarrior
 ```
+
+# iTerm-2 shortcuts
+
+| **Shortcut** | **For**                    |
+|:-------------|:---------------------------|
+| **⌘ ,**      | Open Preferences           |
+| **⌘ D**      | Split Windows Vertically   |
+| **⌘ ⇧ D**    | Split Windows Horizontally |
+| **⌘ ;**      | Auto completion            |
+| **⌘ ⇧ H**    | Paste History              |
+| **⌘ ⌥ B**    | Show Interactive History   |
+| **⌥ ⌘ Drag** | Select Rectangular Block   |
+
+Once iTerm is set with above plugins, other terminals can simply be installed and with its corrosponding configs
+
+# Alacritty
+
+[https://www.josean.com/posts/how-to-setup-alacritty-terminal](https://www.josean.com/posts/how-to-setup-alacritty-terminal)
+
+[https://www.josean.com/posts/7-amazing-cli-tools](https://www.josean.com/posts/7-amazing-cli-tools)
+
+# WezTerm
+[https://www.josean.com/posts/how-to-setup-wezterm-terminal](https://www.josean.com/posts/how-to-setup-wezterm-terminal)
 
 ## References
 

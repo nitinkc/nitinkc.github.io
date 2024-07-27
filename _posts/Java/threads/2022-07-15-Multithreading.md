@@ -6,7 +6,6 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-
 ## History of multithreads
 
 Java 1 : Threads -> one set of API for all machines. hardware independent
@@ -26,7 +25,7 @@ Java 8 : ParallelStreams and CompletableFutures
 Java 21 : Virtual Threads
 * dsfgds
 
-# Problems with Completablefutures
+# Problems with CompletableFutures
 
 Railway track pattern is good in concept, but in implementation, 
 * cognitive load : since there is skipping to then's or exceptionally's or the return type.
@@ -96,3 +95,6 @@ to complete.
 The main difference between a  and 
 
 * the **common pool** that’s used by other features like parallel Streams operates in **LIFO** mode.
+
+### Runnable vs Callable
+Runnable doesn't returns anything. it returns `void` where as Callable returns an object of type `T`.

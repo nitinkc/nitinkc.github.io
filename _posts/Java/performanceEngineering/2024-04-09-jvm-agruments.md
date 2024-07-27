@@ -37,3 +37,24 @@ intx CICompilerCount                          = 12                              
 bool CICompilerCountPerCPU                    = true                                      {product} {default}
 intx CompileThreshold                         = 10000                                  {pd product} {default}
 ```
+
+```shell
+java -XX:+PrintFlagsFinal
+```
+-Xss 
+
+
+
+# String Pool Management
+-XX:+PrintStringTableStatistics: Prints statistics about the String pool.
+-XX:StringTableSize=120120: Sets the size of the String table.
+
+# Heap Management
+-XX:MaxHeapSize=1g or -Xmx1g: Sets maximum heap size.
+-XX:InitialHeapSize=4g or -Xms4g: Sets initial heap size.
+- -Xss for stack
+
+# Diagnostic and Troubleshooting
+-XX:+UnlockDiagnosticVMOptions: Unlocks diagnostic VM options for troubleshooting.
+-XX:+HeapDumpOnOutOfMemoryError: Generates heap dump on OutOfMemoryError.
+-XX:HeapDumpPath=<path>: Specifies heap dump file path.

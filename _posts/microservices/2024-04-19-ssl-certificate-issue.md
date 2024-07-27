@@ -4,6 +4,7 @@ date:   2024-04-19 21:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+{% include toc title="Index" %}
 
 Solution for the issue on Local microservice testing
 Caused by: `javax.net.ssl.SSLHandshakeException`: PKIX path building failed: `sun.security.provider.certpath.SunCertPathBuilderException`: 
