@@ -7,7 +7,6 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
-
 **Concurrency** : looking for a new job, while working on the current job, during office hours.
 
 **Parallelism** : maintaining 2 jobs, with 2 managers, without telling either manager
@@ -18,72 +17,69 @@ tags: ['Java']
 
 # Parallel vs Concurrent
 
-**Parallel**
-
-* Walk and Talk in parallel, exactly at the same time
-
-```java
-                          v
-                          | Time Slice v
-thread1        Talk   T   Talk   T
-thread2        Walk       Walk
-time  t=0-----------------^-------------------->t
-```
-
-**Concurrent**
+**Parallelism**
+-Walk and Talk in parallel, exactly at the same time (in 2 cores of a CPU)
 
 ```java
-                              v                    v
-                              |Time slice          |Another timeslice
-thread1              T   T   Talk           Talk   |      Talk
-thread2                              Drink        Drink
-time  t=0---------------------^--------------------^-------->t
+                       v
+                       | [Time Slice v]
+thread1-talk   T   T   T   T
+thread2-walk   W       W
+time  t=0--------------^-------------------->t
 ```
 
+**Concurrency**
+Talk & Drink, but not at the Same time. 
+- hold one task and resume it once another is done
+```java
+                     v                    v
+                     |Time slice          |Another timeslice
+thread1 - Talk   T   T    T   | T   T   T |  T  T
+thread2 - Drink      |        D           D
+time  t=0------------^--------^-----------^-------->t
+```
 
 # Parallel vs Asynchronous
 
 Asynchronous means `Non Blocking`
 
-* Non Blocking : when you make a method call, you dont have to wait for it to complete
-* Does not block the thread of execution and wait to finish.
-* however, tasks are always blocking (default behaviour of a thread)
-* what does the thread do : Thread to be non-blocking
-  * responsiveness : main thread should always delegate and be available for next step
-      * Click on download button and then cancel
+* Non Blocking : when you make a method call, you don't have to wait for it to complete
+* Does not block the **thread of execution** and wait to finish.
+* however, **tasks** are always blocking (default behaviour of a thread)
+* For a Thread to be non-blocking
+  * **responsiveness** : main thread should always **delegate** and be available for next step
+      * Eg: Click on download button and then cancel
           * if main thread takes care of downloading, then the cancel button is blocked until the download is finished
-  * Pre-emptible :
-
+  * **Pre-emptible** :
 
 >Both parallel and Async processes run in a separate thread (other than main thread)
 
 For parallel, the thread needs to **JOIN** i.e. the slowest process/thread will determine the overall speed.
 * pen refills (10), cap(20 per hour0  ) and body(50 body per hours) example. Total pens per hour = 10
 
-* For Asynchronous, not waiting for completion, but when results does arrive, move on to do other things with it.
+For Asynchronous, not waiting for completion, but when results does arrive, move on to do other things with it.
     * use the call back to receive response
     * or use a promise
 
-
 ## Asynchronous Task Execution Engine 
+Executor Service introduced in Java 1.5
+{: .notice--info}
 
--> Executor Service introduced in Java 1.5
+Execution Engine has
+- Work Queue (Blocking Queue)
+- Completion Queue
+- Thread Pool
 
-It has
+As soon as the work is placed in the work queue, you get **Future**.
 
-* Work Queue (Blocking Queue)
-* Completion Queue
-* Thread Pool
+Future is a proxy or reference of the result that **will be returned** in the Future
 
-As soon as the work is placed in the work queue, you get Future.
-Future is a proxy or reference of the result that will be returned in the Future
-
-Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Extends Executor service)
-
+Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Extends ExecutorService)
 
 # Async & non blocking programming Features
 
-**Call back** (Callback Hell) - When the response is received, execute the function
+### Call back
+(Callback Hell) - When the response is received, execute the function
 
 * ```java
     doSomething(data, response -> {...})
@@ -94,10 +90,11 @@ Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Exten
 
 > Callback hell to Promises
 
-**Promise** : When done with the task, update through the promise by any one of the three states
-* Pending
-* Resolved
-* Rejected
+### Promise 
+When done with the task, update through the promise by any one of the three states
+- Pending
+- Resolved
+- Rejected
 
 Promise has 2 channels -> data channel & error channel
 
@@ -138,7 +135,7 @@ Java is statically typed, so we have to provide the type of CompletableFuture in
 {% gist nitinkc/eea4fd28d7765ec964cbf9b5c270ec5c %}
 
 
-# CompletableFuture - ThreadPool
+### CompletableFuture - ThreadPool
 
 By Default Completable future uses the **Common ForkJoinPool**. 
 Which means that the number of threads in a common forkjoin pool is equal to the number of cores
@@ -170,7 +167,6 @@ Creating a pipeline and then completing
 {% gist nitinkc/da36ef99c6a7e383e7aea4475328ad9c %}
 
 # Stages of Completable futures
-
 When one stage completes, another one starts and it keeps running
 
 ### supplyAsync()
@@ -179,21 +175,21 @@ When one stage completes, another one starts and it keeps running
 * takes **Supplier** as the input
 * returns `CompletableFuture<T>()` of type T
 
-### thenAccept() & thenAcceptAsync
-* CompletionStage method
-* used for chainign asynchronous tasks. has the capability to use the results of previous async task and perform 
-  actions on it
-* takes **Consumer** as the input
-* returns `CompletableFuture<Void>()` type Void
-
 ### thenApply() & thenApplyAsync()
 * Completion Stage method
 * used for applying transformations, takes a Function
 * thenApply deals with **Function that returns** a value
 * returns `CompletableFuture<T>()` of TypeT
 
+### thenAccept() & thenAcceptAsync
+* CompletionStage method
+* used for chaining asynchronous tasks. Has the capability to use the results of previous async task and perform
+  actions on it
+* takes **Consumer** as the input
+* returns `CompletableFuture<Void>()` type Void
+
 ### thenCombine()
-Use Case : When there is a need to bring data from multiple microservices and combine them
+**Use Case** : When there is a need to bring data from multiple microservices and combine them
 
 * used to combine Independent Completable Futures (two asynchronous tasks)
   * For Example : if a service makes 2 calls to independent services, then the total latency will be MAX(service1, 
@@ -227,11 +223,9 @@ compose() --> sequencing dependent asynchronous tasks,
 thenCombine() --> combine the results of two independent asynchronous tasks into a single result
 {: .notice--primary}
 
-### Dealing with TimeOut
- 2 functions
+### TimeOut - 2 functions
 
 ##### completeOnTimeout
-
 if the CompletableFuture doesn't complete within the specified timeout, it will be completed with the provided default 
 value.
 
@@ -243,7 +237,6 @@ private static void successOnTimeOut(CompletableFuture<Integer> future) {
 ```
 
 ##### orTimeout
-
 If the CompletableFuture times out, it is canceled, and the resulting CompletableFuture is considered completed 
 exceptionally with a TimeoutException.
 
@@ -257,9 +250,8 @@ private static void failureOnTimeOut(CompletableFuture<Integer> future) {
 ```
 
 ### join()
-
 * to obtain the result of the asynchronous computation when it's done.
-* similar to the get() method, but doesn't throw checked exceptions.
+* similar to the `get()` method, but doesn't throw checked exceptions.
 * waits indefinitely for the computation to finish 
   * returns the result 
   * or throws any unhandled exception if one occurs.
@@ -270,7 +262,6 @@ int result = future.join(); // Get the result when the computation is complete
 ```
 
 ### get()
-
 * like join(), the get() method is also used to obtain the result of the asynchronous computation when it's done.
 * Unlike join(), the get() method can throw checked exceptions, specifically `InterruptedException` and 
   `ExecutionException`, which need to be handled.
