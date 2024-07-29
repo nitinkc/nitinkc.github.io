@@ -7,6 +7,9 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
+Java 21 Virtual Threads and Structured Concurrency
+
+
 # Scenario
 When there are multiple independent tasks to be completed, and one of the tasks fail, there should bne some mechanism to let others know that it failed 
 and let others also failfast (instead of waiting for the other tasks to finish)

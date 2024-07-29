@@ -22,37 +22,30 @@ tags: ['Java']
 * Not managed or scheduled by the OS but the JVM is responsible for scheduling.
 * any work must be run in a platform thread, but the JVM is utilizing **carrier threads**, which are
   platform threads, to “carry” any virtual thread when its time has come to execute.
-* All Virtual Threads are always daemon threads, don’t forget to call join() if you want to wait on the main thread.
+* All Virtual Threads are **always daemon threads**, don’t forget to call `join()` if you want to wait on the main thread.
 * Available plentifully and can be used the **one thread per request** model
 * If the code calls a blocking I/O operation in a virtual thread, the runtime **suspends the virtual thread**
-  which can be resumed which can be resumed at appropriate time later
+  which can be resumed which at appropriate time later
 
 * platform threads are managed in a **FIFO** work-stealing **ForkJoinPool**,
     * uses all available processors by default
     * can be modified by tuning the system property `jdk.virtualThreadScheduler.parallelism`.
 
-The main difference between a  and
-
 * the **common pool** that’s used by other features like parallel Streams operates in **LIFO** mode.
 
-in the Virtual Thread Implementation following are used
+The Virtual Thread uses :-
 - Continuations
 - Executor Service
 - ForkJoinPool
 
-
-Java 21 Virtual Threads and Structured Concurrency
- 
 # Task Types
-IO Bound
-
-CPU Bound
+- IO Bound
+- CPU Bound
 
 ## Handling the user requests 
 
 A couple of different architectures used by application servers for handling the user requests.
-
-- process per request model (CGI - Common Gateway Interface)[https://en.wikipedia.org/wiki/Common_Gateway_Interface]
+- process-per-request model (old, CGI - Common Gateway Interface)[https://en.wikipedia.org/wiki/Common_Gateway_Interface]
 - thread per request model
 
 In the 1990s, a popular mechanism for handling user requests was the CGI, the common gateway interface.
@@ -66,8 +59,6 @@ This is an issue because a process in an operating system is considered heavywei
 So because of this, a variation of CGI was created and that is called fast CGI.
 - like having a pool of processes, and the user request is routed to one of the available processes.
 - There is no extra time spent on starting up a new process because it's already up.
-
-
 
 
 # Concurrency and Parallelism
@@ -92,7 +83,7 @@ Core Core Core Core
 
 ### Synchronous call
 
-```message!
+```mermaid!
 sequenceDiagram
     participant Client
     participant API1
