@@ -42,8 +42,7 @@ The Virtual Thread uses :-
 - IO Bound
 - CPU Bound
 
-## Handling the user requests 
-
+## Handling the user requests
 A couple of different architectures used by application servers for handling the user requests.
 - process-per-request model (old, CGI - Common Gateway Interface)[https://en.wikipedia.org/wiki/Common_Gateway_Interface]
 - thread per request model
@@ -59,7 +58,6 @@ This is an issue because a process in an operating system is considered heavywei
 So because of this, a variation of CGI was created and that is called fast CGI.
 - like having a pool of processes, and the user request is routed to one of the available processes.
 - There is no extra time spent on starting up a new process because it's already up.
-
 
 # Concurrency and Parallelism
 
@@ -81,8 +79,19 @@ Core Core Core Core
   1    2    3    4
 ```
 
-### Synchronous call
+# Blocking vs Non blocking IO
+**IO opearations**
+- socket reads/writes - used by DB calls, REST Calls, anything to do with the networks
+- file reads/writes - disk/slower memory access
+- concurrent locks - enforcing synchronization
 
+**Blocking IO aka synchronous I/O**
+
+In Blocking I/O operations, a thread that performs an I/O operation (such as reading from a file or network socket) is 
+**blocked** until the operation completes. During this time, the thread cannot perform other tasks. 
+- This is a performance blocker
+
+**Synchronous call**
 ```mermaid!
 sequenceDiagram
   participant Client
@@ -99,9 +108,14 @@ sequenceDiagram
   API2 -->> Client: Response from API2
 ```
 
-### Aynchronous calls
-- Futures and Callbacks
+**Non Blocking IO**
 
+In non-blocking I/O operations, a thread initiates an I/O operation and continues executing other code while the 
+I/O operation is processed asynchronously.
+- This can improve performance and scalability, especially in systems with high I/O operations.
+
+**Aynchronous calls**
+- Futures and Callbacks
 ```mermaid!
 sequenceDiagram
     participant Client
@@ -110,46 +124,34 @@ sequenceDiagram
 
     Client ->> API1: Call API1 (Async)
     API1 -->> Client: Acknowledge receipt
-    Client -->> API2: Call API2 (Async)
+    Client ->> API2: Call API2 (Async)
     API2 -->> Client: Acknowledge receipt
    
-    Note over API1, API2: Responses can be received asynchronously
+    Note over Client, API2: Responses can be received in any order
     API2 ->> Client: Response from API2
     API1 ->> Client: Response from API1
 ```
-
-In Java 1MB of Stack is allocated for each thread. That's mandated by the OS because , the Java thread is backed by the OS thread, which requires memory up front.
-
-Note: the Java threads are basically a thin layer on top of the OS Threads, so creating a Java thread creates an underlying OS thread under the hood.
-
-# Non blocking IO
-Typically, a thread waits when an IO operation takes place within a thread, which is a performance blocker
-
-Blocking IO
-- blocking I/O, also known as synchronous I/O
-
-Non Blocking IO
-
-- socket reads/writes - used by DB calls, REST Calls, anything to do with the networks 
-- file reads/writes
-- concurrent locks
-
 
 
 ![blockingVsNonBlocking.png](..%2F..%2Fassets%2Fimages%2FblockingVsNonBlocking.png)
 
 
-Reactive Programming : to overcome scalability problems with IO
 
+
+
+
+In Java 1MB of Stack is allocated for each thread. That's mandated by the OS because,
+the Java thread is backed by the OS thread, which requires memory up front.
+
+Note: the Java threads are basically a thin layer on top of the OS Threads, so creating a Java thread creates an underlying OS thread under the hood.
+{: .notice--info}
+Reactive Programming : to overcome scalability problems with IO
 
 # Project Loom 
 Most fundamental change in Java
-
-The Virtual thread starts as a Daemon thread where as the platform thread starts as a non-daemon thread
-
-The JVM Shutsdown when there are no non-daemon threads running.
-
-error with platform thread with large number of threads
+- The Virtual thread starts as a Daemon thread whereas the platform thread starts as a non-daemon thread
+- The JVM Shutsdown when there are no non-daemon threads running.
+- error with platform thread with large number of threads
 ```
 [3.536s][warning][os,thread] Failed to start thread "Unknown thread" - pthread_create failed (EAGAIN) for attributes: stacksize: 1024k, guardsize: 4k, detached.
 [3.536s][warning][os,thread] Failed to start the native thread for java.lang.Thread "Thread-8158"
