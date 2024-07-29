@@ -166,6 +166,12 @@ CompletableFuture<Void>
 Creating a pipeline and then completing
 {% gist nitinkc/da36ef99c6a7e383e7aea4475328ad9c %}
 
+##### complete(T value):
+* allows to manually complete a CompletableFuture with a specific result value.
+* to provide a result explicitly, bypassing the actual asynchronous computation.
+
+{% gist nitinkc/28618b6feb55df00447289a75b351dba %}
+
 # Stages of Completable futures
 When one stage completes, another one starts and it keeps running
 
@@ -187,6 +193,16 @@ When one stage completes, another one starts and it keeps running
   actions on it
 * takes **Consumer** as the input
 * returns `CompletableFuture<Void>()` type Void
+
+### Exceptionally
+
+With the use of **exceptionally** if the execution of the task is
+* OK, go to the next THEN
+* exception, go to the next EXCEPTIONALLY,
+  * BUT with proper type handling. The return type of Exceptionally has to be of the proper type.
+  * Write the exception code generically and use that so that it aligns to the data type properly.
+
+  {% gist nitinkc/6ddd9a3a39bb8639ffe23e9dee2ea709 %}
 
 ### thenCombine()
 **Use Case** : When there is a need to bring data from multiple microservices and combine them
@@ -211,16 +227,8 @@ When one stage completes, another one starts and it keeps running
 * returns **CompletableFuture<T>** here T is the type of the result of the second CompletableFuture. 
 * The resulting CompletableFuture is a flattened chain.
 
-### Exceptionally
-
-With the use of **exceptionally** if the execution of the task is
-* OK, go to the next THEN
-* exception, go to the next EXCEPTIONALLY, 
-    * BUT with proper type handling. The return type of Exceptionally has to be of the proper type. 
-    * Write the exception code generically and use that so that it aligns to the data type properly.
-
-compose() --> sequencing dependent asynchronous tasks, 
-thenCombine() --> combine the results of two independent asynchronous tasks into a single result
+**compose()** --> sequencing dependent asynchronous tasks, 
+**thenCombine()** --> combine the results of two independent asynchronous tasks into a single result
 {: .notice--primary}
 
 ### TimeOut - 2 functions
@@ -235,7 +243,6 @@ private static void successOnTimeOut(CompletableFuture<Integer> future) {
         // for more than a second. the value doesn't arrive in 1 sec (timeout) then resolve it, via the default value
 }
 ```
-
 ##### orTimeout
 If the CompletableFuture times out, it is canceled, and the resulting CompletableFuture is considered completed 
 exceptionally with a TimeoutException.
@@ -249,39 +256,45 @@ private static void failureOnTimeOut(CompletableFuture<Integer> future) {
 }
 ```
 
-### join()
+### join() - Blocking Until Completion
+**Ensuring All Steps Complete:** 
+The CompletableFuture operations you chain (e.g., thenApply, exceptionally, thenAccept, thenRun) will execute asynchronously. 
+
+If the main thread exits before these operations complete, you won’t see their output. 
+`join()` ensures that the main thread waits for the entire chain of operations to finish.
 * to obtain the result of the asynchronous computation when it's done.
 * similar to the `get()` method, but doesn't throw checked exceptions.
-* waits indefinitely for the computation to finish 
-  * returns the result 
+* waits indefinitely for the computation to finish
+  * returns the result
   * or throws any unhandled exception if one occurs.
-
 ```java
 CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> 100);
 int result = future.join(); // Get the result when the computation is complete
+//Blocks the main thread until the supplyAsync is done
 ```
 
 ### get()
 * like join(), the get() method is also used to obtain the result of the asynchronous computation when it's done.
 * Unlike join(), the get() method can throw checked exceptions, specifically `InterruptedException` and 
   `ExecutionException`, which need to be handled.
-* use get() if there is a need to handle exceptions or have more control over waiting for the result.
+* use get() if there is a need to explicit handling for interruptions and want to differentiate between exceptions and interruptions.
 
 ```java
 CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> 100);
 try {
     int result = future.get(); // Get the result and handle exceptions
-} catch (InterruptedException | ExecutionException e) {
-    // Handle exceptions
-}
+} catch (InterruptedException e) {
+    System.out.println("Thread was interrupted");
+    Thread.currentThread().interrupt(); // Preserve interruption status
+  } catch (ExecutionException e) {
+    System.out.println("Caught exception: " + e.getCause()); // Print actual cause
+  }
 ```
 
-### complete(T value):
+### allOf() 
+**Note** :: `allOf(..)` does not "wait" for all tasks to complete. It simply returns a CompletableFuture
 
-* allows to manually complete a CompletableFuture with a specific result value.
-* to provide a result explicitly, bypassing the actual asynchronous computation.
-
-{% gist nitinkc/28618b6feb55df00447289a75b351dba %}
+{% gist nitinkc/ffb3f165b3b58072acd750b78c0a2644 %}
 
 # Streams API vs Async API
 
