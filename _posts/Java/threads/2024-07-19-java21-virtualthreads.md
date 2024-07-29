@@ -85,21 +85,20 @@ Core Core Core Core
 
 ```mermaid!
 sequenceDiagram
-    participant Client
-    participant API1
-    participant API2
-    participant ExternalSystem
+  participant Client
+  participant API1
+  participant API2
+  participant ExternalSystem
 
-    Client ->> API1: Call API1
-    API1 -->> Client: Response from API1
-    Client ->> API2: Call API2
-    API2 -->> Client: Response from API2
-
-    Note over API1, ExternalSystem: Blocking I/O operation
-    API1 ->> ExternalSystem: Request data
-    ExternalSystem -->> API1: Response data
-    API1 -->> Client: Response from API1
+  Client ->> API1: Call API1
+  Note over API1, ExternalSystem: Blocking I/O operation
+  API1 ->> ExternalSystem: Request data
+  ExternalSystem -->> API1: Response data
+  API1 -->> Client: Response from API1
+  Client ->> API2: Call API2
+  API2 -->> Client: Response from API2
 ```
+
 ### Aynchronous calls
 - Futures and Callbacks
 
@@ -122,7 +121,7 @@ In Java 1MB of Stack is allocated for each thread. That's mandated by the OS bec
 Note: the Java threads are basically a thin layer on top of the OS Threads, so creating a Java thread creates an underlying OS thread under the hood.
 
 # Non blocking IO
-Typically a thread waits when an IO operation takes place within a thread, which is a performance blocker
+Typically, a thread waits when an IO operation takes place within a thread, which is a performance blocker
 
 Blocking IO
 - blocking I/O, also known as synchronous I/O
