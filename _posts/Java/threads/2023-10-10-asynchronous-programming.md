@@ -148,11 +148,29 @@ Common ForkJoinPool is shared by
 
 And thus, **user defined thread pool** is also an option to avoid for resource waiting scenarios arising from common thread pool.
 
+CompletableFuture started on a different Pool (mypool) altogether.
+* It's a good idea to use a different Thread pool if the tasks are IO bound. 
+* The Fork Join Pool must be used only CPU intensive task
+
 Define User-defined thread pool
 ```java
-Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
-```
+int numberOfCores = Runtime.getRuntime().availableProcessors();
+ExecutorService pool = Executors.newFixedThreadPool(numberOfCores);
+// Usually the Thread pool would be created upfront
+ExecutorService pool = Executors.newCachedThreadPool();
+ForkJoinPool pool = new ForkJoinPool(10);
 
+finally {
+   pool.close();
+}
+```
+Pass the pool into async methods (thenApplyAsync, thenAcceptAsync)
+```java
+ExecutorService pool = Executors.newCachedThreadPool();
+CompletableFuture<Double> future =  CompletableFuture.supplyAsync(() -> compute(), pool);
+CompletableFuture<Double> doubleCompletableFuture = future.thenApplyAsync(data -> data * 2, pool);
+CompletableFuture<Void> voidCompletableFuture = doubleCompletableFuture.thenAcceptAsync(data -> getPrintln(data),pool);
+```
 # Creating a new CompletableFuture
 ### supplyAsync() - with return Data
 CompletableFuture<V>
@@ -231,6 +249,48 @@ With the use of **exceptionally** if the execution of the task is
 **thenCombine()** --> combine the results of two independent asynchronous tasks into a single result
 {: .notice--primary}
 
+### join() - Blocking Until Completion
+**Ensuring All Steps Complete:**
+The CompletableFuture operations you chain (e.g., thenApply, exceptionally, thenAccept, thenRun) will execute asynchronously.
+
+If the main thread exits before these operations complete, you won’t see their output.
+`join()` ensures that the main thread waits for the entire chain of operations to finish.
+* to obtain the result of the asynchronous computation when it's done.
+* similar to the `get()` method, but doesn't throw checked exceptions.
+* waits indefinitely for the computation to finish
+  * returns the result
+  * or throws any unhandled exception if one occurs.
+```java
+CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> 100);
+int result = future.join(); // Get the result when the computation is complete
+//Blocks the main thread until the supplyAsync is done
+```
+
+### get() & getNow() INSTEAD use thenAccept()
+get() is a blocking call; The best thing to do with GET is to for**GET**. INSTEAD use thenAccept()
+* like join(), the get() method is also used to obtain the result of the asynchronous computation when it's done.
+* Unlike join(), the get() method can throw checked exceptions, specifically `InterruptedException` and
+  `ExecutionException`, which need to be handled.
+* use get() if there is a need to explicit handling for interruptions and want to differentiate between exceptions and interruptions.
+* if it's so important to use get, **use getNow()** with a default value
+
+- getNow() is impatient non-blocking and moves on with a value if there is no immediate response
+- If there is delay prior to getNow call then the getNow may return the correct value.
+
+```java
+CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> 100);
+try {
+    int result = future.get(); // Get the result and handle exceptions
+    int data = future.getNow(-99.0);//need to provide a value if the value is absent
+    future.thenAccept(data -> getPrintln(data));
+} catch (InterruptedException e) {
+    System.out.println("Thread was interrupted");
+    Thread.currentThread().interrupt(); // Preserve interruption status
+  } catch (ExecutionException e) {
+    System.out.println("Caught exception: " + e.getCause()); // Print actual cause
+  }
+```
+
 ### TimeOut - 2 functions
 
 ##### completeOnTimeout
@@ -254,41 +314,6 @@ private static void failureOnTimeOut(CompletableFuture<Integer> future) {
     future.orTimeout(1, TimeUnit.SECONDS);//Does not keep the pipeline in PENDING state
     //for more than a second. the value doesn't arrive in 1 sec (timeout) then cancel it, and completes it exceptionally with a TimeoutException
 }
-```
-
-### join() - Blocking Until Completion
-**Ensuring All Steps Complete:** 
-The CompletableFuture operations you chain (e.g., thenApply, exceptionally, thenAccept, thenRun) will execute asynchronously. 
-
-If the main thread exits before these operations complete, you won’t see their output. 
-`join()` ensures that the main thread waits for the entire chain of operations to finish.
-* to obtain the result of the asynchronous computation when it's done.
-* similar to the `get()` method, but doesn't throw checked exceptions.
-* waits indefinitely for the computation to finish
-  * returns the result
-  * or throws any unhandled exception if one occurs.
-```java
-CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> 100);
-int result = future.join(); // Get the result when the computation is complete
-//Blocks the main thread until the supplyAsync is done
-```
-
-### get()
-* like join(), the get() method is also used to obtain the result of the asynchronous computation when it's done.
-* Unlike join(), the get() method can throw checked exceptions, specifically `InterruptedException` and 
-  `ExecutionException`, which need to be handled.
-* use get() if there is a need to explicit handling for interruptions and want to differentiate between exceptions and interruptions.
-
-```java
-CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> 100);
-try {
-    int result = future.get(); // Get the result and handle exceptions
-} catch (InterruptedException e) {
-    System.out.println("Thread was interrupted");
-    Thread.currentThread().interrupt(); // Preserve interruption status
-  } catch (ExecutionException e) {
-    System.out.println("Caught exception: " + e.getCause()); // Print actual cause
-  }
 ```
 
 ### allOf() 
