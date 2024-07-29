@@ -16,7 +16,6 @@ tags: ['Java']
 ![](https://www.youtube.com/watch?v=1zSF1259s6w)
 
 # Parallel vs Concurrent
-
 **Parallelism**
 -Walk and Talk in parallel, exactly at the same time (in 2 cores of a CPU)
 
@@ -40,10 +39,8 @@ time  t=0------------^--------^-----------^-------->t
 ```
 
 # Parallel vs Asynchronous
-
 Asynchronous means `Non Blocking`
-
-* Non Blocking : when you make a method call, you don't have to wait for it to complete
+* **Non Blocking** : when you make a method call, you don't have to wait for it to complete
 * Does not block the **thread of execution** and wait to finish.
 * however, **tasks** are always blocking (default behaviour of a thread)
 * For a Thread to be non-blocking

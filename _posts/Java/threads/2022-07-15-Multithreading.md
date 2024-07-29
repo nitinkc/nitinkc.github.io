@@ -5,9 +5,9 @@ date:   2021-10-18 13:10:00
 categories: ['Java']
 tags: ['Java']
 ---
+{% include toc title="Index" %}
 
 ## History of multithreads
-
 Java 1 : Threads -> one set of API for all machines. hardware independent
 
 Java 5 : ExecutorServices API -> Pool of threads
