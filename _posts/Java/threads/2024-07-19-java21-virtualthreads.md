@@ -110,10 +110,12 @@ sequenceDiagram
 
     Client ->> API1: Call API1 (Async)
     API1 -->> Client: Acknowledge receipt
-    API1 --x Client: Response from API1
     Client -->> API2: Call API2 (Async)
     API2 -->> Client: Acknowledge receipt
-    API2 --x Client: Response from API2
+   
+    Note over API1, API2: Responses can be received asynchronously
+    API2 ->> Client: Response from API2
+    API1 ->> Client: Response from API1
 ```
 
 In Java 1MB of Stack is allocated for each thread. That's mandated by the OS because , the Java thread is backed by the OS thread, which requires memory up front.
