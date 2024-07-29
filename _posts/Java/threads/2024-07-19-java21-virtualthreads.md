@@ -91,7 +91,7 @@ sequenceDiagram
   participant ExternalSystem
 
   Client ->> API1: Call API1
-  Note over API1, ExternalSystem: Blocking I/O operation
+  Note over Client, ExternalSystem: Blocking I/O operation
   API1 ->> ExternalSystem: Request data
   ExternalSystem -->> API1: Response data
   API1 -->> Client: Response from API1
