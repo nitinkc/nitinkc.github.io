@@ -7,6 +7,40 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
+# Two kinds of threads
+
+### Platform threads
+* the number of available platform threads is limited to the number of OS threads.
+* typically have a large thread stack and other resources that are maintained by the operating system.
+
+### Virtual Threads
+
+* Virtual threads are suitable for running tasks that spend most of the time blocked, often waiting for I/O operations
+  to complete.
+* However, they aren't intended for long-running CPU-intensive operations.
+
+* Not managed or scheduled by the OS but the JVM is responsible for scheduling.
+* any work must be run in a platform thread, but the JVM is utilizing **carrier threads**, which are
+  platform threads, to “carry” any virtual thread when its time has come to execute.
+* All Virtual Threads are always daemon threads, don’t forget to call join() if you want to wait on the main thread.
+* Available plentifully and can be used the **one thread per request** model
+* If the code calls a blocking I/O operation in a virtual thread, the runtime **suspends the virtual thread**
+  which can be resumed which can be resumed at appropriate time later
+
+* platform threads are managed in a **FIFO** work-stealing **ForkJoinPool**,
+    * uses all available processors by default
+    * can be modified by tuning the system property `jdk.virtualThreadScheduler.parallelism`.
+
+The main difference between a  and
+
+* the **common pool** that’s used by other features like parallel Streams operates in **LIFO** mode.
+
+in the Virtual Thread Implementation following are used
+- Continuations
+- Executor Service
+- ForkJoinPool
+
+
 Java 21 Virtual Threads and Structured Concurrency
  
 # Task Types
@@ -288,6 +322,6 @@ private String concurrentCallCompletableFuture() {
 }
 ```
 
-
+![virtualthreadWithFJPool.png]({{ site.url }}/assets/images/virtualthreadWithFJPool.png)
 
 

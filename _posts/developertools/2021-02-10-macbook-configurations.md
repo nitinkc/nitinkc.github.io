@@ -19,7 +19,6 @@ Installing the following tools and configuring them ensures maximum ease of deve
 - Terminal              [Configuring Terminal]({% post_url /developertools/2021-02-01-terminal-config %})                    
 - Profile Settings   [Set Local profile, alias etc.]({% post_url /developertools/2023-07-12-profile-settings %})         
 - IntelliJ Settings  [Configuring IntelliJ]({% post_url /developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings %}) 
-- Git profile         [Configuring global git profile]({% post_url /git/2022-03-16-multiple-git-config %})
 - Git config         [Configuring global git congig]({% post_url /git/2024-06-18-git-config %})
 - Sublime	          [Configuring Sublime Editor]({% post_url /developertools/2021-03-24-sublime-settings %})           
 - Brew Package       [Migrating brew packages]({% post_url /developertools/2022-08-13-brew-package-migration%} )   

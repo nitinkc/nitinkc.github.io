@@ -7,6 +7,8 @@ tags: ['Java',"Performance Engineering"]
 
 {% include toc title="Index" %}
 
+JMH is more suited for microbenchmarking Java code rather than making HTTP requests.
+
 # Profiling Tools:
 
 - VisualVM: A free tool provided by Oracle that integrates with the JDK. It provides CPU, memory, and thread profiling.

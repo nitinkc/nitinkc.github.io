@@ -1,5 +1,5 @@
 ---
-title:  "Asynchronous Programming"
+title:  "CompletableFutures & Asynchronous Programming"
 date:   2023-10-10 15:16:00
 categories: ['Java']
 tags: ['Java']
@@ -7,9 +7,14 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
+
 **Concurrency** : looking for a new job, while working on the current job, during office hours.
+
 **Parallelism** : maintaining 2 jobs, with 2 managers, without telling either manager
+
 **Asynchronous** : While Brewing coffee, read emails and get back to coffee when it's done.
+
+![](https://www.youtube.com/watch?v=1zSF1259s6w)
 
 # Parallel vs Concurrent
 
@@ -151,15 +156,18 @@ Define User-defined thread pool
 Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
 ```
 
-### Creating a completable future
-
+# Creating a new CompletableFuture
+### supplyAsync() - with return Data
+CompletableFuture<V>
 {% gist nitinkc/7d0d331d4716151c51579d4fdda5ba94 %}
 
+### runAsync() - No Return data
+CompletableFuture<Void>
+{% gist nitinkc/e186dba8001122fa5281cf979cd5ce3d %}
 
-### Creating a pipeline and then completing
-
+### new CompletableFuture<>() 
+Creating a pipeline and then completing
 {% gist nitinkc/da36ef99c6a7e383e7aea4475328ad9c %}
-
 
 # Stages of Completable futures
 
@@ -171,14 +179,14 @@ When one stage completes, another one starts and it keeps running
 * takes **Supplier** as the input
 * returns `CompletableFuture<T>()` of type T
 
-### thenAccept()
+### thenAccept() & thenAcceptAsync
 * CompletionStage method
 * used for chainign asynchronous tasks. has the capability to use the results of previous async task and perform 
   actions on it
 * takes **Consumer** as the input
 * returns `CompletableFuture<Void>()` type Void
 
-### thenApply()
+### thenApply() & thenApplyAsync()
 * Completion Stage method
 * used for applying transformations, takes a Function
 * thenApply deals with **Function that returns** a value
