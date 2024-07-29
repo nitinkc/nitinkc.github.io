@@ -24,12 +24,14 @@ Java 8 : ParallelStreams and CompletableFutures
 
 Java 21 : Virtual Threads
 * Game changer 
+* [https://nitinkc.github.io/java/java21-virtualthreads/](https://nitinkc.github.io/java/java21-virtualthreads/)
 
 # Defining Threads
-By default, the platform threadsa re NON-DAEMON Threads, unless its explicitly marked daemon.
+By default, the platform threads are NON-DAEMON Threads, unless its explicitly marked daemon.
 
 If any non daemon thread is running, the JVM will not shut it down even if the main thread has terminated.
 [T1ThreadRunsParentDies.java](https://github.com/nitinkc/JavaConcepts/blob/main/src/main/java/nitin/multithreading/aBasics/T1ThreadRunsParentDies.java)
+
 ### extending Thread
 Invoke
 ```java
@@ -181,20 +183,14 @@ Note here that the executor service interface also implements AutoCloseable
 to handle the results of the tasks as they happen instead of get()
 
 # Futures Limitations
-Cannot create Asynchronous pipeline (Reactive style of programming) 
-- (its imperative style. Have to tell what to do and how to do)
-
-Cannot Complete a future
-
-Limited Functionality
+- Cannot create Asynchronous pipeline (Reactive style of programming) (its imperative style. Have to tell what to do and how to do)
+- Cannot Complete a future
+- Limited Functionality
 
 # CompletableFutures
-
 ```java
 // Create a Completable Future
-        CompletableFuture<String> future = new CompletableFuture<>();
-
-
+CompletableFuture<String> future = new CompletableFuture<>();
 ```
 
 # Problems with CompletableFutures
@@ -203,11 +199,8 @@ Railway track pattern is good in concept, but in implementation,
 * cognitive load : since there is skipping to then's or exceptionally's or the return type.
 
 # Continuations and Coroutines
-
-Don't want a Thread be blocked on a task. thread should be able to switch between the tasks
-
-when a task is sleeping, thread should be able to do other things
-
+- Don't want a Thread be blocked on a task. thread should be able to switch between the tasks
+- when a task is sleeping, thread should be able to do other things
 
 **Subroutine** : Just a function, no state. Function you call and get a response.
 @startuml
@@ -215,13 +208,13 @@ participant Method as A
 participant Subroutine as B
 participant Coroutine
 
-    activate A
+activate A
 
-    A -> B: call Subroutine
-    activate B #FFBBBB
-    Note right of B: One Entry point.
-    B --> A: return response
-    deactivate B
+A -> B: call Subroutine
+activate B #FFBBBB
+Note right of B: One Entry point.
+B --> A: return response
+deactivate B
 skinparam sequenceMessageAlign center
 
 activate Coroutine #green
@@ -244,7 +237,6 @@ activate Coroutine #gold
 Coroutine -> A: yield 
 deactivate Coroutine
 deactivate A
-
 @enduml
 
 **Coroutine** : Cooperative Routine - no entry point, no exit point. Just like a conversations. Kind of weave in and 
@@ -268,60 +260,22 @@ sequenceDiagram
 * Should be a data structure that you benefit from but should not be directly accessed. Be in the background.
 * Continuations in Java are behind the scenes.
 
-when a method yields using Continuation.yield() method, the Stack Frames and Code Pointer get stored in the related Continuation.
-
-a Continuation can be run from inside another Continuation
-
-
-
-```java
- private static final ContinuationScope SCOPE = new ContinuationScope("scope");
-    // --add-exports java.base/jdk.internal.vm=ALL-UNNAMED in the gradle build package
-    //Package 'jdk.internal.vm' is declared in module 'java.base', which does not export it to the unnamed module
-    public static void main(String[] args) throws Exception {
-        logShortMessage("Main method : START");
-
-        Continuation continuation = new Continuation(SCOPE, ContinuationsAsCoroutines::continuationMethod);
-        while (!continuation.isDone()) {//Run as long as Continuations are running.
-            continuation.run();//Run with each Continuation.yield method
-            logShortMessage("##### Continuation loop #####");
-            Thread.sleep(Duration.ofSeconds(3));
-        }
-        logShortMessage("Main method : END");
-    }
-
-
-    private static void continuationMethod() {
-        logShortMessage("continuationMethod : enter");
-        Incrementer incrementer = new Incrementer(1, zonedDateTimeStr(ZonedDateTime.now()));
-
-        logShortMessage("State 1 : " + incrementer);
-        //Restores the state
-        Continuation.yield(SCOPE);//Run until here and send the control back to the main method
-
-        //Restore from previous point, Resumes the state
-        modifyIncrementer(incrementer);
-        logShortMessage("State 2 : " + incrementer);
-        Continuation.yield(SCOPE);
-    }
-```
-
-
-
+when a method yields using `Continuation.yield()` method, the Stack Frames and Code Pointer get stored in the related Continuation.
+- A Continuation can be run from inside another Continuation
+{% gist nitinkc/f485271e46a2c7c60961467e6b039966 %}
 
 Virtual threads occupy very small amount of memory and uses the concept of mounting and unmounting in terms of 
 context switching when Sleep or blocking operation is involved.
 
 Thread can switch between tasks
 
-
 //Do not confuse ExecutorService with pooling
- bvc
+vc
 No sense to pool virtual threads
 
 VirtualThreads are like qtips - use and throw
 
-```log
+```java
 DONE in : Main thread Thread[#1,main,5,main]
 entering task1 Thread[#1,main,5,main]
 entering task2 Thread[#1,main,5,main] #when the task 1 goes to sleep, same thread picks up task2
