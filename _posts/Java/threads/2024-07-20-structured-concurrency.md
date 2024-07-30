@@ -9,10 +9,10 @@ tags: ['Java']
 
 Java 21 Virtual Threads and Structured Concurrency
 
-
 # Scenario
-When there are multiple independent tasks to be completed, and one of the tasks fail, there should bne some mechanism to let others know that it failed 
-and let others also failfast (instead of waiting for the other tasks to finish)
+When there are multiple independent tasks to be completed, and one of the tasks fail, there should be 
+some mechanism to let others know that it has failed 
+and let others also fail-fast (instead of waiting for the other tasks to finish)
 
 # Interrupts and Thread Cancellation
 
@@ -25,6 +25,7 @@ and let others also failfast (instead of waiting for the other tasks to finish)
 `boolean isInterrupted()`
 Effect: Checks the interrupted status of the specified thread **without** clearing it.
 
+# Expected features
 **Cooperative Interruption**: Threads should check their interrupted status periodically to respond appropriately to interruption requests.
 
 **Handling Interruption**: Proper handling of interruptions improves application responsiveness and thread management.
@@ -32,12 +33,13 @@ Effect: Checks the interrupted status of the specified thread **without** cleari
 - Interrupter must call `interrupt()` to set the flag (its own) 
 - Interrupted thread 
   - may choose to ignore the interrupt
-  - check interrupted status periodically
+  - check interrupted status periodically (polling)
   - `wait()`, `sleep()`, `join()` will check status automatically
     - throws `InterruptedException()`
     - clears the interrupted status flag
+  - Cancel using `cancel(true)`
 
-Futures - Class build on top of Threads. Cancel using `cancel(true)`
+# Futures - Class build on top of Threads. 
 
 ```java
 Future<TaskResponse> taskFuture = excecutor.submit(callable);
@@ -57,7 +59,7 @@ var tasks = List.of(new BlockingIOTasks("Price-1", 3, true),
 ### StructuredTaskScope
 Shuts down when **all child** threads complete
 ```java
-try(var scope = new StructuredTaskScope<TaskResponse>()) {
+try(var scope = new StructuredTaskScope<TaskResponse>()){
     // Start running the tasks in parallel
     List<Subtask<TaskResponse>> subtasks = tasks.stream().map(task -> scope.fork(task)).toList();
     
@@ -137,5 +139,3 @@ try (var service = Executors.newVirtualThreadPerTaskExecutor()) {
     return result;
 } // makes sure that all threads are fully terminated
 ```
-
-

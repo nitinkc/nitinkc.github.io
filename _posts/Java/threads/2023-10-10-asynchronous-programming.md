@@ -318,6 +318,25 @@ private static void failureOnTimeOut(CompletableFuture<Integer> future) {
 
 {% gist nitinkc/ffb3f165b3b58072acd750b78c0a2644 %}
 
+### whenComplete()
+whenComplete does not allow for transformation of the result.
+it is primarily used for handling completion and any associated exceptions.
+{% gist nitinkc/3648ba0dd28d87fb5c4c13d4a77742e4 %}
+
+### anyOf()
+Returns the first one succeeded. 
+```java
+CompletableFuture
+        .anyOf(future1, future2, future3, future4)
+        .thenAccept(result -> {
+            System.out.println("Handling Accept :: " + result);
+        })
+        .exceptionally(throwable -> {
+            System.out.println("Handling Failure :: " + throwable);
+            return null;
+        })
+        .join();
+```
 # Streams API vs Async API
 
 | Functional Interface | Method         | Streams API | Async API     |

@@ -62,5 +62,3 @@ Scoped values are not available for Child threads except the ones initiated with
 This is because threads started from StructuredTaskScope block are 
 **guaranteed to complete** before the **try-with-resources block ends** and THUS
 remains within the scope of the ScopedValue.
-
-
