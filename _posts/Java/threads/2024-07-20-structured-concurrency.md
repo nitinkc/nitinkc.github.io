@@ -46,7 +46,7 @@ Future<TaskResponse> taskFuture = excecutor.submit(callable);
 taskFuture.cancel(true);
 ```
 
-# JDK Classes
+# Structured Task
 - StructuredTaskScope
 - Subtask
 

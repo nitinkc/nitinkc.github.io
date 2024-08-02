@@ -17,8 +17,7 @@ Scoped Value are only available for use within the dynamic scope of the method
 - during the bounded period of execution of a method 
 - bound during start of scope and unbounded during end of scope (even exception)
 - Rebinding allowed but cannot modify Scoped Value
-- No cleanup required. automatically handled
-
+- No cleanup required. Automatically handled
 
 # Bind the Scoped Values to the Object
 all methods return boolean
@@ -29,11 +28,12 @@ all methods return boolean
 ScopedValue.callWhere(studentScopedValue, hp, CallableClass::methodName);//using a callable
 
 //binds studentScopedValue with harryPotter Object within the scope of the method voidMethodCall
-ScopedValue.runWhere(studentScopedValue, hp, RunnableClass::voidMethodCall);
+ScopedValue.runWhere(studentScopedValue, hp, RunnableClass::voidMethodCall);//using runnable, void method call
 
 //binds studentScopedValue with harryPotter Object within the Supplier method voidMethodCall
 ScopedValue.getWhere(studentScopedValue, hp, Class::supplierMethodCall);
 ```
+
 For multiple scopes 
 ```java
 // ScopedValues for managing different pieces of data

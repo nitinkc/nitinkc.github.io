@@ -337,6 +337,15 @@ CompletableFuture
         })
         .join();
 ```
+
+### completedFuture()
+**Purpose**: This method creates a CompletableFuture that is already completed with the specified value.
+
+**Usage**: It is used when you have a result that is already available and want to wrap it in a CompletableFuture without additional asynchronous computation.
+
+**Behavior**: The resulting CompletableFuture is instantly completed with the given value, meaning that any operations on this CompletableFuture will execute immediately (or as soon as possible).
+
+
 # Streams API vs Async API
 
 | Functional Interface | Method         | Streams API | Async API     |

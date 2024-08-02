@@ -18,12 +18,9 @@ Certificate issue for Mac and Windows users when opening GKE URLs from UI:
 Download the certificate from the web browser
 ![sslDownload.png]({{ site.url }}/assets/images/sslDownload.png)
 
-##### Update CA Certificate for Windows
-- Download  certificate
-- Double-click on certificate → Current User → Select Place all certificates in the following store → Click on Browse 
-→ Select Trusted Root Certification Authorities → Click Next → Finish
+##### Update CA Certificate
 
-For Mac double-click and it will install or open `Key Chain Access`
+For Macbook double-click, and it will install or open `Key Chain Access`
 ![ssl-keychain.png]({{ site.url }}/assets/images/ssl-keychain.png)
 
 Export the certificate from Keychain access and Save it as pem file
@@ -56,7 +53,6 @@ sudo keytool -import -file /Users/${UserName}/Documents/My_Enterprise_Root_CA.ce
 -keystore /Users/${UserName}/Library/Java/JavaVirtualMachines/corretto-21.0.3/Contents/Home/lib/security/cacerts
 ```
 
-it will ask for 2 passwords then
-
+if it asks for 2 passwords then
 - 1st password would be your mac/windows login password
 - 2nd password would be "changeit"
