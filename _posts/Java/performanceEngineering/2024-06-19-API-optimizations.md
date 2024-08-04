@@ -4,6 +4,7 @@ date:   2024-06-19 00:10:00
 categories: ['Java',"Performance Engineering"]
 tags: ['Java',"Performance Engineering"]
 ---
+{% include toc title="Index" %}
 
 Identify actual bottlenecks through load testing and profiling
 

@@ -5,6 +5,9 @@ categories: ['Java',"Performance Engineering"]
 tags: ['Java',"Performance Engineering"]
 ---
 
+{% include toc title="Index" %}
+
+
 # Java Memory Leaks
 
 A memory leak happens **only if the allocated objects can't be garbage-collected** because they are referenced from somewhere in the running application.

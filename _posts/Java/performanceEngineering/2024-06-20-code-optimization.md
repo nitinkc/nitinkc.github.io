@@ -4,6 +4,7 @@ date:   2024-06-20 00:10:00
 categories: ['Java',"Performance Engineering"]
 tags: ['Java',"Performance Engineering"]
 ---
+{% include toc title="Index" %}
 
 # Java Performance Optimization Techniques
 

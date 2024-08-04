@@ -5,6 +5,7 @@ categories: ['Java',"Performance Engineering"]
 tags: ['Java',"Performance Engineering"]
 ---
 
+{% include toc title="Index" %}
 
 ```shell
 git clone https://github.com/AdoptOpenJDK/jitwatch.git

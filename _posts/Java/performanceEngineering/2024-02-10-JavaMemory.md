@@ -36,14 +36,13 @@ The heap is larger and more flexible than the stack, but it's also more prone to
   
 **Metaspace**
 
-- Metaspace, introduced in Java 8, replaces the older "permanent generation" (PermGen) for storing metadata related to classes and methods.
+- Metaspace, introduced in Java 8, replaces the older "permanent generation" (PermGen) for storing **metadata** related to classes and methods.
 - It stores information such as class definitions, method information, and constant pool data.
 - Unlike PermGen, metaspace is not part of the Java heap but is allocated from the native memory of the operating system.
 - Metaspace automatically grows or shrinks based on the application's demand and the available native memory.
 - The use of metaspace helps to avoid some of the limitations and issues associated with PermGen, such as memory leaks caused by classloader leaks.
 
-Check [https://nitinkc.github.io/java/GarbageCollections/#generational-garbage-collection](https://nitinkc.github.io/java/GarbageCollections/#generational-garbage-collection)
-
+Check [generational-garbage-collection](https://nitinkc.github.io/java/performance%20engineering/GarbageCollections/#generational-garbage-collection)
 # Stack
 Every thread will have its own stack which is managed effectively by the Java virtual machine.
 
@@ -126,4 +125,14 @@ initialized. However, it does not mean that the state of the object itself canno
 ![java-memory3.png]({{ site.url }}/assets/images/java-memory3.png)
 
 # Metaspace - Since Java 8
+
+PermGen prior to Java 8.
+
+Static primitives are stored in the meta space
+
+Static Objects are stored on the heap but object pointer held in the meta space
+
+Any object on the heap which is referenced from the meta space will never be garbage collected.
+
+All threads in Java have access to the meta space.
 

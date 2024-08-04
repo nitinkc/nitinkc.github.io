@@ -99,8 +99,7 @@ try(var scope = new StructuredTaskScope.ShutdownOnFailure()){
     // Start running the tasks in parallel
     List<Subtask<TaskResponse>> subtasks = tasks.stream().map(task -> scope.fork(task)).toList();
 
-    // Wait for all tasks to complete (success or not)
-    scope.join();
+    / 
     scope.throwIfFailed();// Wait till first Child Task fails. Send cancellation to all other Child Tasks
     
     // Handle Success Child Task Results
