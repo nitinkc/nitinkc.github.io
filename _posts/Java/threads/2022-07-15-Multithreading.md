@@ -7,24 +7,6 @@ tags: ['Java']
 ---
 {% include toc title="Index" %}
 
-## History of multithreading in Java
-Java 1 : Threads -> one set of API for all machines. hardware independent
-
-Java 5 : ExecutorServices API -> Pool of threads
-* Issue 1: Pool induced deadlock
-* One thread breaks the problem and throws in the pool and waits foe the result to come back
-* All the threads in pool just divided the work, and no thread left to take care of the problem
-
-Java 7 : Fork Join pool
-* Work-stealing : the threads that divides problem, also solves one of the divided part
-
-Java 8 : ParallelStreams and CompletableFutures
-* uses Java 7 FJP
-* Common Fork join pool
-
-Java 21 : Virtual Threads
-* Game changer 
-* [https://nitinkc.github.io/java/java21-virtualthreads/](https://nitinkc.github.io/java/java21-virtualthreads/)
 
 # Defining Threads
 By default, the platform threads are NON-DAEMON Threads, unless its explicitly marked daemon.
@@ -135,7 +117,7 @@ Thinking in this way allows us to separate the task from how the task will be ex
 
 We call this the execution policy of the task, which the idea behind the Java Futures. The thread pool contains a number of threads based on some policy
 
-# Future
+# Futures & Executor Service
 
 - Several callers can submit their tasks.
 - These tasks get executed by the threads **inside the thread pool**.
@@ -178,6 +160,66 @@ Note here that the executor service interface also implements AutoCloseable
 
 ![futures.png]({{ site.url }}/assets/images/futures.png)
 
+
+#### Types of ExecutorServices:
+
+##### Fixed Thread Pool
+```java
+ExecutorService fixedThreadPool = Executors.newFixedThreadPool(int nThreads);
+```
+##### Cached Thread Pool:
+```java
+ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+```
+##### Single Thread Executor:
+```java
+ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
+```
+##### Scheduled Thread Pool
+```java
+ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(int corePoolSize);
+```
+
+#### Submitting a Task
+##### Runnable Service
+```java
+ExecutorService executor = Executors.newFixedThreadPool(2);
+
+Runnable task1 = () -> {
+    System.out.println("Task 1 is running");
+};
+
+executor.execute(task2);
+```
+
+##### Callable Service (Retruns a Future)
+```java
+Callable<String> task1 = () -> {
+    return "Task 1 result";
+};
+
+Future<String> future1 = executor.submit(task1);
+
+try {
+    String result1 = future1.get(); // Blocking call
+    System.out.println(result1);
+} catch (InterruptedException | ExecutionException e) {
+    e.printStackTrace();
+}
+```
+
+#### Shutting Down the ExecutorService
+```java
+executor.shutdown(); // Initiates an orderly shutdown
+try {
+    if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
+        executor.shutdownNow(); // Forcefully shuts down if tasks do not terminate within the timeout
+    }
+} catch (InterruptedException e) {
+    executor.shutdownNow();
+}
+```
+
 ### ExecutorCompletionService
 
 to handle the results of the tasks as they happen instead of get()
@@ -187,7 +229,8 @@ to handle the results of the tasks as they happen instead of get()
 - Cannot Complete a future
 - Limited Functionality
 
-# CompletableFutures
+# [CompletableFutures](https://nitinkc.github.io/java/asynchronous-programming/#creating-a-new-completablefuture)
+
 ```java
 // Create a Completable Future
 CompletableFuture<String> future = new CompletableFuture<>();

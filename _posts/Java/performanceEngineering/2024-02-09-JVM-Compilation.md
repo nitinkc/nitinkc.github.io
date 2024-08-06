@@ -8,45 +8,35 @@ tags: ['Java',"Performance Engineering"]
 {% include toc title="Index" %}
 
 Java code compiles to byte code (.class file) which then runs (interpreted at runtime) in JVM.
-
-Write code once and run it on any hardware consistently.
-
-For C language, the code is directly compiled to native machine code
+- Write Java code once and run it on any hardware consistently. 
+- For C language, the code is directly compiled to each native machine code
 
 # Experiment with New features
-- experiment with continuations '--add-exports=java.base/jdk.internal.vm=ALL-UNNAMED'
+experiment with continuations with J21 with VM Argument `--add-exports=java.base/jdk.internal.vm=ALL-UNNAMED`
+
+For Gradle based projects, add in `build.gradle`
 ```groovy
 tasks.withType(JavaCompile) {
-options.compilerArgs += [
-'--add-exports=java.base/jdk.internal.vm=ALL-UNNAMED',
-'--enable-preview'
-]
+  options.compilerArgs += ['--add-exports=java.base/jdk.internal.vm=ALL-UNNAMED', '--enable-preview']
 }
 tasks.withType(JavaExec) {
-jvmArgs += [
-'--add-exports=java.base/jdk.internal.vm=ALL-UNNAMED',
-'--enable-preview'
-]
+  jvmArgs += ['--add-exports=java.base/jdk.internal.vm=ALL-UNNAMED', '--enable-preview']
 }
 ```
 
 # JIT - Just In Time compilation
-
-The Java Virtual Machine has a feature called Just in Time compilation.
-The JVM will monitor which branches of code are run the **most often**, which methods or parts of methods, specifically loops
+The JVM will monitor which branches of code are run the **most often**, the methods or parts of methods, specifically loops
 are executed the **most frequently**.
 
-Code execution could speed up if **that method/part of method was compiled to native machine code** and JVM can do so.
+Code execution could speed up if **that method/part of method was compiled to native machine code** and JVM can do so using **Just in Time compilation**.
 
 So part of our application is being run 
-* in interpreted mode as bytecode (less frequently used code) and 
-* some is running as compiled native machine code (most frequently used).
+* in **interpreted mode** as bytecode (less frequently used code) and 
+* some is running as **compiled native machine code** (most frequently used).
 
-This process of native compilation is completely transparent to the user, but it has an important implication
+> Code will generally run faster, the longer it is left to run.
 
-> Your code will generally run faster, the longer it is left to run.
-
-That's because the virtual machine can **profile your code** and work out which bits of it could be optimized by 
+That's because the virtual machine can **profile your code** and work out, automatically, which bits of it could be optimized by 
 compiling them to native machine code.
 
 # Compiler Flags
@@ -58,7 +48,7 @@ compiling them to native machine code.
 ```
 
 Section of the output
-```log
+```
 50   31     n 0       java.lang.System::arraycopy (native)   (static)
 56   19       3       java.lang.Integer::valueOf (32 bytes)
 56   20       3       java.lang.Number::<init> (5 bytes)
@@ -69,25 +59,27 @@ Section of the output
 58   23       3       java.util.ImmutableCollections$SetN$SetNIterator::hasNext (13 bytes)   made not entrant
 1043  779   !   3       com.sun.tools.javac.jvm.PoolReader$ImmutablePoolHelper::readIfNeeded (148 bytes)   made not entrant
 ```
-
-column 1 is time in milliseconds since the VM Started<br>
-column 2 is sequence of execution <br>
-`n` means Native method <br>
-`s` means it's a synchronized method <br>
-`%` means the code is in code-cache for optimal performance <br>
-Next column is `1,2,3,4` indicating Compilation level (`C1 -> Native Level 1,2,3` & `C2 -> Native Level 4`) <br>
-`made not entrant` : This message typically appears when a compiled method is invalidated due to changes in the 
-execution profile or other factors. When a method is "not entrant," it means that it is no longer considered suitable for execution, and the JVM may deoptimize it or recompile it with different optimizations.
+- `column 1` is time in milliseconds since the VM Started
+- `column 2` is the order in which the method or the code block is complied
+- `!` means exception
+- `n` means Native method
+- `s` means it's a synchronized method
+- `%` the code has been **natively compiled** and is now running from **code-cache** for optimal performance
+  - most optimized way possible
+- Next column is `1,2,3,4` indicates Compilation level (`C1 -> Native Level 1,2,3` & `C2 -> Native Level 4`)
+- `made not entrant` : This message typically appears when a compiled method is invalidated due to changes in the 
+execution profile or other factors. 
+  - When a method is "not entrant," it means that it is no longer considered suitable for execution, and the JVM may de-optimize it or recompile it with different optimizations.
 
 # C1 and C2 compilers
 
 The **HotSpot virtual machine** (since Java version 1.3) contains two conventional JIT-compilers: 
 
-The client compiler, also called **C1** 
+The client compiler, also called **C1** produces Native Level 1,2,3
   * C1 is designed to run faster and produce less optimized code,
   * is a better fit for desktop applications, since its faster
 
-the server compiler, called **opto or C2**.
+the server compiler, called **opto or C2** produces Native Level 4
   * C2 takes a little more time to run but produces a better-optimized code.
   * C2 has been extremely optimized and produces code that can compete with C++
   * is better for long-running server applications that can spend more time on the JIT compilation
@@ -115,8 +107,6 @@ It takes more time to compile compared to the C1 compiler but produces faster co
 
 **Optimization Levels**: Both C1 and C2 compilers have multiple optimization levels.
 The JVM may choose different optimization levels based on the frequency and importance of the methods being compiled.
-
-`-XX:-TieredCompilation` : Turn off the Tiered Compilation
 
 ##### Control Options
 `-client`: This option instructs the JVM to use the client compiler (C1) as the default compiler. Prevent's C2 compiler to kick in if needed.
@@ -176,20 +166,15 @@ jinfo --flag CICompilerCount 1692
 The virtual machine decides which level of compilation to apply to a particular block of code based on **how often it is being run**
 and how complex or time-consuming it is.
 
-the higher the number, the more profiled the code has been.
+The higher the number, the more profiled the code has been.
 
 If the code has been called enough times, then we reach level four and the C2 compiler has been
-used instead.
-
-And this means that our code is even more optimized than when it was compiled using the C1 compiler
-
-and the Java virtual machine can actually decide.
+used instead. And this means that our code is even more optimized than when it was compiled using the C1 compiler.
 
 # Tuning the code cache
 
 `-XX:+PrintCodeCache`
 If the code cache is full, the warning message is `code cache is full, compiler has been disabled.`
-
 
 ```log
 CodeHeap 'non-profiled nmethods': size=119168Kb used=12Kb max_used=12Kb free=119155Kb
@@ -206,7 +191,6 @@ total_blobs=332 nmethods=33 adapters=206
 compilation: enabled
 stopped_count=0, restarted_count=0 full_count=0
 ```
-
 
 We can change the code cache size with three different flags.
 
@@ -239,14 +223,10 @@ From local JConsole installation, invoke the jconsole
 cd /usr/bin
 jconsole
 2024-02-10 00:16:58.371 jconsole[16258:688137] WARNING: Secure coding is not enabled for restorable state! Enable secure coding by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState: and returning YES.
-
 ```
 Choose the Remote process and provide appropriate parameters
-![jconsole.png](..%2F..%2Fassets%2Fimages%2Fjconsole.png)
-
-
-![jconsole-log.png](..%2F..%2Fassets%2Fimages%2Fjconsole-log.png)
-
+![jconsole.png](..%2F..%2F..%2Fassets%2Fimages%2Fjconsole.png)
+![jconsole-log.png](..%2F..%2F..%2Fassets%2Fimages%2Fjconsole-log.png)
 # 32 bit JVM vs 64 bit JVM
 
 | 32 bit JVM                        | 64 bit JVM                                             | 
@@ -300,4 +280,16 @@ Maximum bucket size     :        11
 ```
 
 `-XX:+HeapDumpOnOutOfMemoryError`
+
 `-XX:HeapDumpPath=<>`
+
+# JIT Watch - Compiler inspector
+```shell
+git clone https://github.com/AdoptOpenJDK/jitwatch.git
+
+cd jitwatch
+mvn clean package && java -jar ui/target/jitwatch-ui-shaded.jar
+```
+
+![java-memory.png]({{ site.url }}/assets/images/jitWatch1.png)
+![java-memory.png]({{ site.url }}/assets/images/jitWatch2.png)

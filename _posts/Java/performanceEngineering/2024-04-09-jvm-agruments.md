@@ -21,13 +21,8 @@ Pass in the PID for the running Java progam along with the flag to know its curr
 -XX:SurvivorRatio=8
 ```
 
-# Compilation
-
-`-XX:+PrintCompilation` : see the output on console
-
-`-XX:-TieredCompilation` : Turn off the Tiered Compilation
-
-Get all the possible flags/options
+**Get all the possible flags/options**
+`-XX:+PrintFlagsFinal` : 
 ```shell
 java -XX:+PrintFlagsFinal
 ```
@@ -35,6 +30,34 @@ Check the following flags
 `CICompilerCount` -  how many threads are available to run the compiling process
 
 `CompileThreshold` - the number of times a method/code needs to run before it is natively compiled
+
+# Compilation
+
+`-XX:+PrintCompilation` -  provides insight into the compilation process of methods by the JVM, including information about their optimization levels and status
+
+`-XX:-TieredCompilation`: This option disables tiered compilation, meaning that only the C2 compiler will be used.
+
+`-client`: This option instructs the JVM to use the client compiler (C1) as the default compiler. Prevent's C2 compiler to kick in if needed.
+
+`-server`: This option instructs the JVM to use the server compiler (C2) as the default compiler.
+
+`-d64`: This option specifies that the JVM should run in 64-bit mode, utilizing the larger address space available on 64-bit architectures.
+
+`-XX:CICompilerCount=n`
+
+`-XX:CompileThreshold=n`
+
+`-XX:+PrintCodeCache` : If the code cache is full, the warning message is `code cache is full, compiler has been disabled.`
+
+`InitialCodeCacheSize` is the size of the code cache when the application starts.
+The default size varies based on available memory, but it's often around about 160kB.
+
+`-XX:ReservedCodeCacheSize=150M` : is the maximum size of the code cache. In other words, the code cache can grow over time
+**up to the size** of the reserved code cache.
+
+`CodeCacheExpansionSize` dictates how quickly the code cache should grow as it gets full. How much extra space should be
+added each time the code cache is grown
+
 
 # Diagnostic and Troubleshooting
 `-XX:+UnlockDiagnosticVMOptions`: Unlocks diagnostic VM options for troubleshooting.
@@ -58,6 +81,9 @@ Check the following flags
 
 `-Xss` for stack
 
+`-XX:+HeapDumpOnOutOfMemoryError`
+
+`-XX:HeapDumpPath=<>`
 
 # Garbage Collections
 

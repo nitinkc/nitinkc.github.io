@@ -37,16 +37,21 @@ The heap is larger and more flexible than the stack, but it's also more prone to
 **Metaspace**
 
 - Metaspace, introduced in Java 8, replaces the older "permanent generation" (PermGen) for storing **metadata** related to classes and methods.
+- Static primitives are stored in the meta space
+- Static Objects are stored on the heap but object pointer/reference is held in the meta space
+- Any object on the heap which is referenced from the meta space will never be garbage collected.
+- All threads in Java have access to the meta space.
 - It stores information such as class definitions, method information, and constant pool data.
 - Unlike PermGen, metaspace is not part of the Java heap but is allocated from the native memory of the operating system.
 - Metaspace automatically grows or shrinks based on the application's demand and the available native memory.
 - The use of metaspace helps to avoid some of the limitations and issues associated with PermGen, such as memory leaks caused by classloader leaks.
 
 Check [generational-garbage-collection](https://nitinkc.github.io/java/performance%20engineering/GarbageCollections/#generational-garbage-collection)
+
 # Stack
 Every thread will have its own stack which is managed effectively by the Java virtual machine.
 
-Java knows exactly when data on the stack can be destroyed (via [Automatic Garbage Collection Process](https://nitinkc.github.io/java/GarbageCollections))
+Java knows exactly when data on the stack can be destroyed (via [Automatic Garbage Collection Process](https://nitinkc.github.io/java/performance%20engineering/GarbageCollections/)
 
 ```java
 public static void main(String[] args) {
@@ -66,14 +71,30 @@ The Corrosponding Stack prior to `return result`
 |result = 24        | 
 |temp = 12          |
 |data = 10          | <-- Pass By Value Example in modify(int data)
-|a=10               |
+|a = 10             |
 |args = empty array |
-
 ```
 
 Stacks can only be used to store simple data types like primitives
 
 For complex data types, Stack entry keeps a pointer to the object 
+
+```java
+private Map<Integer, String>  idToNameMap;
+public List<String> getAllNames() {
+   int count = idToNameMap.size();
+   List<String> allNames = new ArrayList<>();
+   
+   allNames.addAll(idToNameMap.values());
+   return allNames;
+}
+```
+The `count` variable is a primitive type allocated on the **stack**, and is therefore 
+_only accessible by the thread that is currently executing_ the `getAllNames()` method.
+
+If 2 threads are executing the `getAllNames()` simultaneously, they have 
+**2 different versions of the `count`** variable on their stack.
+
 
 # The Heap
 
@@ -125,14 +146,49 @@ initialized. However, it does not mean that the state of the object itself canno
 ![java-memory3.png]({{ site.url }}/assets/images/java-memory3.png)
 
 # Metaspace - Since Java 8
+Called PermGen prior to Java 8.
 
-PermGen prior to Java 8.
+**Static primitives** are stored in the meta space
 
-Static primitives are stored in the meta space
-
-Static Objects are stored on the heap but object pointer held in the meta space
+Static Objects are stored on the heap but **object pointer/reference** is held in the meta space
 
 Any object on the heap which is referenced from the meta space will never be garbage collected.
 
 All threads in Java have access to the meta space.
 
+# Final Diagram
+
+```java
+int localVar = 10;//Primitive
+List<String> myList = new ArrayList<>();myList.add("Harry Potter");
+Book book = new Book("Harry Potter");//Object
+static int globalVariable = 90;
+static Map<String, Integer> map = new HashMap<>();//Static Object
+```
+```mermaid!
+graph TB
+    subgraph Stack
+        myLocalVar["localVar = 10"]
+        myListRef["myList (reference to ArrayList)"]
+        book["book"]
+    end
+
+    subgraph Heap
+        ArrayList["ArrayList"]
+        StringObj["StringObject(Harry Potter)"]
+        HashMapObj["HashMapObject[key:value]"]
+        BookOnHeap["BookObject(Harry Potter)"]
+        ArrayList -->|contains reference to| StringObj
+    end
+
+    subgraph Metaspace
+        GlobalVar["globalVariable = 90"]
+        Map["map"]
+        Map --> |reference in metadata| HashMapObj
+    end
+
+    myListRef -->|references| ArrayList
+    book --> |references| BookOnHeap
+    HashMapObj --> Heap
+    StringObj --> Heap
+```
