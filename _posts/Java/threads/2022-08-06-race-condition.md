@@ -5,7 +5,101 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-As a general rule, you shouldn't expect to be creating your own interfaces, just to work with lambdas. T
+**What are Resources?**
+- Variables
+- Data structures (Objects)
+- File or Connection handles
+- Message queues or Work Queues
+- Any Object
+
+Heap is shared, Stack is for each thread so variables on the Stack is not sharable.
+
+```mermaid!
+flowchart LR
+    subgraph Dispatcher
+        WD[Work Dispatcher]
+    end
+
+    subgraph Queue
+        WQ[Work Queue]
+        WQ --> T1[Task 1]
+        WQ --> T2[Task 2]
+        WQ --> T3[Task 3]
+        WQ --> TN[Task N]
+    end
+
+    subgraph Workers
+        W1[Worker 1]
+        W2[Worker 2]
+        W3[Worker 3]
+        WN[Worker N]
+    end
+
+    WD --> WQ
+
+    T1 -.->|Task Dequeue| W1
+    T2 -.->|Task Dequeue| W2
+    T3 -.->|Task Dequeue| W3
+    TN -.->|Task Dequeue| WN
+    
+    W1 --> |Processing| P1[Task 1 Processing]
+    W2 --> |Processing| P2[Task 2 Processing]
+    W3 --> |Processing| P3[Task 3 Processing]
+    WN --> |Processing| PN[Task N Processing]
+```
+
+# Atomic Operation
+- All-or-Nothing: The operation completes fully or does not start at all.
+- Indivisibility: No other operations can interleave or interrupt the atomic operation.
+
+In the given example, `counter++` is **not an atomic operation** as it involves 3 steps
+- Fetch the current value of counter from memory.
+- Increment the fetched value by 1.
+- Store the incremented value back into counter.
+
+If two threads execute counter++ simultaneously, they could both fetch the same 
+initial value of counter, increment it, and then store the same new value, resulting in one increment instead of two. This is **a race condition**.
+```java
+private int counter;
+ public void increment() {
+    counter++;
+}
+
+public void decrement() {
+    counter--;
+}
+```
+We can Ensuring Atomicity: 
+- Using synchronized
+  - on the method - monitor
+  - using synchronized block - more granularity & flexibility but verbose
+- Using AtomicInteger
+
+```java
+SharedClass sharedObject = new SharedClass();
+Thread thread1 = new Thread(() -> sharedObject.increment());
+Thread thread2 = new Thread(() -> sharedObject.decrement());
+
+class SharedClass {
+    private int counter = 0;
+
+    public synchronized void increment() {
+        this.counter++;
+    }
+
+    public synchronized void decrement() {
+        this.counter--;
+    }
+}
+```
+When thread1 is executing `sharedObject.increment();` thread2 cannot execute `sharedObject.decrement();.
+And when thread2 is executing sharedObject.decrement();thread1 cannot execute sharedObject.increment();
+That is because both methods are synchronized, and belong to the same object (counter).
+
+
+# Critical Section
+
+As a general rule, you shouldn't expect to be creating your own interfaces, just to work with lambdas. 
 
 The vast majority of likely operations, whether they have zero, one, or two arguments, including things dealing with
 primitive return types, or primitive arguments, have probably been built for you.

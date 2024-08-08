@@ -25,8 +25,9 @@ error: cannot find symbol
   symbol:   method foo()
   location: variable test of type String
 ```
+[Show Bytecode](https://nitinkc.github.io/developer%20tools/inteliJ-Idea-CE-settings/#show-bytecode)
 
-notice in the [byte code `LOCALVARIABLE test Ljava/lang/String; L1 L2 1`](https://nitinkc.github.io/shortcuts/intelliJ-Debug-tricks/#show-bytecode)
+notice in the [byte code](https://nitinkc.github.io/shortcuts/intelliJ-Debug-tricks/#show-bytecode) `LOCALVARIABLE test Ljava/lang/String; L1 L2 1`
 ```java
  public static main([Ljava/lang/String;)V
    L0
@@ -43,9 +44,8 @@ notice in the [byte code `LOCALVARIABLE test Ljava/lang/String; L1 L2 1`](https:
     MAXLOCALS = 2
 ```
 
-### Use type inference carefully
-
-**Use case** : When the response is received from a call of a method or a service, use type inference because its type 
+### Use of type inference
+When the response is **_received from a call of a method or a service_**, use type inference because its type 
 is determined by the return type of the method or the service being called.
 
 # Arrays asList
@@ -65,7 +65,7 @@ try{
 Instead of using `Arrays.asList` use `List.of()`, the immutable variant. Similarly, use `Set.of` and `Map.of`.
 
 * The Set's of does not provide duplicate
-* the of methods does not permit nulls
+* the `of` methods does not permit nulls
 
 # Streams Purity - Shared Mutability
 
