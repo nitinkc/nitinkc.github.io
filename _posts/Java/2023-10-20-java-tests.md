@@ -7,10 +7,16 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
+| Videos                                           | 
+|:-------------------------------------------------|
+| ![](https://www.youtube.com/watch?v=q2T9NlROLqw) |
+| ![](https://www.youtube.com/watch?v=DHwNR7h3k5Y) |
+
+
 # Type inference
 
 - helps remove the noise from the code
-- IDE's provides the hover and know the type of the variables.
+- IDE's provides the **hover and know** feature to know the type of the object.
 - allows the compiler to know the type about
 
 ```java
@@ -20,10 +26,10 @@ test.foo();
 Notice the compile time log : _location: variable test of **type String**_
 ```java
 error: cannot find symbol
-        test.foo();
-            ^
-  symbol:   method foo()
-  location: variable test of type String
+      test.foo();
+          ^
+symbol:   method foo()
+location: variable test of type String
 ```
 [Show Bytecode](https://nitinkc.github.io/developer%20tools/inteliJ-Idea-CE-settings/#show-bytecode)
 
@@ -48,33 +54,65 @@ notice in the [byte code](https://nitinkc.github.io/shortcuts/intelliJ-Debug-tri
 When the response is **_received from a call of a method or a service_**, use type inference because its type 
 is determined by the return type of the method or the service being called.
 
-# Arrays asList
+# Arrays asList add() vs set()
 
 ```java
-List<Integer> numbers = Arrays.asList(1,2,3);
+List<Integer> numbers = Arrays.asList(1,2,3);// does not support add method
 System.out.println(numbers.getClass());//class java.util.Arrays$ArrayList
-//it is far from immutable. does not support add method
 
 try{
-    numbers.add(4);
+    numbers.add(4);//this fails
 } catch (Exception e){
     System.out.println("add unsupported ");//This runs, as add is not supported in Arrays.asList()
 }
+
+try {
+    numbers.set(2, 2);//This works
+} catch (Exception ex) {
+ System.out.println("set() unsupported");
+}
 ```
 
-Instead of using `Arrays.asList` use `List.of()`, the immutable variant. Similarly, use `Set.of` and `Map.of`.
+### Static of()
+Quit using `Arrays.asList` and start using `List.of()`, **the immutable variant**. Similarly, use Static Factories `Set.of()` and `Map.of()`.
 
-* The Set's of does not provide duplicate
-* the `of` methods does not permit nulls
+* The Set's `of()` does not permit duplicate
+* the `of` methods does not permit nulls.
+  * IDE Warns : `Passing 'null' argument to parameter annotated as @NotNull`
+  * throws `NullPointerException` if null is tried to be inserted
 
-# Streams Purity - Shared Mutability
+Immutability makes it safe to make a copy and safe to share. the Of() factory methods are smart. If the collection is truly immutable, it shares a reference instead of duplicating.
+
+### remove
+Be careful while using the var
+```java
+Collection<Integer> numbers = new ArrayList<Integer>(getIntegers());
+numbers.remove(1);//Removes the Object => //[2, 3]
+
+var numbers = new ArrayList<Integer>(getIntegers());
+numbers.remove(1);//overloaded Remove method that takes Integer instead of Object
+//[1, 3]
+```
+
+# Function Purity - Shared Mutability
+```java
+List<String> words = getData(url);//Add more data
+List<String> result = new ArrayList<>();//Shared Mutable Variable
+
+words
+    .parallelStream() //Gives problem 
+    //.stream
+    .map(String::toUpperCase)
+    .forEach(name -> result.add(name));//Shared Mutability is BAD
+```
 
 - The execution is always lazy in Java or C#. 
   - For Kotlin and Scala you can choose between eager and lazy
-- Functional programming relies on lazy evaluation for efficiency
+    - In Kotlin, by default, its eager evaluation. if using `asSequence()`, then its lazy
+- Functional programming relies on lazy evaluation for **efficiency**
 - Lazy evaluation relies on **purity of functions** for correctness.
 
-Programmers need to make sure that Lambdas are pure
+Programmers need to make sure that **Lambdas are pure**
 
 ### Rule for purity
 
@@ -82,8 +120,7 @@ Rule 1 is necessary but not sufficient
 1. **No shared mutability** :  The function does not make any change that is visible outside
 2. The function does not depend on anything that may change from outside
 
-### Parallels
-
+### Parallel Stream
 
 ```java
 //Which Thread will transform run
@@ -93,10 +130,10 @@ List.of(1,2,3).stream()
         .sequential()
         .forEach(number -> print(number));
 ```
-Java 8 streams do not segment the pipeline for different threading model. The last setting overrides the entire 
+Java 8 streams do not segment the pipeline for different threading model. The **last setting** overrides the entire 
 pipeline.
 
-Reactive streams segment the pipeline for different threading model
+**Reactive streams** segment the pipeline for different threading model.
 
 # Inheritance
 
@@ -143,10 +180,10 @@ public static void main(String[] args) {
 
 # toList or .collect(Collectors.toList())
 
-It is better to use toList directly in the stream rather than 
+It is better to use **toList** directly in the stream rather than `.collect(Collectors.toList())`
 
 ```java
-.toList();//Immutable
+.toList();//Immutable List
 .collect(Collectors.toList()); //Mutable
 .collect(Collectors.toUnmodifiableList())//Immutable
 ```
