@@ -69,26 +69,15 @@ Thread.ofPlatform().start(MethodReferenceClass::doSomething);
 ```
 
 # Thread methods
-get current thread
 ```java
 Thread.currentThread();
-```
-interrupt
-```java
 thread.interrupt();
 boolean isInterrupted= thread.isInterrupted();
-```
 
-join
-```java
 thread.join();
-```
-sleep
-```java
+
 thread.sleep(Duration.ofSeconds(2));
-```
-Set Daemon Status
-```java
+
 thread.setDaemon(true);
 ```
 

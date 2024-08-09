@@ -137,7 +137,7 @@ pipeline.
 
 # Inheritance
 
-Do not do anything serious in the constructor, especially do not call virtual method
+Do not do **anything serious in the constructor**, especially do not call **virtual method**
 
 **Lesson from effective Java**: Make the constructor simple and private and make the Factory method create it. By the 
 time you get to the Factory method, the constructor would have been completed.
