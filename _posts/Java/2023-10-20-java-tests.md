@@ -1,5 +1,5 @@
 ---
-title:  "Java Tests"
+title:  "Java Puzzles"
 date:   2023-10-20 15:16:00
 categories: ['Java']
 tags: ['Java']
