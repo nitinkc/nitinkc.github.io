@@ -1,5 +1,5 @@
 ---
-title:  "Scoped Variables"
+title:  "Thread Creation"
 date:   2024-08-08 20:17:00
 categories: ['Java']
 tags: ['Java']
