@@ -115,81 +115,58 @@ sidebar:
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://nitinkc.github.io/assets/media/file.pdf">Download PDF</a>.</p>
     </embed>
 </object>
-
 ```
+
 ## INCLUDE TIME
 
-| Column Header 1                                                         | Column Header 1                          <br/> |
-|:------------------------------------------------------------------------|:-----------------------------------------------|
-| Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} | {{ site.time  }}                               |
-| {% raw  %}`{{ 'now'                                                     | date: "%Y/%m/%d" }}`{% endraw %}               |
-| {% raw  %}`{{ 'now'                                                     | date_to_rfc822 }}`{% endraw %}                 |
-| {% raw  %}`{{ 'now'                                                     | date: "%C" }}`{% endraw %}                     |
-| {% raw  %}`{{ 'now'                                                     | date: "%c" }}`{% endraw %}                     |
-| {% raw  %}`{{ 'now'                                                     | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}  |
+-  Site Build Time to be displayed{% raw  %}`{{ site.time  }}`{% endraw %} 
+-  {% raw  %}`{{ 'now' date: "%Y/%m/%d" }}`{% endraw %}                    
+-  {% raw  %}`{{ 'now' date_to_rfc822 }}`{% endraw %}                      
+-  {% raw  %}`{{ 'now' date: "%C" }}`{% endraw %}                          
+-  {% raw  %}`{{ 'now' date: "%c" }}`{% endraw %}                          
+-  {% raw  %}`{{ 'now' date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}       
 
 ## Notices with theme
+- Default `{: .notice}`        
+- Primary {: .notice--primary} 
+- Info    {: .notice--info}    
+- Warning {: .notice--warning} 
+- Success {: .notice--success} 
+- Danger  {: .notice--danger} 
 
-Notice [emphasized](#notices-with-theme) with the `{: .notice}` class.
-{: .notice}
-
-Notice [emphasized](#notices-with-theme) with the `{: .notice--primary}` class.
-{: .notice--primary}
-
-Notice [emphasized](#notices-with-theme) with the `{: .notice--info}` class.
-{: .notice--info}
-
-Notice [emphasized](#notices-with-theme) with the `{: .notice--warning}` class.
-{: .notice--warning}
-
-Notice [emphasized](#notices-with-theme) with the `{: .notice--success}` class.
-{: .notice--success}
-
-Notice [emphasized](#notices-with-theme) with the `{: .notice--danger}` class.
-{: .notice--danger}
 
 # Writing Math Equations
+Traditional using subscript and super-script
 
-Traditional using subscript and super script
-
-{% raw %}
-log<sub>base</sub>index = power
-
-base<sup>power</sup> = index
-{% endraw %}
-
-
-`log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>`
-{% raw %}
-log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>
-{% endraw %}
+- `log<sub>base</sub>index = power` ==> log<sub>base</sub>index = power
+- `base<sup>power</sup> = index` ==> base<sup>power</sup> = index
+- `log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>` ==> log<sub>b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>
 
 # $$ \LaTeX $$ - Using Lib
 - From [https://yihui.org/en/2018/07/latex-math-markdown/](https://yihui.org/en/2018/07/latex-math-markdown/)
 - Cheatsheet - html [https://quickref.me/latex.html](https://quickref.me/latex.html)
 - Cheatsheet - pdf [https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf](https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf)
 
-[https://nitinkc.github.io/develope| x^{n+1}                                                        | $$ x^{n+1} $$                                                                                           |
-| \frac{a+b}{2}                    r%20tools/LaTex/](https://nitinkc.github.io/developer%20tools/LaTex/)
+[https://nitinkc.github.io/developer%20tools/LaTex/](https://nitinkc.github.io/developer%20tools/LaTex/)
 
 # $$ \LaTeX $$ Summary
 
-keep the expressions between `$$`
 
-| Math Expression                                                   | Rendered Output                                                                                         |
-|-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| log{_a}{n}                                                     | $$ log{_a}{n} $$                                                                                        |
-| y = ax^2 + bx + c                                              | $$ y = ax^2 + bx + c, $$                                                                                |
-| $$ \frac{a+b}{2} $$                                                                                     |
-| \sqrt[n]{a^2+b^2}                                              | $$ \sqrt[n]{a^2+b^2} $$                                                                                 |
-| x_1, \ldots, x_n                                               | $$ x_1, \ldots, x_n $$                                                                                  |
-| x_1 + \cdots + x_n                                             | $$ x_1 + \cdots + x_n $$                                                                                |
-| \left( a + \frac{1}{2} \right)^2                               | $$ \left( a + \frac{1}{2} \right)^2 $$                                                                  |
-| while this $$ a > 0 $$ is inline math mode.                    | while this $$ a > 0 $$ is inline math mode.                                                             |
-| \vec{u} \otimes \vec{v} = \mathbf{M}                           | $$ \vec{u} \otimes \vec{v} = \mathbf{M} $$                                                              |
-| \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] | $$ \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] $$                           |
-| \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 | $$ \frac{\frac12 - 2}{5 + \frac43} - \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} = 0 $$ |
-| \xrightarrow[under]{over}                                      | $$ \xrightarrow[under]{over} $$                                                                         |
+| Math Expression                                                              | Rendered Output                                                                  |
+|:-----------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
+| log{_a}{n}                                                                   | $ log{_a}{n} $                                                                   |
+| y = ax^2 + bx + c                                                            | $ y = ax^2 + bx + c $                                                            |
+| \frac{a+b}{2}                                                                | $ \frac{a+b}{2} $                                                                |
+| \sqrt[n]{a^2+b^2}                                                            | $ \sqrt[n]{a^2+b^2} $                                                            |
+| x_1, \ldots, x_n                                                             | $ x_1, \ldots, x_n $                                                             |
+| x_1 + \cdots + x_n                                                           | $ x_1 + \cdots + x_n $                                                           |
+| \left( a + \frac{1}{2} \right)^2                                             | $ \left( a + \frac{1}{2} \right)^2 $                                             |
+| \vec{u} \otimes \vec{v} = \mathbf{M}                                         | $ \vec{u} \otimes \vec{v} = \mathbf{M} $                                         |
+| \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right]      | $ \log \left[1 + \left( \frac{x + \sin y}{z} - \sqrt{a} \right)^b \right] $      |
+| \frac{\frac12 - 2}{5 + \frac43}                                              | $ \frac{\frac12 - 2}{5 + \frac43} $                                              |
+| \frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43}                  | $\frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43} $                   |
+| \xrightarrow[under]{over}                                                    | $ \xrightarrow[under]{over} $                                                    |
+| 24\times 60\times 60 \approx \text{90K secs}, \text{1 Day has 86400 seconds} | $ 24\times 60\times 60 \approx \text{90K secs}, \text{1 Day has 86400 seconds} $ |
 
 ### LaTex, Table, Media, Math, Plant UML
 
@@ -203,5 +180,4 @@ keep the expressions between `$$`
 [Mermaid Live Editor with gist code load](https://mermaid.live/edit?gist=https://gist.github.com/nitinkc/404befd918e8109cc830d23e3f7206fc#pako:eNqVUz1PwzAQ_SuWpyK1EiuRQIIi0YEKRBEDmOGSXBLTxI7OzlC1_e84cRM3bRm46d353cc721ue6BR5xHOCumDvD0IxZ6aJfWBlIVn7WGvV5lka-4bZl-AeswlhhoQqQWY1uyeCLn4l-HfI8whVKtRJgwVCHXhDuqs_4FGllSWp8pf4xzE8ZpMFEG3Yq7YWadx3AaZYQu3pB6cjXGjJZrO7XaKVBakMO1a1C13_FrJEC6aGBEPp1p5KHUP5AeQGyHssIS6R3bKb65Nh5iUY01ZKwYLL6HzWB0bSRtRu9nk_u1SZZhDrxu6CvH9nht2diR6eQZc9rMqctRvUt8Sjuw61Tw6GRR_F-ZRXSBXI1L3TbcsT3BZYoeCRgynQWnCh9o4HjdWrjUp4ZKnBKSfd5AWPMiiN85raKcZHCe7Gqp6CqbSalv4XdJ9hymtQn1pXh8T9L4IkBGE)
 
 use the tag `mermaid!`
-
-<script src="https://gist.github.com/nitinkc/404befd918e8109cc830d23e3f7206fc.js"></script>
+{% gist nitinkc/404befd918e8109cc830d23e3f7206fc %}
