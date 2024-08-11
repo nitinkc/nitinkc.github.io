@@ -6,6 +6,9 @@ tags: [System Design]
 ---
 
 # 7 Layers of OSI
+[https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#tcpip-encapsulation](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#tcpip-encapsulation)
+
+![](https://www.youtube.com/watch?v=0y6FtKsg6J4)
 
 > Aap trans network datalink physical
 1. Application
@@ -19,8 +22,7 @@ The above three can be clubbed into Application protocol layer due to too much o
 
 Physical Layer Adds the Start and End delimiter for a message
 
-[https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#tcpip-encapsulation](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#tcpip-encapsulation)
-![](https://www.youtube.com/watch?v=0y6FtKsg6J4)
+![](https://www.escotal.com/Images/Network%20parts/osi.gif)
 
 
 ### The NIC and the MAC Address

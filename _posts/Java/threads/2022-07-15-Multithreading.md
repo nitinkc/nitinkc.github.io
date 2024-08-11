@@ -237,59 +237,49 @@ Railway track pattern is good in concept, but in implementation,
 
 **Subroutine** : Just a function, no state. Function you call and get a response.
 
-@startuml
-participant Method as A
-participant Subroutine as B
-participant Coroutine
-
-activate A
-
-A -> B: call Subroutine
-activate B #FFBBBB
-Note right of B: One Entry point.
-B --> A: return response
-deactivate B
-skinparam sequenceMessageAlign center
-
-activate Coroutine #green
-A -> Coroutine: call
-Note right of Coroutine: Entry point 1
-activate Coroutine #gold
-activate A #Red
-Coroutine -> A: yield
-deactivate Coroutine
-
-A -> Coroutine: call
-Note right of Coroutine: Entry point 2
-activate Coroutine #gold
-Coroutine -> A: yield 
-deactivate Coroutine
-
-A -> Coroutine: call
-Note right of Coroutine: Entry point 3
-activate Coroutine #gold
-Coroutine -> A: yield 
-deactivate Coroutine
-deactivate A
-@enduml
-
-**Coroutine** : Cooperative Routine - no entry point, no exit point. Just like a conversations. Kind of weave in and 
+**Coroutine** : Cooperative Routine - no entry point, no exit point. Just like a conversations. Kind of weave in and
 weave out of the functions.
 
-```mermaid!
-sequenceDiagram
-    participant Method
-    participant Coroutine
+@startuml
 
-    Method->>Coroutine: call
-    Coroutine-->>Method: yield (Entry Point 1)
-    Method->>Coroutine: call
-    Coroutine-->>Method: yield (Entry Point 2)
-    Method->>Coroutine: call
-    Coroutine-->>Method: yield (Entry Point 3)
-    Method->>Coroutine: call
-    Coroutine-->>Method: yield
-```
+    participant Method as A
+    participant Subroutine as B #yellow
+    participant Coroutine #99FF99
+    
+    activate A
+    
+    == Subroutine ==
+    
+    A -> B: call Subroutine
+    activate B #FFBBBB
+    Note right of B: One Entry point.
+    B -> A: return response
+    deactivate B
+    skinparam sequenceMessageAlign center
+    
+    == Coroutine ==
+    
+    activate Coroutine #green
+    A -> Coroutine: call
+    Note right of Coroutine: Entry point 1
+    activate Coroutine #gold
+    activate A #Red
+    Coroutine -->> A: yield (Entry Point 1)
+    deactivate Coroutine
+    
+    A -> Coroutine: call
+    Note right of Coroutine: Entry point 2
+    activate Coroutine #gold
+    Coroutine -->> A: yield (Entry Point 2) 
+    deactivate Coroutine
+    
+    A -> Coroutine: call
+    Note right of Coroutine: Entry point 3
+    activate Coroutine #gold
+    Coroutine -->> A: yield (Entry Point 3) 
+    deactivate Coroutine
+    deactivate A
+@enduml
 
 **Continuations** : Data structure that helps to restore the context of a call between calls to a coroutine
 * Should be a data structure that you benefit from but should not be directly accessed. Be in the background.
