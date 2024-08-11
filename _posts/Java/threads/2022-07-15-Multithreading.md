@@ -7,8 +7,15 @@ tags: ['Java']
 ---
 {% include toc title="Index" %}
 
+# Runnable vs Callable
+[Runnable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html#run())
+doesn't return anything (`void`) nor does it explicitly indicate a check exception.
 
-# Defining Threads
+Whereas [Callable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html#call())
+returns an object of type `T` and throws exception
+
+
+# Defining Platform Threads
 By default, the platform threads are NON-DAEMON Threads, unless its explicitly marked daemon.
 
 If any non daemon thread is running, the JVM will not shut it down even if the main thread has terminated.
@@ -106,7 +113,7 @@ Thinking in this way allows us to separate the task from how the task will be ex
 
 We call this the execution policy of the task, which the idea behind the Java Futures. The thread pool contains a number of threads based on some policy
 
-# Futures & Executor Service
+# Executor Service & Futures
 
 - Several callers can submit their tasks.
 - These tasks get executed by the threads **inside the thread pool**.
@@ -126,14 +133,9 @@ interface which represents the abstraction of a thread pool is
 The applications will use the executor service interface to submit runnable or callable tasks.
 {: .notice--info}
 
-### Runnable vs Callable
-[Runnable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html#run())
-doesn't return anything (`void`) nor does it explicitly indicate a check exception. 
-
-Whereas [Callable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html#call())
-returns an object of type `T` and throws exception
 
 ###  [Executor Service](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ExecutorService.html#method-summary)
+Returns a Future
 ```java
 public interface ExecutorService extends Executor, AutoCloseable{
     Future<?> submit(Runnable task);//Submits a Runnable task for execution and returns a Future representing that task.
@@ -149,8 +151,7 @@ Note here that the executor service interface also implements AutoCloseable
 
 ![futures.png]({{ site.url }}/assets/images/futures.png)
 
-
-#### Types of ExecutorServices:
+### Types of ExecutorServices:
 
 ##### Fixed Thread Pool
 ```java
@@ -169,7 +170,7 @@ ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
 ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(int corePoolSize);
 ```
 
-#### Submitting a Task
+### Submitting a Task
 ##### Runnable Service
 ```java
 ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -213,13 +214,13 @@ try {
 
 to handle the results of the tasks as they happen instead of get()
 
-# Futures Limitations
+### Futures Limitations
 - Cannot create Asynchronous pipeline (Reactive style of programming) (its imperative style. Have to tell what to do and how to do)
 - Cannot Complete a future
 - Limited Functionality
 
 # [CompletableFutures](https://nitinkc.github.io/java/asynchronous-programming/#creating-a-new-completablefuture)
-
+Refer [CompletableFutures](https://nitinkc.github.io/java/asynchronous-programming/#creating-a-new-completablefuture)
 ```java
 // Create a Completable Future
 CompletableFuture<String> future = new CompletableFuture<>();
@@ -235,6 +236,7 @@ Railway track pattern is good in concept, but in implementation,
 - when a task is sleeping, thread should be able to do other things
 
 **Subroutine** : Just a function, no state. Function you call and get a response.
+
 @startuml
 participant Method as A
 participant Subroutine as B
@@ -273,6 +275,7 @@ deactivate A
 
 **Coroutine** : Cooperative Routine - no entry point, no exit point. Just like a conversations. Kind of weave in and 
 weave out of the functions.
+
 ```mermaid!
 sequenceDiagram
     participant Method

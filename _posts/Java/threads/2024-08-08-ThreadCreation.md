@@ -31,7 +31,7 @@ private static void sequentialWithStreams(List<Long> inputNumbers, Factorial fac
 }
 ```
 
-# Traditional threads
+# Traditional Platform Threads
 ```java
 private static void runWithTraditionalFactorial(List<Long> inputNumbers, Factorial factorial) throws InterruptedException {
     List<Thread> threads = new ArrayList<>();
@@ -116,7 +116,7 @@ private static void runWithCompletableFuture(List<Long> inputNumbers, Factorial 
 }
 ```
 
-# With Virtual threads
+# Virtual threads
 **Pros:**
 - More scalable and efficient for I/O-bound tasks.
 - Reduces the overhead of managing many threads.

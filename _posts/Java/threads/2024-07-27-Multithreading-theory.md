@@ -7,14 +7,13 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
-
 # Why we need Threads
-**Responsiveness achieved by Concurrency**
+**Responsiveness (achieved by Concurrency)**
 - Critical with applications with user interface
-- Concurrency = Multitasking in the context: Responsiveness can eb achieved by using multiple threads, with a separate thread for each task
-- NOTE: We dont need multiple cores to achieve Concurrency
+- Concurrency = Multitasking in the context: Responsiveness can be achieved by using multiple threads, with a separate thread for each task
+- NOTE: We don't need multiple cores to achieve Concurrency
 
-**Performance achieved by Parallelism**
+**Performance (achieved by Parallelism)**
 - illusion with one core, truly parallel with multicore processors
 - Completing a complex task much faster
 
@@ -27,13 +26,7 @@ Caveat : Multithreaded Programming is fundamentally different from single thread
 {: .notice--primary}
 
 
-- Instruction Pointer for each thread : address of the next instruction to execute
-- Multiple Threads in EACH PROCESS Share
-  - the Process's open Files, 
-  - the Process's metadata
-  - Heap and 
-  - Code 
-
+# Process
 ```
 +-------------------------------------------------------+
 |                   Process (Context)                   |
@@ -42,7 +35,7 @@ Caveat : Multithreaded Programming is fundamentally different from single thread
 |  +---------+  +---------+    +----------------+       |
 |  |  PID    |  |         |    |  Main Thread   |       |
 |  |  Mode   |  |  Files  |    +----------------+       |
-|  |  ....   |  |         |    |       Stack    |       |
+|  |  ....   |  |         |    |     Stack.     |       |
 |  |  ....   |  |         |    +----------------+       |
 |  |         |  +---------+    |Instruction Ptr |       |
 |  |         |                 +----------------+       |
@@ -50,21 +43,30 @@ Caveat : Multithreaded Programming is fundamentally different from single thread
 |  |         |  +---------+     +----------------+      |
 |  |         |  |         |     |   Thread 1     |      |
 |  |         |  |   Data  |     +----------------+      |
-|  |         |  |  (Heap) |     |       Stack    |      |
+|  |         |  |  (Heap) |     |    Stack.      |      |
 |  |Priority |  |         |     +----------------+      |
 |  |         |  +---------+     |Instruction Ptr |      |
 |  |         |                  +----------------+      |
 |  |         |  +---------+     +----------------+      |
-|  |         |  |         |     |     Thread 2    |      |
+|  |         |  |         |     |    Thread 2    |      |
 |  |         |  |  Code   |     +----------------+      |
-|  |         |  |         |     |       Stack    |      |
+|  |         |  |         |     |    Stack.      |      |
 |  |         |  |         |     +----------------+      |
 |  |         |  +---------+     |Instruction Ptr |      |
 |  |         |                  +----------------+      |
 |  +---------+                         ...              |
 +-------------------------------------------------------+
 ```
+**Instruction Pointer** 
+- Associated with each thread
+- address of the next instruction to execute
 
+**Multiple Threads in EACH PROCESS Share**
+  - the Process's open Files,
+  - the Process's metadata
+  - Heap and
+  - Code
+  
 # Context Switching
 
 ```
@@ -72,7 +74,7 @@ Caveat : Multithreaded Programming is fundamentally different from single thread
 | Process ID : 458  |  | Process ID : 5821|   | Process ID : 4585 |  | Process ID :33782 |
 +-------------------+  +-------------------+  +-------------------+  +-------------------+
 | +-------+ +-----+ |  | +------+ +------+ |  | +------+ +------+ |  | +--------------+  |
-| |Thread1| |Thread2|  | | |Thread| |Thread|  ||Thread1| |Thread2||  | |     Thread1  |  |
+| |Thread1| |Thread2|  | |Thread1| |Thread2|  ||Thread1| |Thread2||  | |   Thread1    |  |
 | +-------+ +-----+ |  | +------+ +------+ |  | +------+ +------+ |  | +--------------+  |
 |                   |  | +------+ +------+ |  |                   |  |                   |
 |                   |  | |Thread| |Thread| |  |                   |  |                   |
@@ -81,24 +83,26 @@ Caveat : Multithreaded Programming is fundamentally different from single thread
 +-------------------+  +-------------------+  +-------------------+  +-------------------+
 ```
 
-the OS has to run one thread, stop it and then run another thread. This is called Context Switching
+OS has to schedule & run one thread, stop it and then run another thread. 
 - Stop thread1
 - Schedule thread1 out
 - Schedule Thread 2 in 
 - Start thread 2
 
+This is called **Context Switching**
+
 This is not a cheap operation and is the price of Multitasking(concurrency)
-- same a human beings - takes time to focus on next task after switching from first
-- Store data of current thread
-- restore data of another thread (nack into CPU and memory)
+- same as human beings - takes time to focus on next task after switching from first
+- Store data of current outgoing thread
+- restore data of the incoming thread (back into CPU and memory)
 
 ### Issues with Context Switch
-Large number of threads causes Thrashing (Spending more time in management than real productive work)
+Large number of threads causes **Thrashing** (Spending more time in management than real productive work)
 
-Threads consumes less resources than Processes
+- Threads consumes less resources than Processes
 
 Context Switching between **threads from the same process** is **CHEAPER** than context switch between different processes
-
+{: .notice--primary}
 
 # Thread Scheduling
 Each OS implements its own Thread Scheduling Algorithm
@@ -109,10 +113,10 @@ Assume 2 processes(A,B) with two threads(1,2) each running in a single core proc
 
 | Thread | Arrival Order | CPU Time (anticipated) |
 |:-------|:--------------|:-----------------------|
-| A1	    | 0	            | 4                      | 
-| A2	    | 1	            | 3                      | 
-| B1	    | 2	            | 2                      | 
-| B2	    | 3	            | 1                      | 
+| A1     | 0             | 4                      | 
+| A2     | 1             | 3                      | 
+| B1     | 2             | 2                      | 
+| B2     | 3             | 1                      | 
 
 ### First Come First Serve Scheduling
 ```
@@ -125,11 +129,11 @@ Time 0        Time 1        Time 2        Time 3
 **Problems**
 - **Thread Starvation** - for the short process due to long running processes
 
-### Shorted Job First Scheduling
+### Shortest Job First Scheduling
 Shortest Job First (SJF) scheduling algorithm selects the process with the shortest 
 execution time from the ready queue. 
 
-It can be either preemptive (Shortest Remaining Time First) or non-preemptive.
+It can be either **preemptive** (Shortest Remaining Time First) or **non-preemptive**.
 
 **Timeline Illustration with SJF (Non-preemptive)**
 
@@ -173,21 +177,22 @@ epics to prevent starvation.
 
 
 ## History of multithreading in Java
-Java 1 : Threads -> one set of API for all machines. hardware independent
+**Java 1:** Threads 
+- one set of API for all machines. hardware independent
 
-Java 5 : ExecutorServices API -> Pool of threads
+**Java 5** : ExecutorServices API -> Pool of threads
 * Issue 1: Pool induced deadlock
 * One thread breaks the problem and throws in the pool and waits foe the result to come back
 * All the threads in pool just divided the work, and no thread left to take care of the problem
 
-Java 7 : Fork Join pool
+**Java 7** : Fork Join pool
 * Work-stealing : the threads that divides problem, also solves one of the divided part
 
-Java 8 : ParallelStreams and CompletableFutures
+**Java 8** : ParallelStreams and CompletableFutures
 * uses Java 7 FJP
 * Common Fork join pool
 
-Java 21 : Virtual Threads
+**Java 21** : Virtual Threads
 * Game changer
 * [https://nitinkc.github.io/java/java21-virtualthreads/](https://nitinkc.github.io/java/java21-virtualthreads/)
 

@@ -126,16 +126,22 @@ A ReentrantLock is a more flexible lock than the built-in synchronized block.
 **Advantages**:
 - Can be unlocked in a different method or class from where it was locked. 
 - Provides more control over the lock (e.g., timed lock, interruptible lock).
+- can maintain fairness `ReentrantLock(true)` but may come with a cost of throughput.
+use unlock in finally block so that it is always guaranteed that the resource is unlocked.
+
 
 **Use Case**: When you need advanced locking features not provided by the synchronized block.
 
 ### 2. ReadWriteLock - ReentrantReadWriteLock
 A ReadWriteLock allows multiple threads to read a resource concurrently but only one thread to write.
 
+2 Types
 **Advantages**:
 - Improves performance in scenarios where reads are more frequent than writes.
 
 **Use Case**: When you have a resource that is frequently read but infrequently written.
+
+ince the method is guarded by a read lock. Many threads can acquire that lock as long as no other thread is holding the write lock
 
 ### 3. CountDownLatch
 A CountDownLatch is used to make one or more threads wait until a set of operations being performed in other threads completes.
@@ -197,3 +203,91 @@ Use Case: When you need to perform atomic operations on a single variable withou
 > Synchronization mechanisms like CountDownLatch and CyclicBarrier can be applicable in distributed systems.
 
 Their usage and considerations differ compared to their usage in single-process applications. 
+
+# Locking
+Coarse grain locking - simplicity, but performance is not good.
+
+Fine-grained locking - more control, but can cause deadlocks
+
+
+# Deadlocks
+Problems when multiple locks are held.
+
+**Mutual Exclusion** -  only one thread can have exclusive access to a resource at a given moment.
+
+**Hold and Wait** - at least one thread is holding the resource and is waiting for another resource.
+
+**Non-Preemptive Allocation** - a resource cannot be released until the thread using it is done using it.
+
+**Circular Wait** - one thread holding resource A and waiting for another resource and vice versa.
+
+Easiest solution to avoid deadlocks is to break the Circular Wait condition. Enforcing strict order on lock acquisition prevents dead locks.
+- lock resource in the same order everywhere
+Deadlock detection : 
+
+1. Watchdog
+
+In microcontrollers, this watchdog is implemented by a low level routine that periodically
+checks the status of a particular register.
+
+That register needs to be updated by every thread, every few instructions, and if the watchdog detects
+that this register hasn't been updated, it knows that the threads are not responsive and will simply
+restart them in a similar way.
+
+2. Thread Interruption  (not possible with synchronized)
+
+3. tryLock Operations (not possible with synchronized)
+
+
+# Semaphore
+[English meaning](https://www.merriam-webster.com/dictionary/semaphore)
+
+Can be used to restrict the number of "users" to a particular resource or a group of resources
+
+Unlike the locks that allows only one "user/thread" per resource.
+
+
+# Lock Free Algorithms
+
+Whats wrong with Locks ?
+DEADLOCKS
+
+Priority inversion
+
+
+Why we need locks?
+
+Multiple threads accessing shared resources
+
+At least one thread is modifying the shared resources
+
+Non-Atomic operation (eg. count++) - A single Java operation turns into one or more hardware operation
+
+- fetch current value of count
+- perform count+1
+- reassign back to count
+
+Lock free solutions 
+- utilizes operations guaranteed to be one hardware operation
+- A single hardware operation 
+  - is Atomic by definition and thus
+  - threadsafe
+- 
+
+# Atomic Operations in Java
+Read/Assignment on all primitive types (except for long and double)
+Read/Assigment on all references
+Read/Assignment on all Volatile long and double
+
+
+Avoid DataRaces
+
+MAke all shared variables that you want to read or write Volatile
+Read/Assignment on all Volatile Primitive types and references
+
+# Atomic Classes in Java
+Atomic classes in Java Concurrent atomic package
+
+internally uses the unsafe class which provides access to low level, native methods
+
+[Java Docs](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/atomic/package-summary.html)

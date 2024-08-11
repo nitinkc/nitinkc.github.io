@@ -17,9 +17,8 @@ tags: ['Java']
 
 # Parallel vs Concurrent
 **Parallelism**
--Walk and Talk in parallel, exactly at the same time (in 2 cores of a CPU)
-
-```java
+- Walk and Talk in parallel, exactly at the same time (in 2 cores of a CPU)
+```
                        v
                        | [Time Slice v]
 thread1-talk   T   T   T   T
@@ -43,13 +42,16 @@ Asynchronous means `Non Blocking`
 * **Non Blocking** : when you make a method call, you don't have to wait for it to complete
 * Does not block the **thread of execution** and wait to finish.
 * however, **tasks** are always blocking (default behaviour of a thread)
-* For a Thread to be non-blocking
-  * **responsiveness** : main thread should always **delegate** and be available for next step
-      * Eg: Click on download button and then cancel
-          * if main thread takes care of downloading, then the cancel button is blocked until the download is finished
-  * **Pre-emptible** :
 
->Both parallel and Async processes run in a separate thread (other than main thread)
+For a Thread to be non-blocking, these 2 properties should meet
+- **responsiveness** : main thread should always **delegate** and be available for next step
+  * Eg: Click on download button and then cancel
+    * if main thread takes care of downloading, then the cancel button is blocked until the download is finished
+- **Pre-emptible** : the ability of a system or thread to be interrupted or preempted by other tasks or threads. 
+  - In a preemptible system, a running thread can be paused or stopped by the system scheduler to allow other threads or processes to execute.
+
+Both parallel and Async processes run in a separate thread (other than main thread)
+{: .notice--info}
 
 For parallel, the thread needs to **JOIN** i.e. the slowest process/thread will determine the overall speed.
 * pen refills (10), cap(20 per hour0  ) and body(50 body per hours) example. Total pens per hour = 10
@@ -59,15 +61,14 @@ For Asynchronous, not waiting for completion, but when results does arrive, move
     * or use a promise
 
 ## Asynchronous Task Execution Engine 
-Executor Service introduced in Java 1.5
-{: .notice--info}
+> Executor Service was introduced in Java 1.5
 
 Execution Engine has
 - Work Queue (Blocking Queue)
 - Completion Queue
 - Thread Pool
 
-As soon as the work is placed in the work queue, you get **Future**.
+As soon as the work is **placed** in the work queue, you get **Future**.
 
 Future is a proxy or reference of the result that **will be returned** in the Future
 
