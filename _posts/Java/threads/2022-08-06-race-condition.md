@@ -6,7 +6,6 @@ tags: ['Java']
 ---
 {% include toc title="Index" %}
 
-
 **What are Resources?**
 - Variables
 - Data structures (Objects)
@@ -51,7 +50,7 @@ flowchart LR
 ```
 
 # Atomic Operation
-- All-or-Nothing: The operation completes fully or does not start at all.
+- All-or-Nothing: The operation completes fully or doesn’t start at all.
 - Indivisibility: No other operations can interleave or interrupt the atomic operation.
 
 In the given example, `counter++` is **not an atomic operation** as it involves 3 steps
@@ -94,10 +93,9 @@ class SharedClass {
     }
 }
 ```
-When thread1 is executing `sharedObject.increment();` thread2 cannot execute `sharedObject.decrement();.
-And when thread2 is executing sharedObject.decrement();thread1 cannot execute sharedObject.increment();
+When thread1 is executing `sharedObject.increment();` thread2 can’t execute `sharedObject.decrement();.
+And when thread2 is executing sharedObject.decrement();thread1 can’t execute sharedObject.increment();
 That is because both methods are synchronized, and belong to the same object (counter).
-
 
 # Critical Section
 
@@ -170,6 +168,7 @@ public synchronized void decrement() {
     count--;
 }
 ```
+
 # Data Race
 Is `x` strictly greater then `y`
 ```java
@@ -214,38 +213,7 @@ y++; x++;
 ### Data Race - Solution
 Establish a `Happens-Before` semantics by
 - synchronization of methods
-- volatile shared variables 
-
-#### Volatile
-- volatile variables are **stored in main memory** and their changes are visible to all threads immediately. 
-  - The volatile keyword **prevents the CPU from caching** the variable’s value in a local register or cache.
-- The volatile keyword **does not guarantee atomicity** for compound operations (e.g., incrementing a variable, count++). 
-  - It only ensures that the latest value of the variable is visible across threads. 
-  - For atomic operations, additional synchronization or atomic classes (like AtomicInteger) are needed.
-
-volatile also provides a **guarantee about the ordering** of operations:
-
-**`Happens-Before` Relationship**: Writes to a volatile variable establish a happens-before relationship with subsequent reads of that variable. 
-- This means that any write to a volatile variable **happens-before any subsequent read** of that variable, ensuring proper visibility and ordering of operations.
-
-**No Reordering**: The Java Memory Model guarantees that reads and writes to volatile variables **cannot be reordered** with respect to other 
-reads and writes to volatile variables.
-
-```java
-volatile int sharedVar = 0;
-public void task(){
-  ...//All instructions WILL be execute before
-  read/write(sharedVar);
-  ...//All instructions will be executed after
-}
-```
-
-**Implementation Details**
-Here’s how the volatile keyword is typically implemented:
-
-**Memory Barriers:** The Java Virtual Machine (JVM) uses memory barriers (or fences) to enforce the visibility and ordering guarantees. These barriers prevent the CPU and memory subsystem from reordering reads and writes to volatile variables.
-- Store Barrier: Ensures that writes to volatile variables are not reordered with preceding writes.
-- Load Barrier: Ensures that reads of volatile variables are not reordered with following reads.
+- volatile shared variables
 
 synchronized - solves both race and data condition, but has performance penalty
 
@@ -259,6 +227,14 @@ Every shared variable (modified by at least one thread) should be either
 - Guarded by a synchronized block (or any type of lock) OR
 - declared volatile
 
+# Why we need locks?
+- Multiple threads accessing shared resources
+- At least one thread is modifying the shared resources
+- Non-Atomic operation (eg. count++) - A single Java operation turns into one or more hardware operation
+  - fetch current value of count
+  - perform count+1
+  - reassign back to count
+  
 # Locks
 When we have multiple shared resources, should we use one lock for all the shared resources or individual lock
 for each resource
@@ -293,7 +269,7 @@ In microcontrollers, this watchdog is implemented by a low level routine that pe
 checks the status of a particular register.
 
 That register needs to be updated by every thread, every few instructions, and if the watchdog detects
-that this register hasn't been updated, it knows that the threads are not responsive and will simply
+that this register hasn't been updated, it knows that the threads aren’t responsive and will simply
 restart them in a similar way.
 
 2. Thread Interruption  (not possible with synchronized)
@@ -410,7 +386,7 @@ How many threads can execute readFromDatabase(key); in the same time?
 
 `Synchronized` and `ReentrantLock` do not allow **multiple readers** to access a shared resource concurrently
 
-But when read operatiosn are predominant or when read operations are not fast
+But when read operatiosn are predominant or when read operations aren’t fast
 - read from many variables
 - read from complex data structure
 
@@ -611,41 +587,42 @@ try{
 
 # Lock Free Algorithms
 
-Whats wrong with Locks ?
-DEADLOCKS
+What's wrong with Locks?
+- DEADLOCKS
+- slow critical section (if one thread holds the lock for long. The slowest thread determines the speed)
+- Priority inversion when 2 threads share a lock, but the low-priority thread keeps getting scheduled ahead of more priority
+  - Low-priority thread acquires the lock and is preempted (schedule out)
+  - High-priority thread can’t progress because the low-priority thread is not scheduled to release the lock.
+- Thread not releasing the lock (Kill Tolerance)
+  - Thread dies, gets interrupted, or forgets to release the lock
+  - Leaves all other threads hanging forever
+  - Unrecoverable, just like deadlocks
+  - To avoid, need to write more complex error-prone code.
+- Performance overhead in having contention over a lock
+  - Thread A acquires a lock
+  - Thread B tries and gets blocked
+  - Thread B is scheduled out (context switch)
+  - Later Thread B is scheduled back (another context switch)
+  - overhead for latency-sensitive applications (stock market data)
 
-Priority inversion
-
-
-Why we need locks?
-
-Multiple threads accessing shared resources
-
-At least one thread is modifying the shared resources
-
-Non-Atomic operation (eg. count++) - A single Java operation turns into one or more hardware operation
-
-- fetch current value of count
-- perform count+1
-- reassign back to count
 
 Lock free solutions 
-- utilizes operations guaranteed to be one hardware operation
+- uses operations guaranteed to be executed as a single hardware operation
 - A single hardware operation 
   - is Atomic by definition and thus
   - threadsafe
-- 
 
-# Atomic Operations in Java
+
+##  Atomic Operations in Java
 Read/Assignment on all primitive types (except for long and double)
 Read/Assigment on all references
 Read/Assignment on all Volatile long and double
 
 
-Avoid DataRaces
+## Avoid DataRaces
 
-MAke all shared variables that you want to read or write Volatile
-Read/Assignment on all Volatile Primitive types and references
+Make all shared variables that you want to read or write Volatile
+- ead/Assignment on all Volatile Primitive types and references
 
 # Atomic Classes in Java
 Atomic classes in Java Concurrent atomic package
@@ -654,9 +631,54 @@ internally uses the unsafe class which provides access to low level, native meth
 
 [Java Docs](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/atomic/package-summary.html)
 
+### AtomicInteger
+```java
+int initialValue = 0;
+AtomicInteger atomicInteger = new AtomicInteger(initialValue);
+
+//Increments by 1, 
+int previousValue = atomicInteger.getAndIncrement();//return the PREVIUOS value
+int updatedValue = atomicInteger.incrementAndGet();// return the NEW-VALUE
+
+//Similarly for decrement
+
+//addAndGet(delta), getAndAdd(delta) increments or decrements by delta(delta can be negative)
+```
+Pros
+- Simplicity
+- no synchronization or locks needed
+- no race conditions or data races
+
+Cons
+- Only the operation itself is atomic
+- There will still be race condition between 2 separate atomic operations
+
+```java
+int initialValue = 0;
+AtomicInteger atomicInteger = new AtomicInteger(initialValue);
+
+int a = atomicInteger.incrementAndGet();
+int b = atomicInteger.addAndGet(-1); // SUBJECTED TO RACE CONDITION
+```
+
+Summary
+
+AtomicInteger is a great tool for concurrent counting, without the complexity of using a lock
+
+AtomicInteger should be used only when atomic operations are needed.
+- it's on par and sometimes more performant than regular integer with lock protection
+
+# AtomicReference<T>
+
+
+
+
+
 # Synchronization Mechanisms in Java
 
-### 1. Mutex (Lock) - ReentrantLock
+### Volatile Variable
+
+### Mutex (Lock) - ReentrantLock
 A ReentrantLock is a more flexible lock than the built-in synchronized block.
 
 **Advantages**:
@@ -664,7 +686,6 @@ A ReentrantLock is a more flexible lock than the built-in synchronized block.
 - Provides more control over the lock (e.g., timed lock, interruptible lock).
 - can maintain fairness `ReentrantLock(true)` but may come with a cost of throughput.
   use unlock in finally block so that it is always guaranteed that the resource is unlocked.
-
 
 **Use Case**: When you need advanced locking features not provided by the synchronized block.
 
@@ -679,44 +700,9 @@ A ReadWriteLock allows multiple threads to read a resource concurrently but only
 
 Since the method is guarded by a read lock. Many threads can acquire that lock as long as no other thread is holding the write lock
 
-### 3. CountDownLatch
-A CountDownLatch is used to make one or more threads wait until a set of operations being performed in other threads completes.
+### Semaaphore
 
-**Advantages**:
-- Allows threads to wait for a specific condition to be met.
-
-**Use Case**: Waiting for multiple threads to complete initialization tasks before proceeding.
-
-### 4. CyclicBarrier
-A CyclicBarrier allows a set of threads to wait for each other to reach a common barrier point.
-- guarantee that some portion of the work is done by all threads before the rest of the work is performed.
-
-
-### 5. Exchanger
-An Exchanger allows two threads to exchange data with each other.
-
-Advantages:
-- Useful for thread communication where each thread provides data to the other.
-
-Use Case: Pairwise data exchange between threads.
-
-### 6. Phaser
-A Phaser is a more flexible version of CountDownLatch and CyclicBarrier.
-
-Advantages:
-- Supports dynamic registration of parties and multiple phases of synchronization.
-
-Use Case: Complex synchronization scenarios with multiple phases and dynamic participants.
-
-### 7. StampedLock
-A StampedLock is a lock that offers three modes for controlling read/write access.
-
-Advantages:
-- Provides an optimistic read mode, which can improve performance for read-heavy scenarios.
-
-Use Case: When you need high-performance read access with occasional writes.
-
-### 8. Condition Variables
+### Condition Variables
 Condition variables are used with locks to allow threads to wait for certain conditions to be met.
 
 Advantages:
@@ -724,13 +710,59 @@ Advantages:
 
 Use Case: When threads need to wait for specific conditions before proceeding.
 
-### 9. Atomic Variables
+### Atomic Variables
 Atomic variables (e.g., AtomicInteger, AtomicLong, AtomicReference) provide lock-free thread-safe operations on single variables.
 
 Advantages:
 - Lower overhead compared to using locks.
 
 Use Case: When you need to perform atomic operations on a single variable without the overhead of locking.
+
+
+As part of the `java.util.concurrent` package, the JDK contains many classes that help us coordinate between threads.
+
+A few of those include the `CountDownLatch`, `CyclicBarrier`, `Phaser`, `Exchanger`, and others that may be added in future versions
+of the JDK.
+
+However, all those classes are no more than higher-level wrappers built upon the same building blocks.
+We can implement their functionality with the tools we already have.
+
+### CountDownLatch
+A CountDownLatch is used to make one or more threads wait until a set of operations being performed in other threads completes.
+
+**Advantages**:
+- Allows threads to wait for a specific condition to be met.
+
+**Use Case**: Waiting for multiple threads to complete initialization tasks before proceeding.
+
+### CyclicBarrier
+A CyclicBarrier allows a set of threads to wait for each other to reach a common barrier point.
+- guarantee that some portion of the work is done by all threads before the rest of the work is performed.
+
+### Exchanger
+An Exchanger allows two threads to exchange data with each other.
+
+Advantages:
+- Useful for thread communication where each thread provides data to the other.
+
+Use Case: Pairwise data exchange between threads.
+
+### Phaser
+A Phaser is a more flexible version of CountDownLatch and CyclicBarrier.
+
+Advantages:
+- Supports dynamic registration of parties and multiple phases of synchronization.
+
+Use Case: Complex synchronization scenarios with multiple phases and dynamic participants.
+
+### StampedLock
+A StampedLock is a lock that offers three modes for controlling read/write access.
+
+Advantages:
+- Provides an optimistic read mode, which can improve performance for read-heavy scenarios.
+
+Use Case: When you need high-performance read access with occasional writes.
+
 
 
 > Synchronization mechanisms like CountDownLatch and CyclicBarrier can be applicable in distributed systems.
