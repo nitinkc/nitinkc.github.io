@@ -13,6 +13,9 @@ tags: ['Java']
 - Concurrency = Multitasking in the context: Responsiveness can be achieved by using multiple threads, with a separate thread for each task
 - NOTE: We don't need multiple cores to achieve Concurrency
 
+> Consider one thread serving one request at time
+
+
 **Performance (achieved by Parallelism)**
 - illusion with one core, truly parallel with multicore processors
 - Completing a complex task much faster

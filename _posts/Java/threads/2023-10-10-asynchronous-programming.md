@@ -15,6 +15,30 @@ tags: ['Java']
 
 ![](https://www.youtube.com/watch?v=1zSF1259s6w)
 
+# What is IO
+
+The CPU can access the memory directly at any time, so our program can read from or write to variables from the memory without the operating system's involvement.
+
+On the other hand, the CPU doesn't have direct access to peripheral devices (mouse, keyboard, NIC, Monitor, Disk drive), 
+
+CPU can communicate with the controller of each device to either send it some data, or receive some data 
+
+During the time that the specific device is doing its work, or when the device is idle.
+
+request to the network hasn't yet arrived, the CPU can continue running other tasks.
+
+
+### IO Bound Application
+```java
+public List<Dto> getData(RequestBody req){
+    Request request = parseIncomingRequest(req);//CPU Bound task
+    Data data = service.getDataFromDb(request);//IO Bound Task, Thread is blocked until the task is done
+    List<Dto> dtoList = mapper.map(data);//CPU Bound task
+    return dtoList;
+}
+```
+**The CPU has nothing to do**.
+![cpu-dma.png](../../../assets/images/cpu-dma.png)
 # Parallel vs Concurrent
 **Parallelism**
 - Walk and Talk in parallel, exactly at the same time (in 2 cores of a CPU)

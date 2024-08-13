@@ -111,12 +111,13 @@ The size of the thread pool that is used in Spring Boot with Tomcat
 - a user request for an application server would be handed over to an **already created thread** in a thread pool, rather than creating a brand new one.
 
 # Fundamental shift in the thinking
-Instead of creating a new thread to do a particular task, think about submitting a task to a threadpool
+Instead of creating a new thread to do a particular task, think about submitting a task to a thread pool
 
 Thinking in this way allows us to separate the task from how the task will be executed.
 > Telling what to do not HOW to do
 
-We call this the execution policy of the task, which the idea behind the Java Futures. The thread pool contains a number of threads based on some policy
+We call this the execution policy of the task, which is the idea behind the Java Futures. 
+The thread pool contains a number of threads based on some policy
 
 # Executor Service & Futures
 
@@ -154,10 +155,14 @@ Note here that the executor service interface also implements AutoCloseable
 - if you wrap executor service in a try with resources block, then the close() method will be automatically called.
 - good use in virtual threads.
 
+A thread executor creates a non-daemon thread on the first task taht is executed, so failing to call
+- shutdown() will result in your application never terminating
+- shutdownNow() attempts to stop all running thread
+
 ![futures.png]({{ site.url }}/assets/images/futures.png)
 
-### Types of ExecutorServices:
-
+### Create ExecutorServices
+Keep in mind to either use `try-with-resource` block or shout down the service in the finally block
 ##### Fixed Thread Pool
 ```java
 ExecutorService fixedThreadPool = Executors.newFixedThreadPool(int nThreads);
@@ -224,14 +229,14 @@ to handle the results of the tasks as they happen instead of get()
 - Cannot Complete a future
 - Limited Functionality
 
-# [CompletableFutures](https://nitinkc.github.io/java/asynchronous-programming/#creating-a-new-completablefuture)
+# CompletableFutures
 Refer [CompletableFutures](https://nitinkc.github.io/java/asynchronous-programming/#creating-a-new-completablefuture)
 ```java
 // Create a Completable Future
 CompletableFuture<String> future = new CompletableFuture<>();
 ```
 
-# Problems with CompletableFutures
+## Problems with CompletableFutures
 
 Railway track pattern is good in concept, but in implementation, 
 * cognitive load : since there is skipping to then's or exceptionally's or the return type.
