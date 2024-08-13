@@ -51,6 +51,11 @@ class SimpleRunnable implements Runnable {
     }
 }
 ```
+##### Difference between t.start() and t.run()
+* t.start calls run() from within. if t.run is executed, run method will execute normally.
+
+* ALSO. Since by extending, we are limiting to extending only one class. NO CHANCE OF EXTENDING ANY OTHER CLASS!!
+* We cannot extend any other class. Thus implementing Runnable Interface is preferred over this approach.
 
 ### Using Fluent API
 Staring Daemon thread

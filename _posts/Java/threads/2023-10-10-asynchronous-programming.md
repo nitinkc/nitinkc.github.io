@@ -36,6 +36,7 @@ thread1 - Talk   T   T    T   | T   T   T |  T  T
 thread2 - Drink      |        D           D
 time  t=0------------^--------^-----------^-------->t
 ```
+![io-calls.png](../../../assets/images/io-calls.png)
 
 # Parallel vs Asynchronous
 Asynchronous means `Non Blocking`

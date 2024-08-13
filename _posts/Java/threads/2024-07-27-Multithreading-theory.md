@@ -69,6 +69,18 @@ Caveat : Multithreaded Programming is fundamentally different from single thread
   
 # Context Switching
 
+When a CPU switches from executing one thread to executing another,
+the CPU needs to save 
+- the local data, 
+- program pointer etc. of the current thread, 
+and load 
+- the local data, 
+- program pointer etc. of the next thread to execute.
+
+This switch is called a "context switch" 
+
+The CPU switches from executing in the context of one thread to executing in the context of another.
+
 ```
 +-------------------+  +-------------------+  +-------------------+  +-------------------+
 | Process ID : 458  |  | Process ID : 5821|   | Process ID : 4585 |  | Process ID :33782 |
@@ -118,7 +130,7 @@ Assume 2 processes(A,B) with two threads(1,2) each running in a single core proc
 | B1     | 2             | 2                      | 
 | B2     | 3             | 1                      | 
 
-### First Come First Serve Scheduling
+### First Come, First Serve Scheduling
 ```
 Time 0        Time 1        Time 2        Time 3
 +------------+------------+------------+------------+
@@ -127,7 +139,7 @@ Time 0        Time 1        Time 2        Time 3
 ```
 
 **Problems**
-- **Thread Starvation** - for the short process due to long running processes
+- **Thread Starvation** - for the short process due to long-running processes
 
 ### Shortest Job First Scheduling
 Shortest Job First (SJF) scheduling algorithm selects the process with the shortest 

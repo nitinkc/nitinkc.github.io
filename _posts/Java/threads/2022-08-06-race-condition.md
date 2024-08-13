@@ -169,6 +169,18 @@ public synchronized void decrement() {
 }
 ```
 
+```mermaid!
+sequenceDiagram
+    participant T1 as Thread 1 count++ #blue
+    participant T2 as Thread 2 count-- #green
+
+    T1->>T1: Read count (0)
+    T2->>T2: Read count (0)
+    T1->>T1: Increment count to 1
+    T1->>T1: Write count (1)
+    T2->>T2: Decrement count to -1
+    T2->>T2: Write count (-1)
+```
 # Data Race
 Is `x` strictly greater then `y`
 ```java
@@ -197,7 +209,7 @@ Compiler and CPU may execute the instruction Out of order (if the instructions a
 The CPU rearranges the code for better hardware units utilization
 
 The following can't be rearranged as all instructions are interdependent
-- lead to unexpected, paradoxical and incorrect results.
+- lead to unexpected, paradoxical, and incorrect results.
 ```java
 x = 1;
 y = x * 2;
@@ -213,21 +225,17 @@ y++; x++;
 ### Data Race - Solution
 Establish a `Happens-Before` semantics by
 - synchronization of methods
-- volatile shared variables
+  - solves both race and data condition but has a performance penalty
+- (volatile shared variables)[https://nitinkc.github.io/java/Volatile/]
+  - solves race condition for read/write from long and double
+  - solves all data races by guaranteeing order
 
-synchronized - solves both race and data condition, but has performance penalty
-
-Volatile 
-- solves race condition for read/write from long and double
-- solved all data races by guaranteeing order
-
-Rule of thumb
-
+##### Rule of thumb
 Every shared variable (modified by at least one thread) should be either
 - Guarded by a synchronized block (or any type of lock) OR
 - declared volatile
 
-# Why we need locks?
+# Why do we need locks?
 - Multiple threads accessing shared resources
 - At least one thread is modifying the shared resources
 - Non-Atomic operation (eg. count++) - A single Java operation turns into one or more hardware operation
@@ -249,7 +257,7 @@ for each resource
 ### Deadlocks
 Problems when multiple locks are held.
 
-**Mutual Exclusion** -  only one thread can have exclusive access to a resource at a given moment.
+**Mutual Exclusion** - only one thread can have exclusive access to a resource at a given moment.
 
 **Hold and Wait** - at least one thread is holding the resource and is waiting for another resource.
 
@@ -257,10 +265,11 @@ Problems when multiple locks are held.
 
 **Circular Wait** - one thread holding resource A and waiting for another resource and vice versa.
 
-Easiest solution to avoid deadlocks is to **break the Circular Wait condition**. 
+The easiest solution to avoid deadlocks is to **break the Circular Wait condition**. 
 
 Enforcing strict order on lock acquisition prevents deadlocks.
-- lock resource in the same order everywhere
+- lock resources in the same order everywhere
+
 Deadlock detection : 
 
 1. Watchdog
@@ -272,7 +281,7 @@ That register needs to be updated by every thread, every few instructions, and i
 that this register hasn't been updated, it knows that the threads aren’t responsive and will simply
 restart them in a similar way.
 
-2. Thread Interruption  (not possible with synchronized)
+2. Thread Interruption (not possible with synchronized)
 
 3. tryLock Operations (not possible with synchronized)
 
@@ -669,6 +678,7 @@ AtomicInteger should be used only when atomic operations are needed.
 - it's on par and sometimes more performant than regular integer with lock protection
 
 # AtomicReference<T>
+
 
 
 
