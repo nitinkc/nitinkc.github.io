@@ -16,11 +16,16 @@ returns an object of type `T` and throws exception
 
 
 # Defining Platform Threads
-By default, the platform threads are NON-DAEMON Threads, unless its explicitly marked daemon.
+In Java, by default, all threads are non-daemon threads (unless explicitly modified)
+A non-daemon thread is a thread that is critical to the application's operation.
+The Java Virtual Machine (JVM will not terminate until all non-daemon threads have finished executing. 
+This is true even if the main thread has terminated.
 
-If any non daemon thread is running, the JVM will not shut it down even if the main thread has terminated.
-[T1ThreadRunsParentDies.java](https://github.com/nitinkc/JavaConcepts/blob/main/src/main/java/nitin/multithreading/aBasics/T1ThreadRunsParentDies.java)
-
+```java
+thread.setDaemon(false);//false=non-daemon, runs the child thread, even if the parent dies. 
+// if set true, the child dies as soon as parent dies
+```
+[T1ThreadRunsParentDies.java](https://github.com/nitinkc/JavaConcepts/blob/main/src/main/java/nitin/multithreading/aBasics/aPlatformThreads/T1ThreadRunsParentDies.java)
 ### extending Thread
 Invoke
 ```java
