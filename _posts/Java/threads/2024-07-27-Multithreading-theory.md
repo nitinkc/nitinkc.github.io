@@ -1,8 +1,8 @@
 ---
 title:  "Multithreading Theory & Thread Lifecycle"
 date:   2024-07-27 20:17:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java','Multithreading']
+tags: ['Java','Multithreading']
 ---
 
 {% include toc title="Index" %}

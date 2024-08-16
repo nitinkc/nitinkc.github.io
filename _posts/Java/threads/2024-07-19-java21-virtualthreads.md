@@ -1,8 +1,8 @@
 ---
 title:  "Virtual Threads"
 date:   2024-07-19 12:17:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java','Multithreading']
+tags: ['Java','Multithreading']
 ---
 
 {% include toc title="Index" %}

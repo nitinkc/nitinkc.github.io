@@ -1,8 +1,8 @@
 ---
 title:  "Synchronization - Race Condition & Critical Section"
 date:   2022-08-06 08:30:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java','Multithreading']
+tags: ['Java','Multithreading']
 ---
 {% include toc title="Index" %}
 

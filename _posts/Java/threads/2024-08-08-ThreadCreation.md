@@ -1,8 +1,8 @@
 ---
 title:  "Thread Creation"
 date:   2024-08-08 20:17:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java','Multithreading']
+tags: ['Java','Multithreading']
 ---
 
 {% include toc title="Index" %}

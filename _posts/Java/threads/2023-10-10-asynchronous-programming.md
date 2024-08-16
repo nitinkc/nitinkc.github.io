@@ -1,8 +1,8 @@
 ---
 title:  "CompletableFutures & Asynchronous Programming"
 date:   2023-10-10 15:16:00
-categories: ['Java']
-tags: ['Java']
+categories: ['Java','Multithreading']
+tags: ['Java','Multithreading']
 ---
 
 {% include toc title="Index" %}
