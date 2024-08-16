@@ -1,5 +1,5 @@
 ---
-title:  "Multithreading Theory & Thread Lifecycle"
+title:  "Multithreading Theory"
 date:   2024-07-27 20:17:00
 categories: ['Java','Multithreading']
 tags: ['Java','Multithreading']
@@ -7,14 +7,20 @@ tags: ['Java','Multithreading']
 
 {% include toc title="Index" %}
 
+**Concurrency** : looking for a new job, while working on the current job, during office hours.
+
+**Parallelism** : maintaining 2 jobs, with 2 managers, without telling either manager
+
+**Asynchronous** : While Brewing coffee, read emails and get back to coffee when it's done.
+
 # Why we need Threads
 **Responsiveness (achieved by Concurrency)**
 - Critical with applications with user interface
-- Concurrency = Multitasking in the context: Responsiveness can be achieved by using multiple threads, with a separate thread for each task
+- Concurrency = Multitasking in the context: 
+  - Responsiveness can be achieved by using multiple threads, with a separate thread for each task
 - NOTE: We don't need multiple cores to achieve Concurrency
 
-> Consider one thread serving one request at time
-
+> Consider one thread serving one request at a time
 
 **Performance (achieved by Parallelism)**
 - illusion with one core, truly parallel with multicore processors
@@ -25,44 +31,19 @@ Core2 | Task3 -> Task4 -> Task3 -> Task4 -> Task3
 Core1 | Task1 -> Task2 -> Task1 -> Task2 -> Task1
 ```
 
-Caveat : Multithreaded Programming is fundamentally different from single threaded programming
+Caveat: Multithreaded Programming is fundamentally different from single-threaded programming
 {: .notice--primary}
 
-
 # Process
-```
-+-------------------------------------------------------+
-|                   Process (Context)                   |
-+-------------------------------------------------------+
-|  Files, Heap and Code is shared by among all threads  |
-|  +---------+  +---------+    +----------------+       |
-|  |  PID    |  |         |    |  Main Thread   |       |
-|  |  Mode   |  |  Files  |    +----------------+       |
-|  |  ....   |  |         |    |     Stack.     |       |
-|  |  ....   |  |         |    +----------------+       |
-|  |         |  +---------+    |Instruction Ptr |       |
-|  |         |                 +----------------+       |
-|  |         |                                          |
-|  |         |  +---------+     +----------------+      |
-|  |         |  |         |     |   Thread 1     |      |
-|  |         |  |   Data  |     +----------------+      |
-|  |         |  |  (Heap) |     |    Stack.      |      |
-|  |Priority |  |         |     +----------------+      |
-|  |         |  +---------+     |Instruction Ptr |      |
-|  |         |                  +----------------+      |
-|  |         |  +---------+     +----------------+      |
-|  |         |  |         |     |    Thread 2    |      |
-|  |         |  |  Code   |     +----------------+      |
-|  |         |  |         |     |    Stack.      |      |
-|  |         |  |         |     +----------------+      |
-|  |         |  +---------+     |Instruction Ptr |      |
-|  |         |                  +----------------+      |
-|  +---------+                         ...              |
-+-------------------------------------------------------+
-```
+All threads **share** Files, Heap, and Code
+
+[Image Code Link](https://app.eraser.io/workspace/tRdPDXKngDIyHNQeiKZE?origin=share)
+
+![process.png](../../../assets/images/process.png){:width="400" height="300"}
+
 **Instruction Pointer** 
-- Associated with each thread
 - address of the next instruction to execute
+- Associated with each thread
 
 **Multiple Threads in EACH PROCESS Share**
   - the Process's open Files,
@@ -70,46 +51,28 @@ Caveat : Multithreaded Programming is fundamentally different from single thread
   - Heap and
   - Code
   
-# Context Switching
+## Context Switching
+The CPU switches from executing in the **context of one thread** to executing in the context of another is **Context Switching**
 
-When a CPU switches from executing one thread to executing another,
-the CPU needs to save 
-- the local data, 
-- program pointer etc. of the current thread, 
-and load 
-- the local data, 
-- program pointer etc. of the next thread to execute.
-
-This switch is called a "context switch" 
-
-The CPU switches from executing in the context of one thread to executing in the context of another.
-
-```
-+-------------------+  +-------------------+  +-------------------+  +-------------------+
-| Process ID : 458  |  | Process ID : 5821|   | Process ID : 4585 |  | Process ID :33782 |
-+-------------------+  +-------------------+  +-------------------+  +-------------------+
-| +-------+ +-----+ |  | +------+ +------+ |  | +------+ +------+ |  | +--------------+  |
-| |Thread1| |Thread2|  | |Thread1| |Thread2|  ||Thread1| |Thread2||  | |   Thread1    |  |
-| +-------+ +-----+ |  | +------+ +------+ |  | +------+ +------+ |  | +--------------+  |
-|                   |  | +------+ +------+ |  |                   |  |                   |
-|                   |  | |Thread| |Thread| |  |                   |  |                   |
-|                   |  | |  3   | |  4   | |  |                   |  |                   |
-|                   |  | +------+ +------+ |  |                   |  |                   |
-+-------------------+  +-------------------+  +-------------------+  +-------------------+
-```
-
-OS has to schedule & run one thread, stop it and then run another thread. 
-- Stop thread1
-- Schedule thread1 out
-- Schedule Thread 2 in 
+OS has to:-
+- Stop thread1 **saving**
+  - the local data,
+  - program pointer etc. of the current thread
+- Schedule thread1 **out**
+- Schedule Thread 2 **in** by **loading**
+  - the local data,
+  - program pointer etc. of the next thread to execute.
 - Start thread 2
 
-This is called **Context Switching**
-
-This is not a cheap operation and is the price of Multitasking(concurrency)
-- same as human beings - takes time to focus on next task after switching from first
-- Store data of current outgoing thread
+This is not an economical operation and is the price (tradeoff) with Multitasking(concurrency)
+- same as human beings—takes time to focus on the next task after switching from the first
+- Store data of the current outgoing thread
 - restore data of the incoming thread (back into CPU and memory)
+
+
+[Code Link](https://app.eraser.io/workspace/EoAeHbbnoamTb2aJzyMN?origin=share)
+
+![processWithThreads.png](../../../assets/images/processWithThreads.png)
 
 ### Issues with Context Switch
 Large number of threads causes **Thrashing** (Spending more time in management than real productive work)
@@ -118,6 +81,39 @@ Large number of threads causes **Thrashing** (Spending more time in management t
 
 Context Switching between **threads from the same process** is **CHEAPER** than context switch between different processes
 {: .notice--primary}
+
+# Thread Vs Process
+
+**Prefer Multithreaded architecture when**
+- tasks share a lot of Data
+- Threads are much faster to create and destroy
+- Faster Context switches between threads of same process
+
+**Prefer Multi-Process architecture when**
+- Security and Stability is of higher importance
+  - Separate processes are completely isolated from each other
+- Tasks are unrelated to each other
+
+
+## History of multithreading in Java
+**Java 1:** Threads
+- one set of API for all machines. hardware independent
+
+**Java 5** : ExecutorServices API -> Pool of threads
+* Issue 1: Pool induced deadlock
+* One thread breaks the problem and throws in the pool and waits foe the result to come back
+* All the threads in pool just divided the work, and no thread left to take care of the problem
+
+**Java 7** : Fork Join pool
+* Work-stealing : the threads that divides problem, also solves one of the divided part
+
+**Java 8** : ParallelStreams and CompletableFutures
+* uses Java 7 FJP
+* Common Fork join pool
+
+**Java 21** : Virtual Threads
+* Game changer
+* [https://nitinkc.github.io/java/java21-virtualthreads/](https://nitinkc.github.io/java/java21-virtualthreads/)
 
 # Thread Scheduling
 Each OS implements its own Thread Scheduling Algorithm
@@ -178,40 +174,6 @@ This way the operating system will give preference to interactive and real time 
 And in the same time, it will give preference to computational threads that **did not complete**, or did not get enough time to run in previous
 epics to prevent starvation.
 
-# Thread Vs Process
-
-**Prefer Multithreaded architecture when**
-- tasks share a lot of Data
-- Threads are much faster to create and destroy
-- Faster Context switches between threads of same process
-
-**Prefer Multi-Process architecture when**
-- Security and Stability is of higher importance
-  - Separate processes are completely isolated from each other
-- Tasks are unrelated to each other
-
-
-## History of multithreading in Java
-**Java 1:** Threads 
-- one set of API for all machines. hardware independent
-
-**Java 5** : ExecutorServices API -> Pool of threads
-* Issue 1: Pool induced deadlock
-* One thread breaks the problem and throws in the pool and waits foe the result to come back
-* All the threads in pool just divided the work, and no thread left to take care of the problem
-
-**Java 7** : Fork Join pool
-* Work-stealing : the threads that divides problem, also solves one of the divided part
-
-**Java 8** : ParallelStreams and CompletableFutures
-* uses Java 7 FJP
-* Common Fork join pool
-
-**Java 21** : Virtual Threads
-* Game changer
-* [https://nitinkc.github.io/java/java21-virtualthreads/](https://nitinkc.github.io/java/java21-virtualthreads/)
-
-
 # Thread Lifecycle
 [https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.State.html](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.State.html)
 
@@ -262,3 +224,233 @@ However, it's not guaranteed that the current thread will stop running immediate
 `Thread.sleep(1000)` instructs the operating system to **not schedule** the current thread until the given time passes.
 
 During that time, the thread is not consuming any CPU.
+
+# Task Types
+- IO Bound
+- CPU Bound
+
+## Handling the user requests
+A couple of different architectures are used by application servers for handling the user requests.
+- process-per-request model (old, CGI - Common Gateway Interface)[https://en.wikipedia.org/wiki/Common_Gateway_Interface]
+- thread per request model
+
+In the 1990s, a popular mechanism for handling user requests was the CGI, the common gateway interface.
+In this architecture, when a user sends a request to the web server, the web server will invoke the associated CGI script
+as a separate **process**.
+
+Once the response is sent back, the process is destroyed and this is an overhead.
+
+This is an issue because a process in an operating system is considered heavyweight, starting and terminating a process for every request is inefficient.
+
+So because of this, a variation of CGI was created and that is called fast CGI.
+- like having a pool of processes, and the user request is routed to one of the available processes.
+- There is no extra time spent on starting up a new process because it's already up.
+
+# Concurrency and Parallelism
+
+##  Parallelism
+- Multiple dependent sub tasks - all executing at the same time
+- Multiple cores involved
+- No parallelism in single core
+
+```markdown
+      Task
+      |
+  --------------
+  |    |    |    |
+Sub Sub  Sub  Sub
+task task task task
+  1    2    3    4
+  |    |    |    |
+Core Core Core Core
+  1    2    3    4
+```
+
+# Blocking vs Non blocking IO
+**IO opearations**
+- socket reads/writes - used by DB calls, REST Calls, anything to do with the networks
+- file reads/writes - disk/slower memory access
+- concurrent locks - enforcing synchronization
+
+Reactive Programming : to overcome scalability problems with IO
+{: .notice--info}
+
+**Blocking IO aka synchronous I/O**
+
+In Blocking-I/O operations, a thread that performs an I/O operation (such as reading from a file or network socket) is
+**blocked** until the operation completes. During this time, the thread cannot perform other tasks.
+- This is a performance blocker
+
+**Synchronous call**
+
+```mermaid!
+sequenceDiagram
+  participant Client
+  participant API1
+  participant API2
+  participant ExternalSystem
+
+  Client ->> API1: Call API1
+  Note over Client, ExternalSystem: Blocking I/O operation
+  API1 ->> ExternalSystem: Request data
+  ExternalSystem -->> API1: Response data
+  API1 -->> Client: Response from API1
+  Client ->> API2: Call API2
+  API2 -->> Client: Response from API2
+```
+
+**Non Blocking IO**
+
+In non-blocking I/O operations, a thread initiates an I/O operation and continues executing other code while the
+I/O operation is processed asynchronously.
+- This can improve performance and scalability, especially in systems with high I/O operations.
+
+**Asynchronous calls**
+- Futures and Callbacks
+
+```mermaid!
+sequenceDiagram
+    participant Client
+    participant API1
+    participant API2
+
+    Client ->> API1: Call API1 (Async)
+    API1 -->> Client: Acknowledge receipt
+    Client ->> API2: Call API2 (Async)
+    API2 -->> Client: Acknowledge receipt
+   
+    Note over Client, API2: Responses can be received in any order
+    API2 ->> Client: Response from API2
+    API1 ->> Client: Response from API1
+```
+
+![blockingVsNonBlocking.png](../../../assets/images/blockingVsNonBlocking.png)
+
+In Java 1MB of Stack is allocated for each thread. That's mandated by the OS because,
+the Java thread is backed by the OS thread, which requires memory up front.
+
+Note: the Java threads are basically a thin layer on top of the OS Threads, so creating a Java thread creates an underlying OS thread under the hood.
+{: .notice--info}
+
+# What is IO
+
+The CPU can access the memory directly at any time, so our program can read from or write to variables from the memory without the operating system's involvement.
+
+On the other hand, the CPU doesn't have direct access to peripheral devices (mouse, keyboard, NIC, Monitor, Disk drive),
+
+CPU can communicate with the controller of each device to either send it some data, or receive some data
+
+During the time that the specific device is doing its work, or when the device is idle.
+
+request to the network hasn't yet arrived, the CPU can continue running other tasks.
+
+
+### IO Bound Application
+```java
+public List<Dto> getData(RequestBody req){
+    Request request = parseIncomingRequest(req);//CPU Bound task
+    Data data = service.getDataFromDb(request);//IO Bound Task, Thread is blocked until the task is done
+    List<Dto> dtoList = mapper.map(data);//CPU Bound task
+    return dtoList;
+}
+```
+**The CPU has nothing to do**.
+![cpu-dma.png](../../../assets/images/cpu-dma.png)
+
+# Parallel vs Concurrent
+**Parallelism**
+- Walk and Talk in parallel, exactly at the same time (in 2 cores of a CPU)
+```
+                       v
+                       | [Time Slice v]
+thread1-talk   T   T   T   T
+thread2-walk   W       W
+time  t=0--------------^-------------------->t
+```
+
+**Concurrency**
+Talk & Drink, but not at the Same time.
+- hold one task and resume it once another is done
+```java
+                     v                    v
+                     |Time slice          |Another timeslice
+thread1 - Talk   T   T    T   | T   T   T |  T  T
+thread2 - Drink      |        D           D
+time  t=0------------^--------^-----------^-------->t
+```
+![io-calls.png](../../../assets/images/io-calls.png)
+
+# Parallel vs Asynchronous
+Asynchronous means `Non Blocking`
+* **Non Blocking** : when you make a method call, you don't have to wait for it to complete
+* Does not block the **thread of execution** and wait to finish.
+* however, **tasks** are always blocking (default behaviour of a thread)
+
+For a Thread to be non-blocking, these 2 properties should meet
+- **responsiveness** : main thread should always **delegate** and be available for next step
+  * Eg: Click on download button and then cancel
+    * if main thread takes care of downloading, then the cancel button is blocked until the download is finished
+- **Pre-emptible** : the ability of a system or thread to be interrupted or preempted by other tasks or threads.
+  - In a preemptible system, a running thread can be paused or stopped by the system scheduler to allow other threads or processes to execute.
+
+Both parallel and Async processes run in a separate thread (other than main thread)
+{: .notice--info}
+
+For parallel, the thread needs to **JOIN** i.e. the slowest process/thread will determine the overall speed.
+* pen refills (10), cap(20 per hour0  ) and body(50 body per hours) example. Total pens per hour = 10
+
+For Asynchronous, not waiting for completion, but when results does arrive, move on to do other things with it.
+* use the call back to receive response
+* or use a promise
+
+## Asynchronous Task Execution Engine
+> Executor Service was introduced in Java 1.5
+
+Execution Engine has
+- Work Queue (Blocking Queue)
+- Completion Queue
+- Thread Pool
+
+As soon as the work is **placed** in the work queue, you get **Future**.
+
+Future is a proxy or reference of the result that **will be returned** in the Future
+
+Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Extends ExecutorService)
+
+# Async & non blocking programming Features
+
+### Call back
+(Callback Hell) - When the response is received, execute the function
+
+* ```java
+    doSomething(data, response -> {...})
+    ```
+* CallBack lacks consistency
+* Really hard to compose call backs
+* hard to deal with error
+
+> Callback hell to Promises
+
+### Promise
+When done with the task, update through the promise by any one of the three states
+- Pending
+- Resolved
+- Rejected
+
+Promise has 2 channels -> data channel & error channel
+
+## Railway Track pattern
+
+Treat error as another form of data and as first class citizens
+
+```java
+data track  -----f------f     recovering from exception       f--or continue with then methods-----
+                          \                                  /
+error track ----------------f---can retrun default data-----f----or handle exception---------------
+```
+
+```java
+HappyPath==========================D==========D=======================
+data -> function -> Promise -> f-> P -> f  -> P -> f -> P -> f-> P -> f       
+UnhappyPath===========================================Exception==E=======
+```

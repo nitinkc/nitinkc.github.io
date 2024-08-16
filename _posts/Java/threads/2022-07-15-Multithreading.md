@@ -14,18 +14,22 @@ doesn't return anything (`void`) nor does it explicitly indicate a check excepti
 Whereas [Callable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html#call())
 returns an object of type `T` and throws exception
 
+# Daemon Threads:
+A daemon thread is a thread that runs in the background and does not prevent the JVM from exiting.
+- When all non-daemon threads finish, the JVM can shut down, even if daemon threads are still running.
+- Daemon threads are typically used for background services like garbage collection or background monitoring.
 
 # Defining Platform Threads
-In Java, by default, all threads are non-daemon threads (unless explicitly modified)
-A non-daemon thread is a thread that is critical to the application's operation.
-The Java Virtual Machine (JVM will not terminate until all non-daemon threads have finished executing. 
-This is true even if the main thread has terminated.
+In Java, by default, all threads are **non-daemon threads** (unless explicitly modified)
+- The Java Virtual Machine (JVM will not terminate until all non-daemon threads have finished executing. 
+- This is true even if the main thread has terminated.
 
 ```java
 thread.setDaemon(false);//false=non-daemon, runs the child thread, even if the parent dies. 
 // if set true, the child dies as soon as parent dies
 ```
 [T1ThreadRunsParentDies.java](https://github.com/nitinkc/JavaConcepts/blob/main/src/main/java/nitin/multithreading/aBasics/aPlatformThreads/T1ThreadRunsParentDies.java)
+
 ### extending Thread
 Invoke
 ```java
@@ -85,7 +89,7 @@ Thread thr = new Thread(MethodReferenceClass::doSomething);
 Thread.ofPlatform().start(MethodReferenceClass::doSomething);
 ```
 
-# Thread methods
+### Thread methods
 ```java
 Thread.currentThread();
 thread.interrupt();
