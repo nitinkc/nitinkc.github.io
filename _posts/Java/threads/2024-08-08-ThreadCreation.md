@@ -32,6 +32,8 @@ private static void sequentialWithStreams(List<Long> inputNumbers, Factorial fac
 ```
 
 # Traditional Platform Threads
+[https://nitinkc.github.io/java/multithreading/Multithreading/#defining-platform-threads](https://nitinkc.github.io/java/multithreading/Multithreading/#defining-platform-threads)
+
 ```java
 private static void runWithTraditionalFactorial(List<Long> inputNumbers, Factorial factorial) throws InterruptedException {
     List<Thread> threads = new ArrayList<>();
@@ -102,6 +104,8 @@ private static void runParallelFactorialWithExecutor(List<Long> inputNumbers, Fa
 ```
 
 # Completable futures
+[https://nitinkc.github.io/java/multithreading/asynchronous-programming/#creating-a-new-completablefuture](https://nitinkc.github.io/java/multithreading/asynchronous-programming/#creating-a-new-completablefuture)
+
 ```java
 private static void runWithCompletableFuture(List<Long> inputNumbers, Factorial factorial) {
     startTimer();
@@ -117,6 +121,8 @@ private static void runWithCompletableFuture(List<Long> inputNumbers, Factorial 
 ```
 
 # Virtual threads
+[https://nitinkc.github.io/java/multithreading/java21-virtualthreads/#virtual-thread-creation](https://nitinkc.github.io/java/multithreading/java21-virtualthreads/#virtual-thread-creation)
+
 **Pros:**
 - More scalable and efficient for I/O-bound tasks.
 - Reduces the overhead of managing many threads.

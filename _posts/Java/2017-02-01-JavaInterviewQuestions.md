@@ -116,23 +116,24 @@ They can be broken into two groups:
 - Access control modifiers ( public, private, protected, default)
 - Non-access modifiers (final, abstract, static, synchronized, strictfp, transient, native, volatile)
 
-| Modifier  | Class  | Package  | Subclass  |  World |
-|---|---|---|---|---|
-| public  |Y|Y|Y|Y|
-|  protected |Y|Y|Y|N|
-|  no modifier |Y|Y|N|N|
-|private |Y|N|N|N|
+| Modifier    | Class | Package | Subclass | World |
+|:------------|:------|:--------|:---------|:------|
+| public      | Y     | Y       | Y        | Y     |
+| protected   | Y     | Y       | Y        | N     |
+| no modifier | Y     | Y       | N        | N     |
+| private     | Y     | N       | N        | N     |
 
-| MODIFIER  | DESCRIPTION  |
-|---|---|
-public |Visible to the world
-private|Visible to the class
-protected|Visible to the package and all subclasses
-| static | Used for creating class methods and variables
-final|	Used for finalizing implementations of classes, variables, and methods
-abstract|	Used for creating abstract methods and classes
-synchronized	| Used in threads and locks the method or variable so it can only be used by one thread at a time
-volatile|Used in threads and keeps the variable in main memory rather than caching it locally in each thread static
+
+| MODIFIER      | DESCRIPTION                                                                                                |
+|:--------------|:-----------------------------------------------------------------------------------------------------------|
+| public        | Visible to the world                                                                                       |
+| private       | Visible to the class                                                                                       |
+| protected     | Visible to the package and all subclasses                                                                  |
+| static        | Used for creating class methods and variables                                                              |
+| final         | 	Used for finalizing implementations of classes, variables, and methods                                    |
+| abstract      | 	Used for creating abstract methods and classes                                                            |
+| synchronized	 | Used in threads and locks the method or variable so it can only be used by one thread at a time            |
+| volatile      | Used in threads and keeps the variable in main memory rather than caching it locally in each thread static |
 
 
 Anything can be declared inside anything!!

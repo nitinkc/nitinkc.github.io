@@ -108,16 +108,19 @@ Creating platform threads is **highly discouraged**.
 
 > BREATHER
 
+# Platform threads - Issues
 Platform Thread is an expensive resource. Each thread is allocated 1 MB of memory by default.
 
-Yet another problem is that starting a platform thread will take some time which might lead to performance issues.
+Another problem is that starting a platform thread will take some time which might lead to performance issues.
 
-The solution for both the problems is to create a thread pool (every application server creates). Tomcat, for example, would create 200 threads dedicated for user requests by default.
+The solution for both the problems is to create a **thread pool** (every application server creates a default thread-pool). 
 
 The size of the thread pool that is used in Spring Boot with Tomcat
-- by default, Tomcat uses a threadpool size of 200.
-- It means that If 250 concurrent users hit spring boot application, 50 of them are going to wait for a platform thread to process their request
-- a user request for an application server would be handed over to an **already created thread** in a thread pool, rather than creating a brand new one.
+- by default, Tomcat uses a thread- pool size of 200.
+- It means that If 250 concurrent users hit spring boot application, 
+  - 50 of them are going to wait for a platform thread to process their request
+- a user request for an application server would be handed over to an **already created thread** in a thread pool, 
+rather than creating a brand new one.
 
 # Fundamental shift in the thinking
 Instead of creating a new thread to do a particular task, think about submitting a task to a thread pool
