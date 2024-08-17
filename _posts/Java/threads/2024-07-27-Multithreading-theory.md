@@ -435,7 +435,7 @@ Callback - When the response is received, execute the function
 * Really hard to compose call backs
 * hard to deal with error
 
-> Has Problem of Callback hell
+> Creates Callback hell
 
 ### Promise
 When done with the task, update through the promise by any one of the three states

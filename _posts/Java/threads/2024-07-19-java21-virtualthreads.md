@@ -36,7 +36,7 @@ tags: ['Java','Multithreading']
 
 # Project Loom & Virtual threads
 Most fundamental change in Java
-- The Virtual thread starts as a Daemon thread whereas the platform thread starts as a non-daemon thread
+- The _Virtual Thread_ starts as a **Daemon thread** whereas the _Platform Thread_ starts as a **non-daemon thread**
 - The JVM Shutsdown when there are no non-daemon threads running.
 - error with platform thread with large number of threads
 ```
@@ -46,7 +46,7 @@ Most fundamental change in Java
 - With Virtual threads, each worker/task corresponds to one platform thread. 
 - Each worker just runs and leaves and picks other task, thus starting and ending of a same methods can be done in different threads.
 
-the virtual thread `#31` is started by the `worker2` but is ended by the `worker4`.
+- virtual thread `#31` is started by the `worker2` but is ended by the `worker4`.
 ```
 Start::executeBusinessLogic : VirtualThread[#31]/runnable@ForkJoinPool-1-worker-2
 Start::executeBusinessLogic : VirtualThread[#29]/runnable@ForkJoinPool-1-worker-1
@@ -56,7 +56,6 @@ END::executeBusinessLogic : VirtualThread[#29]/runnable@ForkJoinPool-1-worker-3
 
 # Virtual Thread creation
 Virtual Threads are scheduled on a platform thread (aka carrier thread) for its CPU bound operation.
-
 The big advantage is that when we use virtual threads, the OS thread is released automatically during an IO operation.
 
 ### Using static thread method
@@ -72,7 +71,7 @@ Builder is **NOT** Thread Safe
 {% gist nitinkc/b682bc6e3e3dbdb83322c940c00d0267 %}
 
 ### Using Thread factory
- is thread safe
+ThreadFactory is thread safe
 {% gist nitinkc/cb1f98eb47895a4388e4b685a9792d65%}
 
 ### Using the virtual thread executor service
@@ -98,7 +97,7 @@ so that there are no rogue runaway threads.
 
 # Scenario
 When there are multiple independent tasks to be completed, all as part of one thread, without blocking the thread
-> Concurrently run many tasks within a thread in non-blocking fashion
+> Concurrently, run many tasks within a thread in non-blocking fashion
 
 combination of using virtual threads to write sequential code and futures/CompletableFutures for 
 concurrent code is both readable and powerful
