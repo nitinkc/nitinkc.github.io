@@ -13,6 +13,13 @@ tags: ['Java','Multithreading']
 
 **Asynchronous** : While Brewing coffee, read emails and get back to coffee when it's done.
 
+In Java **1MB of Stack** is allocated for each thread. The OS mandates that because,
+the Java thread is backed by the OS thread, which requires memory up front.
+
+Note: the Java threads are basically a thin layer on top of the OS Threads, so creating a Java thread creates an underlying OS 
+thread under the hood.
+{: .notice--info}
+
 # Why we need Threads
 **Responsiveness (achieved by Concurrency)**
 - Critical with applications with user interface
@@ -164,39 +171,40 @@ stateDiagram
     RUNNING --> BLOCKED : Waiting for monitor lock
     BLOCKED --> RUNNABLE : Monitor lock acquired
     RUNNING --> WAITING : wait() called
-    WAITING --> RUNNABLE : notify() or notifyAll() called
-    RUNNING --> TIMED_WAITING : sleep(milliseconds) or wait(milliseconds) called
-    TIMED_WAITING --> RUNNABLE : sleep time up or wait time up
+    WAITING --> RUNNABLE : notify()/notifyAll() called
+    RUNNING --> TIMED_WAITING : sleep/wait called
+    TIMED_WAITING --> RUNNABLE : sleep/wait time up
     RUNNING --> YIELD : yield() called
     YIELD --> RUNNABLE : Thread yields control
-    RUNNING --> TERMINATED : run() method completes or throws exception
+    RUNNING --> TERMINATED : run() completes or throws exception
     WAITING --> TERMINATED : InterruptedException thrown
     TIMED_WAITING --> TERMINATED : InterruptedException thrown
 ```
 
-**NEW**: The thread is created but not yet started.
+| **State**           | **Description**                                                         |
+|:--------------------|:------------------------------------------------------------------------|
+| **NEW**             | The thread is created but not yet started.                              |
+| **RUNNABLE**        | The thread is ready to run but waiting for CPU time.                    |
+| **RUNNING**         | The thread is actively executing.                                       |
+| **BLOCKED**         | The thread is waiting for a monitor lock.                               |
+| **WAITING**         | The thread is waiting indefinitely for another thread’s action.         |
+| **TIMED_WAITING**   | The thread is waiting for another thread’s action for a specified time. |
+| **YIELD**           | The thread is yielding control to allow other threads to execute.       |
+| **TERMINATED**      | The thread has completed execution or has been interrupted.             |
 
-**RUNNABLE**: The thread is ready to run but waiting for CPU time.
-
-**RUNNING**: The thread is actively executing.
-
-**BLOCKED**: The thread is waiting for a monitor lock.
-
-**WAITING**: The thread is waiting indefinitely for another thread's action.
-
-**TIMED_WAITING**: The thread is waiting for another thread's action for a specified time.
-
-**YIELD**: The thread is yielding control to allow other threads to execute.
-
-**TERMINATED**: The thread has completed execution or has been interrupted.
-
-## Yield Explanation
+### Yield
 When a thread calls yield(), it suggests to the thread scheduler that it might 
 be a good time to switch to another thread. 
 
-The thread transitions from RUNNING to RUNNABLE, allowing other threads to be scheduled for execution. 
+- The thread transitions **from RUNNING to RUNNABLE**, allowing other threads to be scheduled for execution. 
+- However, it's **not guaranteed** that 
+  - the current thread will stop running immediately or 
+  - other threads will be scheduled right away.
 
-However, it's not guaranteed that the current thread will stop running immediately or that other threads will be scheduled right away.
+### Sleep
+`Thread.sleep(1000)` instructs the operating system to **not schedule** the current thread until the given time passes.
+
+During that time, the thread is not consuming any CPU.
 
 # History of multithreading in Java
 **Java 1:** Threads
@@ -218,52 +226,64 @@ However, it's not guaranteed that the current thread will stop running immediate
 * Game changer [Virtual Threads Docs](https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html)
 * [https://nitinkc.github.io/java/java21-virtualthreads/](https://nitinkc.github.io/java/java21-virtualthreads/)
 
-# Tidbits
-
-`Thread.sleep(1000)` instructs the operating system to **not schedule** the current thread until the given time passes.
-
-During that time, the thread is not consuming any CPU.
-
-# Task Types
-- IO Bound
-- CPU Bound
-
-## Handling the user requests
+# Handling the user requests - Architecture
 A couple of different architectures are used by application servers for handling the user requests.
 - process-per-request model (old, CGI - Common Gateway Interface)[https://en.wikipedia.org/wiki/Common_Gateway_Interface]
-- thread per request model
+- thread per request model 
 
-In the 1990s, a popular mechanism for handling user requests was the CGI, the common gateway interface.
+### Process-per-request model
+In the 1990s, a popular mechanism for handling user requests was the CGI(common gateway interface)
+
 In this architecture, when a user sends a request to the web server, the web server will invoke the associated CGI script
 as a separate **process**.
+- Once the response is sent back, the process is destroyed and this is an overhead.
+- This is an issue because a process in an operating system is considered heavyweight, starting and terminating a process for every request is inefficient.
 
-Once the response is sent back, the process is destroyed and this is an overhead.
-
-This is an issue because a process in an operating system is considered heavyweight, starting and terminating a process for every request is inefficient.
-
-So because of this, a variation of CGI was created and that is called fast CGI.
-- like having a pool of processes, and the user request is routed to one of the available processes.
+To solve this, a variation of CGI was created and called **fast CGI**.
+- similar to having a pool of processes, and the user request is routed to one of the available processes.
 - There is no extra time spent on starting up a new process because it's already up.
 
-# Concurrency and Parallelism
+### Thread-Per-Request Model
+In the thread-per-request model, each incoming request is assigned a separate thread. 
+- This thread handles the request, performs the necessary processing, and then completes. 
+- it allows concurrent handling of multiple requests by allocating a dedicated thread for each request
 
-##  Parallelism
-- Multiple dependent sub tasks - all executing at the same time
-- Multiple cores involved
-- No parallelism in single core
+##### Apache Tomcat
+- Tomcat is a popular open-source web server and servlet container that follows the thread-per-request model. 
+- Tomcat maintains a pool of worker threads. 
+  - When a request arrives, a thread from the pool is assigned to handle the request. 
+  - Once the request is processed and a response is generated, **the thread is returned to the pool for reuse**.
 
-```markdown
-      Task
-      |
-  --------------
-  |    |    |    |
-Sub Sub  Sub  Sub
-task task task task
-  1    2    3    4
-  |    |    |    |
-Core Core Core Core
-  1    2    3    4
+# Task Types
+- IO Bound ()
+- CPU Bound (Compute-intensive)
+
+# What is IO
+The CPU can access the memory directly at any time, so our program can read from or write to 
+variables from the memory without the operating system's involvement.
+
+The CPU doesn't have direct access to **peripheral devices** (mouse, keyboard, NIC, Monitor, Disk drive). 
+CPU can communicate with the **device-controller** of each device to either send it some data or receive some data from it.
+
+During the time that the specific IO device is doing its work, or when the device is idle, or the
+response from the network hasn't arrived yet, the CPU can continue running other tasks.
+
+There is Direct Memory Access (DMA) involved, acting as a buffer between Peripheral controller, RAM and CPU
+
+[Diagram Code](https://app.eraser.io/workspace/T6P7KpKfUkWkbqsVJbqC?origin=share)
+![dma.png](../../../assets/images/dma.png){:width="400" height="300"}
+
+### IO Bound Application
+```java
+public List<Dto> getData(RequestBody req){
+    Request request = parseIncomingRequest(req);//CPU Bound task
+    Data data = service.getDataFromDb(request);//IO Bound Task, Thread is blocked until the task is done
+    List<Dto> dtoList = mapper.map(data);//CPU Bound task
+    return dtoList;
+}
 ```
+
+![cpu-dma.png](../../../assets/images/cpu-dma.png)
 
 # Blocking vs Non blocking IO
 **IO opearations**
@@ -274,13 +294,14 @@ Core Core Core Core
 Reactive Programming : to overcome scalability problems with IO
 {: .notice--info}
 
-**Blocking IO aka synchronous I/O**
+### Blocking IO aka synchronous I/O
 
 In Blocking-I/O operations, a thread that performs an I/O operation (such as reading from a file or network socket) is
-**blocked** until the operation completes. During this time, the thread cannot perform other tasks.
+**blocked** until the operation completes. 
+- During this time, the thread cannot perform other tasks.
 - This is a performance blocker
 
-**Synchronous call**
+**Synchronous call** considering API2 depending on the results of the API1.
 
 ```mermaid!
 sequenceDiagram
@@ -290,21 +311,23 @@ sequenceDiagram
   participant ExternalSystem
 
   Client ->> API1: Call API1
-  Note over Client, ExternalSystem: Blocking I/O operation
+  Note over Client, ExternalSystem: Blocking I/O operation - Call API2 waiting
   API1 ->> ExternalSystem: Request data
   ExternalSystem -->> API1: Response data
   API1 -->> Client: Response from API1
+  Note over Client, ExternalSystem: Blocking I/O operation - Call API2 waiting
+  
   Client ->> API2: Call API2
   API2 -->> Client: Response from API2
 ```
 
-**Non Blocking IO**
+### Non Blocking IO aka Asynchronous
 
 In non-blocking I/O operations, a thread initiates an I/O operation and continues executing other code while the
 I/O operation is processed asynchronously.
 - This can improve performance and scalability, especially in systems with high I/O operations.
 
-**Asynchronous calls**
+**Asynchronous calls** Considering API1 and API2 to be mutually exclusive
 - Futures and Callbacks
 
 ```mermaid!
@@ -323,42 +346,22 @@ sequenceDiagram
     API1 ->> Client: Response from API1
 ```
 
+In terms of Thread, blocking va non-blocking tasks would look like
 ![blockingVsNonBlocking.png](../../../assets/images/blockingVsNonBlocking.png)
 
-In Java 1MB of Stack is allocated for each thread. That's mandated by the OS because,
-the Java thread is backed by the OS thread, which requires memory up front.
+# Concurrency and Parallelism
 
-Note: the Java threads are basically a thin layer on top of the OS Threads, so creating a Java thread creates an underlying OS thread under the hood.
-{: .notice--info}
+**Parallelism with dividable large task**
+- Multiple dependent sub-tasks (larger task divided into smaller similar tasks) - all executing at the same time
+- Multiple CPU cores involved
+- No parallelism in a single core
 
-# What is IO
+[Diagram](https://app.eraser.io/workspace/ptDSaZUOMF3oJpPoCun3)
+![task-per-core.png](../../../assets/images/task-per-core.png)
 
-The CPU can access the memory directly at any time, so our program can read from or write to variables from the memory without the operating system's involvement.
-
-On the other hand, the CPU doesn't have direct access to peripheral devices (mouse, keyboard, NIC, Monitor, Disk drive),
-
-CPU can communicate with the controller of each device to either send it some data, or receive some data
-
-During the time that the specific device is doing its work, or when the device is idle.
-
-request to the network hasn't yet arrived, the CPU can continue running other tasks.
-
-
-### IO Bound Application
-```java
-public List<Dto> getData(RequestBody req){
-    Request request = parseIncomingRequest(req);//CPU Bound task
-    Data data = service.getDataFromDb(request);//IO Bound Task, Thread is blocked until the task is done
-    List<Dto> dtoList = mapper.map(data);//CPU Bound task
-    return dtoList;
-}
-```
-**The CPU has nothing to do**.
-![cpu-dma.png](../../../assets/images/cpu-dma.png)
-
-# Parallel vs Concurrent
-**Parallelism**
-- Walk and Talk in parallel, exactly at the same time (in 2 cores of a CPU)
+**Parallelism in Independent Tasks**
+- Walk and Talk in parallel (2 independent tasks), exactly at the same time 
+- 2 threads in 2 cores of the CPU
 ```
                        v
                        | [Time Slice v]
@@ -370,6 +373,7 @@ time  t=0--------------^-------------------->t
 **Concurrency**
 Talk & Drink, but not at the Same time.
 - hold one task and resume it once another is done
+- can happen on a single core (2 threads in one core)
 ```java
                      v                    v
                      |Time slice          |Another timeslice
@@ -379,28 +383,30 @@ time  t=0------------^--------^-----------^-------->t
 ```
 ![io-calls.png](../../../assets/images/io-calls.png)
 
-# Parallel vs Asynchronous
+# Asynchronous
 Asynchronous means `Non Blocking`
-* **Non Blocking** : when you make a method call, you don't have to wait for it to complete
-* Does not block the **thread of execution** and wait to finish.
-* however, **tasks** are always blocking (default behaviour of a thread)
+- when you make a method call, you don't have to wait for it to complete
+- Do not block the **thread of execution** and wait to finish.
+- however, **tasks** are always blocking (default behavior of a thread)
 
-For a Thread to be non-blocking, these 2 properties should meet
+For a Thread to be non-blocking, these **2 properties** should meet
 - **responsiveness** : main thread should always **delegate** and be available for next step
-  * Eg: Click on download button and then cancel
-    * if main thread takes care of downloading, then the cancel button is blocked until the download is finished
-- **Pre-emptible** : the ability of a system or thread to be interrupted or preempted by other tasks or threads.
+  * Eg: Click on download button and then move on to doing other stuff.
+    * if the main thread takes care of downloading, then the application is blocked until the download is finished.
+- **Pre-emptible** : the ability of a system or thread to be **interrupted** or **preempted** by other tasks or threads.
   - In a preemptible system, a running thread can be paused or stopped by the system scheduler to allow other threads or processes to execute.
 
-Both parallel and Async processes run in a separate thread (other than main thread)
+Both parallel and Async processes run in a separate thread (other than the main-thread)
 {: .notice--info}
 
-For parallel, the thread needs to **JOIN** i.e. the slowest process/thread will determine the overall speed.
-* pen refills (10), cap(20 per hour0  ) and body(50 body per hours) example. Total pens per hour = 10
+For parallelism, the thread needs to **JOIN** i.e. 
+- the slowest process/thread determines the overall speed. 
+- per hour production - refills(10), cap(20) and body(50). 
+  - Total pens per hour = 10
 
-For Asynchronous, not waiting for completion, but when results does arrive, move on to do other things with it.
-* use the call back to receive response
-* or use a promise
+Asynchronous, do not wait for completion, but when results arrive, move on to do other things with the results.
+* use the **call back** to receive response
+* or use a **promise**
 
 ## Asynchronous Task Execution Engine
 > Executor Service was introduced in Java 1.5
@@ -419,16 +425,17 @@ Fork Join Framework (used in parallel stream behind the scenes) -> Java 7 (Exten
 # Async & non blocking programming Features
 
 ### Call back
-(Callback Hell) - When the response is received, execute the function
+Callback - When the response is received, execute the function
 
-* ```java
+```java
     doSomething(data, response -> {...})
-    ```
+```
+        
 * CallBack lacks consistency
 * Really hard to compose call backs
 * hard to deal with error
 
-> Callback hell to Promises
+> Has Problem of Callback hell
 
 ### Promise
 When done with the task, update through the promise by any one of the three states
@@ -438,7 +445,7 @@ When done with the task, update through the promise by any one of the three stat
 
 Promise has 2 channels -> data channel & error channel
 
-## Railway Track pattern
+#### Railway Track pattern
 
 Treat error as another form of data and as first class citizens
 
