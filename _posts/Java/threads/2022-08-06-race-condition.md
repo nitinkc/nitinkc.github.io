@@ -13,41 +13,7 @@ tags: ['Java','Multithreading']
 - Message queues or Work Queues
 - Any Object
 
-Heap is shared, Stack is for each thread so variables on the Stack is not sharable.
-
-```mermaid!
-flowchart LR
-    subgraph Dispatcher
-        WD[Work Dispatcher]
-    end
-
-    subgraph Queue
-        WQ[Work Queue]
-        WQ --> T1[Task 1]
-        WQ --> T2[Task 2]
-        WQ --> T3[Task 3]
-        WQ --> TN[Task N]
-    end
-
-    subgraph Workers
-        W1[Worker 1]
-        W2[Worker 2]
-        W3[Worker 3]
-        WN[Worker N]
-    end
-
-    WD --> WQ
-
-    T1 -.->|Task Dequeue| W1
-    T2 -.->|Task Dequeue| W2
-    T3 -.->|Task Dequeue| W3
-    TN -.->|Task Dequeue| WN
-    
-    W1 --> |Processing| P1[Task 1 Processing]
-    W2 --> |Processing| P2[Task 2 Processing]
-    W3 --> |Processing| P3[Task 3 Processing]
-    WN --> |Processing| PN[Task N Processing]
-```
+Heap is shared, Stack is for each thread so variables on the Stack is not shared.
 
 # Atomic Operation
 - All-or-Nothing: The operation completes fully or doesn’t start at all.
@@ -57,21 +23,23 @@ In the given example, `counter++` is **not an atomic operation** as it involves 
 - Fetch the current value of counter from memory.
 - Increment the fetched value by 1.
 - Store the incremented value back into counter.
+  ```java
+  private int counter;
+   public void increment() {
+      counter++;
+  }
+  
+  public void decrement() {
+      counter--;
+  }
+  ```
+If two threads execute `counter++` simultaneously, they could both fetch the same
+initial value of counter, increment it, and then store the same new value, resulting in one increment instead of two. 
 
-If two threads execute counter++ simultaneously, they could both fetch the same 
-initial value of counter, increment it, and then store the same new value, resulting in one increment instead of two. This is **a race condition**.
-```java
-private int counter;
- public void increment() {
-    counter++;
-}
+This is **a race condition**.
 
-public void decrement() {
-    counter--;
-}
-```
-We can Ensure Atomicity: 
-- Using synchronized
+### Ensuring Atomicity 
+- Using synchronized keyword
   - on the method - monitor
   - using synchronized block - more granularity & flexibility but verbose
 - Using AtomicInteger
@@ -93,24 +61,17 @@ class SharedClass {
     }
 }
 ```
-When thread1 is executing `sharedObject.increment();` thread2 can’t execute `sharedObject.decrement();.
-And when thread2 is executing sharedObject.decrement();thread1 can’t execute sharedObject.increment();
+When thread1 is executing `sharedObject.increment();` thread2 can’t execute `sharedObject.decrement();`
+
+And when thread2 is executing `sharedObject.decrement();`thread1 can’t execute `sharedObject.increment();`
+
 That is because both methods are synchronized, and belong to the same object (counter).
 
 # Critical Section
 
-As a general rule, you shouldn't expect to be creating your own interfaces, just to work with lambdas. 
-
-The vast majority of likely operations, whether they have zero, one, or two arguments, including things dealing with
-primitive return types, or primitive arguments, have probably been built for you.
-
-And you should use the features of the java.util.function package when you need to create lambdas.
-
 Concurrent systems -> different threads communicate with each other
 
 Distributed Systems -> different processes communicate.
-
-Concurrency vs parallelism
 
 Reentrant Locks and Semaphores are introduced in Java 1.5
 
@@ -121,38 +82,39 @@ Reentrant Locks and Semaphores are introduced in Java 1.5
 - Condition when multiple threads accessing a shared resource
 - At least one thread is modifying the shared resources
 - The timing of thread scheduling may cause incorrect results
-- the core of the problem is non-atomic operations performed on the shared resource
+- the core of the problem is **non-atomic operations** performed on the shared resource
 
-Interleaved Execution with Thread 1 and Thread 2: **NO COMMUNICATION**
-
-Both threads incrementing
+Interleaved Execution (incrementing a shared resource) with Thread 1 and Thread 2 with **NO COMMUNICATION**
 
 ```mermaid!
 sequenceDiagram
     participant T1 as Thread 1
+    participant SR as Shared Resource<br/> count
     participant T2 as Thread 2
 
-    T1->>T1: Read count (0)
-    T2->>T2: Read count (0)
-    T1->>T1: Increment count to 1
-    T1->>T1: Write count (1)
-    T2->>T2: Increment count to 1
-    T2->>T2: OverWrite count (1)
+    SR ->> T1: Read count (0)
+    SR ->> T2: Read count (0)
+    
+    T1--x T1: Increment count to 1
+    T1->>SR: Write count (1)
+    T2--x T2: Increment count to 1
+    T2->>SR: OverWrite count (1)
 ```
 
-One thread incrementing, one decrementing
+**One thread incrementing, one decrementing**
 
 ```mermaid!
 sequenceDiagram
-    participant T1 as Thread 1 count++ #blue
-    participant T2 as Thread 2 count-- #green
+    participant T1 as Thread 1 <br/> count++ #blue
+    participant SR as Shared Resource<br/> count
+    participant T2 as Thread 2 <br/> count-- #green
 
-    T1->>T1: Read count (0)
-    T2->>T2: Read count (0)
+    SR->>T1: Read count (0)
+    SR->>T2: Read count (0)
     T1->>T1: Increment count to 1
-    T1->>T1: Write count (1)
+    T1->>SR: Write count (1)
     T2->>T2: Decrement count to -1
-    T2->>T2: Write count (-1)
+    T2->>SR: Write count (-1)
 ```
 ### Race Condition Solution
 identify and protect the critical section by a synchronized block.
@@ -169,23 +131,10 @@ public synchronized void decrement() {
 }
 ```
 
-```mermaid!
-sequenceDiagram
-    participant T1 as Thread 1 count++ #blue
-    participant T2 as Thread 2 count-- #green
-
-    T1->>T1: Read count (0)
-    T2->>T2: Read count (0)
-    T1->>T1: Increment count to 1
-    T1->>T1: Write count (1)
-    T2->>T2: Decrement count to -1
-    T2->>T2: Write count (-1)
-```
 # Data Race
-Is `x` strictly greater then `y`
+Is `x` strictly greater than `y`?
 ```java
 private int x = 0, y = 0;
-
 public void increment() {
     x++;//Does this run before y++ 
     y++;
@@ -196,7 +145,8 @@ public void checkForDataRace() {
         System.out.println("y > x - Data Race is detected");
 }
 ```
-One thread running incrementing over and over again. One checker thread just to see if Data Race occurs.
+- One thread running `increment()` method
+- One checker thread just to see if Data Race occurs.
 
 Compiler and CPU may execute the instruction Out of order (if the instructions are independent) to optimize performance
 - The logical correctness of the code is always maintained

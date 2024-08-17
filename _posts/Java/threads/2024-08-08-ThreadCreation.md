@@ -70,7 +70,8 @@ private static void parallelStream(List<Long> inputNumbers, Factorial factorial)
 ```
 
 # Executor & Futures
-[]()
+[https://nitinkc.github.io/java/multithreading/Multithreading/#create-executorservices](https://nitinkc.github.io/java/multithreading/Multithreading/#create-executorservices)
+
 **Pros:**
  - Provides better control over thread management.
  - Automatically handles thread pooling and task scheduling.

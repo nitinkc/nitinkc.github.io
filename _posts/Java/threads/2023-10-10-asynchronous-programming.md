@@ -65,11 +65,11 @@ CompletableFuture<Void> voidCompletableFuture = doubleCompletableFuture.thenAcce
 ```
 # Creating a new CompletableFuture
 ### supplyAsync() - with return Data
-CompletableFuture<V>
+**CompletableFuture<V>**
 {% gist nitinkc/7d0d331d4716151c51579d4fdda5ba94 %}
 
 ### runAsync() - No Return data
-CompletableFuture<Void>
+**CompletableFuture<Void>**
 {% gist nitinkc/e186dba8001122fa5281cf979cd5ce3d %}
 
 ### new CompletableFuture<>() 
@@ -79,7 +79,6 @@ Creating a pipeline and then completing
 ##### complete(T value):
 * allows to manually complete a CompletableFuture with a specific result value.
 * to provide a result explicitly, bypassing the actual asynchronous computation.
-
 {% gist nitinkc/28618b6feb55df00447289a75b351dba %}
 
 # Stages of Completable futures
@@ -105,7 +104,6 @@ When one stage completes, another one starts and it keeps running
 * returns `CompletableFuture<Void>()` type Void
 
 ### Exceptionally
-
 With the use of **exceptionally** if the execution of the task is
 * OK, go to the next THEN
 * exception, go to the next EXCEPTIONALLY,

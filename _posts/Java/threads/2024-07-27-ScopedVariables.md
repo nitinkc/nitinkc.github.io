@@ -11,7 +11,7 @@ tags: ['Java','Multithreading']
 
 Immutable and better way to share data between threads
 
-Scoped Value are only available for use within the dynamic scope of the method
+Scoped Value are only available for use within the **dynamic scope** of the method
 
 # Advantages
 - during the bounded period of execution of a method 
