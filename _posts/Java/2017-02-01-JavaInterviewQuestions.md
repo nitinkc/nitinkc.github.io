@@ -457,7 +457,7 @@ A extends B and B extends A not allowed
 - aka Composition or Aggregation
 - No specific keyword, but mostly "new" is used (for instance method)
 - Advantage : Code reuability
-- Disadv : code dependency
+- Disadvantage : code dependency
 
 ```java
 Class Engine{

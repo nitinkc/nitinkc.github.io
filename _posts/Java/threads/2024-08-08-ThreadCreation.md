@@ -70,6 +70,7 @@ private static void parallelStream(List<Long> inputNumbers, Factorial factorial)
 ```
 
 # Executor & Futures
+[]()
 **Pros:**
  - Provides better control over thread management.
  - Automatically handles thread pooling and task scheduling.

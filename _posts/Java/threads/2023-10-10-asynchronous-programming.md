@@ -7,7 +7,6 @@ tags: ['Java','Multithreading']
 
 {% include toc title="Index" %}
 
-
 # CompletableFuture
 ![](https://www.youtube.com/watch?v=1zSF1259s6w)
 
@@ -25,18 +24,16 @@ Javascript is dynamically typed
 | rejected      | resolved   | next catch in the pipeline |
 
 ##### Java
-Java is statically typed, so we have to provide the type of CompletableFuture in the declaration
+Java is statically typed, so we have to provide **the type of CompletableFuture** in the declaration
 {% gist nitinkc/eea4fd28d7765ec964cbf9b5c270ec5c %}
 
 
 ### CompletableFuture - ThreadPool
-
-By Default Completable future uses the **Common ForkJoinPool**. 
-Which means that the number of threads in a common forkjoin pool is equal to the number of cores
-in the machine `Runtime.getRuntime().availableProcessors()`
+By Default, Completable future uses the **Common ForkJoinPool**. 
+- Which means that the number of threads in a common fork-join pool is equal to the number of cores in the machine 
+- `Runtime.getRuntime().availableProcessors()`
 
 Common ForkJoinPool is shared by
-
 * ParallelStreams
 * CompletableFuture
 
@@ -46,11 +43,11 @@ CompletableFuture started on a different Pool (mypool) altogether.
 * It's a good idea to use a different Thread pool if the tasks are IO bound. 
 * The Fork Join Pool must be used only CPU intensive task
 
-Define User-defined thread pool
+User-defined thread pool
 ```java
 int numberOfCores = Runtime.getRuntime().availableProcessors();
 ExecutorService pool = Executors.newFixedThreadPool(numberOfCores);
-// Usually the Thread pool would be created upfront
+//Usually the Thread pool would be created upfront
 ExecutorService pool = Executors.newCachedThreadPool();
 ForkJoinPool pool = new ForkJoinPool(10);
 
@@ -58,6 +55,7 @@ finally {
    pool.close();
 }
 ```
+
 Pass the pool into async methods (thenApplyAsync, thenAcceptAsync)
 ```java
 ExecutorService pool = Executors.newCachedThreadPool();
@@ -216,7 +214,7 @@ private static void failureOnTimeOut(CompletableFuture<Integer> future) {
 {% gist nitinkc/ffb3f165b3b58072acd750b78c0a2644 %}
 
 ### whenComplete()
-whenComplete does not allow for transformation of the result.
+whenComplete doesn’t allow for transformation of the result.
 it is primarily used for handling completion and any associated exceptions.
 {% gist nitinkc/3648ba0dd28d87fb5c4c13d4a77742e4 %}
 
