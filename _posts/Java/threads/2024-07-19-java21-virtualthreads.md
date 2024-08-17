@@ -18,6 +18,7 @@ tags: ['Java','Multithreading']
 * the **common pool** that’s used by other features like parallel Streams operates in **LIFO** mode.
 
 ### Virtual Threads
+* [Java21 Virtual threads Docs](https://docs.oracle.com/en%2Fjava%2Fjavase%2F22%2Fdocs%2Fapi%2F%2F/java.base/java/lang/Thread.State.html)
 * Virtual threads are **suitable** for running tasks that spend most of the time blocked, often waiting **for I/O operations**
   to complete.
 * They aren't intended for long-running CPU-intensive operations. For that use the existing platform threads

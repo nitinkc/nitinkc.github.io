@@ -34,7 +34,7 @@ Core1 | Task1 -> Task2 -> Task1 -> Task2 -> Task1
 Caveat: Multithreaded Programming is fundamentally different from single-threaded programming
 {: .notice--primary}
 
-# Process
+# Process & Threads
 All threads **share** Files, Heap, and Code
 
 [Image Code Link](https://app.eraser.io/workspace/tRdPDXKngDIyHNQeiKZE?origin=share)
@@ -51,7 +51,7 @@ All threads **share** Files, Heap, and Code
   - Heap and
   - Code
   
-## Context Switching
+### Context Switching
 The CPU switches from executing in the **context of one thread** to executing in the context of another is **Context Switching**
 
 OS has to:-
@@ -69,20 +69,18 @@ This is not an economical operation and is the price (tradeoff) with Multitaskin
 - Store data of the current outgoing thread
 - restore data of the incoming thread (back into CPU and memory)
 
+### Issues with Context Switch
+A large number of threads causes **Thrashing** (Spending more time in management than real productive work)
+- Threads consume fewer resources than Processes
+
+Context Switching between **threads from the same process** is **CHEAPER** than context switch between different processes
+{: .notice--primary}
 
 [Code Link](https://app.eraser.io/workspace/EoAeHbbnoamTb2aJzyMN?origin=share)
 
 ![processWithThreads.png](../../../assets/images/processWithThreads.png)
 
-### Issues with Context Switch
-Large number of threads causes **Thrashing** (Spending more time in management than real productive work)
-
-- Threads consumes less resources than Processes
-
-Context Switching between **threads from the same process** is **CHEAPER** than context switch between different processes
-{: .notice--primary}
-
-# Thread Vs Process
+### Summary
 
 **Prefer Multithreaded architecture when**
 - tasks share a lot of Data
@@ -94,88 +92,69 @@ Context Switching between **threads from the same process** is **CHEAPER** than 
   - Separate processes are completely isolated from each other
 - Tasks are unrelated to each other
 
-
-## History of multithreading in Java
-**Java 1:** Threads
-- one set of API for all machines. hardware independent
-
-**Java 5** : ExecutorServices API -> Pool of threads
-* Issue 1: Pool induced deadlock
-* One thread breaks the problem and throws in the pool and waits foe the result to come back
-* All the threads in pool just divided the work, and no thread left to take care of the problem
-
-**Java 7** : Fork Join pool
-* Work-stealing : the threads that divides problem, also solves one of the divided part
-
-**Java 8** : ParallelStreams and CompletableFutures
-* uses Java 7 FJP
-* Common Fork join pool
-
-**Java 21** : Virtual Threads
-* Game changer
-* [https://nitinkc.github.io/java/java21-virtualthreads/](https://nitinkc.github.io/java/java21-virtualthreads/)
-
 # Thread Scheduling
 Each OS implements its own Thread Scheduling Algorithm
 
-[Linux Schedulers](https://developer.ibm.com/tutorials/l-completely-fair-scheduler/)
+Scheduling can be either
+- **preemptive** (forcing the current task out) - Shortest Remaining Time First
+  - forcibly interrupt and suspend the currently running task to switch to another task
+- **non-preemptive** (waits for the current task to finish first).
+
 Assume 2 processes(A,B) with two threads(1,2) each running in a single core processor
 - the 4 tasks each have an arrival order and length of execution time.
 
-| Thread | Arrival Order | CPU Time (anticipated) |
-|:-------|:--------------|:-----------------------|
-| A1     | 0             | 4                      | 
-| A2     | 1             | 3                      | 
-| B1     | 2             | 2                      | 
-| B2     | 3             | 1                      | 
+| Thread  | Arrival Order  | CPU Time  |
+|:-------:|:--------------:|:---------:|
+|   A1    |       0        |     4     | 
+|   A2    |       1        |     3     | 
+|   B1    |       2        |     2     | 
+|   B2    |       3        |     1     | 
 
-### First Come, First Serve Scheduling
-```
-Time 0        Time 1        Time 2        Time 3
-+------------+------------+------------+------------+
-| A1 executes| A2 executes| B1 executes| B2 executes|
-+------------+------------+------------+------------+
-```
+### First-Come, First-Serve Scheduling
+
+| Time 0 | Time 1 | Time 2 | Time 3 | Time 4 | Time 5 | Time 6 | Time 7 | Time 8 | Time 9 |
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+|   A1   |   A1   |   A1   |   A1   |   A2   |   A2   |   A2   |   B1   |   B1   |   B2   |
 
 **Problems**
 - **Thread Starvation** - for the short process due to long-running processes
 
 ### Shortest Job First Scheduling
 Shortest Job First (SJF) scheduling algorithm selects the process with the shortest 
-execution time from the ready queue. 
-
-It can be either **preemptive** (Shortest Remaining Time First) or **non-preemptive**.
+execution time from the ready queue.
 
 **Timeline Illustration with SJF (Non-preemptive)**
 
-```
-Time 0        Time 1        Time 2        Time 3        Time 4        Time 5        Time 6        Time 7        Time 8        Time 9        Time 10
-+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+
-| A1 executes (4 units) | B2 executes (1 unit)   | B1 executes (2 units)   | A2 executes (3 units)   |
-+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+
-```
+First, finishing the current job in hand(A1)
+
+|        Time 0        |  Time 1   |  Time 2   |  Time 3   | Time 4 |   Time 5   | Time 6 |      Time 7       |  Time 8   |  Time 9 |
+|:--------------------:|:---------:|:---------:|:---------:|:------:|:----------:|:------:|:-----------------:|:---------:|:-------:|
+|          A1          |    A1     |    A1     |    A1     |   B2   |     B1     |   B1   |        A2         |    A2     |    A2   |
+| A1 - 4 units of task |||| 1 unit |B1 - 2 units|| A2 - 3 units task |||
+
 
 **Problems**
 If there are many short jobs, the longer jobs, now, can face starvation.
 
 ### How it really works
-OS divides the time into Epochs (moderately size pieces)
+[Inside the Linux 2.6 Completely Fair Scheduler](https://developer.ibm.com/tutorials/l-completely-fair-scheduler/)
 
-In each Epoch, the OS allocated different time slice for each thread
+- OS divides the time into Epochs (moderately size pieces)
+- In each Epoch, the OS allocated different time slice for each thread
 
-Notice: not all the threads get to run or complete in each epoch.
+> Not all the threads get to run or complete in each epoch.
 
-The decision on how to allocate the time for each thread is based on a dynamic priority(The operating system maintains for each thread).
+The decision on how to allocate the time for each thread is based on a dynamic priority (The operating system maintains for each thread).
 $$ \text Dynamic Priority = \text Static Priority + Bonus $$
 - The static priority is set by the developer ahead of time.
 - And the bonus is adjusted by the operating system in every epoch for each thread
 
-This way the operating system will give preference to interactive and real time threads that need more immediate attention.
+This way the operating system will give preference to interactive and real-time threads that need more immediate attention.
 And in the same time, it will give preference to computational threads that **did not complete**, or did not get enough time to run in previous
 epics to prevent starvation.
 
 # Thread Lifecycle
-[https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.State.html](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.State.html)
+[https://docs.oracle.com/en%2Fjava%2Fjavase%2F22%2Fdocs%2Fapi%2F%2F/java.base/java/lang/Thread.State.html](https://docs.oracle.com/en%2Fjava%2Fjavase%2F22%2Fdocs%2Fapi%2F%2F/java.base/java/lang/Thread.State.html)
 
 ```mermaid!
 stateDiagram
@@ -218,6 +197,26 @@ be a good time to switch to another thread.
 The thread transitions from RUNNING to RUNNABLE, allowing other threads to be scheduled for execution. 
 
 However, it's not guaranteed that the current thread will stop running immediately or that other threads will be scheduled right away.
+
+# History of multithreading in Java
+**Java 1:** Threads
+- one set of API for all machines. hardware independent
+
+**Java 5** : ExecutorServices API -> Pool of threads
+* Issue 1: Pool-induced deadlock
+* One thread breaks the problem and throws in the pool and waits foe the result to come back
+* All the threads in pool just divided the work, and no thread left to take care of the problem
+
+**Java 7** : Fork Join pool
+* Work-stealing: the thread that divides the problem also solves one of the divided part
+
+**Java 8** : ParallelStreams and CompletableFutures
+* uses Java 7 FJP
+* Common Fork join pool
+
+**Java 21** : Virtual Threads
+* Game changer [Virtual Threads Docs](https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html)
+* [https://nitinkc.github.io/java/java21-virtualthreads/](https://nitinkc.github.io/java/java21-virtualthreads/)
 
 # Tidbits
 
