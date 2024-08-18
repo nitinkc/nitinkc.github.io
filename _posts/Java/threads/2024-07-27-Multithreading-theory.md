@@ -254,6 +254,20 @@ In the thread-per-request model, each incoming request is assigned a separate th
   - When a request arrives, a thread from the pool is assigned to handle the request. 
   - Once the request is processed and a response is generated, **the thread is returned to the pool for reuse**.
 
+### Thread-Per-Task Threading model
+
+##### Issues
+- Does not give optimal performance
+  - when a thread is blocking IO, it cannot be used
+  - Requires us to allocate more threads
+  - Consuming more resources
+  - Adding context switch overhead
+- 
+
+### Thread-Per-Core with Non-Blocking-IO
+- provides optimal performance
+- 
+
 # Task Types
 - IO Bound ()
 - CPU Bound (Compute-intensive)

@@ -6,26 +6,36 @@ tags: ['Java','Multithreading']
 ---
 {% include toc title="Index" %}
 
-**What are Resources?**
-- Variables
+**What are Shared Resources?**
+- Variables (Class level, static etc)
 - Data structures (Objects)
 - File or Connection handles
 - Message queues or Work Queues
-- Any Object
+- Any Other Object
 
-Heap is shared, Stack is for each thread so variables on the Stack is not shared.
+Heap is shared.
+Stack is created for each thread so variables on the Stack aren’t shared.
+
+Concurrent systems -> different threads communicate with each other
+
+Distributed Systems -> different processes communicate.
+
+Reentrant Locks and Semaphores are introduced in Java 1.5
+* Reentrant Locks (Mutex) allows only one thread in a critical section.
+* Semaphore allows a fixed number of threads to access a critical section.
 
 # Atomic Operation
-- All-or-Nothing: The operation completes fully or doesn’t start at all.
-- Indivisibility: No other operations can interleave or interrupt the atomic operation.
+**All-or-Nothing**: The operation either completes fully or doesn’t start at all.
+ 
+**Indivisibility**: No other operations can interleave or interrupt the atomic operation.
 
-In the given example, `counter++` is **not an atomic operation** as it involves 3 steps
+In the given example, `counter++` or `counter--` are **not atomic operation** as it involves 3 steps
 - Fetch the current value of counter from memory.
 - Increment the fetched value by 1.
 - Store the incremented value back into counter.
   ```java
   private int counter;
-   public void increment() {
+  public void increment() {
       counter++;
   }
   
@@ -33,58 +43,34 @@ In the given example, `counter++` is **not an atomic operation** as it involves 
       counter--;
   }
   ```
+  
 If two threads execute `counter++` simultaneously, they could both fetch the same
 initial value of counter, increment it, and then store the same new value, resulting in one increment instead of two. 
 
-This is **a race condition**.
-
-### Ensuring Atomicity 
-- Using synchronized keyword
-  - on the method - monitor
-  - using synchronized block - more granularity & flexibility but verbose
-- Using AtomicInteger
-
-```java
-SharedClass sharedObject = new SharedClass();
-Thread thread1 = new Thread(() -> sharedObject.increment());
-Thread thread2 = new Thread(() -> sharedObject.decrement());
-
-class SharedClass {
-    private int counter = 0;
-
-    public synchronized void increment() {
-        this.counter++;
-    }
-
-    public synchronized void decrement() {
-        this.counter--;
-    }
-}
-```
-When thread1 is executing `sharedObject.increment();` thread2 can’t execute `sharedObject.decrement();`
-
-And when thread2 is executing `sharedObject.decrement();`thread1 can’t execute `sharedObject.increment();`
-
-That is because both methods are synchronized, and belong to the same object (counter).
+This is a **race condition**.
 
 # Critical Section
+Critical Sections are parts of code that access shared resources and must be protected to prevent concurrent access issues.
 
-Concurrent systems -> different threads communicate with each other
-
-Distributed Systems -> different processes communicate.
-
-Reentrant Locks and Semaphores are introduced in Java 1.5
-
-* Reentrant Locks (Mutex) allows only one thread in a critical section.
-* Semaphore allows a fixed number of threads to access a critical section.
+- **Synchronized** Methods and Synchronized Blocks (with lock object) ensure that only one thread can access a critical section at a time.
+- **ReentrantLocks** offer more control and flexibility compared to synchronized blocks.
+- **Concurrent Collections** are thread-safe and can simplify handling shared data without manual synchronization.
+  - **Examples**: ConcurrentHashMap, CopyOnWriteArrayList, BlockingQueue
 
 # Race Condition
-- Condition when multiple threads accessing a shared resource
+- Multiple threads accessing shared resources
 - At least one thread is modifying the shared resources
 - The timing of thread scheduling may cause incorrect results
 - the core of the problem is **non-atomic operations** performed on the shared resource
 
-Interleaved Execution (incrementing a shared resource) with Thread 1 and Thread 2 with **NO COMMUNICATION**
+**Non-Atomic operation** - A single Java operation(eg. count++) turns into two or more hardware operation
+  - fetch current value of count
+  - perform count+1
+  - reassign back to count
+
+### Interleaved Execution with a shared resource. 
+
+**Both thread incrementing with NO COMMUNICATION**
 
 ```mermaid!
 sequenceDiagram
@@ -118,7 +104,14 @@ sequenceDiagram
 ```
 
 ### Race Condition Solution
-identify and protect the critical section by a synchronized block.
+**Ensuring Atomicity**
+
+Identify and protect the critical section
+- Using synchronized keyword
+  - on the method - monitor
+  - using synchronized block - more granularity & flexibility but verbose
+- Using AtomicInteger
+
 ```java
 //Run by increment thread
 public synchronized void increment() {
@@ -129,13 +122,17 @@ public synchronized void decrement() {
     count--;
 }
 ```
+- When thread1 is executing `increment();` thread2 can’t execute `decrement();`
+- And when thread2 is executing `decrement();`thread1 can’t execute `increment();`
+
+That is because both methods are synchronized, and belong to the same object (counter).
 
 # Data Race
 Is `x` strictly greater than `y`?
 ```java
 private int x = 0, y = 0;
 public void increment() {
-    x++;//Does this run before y++ 
+    x++;//Does this always run before y++? 
     y++;
 }
 // Check for the above hypothesis
@@ -144,13 +141,14 @@ public void checkForDataRace() {
         System.out.println("y > x - Data Race is detected");
 }
 ```
-- One thread running `increment()` method
+- One thread running `increment()` method in a loop
 - One checker thread just to see if Data Race occurs.
 
-Compiler and CPU may execute the instruction Out of order (if the instructions are independent) to optimize performance
+### Code rearrangement
+Compiler and CPU **may** execute the instruction **Out of order** (if the instructions are independent) to optimize performance
 - The logical correctness of the code is always maintained
 
-[https://nitinkc.github.io/java/compiler-code-optimization/](https://nitinkc.github.io/java/compiler-code-optimization/)
+[Java Compilation Optimization](https://nitinkc.github.io/java/compiler-code-optimization/)
 
 **The compiler re-arranges the instructions for better**
 - branch prediction (optimized loops, `if` statements etc.)
@@ -161,14 +159,15 @@ Compiler and CPU may execute the instruction Out of order (if the instructions a
 - hardware units utilization
 
 The following can't be rearranged as all instructions are interdependent
+- `y` depends on `x` and `z` depends on `y`ß
 ```java
 x = 1;
 y = x * 2;
+z = y + 1;
 ```
 
-this code may be arranged by Compiler or CPU
-- lead to unexpected, paradoxical, and incorrect results.
-
+The following code may be arranged by the Compiler or CPU
+- leading to unexpected, paradoxical, and incorrect results.
 ```java
 x++; y++;
 //OR
@@ -188,14 +187,7 @@ Every shared variable (modified by at least one thread) should be either
 - Guarded by a synchronized block (or any type of lock) OR
 - declared volatile
 
-# Why do we need locks?
-- Multiple threads accessing shared resources
-- At least one thread is modifying the shared resources
-- Non-Atomic operation (eg. count++) - A single Java operation turns into one or more hardware operation
-  - fetch current value of count
-  - perform count+1
-  - reassign back to count
-
+# Locks
 When we have multiple shared resources, we can use
 - one lock for all the shared resources 
   - **Coarse grain locking** - simplicity, but performance is not good.
@@ -204,28 +196,29 @@ When we have multiple shared resources, we can use
   - **Fine-grained locking** - more control, but can cause deadlocks
   - more programmatic control but prone to errors.
 
-### Deadlocks - Problems when multiple locks are held.
+### Deadlocks
+Problem when multiple locks are held.
 
-## Key Concepts in Resource Management
+For a deadlock to occur, all 4 conditions need to be met simultaneously.
 
 | **Concept**                   | **Description**                                                                 |
 |:------------------------------|:--------------------------------------------------------------------------------|
 | **Mutual Exclusion**          | Only one thread can have exclusive access to a resource at a given moment.      |
 | **Hold and Wait**             | At least one thread is holding a resource and is waiting for another resource.  |
 | **Non-Preemptive Allocation** | A resource cannot be released until the thread using it is finished with it.    |
-| **Circular Wait**             | A situation where one thread is holding resource A and waiting for resource B,\ 
-|| while another thread holds resource B and is waiting for resource A.            | 
-
+| **Circular Wait**             | A situation where one thread is holding resource A and waiting for resource B,  \ 
+|                               | while another thread holds resource B and is waiting for resource A.            | 
 
 The easiest solution to avoid deadlocks is to **break the Circular Wait condition**. 
 
 Enforcing strict order on lock acquisition prevents deadlocks.
 - lock resources in the same order everywhere
 
+{% gist nitinkc/442baad95fd069a9ac1645db1f941d1b %}
+
 ### Deadlock detection  
 
 ##### 1. Watchdog
-
 In microcontrollers, this watchdog is implemented by a low level routine that periodically
 checks the status of a particular register.
 
@@ -237,162 +230,7 @@ restart them in a similar way.
 
 ##### 3. tryLock Operations (not possible with synchronized)
 
-## ReentrantLock
-Works same as `synchronized` keyword applied to an object 
-- but requires explicit locking and unlocking
-  - prone to errors if forget to unlock, or if there is an exception after locking and before unlocking
 
-**SOLUTION** : always lock in the try block and unlock in the finally block
-  - this pattern also helps when you want to unlock after `return` statement
-
-##### Reentrancy
-The same thread can acquire the read or write lock multiple times without causing a deadlock.
-- For example, if a thread already holds the write lock, it can acquire it again without blocking.
-
-##### Fairness
-By default, it uses a non-fair policy where thread scheduling is not guaranteed to follow any specific order. 
-- However, a fair version can be used where threads are granted locks in the order they requested them, which can help prevent thread starvation.
-
-```java
-Lock lock = new ReentrantLock();
-
-public int task() {
-    lock.lock();
-    try {
-      // Critical section
-      return doTask();//returns an integer
-    } finally {//Guaranteed to execute
-        lock.unlock();//with return statements, this is the only way to unlock 
-    }
-}
-```
-With this extra complexity we have more control over lock & get more Lock operations
-
-#### Queries
-- `int getQueueLength()` : Returns an estimate of the number of threads waiting to acquire the lock.
-- `Thread getOwner()` : Returns the thread currently holding the lock, or null if no thread holds the lock.
-- `boolean isHeldByCurrentThread()` : Returns true if the current thread holds the lock.
-- `boolean isLocked()` : Returns true if the lock is currently held by any thread.
-
-By default,
-both `synchronized` keyword and `ReentrantLock()` **does not** provide a fairness guarantee. 
-- But, `ReentrantLock(true)` can be used to enforce fairness
-- may affect the throughput as maintaining fairness comes with a cost.
-
-### LockInterruptibly
-- Useful with Watchdog for deadlock detection and recovery
-- Waking up threads to do cleanup
-```java
-try{
-    //lock.lock();
-    lock.lockInterruptibly();
-        ...
-} catch(InterruptedException){
-    if(Thread.currentThread().isInterrupted()){
-        doCleanUp&Exit();
-    }
-}
-```
-
-### lock() and tryLock()
-- never blocks
-- Attempts to acquire the lock immediately.
-- If the lock is available, it is acquired and the method returns true.
-- If the lock is not available, it returns false immediately **without blocking** or waiting.
-
-**Use Cases**
-- tryLock(): When immediate feedback is needed without waiting. eg Video/Image processing, Trading systems, UI Applications
-- tryLock(long time, TimeUnit unit): When waiting for a limited time is acceptable and you want to handle lock acquisition with a timeout.
-
-Regular lock 
-```java
-lock.lock();//sleeps when the lock is not free
-try{
-   // Critical section
-} finally() {
-    lock.unlock();
-}
-```
-
-##### Summary
-```java
-ReentrantLock lock = new ReentrantLock();
-public void update(int key, int value) {
-  lock.lock();
-  try {
-    writeToDatabase(key, value); //slow
-  } finally {
-    lock.unlock();
-  }
-}
-
-public int read(int key) {
-  lock.lock();
-  try {
-    return readFromDatabase(key); //slow
-  } finally {
-    lock.unlock();
-  }
-}
-```
-
-for `ReentrantLock lock = new ReentrantLock();`
-
-How many threads can execute writeToDatabase(key, value); in the same time? Ans : 1
-- The lock protects the critical section from concurrent access
-
-How many threads can execute readFromDatabase(key); in the same time?
-- Only **one thread** can access that method since it's guarded by a lock
-
-## ReentrantReadWriteLock
-
-`Synchronized` and `ReentrantLock` do not allow **multiple readers** to access a shared resource concurrently
-
-But when read operatiosn are predominant or when read operations aren’t fast
-- read from many variables
-- read from complex data structure
-
-Under these circumstances, mutual exclusion negatively impacts performance
-
-```java
-ReadWriteLock lock = new ReentrantReadWriteLock();
-Lock readLock = lock.readLock();
-Lock writeLock = lock.writeLock();
-```
-#### Read Lock
-**Multiple threads can hold the read lock** simultaneously as long as no thread holds the write lock. 
-- This is useful for scenarios where multiple threads need to read data concurrently without modifying it.
-
-```java
-public int read(int key) {
-  readLock.lock();
-  try {
-    return readFromDatabase(key); //slow
-  } finally {
-    readLock.unlock();
-  }
-}
-```
-
-#### Write Lock:
-Only one thread can hold the write lock at a time, and no other threads (either read or write) can acquire the lock. 
-- This ensures exclusive access to the resource for modifications.
-
-```java
-public void update(int key, int value) {
-  writeLock.lock();
-  try {
-    writeToDatabase(key, value); //slow
-  } finally {
-    writeLock.unlock();
-  }
-}
-```
-How many threads can execute `writeToDatabase(key, value);` in the same time?
-- That method is guarded by a write lock, and only one thread can acquire a write lock at a time
-
-How many threads can execute `readFromDatabase(key);`, at most at the same time?
-- Since the method is guarded by a read lock. Many threads can acquire that lock as long as no other thread is holding the write lock
 
 # Inter-thread Communications
 basdkjsadnas
@@ -635,3 +473,5 @@ AtomicInteger should be used only when atomic operations are needed.
 # AtomicReference<T>
 
 
+# Synchronization Mechanisms in Java
+[https://nitinkc.github.io/java/multithreading/synchronization-mechanism-java/](https://nitinkc.github.io/java/multithreading/synchronization-mechanism-java/)

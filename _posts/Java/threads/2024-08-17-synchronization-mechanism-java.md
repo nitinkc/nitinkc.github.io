@@ -1,14 +1,14 @@
 ---
 title:  "Synchronization Mechanisms in Java"
-date:   2024-08-08 20:17:00
+date:   2024-08-17 20:17:00
 categories: ['Java','Multithreading']
 tags: ['Java','Multithreading']
 ---
 
 {% include toc title="Index" %}
 
-
 ### Volatile Variable
+[https://nitinkc.github.io/java/multithreading/Volatile/](https://nitinkc.github.io/java/multithreading/Volatile/)
 
 ### Mutex (Lock) - ReentrantLock
 A ReentrantLock is a more flexible lock than the built-in synchronized block.

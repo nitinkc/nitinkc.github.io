@@ -7,6 +7,8 @@ tags: ['Java','Multithreading']
 
 {% include toc title="Index" %}
 
+| [Java21 Virtual threads Docs](https://openjdk.org/jeps/444) | [Virtual Threads Docs](https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html) |
+
 # Two kinds of threads
 
 ### Platform threads
@@ -17,11 +19,13 @@ tags: ['Java','Multithreading']
   * can be modified by tuning the system property `jdk.virtualThreadScheduler.parallelism`.
 * the **common pool** that’s used by other features like parallel Streams operates in **LIFO** mode.
 
+[Diagram code](https://app.eraser.io/workspace/7T1zn0AFYP9i1gxvb6ZS)
+![platformThreads.png](../../../assets/images/platformThreads.png){:width="50%" height="50%"}
+
 ### Virtual Threads
-* [Java21 Virtual threads Docs](https://docs.oracle.com/en%2Fjava%2Fjavase%2F22%2Fdocs%2Fapi%2F%2F/java.base/java/lang/Thread.State.html)
 * Virtual threads are **suitable** for running tasks that spend most of the time blocked, often waiting **for I/O operations**
   to complete.
-* They aren't intended for long-running CPU-intensive operations. For that use the existing platform threads
+* They **aren't intended** for long-running **CPU-intensive** operations. For that use the existing platform threads
 * Not managed or scheduled by the OS, but the **JVM is responsible for scheduling**.
 * JVM uses **carrier threads** (which are platform threads) to “carry” any virtual thread when its time has come to execute. Work must be run in a platform thread.
 * All Virtual Threads are **always daemon threads**, don’t forget to call `join()` if you want to wait on the main thread. 
@@ -34,18 +38,20 @@ tags: ['Java','Multithreading']
 - Executor Service
 - ForkJoinPool
 
+[Diagram code](https://app.eraser.io/workspace/zk1bATBmP6EbZ0v2nd01)
+![virtualThreadArchitecture.png](../../../assets/images/virtualThreadArchitecture.png)
+
 # Project Loom & Virtual threads
-Most fundamental change in Java
+[Most fundamental change in Java](https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html#GUID-DC4306FC-D6C1-4BCC-AECE-48C32C1A8DAA)
 - The _Virtual Thread_ starts as a **Daemon thread** whereas the _Platform Thread_ starts as a **non-daemon thread**
-- The JVM Shutsdown when there are no non-daemon threads running.
-- error with platform thread with large number of threads
+- The JVM Shuts down when there are no non-daemon threads running.
+- error with platform thread with a large number of threads is eliminated with virtual threads
 ```
 [3.536s][warning][os,thread] Failed to start thread "Unknown thread" - pthread_create failed (EAGAIN) for attributes: stacksize: 1024k, guardsize: 4k, detached.
 [3.536s][warning][os,thread] Failed to start the native thread for java.lang.Thread "Thread-8158"
 ```
-- With Virtual threads, each worker/task corresponds to one platform thread. 
-- Each worker just runs and leaves and picks other task, thus starting and ending of a same methods can be done in different threads.
-
+- With Virtual threads, each worker/task corresponds to a platform thread.
+- Each worker just runs and leaves and picks other task (if there is an IO bound operation), thus starting and ending of a same methods can be done in different threads.
 - virtual thread `#31` is started by the `worker2` but is ended by the `worker4`.
 ```
 Start::executeBusinessLogic : VirtualThread[#31]/runnable@ForkJoinPool-1-worker-2
@@ -56,9 +62,9 @@ END::executeBusinessLogic : VirtualThread[#29]/runnable@ForkJoinPool-1-worker-3
 
 # Virtual Thread creation
 Virtual Threads are scheduled on a platform thread (aka carrier thread) for its CPU bound operation.
-The big advantage is that when we use virtual threads, the OS thread is released automatically during an IO operation.
+The big advantage is that when we use virtual threads, the OS thread is released **automatically during an IO operation**.
 
-### Using static thread method
+### static thread method
 - can't name a thread 
 ```java
 var t = Thread.startVirtualThread(() -> executeBusinessLogic());
@@ -66,18 +72,26 @@ var t = Thread.startVirtualThread(() -> executeBusinessLogic());
 t.join(); //Proceed sequentially after thread completes its task
 ```
 
-### Create a virtual thread builder object
+### virtual thread builder object
 Builder is **NOT** Thread Safe
 {% gist nitinkc/b682bc6e3e3dbdb83322c940c00d0267 %}
 
-### Using Thread factory
+### Thread factory
 ThreadFactory is thread safe
 {% gist nitinkc/cb1f98eb47895a4388e4b685a9792d65%}
 
-### Using the virtual thread executor service
+### Default Virtual Thread executor service
+**Default Factory** : **Cannot** name threads
+
+**Default vs. Custom Factory**: The `Executors.newVirtualThreadPerTaskExecutor()` uses a default virtual thread configuration,
+while the `Executors.newThreadPerTaskExecutor(factory)` allows you to specify a **custom ThreadFactory** with particular configurations (e.g., custom naming).
+
 {% gist nitinkc/96904758c763e2c43b6f9fdd8898e668%}
 
 ### Thread Per Task Executor Service
+**Custom Factory** : The custom factory approach provides the **ability to name threads**, which can be useful for debugging or monitoring purposes.
+- The default virtual thread executor (described above) doesn’t offer this level of customization out of the box.
+
 {% gist nitinkc/ddebd32d96b28d62f7fc20ddeb8336fa %}
 
 ### try with resource block
@@ -87,10 +101,8 @@ Waiting for all threads to complete involves
 - creating an array of threads and 
 - joining with each of them explicitly. 
 
-In JDK 21 (officially supporting Virtual threads), the ExecutorService is "**Autocloseable**". 
-
-which means if you use the try with resource block, the close method will be called on the ExecutorService 
-at the end of the block and this will wait till all the virtual threads are terminated.
+In JDK 21 (officially supporting Virtual threads), the ExecutorService is "**Autocloseable**". Which means if you use the try with resource block, 
+the close method will be called on the ExecutorService at the end of the block and this will wait till all the virtual threads are terminated.
 
 This is one example of "Structured Concurrency" where we wait for all threads started within a block to complete, 
 so that there are no rogue runaway threads.
