@@ -6,7 +6,6 @@ tags: ['Java','Multithreading']
 ---
 {% include toc title="Index" %}
 
-
 # Semaphore
 [English meaning](https://www.merriam-webster.com/dictionary/semaphore)
 

@@ -196,7 +196,7 @@ When we have multiple shared resources, we can use
   - **Fine-grained locking** - more control, but can cause deadlocks
   - more programmatic control but prone to errors.
 
-### Deadlocks
+# Deadlocks
 Problem when multiple locks are held.
 
 For a deadlock to occur, all 4 conditions need to be met simultaneously.
@@ -241,12 +241,12 @@ restart them in a similar way.
 
 # Inter-thread Communications
 basdkjsadnas
-# Lock Free Algorithms
 
-What's wrong with Locks?
+# Lock Free Algorithms
+**What's wrong with Locks?**
 - DEADLOCKS
-- slow critical section (if one thread holds the lock for long. The slowest thread determines the speed)
-- Priority inversion when 2 threads share a lock, but the low-priority thread keeps getting scheduled ahead of more priority
+- slow critical section (the one thread that holds the lock for long, the slowest thread determines the speed)
+- Priority inversion when 2 threads share a lock, but the low-priority thread keeps getting scheduled
   - Low-priority thread acquires the lock and is preempted (schedule out)
   - High-priority thread can’t progress because the low-priority thread is not scheduled to release the lock.
 - Thread not releasing the lock (Kill Tolerance)
@@ -261,28 +261,23 @@ What's wrong with Locks?
   - Later Thread B is scheduled back (another context switch)
   - overhead for latency-sensitive applications (stock market data)
 
-
-Lock free solutions 
+## Lock free solutions 
 - uses operations guaranteed to be executed as a single hardware operation
 - A single hardware operation 
   - is Atomic by definition and thus
   - threadsafe
-
 
 ##  Atomic Operations in Java
 Read/Assignment on all primitive types (except for long and double)
 Read/Assigment on all references
 Read/Assignment on all Volatile long and double
 
-
 ## Avoid DataRaces
-
 Make all shared variables that you want to read or write Volatile
-- ead/Assignment on all Volatile Primitive types and references
+- read/Assignment on all Volatile Primitive types and references
 
 # Atomic Classes in Java
 Atomic classes in Java Concurrent atomic package
-
 internally uses the unsafe class which provides access to low level, native methods
 
 [Java Docs](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/atomic/package-summary.html)
@@ -325,7 +320,6 @@ AtomicInteger should be used only when atomic operations are needed.
 - it's on par and sometimes more performant than regular integer with lock protection
 
 # AtomicReference<T>
-
 
 # Synchronization Mechanisms in Java
 [https://nitinkc.github.io/java/multithreading/synchronization-mechanism-java/](https://nitinkc.github.io/java/multithreading/synchronization-mechanism-java/)

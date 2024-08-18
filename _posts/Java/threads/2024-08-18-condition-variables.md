@@ -8,7 +8,7 @@ tags: ['Java','Multithreading']
 
 # Condition Variables
 Semaphore as particular example of condition variable `Is number of Permits > 0`
-- if condition is not met thread-1 goes to sleep until another thread changes the semaphore's state.
+- if condition is not met, thread-1 goes to sleep until another thread changes the semaphore's state.
 
 Condition variable is always associated with a lock.
 Lock ensures **atomic** check and modification of the shared variables involved in the condition.
