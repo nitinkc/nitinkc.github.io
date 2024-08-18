@@ -233,12 +233,14 @@ restart them in a similar way.
 # ReentrantLock
 [https://nitinkc.github.io/java/multithreading/reentrant-lock/](https://nitinkc.github.io/java/multithreading/reentrant-lock/)
 
+# Semaphore
+[https://nitinkc.github.io/java/multithreading/semaphores/](https://nitinkc.github.io/java/multithreading/semaphores/)
+
+# Condition Variables
+[https://nitinkc.github.io/java/multithreading/condition-variables/](https://nitinkc.github.io/java/multithreading/condition-variables/)
+
 # Inter-thread Communications
 basdkjsadnas
-
-# Semaphore
-
-
 # Lock Free Algorithms
 
 What's wrong with Locks?

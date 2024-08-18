@@ -9,11 +9,11 @@ tags: ['Java','Multithreading']
 
 # Semaphore
 [English meaning](https://www.merriam-webster.com/dictionary/semaphore)
+
 ![](https://merriam-webster.com/assets/mw/static/art/dict/semaphor.gif)
 
 Can be used to restrict the **number of "users"** to a particular resource or a group of resources
-
-Unlike the **locks that allows only one** "user/thread" per resource.
+- Unlike the **locks that allow only one** "user/thread" per resource.
 
 Initializes a Semaphore with a given number of permits. The number of permits indicates how many
 threads can access the resource simultaneously.
@@ -78,9 +78,8 @@ But Semaphore is great choice for other solutions for the problems such as Produ
 | **Release by Any Thread**      | Semaphore permits can be released by any thread, even if it did not acquire the permit. This can create bugs as it allows multiple threads to enter a critical section simultaneously. | Locks can only be released by the thread that acquired them, ensuring exclusive access to the critical section. |
 | **Example Use Cases**             | **Database Connection Pool**: Limiting the number of concurrent connections to a database.<br>**Thread Pool Management**: Limiting the number of concurrent threads executing tasks. | **Critical Section**: Ensuring that only one thread can modify a shared data structure or resource at a time.<br>**Atomic Operations**: Preventing race conditions when performing complex operations on shared resources.                   |
 
-## Producer Consumer Problem
+# Producer Consumer Problem
 Able to have many producers and many consumers, and allow the consumers to apply back pressure on the producers, if the producers produce faster than the consumers can consume.
-
 
 ```java
 final int QUEUE_CAPACITY = 10;
@@ -90,8 +89,7 @@ ReentrantLock lock = new ReentrantLock();
 Queue<Integer> queue = new ArrayDeque<>(); 
 ```
 
-
-Producer
+**Producer**
 ```java
  while (true) {
     emptySemaphore.acquire(); // Wait for an empty slot
@@ -103,7 +101,7 @@ Producer
 }
 ```
 
-Consumer
+**Consumer**
 ```java
 while (true) {
     fullSemaphore.acquire(); // Wait for an available item
