@@ -116,10 +116,9 @@ sequenceDiagram
     T2->>T2: Decrement count to -1
     T2->>SR: Write count (-1)
 ```
+
 ### Race Condition Solution
 identify and protect the critical section by a synchronized block.
-
-One thread incrementing, one decrementing
 ```java
 //Run by increment thread
 public synchronized void increment() {
@@ -151,21 +150,25 @@ public void checkForDataRace() {
 Compiler and CPU may execute the instruction Out of order (if the instructions are independent) to optimize performance
 - The logical correctness of the code is always maintained
 
+[https://nitinkc.github.io/java/compiler-code-optimization/](https://nitinkc.github.io/java/compiler-code-optimization/)
+
 **The compiler re-arranges the instructions for better**
 - branch prediction (optimized loops, `if` statements etc.)
 - Vectorization - parallel instruction execution (SIMD)
 - Prefetching instructions - better cache performance
 
-The CPU rearranges the code for better hardware units utilization
+**The CPU rearranges the code for better** 
+- hardware units utilization
 
 The following can't be rearranged as all instructions are interdependent
-- lead to unexpected, paradoxical, and incorrect results.
 ```java
 x = 1;
 y = x * 2;
 ```
 
-the may be arranged by CPU or Compiler
+this code may be arranged by Compiler or CPU
+- lead to unexpected, paradoxical, and incorrect results.
+
 ```java
 x++; y++;
 //OR
@@ -176,7 +179,7 @@ y++; x++;
 Establish a `Happens-Before` semantics by
 - synchronization of methods
   - solves both race and data condition but has a performance penalty
-- (volatile shared variables)[https://nitinkc.github.io/java/Volatile/]
+- [volatile shared variables](https://nitinkc.github.io/java/Volatile/)
   - solves race condition for read/write from long and double
   - solves all data races by guaranteeing order
 
@@ -192,37 +195,36 @@ Every shared variable (modified by at least one thread) should be either
   - fetch current value of count
   - perform count+1
   - reassign back to count
-  
-# Locks
-When we have multiple shared resources, should we use one lock for all the shared resources or individual lock
-for each resource
 
-**Coarse grain locking** - simplicity, but performance is not good.
-- lots of suspended threads
+When we have multiple shared resources, we can use
+- one lock for all the shared resources 
+  - **Coarse grain locking** - simplicity, but performance is not good.
+  - lots of suspended threads
+- individual lock for each resource
+  - **Fine-grained locking** - more control, but can cause deadlocks
+  - more programmatic control but prone to errors.
 
-**Fine-grained locking** - more control, but can cause deadlocks
-- more programmatic control but prone to errors.
+### Deadlocks - Problems when multiple locks are held.
 
+## Key Concepts in Resource Management
 
-### Deadlocks
-Problems when multiple locks are held.
+| **Concept**                   | **Description**                                                                 |
+|:------------------------------|:--------------------------------------------------------------------------------|
+| **Mutual Exclusion**          | Only one thread can have exclusive access to a resource at a given moment.      |
+| **Hold and Wait**             | At least one thread is holding a resource and is waiting for another resource.  |
+| **Non-Preemptive Allocation** | A resource cannot be released until the thread using it is finished with it.    |
+| **Circular Wait**             | A situation where one thread is holding resource A and waiting for resource B,\ 
+|| while another thread holds resource B and is waiting for resource A.            | 
 
-**Mutual Exclusion** - only one thread can have exclusive access to a resource at a given moment.
-
-**Hold and Wait** - at least one thread is holding the resource and is waiting for another resource.
-
-**Non-Preemptive Allocation** - a resource cannot be released until the thread using it is done using it.
-
-**Circular Wait** - one thread holding resource A and waiting for another resource and vice versa.
 
 The easiest solution to avoid deadlocks is to **break the Circular Wait condition**. 
 
 Enforcing strict order on lock acquisition prevents deadlocks.
 - lock resources in the same order everywhere
 
-Deadlock detection : 
+### Deadlock detection  
 
-1. Watchdog
+##### 1. Watchdog
 
 In microcontrollers, this watchdog is implemented by a low level routine that periodically
 checks the status of a particular register.
@@ -231,15 +233,16 @@ That register needs to be updated by every thread, every few instructions, and i
 that this register hasn't been updated, it knows that the threads aren’t responsive and will simply
 restart them in a similar way.
 
-2. Thread Interruption (not possible with synchronized)
+##### 2. Thread Interruption (not possible with synchronized)
 
-3. tryLock Operations (not possible with synchronized)
+##### 3. tryLock Operations (not possible with synchronized)
 
 ## ReentrantLock
 Works same as `synchronized` keyword applied to an object 
 - but requires explicit locking and unlocking
-  - prone to errors if forget to unlock, or if there is an exception after locking adn before unlocking
-  - **SOLUTION** : always lock in the try block and unlock in the finally block
+  - prone to errors if forget to unlock, or if there is an exception after locking and before unlocking
+
+**SOLUTION** : always lock in the try block and unlock in the finally block
   - this pattern also helps when you want to unlock after `return` statement
 
 ##### Reentrancy
@@ -259,20 +262,20 @@ public int task() {
       // Critical section
       return doTask();//returns an integer
     } finally {//Guaranteed to execute
-        lock.unlock();//with return statements, thsi is the only way to unlock 
+        lock.unlock();//with return statements, this is the only way to unlock 
     }
 }
 ```
-With this extra complexity we have more control over lock & more Lock operations
+With this extra complexity we have more control over lock & get more Lock operations
 
-### Queries
+#### Queries
 - `int getQueueLength()` : Returns an estimate of the number of threads waiting to acquire the lock.
 - `Thread getOwner()` : Returns the thread currently holding the lock, or null if no thread holds the lock.
 - `boolean isHeldByCurrentThread()` : Returns true if the current thread holds the lock.
 - `boolean isLocked()` : Returns true if the lock is currently held by any thread.
 
 By default,
-both `synchronized` keyword and `ReentrantLock()` does not provide a fairness guarantee. 
+both `synchronized` keyword and `ReentrantLock()` **does not** provide a fairness guarantee. 
 - But, `ReentrantLock(true)` can be used to enforce fairness
 - may affect the throughput as maintaining fairness comes with a cost.
 
@@ -396,17 +399,19 @@ basdkjsadnas
 
 # Semaphore
 [English meaning](https://www.merriam-webster.com/dictionary/semaphore)
+![](https://merriam-webster.com/assets/mw/static/art/dict/semaphor.gif)
 
-Can be used to restrict the number of "users" to a particular resource or a group of resources
+Can be used to restrict the **number of "users"** to a particular resource or a group of resources
 
-Unlike the locks that allows only one "user/thread" per resource.
+Unlike the **locks that allows only one** "user/thread" per resource.
 
-Initializes a Semaphore with a given number of permits. The number of permits indicates how many threads can access the resource simultaneously.  
+Initializes a Semaphore with a given number of permits. The number of permits indicates how many
+threads can access the resource simultaneously.  
 ```java
 Semaphore semaphore = new Semaphore(int permits);
 ```
 
-##### Acquire and release a permit**
+##### Acquire and release a permit
 
 Acquires a permit from the semaphore, **blocking until a permit is available**. 
 - Throws InterruptedException if the current thread is interrupted while waiting.
@@ -630,101 +635,3 @@ AtomicInteger should be used only when atomic operations are needed.
 # AtomicReference<T>
 
 
-
-
-
-
-# Synchronization Mechanisms in Java
-
-### Volatile Variable
-
-### Mutex (Lock) - ReentrantLock
-A ReentrantLock is a more flexible lock than the built-in synchronized block.
-
-**Advantages**:
-- Can be unlocked in a different method or class from where it was locked.
-- Provides more control over the lock (e.g., timed lock, interruptible lock).
-- can maintain fairness `ReentrantLock(true)` but may come with a cost of throughput.
-  use unlock in finally block so that it is always guaranteed that the resource is unlocked.
-
-**Use Case**: When you need advanced locking features not provided by the synchronized block.
-
-### 2. ReadWriteLock - ReentrantReadWriteLock
-A ReadWriteLock allows multiple threads to read a resource concurrently but only one thread to write.
-
-2 Types
-**Advantages**:
-- Improves performance in scenarios where reads are more frequent than writes.
-
-**Use Case**: When you have a resource that is frequently read but infrequently written.
-
-Since the method is guarded by a read lock. Many threads can acquire that lock as long as no other thread is holding the write lock
-
-### Semaaphore
-
-### Condition Variables
-Condition variables are used with locks to allow threads to wait for certain conditions to be met.
-
-Advantages:
-- Allows for complex waiting conditions.
-
-Use Case: When threads need to wait for specific conditions before proceeding.
-
-### Atomic Variables
-Atomic variables (e.g., AtomicInteger, AtomicLong, AtomicReference) provide lock-free thread-safe operations on single variables.
-
-Advantages:
-- Lower overhead compared to using locks.
-
-Use Case: When you need to perform atomic operations on a single variable without the overhead of locking.
-
-
-As part of the `java.util.concurrent` package, the JDK contains many classes that help us coordinate between threads.
-
-A few of those include the `CountDownLatch`, `CyclicBarrier`, `Phaser`, `Exchanger`, and others that may be added in future versions
-of the JDK.
-
-However, all those classes are no more than higher-level wrappers built upon the same building blocks.
-We can implement their functionality with the tools we already have.
-
-### CountDownLatch
-A CountDownLatch is used to make one or more threads wait until a set of operations being performed in other threads completes.
-
-**Advantages**:
-- Allows threads to wait for a specific condition to be met.
-
-**Use Case**: Waiting for multiple threads to complete initialization tasks before proceeding.
-
-### CyclicBarrier
-A CyclicBarrier allows a set of threads to wait for each other to reach a common barrier point.
-- guarantee that some portion of the work is done by all threads before the rest of the work is performed.
-
-### Exchanger
-An Exchanger allows two threads to exchange data with each other.
-
-Advantages:
-- Useful for thread communication where each thread provides data to the other.
-
-Use Case: Pairwise data exchange between threads.
-
-### Phaser
-A Phaser is a more flexible version of CountDownLatch and CyclicBarrier.
-
-Advantages:
-- Supports dynamic registration of parties and multiple phases of synchronization.
-
-Use Case: Complex synchronization scenarios with multiple phases and dynamic participants.
-
-### StampedLock
-A StampedLock is a lock that offers three modes for controlling read/write access.
-
-Advantages:
-- Provides an optimistic read mode, which can improve performance for read-heavy scenarios.
-
-Use Case: When you need high-performance read access with occasional writes.
-
-
-
-> Synchronization mechanisms like CountDownLatch and CyclicBarrier can be applicable in distributed systems.
-
-Their usage and considerations differ compared to their usage in single-process applications. 
