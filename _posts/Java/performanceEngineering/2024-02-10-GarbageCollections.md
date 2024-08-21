@@ -26,6 +26,9 @@ Meta space is never garbage collected as it holds Static primitives or the refer
 **Not a good idea** to call and let JVM Decide when it's right. So, **DO NOT** use.
 
 # The finalize() method
+The finalize() method of an object is called by the Garbage Collector before it removes the object from memory
+(when there are no references to that object).
+
 Deprecated since Java 9. This method runs when the object is eligible for GC
 
 But like GC, you will never know when it is going to run or if it will run as per the intention
@@ -49,6 +52,11 @@ Young generation (much smaller than the old, but can be tuned) has 3 spaces
 - Eden
 - S0 (Survivor 0 Space)
 - S1 (Survivor 1 Space)
+
+##### Island of isolation
+**Eden Space** --> When an instance is created, stored in Eden Space (Young generation of heap memory area)
+
+**Survivor space** --> after Minor GC (Obj. live and referenced)
 
 
 ### Minor Collection

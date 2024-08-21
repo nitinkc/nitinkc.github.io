@@ -4,6 +4,7 @@ date:   2024-08-20 00:17:00
 categories: ['Java']
 tags: ['Java']
 ---
+{% include toc title="Index" %}
 
 # The Need
 1. Most of the traditional Collections are not threadsafe

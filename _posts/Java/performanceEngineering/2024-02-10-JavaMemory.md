@@ -162,7 +162,7 @@ Any object on the heap which is referenced from the meta space will never be gar
 
 All threads in Java have access to the meta space.
 
-# Final Diagram
+# Final
 
 ```java
 int localVar = 10;//Primitive

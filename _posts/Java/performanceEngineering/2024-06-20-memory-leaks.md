@@ -8,6 +8,15 @@ tags: ['Java',"Performance Engineering"]
 {% include toc title="Index" %}
 
 
+• In C explicit call free()
+
+Objects that aren’t freed-up, continue to consume memory. This is memory leak
+
+Java avoids memory leaks by
+• Running on a Virtual Machine
+Adopts the GC Strategy (invented with LISP in 1959 )
+
+
 # Java Memory Leaks
 
 A memory leak happens **only if the allocated objects can't be garbage-collected** because they are referenced from somewhere in the running application.
@@ -35,7 +44,7 @@ list holds references to large byte arrays, causing them to remain in memory (ma
 
 **Solution**:
 
-Explicitly clear references when they are no longer needed.
+Explicitly clear references when they’re no longer needed.
 ```java
 public void clearData() {
     list.clear();

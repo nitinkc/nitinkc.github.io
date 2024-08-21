@@ -69,6 +69,20 @@ They are not required to be caught or declared explicitly.
 1. IllegalStateException : attempting to run an invalid operation in collection adn Concurrency
 1. UnsupportedOperationException : --do--
 
+# Checked vs Unchecked Exceptions
+
+| Property | Checked Exception | Unchecked Exception |
+|----------|-------------------|---------------------|
+| **Also Known As** | Compile-time exceptions | Runtime exceptions |
+| **Should Be Solved At** | Compile time | Runtime |
+| **Benefit/Advantage** | Ensures issues are fixed at compile time to avoid runtime problems | Handles interruptions at runtime and provides meaningful messages to users |
+| **Creating Custom Exceptions** | `class UserException extends Exception { UserException(String s) { super(s); } }` | `class UserException extends RuntimeException { UserException(String s) { super(s); } }` |
+| **Exception Propagation** | Must use `throws` keyword | Automatically propagated |
+| **Handling in Subclass** | Must handle or declare narrower checked exceptions | Can declare/throw any unchecked exception; cannot declare checked exceptions |
+| **Which Classes Are Which Type?** | `Exception` and its subclasses (excluding `RuntimeException`) are checked | `RuntimeException` and its subclasses are unchecked |
+| **Most Frequently Faced Exceptions** | `SQLException`, `IOException`, `ClassNotFoundException` | `NullPointerException`, `ArithmeticException`, `ArrayIndexOutOfBoundsException` |
+
+
 ### Error
 
 Errors represent more serious, unrecoverable problems that are not typically handled by the application.
@@ -88,8 +102,27 @@ Custom exceptions are handled in a similar way to built-in exceptions.
 Handling exceptions in Java is typically done using try, catch, and finally blocks.
 
 # Try with resources
+
+The `try-with-resources` syntax introduced in java 7,
+automatically closes all resources opened in the try clause. 
+
+This feature is known as automatic resource management
+
 Resources are automatically closed at the end of the try block with `try-with-resources`. 
 This simplifies resource management and reduces the likelihood of resource leaks.
+
+Only try-with-resources statement is permitted to omit both the catch and finally blocks
+{: .notice--info}
+
+The resources created in the try clause are **only in scope within the try block**.
+
+### AutoCloseable
+Java Commits to closing any resource opened in the try-with-resource block.
+
+For this reason the resource must be **closeable**.
+Auto Closeable interface has only one method `close()`
+
+Checked Exception thus have to give a catch block
 
 ### Basic File Reading
 ```java
@@ -210,3 +243,24 @@ try{
    System.out.println("This will always run");
 }
 ```
+
+
+# ClassNotFoundException vs NoClassDefFoundError
+
+Both `ClassNotFoundException` and `NoClassDefFoundError` indicate issues with class loading, but they occur in different scenarios:
+
+### ClassNotFoundException
+
+| Property | ClassNotFoundException | NoClassDefFoundError |
+|----------|-------------------------|----------------------|
+| **Type** | Exception (`java.lang.Exception`) | Error (`java.lang.Error`) |
+| **Occurs When** | Class not found in classpath at runtime | Class present at compile time but missing at runtime |
+| **Thrown By** | Application (e.g., `Class.forName()`, `loadClass()`) | Java Runtime System |
+| **Typical Cause** | Classpath not updated with required JAR files | Required class definition missing at runtime |
+
+For more information, visit:
+- [ClassNotFoundException vs NoClassDefFoundError](http://javaconceptoftheday.com/classnotfoundexception-vs-noclassdeffounderror-in-java/)
+- [Stack Overflow Discussion](http://stackoverflow.com/questions/1457863/what-causes-and-what-are-the-differences-between-noclassdeffounderror-and-classn)
+
+
+
