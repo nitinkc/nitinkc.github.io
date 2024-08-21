@@ -474,3 +474,12 @@ HappyPath==========================D==========D=======================
 data -> function -> Promise -> f-> P -> f  -> P -> f -> P -> f-> P -> f       
 UnhappyPath===========================================Exception==E=======
 ```
+
+
+# Daemon vs Non-Daemon threads
+
+| **User Threads**                                                                                                        | **Daemon Threads** (Backgroud threads)                                                                                    |
+|:--------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
+| JVM **waits** for user threads to finish their work. It **will not exit** until all user threads finish their work. | JVM will not wait for daemon threads to finish their work. It will exit as soon as all main thread finish their work. |
+| User threads are high priority threads.                                                                             | Daemon threads are low priority threads.                                                                              |
+| JVM will not force the user threads to terminate. It will wait for user threads to terminate themselves.            | JVM will force the daemon threads to terminate if all user threads have finished their work.                          |

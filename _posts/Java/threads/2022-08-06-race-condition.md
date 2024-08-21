@@ -13,12 +13,11 @@ tags: ['Java','Multithreading']
 - Message queues or Work Queues
 - Any Other Object
 
-Heap is shared.
-Stack is created for each thread so variables on the Stack aren’t shared.
+Heap Memory is shared.
+Stack is created for each thread, so the variables on the Stack aren’t shared.
 
-Concurrent systems -> different threads communicate with each other
-
-Distributed Systems -> different processes communicate.
+> Concurrent systems -> different threads **communicate** with each other <br>
+Distributed Systems -> different processes **communicate**.
 
 Reentrant Locks and Semaphores are introduced in Java 1.5
 * Reentrant Locks (Mutex) allows only one thread in a critical section.
@@ -30,9 +29,9 @@ Reentrant Locks and Semaphores are introduced in Java 1.5
 **Indivisibility**: No other operations can interleave or interrupt the atomic operation.
 
 In the given example, `counter++` or `counter--` are **not atomic operation** as it involves 3 steps
-- Fetch the current value of counter from memory.
-- Increment the fetched value by 1.
-- Store the incremented value back into counter.
+- **Read** - Fetch the current value of counter from memory.
+- **Temp Write** - Increment the fetched value by 1.
+- **Assignment** - Store the incremented value back into counter.
   ```java
   private int counter;
   public void increment() {
@@ -211,8 +210,9 @@ For a deadlock to occur, all 4 conditions need to be met simultaneously.
 
 The easiest solution to avoid deadlocks is to **break the Circular Wait condition**. 
 
-Enforcing strict order on lock acquisition prevents deadlocks.
-- lock resources in the same order everywhere
+Enforcing **strict order** on lock acquisition prevents deadlocks.
+Lock resources in the same order everywhere
+{: .notice--primary}
 
 {% gist nitinkc/442baad95fd069a9ac1645db1f941d1b %}
 
@@ -267,59 +267,143 @@ basdkjsadnas
   - is Atomic by definition and thus
   - threadsafe
 
-##  Atomic Operations in Java
-Read/Assignment on all primitive types (except for long and double)
-Read/Assigment on all references
-Read/Assignment on all Volatile long and double
+# Atomic Operations in Java
+- Read & Assignment on all primitive types (except for long and double)
+- Read & Assigment on all references
+- Read & Assignment on all Volatile long and double
+
+Java provides several mechanisms to achieve atomic operations:
+
+1. **Atomic Variables** :
+The `java.util.concurrent.atomic` package provides classes that perform atomic operations on various types:
+
+2. **Volatile Variables**
+The `volatile` keyword in Java ensures **visibility of changes** to variables across threads. 
+However, it **does not guarantee** atomicity for operations on **long and double types**, 
+which are 64-bit values and may require special handling.
+
+3. **Synchronization**
+While not strictly atomic operations, synchronized blocks or methods provide mutual exclusion, 
+ensuring that only one thread can execute a block of code at a time.
+This can be used to manage complex atomic operations that involve multiple steps.
 
 ## Avoid DataRaces
-Make all shared variables that you want to read or write Volatile
+Make all shared variables that you want to read or write **Volatile**
 - read/Assignment on all Volatile Primitive types and references
 
-# Atomic Classes in Java
-Atomic classes in Java Concurrent atomic package
-internally uses the unsafe class which provides access to low level, native methods
 
-[Java Docs](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/atomic/package-summary.html)
+# Volatile
+For primitive types other than long and double atomic operations are typically
+managed using the volatile keyword or synchronization,
+  ```java
+  private volatile int counter;
+  ```
+Accessing or updating this counter will be atomic, but **only for reads and writes**.
+More complex operations like incrementing require additional synchronization.
+
+# Atomic Classes in Java
+Atomic classes in `java.util.concurrent.atomic` package
+- internally uses the unsafe class which provides access to low level, native methods
+- [Java Docs - java.util.concurrent.atomic](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/atomic/package-summary.html)
 
 ### AtomicInteger
+**Atomic Classes for int**: The `java.util.concurrent.atomic` package provides `AtomicInteger` for int:
+
 ```java
 int initialValue = 0;
 AtomicInteger atomicInteger = new AtomicInteger(initialValue);
 
-//Increments by 1, 
-int previousValue = atomicInteger.getAndIncrement();//return the PREVIUOS value
-int updatedValue = atomicInteger.incrementAndGet();// return the NEW-VALUE
+public void increment() {
+  //Increments by 1, 
+  int previousValue = atomicInteger.getAndIncrement();//return the PREVIUOS value
+  int updatedValue = atomicInteger.incrementAndGet();// return the NEW-VALUE
+  //Similarly for decrement
+}
 
-//Similarly for decrement
+public int getValue() {
+  return atomicCounter.get(); // Atomic read
+}
 
 //addAndGet(delta), getAndAdd(delta) increments or decrements by delta(delta can be negative)
 ```
-Pros
+
+**Pros**
 - Simplicity
 - no synchronization or locks needed
 - no race conditions or data races
 
-Cons
+**Cons**
 - Only the operation itself is atomic
 - There will still be race condition between 2 separate atomic operations
+  ```java
+  int initialValue = 0;
+  AtomicInteger atomicInteger = new AtomicInteger(initialValue);
+  
+  int a = atomicInteger.incrementAndGet();
+  int b = atomicInteger.addAndGet(-1); // SUBJECTED TO RACE CONDITION
+  ```
 
-```java
-int initialValue = 0;
-AtomicInteger atomicInteger = new AtomicInteger(initialValue);
-
-int a = atomicInteger.incrementAndGet();
-int b = atomicInteger.addAndGet(-1); // SUBJECTED TO RACE CONDITION
-```
-
-Summary
+**Summary**
 
 AtomicInteger is a great tool for concurrent counting, without the complexity of using a lock
 
 AtomicInteger should be used only when atomic operations are needed.
 - it's on par and sometimes more performant than regular integer with lock protection
 
+### Atomic Operations on volatile long and volatile double
+In Java, volatile 
+- **guarantees visibility and ordering** but 
+- does not guarantee atomicity for long and double types.
+
+For these types, Java uses `AtomicLong` and `AtomicDouble` from the `java.util.concurrent.atomic` package 
+- note that AtomicDouble is **not in the standard library** but is available in libraries like Google Guava.
+
+- **AtomicLong**: Provides atomic operations for long values:
+  ```java
+  import java.util.concurrent.atomic.AtomicLong;
+  
+  private AtomicLong atomicLong = new AtomicLong();
+  
+  public void incrementLong() {
+      atomicLong.incrementAndGet(); // Atomic increment
+  }
+  
+  public long getLongValue() {
+      return atomicLong.get(); // Atomic read
+  }
+  ```
+  
+- **AtomicDouble**: Provided by libraries such as Google Guava:
+  ```java
+  import com.google.common.util.concurrent.AtomicDouble;
+  
+  private AtomicDouble atomicDouble = new AtomicDouble();
+  
+  public void setDouble(double newValue) {
+      atomicDouble.set(newValue); // Atomic assignment
+  }
+  
+  public double getDoubleValue() {
+      return atomicDouble.get(); // Atomic read
+  }
+  ```
+
 # AtomicReference<T>
+**AtomicReference Class**: Manages atomic operations on references. For example:
+
+```java
+import java.util.concurrent.atomic.AtomicReference;
+
+private AtomicReference<MyObject> atomicRef = new AtomicReference<>(new MyObject());
+
+public void updateReference(MyObject newValue) {
+    atomicRef.set(newValue); // Atomic assignment
+}
+
+public MyObject getReference() {
+    return atomicRef.get(); // Atomic read
+}
+```
 
 # Synchronization Mechanisms in Java
 [https://nitinkc.github.io/java/multithreading/synchronization-mechanism-java/](https://nitinkc.github.io/java/multithreading/synchronization-mechanism-java/)

@@ -27,7 +27,6 @@ Javascript is dynamically typed
 Java is statically typed, so we have to provide **the type of CompletableFuture** in the declaration
 {% gist nitinkc/eea4fd28d7765ec964cbf9b5c270ec5c %}
 
-
 ### CompletableFuture - ThreadPool
 By Default, Completable future uses the **Common ForkJoinPool**. 
 - Which means that the number of threads in a common fork-join pool is equal to the number of cores in the machine 
@@ -63,13 +62,14 @@ CompletableFuture<Double> future =  CompletableFuture.supplyAsync(() -> compute(
 CompletableFuture<Double> doubleCompletableFuture = future.thenApplyAsync(data -> data * 2, pool);
 CompletableFuture<Void> voidCompletableFuture = doubleCompletableFuture.thenAcceptAsync(data -> getPrintln(data),pool);
 ```
+
 # Creating a new CompletableFuture
 ### supplyAsync() - with return Data
-**CompletableFuture<V>**
+`CompletableFuture<V>`
 {% gist nitinkc/7d0d331d4716151c51579d4fdda5ba94 %}
 
 ### runAsync() - No Return data
-**CompletableFuture<Void>**
+`CompletableFuture<Void>`
 {% gist nitinkc/e186dba8001122fa5281cf979cd5ce3d %}
 
 ### new CompletableFuture<>() 
@@ -77,7 +77,7 @@ Creating a pipeline and then completing
 {% gist nitinkc/da36ef99c6a7e383e7aea4475328ad9c %}
 
 ##### complete(T value):
-* allows to manually complete a CompletableFuture with a specific result value.
+* allows completing a `CompletableFuture`, manually, with a specific result value.
 * to provide a result explicitly, bypassing the actual asynchronous computation.
 {% gist nitinkc/28618b6feb55df00447289a75b351dba %}
 

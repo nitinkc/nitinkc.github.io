@@ -116,7 +116,7 @@ Another problem is that starting a platform thread will take some time which mig
 The solution for both the problems is to create a **thread pool** (every application server creates a default thread-pool). 
 
 The size of the thread pool that is used in Spring Boot with Tomcat
-- by default, Tomcat uses a thread- pool size of 200.
+- by default, Tomcat uses a thread-pool size of 200.
 - It means that If 250 concurrent users hit spring boot application, 
   - 50 of them are going to wait for a platform thread to process their request
 - a user request for an application server would be handed over to an **already created thread** in a thread pool, 

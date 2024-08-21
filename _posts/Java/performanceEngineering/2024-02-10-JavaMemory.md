@@ -9,6 +9,12 @@ tags: ['Java',"Performance Engineering"]
 
 # The Stack, Heap and the Metaspace (Summary)
 
+### Java Memory - The Rules
+
+-  All Objects are stored in Heap.
+- Variables are a reference to the object
+- Local Variables are stored on the stack (thread level variables)
+
 **Stack**
 
 - JVM Argumenr - `Xss`
@@ -165,6 +171,7 @@ Book book = new Book("Harry Potter");//Object
 static int globalVariable = 90;
 static Map<String, Integer> map = new HashMap<>();//Static Object
 ```
+
 ```mermaid!
 graph TB
     subgraph Stack
