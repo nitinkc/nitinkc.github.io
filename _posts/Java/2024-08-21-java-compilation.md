@@ -17,7 +17,17 @@ In Java, the compilation process involves several stages to transform Java sourc
 Below are the six stages of the Java compiler:
 
 ```
-Source Code → Lexical Analysis → Syntax Analysis → Semantic Analysis → Intermediate Code Generation → Code Optimization → Code Generation → Bytecode (.class files)
+.java file
+  |
+  v
+Compilation => Source Code → Lexical Analysis → Syntax Analysis → Semantic Analysis → Intermediate Code Generation → Code Optimization → Code Generation → Bytecode (.class files)
+  |
+  v
+.class file
+  |
+  v
+ execution and output
+
 ```
 
 ## 1. Lexical Analysis
@@ -27,7 +37,7 @@ operators, and literals.
 
 **Process**:
 - **Buffering**: Take complete source program in the form of a buffer.
-- **Tokenization**: The compiler reads the source code character by character and groups them into tokens.
+- **Tokenization**: After buffering, The compiler reads the source code character by character and groups them into tokens.
 - **Examples**: Keywords (`public`, `class`), identifiers (`MyClass`, `main`), operators (`+`, `=`), and literals (`42`, `"Hello"`).
 
 **Output**: A sequence of tokens that represent the source code in a structured format.
