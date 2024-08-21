@@ -38,6 +38,8 @@ operators, and literals.
 **Process**:
 - **Buffering**: Take complete source program in the form of a buffer.
 - **Tokenization**: After buffering, The compiler reads the source code character by character and groups them into tokens.
+  - during tokenization, all metadata related to code, like comments, are removed
+  - if metadata is needed till the runtime, use **Annotations**
 - **Examples**: Keywords (`public`, `class`), identifiers (`MyClass`, `main`), operators (`+`, `=`), and literals (`42`, `"Hello"`).
 
 **Output**: A sequence of tokens that represent the source code in a structured format.
