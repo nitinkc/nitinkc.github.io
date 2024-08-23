@@ -39,7 +39,7 @@ operators, and literals.
 - **Buffering**: Take complete source program in the form of a buffer.
 - **Tokenization**: After buffering, The compiler reads the source code character by character and groups them into tokens.
   - during tokenization, all metadata related to code, like comments, are removed
-  - if metadata is needed till the runtime, use **Annotations**
+  - if metadata is needed till the runtime, go for **Annotations**
 - **Examples**: Keywords (`public`, `class`), identifiers (`MyClass`, `main`), operators (`+`, `=`), and literals (`42`, `"Hello"`).
 
 **Output**: A sequence of tokens that represent the source code in a structured format.
@@ -103,5 +103,10 @@ machine code for the target processor.
 
 **Output**: Java bytecode files (`.class` files) that are ready to be executed by the JVM.
 
+# JVM Architecture
+JVM is divided into three main subsystems:
+- ClassLoader
+- Runtime Data Area (Memory Area)
+- Execution Engine
 
-
+[JVM Architecture](https://www.linkedin.com/pulse/jvm-architecture-how-internally-work-ali-as-ad/)
