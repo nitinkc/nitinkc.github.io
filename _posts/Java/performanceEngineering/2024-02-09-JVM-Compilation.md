@@ -1,5 +1,5 @@
 ---
-title:  "JVM and Compilation process"
+title:  "Compiler Flags"
 date:   2024-02-09 20:27:00
 categories: ['Java',"Performance Engineering"]
 tags: ['Java',"Performance Engineering"]
@@ -293,3 +293,8 @@ mvn clean package && java -jar ui/target/jitwatch-ui-shaded.jar
 
 ![java-memory.png]({{ site.url }}/assets/images/jitWatch1.png)
 ![java-memory.png]({{ site.url }}/assets/images/jitWatch2.png)
+
+[JVM Architecture](https://www.linkedin.com/pulse/jvm-architecture-how-internally-work-ali-as-ad/)
+
+
+[https://nitinkc.github.io/java/java-compilation/](https://nitinkc.github.io/java/java-compilation/)

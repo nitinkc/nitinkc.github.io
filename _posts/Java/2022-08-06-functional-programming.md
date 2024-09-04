@@ -1,137 +1,203 @@
 ---
-title:  "Functional Concepts"
+title:  "Functional Programming Concepts"
 date:   2022-08-06 08:30:00
 categories: ['Java']
 tags: ['Java']
 ---
-# Functional Concepts Agenda
 
 * How to get behavior out of a method and
-* Passing behavior into a method.
-* Will be investigating the singleton, the factory and comparing those with constructors.
+  ```java
+  // Method that returns behavior as a Predicate
+  public static Predicate<Integer> getThresholdPredicate(int threshold) {
+      return number -> number > threshold;
+  }
+  ```
+* Passing that behavior into a method.
+  ```java
+   // Obtain a behavior (Predicate) that checks if a number is greater than 10
+   Predicate<Integer> isGreaterThanTen = getThresholdPredicate(10);
 
-### A Question of Ownership
+  // Passing that behavior into a method
+  List<Integer> filteredNumbers = filterNumbers(numbers, isGreaterThanTen);
+  // Method that accepts a Predicate to filter numbers
+  public static List<Integer> filterNumbers(List<Integer> numbers, Predicate<Integer> predicate) {
+  return numbers.stream()
+      .filter(predicate)
+      .collect(Collectors.toList());
+  }
+  ```
+Good Design Principle `keep together what belongs together`
 
-Good Design Principle
-``` keep together what belongs together ```
-
-Tight relationship between the car and the means of selecting a particular car, the criteria, should actually be in the
-car class.
+>The Right Way --> Delegate
+- be declarative (leave it to the API's)
+- not imperative.
 
 
-A pure function is essentially one where the return value, the result of that function, depends only on its arguments.
-There are no variations and there are no side effects.
+# Pure Function
 
-So, if we had a pure function and we call it, let's say, three and seven as arguments, the mechanism of the pure
-function always produces the **same result** for the **same arguments**; 
-so, perhaps 10 in this case, if it were adding them
-together.
+**Rules:**
+- **No Side Effects**: A pure function does not alter any state outside itself. It does not produce side effects.
+- **Dependence on External State**: A pure function **does not rely** on external variables or states that may change.
 
-Further, a pure function does not do anything else.
+**Characteristics of Pure Functions:**
+- **Idempotent**: A pure function is idempotent, meaning it will return the same result when executed multiple times with the same input.
+- **No Side Effects**: It does not affect or rely on any external state.
+- **Concurrency**: Pure functions can be executed in parallel without causing issues, improving concurrency and performance.
 
-By contrast, a regular function, or an impure one, if we call it with three and seven, the mechanism might return
-different values for different invocations, even with the same arguments.
+### Why Are Pure Functions Important?
 
-It might for example look something up in a database; it might look up three and get 99 as a result (from the db call)
-and then produce a result of 106.
+Functional programming emphasizes **immutability** and **purity** for _efficiency_:
 
-It might also write things to the database.
+- **Lazy Evaluation**: Functional programming relies on lazy evaluation, which defers computation until necessary.
 
-Pure functions are idempotent. Can be run many times without any effect.
+Lazy evaluation requires purity of functions
+{: .notice--primary}
 
-Improves concurrency as multiple pure functions can be executed in parellel wihout any side effects.
+- **Parallel Execution**: Lazy evaluation and parallel execution depend on the immutability and purity of functions to ensure correctness and efficiency.
 
+In contrast, an impure function might return different results for the same arguments or modify external state.
+
+> As Polymorphism is to object-oriented Programming,
+`Functional Composition + Lazy Evaluation` is to functional programming
+
+
+#### Avoid Shared Responsibility
+```java
+//Return the list of names of employees, in upper case, younger than 25
+List<String> youngEmployees = new ArrayList<>();
+
+employees.stream()
+        .filter(employee -> employee.getAge() < 25)
+        .map(EmployeeSimple::getName)//get the name
+        .map(String::toUpperCase)//convert to upper case
+        .forEach(upprCaseEmp -> youngEmployees.add(upprCaseEmp)); //Don't do this. Shared mutabilty is evil.
+//This code can't ever be parallelized and it will misbehave.
+```
+
+the `filter` and `map` is pure function, but the `forEach` has shared mutability and thus code wouldn't behave as expected on applying parallelStream
+
+> It is programmers' responsibility to keep the function pure and if the function is impure, lazy evaluation would not be possible.
 
 ---------------------------------
 
-# The idea of using arguments to a factory method
+# The Idea of Using Arguments in a Factory Method
 
-- Previously, we've seen the ability to pass behavior as an argument to a function (often as a lambda, but not
-  necessarily,)
+In programming, particularly in Java, `factory methods` are often used to **_create objects_**
+based on certain parameters or conditions. 
 
-- and we've been returning behavior back from a function, those have been our factories
+Here, we explore how arguments can be utilized in a factory method
+to influence the behavior of the created objects.
 
-But so far the behavior we've been returning out of functions has essentially been fixed.
+## Passing Behavior as Arguments
 
-- get gas level car criterion, creates an object, a new gas level criterion, which is actually parametrized with a
-  threshold. The gas level criterion class internally has a threshold.
-
-That value is set as the argument to the constructor
-
-So the test method that we created here actually behaves in a way that depends on the threshold value that is passed in
-to the constructor
-
-### Single Argument
-
-  ```java
-// Factory for creating GasLevelCarCriterion
-public static Criteria<Car1> getGasLevelCarCriterion(int threshold){
-    return new GasLevelCarCriterion(threshold);
+Previously, we have seen two key concepts:
+- **Passing Behavior as Arguments**: We can pass behavior (such as functions or lambdas) as arguments to other functions.
+- ```java
+  // Define a predicate for checking if a car is red
+  Predicate<Car> isRed = car -> "Red".equals(car.getColor());
+  // Use the filterCars method with the predicate
+  System.out.println(filterCars(new Car[]{car1, car2}, isRed)); // Output: [Red]
+    
+  // Method that takes a Predicate as an argument to filter cars
+  public static String[] filterCars(Car[] cars, Predicate<Car> predicate) {
+      return Arrays.stream(cars)
+                   .filter(predicate)
+                   .map(Car::getColor)
+                   .toArray(String[]::new);
   }
+  ```
+- **Returning Behavior from Functions**: We can also return behavior from functions, 
+  - effectively creating factory methods that generate specific behaviors.
+- ```java
+  // Factory method that returns a Predicate based on the color
+  public static Predicate<Car> getColorPredicate(String color) {
+  return car -> color.equals(car.getColor());
+  }
+  ```
 
-  private static class GasLevelCarCriterion implements Criteria<Car1> {
-    private int threshold;
-    public GasLevelCarCriterion(int threshold) {
-      this.threshold = threshold;
-    }  
-```
+However, up until now, the behaviors returned by these functions have been fixed and predefined.
 
-The value of threshold is shared. It gets copied from the method stack to the object memory stack of the Lambda
+## Example: Using a Single Argument
 
-the object that the lambda represents is created, is that the code is copied in there. But also, the value of threshold
-is duplicated into the object.
+Consider a scenario where we want to create a criterion for evaluating the gas level in a car. 
+The criterion depends on a threshold value that is provided as an argument.
+
+### Example with a Constructor Argument
 
 ```java
-// Factory for creating GasLevelCarCriterion using anonymous inner class. Variable is shared between lambda.
-  // Its effectively final. Can be used, but cannot be modified
-  public static Criteria<Car1> getGasLevelCarCriterion(int threshold){
+// Factory method for creating GasLevelCarCriterion
+public static Criteria<Car1> getGasLevelCarCriterion(int threshold) {
+  return new GasLevelCarCriterion(threshold);
+}
 
-    //threshold = threshold + 1;//Variable 'threshold' is accessed from within inner class, needs to be final or effectively final
-    return new Criteria<Car1>(){
-      @Override
-      public boolean test(Car1 car1) {
-        return car1.getGasLevel() >= threshold;
-      }
-    };
+private static class GasLevelCarCriterion implements Criteria<Car1> {
+  private int threshold;
+
+  public GasLevelCarCriterion(int threshold) {
+    this.threshold = threshold;
   }
+
+  @Override
+  public boolean test(Car1 car1) {
+    return car1.getGasLevel() >= threshold;
+  }
+}
 ```
 
-OR, The same can be written as
+
 
 ```java
- public static Criteria<Car1> getGasLevelCarCriterionLambda(int threshold){
-        return car1 ->  car1.getGasLevel() >= threshold;
-  }
+// Factory method creating GasLevelCarCriterion using a lambda expression
+public static Criteria<Car1> getGasLevelCarCriterionLambda(int threshold) {
+    return car1 -> car1.getGasLevel() >= threshold;
+}
 ```
+The lambda expression allows for concise syntax and still respects the constraint that threshold must be final or effectively final.
 
-### Variable Argument
-
+### Using Variable Arguments
 ```java
-// Factory method to return a criteria of Car based on multiple car color
-  
-  public static Criteria<Car1> getColorCriteria(String ...colors){
+// Factory method to return a criteria of Car based on multiple car colors
+public static Criteria<Car1> getColorCriteria(String... colors) {
     Set<String> colorSet = new HashSet<>(Arrays.asList(colors));
 
     return c -> colorSet.contains(c.color);
-  }
+}
+
 ```
 
-when a function returns another behavior that depends on the arguments to the factory, then we have that closure effect,
-and the values that are used inside the generated behavior must be constants (final or effectively final). 
+# Closure and Immutability
+When a function returns **behavior** that _depends on_ its **arguments**, it introduces a **closure** effect. 
+This means that the returned behavior captures the values of the arguments used within it. 
+However, for these values to be safely captured and used, they must be constants (i.e., **final or effectively final**).
 
+```java
+// Factory method that returns a Predicate based on the threshold
+public static Predicate<Integer> createThresholdPredicate(int threshold) {
+  //threshold = threshold + 1;//Variable 'threshold' is accessed from within inner class (Lambda below), needs to be final or effectively final
+
+  // 'threshold' is captured by the closure
+  return number -> number > threshold;//Variable 'threshold' needs to be final or effectively final
+
+}
+```
+In summary, using arguments in factory methods allows you to create flexible and 
+reusable criteria or behaviors, while ensuring that the values used within the 
+returned behavior are **immutable** to prevent unintended side effects.
 
 ------------------------------------
 
-Java is a strongly statically typed language, and the lambda expression seems to lack type information.
+Java is a strongly statically typed language, and the lambda expressions lack type information.
 
 This is how it gets resolved
 
+### **assignment to a variable**
 - The first possibility is by **assignment to a variable**.
 
 ```java
 private static final CarCriteria1 RED_CAR_CRITERION =  c ->  c.getColor().equals("Red");
 ```
 
+### 
 - **Passing a lambda expression as an argument** to another function call.
 
 There is an implied assignment to the actual parameter of that method call, and that parameter's type specifies what the
@@ -151,12 +217,12 @@ The return type declared for that function specifies what the lambda expression 
   }
 ```
 
-- Fouth, the one that is significantly less common but completely legitimate, is to use a cast to specify what type of
+### 4.Standalone Lambda using Type Casting.≥
+
+- Fourth, the one that is significantly less common but completely legitimate, is to use a cast to specify what type of
   lambda we're trying to build.
 
-## Standalone Lamdba using Type Casting.≥
-
-So, prior to the advent of lambda expressions in Java 8, there were two kinds of places that you could use a cast.
+Prior to the advent of lambda expressions in Java 8, there were two kinds of places that you could use a cast.
 
 - You could use a cast on a primitive value which would cause the bit pattern representation to change, perhaps from a
   32 bit integer into a 16 bit integer.
@@ -167,7 +233,7 @@ So, prior to the advent of lambda expressions in Java 8, there were two kinds of
 
 Those two forms of casts are quite different from what's happening now.
 
-``` java
+```java
 boolean b = ((CarCriteria1)(c -> c.getColor().equals("Red"))).test(Car1.withGasColorPassengers(0,"Red"));
 ```
 
@@ -177,8 +243,7 @@ Now, notice that a single lambda expression could potentially be compiled into m
 on the context.
 
 ```java
-    boolean b2 = ((Strange)(c -> c.getColor().equals("Red"))).anotherTestStuff(Car1.withGasColorPassengers(0,"Red"));
-
+boolean b2 = ((Strange)(c -> c.getColor().equals("Red"))).anotherTestStuff(Car1.withGasColorPassengers(0,"Red"));
 ```
 
 Potentially confusing, and that's one of the reasons that we might choose to put the argument types into the lambda's
@@ -186,29 +251,24 @@ formal parameter list. Because that could be sufficient in some cases to resolve
 
 -------------------------------------------
 
-As a general rule, you shouldn't expect to be creating your own interfaces, just to work with lambdas. T
+As a general rule, you shouldn't be creating your own interfaces, just to work with lambdas.
 
 The vast majority of likely operations, whether they have zero, one, or two arguments, including things dealing with
-primitive return types, or primitive arguments, have probably been built for you.
+primitive return types, or primitive arguments, have been in-built in Java.
 
-And you should use the features of the java.util.function package when you need to create lambdas.
-
-
-Generically typed interfaces
-– Predicate<T> —T in, boolean out
-– Function<T,R> —T in, R out
-– Consumer<T> —T in, nothing (void) out
-– Supplier<T> —Nothing in, T out
-– BinaryOperator<T> —Two T’s in, T out
-
-
+Use the features of the `java.util.function` package when you need to create lambdas.
 
 ## Predefined Functional Interface
 
-Defined in java.util.function
+Defined in `java.util.function`
 
-|1.| Predicate &lt;T> | test(), takes T in, returns boolean | Used with filter() in Stream API|
-|2.| Function<T,R> |apply(T k), T in return user defined TYPE R | Used with map() in Stream API
-|3.| Consumer&lt;T> |accept(), T in, void out |Used with forEach() method |
-|4.| Supplier&lt;T> |get(), nothing in, T out |Used with .collect tereminal operator|
+|                   |                                         |                                       |
+|:------------------|:----------------------------------------|:--------------------------------------|
+| Predicate <T>     | `test()`, takes T in, boolean out       | Used in `filter()` in Stream API      |
+| Function<T,R>     | `apply(T k)`, T in R out(user defined ) | Used in `map()` in Stream API         |   
+| Consumer<T>       | `accept()`, T in, void out              | Used in `forEach()` method            |
+| Supplier<T>       | `get()`, nothing in, T out              | Used in `.collect` tereminal operator |
+| BinaryOperator<T> | Two T’s in, T out                       |                                       |
 
+--------------------
+* Will be investigating the singleton, the factory and comparing those with constructors.

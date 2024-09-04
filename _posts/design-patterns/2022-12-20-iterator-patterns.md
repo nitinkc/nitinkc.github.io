@@ -7,7 +7,7 @@ tags: ['Java']
 {% include toc title="Index" %}
 
 
-break & limit of Impertive style coding
+break & limit of Imperative style coding
 
 ```java
 /* LIMIT */

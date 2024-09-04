@@ -1,5 +1,5 @@
 ---
-title:  "Java Compilation Process"
+title:  "Java Compilation Process & JVM Architecture"
 date:   2024-08-21 00:17:00
 categories: ['Java']
 tags: ['Java']
@@ -109,4 +109,4 @@ JVM is divided into three main subsystems:
 - Runtime Data Area (Memory Area)
 - Execution Engine
 
-[JVM Architecture](https://www.linkedin.com/pulse/jvm-architecture-how-internally-work-ali-as-ad/)
+[https://www.linkedin.com/pulse/jvm-architecture-how-internally-work-ali-as-ad/](https://www.linkedin.com/pulse/jvm-architecture-how-internally-work-ali-as-ad/)
