@@ -102,7 +102,7 @@ naver_site_verification  :
 
 
 # Analytics
-analyticsy:
+analytics:
   provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          :
