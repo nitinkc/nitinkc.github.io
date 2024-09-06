@@ -4,6 +4,7 @@ date:   2022-08-06 08:30:00
 categories: ['Java']
 tags: ['Java']
 ---
+{% include toc title="Index" %}
 
 * How to get behavior out of a method and
   ```java
@@ -197,16 +198,17 @@ This is how it gets resolved
 private static final CarCriteria1 RED_CAR_CRITERION =  c ->  c.getColor().equals("Red");
 ```
 
-### 
+### **lambda expression as an argument**
 - **Passing a lambda expression as an argument** to another function call.
 
 There is an implied assignment to the actual parameter of that method call, and that parameter's type specifies what the
 lambda expression has to be.
 
 ```java
-    showAll(getCarsByCriteria1(cars, c -> c.getPassengers().size() == 2));
+showAll(getCarsByCriteria1(cars, c -> c.getPassengers().size() == 2));
 ```
 
+### **Returning a lambda**
 - Third, Returning a lambda expression directly from a function call.
 
 The return type declared for that function specifies what the lambda expression must be.

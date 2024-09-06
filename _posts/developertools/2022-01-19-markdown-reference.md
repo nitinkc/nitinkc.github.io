@@ -10,7 +10,7 @@ sidebar:
 
 {% include toc title="Index" %}
 
-## Add Table of contents
+# Add Table of contents
 - right side Index bar (on this blog)
   {% raw  %}
     `{% include toc title="Index" %}`
@@ -21,18 +21,18 @@ sidebar:
 - Contents `{:.no_toc}`
   - Will be replaced with the ToC, excluding the "Contents" header `{:toc}`
 
-## Escape Liquid template tags in Jekyll posts
+# Escape Liquid template tags in Jekyll posts
 - Use backtick(`) to display a liquid tag as a span of code .
 * to begin `{{ "{% raw " }}%}` and end with `{{ "{% endraw " }}%} `
 * Another way to escape `{{ "{{ tag " }}}}`
 
-## Include gists as
+# Include gists
 Include code as a gist into the Jekyll post. Uses jekyll-gist plugin.
 {% raw  %}
 `{% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}`
 {% endraw %}
 
-## Hyperlinks
+# Hyperlinks
 External links
 - Open link in another tab
   `[Try me for another Tab](https://www.google.com/){:target="_blank"}`
@@ -54,10 +54,10 @@ If you're building your pages with Markdown, use the following examples to gener
 
 - skipping `site.baseurl` [Link title without site.baseurl]({% post_url /developertools/2021-02-01-terminal-config %})
 {% raw  %}
-`[Link title]({% post_url /developertools/2021-02-01-terminal-config %})`
+``
 {% endraw %}
 
-## Use a picture 
+# Image 
 in a post from specific folder
 `![Image Text]({{ site.url }}/assets/images/image.png)`
 
@@ -65,7 +65,22 @@ in a post from specific folder
 - `<img src="assets/images/image.png" width="300" height="200">`
 - `![platformThreads.png](../../../assets/images/platformThreads.png){:width="70%" height="50%"}`
 
-## Insert Table
+# Video
+```
+<iframe
+src="https://www.youtube.com/embed/1yaUn_PhlM8"
+title="git revert - local and remote" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+```
+
+using Spaceship jekyll plugin
+```
+![](https://www.youtube.com/watch?v=I6jB0nM9SKU)
+```
+
+# Insert Table
 **Jekyll Spaceship plugin Table** [https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#1-table-usage](https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#1-table-usage)
 ```markdown
 | Left Aligned Header 1  | Center Aligned Header                 | 
@@ -74,7 +89,7 @@ in a post from specific folder
 | ⌘  + 1  	             | It activates the quick fix.           |
 ```
 
-## Add Sidebar Navigation
+# Add Sidebar Navigation
 In the header tag add
 
 ```markdown
@@ -84,7 +99,7 @@ sidebar:
 ---
 ```
 
-## Embed pdf document
+# Embed pdf document
 ```markdown
 <object data="https://nitinkc.github.io/assets/media/file.pdf" 
         type="application/pdf" 
@@ -98,27 +113,27 @@ sidebar:
 </object>
 ```
 
-## DateFormatting with Liquid
-Use the **date filter** to change the display format of dates.
+# DateFormatting with Liquid
+Use the [**date filter**](https://cloud.google.com/looker/docs/best-practices/how-to-use-liquid-to-format-dates#strftime-reference) 
+to change the display format of dates.
 
-`{{ '2023-04-06' | date: "%B %d, %Y" }}`: Displays the date as "April 06, 2023"
+- {% raw  %}`{{ '2023-04-06' | date: "%B %d, %Y" }}`{% endraw %}: Displays the date as "April 06, 2023"
+- {% raw  %}`{{ customer.date_of_birth | date: '%D' }}`{% endraw %}: Displays a customer's date of birth in the format "03/09/80"
+- {% raw  %}`{{ site.time | date: '%D' }}`{% endraw %}: Site Build Time to be displayed
 
-`{{ customer.date_of_birth | date: '%D' }}`: Displays a customer's date of birth in the format "03/09/80"
+**Examples**
+- {% raw  %}`{{ 'now' | date: "%Y/%m/%d" }}`{% endraw %}              
+  - {{ 'now' | date: "%Y/%m/%d" }}              
+- {% raw  %}`{{ 'now' | date_to_rfc822 }}`{% endraw %}                
+  - {{ 'now' | date_to_rfc822 }}                
+- {% raw  %}`{{ 'now' | date: "%C" }}`{% endraw %}                    
+  - {{ 'now' | date: "%C" }} : %C - Year divided by 100 and truncated to integer (00-99)                 
+- {% raw  %}`{{ 'now' | date: "%c" }}`{% endraw %}                    
+  - {{ 'now' | date: "%c" }}                 
+- {% raw  %}`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %} 
+  - {{ 'now' | date: "%a, %b %-d %Y - %r %Z" }} 
 
-Site Build Time to be displayed{% raw  %}`{{ site.time | date: '%D' }}`{% endraw %}
-
-- {% raw  %}`{{ 'now' | date: "%Y/%m/%d" }}`{% endraw %}
-  - {{ 'now' | date: "%Y/%m/%d" }}
-- {% raw  %}`{{ 'now' | date_to_rfc822 }}`{% endraw %}
-  - {{ 'now' | date_to_rfc822 }}
-- {% raw  %}`{{ 'now' | date: "%C" }}`{% endraw %}
-  - {{ 'now' | date: "%C" }} 
-- {% raw  %}`{{ 'now' | date: "%c" }}`{% endraw %} 
-  - {{ 'now' | date: "%c" }} 
-- {% raw  %}`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}
-  - {{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
-
-## Notices with theme
+# Notices with theme
 - Default `{: .notice}`        
 - Primary {: .notice--primary} 
 - Info    {: .notice--info}    
@@ -142,7 +157,6 @@ Traditional using subscript and super-script
 
 # $$ \LaTeX $$ Summary
 
-
 | Math Expression                                                              | Rendered Output                                                                  |
 |:-----------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
 | log{_a}{n}                                                                   | $ log{_a}{n} $                                                                   |
@@ -159,16 +173,14 @@ Traditional using subscript and super-script
 | \xrightarrow[under]{over}                                                    | $ \xrightarrow[under]{over} $                                                    |
 | 24\times 60\times 60 \approx \text{90K secs}, \text{1 Day has 86400 seconds} | $ 24\times 60\times 60 \approx \text{90K secs}, \text{1 Day has 86400 seconds} $ |
 
-### LaTex, Table, Media, Math, Plant UML
-
+### Spaceship - LaTex, Table, Media, Math, Plant UML
 [Jeykll Spaceship](https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#table-of-contents)
 
 # Diagrams
-
 [Plant UML Sequence Diagram](https://plantuml.com/sequence-diagram)
 
 ### Mermaid Diagram
 [Mermaid Live Editor with gist code load](https://mermaid.live/edit?gist=https://gist.github.com/nitinkc/404befd918e8109cc830d23e3f7206fc#pako:eNqVUz1PwzAQ_SuWpyK1EiuRQIIi0YEKRBEDmOGSXBLTxI7OzlC1_e84cRM3bRm46d353cc721ue6BR5xHOCumDvD0IxZ6aJfWBlIVn7WGvV5lka-4bZl-AeswlhhoQqQWY1uyeCLn4l-HfI8whVKtRJgwVCHXhDuqs_4FGllSWp8pf4xzE8ZpMFEG3Yq7YWadx3AaZYQu3pB6cjXGjJZrO7XaKVBakMO1a1C13_FrJEC6aGBEPp1p5KHUP5AeQGyHssIS6R3bKb65Nh5iUY01ZKwYLL6HzWB0bSRtRu9nk_u1SZZhDrxu6CvH9nht2diR6eQZc9rMqctRvUt8Sjuw61Tw6GRR_F-ZRXSBXI1L3TbcsT3BZYoeCRgynQWnCh9o4HjdWrjUp4ZKnBKSfd5AWPMiiN85raKcZHCe7Gqp6CqbSalv4XdJ9hymtQn1pXh8T9L4IkBGE)
-2
+
 use the tag `mermaid!`
 {% gist nitinkc/404befd918e8109cc830d23e3f7206fc %}

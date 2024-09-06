@@ -10,9 +10,11 @@ tags: ['Java']
 **Null is a smell**
 
 * New class in `java.util package`
-* It is a Container to **hold at most one value**, like Collections and Arrays.
-* To represent a value if it's present or absent.
-* Helps avoids runtime `NullPointerExceptions`
+* optional provides a means for a function returning a value to indicate the value could possibly be null.
+* Optional is a box that **hold at most one value**, like Collections and Arrays, in it
+* Optional is of **16 bytes**, and is an `Object`. 
+* creates a separate memory, excessive use should be avoided, as it can create performance issues.
+* Optional is **immutable**. Once assigned, it cannot be reassigned.
 
 # Creating Optional - .of() vs .ofNullable()
 **`Optional.of()`**
@@ -27,18 +29,20 @@ tags: ['Java']
 
 # Optional methods
 
-| **Methods of Optional**               | **Description**                                    |
-|:--------------------------------------|:---------------------------------------------------|
-| `optional.get()`                      | returns value if present or throws               \ 
-|                                       | **`NoSuchElementException: No value present`**     |
-| `optional.orElse(other)`              | returns value if present or returns other          |
-| `optional.orElseGet(Supplier)`        | returns value if present or calls function         |
-| `optional.map(Function)`              | returns an Options with function applied           |
-| `optional.isPresent()`                | returns true if value is present                   |
-| `optional.ifPresentOrElse(`           | Beware of the **Shared Mutability**                |
-| ^^ `value -> actionIfPresent(value),` |                                                    |
-| ^^ `() -> actionIfEmpty()`            |                                                    |
-| ^^ `);`                               |                                                    |
+| **Category**   | **Methods of Optional**               | **Description**                                            |
+|:---------------|:--------------------------------------|:-----------------------------------------------------------|
+| Creating       | `Optional.of()`                       | Optional with a **non-null** value                         |
+| ^^Optional     | `Optional.ofNullable`                 | Optional that can hold **either a non-null value or null** |
+| Unwrapping     | `optional.get()`                      | returns value if present or throws                         |        
+| ^^Optionals    | ^^                                    | ^^**`NoSuchElementException: No value present`**           |
+| ^^             | `optional.orElse(other)`              | returns value if present or returns other                  |
+| ^^             | `optional.orElseGet(Supplier)`        | returns value if present or returns Supplier               |
+| apply function | `optional.map(Function)`              | returns an Option with function applied                    |
+|                | `optional.isPresent()`                | returns true if value is present                           |
+| ^^             | `optional.ifPresentOrElse(`           | Beware of the **Shared Mutability**                        |
+| ^^             | ^^ `value -> actionIfPresent(value),` | ^^                                                         |
+| ^^             | ^^ `() -> actionIfEmpty()`            | ^^                                                         |
+| ^^             | ^^ `);`                               | ^^                                                         |
 
 ```java
 String str = null;
@@ -83,20 +87,10 @@ for (String city : cities) {
   System.out.println(str2);
 }
 ```
-More elaborate example
-{% gist nitinkc/3b6166b2b2825dad85bea8dd9cf7812a %}
-
-# The `null == object` comparison
-Using `null == object` is a defensive programming practice,
-where **accidental assignment in conditionals** can cause bugs.
-
-Writing `null == object` instead of `object == null` prevents accidental assignment if mistakenly use a single `=` instead of `==`.
-
-For example, `if(object = null)`, the expression `object = null` will always evaluate to null,
-and the **if condition will always be false**, even if the object is not null.
+- More elaborate example
+- {% gist nitinkc/3b6166b2b2825dad85bea8dd9cf7812a %}
 
 # Patterns & Anti-patterns - Do's and Dont's
-
 **var has strict type checking**. Reassignment has to match the `type` initially set.
 
 ```java
@@ -179,3 +173,68 @@ Return Optional from a method to make it failsafe.
   
 - If the result is a **collection**, then **don't use Optional**, instead return an empty collection
 > With collections, Do not return a null, instead return an empty *collection* - Effective Java
+
+# The `null == object` comparison
+Using `null == object` is a defensive programming practice,
+where **accidental assignment in conditionals** can cause bugs.
+
+Writing `null == object` instead of `object == null` prevents accidental assignment if mistakenly use a single `=` instead of `==`.
+
+For example, `if(object = null)`, the expression `object = null` will always evaluate to null,
+and the **if condition will always be false**, even if the object is not null.
+
+# Handling Null pointer Exceptions (NPE)
+
+### Boolean Variables
+Prefer **primitive boolean** types over Wrapper class to avoid creating objects & NPE.
+
+If a String, intended to carry boolean values, you should use the `Boolean.parseBoolean(String)` method.
+```java
+String trueString = "true";
+
+// Parsing strings to boolean
+boolean isTrue = Boolean.parseBoolean(trueString);
+```
+
+**Misinterpretation of Argument**: The argument for `Boolean.getBoolean` should be the name of a system property, 
+not a boolean value.
+```java
+String isBooleanFlag = "true";//'undefined', 'false', 'anyStringValue '
+//isBooleanFlag is intended to be a boolean value, this usage is incorrect
+boolean aBoolean = Boolean.getBoolean(isBooleanFlag);
+```
+
+### Removing 'null' values
+```java
+// if any object in a list is NULL
+list.stream()
+        .filter(object -> null != object) //Removing potential objects that might create exception
+        .map(str -> str.toLowerCase())
+        .collect(Collectors.toList());
+```
+
+Ensuring, in case there is a null return, the exception is handled properly
+```java
+Order specificOrders = orders.stream()
+				.filter(order -> order.getOrderNumber().equals(electronicOrder.getOrderNumber()))
+				.findFirst()
+                .orElse(null);
+	
+if(null != specificOrders) {
+    ...
+    ...
+    ...
+}
+```
+Or same code optimized
+```java
+orders.stream()
+    .filter(order -> order.getOrderNumber().equals(electronicOrder.getOrderNumber()))
+    .findFirst()
+    .ifPresent(specificOrders -> {
+        // Perform actions on specificOrders
+        ...
+        ...
+        ...
+        });
+```

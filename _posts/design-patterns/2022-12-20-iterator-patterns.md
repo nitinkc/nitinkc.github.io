@@ -26,21 +26,19 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
-limit and takeWhile are the functional equivalent of break from the imperative style.
+`limit` and `takeWhile` are the functional equivalent of `break` from the imperative style.
 ```java
  List<Integer> numbers = Stream.iterate(1, n -> n + 1)
                 .takeWhile(n -> n <= 10) // Take elements while the condition is true (less than or equal to 10).
                 .limit(5) // Limit the stream to the first 5 elements.
-                .collect(Collectors.toList());
-
+                .toList();
 ```
 
-
 # Shared Mutability
+**Impurity in Functional Programming** : The given functional pipeline is *not* pure due to shared mutability.
 
-Impurity in Functional Programming : The given functional pipeline is *not* pure. We are doing shared mutability.
-
-The result may be unpredictable if we ever **change** this code to run in **parallel** by adding .parallel() or by changing .stream() to .parallelStream()
+The result may be unpredictable if we ever **change** this code to run in **parallel** by adding 
+`.parallel()` or by changing `.stream()` to `.parallelStream()`
 
 ```java
 var ret = new ArrayList<String>();
@@ -88,19 +86,4 @@ Functional pipeline offers internal iterators
 * Ensure that we make the functional pipeline pure
 
 # What is a pure function:
-
-A pure function is idempotent : Returns the same result for the same input (Immutability)
-and does not have any side-effects
-
-##### Rules :
-1. It does not change any state that is visible outside
-2. It does not **depend** on anything outside that may change
-
-##### Why ??
-Functional programming relies on lazy evaluation for efficiency.
-
-Lazy evaluation and parallel execution rely on
-**immutability** and **purity** of functions for correctness.
-
-FP emphasizes immutability and purity, not because
-but because it is essential to it's survival/efficiency.
+[functional-programming/#pure-function]({% post_url /Java/2022-08-06-functional-programming %})

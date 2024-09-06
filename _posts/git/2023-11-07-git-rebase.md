@@ -55,7 +55,6 @@ When your feature branch is local and changing history will not affect others.
 
 
 # Fast-Forward
-
 When the merge from branch A happens with Branch B, and Branch B does not have new commits, the fast forward merge happens.
 You get message "You have performed a fast-forward merge."
 
@@ -69,5 +68,3 @@ git merge --no-ff feature/new-feature
 <img src="..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png" width="300" height="300">
 
 ![](https://www.youtube.com/watch?v=0chZFIZLR_0)
-
-

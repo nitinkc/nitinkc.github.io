@@ -7,7 +7,6 @@ tags: ['Java',"Performance Engineering"]
 
 {% include toc title="Index" %}
 
-
 • In C explicit call free()
 
 Objects that aren’t freed-up, continue to consume memory. This is memory leak
@@ -16,6 +15,7 @@ Java avoids memory leaks by
 • Running on a Virtual Machine
 Adopts the GC Strategy (invented with LISP in 1959 )
 
+## [https://blog.heaphero.io/types-of-outofmemoryerror/](https://blog.heaphero.io/types-of-outofmemoryerror/)
 
 # Java Memory Leaks
 

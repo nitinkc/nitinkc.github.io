@@ -8,7 +8,7 @@ tags: ['Git']
 While using Git Submodules, after cloning a submodule, the projects are in detached
 mode.
 
-[Use this link for the resolution](https://github.com/nitinkc/git-submodule-demo/blob/master/README.md)
+### [Use this link for the resolution](https://github.com/nitinkc/git-submodule-demo/blob/master/README.md)
 
 ```sh
 git log --graph --decorate --pretty=oneline --abbrev-commit master origin/master
@@ -22,8 +22,7 @@ git branch -d temp
 ```
 
 # Clone submodules
-
-fetch up  to 6 submodules at a time with `-j6`
+Fetch up to 6 submodules at a time with `-j6`
 
 ```shell
 git clone --recurse-submodules -j6 https://github.com/nitinkc/spring-microservices.git
@@ -43,7 +42,7 @@ git submodule update
 git clone --recurse-submodules -j8 https://github.com/nitinkc/SpringBootProjects.git
 ```
 
-## Update all the submodles
+## Update all the submodules
 ```
 git pull --recurse-submodules
 ```
@@ -54,16 +53,16 @@ git submodule add <GitHub Repo>
 ```
 
 ### In case the projects needs be deleted
-
 ```shell
-git submodule deinit -f -- my-project #provide the project to ve removed
+git submodule deinit -f -- my-project #provide the project to be removed
 git rm --cached my-project                                        
 ```
-* Delete the entry from .gitmodules file
+* Delete the entry from `.gitmodules` file
 * Commit and push the changes on github
 
-Cleaning the local .git repo. 
-* delete the entry from .git/config file
-* delete the project folder from .git/modules/<git-project-name>
+Cleaning the local `.git` repo. 
+* delete the entry from `.git/config` file
+* delete the project folder from `.git/modules/<git-project-name>`
 
-Instead of this, just commit the .gitmodules changes and re-clone the project
+> Instead of this, just commit the `.gitmodules` changes and re-clone the project
+
