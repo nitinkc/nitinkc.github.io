@@ -42,12 +42,11 @@ git branch --unset-upstream feature/new-feature-branch
 ```
 
 # repack
-
 - Combine objects
 - Compress objects
 - Remove redundant objects
 
-If repack is used without any options/switch, it performs a repack operation with the default settings
+If repack is used without any options/switch, it performs a **repack operation with the default settings**
 
 ```shell
 git repack -adf --depth=100
