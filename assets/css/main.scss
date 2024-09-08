@@ -4,92 +4,40 @@
 
 @charset "utf-8";
 
-
 // Site Customization
 // $primary-color: #2d3cc7 !default;
-// $primary-color: #b51b58 !default;
-// $primary-color: #1bb582 !default;
-// $link-color: $primary-color;
-// $link-color-visited: #b51b58 !default;
+//$primary-color: #0092ca !default;
+// #0092ca Blue
+// #393e46
+$primary-color: #b51b58 !default;
+
+$link-color: $primary-color; //#0092ca;
+$link-color-visited: $primary-color  !default;
 $intro-transition: true;
 $global-transition: none;
 
 /* Colors Air Skin*/
-//$background-color: #eeeeee !default;
-$text-color: #222831 !default;
+$background-color: #eeeeee !default;
+$text-color: #363737 !default; //#222831
 $muted-text-color: #393e46 !default;
-$primary-color: #b51b58 !default; //#0092ca Blue
 $border-color: mix(#fff, #393e46, 75%) !default;
 $footer-background-color: $primary-color !default;
-$link-color: #393e46 !default;
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
 
 // Custom Font for the
-$helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
+$helvetica: Spectral, Helvetica, "Helvetica Neue", Arial, sans-serif !default;
 $my-custom-font-family: Times, serif, -apple-system, BlinkMacSystemFont, Roboto, "roboto slab", "droid serif", "segoe ui", system-ui, Arial, sans-serif;
-//$global-font-family: $sans-serif !default;
-$global-font-family: $my-custom-font-family !default;
-$header-font-family: $helvetica !default;
+$custom-font-family: Spectral, serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$global-font-family: $custom-font-family !default;
+//$header-font-family: $helvetica !default;
+$header-font-family: $custom-font-family !default;
+
 
 //Keep the imports below the Variable names
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin from the config.yml
+//@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin from the config.yml
 @import "minimal-mistakes"; // main partials
-
-#main {
-  max-width: unset !important;
-}
-
-.taxonomy__section .list__item {
-  margin-top: 2em;
-}
-
-.taxonomy__section .list__item:nth-child(1) {
-  margin-top: 0.5em;
-}
-
-.page__footer-follow .social-icons .svg-inline--fa {
-  color: inherit;
-}
-
-.taxonomy__index a {
-  text-transform: uppercase;
-  font-size: 0.70em;
-}
-
-.archive__item-title a {
-  color: $text-color;
-}
-
-.archive__item-title a:hover {
-  color: $link-color;
-}
-
-.archive__subtitle::after {
-  background: $primary-color;
-  content: '';
-  display: block;
-  height: 2px;
-  margin: 0.75em auto 0 auto;
-  position: relative;
-  width: 4em;
-}
-
-.archive__subtitle {
-  font-size: $type-size-5;
-  color: $muted-text-color;
-  font-weight: 800;
-  letter-spacing: .25em;
-  line-height: 1.65;
-  text-transform: uppercase;
-  text-align: center;
-  border-bottom: 0px solid #bfbfbf;
-
-  + .list__item .archive__item-title {
-    margin-top: 0.5em;
-  }
-}
 
 .site-title {
   align-self: stretch;
@@ -100,6 +48,65 @@ $header-font-family: $helvetica !default;
   letter-spacing: -0.01em;
   // text-transform: uppercase;
   font-size: 1.3em;
+}
+
+.page__title {
+  margin-top: 0;
+  font-weight: 800;
+  //letter-spacing: .15em;
+  line-height: 1.65;
+  //margin: 0 0 1em 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #B00020;
+  text-decoration: underline;
+  font-family: 'Arial', sans-serif;
+
+  & + .page__meta {
+    margin-top: -0.5em;
+  }
+}
+
+// Define the primary color and its lighter shades
+$color-h2: #c72c6c;//fade from #b51b58
+$color-h3: #d84d80;
+$color-h4: #e97d94;
+$color-h5: #f9aeb1;
+
+// Base styles for all headings
+h1, h2, h3, h4, h5, h6 {
+  //margin: 0.5em 0 0.5em;
+  margin: 0.5em 0;
+}
+
+// Specific color for each heading level
+h1 {
+  color: $primary_color;
+}
+
+h2 {
+  color: $color-h2;
+}
+
+h3 {
+  color: $color-h3;
+}
+
+h4 {
+  color: $color-h4;
+}
+
+h5 {
+  color: $color-h5;
+}
+
+// Optional: define color for h6 if needed
+h6 {
+  color: $color-h5; // Use the same as h5 or define a new lighter color if desired
+}
+
+#main {//Decide the page width
+   max-width: unset !important;
 }
 
 .masthead__menu-item {
@@ -121,24 +128,7 @@ $header-font-family: $helvetica !default;
 }
 
 .masthead {
-  // border-bottom: 4px solid #2053b8;
-}
-
-.page__title {
-  margin-top: 0;
-  font-weight: 800;
-  //letter-spacing: .15em;
-  line-height: 1.65;
-  //margin: 0 0 1em 0;
-  text-transform: uppercase;
-  text-align: center;
-  color: #B00020;
-  text-decoration: underline;
-  font-family: 'Arial', sans-serif;
-
-  & + .page__meta {
-    margin-top: -0.5em;
-  }
+  border-bottom: 4px solid $primary-color;
 }
 
 .sidebar__right {
@@ -162,17 +152,79 @@ $header-font-family: $helvetica !default;
   }
 
   .toc__menu li ul > li a {
-    //font-weight: normal
+    color: $color-h3;
+    font-weight: normal;
+    font-style: oblique;
   }
 
   .toc__menu a {
-    //font-weight: normal;
+    color: #00adb5;
+    //display: block;
     //padding: 0.25rem 0.75rem;
+    //line-height: 1.5;
   }
 }
 
-p > code, a > code, li > code, figcaption > code, td > code {
-  font-size: 90%;
+//Taxonomy div is on the home page when Post_by_category or Post_by_Tag is clicked
+.taxonomy__index a {
+  text-transform: uppercase;
+  font-size: 0.70em;
+}
+
+.taxonomy__section .list__item {
+  margin-top: 2em;
+}
+
+.taxonomy__section .list__item:nth-child(1) {
+  margin-top: 0.5em;
+}
+
+.page__footer,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: #ffffff;
+}
+
+.archive__item-title {
+  // targets <a> (anchor) elements that are descendants of elements with the class archive__item-title
+  a {
+    color: $text-color;
+    &:hover {//Color of the link on Hover
+      color: $link-color;
+    }
+  }
+}
+
+.archive__subtitle {
+  font-size: $type-size-5;
+  color: $muted-text-color;
+  font-weight: 800;
+  letter-spacing: .25em;
+  line-height: 1.65;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 0 solid #bfbfbf; // Simplified border shorthand
+
+  &::after {
+    content: '';
+    display: block;
+    background: $primary-color;
+    height: 2px;
+    width: 4em;
+    margin: 0.75em auto 0;
+    position: relative;
+  }
+
+  + .list__item .archive__item-title {
+    margin-top: 0.5em;
+  }
+}
+
+p > code,
+a > code,
+li > code,
+figcaption > code,
+td > code {
+  //font-size: small;//90%;
   color: $primary-color;
   background-color: #f9f2f4;
 }
@@ -181,34 +233,41 @@ ul li::marker {
   color: $primary-color; /* Set the color of the bullet points */
 }
 
+.page__content {
+  font-size:19px;
+}
+.page__content p {
+  font-size: 1em;
+  margin: 0 0 20px 0;//top,right,bottom,left
+}
+
 .page__content > ul > li,
 .page__content > ol > li {
-  margin-bottom: 0.15em;
-  font-style: normal;//oblique
-  line-height: calc(1.5em + .2vw);
-  word-break: break-word;
+  font-size:1em;
+  margin: 0 0 0 10px;
+  //font-style: oblique; //normal;//oblique
+  //line-height: calc(1.5em + .2vw);
+  //word-break: break-word;
 }
 
-h1 {
-  color: $primary_color;
+.page__content td {
+  //border-collapse: collapse; /* Ensures borders are collapsed between cells */
+ // border: 1px solid $primary-color;// #9b9b9d;//original table bottom border color
 }
 
-$type-size-5b: 0.9em !default;
+//Avoid lines in the gist code
+.page__content .gist-data td {
+  border: none; /* Override the border for <td> inside .gist-data */
+}
+
+//$type-size-5b: 0.9em !default;
 // This changes the code box
 .highlight {
   margin: 0;
   //   padding: 0.5em;
   font-family: $monospace;
   //font-size: $type-size-5b;
-  line-height: 1.8;
-}
-
-.page__content p {
-  margin: 0 0 0.15em;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0.5em 0 0.5em;
+  //line-height: 1.8;
 }
 
 .fluid-width-video-wrapper {
