@@ -97,6 +97,15 @@ chmod +x ~/.git-templates/hooks/pre-commit
 git config --global init.templatedir '~/.git-templates'
 ```
 
+### For Existing Repositories:
+Need to manually copy the hooks from the global directory into each repository's `.git/hooks` directory.
+
+```shell
+for repo in $(find /path/to/your/repos -type d -name '.git'); do
+  cp ~/.git-templates/hooks/* $repo/hooks/
+done
+```
+
 ## Create global GitIgnore via templated dir
 File names present under `.git/info/exclude` are ignored 
 
