@@ -9,7 +9,7 @@ tags: ['Git']
 ### git init
 `git init` creates the following entry in config file in `.git` folder
 
-```dotenv
+```
 [core]
 	repositoryformatversion = 0
 	filemode = true
@@ -26,7 +26,7 @@ The following `remote add` creates the next config `remote "origin"`
 git remote add origin https://github.com/nitinkc/git-tests.git
 ```
 
-```editorconfig
+```
 [remote "origin"]
 	url = https://github.com/nitinkc/git-tests.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
@@ -41,27 +41,23 @@ git remote set-url <remote_name> <remote_url>
 git remote set-url origin https://github.com/nitinkc/x.git
 ```
 - replacing the old repo `git-tests.git` with the new one `x.git`
+    ```
+    [remote "origin"]
+        url = https://github.com/nitinkc/x.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+    ```
 
-```editorconfig
-[remote "origin"]
-	url = https://github.com/nitinkc/x.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-```
-
-##### 3. The `push` switch
+### 3. The `push` switch
 ```shell
 git remote set-url --push origin https://github.com/nitinkc/git-tests.git
 ```
-
 This sets up the push url
-
-```editorconfig
+```
 [remote "origin"]
 	url = https://github.com/nitinkc/git-tests.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 	pushurl = https://github.com/nitinkc/git-tests.git
 ```
-
 
 # git push
 The full command for the push is
@@ -94,7 +90,7 @@ git push -u origin main
 git push --set-upstream origin main
 ```
 
-```editorconfig
+```
 [branch "main"]
     remote = origin
     merge = refs/heads/main
@@ -108,7 +104,7 @@ git push # fatal: The current branch feature/new-feature-branch has no upstream 
 git push --set-upstream origin feature/new-feature-branch
 ```
 git config gets one entry
-```editorconfig
+```
 [branch "feature/new-feature-branch"]
 	remote = origin
 	merge = refs/heads/feature/new-feature-branch
@@ -133,7 +129,7 @@ git remote add bb https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
 ```
 
 Following entry gets made in gitconfig
-```editorconfig
+```
 [remote "bb"]
     url = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
     fetch = +refs/heads/*:refs/remotes/bb/*
@@ -145,7 +141,7 @@ git remote set-url --push gh https://github.com/nitinkc/git-tests.git
 ```
 
 This will modify the gitconfig as below :-
-```editorconfig
+```
 [remote "bb"]
 	url = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
 	fetch = +refs/heads/*:refs/remotes/bb/*
@@ -164,7 +160,7 @@ git remote set-url --add --push both https://nitinc@bitbucket.org/nitinc/git-tes
 ```
 
 Adds two repositories into remote `both` and sets them up for simultaneous pushes and pulls.
-```editorconfig
+```
 [remote "both"]
 	url = https://github.com/nitinkc/git-tests.git
 	fetch = +refs/heads/*:refs/remotes/both/*
@@ -176,7 +172,7 @@ Adds two repositories into remote `both` and sets them up for simultaneous pushe
 ```shell
 git branch --set-upstream-to=both/feature/new-feature-branch feature/new-feature-branch 
 ```
-```editorconfig
+```
 [branch "feature/new-feature-branch"]
 remote = both
 merge = refs/heads/feature/new-feature-branch
