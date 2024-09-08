@@ -10,30 +10,64 @@ tags: ['Git']
 
 ![](https://www.youtube.com/watch?v=aolI_Rz0ZqY)
 
-# Create multiple Git Config
-To ensure multiple git or bitbucket repositories work seamlessly with respective userId's on one machine, 
-configure the global git file in such a way that it picks up right user name for specific repositories.
-with global `.gitconfig` file in home folder `~`
-```sh
-[includeIf "gitdir:~/Documents/ClonedCodeWork/"]
-	path = .gitconfig-work
-[includeIf "gitdir:~/Programming/"]
-	path = .gitconfig-learn
+# Check existing git configs
+
+```shell
+git config --list
 ```
+# Create multiple Git Config
+With single repo and user `git config --global user.name "John Doe" && git config --global user.email "john.doe@example.com"` would suffice
+
+`--global` writes a system-wide config file and `--local` (the default) that writes to `.git/config` in the project repo.
+```shell
+git config  user.name "John Doe" 
+#Or
+git config --local user.name "John Doe" 
+```
+
+To ensure multiple git or bitbucket repositories work seamlessly with respective userId's on one machine, 
+configure the global `.gitconfig` such that it picks up right id for specific repo.
+
+global `.gitconfig` file is located in home folder `~`
+
+- with commnd
+  - Add Config
+    ```shell
+    git config --file ~/.gitconfig-work user.name "Your Name"
+    git config --file ~/.gitconfig-work user.email "xxx@xxx.com"
+    ```
+  - Add the config file
+    ```shell
+    git config --global includeIf.gitdir:~/ClonedCodeWork/.path .gitconfig-work
+    git config --global includeIf.gitdir:~/Programming/.path .gitconfig-learn
+    ```
+- manually
+  - create the files and open in a text editor
+      ```shell
+      touch ~/.gitconfig-learn | open .gitconfig-learn
+      touch ~/.gitconfig-work  | open .gitconfig-work
+      ```
+  - Update the (relevant) information as needed in both the file under `[user]` tag
+      ```shell
+      [user]
+          email = xxx@xxx.com
+          name = Your Name
+      ```
+  - Or, Manually add the config
+    ```shell
+    [includeIf "gitdir:~/Documents/ClonedCodeWork/"]
+    path = .gitconfig-work
+    [includeIf "gitdir:~/Programming/"]
+    path = .gitconfig-learn
+    ```
+
+- Check
+  ```shell
+  git config --global --get-regexp includeIf
+  ```
+  
 `gitdir` takes the folder where multiple projects can reside from same repository (eg: bitbucket enterprise server)
 
-- create the files and open in a text editor
-    ```sh
-    touch ~/.gitconfig-learn | open .gitconfig-learn
-    touch ~/.gitconfig-work  | open .gitconfig-work
-    ```
-- Update the (relevant) information as needed in both the file under `[user]` tag
-    ```sh
-    [user]
-        email = xxx@xxx.com
-        name = Your Name
-    ```
-  
 > While using git clients (github desktop, source tree etc), ensure that it does not overwrite the git config file
 
 # Create global GitIgnore via separate file
@@ -42,7 +76,7 @@ with global `.gitconfig` file in home folder `~`
     touch ~/.gitignore_global
     ```
 - add files that needs to be globally ignored
--  ```sh
+  ```sh
    *~
    .DS_Store
    ```
@@ -52,11 +86,12 @@ with global `.gitconfig` file in home folder `~`
     ```
 
 # templatedir
+**Template Directory**: When you initialize a new Git repository with git init,
+Git **copies** files from the directory specified by `init.templatedir` into the **.git directory of the new repository**.
+
 The `git config --global init.templatedir` command is used to set a global configuration option in Git 
 that specifies a directory template to be used when **initializing new repositories**. 
 
-**Template Directory**: When you initialize a new Git repository with git init, 
-Git **copies** files from the directory specified by `init.templatedir` into the **.git directory of the new repository**. 
 ```text
 ~/.git-templates/
     ├── hooks/
@@ -161,4 +196,43 @@ Description:
   git config --global --get alias.cb
   ```
 
+# Branch Sorter
+- sort by `objectsize`, `authordate`, `committerdate`, `creatordate`, or `taggerdate` with the `--sort` option 
+  ```shell
+  git branch --sort=-committerdate
+  ```
+
+- Set it as a default with the `branch.sort` config setting
+  ```shell
+  git config --global branch.sort -committerdate
+  ```
+  
+> the -committerdate has a leading  -  not a double dash. 
+
+# Column UI
+Set the default response in Columns. Try with `git branch`
+```shell
+git config --global column.ui auto
+```
+
+`git column` 
+```shell
+seq 1 12 | git column --mode=column --padding=10
+1           2           3           4           5           6           7           8           9           10          11          12   
+
+ seq 1 12 | git column --mode=column --padding=5
+1      2      3      4      5      6      7      8      9      10     11     12            
+```
+
+
+# Safe Force Pushing
+
+
+```shell
+git config --global alias.fpush push --force-with-lease
+```
+
+
+# Git Maintenance
+[Git Maintenance]({{ site.baseurl }}{% post_url /git/2023-11-14-git-maintenance %}
 
