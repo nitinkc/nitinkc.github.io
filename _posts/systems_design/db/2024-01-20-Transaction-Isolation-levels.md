@@ -13,46 +13,41 @@ tags: [System Design]
 Acid properties are a set of characteristics that **guarantee the reliability of transactions** 
 in a database system.
 
-##### Atomicity
+### Atomicity
 - Atomicity ensures that a transaction is treated as a single, indivisible unit of work. 
 - Either all changes in the transaction are committed, or none of them are.
 
 Consider a bank transfer where money is withdrawn from one account and deposited into another. 
 - Atomicity ensures that if the withdrawal succeeds, the deposit will also succeed. If any part fails, the entire transaction is rolled back.
 
-##### Consistency
+### Consistency
 Consistency ensures that a transaction brings the database **from one valid state to another**. 
 It enforces integrity constraints to maintain data accuracy.
 
 If a database has a constraint that all customer IDs must be unique, 
 consistency ensures that a transaction creating a new customer will not violate this constraint, maintaining the uniqueness of IDs.
 
-##### Isolation
+### Isolation
 Isolation ensures that the execution of transactions is **independent of each other**.
 - Even though transactions may run concurrently, the result should be **as if transactions are executed in some sequential order**.
 
 Two transactions, A and B, both update the same row concurrently. Isolation ensures that the changes made by one transaction are not visible to the other until the transactions are committed.
 
-##### Durability
+### Durability
 Durability guarantees that **once a transaction is committed, its changes persist**, even in the face of system failures(e.g., power loss, crashes).
 
 After a user completes an online purchase (which involves a series of database transactions), the confirmation is shown. Durability ensures that the purchase details are permanently stored, so even if the system crashes immediately after, the data remains intact upon recovery.
 
 **In summary:**
-
-**Atomicity**: Transactions are all or nothing.
-
-**Consistency**: Transactions maintain the integrity of the database.
-
-**Isolation**: Transactions execute independently and produce the same result as if executed serially.
-
-**Durability**: Committed transactions persist even after system failures.
-
+- **Atomicity**: Transactions are all or nothing.
+- **Consistency**: Transactions maintain the integrity of the database.
+- **Isolation**: Transactions execute independently and produce the same result as if executed serially.
+- **Durability**: Committed transactions persist even after system failures.
 
 ![](https://www.youtube.com/watch?v=GAe5oB742dw)
 
 
-##### Dirty Reads
+# Dirty Reads
 A dirty read occurs when one transaction reads uncommitted changes made by another transaction.
 
 Example:
@@ -60,7 +55,7 @@ Example:
 - Transaction B reads the updated row before A commits.
 - If A rolls back, B has read data that was never committed, resulting in inconsistency.
 
-##### Non-Repeatable Reads
+### Non-Repeatable Reads
 a transaction reads the same row twice but gets different data each time
 
 A non-repeatable read occurs when a transaction reads a value and, during the course of the transaction, 
@@ -83,12 +78,11 @@ Example:
 
 
 **In summary**
-
 - **Dirty reads**: Reading uncommitted data.
 - **Non-repeatable reads**: Reading data that changes during the transaction.
 - **Phantom reads**: Reading a set of rows that is later modified by another transaction.
 
-## Database Transaction Isolation Levels
+# Database Transaction Isolation Levels
 In database management systems (DBMS), transaction isolation levels define the **degree to which transactions are isolated**
 from each other.
 
@@ -141,10 +135,10 @@ So if that happens we rollback one transaction.
 | 2                 | 3                  | **Repeatable Read**  | Versioning of unchanged values | maintains all the version of changes                           |
 | Most Isolated(1)  | Least Efficient(4) | **Serializable**     | Queued Locks                   | Causal Ordering. Same Key Tx's must be ordered else concurrent |
 
+
 # Distributed Transactions
 
-
-How its handled
+How it's handled
 
 2 patterns for handling distributed transactions
 
