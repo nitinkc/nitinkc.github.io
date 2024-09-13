@@ -71,7 +71,7 @@ rather than the classes managing their own dependencies.
 * **Commonly Used in**: Data access objects (DAOs) that perform CRUD (Create, Read, Update, Delete) operations on 
   entities.
 
-## Config
+# Config
 Set a desired Port
 ```shell
 server.port=8089
@@ -79,10 +79,7 @@ server.port=8089
 ### Application Yaml settings
 {% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
 
-> Good Practice
-
-Design application configuration using `@ConfigurationProperties` to ensure Type Safety
-{: .notice--success}
+> Good Practice : Design application configuration using `@ConfigurationProperties` to ensure Type Safety
 
 ```yaml
 myConfig: 
@@ -100,7 +97,7 @@ public class MyConfiguration {
     private int number;
 ```
 
-## Banner
+# Banner
 
 [Spring Boot banner generator](https://springhow.com/spring-boot-banner-generator/)
 
