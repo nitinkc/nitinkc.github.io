@@ -14,7 +14,7 @@ tags: [Spring Microservices, Spring Boot]
 Giving control to the container to get instance of object is called Inversion of Control. 
 * instead of you are creating object using new operator, let the container do that for you.
 
-**DI(Dependency Injection)**:  Way of injecting properties to an object is called Dependency injection.
+**DI(Dependency Injection)**: Way of injecting properties to an object is called Dependency injection.
 
 We have three types of Dependency injection
 * Constructor Injection
@@ -46,7 +46,6 @@ public A3ConstructorInjectedController(GreetingService greetingService) {
     this.greetingService = greetingService;
 }
 ```
-
 
 #### DI via Interfaces is highly preferred
 * Allows runtime to decide implementation to inject
@@ -137,6 +136,12 @@ dependency resolution based on the bean's name (if provided) or type.
 You can also use `@Qualifier` in conjunction  
 with `@Autowired` to specify which bean to inject if there are multiple candidates.
 
+
+- `@Primary` - Multiple beans of the same type and one is intended to go in by **default**
+- `@Qualifier` - Used to specify which exact bean should be injected when multiple beans of the same type are available. 
+  It allows to explicitly select a bean by name or identifier
+
+
 ```java
 public interface PaymentService {
     String processPayment();
@@ -169,7 +174,7 @@ The use of `@Qualifier`
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
-    private PaymentService creditCardpaymentService;
+    private PaymentService creditCardpaymentService;//Can be resolved byNAme or with @Qualifier
     private PaymentService onlineBankingpaymentService;
 
     @Autowired
@@ -182,10 +187,83 @@ public class PaymentController {
 }
 ```
 
-`@Primary` - Multiple beans of the same type and one is intended to go in by default 
-           
-`@Profile` - making a profile active from the application.properties
+# Autowiring
 
-default profile is added 
+#### byType - Class or Interface
+- By Type (Interface): Use `@Qualifier` when there are multiple implementations of an interface and you need to specify which implementation should be injected.
+  ```java
+  private final SortAlgorithm sortAlgorithm;//SortAlgorithm Interface is implemented by multiple classes
+  @Autowired//Optional for Constructor injection 
+  public ComplexAlgorithmImpl(@Qualifier("bubbleSort") SortAlgorithm sortAlgorithm) {
+      this.sortAlgorithm = sortAlgorithm;
+  }
+  ```
+- By Type (Class): Directly inject beans of a specific class when there is no ambiguity or when dealing with distinct classes.
+  ```java
+  private final StringService stringService;//Class
+  private final NumberService numberService;//Class
+  
+  @Autowired
+  public ServiceUser(StringService stringService, NumberService numberService) {
+      this.stringService = stringService;
+      this.numberService = numberService;
+  }
+  ```
 
-`@Profile({"en","default"})`
+#### byName
+- if two Classes implement the same interface, the name is used to resolve the dependency
+- or by the @Qualifier - use @Qualifier to specify which bean to inject when there are multiple implementations of an interface.
+```java
+@Component
+public class QuickSortAlgorithm implements SortAlgorithm {
+  ...
+}
+@Component
+@Qualifier("bubbleSort")//Qualifying byNAme
+public class BubbleSortAlgorithm implements SortAlgorithm {
+  ...      
+}
+@Component
+public class ComplexAlgorithmImpl { 
+  @Autowired 
+  private SortAlgorithm quickSortAlgorithm;//Resolution byName
+    
+  private final SortAlgorithm sortAlgorithm;
+  @Autowired //Constructor Injection using @Qualifier 
+  public ComplexAlgorithmImpl(@Qualifier("bubbleSort") SortAlgorithm sortAlgorithm) {
+      this.sortAlgorithm = sortAlgorithm;
+  }
+  ...
+}
+```
+
+#### constructor
+- similar to `byType`, but through constuctor
+-
+
+# Exceptions
+
+### `NoSuchBeanDefinitionException`
+- `@Component` missing
+- or `@ComponentScan` not defined properly
+
+### `NoUniqueBeanDefinitionException`
+When there are multiple implementations of a single interface and is no declared 
+- `@Primary` or 
+- with `@Qualifier`
+
+```java
+@Component
+public class QuickSortAlgorithm implements SortAlgorithm{}
+
+@Component
+public class BubbleSortAlgorithm implements SortAlgorithm {}
+
+@Component
+public class ComplexAlgorithmImpl {
+
+  @Autowired
+  private SortAlgorithm sortAlgorithm;
+  }
+```
+

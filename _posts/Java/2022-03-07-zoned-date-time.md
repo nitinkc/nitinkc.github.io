@@ -217,3 +217,81 @@ public static Timestamp currentTimestamp() {
 |   X    | Z; -08; -0830; -08:30; -083015; -08:30:15;     | zone-offset 'Z' for zero   |
 |   x    | +0000; -08; -0830; -08:30; -083015; -08:30:15; | zone-offset                |
 |   Z    | +0000; -0800; -08:00;                          | zone-offset                |
+
+
+# Troubleshooting `LocalDate.now()` Discrepancy in Cloud GKE
+
+If your application uses `LocalDate.now()` and returns an outdated date after deployment to GKE, follow these steps to resolve the issue:
+
+## Potential Causes and Solutions
+
+### 1. Verify Node Time Synchronization
+
+Ensure that the time on your Kubernetes nodes is accurate and synchronized:
+
+- **Check Node Time**
+    - SSH into a Kubernetes node.
+    - Use commands like `date` or `timedatectl` to verify the current date and time.
+    - Ensure nodes are synchronized with NTP servers.
+
+- **GKE and NTP**
+    - GKE nodes should be managed to sync time automatically. Verify if there are any issues with NTP configuration.
+
+### 2. Review Container Time Configuration
+
+Containers inherit the time settings from the host system but may have specific configurations:
+
+- **Check Container Time**
+    - Run a command like `date` inside the container to check if the time is correct.
+    - Ensure no container-specific settings are overriding the time.
+
+### 3. Inspect Deployment Scripts and Configurations
+
+Your deployment scripts or Kubernetes configurations might influence the observed time:
+
+- **Review Jenkins Pipeline**
+    - Ensure Jenkins doesn’t inject any deployment-specific time settings.
+
+- **Check Kubernetes Configurations**
+    - Verify that no environment variables or configurations are affecting time.
+
+### 4. Consider Timezone Differences
+
+Timezone differences can affect the date and time values:
+
+- **Verify Timezone Settings**
+    - Ensure that timezone settings are consistent across your local environment, Kubernetes nodes, and containers.
+    - Check both system and application timezone settings.
+
+### 5. Update and Restart Pods
+
+If time discrepancies are due to stale data or configurations:
+
+- **Update Pods**
+    - Apply any changes to configurations.
+    - Restart the affected pods to ensure they pick up the latest settings.
+
+### 6. Use Consistent Time Source
+
+For critical applications, consider using a consistent time source:
+
+- **External Time Services**
+    - Integrate an external time service or API if you need to ensure accurate and consistent time across environments.
+
+## Example Code
+
+If using `LocalDate.now()` is crucial, ensure it’s called at the point of execution:
+
+```java
+import java.time.LocalDate;
+
+public class DateProvider {
+    public static LocalDate getCurrentDate() {
+        return LocalDate.now();
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Current Date: " + getCurrentDate());
+    }
+}
+```

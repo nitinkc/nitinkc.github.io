@@ -6,6 +6,58 @@ tags: [Spring Microservices, CRUD]
 ---
 {% include toc title="Index" %}
 
+# Loose Coupling
+Loose coupling refers to designing a system where components are minimally dependent on each other.
+- This allows for easier modification, testing, and maintenance because changes in one component have little to no impact on others.
+- By Autowiring, we achieve loose coupling. 
+
+> By using `new` keyword (instantiating an obejct), we "**tightly couple**" the dependency which is not good
+
+- **Tightly Coupled:**
+    ```java
+    public class UserService {
+        private UserRepository userRepository = new UserRepository(); // Directly creating a dependency
+        // Methods using userRepository
+    }
+    ```
+- **Loosely Coupled (using Dependency Injection):**
+    ```java
+    public class UserService {
+        private UserRepository userRepository;
+        // Constructor Injection
+        public UserService(UserRepository userRepository) {
+            this.userRepository = userRepository;
+        }
+        // Methods using userRepository
+    }
+    ```
+Here, `UserService` is loosely coupled with `UserRepository` because it doesn’t create the dependency itself. 
+Instead, `UserRepository` is injected into `UserService`, making it easier to swap out `UserRepository` implementations.
+
+# Inversion of Control
+Instead of the Class taking responsibility of creating the object, the framework manages it for you
+- the control of **object creation** and **dependency management** is **_inverted_** from the application code to a framework.
+- The framework manages the lifecycle and interactions of objects.
+
+# Dependency Injection
+Dependency Injection (DI) is a design pattern used to **implement IoC** (Inversion of Control). 
+- In DI, the framework (like Spring) handles the **creation and injection of dependencies** or **bean instantiation beans and wiring dependencies**, 
+rather than the classes managing their own dependencies.
+
+```java
+@Component
+public class UserService {
+    private final UserRepository userRepository;
+
+    @Autowired
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    // Methods using userRepository
+}
+```
+
 # Stereotype Annotations
 
 [All Annotations](https://springframework.guru/spring-framework-annotations/)
@@ -40,6 +92,27 @@ Basic philosophy of Spring Boot : **Conventions over configurations**
 Set a desired Port
 ```shell
 server.port=8089
+```
+
+> Good Practice
+
+Design application configuration using `@ConfigurationProperties` to ensure Type Safety
+{: .notice--success}
+
+```yaml
+myConfig: 
+   flag: true
+   message: From YAML
+   number: 100
+```
+Type Safety can be ensured with this
+```java
+@Component
+@ConfigurationProperties("myConfig")
+public class MyConfiguration {
+    private boolean flag;
+    private String message;
+    private int number;
 ```
 
 ## Banner
@@ -130,6 +203,13 @@ components.
 [https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/](https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/)
 {: .notice--success}
 
+### Autowiring
+- byType
+- byName
+- constructor - similar to byType, but through constuctor
+
+[https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/#Autowiring](https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/#Autowiring)
+
 Eliminates the need of creating a new object and hence the need of constructors from the components
 `StudentService studentService = new StudentService();`
 ```java
@@ -138,6 +218,7 @@ StudentService studentService;//Free to use studentService object within the cla
 ```
 
 `@Autowired`  used for automatic dependency injection.
+- Spring should find the matching bean and wire the dependency
 
 **Dependency injection** is a design pattern in which objects are **provided** with their dependencies (i.e., the 
 objects they need to collaborate with) rather than creating those dependencies themselves.
@@ -147,6 +228,9 @@ automatically inject the required dependency (another Spring bean) at runtime.
 
 * You don't need to create or instantiate the dependent object manually; Spring takes care of it.
 
+### Constructor vs Setter Injection
+- Constructor Injection for Mandatory Dependencies
+- Setter Injection for Optional Dependencies
 
 # Sequence of execution
 
@@ -568,6 +652,18 @@ public class DailyTaskScheduler {
     }
 ```
 
-# Metric logging - Prometheus and micrometer
+# Spring Boot Actuator
 
+## Monitoring
+- /env, /metrics, /trace, /dump
+- /beans, / autoconfig, /configprops, /mappings
+
+## Metric logging - Prometheus and micrometer
 [Prometheus and micrometer](https://nitinkc.github.io/spring/microservices/Prometheus-micrometer/)
+
+# Design Patterns in Spring
+- Front Controller - Dispatcher Servlet
+- Prototype - Beans
+- Dependency Injection
+- Factory Pattern - Bean Factory & Application Context
+- Template Method - org.springframework.web.servlet.mvc.AbstractController
