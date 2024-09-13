@@ -87,16 +87,28 @@ What is typically understood my message is actually a command.
 - Has already happened, in the past
 - order of events can't be changed as history can't be altered
 - Can be sent via the **Event Streaming Platform** like Apache Kafka Streams
+- typically represents a state change
+- Events are often used to indicate that something has occurred in the system that other parts of the system might be interested in.
 
-## Command
+**Characteristics**:
+- **Decoupling**: Events are usually published to an **event queue** or **an event stream**,
+and consumers (or subscribers) can process these events independently. 
+The producer of the event doesn’t need to know who the consumers are.
+- **Immutable**: Once an event is created and published, it doesn’t change. 
+It’s a record of something that had happened.
+
+## Command/Message
 - request for a task to be done
 - order and priority can change
 - Can be sent via API calls (point to point or async) or via "Message Brokers" like Apache Active MQ, Rabbit MQ, Solace
+- typically refers to a piece of data or a command sent from one component to another within a system. 
+- Unlike events, messages often contain commands or instructions that prompt a specific action or response
 
+Example
 
 - Payment service creates an **event** `<<payment received>>` and published it to kafka event streaming platform. 
 - Order service subscribes to the event published and processes the payment.
 - Order service, then, send a **message/command** `<<send invoice>>` to a messaging queue like RabbitMQ, ActiveMQ or solace. 
 - Communication service subscribes to the message and reads the messages and processes it. 
 
-![paymentProcessingArchitecture.png](../../assets/images/paymentProcessingArchitecture.png)
+![paymentProcessingArchitecture.png](../../assets/images/paymentProcessingArchitecture.png){:width="50%" height="50%"}
