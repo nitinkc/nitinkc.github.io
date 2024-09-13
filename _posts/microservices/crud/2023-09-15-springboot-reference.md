@@ -667,3 +667,6 @@ public class DailyTaskScheduler {
 - Dependency Injection
 - Factory Pattern - Bean Factory & Application Context
 - Template Method - org.springframework.web.servlet.mvc.AbstractController
+
+# Aspect Oriented Programming - AOP
+[https://nitinkc.github.io/spring/microservices/spring-aop/](https://nitinkc.github.io/spring/microservices/spring-aop/)
