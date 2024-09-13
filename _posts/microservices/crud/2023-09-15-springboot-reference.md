@@ -6,7 +6,8 @@ tags: [Spring Microservices, CRUD]
 ---
 {% include toc title="Index" %}
 
-# Loose Coupling
+# Concepts
+## Loose Coupling
 Loose coupling refers to designing a system where components are minimally dependent on each other.
 - This allows for easier modification, testing, and maintenance because changes in one component have little to no impact on others.
 - By Autowiring, we achieve loose coupling. 
@@ -34,29 +35,15 @@ Loose coupling refers to designing a system where components are minimally depen
 Here, `UserService` is loosely coupled with `UserRepository` because it doesn’t create the dependency itself. 
 Instead, `UserRepository` is injected into `UserService`, making it easier to swap out `UserRepository` implementations.
 
-# Inversion of Control
+## Inversion of Control
 Instead of the Class taking responsibility of creating the object, the framework manages it for you
 - the control of **object creation** and **dependency management** is **_inverted_** from the application code to a framework.
 - The framework manages the lifecycle and interactions of objects.
 
-# Dependency Injection
+## Dependency Injection
 Dependency Injection (DI) is a design pattern used to **implement IoC** (Inversion of Control). 
 - In DI, the framework (like Spring) handles the **creation and injection of dependencies** or **bean instantiation beans and wiring dependencies**, 
 rather than the classes managing their own dependencies.
-
-```java
-@Component
-public class UserService {
-    private final UserRepository userRepository;
-
-    @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
-    // Methods using userRepository
-}
-```
 
 # Stereotype Annotations
 
