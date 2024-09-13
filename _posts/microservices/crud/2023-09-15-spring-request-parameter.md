@@ -6,14 +6,13 @@ categories: "Spring Microservices"
 tags: ["Spring Microservices", Spring Boot]
 ---
 
+{% include toc title="Index" %}
 
-### Path variable
+# Path variable
 
-http://localhost:8089/api/v0/hello-world/pathVariable/{var_name}
-{: .notice--info}
+> http://localhost:8089/api/v0/hello-world/pathVariable/{var_name}
 
-Read the Path Variable with `@PathVariable` in the method parameter. `@PathVariables` annotation is used to extract values from the URI path
-
+`@PathVariables` annotation is used to extract values from the URI path
 ```java
 @GetMapping(path = "/pathVariable/{var_name}")
 public String helloWorldPathVariable(@PathVariable("var_name") String name) {
@@ -26,13 +25,10 @@ public ResponseEntity<Student> getStudentById(@PathVariable Long studentId) {
 }
 ```
 
-### RequestParam
-
-/jpa/students/pagination?page_size=5&offset=1&sortBy=email
-{: .notice--info}
+# RequestParam
+> /jpa/students/pagination?page_size=5&offset=1&sortBy=email
 
 Check the `required` and `defaultValue` arguments of RequestParam Annotation
-
 ```java
 // Retrieve all users page by page
 @GetMapping(path = "/students/pagination")

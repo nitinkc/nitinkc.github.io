@@ -119,36 +119,27 @@ spring:
       location: logo.png
 ```
 
-## Initial Data Setup
-
+# Initial Data Setup
 keep the sql script in the resources folder by the name `data.sql`
 
 [Sample Data file](https://github.com/nitinkc/spring-data-jpa/blob/master/src/main/resources/data.sql)
 
 # Scans
 
-**Component Scan** :
-
-By default, the package containing the main method is scanned. In addition to it, to scan other
-packages, following annotation is used.
-
-```java
-@ComponentScan(basePackages = {"com.spring5.concepts","com.spring5.services"})
-``` 
-
-
-`@ComponentScan` is used to specify the packages that Spring should scan to discover Spring-managed components like 
+## Component Scan
+By default, the package containing the main method is scanned. 
+- `@ComponentScan` is used to specify the packages that Spring should scan to discover Spring-managed components like
 beans, controllers, services, etc.
 
 ```java
-@ComponentScan(basePackages = {
-        "com.test.animals", 
+@ComponentScan(basePackages = {"com.spring5.concepts",
+        "com.spring5.services"
+        "com.test.animals",
         "com.flowers"
 })
 ```
 
-**Entity Scan** :
-
+## Entity Scan
 `@EntityScan` is specific to Spring Data JPA. 
 * It's used to specify the packages where JPA entities are located.
 * This is important because Spring Data JPA needs to know where the entity classes are in order to create 
@@ -161,10 +152,9 @@ beans, controllers, services, etc.
 }) 
 ```
 
-**SpringBootApplication ScanBasePackages:**
-
-`@SpringBootApplication` is a meta-annotation that combines several annotations, including @ComponentScan.
-* scanBasePackages within @SpringBootApplication allows you to specify the base packages to scan for Spring 
+## SpringBootApplication ScanBasePackages
+`@SpringBootApplication` is a meta-annotation that combines several annotations, including `@ComponentScan`.
+* `scanBasePackages` within `@SpringBootApplication` allows you to specify the base packages to scan for Spring 
 components. 
 * used in the main application class.
 * It also scans the default package where the main application class is located.
@@ -205,37 +195,34 @@ StudentService studentService;//Free to use studentService object within the cla
 **Dependency injection** is a design pattern in which objects are **provided** with their dependencies (i.e., the 
 objects they need to collaborate with) rather than creating those dependencies themselves.
 
-**Automatic Injection**: When you annotate a field, setter method, or constructor with @Autowired, Spring will 
+**Automatic Injection**: When you annotate a field, setter method, or constructor with `@Autowired`, Spring will 
 automatically inject the required dependency (another Spring bean) at runtime.  
-
-* You don't need to create or instantiate the dependent object manually; Spring takes care of it.
 
 ### Constructor vs Setter Injection
 - Constructor Injection for Mandatory Dependencies
 - Setter Injection for Optional Dependencies
 
 # Sequence of execution
-
+```
 Postman/browser/client -> Controller -> Service -> Repository -> Service -> Controller
-{: .notice--info}
+```
 
 # REST APIs
+- Retrieve all Users - GET `/users`
+- Create a User - POST `/users`
+- Retrieve one User - GET `/user/{id}` -> `/user/1`
+- Delete a User - DELETE `/user/{id}` -> `/user/1`
+- Retrieve all posts for a User - GET `/user/{id}/posts`
+- Create a posts for a User - POST `/user/{id}/posts`
+- Retrieve details of a post - GET `/user/{id}/posts/{post_id}`
+
+## Best Practises 
+- Use Plurals
 
 [https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris](https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris)
 {: .notice--success}
 
-```shell
-Retrieve all Users - GET /users
-Create a User - POST /users
-Retrieve one User - GET /users/{id} -> /users/1
-Delete a User - DELETE /users/{id} -> /users/1
-Retrieve all posts for a User - GET /users/{id}/posts
-Create a posts for a User - POST /users/{id}/posts
-Retrieve details of a post - GET /users/{id}/posts/{post_id}
-```
-
 # Controller Vs RestController
-
 `@Controller` on a Controller class needs `@ResponseBody` with method name
 ```java
 @Controller
@@ -250,7 +237,6 @@ public class HealthCheckController {
 ```
 
 # GET Request
-
 [https://nitinkc.github.io/spring/microservices/GET-rest-calls/](https://nitinkc.github.io/spring/microservices/GET-rest-calls/)
 {: .notice--success}
 
