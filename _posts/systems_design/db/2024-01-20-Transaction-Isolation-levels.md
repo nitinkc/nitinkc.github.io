@@ -142,3 +142,86 @@ So if that happens we rollback one transaction.
 | Most Isolated(1)  | Least Efficient(4) | **Serializable**     | Queued Locks                   | Causal Ordering. Same Key Tx's must be ordered else concurrent |
 
 # Distributed Transactions
+
+
+How its handled
+
+2 patterns for handling distributed transactions
+
+- 2 Phase commit - prepare & commit
+```mermaid!
+sequenceDiagram
+    participant T as Transaction Manager
+    participant C as Customer Microservice
+    participant O as Order Microservice
+
+    T->>C: Prepare (Update Customer Funds)
+    C-->>T: Ready (Funds Updated)
+    T->>O: Prepare (Create Order)
+    O-->>T: Ready (Order Created)
+    T->>C: Commit
+    C-->>T: Confirm Commit
+    T->>O: Commit
+    O-->>T: Confirm Commit
+```
+In case of a failure during the preparation phase, the Transaction Manager would instruct all involved services to roll back their changes.
+
+- Saga Pattern
+  The Saga pattern breaks down a distributed transaction into a series of smaller, isolated transactions (or sagas), each with a compensating action in case of failure.
+
+The Saga pattern can be implemented in two main ways: Choreography and Orchestration.
+
+## Choreography Pattern
+In the Choreography pattern, each service involved in the saga knows about the next service 
+and directly communicates with it. 
+
+There is no central coordinator; instead, each service participates in the saga by 
+invoking the next service and handling its own compensations if needed.
+
+```mermaid!
+sequenceDiagram
+    participant C as Customer Microservice
+    participant O as Order Microservice
+
+    C->>C: Update Customer Funds
+    C-->>O: Funds Updated
+    O->>O: Create Order
+    O-->>C: Order Created
+    Note over C, O: If any step fails, compensating transactions are triggered.
+
+    rect rgb(100, 00, 200)
+    C-->>C: Compensate (Refund Funds) 
+    O-->>O: Compensate (Cancel Order)
+    end
+```
+
+
+## Orchestration Pattern
+In the Orchestration pattern, a central coordinator (orchestrator) manages the saga. 
+It directs the flow of the saga, calling each service in sequence and handling compensations if any step fails. 
+This central coordinator controls the entire transaction process.
+
+```mermaid!
+sequenceDiagram
+    participant C as Customer Microservice
+    participant O as Order Microservice
+    participant T as Saga Orchestrator
+
+    T->>C: Start Saga (Update Customer Funds)
+    C->>C: Update Funds
+    C-->>T: Funds Updated
+    T->>O: Start Saga (Create Order)
+    O->>O: Create Order
+    O-->>T: Order Created
+    T->>C: Complete Saga (Notify Completion)
+    C-->>T: Confirm Completion
+    T->>O: Complete Saga (Notify Completion)
+    O-->>T: Confirm Completion
+
+    Note over T, O: If any step fails, orchestrator handles compensations.
+    
+    rect rgb(100, 00, 200)
+    T->>C: Compensate (Refund Funds)
+    T->>O: Compensate (Cancel Order)
+    end
+```
