@@ -104,6 +104,12 @@ It’s a record of something that had happened.
 - typically refers to a piece of data or a command sent from one component to another within a system. 
 - Unlike events, messages often contain commands or instructions that prompt a specific action or response
 
+**Characteristics**:
+- **Direct Communication**: Messages are often used in point-to-point communication or request-response patterns. The sender of the message typically expects a specific response or action from the receiver.
+- **Contextual**: Messages can include commands, requests, or data that needs to be acted upon. 
+The sender and receiver usually have a defined relationship.
+
+
 Example
 
 - Payment service creates an **event** `<<payment received>>` and published it to kafka event streaming platform. 
