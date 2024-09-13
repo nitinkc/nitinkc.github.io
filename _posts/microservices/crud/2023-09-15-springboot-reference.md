@@ -276,17 +276,14 @@ public HelloWorldReturnBean helloWorldReturnBean() {
 {: .notice--success}
 
 ##### Request Validation
+- At Class level, add `@Validated` annotation and at the `@Valid` at the parameter level
+- Check the `required` and `defaultValue` arguments of RequestParam Annotation
 
-At Class level, add `@Validated` annotation and at the `@Valid` at the parameter level
-
-Check the `required` and `defaultValue` arguments of RequestParam Annotation
-
-Simple validation at parameter level with simple class
 ```java
 @RestController
-@RequestMapping("/test") @Validated
+@RequestMapping("/test") 
+@Validated
 public class ValidationController {
-
     @GetMapping("/email")
     public String testEmail(@Valid @Email(message = "Please provide a valid email address")
                             @RequestParam(value = "email") String email ,
@@ -302,7 +299,6 @@ public class ValidationController {
 ```
 
 ##### Response Validation
-
 In the DTO Class (Using Lombok)
 
 ```java
@@ -328,19 +324,14 @@ public class StudentRequestBody {
 ```
 
 ### With Map as Request Body
-
 if request body is like below, a map can be used
-```json
-{
-  "values":["10","12.5","50","100"]
-}
-```
+
 **Curl Request**
 ```shell
 curl --location 'localhost:8090/student/db/studentIdsByMap' \
 --header 'Content-Type: application/json' \
 --data '{
-    "values": ["1","2","3","4","5",""]
+    "values": ["10","12.5","50","100"]
 }'
 ```
 Read the Request Body using `@RequestBody` in the method parameter into either a Map, for simple structures or a class for complex
@@ -356,13 +347,6 @@ public List<StudentDto> getStudentByIdsByMap(@RequestBody Map<String,List<Intege
 
 ### With Class as Request Body
 
-```json
-{
-  "greeting":"Hi from postman.",
-  "count":5,
-  "studentIds": ["1","2","3","4","5"]
-}
-```
 **Curl Request**
 ```shell
 curl --location 'localhost:8090/student/db/studentIdsByClassName' \
@@ -383,7 +367,7 @@ public class StudentRequestBody {
     private String greeting;
 }
 ```
-Controller with **@RequestBody**
+Controller with **`@RequestBody`**
 ```java
 @PostMapping(path = "/studentIdsByClassName",
             consumes = {MediaType.APPLICATION_JSON_VALUE},
@@ -394,7 +378,6 @@ public StudentDtoClass getStudentByIdsRequestBody(@RequestBody StudentRequestBod
 ```
 
 # Service
-
 For a single student Id, JPA's findById method can be utilized. It returns an Optional, so if in case the return is
 a null Optional Class findById can be utilized.
 

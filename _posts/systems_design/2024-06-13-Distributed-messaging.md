@@ -76,3 +76,27 @@ the directly from RAM into the NIC Buffer (kafka uses system call called sendFil
 to tell the OS to direct;y copy the data from the OS cache to the network interface card buffer)
 
 With modern network card, this copying is done with the DMA (Direct Memory Access) - when its used, the CPU is not involved
+
+# Messages vs Events
+
+In terms of OOP, Message is the Super class with Event and Command as subclasses.
+
+What is typically understood my message is actually a command.
+
+## Event
+- Has already happened, in the past
+- order of events can't be changed as history can't be altered
+- Can be sent via the **Event Streaming Platform** like Apache Kafka Streams
+
+## Command
+- request for a task to be done
+- order and priority can change
+- Can be sent via API calls (point to point or async) or via "Message Brokers" like Apache Active MQ, Rabbit MQ, Solace
+
+
+- Payment service creates an **event** `<<payment received>>` and published it to kafka event streaming platform. 
+- Order service subscribes to the event published and processes the payment.
+- Order service, then, send a **message/command** `<<send invoice>>` to a messaging queue like RabbitMQ, ActiveMQ or solace. 
+- Communication service subscribes to the message and reads the messages and processes it. 
+
+![paymentProcessingArchitecture.png](../../assets/images/paymentProcessingArchitecture.png)
