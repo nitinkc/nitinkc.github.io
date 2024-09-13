@@ -10,10 +10,8 @@ tags: [Spring Microservices, CRUD]
 ## Loose Coupling
 Loose coupling refers to designing a system where components are minimally dependent on each other.
 - This allows for easier modification, testing, and maintenance because changes in one component have little to no impact on others.
-- By Autowiring, we achieve loose coupling. 
-
+- By Autowiring, we achieve loose coupling.
 > By using `new` keyword (instantiating an obejct), we "**tightly couple**" the dependency which is not good
-
 - **Tightly Coupled:**
     ```java
     public class UserService {
@@ -50,7 +48,7 @@ rather than the classes managing their own dependencies.
 [All Annotations](https://springframework.guru/spring-framework-annotations/)
 {: .notice--success}
 
-Basic philosophy of Spring Boot : **Conventions over configurations**
+> Basic philosophy of Spring Boot : **Conventions over configurations**
 
 **@Component**
 * **Purpose**: Marks a class as a Spring component or bean.
@@ -74,12 +72,12 @@ Basic philosophy of Spring Boot : **Conventions over configurations**
   entities.
 
 ## Config
-[app.yml/app.props - Application Yaml settings](https://nitinkc.github.io/spring/microservices/spring-revisions/#application-yaml-settings)
-
 Set a desired Port
 ```shell
 server.port=8089
 ```
+### Application Yaml settings
+{% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
 
 > Good Practice
 
@@ -597,10 +595,6 @@ private String customVal;
 # Rest Template
 Refer the following page for details
 [Rest Template](https://nitinkc.github.io/microservices/rest-template/)
-
-### Application Yaml settings
-{% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
-
 
 # CommandLineRunner
 [https://nitinkc.github.io/spring/microservices/CommandLineRunner/](https://nitinkc.github.io/spring/microservices/CommandLineRunner/)
