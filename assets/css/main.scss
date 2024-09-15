@@ -10,6 +10,7 @@
 // #0092ca Blue
 // #393e46
 $primary-color: #b51b58 !default;
+$tocListColor: #1bb578;
 
 $link-color: $primary-color; //#0092ca;
 $link-color-visited: $primary-color  !default;
@@ -58,7 +59,7 @@ $header-font-family: $custom-font-family !default;
   //margin: 0 0 1em 0;
   text-transform: uppercase;
   text-align: center;
-  color: #B00020;
+  color: $tocListColor;//#B00020;
   text-decoration: underline;
   font-family: 'Arial', sans-serif;
 
@@ -67,11 +68,6 @@ $header-font-family: $custom-font-family !default;
   }
 }
 
-// Define the primary color and its lighter shades
-$color-h2: #c72c6c;//fade from #b51b58
-$color-h3: #d84d80;
-$color-h4: #e97d94;
-$color-h5: #f9aeb1;
 
 // Base styles for all headings
 h1, h2, h3, h4, h5, h6 {
@@ -80,29 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Specific color for each heading level
-h1 {
+h1, h2, h3, h4, h5, h6 {
   color: $primary_color;
-}
-
-h2 {
-  color: $color-h2;
-}
-
-h3 {
-  color: $color-h3;
-}
-
-h4 {
-  color: $color-h4;
-}
-
-h5 {
-  color: $color-h5;
-}
-
-// Optional: define color for h6 if needed
-h6 {
-  color: $color-h5; // Use the same as h5 or define a new lighter color if desired
 }
 
 #main {//Decide the page width
@@ -151,17 +126,17 @@ h6 {
     letter-spacing: 1px;
   }
 
-  .toc__menu li ul > li a {
-    color: $color-h3;
-    font-weight: normal;
-    font-style: oblique;
-  }
-
   .toc__menu a {
-    color: #00adb5;
+    color: $tocListColor;
     //display: block;
     //padding: 0.25rem 0.75rem;
     //line-height: 1.5;
+  }
+
+  .toc__menu li ul > li a {
+    color: $primary-color;
+    font-weight: normal;
+    font-style: oblique;
   }
 }
 

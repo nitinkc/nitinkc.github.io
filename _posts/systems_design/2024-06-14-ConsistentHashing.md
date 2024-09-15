@@ -12,7 +12,6 @@ Distribute Data/Connections across all servers evenly using a good hash function
 Simple hashing, when the number of servers are fixed. 
 
 $ serverIndex = hash(key) % N $
-
 N = # of servers
 
 If any server goes down, then N changes and the impact is drastic as most of the keys will have to be redistributed
@@ -29,28 +28,29 @@ Place the servers onto the ring by hashing its Id.
 then we hash each object by its keys (sessionId, transactionId etc.) using the 
 same hashing function, and use the hash directly to map the key onto the ring
 
-To locate the server for a particular object, we go clockwise from the location of the object key on the ring until a server is found.
+To locate the server for a particular object, we go clockwise from the location 
+of the object key on the ring until a server is found.
+
 
 if a new server is added into the ring(with its new hash based on its id), only the keys left to it will get affected
 
-
-with simple hashing, when a new key is added, almost all the keys need to ve remapped
-
-with consistent hashing, adding a new server only requires redistributing of a fraction of the keys
+- with simple hashing, when a new key is added, almost all the keys need to be remapped
+- with consistent hashing, adding a new server only requires redistributing of a fraction of the keys
 
 
 ## Potential Issue
-
-with hash functions, achieving a perfect distribution &  equally sized segments on the rings  is very unlikely. Conceptually, random points are picked on the ring
+With hash functions, achieving a perfect distribution & equally sized segments 
+on the rings is very unlikely. Conceptually, random points are picked on the ring
 
 Situation might occur that a lot of objects map to a single server unevenly, leaving other servers free. 
 the problem is exacerbated if the servers are frequently added or removed.
 
 This problem is resolved with the usage of the **virtual nodes**
 
-We can have x servers with y virtual nodes for each. More virtual server implies more distribution over the ring
-
-But, maintaining the metadata for the virtual nodes take up more space, so a trade off to tune the number of virtual nodes to fit our system requirements
+We can have `x` servers with `y` virtual nodes for each. More virtual server implies more distribution over the ring
+ 
+But, maintaining the metadata for the virtual nodes take up more space, so a 
+trade-off to tune the number of virtual nodes to fit our system requirements
 
 
 

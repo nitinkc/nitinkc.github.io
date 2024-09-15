@@ -8,7 +8,6 @@ tags: [Algorithms]
 
 
 ##### Primitive with parse
-
 `parseInt` & `parseDouble`: Used for parsing a **String** to a **primitive int or double**.
 
 ```java 
@@ -20,7 +19,6 @@ int k = Integer.valueOf(23).intValue();
 `String.valueOf()` converts every **primitive** and **char array** into String
 
 ##### Wrapper using valueOf
-
 `valueOf` is Used for creating instances of wrapper classes from **String or primitive** to Wrapper
 
 ```java
@@ -109,7 +107,6 @@ Arrays.fill(array, Boolean.FALSE);//Initialize entire Array
 ```
 
 # Maps
-
 - contains key or value
 ```java
 boolean containsValue = map.containsValue(3);
@@ -121,7 +118,6 @@ for (String str: list){
     map.put(str, map.getOrDefault(str,0) + 1);//count number of occurances
 }
 ```
-
 - traditional  
 ```java
 for (String str: namesList) {
@@ -131,8 +127,7 @@ for (String str: namesList) {
        treeMap.put(str,1);
 }
 ```
-
-- insert into the map
+- insert into a map     
 ```java
 Map<Integer,Integer> map = new HashMap<>();
 map.putIfAbsent(key, value);
@@ -143,29 +138,28 @@ map.put(1, 200); //Updates the value associated with key 1 to 200, returns 100
 map.putIfAbsent(1, 100); //Inserts the key-value pair (1, 100)
 map.putIfAbsent(1, 200); //Does nothing because key 1 already exists, returns 100
 ```
-
-- Remove from Map
+- Remove from Map 
 ```java
 /* removes the key/value pair for this key if present. Does nothing if the key is not present. */
 map.remove(key); //Concurrent Modification Exception in a Loop
 itr.remove(); //used to avoid concurrent modification exception using an Iterator
 ```
 
-##### Navigate/Iterate a map
-- map.entrySet()
+### Map Iterator
+- `map.keySet().iterator()`
+```java
+Iterator<String> itr = map.keySet().iterator();
+while (itr.hasNext()) {
+    String key = itr.next();
+    Integer value = map.get(key);
+}
+```
+- `map.entrySet()`
 ```java
 // Iterate over the map using entrySet()
 for (Map.Entry<String, Integer> entry : map.entrySet()) {
     String key = entry.getKey();
     Integer value = entry.getValue();
-}
-```
-- map.keySet().iterator()
-```java
-Iterator<String> itr = map.keySet().iterator();
-while (itr.hasNext()){
-    String key = itr.next();
-    Integer value = map.get(key);
 }
 ```
 - map forEach - Takes in a BiConsumer (key,value)
@@ -176,7 +170,7 @@ treeMap.forEach((name, length) -> System.out.println(name + ": " + length));
 ### TreeMap with Comparator
 Tree map keeps the **Default Natural Sorting Order** with **the Keys**
 ```java
-Map<String, Integer> treeMap = new TreeMap<>();
+Map<String, Integer> treeMap = new TreeMap<>();//Default Natural Sorting Order
 Map<String, Integer> treeMapReversed =new TreeMap<>(Comparator.reverseOrder());
 Map<String, Integer> treeMapCustom = new TreeMap<>(Comparator.comparing(String::length));//Custom key sorter
 
@@ -207,7 +201,6 @@ for (String name : namesList) {//From a list of Strints, put String as key
 ```
 
 # Character
-
 - primitive to Wrapper
 ```java
   Character d = Character.valueOf('c');//From primitive to Wrapper
@@ -344,33 +337,30 @@ System.out.println(Arrays.toString(chars));//The value of Array at index = ascii
   ```
 
 # Sorting
-
-- All sorting (Arrays.sort, listObj.sort, Collections.sort) 
-  - returns void
-  - changes the input array
-- `Comparator.nullsFirst` or `Comparator.nullsLast` can be used to accomodate null values
-
+All sorts (`Arrays.sort`, `listObj.sort`, `Collections.sort`)
+- returns void
+- changes the input array
 
 ### Arrays Sort
 ```java
 int intArray[] = {4,5,3,8,2,71};
 Arrays.sort(intArray);//Default Natural Sorting Order
-Arrays.sort(integerArray, Comparator.reverseOrder());//Reverse sorting
+Arrays.sort(intArray, Comparator.reverseOrder());//Reverse sorting
 ```
 
 ### List Sort
+- `Comparator.nullsFirst()` or `Comparator.nullsLast()` can be used to accommodate null values.
 ```java
-List<Integer> list = Arrays.asList(null,4,5,null,3,8,2,71,null);
-list.sort(Comparator.nullsLast(Comparator.naturalOrder()));
-list.sort(Comparator.nullsFirst(Comparator.reverseOrder()));
-
-List<String> stringList = Arrays.asList("apple", "banana", "orange");
-stringList.sort(Comparator.comparing(String::length).reversed());
+  List<Integer> list = Arrays.asList(null,4,5,null,3,8,2,71,null);
+  list.sort(Comparator.nullsLast(Comparator.naturalOrder()));
+  list.sort(Comparator.nullsFirst(Comparator.reverseOrder()));
+  
+  List<String> stringList = Arrays.asList("apple", "banana", "orange");
+  stringList.sort(Comparator.comparing(String::length).reversed());
 ```
 
 ### Collections sort
-- takes care of arranging the `null` values
-
+- takes care of arranging the `null` values.
 ```java
 List<Integer> integerListWithNull = Arrays.asList(5, 6, null, 71, 2, 3);
 Collections.sort(integerListWithNull, Comparator.nullsLast(Comparator.naturalOrder()));
@@ -378,28 +368,28 @@ Collections.sort(integerListWithoutNull, Collections.reverseOrder());
 
 List<String> stringList = Arrays.asList("apple","banana", "orange");
 Collections.sort(stringList, Comparator
-    .comparing(String::length)
-    .thenComparing(Comparator.reverseOrder()));
+                                  .comparing(String::length)
+                                  .thenComparing(Comparator.reverseOrder()));
 ```
 
 # Set
 
 ```java
 List<String> namesList = Arrays.asList("Harry", "Hermione", "Ron","Harry", "Ron", "Ron", "Remus");
-// Ordering NOT guaranteed in HashSet
-Set<Integer> set = new HashSet<Integer>();
-
 // Sorted values returned while iterating in TreeSet
 Set<String> treeSet = new TreeSet<>(Comparator.reverseOrder());
 treeSet.addAll(namesList);
+
+// Ordering NOT guaranteed in HashSet
+Set<Integer> set = new HashSet<Integer>();
 ```
 - Add elements in a Set
-```java
-/* Adds the element to the set and returns true if this set does not have this element.
-if the element already exist the call leaves the set unchanged and returns false*/
-set.add(value);
-//boolean add(E e);
-```
+  ```java
+  /* Adds the element to the set and returns true if this set does not have this element.
+  if the element already exist the call leaves the set unchanged and returns false*/
+  set.add(value);
+  //boolean add(E e);
+  ```
 
 - Find an element in a set
   ```java
@@ -408,12 +398,12 @@ set.add(value);
   ```
 
 - remove from Set
-```java
-boolean remove(Object o)
-// Removes the specified element from this set if it is present. Returns true if this set contained the element
-set.remove(key);// Concurrent Modification Exception in a Loop
-itr.remove();// use of Iterator to avoid conc. modi. excep.
-```
+  ```java
+  boolean remove(Object o)
+  // Removes the specified element from this set if it is present. Returns true if this set contained the element
+  set.remove(key);// Concurrent Modification Exception in a Loop
+  itr.remove();// use of Iterator to avoid conc. modi. excep.
+  ```
 
 ##### Set Iteration
 ```java
@@ -426,7 +416,6 @@ while(itr.hasNext()){
 ```
 
 # Heap
-
 - Declaring min and max heaps
   ```java
   // Primitive Types
@@ -446,9 +435,8 @@ while(itr.hasNext()){
   Queue<Employee> heapMax = new PriorityQueue<>(Comparator.comparing(Employee::getAge)//If the employee age is same
                                                 .thenComparing(Employee::getSalary));//Natural Sort Order
   ```
-  
-# Queue
 
+# Queue
 * offer() Enqueue (add) elements to the queue****
 * peek() Retrieves, but **does not remove**, the head of this queue, or returns null if this queue is empty.
 * poll() Retrieves and removes **the head** of this queue, or returns null if this queue is empty.
@@ -466,7 +454,6 @@ queue.offer("Orange");
 ```
 
 # Stack
-
 - push(E item): Pushes an item onto the top of the stack.
 - pop(): Removes the object at the top of the stack and returns that object.
 - peek(): Looks at the object at the top of the stack **without removing** it.
@@ -528,13 +515,12 @@ for (int i = 0; i < stack.size(); i++) {
   double log10FloatResult = Math.log10(1000.0f);
   double logResult = Math.log(Math.E); // Log base e of e is 1
   ```
-  
+
 # Bitwise
 
 - `Left Shift (<<)`: Shifts the bits to the left by a specified number of positions (n) value << n.
   - The vacant positions on the right are filled with zeros.
   - it effectively **multiplies** the operand by `2^n`
-
 
 - `Signed Right Shift (>>)`: Shifts the bits of the operand to the right by a specified number of positions.
   - It fills the vacant positions on the left with the sign bit (the leftmost bit) to preserve the sign of the number.

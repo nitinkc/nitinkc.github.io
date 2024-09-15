@@ -15,14 +15,14 @@ Distributed Systems is a collection of independent computers that appear to its 
   - Asynchronous with respect to other machine.
 
 
-|            |                             |  |
-|:----------------|:-------------------------------------------|:----------------|
+| Type            | Systems                                    | Product             |
+|:----------------|:-------------------------------------------|:--------------------|
 | Storage         | Database                                   | Relational DB/Mongo |
-| ^^              | File Systems                               | Cassandra, (HDFS) |
-| Computations    | Hadoop, Spark, Storm                       ||
-| Synchronization | NTP (Network Time Protocol), Vector Clocks ||
-| Concensus       | Paxos, Zookeeper                           ||
-| Messaging       | KAfka, RabbitMq, Google PubSub             ||
+| ^^              | File Systems                               | Cassandra, (HDFS)   |
+| Computations    | Hadoop, Spark, Storm                       |                     |
+| Synchronization | NTP (Network Time Protocol), Vector Clocks |                     |
+| Concensus       | Paxos, Zookeeper                           |                     |
+| Messaging       | KAfka, RabbitMq, Google PubSub             |                     |
 
 
 # Lambda Architecture

@@ -183,7 +183,7 @@ sequenceDiagram
     O-->>C: Order Created
     Note over C, O: If any step fails, compensating transactions are triggered.
 
-    rect rgb(100, 00, 200)
+    rect rgb(255, 255, 204)  %% Light Yellow
     C-->>C: Compensate (Refund Funds) 
     O-->>O: Compensate (Cancel Order)
     end
@@ -214,7 +214,7 @@ sequenceDiagram
 
     Note over T, O: If any step fails, orchestrator handles compensations.
     
-    rect rgb(100, 00, 200)
+    rect rgb(255, 255, 204)  %% Light Yellow
     T->>C: Compensate (Refund Funds)
     T->>O: Compensate (Cancel Order)
     end
