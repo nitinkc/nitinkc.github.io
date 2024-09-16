@@ -31,6 +31,34 @@ Design for **Low Latency** & **High Throughput**
 - **Eureka**: Developed by Netflix, Eureka is a service registry and discovery server that is widely used in microservices architectures.
 - **etcd**: A distributed key-value store that can be used for service discovery among other purposes. It's commonly used in Kubernetes clusters.
 
+Helps find where the service is (IP & DNS name)
+- Needed because in the cloud (GCP or AWS) services have dynamic IP's or DNS Name
+- Service instances(VM or Container) register or write their IP or DNS name in a service registry
+- Service Registry is a key-value pair storage
+
+2 ways of service discovery
+## Client-Side Service Discovery
+- client is responsible for discovering the network location of the service and
+- load balance across them.
+- Services register their IP when they start up
+- IP is remove using heart beat (if down)
+- **Np Load balancer required**
+
+## Server-Side Service Discovery
+- Client connects to Service Registry via a Load Balancer
+- Load balancer queries the service registry and
+- routes the traffic to target microservice
+- All Services register with the SERVICE REGISTRY
+
+### Examples of Service registry
+- etcd: A highly available, distributed service discovery system, used by Kubernetes
+- Hashicorp consul: Offers fast service discovery, load balancing adn API's for registering and unregistering services
+- Apache Zookeeper: Built for Hadoop, commonly used alongside Apache Kafka. Used to coordinate distributed systems
+
+## Service Registration Pattern
+- Self Registration
+- Third Party Registration: Another system or microservice (Registrar) does the registration and de-registration.
+
 # Load Balancing
 Distribute incoming network traffic across multiple servers.(to ensure no single server becomes overwhelmed)
 

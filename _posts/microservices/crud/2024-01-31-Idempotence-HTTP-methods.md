@@ -16,15 +16,25 @@ tags: [Microservices]
 | `DELETE`                    | Deleting an information                                                      | Idempotent, Repeatable |
 
 
-# **Idempotence**
+# Idempotence 
+**Concept** : Same output for the Same input
+
+If the request is sent twice(accidentally) by message broker, by API reties or bu a user itself
+- Microservices must be programmed to handle duplicate requests
+- Handling Duplicate requests is called Idempotence
+
+This is done by
+- having a unique identifier for every request (generated) and then
+- storing the if in the DB for future reference (to discard duplicates)
 
 Call multiple times without changing the result beyond the initial call.  
 
 A refresh/resend button on an idempotent method will **reload without any effect**, but on non idempotence, 
 code/client side code should warn about data duplication
 
-Idempotency is **NOT** directly enforced by the HTTP protocol, it's a critical principle in API design and 
-implementation, and **programmers are responsible** for ensuring that their APIs behave idempotently where appropriate.
+> Idempotency is **NOT** directly enforced by the HTTP protocol
+- it's a critical principle in API design and implementation, 
+- and **programmers are responsible** for ensuring that their APIs behave idempotent where appropriate.
 
 ## Note
 It is possible to INSERT a new row using both PUT and POST calls. The code would perform the same, but the idempotency 

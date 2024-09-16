@@ -6,7 +6,6 @@ tags: [Algorithms]
 ---
 {% include toc title="Index" %}
 
-
 ##### Primitive with parse
 `parseInt` & `parseDouble`: Used for parsing a **String** to a **primitive int or double**.
 
@@ -118,7 +117,7 @@ for (String str: list){
     map.put(str, map.getOrDefault(str,0) + 1);//count number of occurances
 }
 ```
-- traditional  
+- Traditional  
 ```java
 for (String str: namesList) {
    if(treeMap.containsKey(str))
@@ -127,17 +126,17 @@ for (String str: namesList) {
        treeMap.put(str,1);
 }
 ```
-- insert into a map     
-```java
-Map<Integer,Integer> map = new HashMap<>();
-map.putIfAbsent(key, value);
-
-map.put(1, 100); //Inserts the key-value pair (1, 100)
-map.put(1, 200); //Updates the value associated with key 1 to 200, returns 100
-
-map.putIfAbsent(1, 100); //Inserts the key-value pair (1, 100)
-map.putIfAbsent(1, 200); //Does nothing because key 1 already exists, returns 100
-```
+- put key-value
+    ```java
+    Map<Integer,Integer> map = new HashMap<>();
+    map.putIfAbsent(key, value);
+    
+    map.put(1, 100); //Inserts the key-value pair (1, 100)
+    map.put(1, 200); //Updates the value associated with key 1 to 200, returns 100
+    
+    map.putIfAbsent(1, 100); //Inserts the key-value pair (1, 100)
+    map.putIfAbsent(1, 200); //Does nothing because key 1 already exists, returns 100
+    ```
 - Remove from Map 
 ```java
 /* removes the key/value pair for this key if present. Does nothing if the key is not present. */
@@ -360,17 +359,17 @@ Arrays.sort(intArray, Comparator.reverseOrder());//Reverse sorting
 ```
 
 ### Collections sort
-- takes care of arranging the `null` values.
-```java
-List<Integer> integerListWithNull = Arrays.asList(5, 6, null, 71, 2, 3);
-Collections.sort(integerListWithNull, Comparator.nullsLast(Comparator.naturalOrder()));
-Collections.sort(integerListWithoutNull, Collections.reverseOrder());
-
-List<String> stringList = Arrays.asList("apple","banana", "orange");
-Collections.sort(stringList, Comparator
-                                  .comparing(String::length)
-                                  .thenComparing(Comparator.reverseOrder()));
-```
+- takes care of arranging the `null` values
+-   ```java
+    List<Integer> integerListWithNull = Arrays.asList(5, 6, null, 71, 2, 3);
+    Collections.sort(integerListWithNull, Comparator.nullsLast(Comparator.naturalOrder()));
+    Collections.sort(integerListWithoutNull, Collections.reverseOrder());
+    
+    List<String> stringList = Arrays.asList("apple","banana", "orange");
+    Collections.sort(stringList, Comparator
+                                      .comparing(String::length)
+                                      .thenComparing(Comparator.reverseOrder()));
+    ```
 
 # Set
 

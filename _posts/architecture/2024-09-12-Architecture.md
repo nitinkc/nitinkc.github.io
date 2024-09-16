@@ -116,3 +116,9 @@ Important Considerations
 
 
 
+
+# Deployment & Production Testing - Patterns
+
+## Rolling Deployment Pattern
+
+## Blue-Green Deployment

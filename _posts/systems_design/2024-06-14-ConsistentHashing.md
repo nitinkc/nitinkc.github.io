@@ -54,7 +54,7 @@ trade-off to tune the number of virtual nodes to fit our system requirements
 
 
 
-### To be  used to distribute Data evenly
+### To be used to distribute Data evenly
 
 Cassandra and Dynamo DB uses consistent hashing for Data Partitioning
 
