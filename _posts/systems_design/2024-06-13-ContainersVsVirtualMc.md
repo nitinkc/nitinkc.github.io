@@ -23,5 +23,9 @@ Containerization : light weight Virtulization
 
 hardware -> host operating system -> container Engine -> containers
 
-Containers
+# Container
+A container is a bundling of an application and all its dependencies as a package 
+that allows it to be deployed easily and consistently regardless of the environment.
+
+- container use Virtualization features of the host operating system.
 

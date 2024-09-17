@@ -20,7 +20,7 @@ Digital certificates ensure secure and encrypted communication between servers a
 
 ## Client Certificate
 - method for authenticating the API User
-- client cerficate file with public & private key pair is used
+- client certificate file with public & private key pair is used
 - When an API caller makes an API call, the server validates the Client Certificate.
 - It is called TLS Handshake
 

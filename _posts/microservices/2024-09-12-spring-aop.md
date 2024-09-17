@@ -1,6 +1,7 @@
 ---
 title:  "Aspect Oriented Programming (AOP)"
-date:   2024-09-12 16:00:00
+date:  
+  2024-09-12 16:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
@@ -39,6 +40,8 @@ This can happen at various times, such as at compile-time, load-time, or runtime
 - Define Aspects: Create classes annotated with @Aspect that define the cross-cutting concerns.
 - Configure Pointcuts: Specify where and when the advice should be applied using pointcut expressions.
 - Apply Advice: Use annotations to define the type of advice and associate it with the pointcuts.
+
+![aopConcepts.png](../../assets/images/aopConcepts.png)
 
 ## add dependencies 
 ```yaml
@@ -101,3 +104,5 @@ public class LoggingAspect {
   - `*`: The first * represents **any class** within the specified package.
   - `*`: The second * represents **any method** name within the classes of the specified package.
   - `(..)`: Represents **any number of parameters** (including zero). The `..` wildcard matches any arguments.
+
+![pointcutExpression.png](../../assets/images/pointcutExpression.png)
