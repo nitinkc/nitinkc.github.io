@@ -22,7 +22,7 @@ A point during the execution of the application where an aspect can be applied.
 Examples include method execution, object instantiation, etc.
 
 ## Advice: 
-The action taken by an aspect at a join point. There are several types of advice:
+The **action** taken (method) by an aspect at a join point. There are several types of advice:
 - `Before`: Executes before the join point.
 - `After`: (finally) advice - Always executed. Executes after the join point, regardless of the outcome.
 - `After Returning`: Executes after the join point if it completes normally.
@@ -30,32 +30,48 @@ The action taken by an aspect at a join point. There are several types of advice
 - `Around`: Most powerful - Surrounds the join point, allowing you to modify its execution.
 
 # Pointcut:
-An expression that specifies where advice should be applied. It defines which join points are matched by the advice.
+An **expression** that specifies where advice should be applied. It defines which join points are matched by the advice.
 
 # Weaving: 
 The process of integrating aspects into the codebase. 
 This can happen at various times, such as at compile-time, load-time, or runtime.
 
 # How AOP Works in Spring Boot
-- Define Aspects: Create classes annotated with @Aspect that define the cross-cutting concerns.
-- Configure Pointcuts: Specify where and when the advice should be applied using pointcut expressions.
-- Apply Advice: Use annotations to define the type of advice and associate it with the pointcuts.
+- **Define Aspects**: Create **classes** annotated with `**@Aspect**` that define the cross-cutting concerns.
+- **Configure Pointcuts**: Specify where and when the advice should be applied **using pointcut expressions**.
+- **Apply Advice**: Use annotations to define the **type of advice** and **associate** it with the pointcuts.
 
 ![aopConcepts.png]({{ site.url }}/assets/images/aopConcepts.png)
 
-## add dependencies 
+## Add Dependency 
 ```yaml
 implementation 'org.springframework.boot:spring-boot-starter-aop'
 ```
 
 ## Define an aspect
-- `@Aspect`: Marks this class as an aspect.
+On Class
+- `@Aspect`: Marks the class as an aspect.
 - `@Component`: Makes the aspect a Spring bean so that it can be detected by the Spring container.
+
+On methods
 - `@Before`: Defines advice to execute before methods in the specified package.
 - `@After`: Defines advice to execute after methods in the specified package.
-- `@Around` : The `@Around` is the most flexible type of advice because it allows you to do things like 
+- `@Around` : The most flexible type of advice because it allows you to do things like
 change the method's return value, throw an exception, or completely prevent the method from running.
 
+## Pointcut Expression:
+`execution(* com.spring.reference.service.*.*(..))`
+- execution(...): This is a pointcut **designator** that specifies which method executions the advice should apply to.
+- `*`: Represents the **return type** of the method. Here, * is a wildcard that matches any return type.
+- `com.spring.reference.service.*.*(..)`:
+  - `com.spring.reference.service`: Specifies the **package** where the methods are located.
+  - `*`: The first * represents **any class** within the specified package.
+  - `*`: The second * represents **any method** name within the classes of the specified package.
+  - `(..)`: Represents **any number of parameters** (including zero). The `..` wildcard matches any arguments.
+
+![pointcutExpression.png]({{ site.url }}/assets/images/pointcutExpression.png)
+
+# Example Code
 ```java
 @Aspect @Component @Slf4j
 public class LoggingAspect {
@@ -91,18 +107,3 @@ public class LoggingAspect {
   }
 }
 ```
-
-### Pointcut Expression: 
-`execution(* com.spring.reference.service.*.*(..))`
-
-- execution(...): This is a pointcut designator that specifies which method executions the advice should apply to.
-
-**Syntax Breakdown**:
-- `*`: Represents the **return type** of the method. Here, * is a wildcard that matches any return type.
-- com.spring.reference.service.*.*(..):
-  - `com.spring.reference.service`: Specifies the **package** where the methods are located.
-  - `*`: The first * represents **any class** within the specified package.
-  - `*`: The second * represents **any method** name within the classes of the specified package.
-  - `(..)`: Represents **any number of parameters** (including zero). The `..` wildcard matches any arguments.
-
-![pointcutExpression.png]({{ site.url }}/assets/images/pointcutExpression.png)
