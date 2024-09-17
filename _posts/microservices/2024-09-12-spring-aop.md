@@ -41,7 +41,7 @@ This can happen at various times, such as at compile-time, load-time, or runtime
 - Configure Pointcuts: Specify where and when the advice should be applied using pointcut expressions.
 - Apply Advice: Use annotations to define the type of advice and associate it with the pointcuts.
 
-![aopConcepts.png](../../assets/images/aopConcepts.png)
+![aopConcepts.png]({{ site.url }}/assets/images/aopConcepts.png)
 
 ## add dependencies 
 ```yaml
@@ -105,4 +105,4 @@ public class LoggingAspect {
   - `*`: The second * represents **any method** name within the classes of the specified package.
   - `(..)`: Represents **any number of parameters** (including zero). The `..` wildcard matches any arguments.
 
-![pointcutExpression.png](../../assets/images/pointcutExpression.png)
+![pointcutExpression.png]({{ site.url }}/assets/images/pointcutExpression.png)
