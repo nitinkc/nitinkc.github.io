@@ -1,5 +1,5 @@
 ---
-title:  "Command Query Responsibility Segregation"
+title:  "Sidecar Pattern"
 date:   2024-09-15 20:02:00
 categories: [System Design]
 tags: [System Design]

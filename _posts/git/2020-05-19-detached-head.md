@@ -21,6 +21,11 @@ git merge temp
 git branch -d temp
 ```
 
+# Add a new project
+```shell
+git submodule add <GitHub Repo Name>
+```
+
 # Clone submodules
 Fetch up to 6 submodules at a time with `-j6`
 
@@ -45,11 +50,6 @@ git clone --recurse-submodules -j8 https://github.com/nitinkc/SpringBootProjects
 ## Update all the submodules
 ```
 git pull --recurse-submodules
-```
-
-## Add new projects using the following command
-```
-git submodule add <GitHub Repo>
 ```
 
 ### In case the projects needs be deleted

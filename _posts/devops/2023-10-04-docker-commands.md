@@ -1,8 +1,8 @@
 ---
 title:  "Docker commands"
 date:   2023-10-04 20:01:00
-categories: [Microservices]
-tags: [Microservices]
+categories: ["DevOps","GitOps"]
+tags: ["DevOps","GitOps"]
 ---
 
 {% include toc title="Index" %}
@@ -259,7 +259,7 @@ For a gradle project, where the build is done in stage 1 and is used in stage 2
 #Build stage
 FROM gradle:latest AS BUILD
 WORKDIR /usr/app/
-COPY . .
+COPY ../microservices .
 RUN gradle clean build
 
 # Package stage
