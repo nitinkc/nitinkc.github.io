@@ -135,10 +135,10 @@ helm upgrade --install todo-service-app myrepo/todo-app -f values.yaml
 Get the IP's, names etc from `minikube dashboard`
 
 Check logs
-
 ```shell
 #pod name from minikube Dashboard
-kubectl logs todo-service-app-todo-app-7b45c8749b-ltmfw    
+kubectl logs todo-service-app-todo-app-7b45c8749b-ltmfw  
+kubectl logs -f todo-service-app-todo-app-7b45c8749b-ltmfw    
 ```
 
 Test Connectivity from Inside the Pod
@@ -153,6 +153,3 @@ wget -qO- http://<your-pod-ip>:5000/actuator/health
 ```
 
 
-kubectl get pods
-kubectl describe pod todo-service-app-todo-app-7b45c8749b-ltmfw
-kubectl get service\n
