@@ -88,6 +88,7 @@ helm repo add myrepo https://nitinkc.github.io/HelmCharts
 helm install myapp myrepo/my-first-chart
 ```
 
+Changes in the [values file](https://github.com/nitinkc/HelmCharts/blob/main/todo-app/values.yaml#L10-L58)
 
 
 

@@ -26,6 +26,8 @@ Make any changes to the [https://github.com/nitinkc/messenger-spring-boot/tree/m
 The circle-ci pipeline is setup to push the latest build image to docker. [Code](https://github.com/nitinkc/messenger-spring-boot/blob/master/.circleci/config.yml)
 
 ## Release with flux
+The release to be done AFTER the helm project is up and running through the github repo via pages server
+
 On the minikube cluster running on local
 
 Goto [Helm Repo project](https://github.com/nitinkc/HelmCharts/tree/main)
@@ -35,3 +37,4 @@ helm repo update
 helm upgrade --install todo-service-app myrepo/todo-app      
 ```
 
+Refresh the minikube Dashboard and check the latest installation
