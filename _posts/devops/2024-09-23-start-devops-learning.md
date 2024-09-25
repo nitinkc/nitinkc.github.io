@@ -1,9 +1,10 @@
 ---
 title:  "DevOps Learning - Starting point"
 date:   2024-09-23 20:14:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: ["DevOps","GitOps"]
+tags: ["DevOps","GitOps"]
 ---
+{% include toc title="Index" %}
 
 Start Docker 
 
