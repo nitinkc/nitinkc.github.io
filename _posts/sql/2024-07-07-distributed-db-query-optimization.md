@@ -9,6 +9,12 @@ tags: ['SQL']
 In Google Cloud Platform's BigQuery, clustering and partitioning are optimization
 techniques used to improve query performance and manage costs when working with large datasets.
 
+## Indexing:
+An index is a data structure that improves the speed of data retrieval operations on a database table.
+
+**Use in BigQuery**: While BigQuery doesn’t support traditional indexing like other databases,
+leveraging partitioning and clustering effectively serves a similar purpose by optimizing data access paths.
+
 # Partitioning
 Partitioning involves dividing a large database table into smaller, 
 more manageable **segments** called partitions, making it easier and more efficient to query large datasets.
@@ -107,6 +113,7 @@ AND visit_date = '2023-07-01';
 You can use both strategies together for maximum performance. For example, 
 - partition by a date column (high cardinality, time-based) and 
 - cluster by facility_id (high cardinality) and status (low cardinality) to optimize a variety of queries.
+
 
 # Sharding
 Sharding is a technique used in distributed databases to **horizontally partition** data across multiple servers or nodes (shards). 
@@ -372,16 +379,8 @@ PRIMARY KEY (facility_id, patient_id, visit_date, visit_id)
 
 
 
-# Additional Concepts for Query Optimization
-
-## Indexing:
-An index is a data structure that improves the speed of data retrieval operations on a database table.
-
-**Use in BigQuery**: While BigQuery doesn’t support traditional indexing like other databases, 
-leveraging partitioning and clustering effectively serves a similar purpose by optimizing data access paths.
-
-## Denormalization:
-In a distributed database, especially in data warehouses, denormalization (storing redundant data) 
+# Denormalization:
+In a distributed database, especially in data warehouses, denormalization (storing redundant data)
 can **reduce the need for complex joins** and improve query performance.
 
 **Example**: Instead of normalizing patient data across multiple tables, you might store it all in one table, which can speed up read queries.
@@ -396,6 +395,8 @@ SELECT
 FROM `project.dataset.patients` p
 JOIN `project.dataset.visits` v ON p.patient_id = v.patient_id;
 ```
+
+# Additional Concepts for Query Optimization
 
 ## Data Types:
 **Optimization**: Choosing appropriate data types can reduce storage costs and improve performance. For instance, using INTEGER instead of STRING for numeric values can yield better performance.
@@ -440,6 +441,7 @@ JOIN (
 ) v ON p.patient_id = v.patient_id
 WHERE v.visit_count > 5;
 ```
+
 ## Data Sampling:
 Use Case: For exploratory data analysis, consider using sampled data instead of the full dataset to speed up query times. 
 BigQuery supports sampling methods that can be utilized in your queries.
@@ -448,6 +450,7 @@ SELECT *
 FROM `project.dataset.large_table`
 TABLESAMPLE SYSTEM (10 PERCENT);
 ```
+
 ## Load Balancing:
 Context: In distributed databases, balancing the load among nodes can prevent some nodes from becoming bottlenecks. 
 Ensure that your data distribution is even across partitions or shards.
@@ -463,7 +466,6 @@ CREATE TABLE patient_visits (
 ) PRIMARY KEY (facility_id, visit_date, patient_id);
 ```
 
-
 # Avoiding Cross-Joins:
 Context: Cross-joins can lead to significant performance degradation. Always ensure that join conditions are specified to avoid cartesian products.
 ```sql
@@ -472,6 +474,7 @@ SELECT *
 FROM `project.dataset.table_a` a JOIN `project.dataset.table_b` b 
     ON a.id = b.id;  -- Avoiding cross-join
 ```
+
 # Caching:
 Context: If your queries frequently access the same datasets, consider caching results where possible.
 This can significantly reduce load times for repeat queries.
