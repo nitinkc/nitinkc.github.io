@@ -138,8 +138,7 @@ graph TD
 
 # Cluster Pruning
 Cluster pruning refers to the optimization technique used in databases, particularly in distributed databases,
-to reduce the amount of data read from storage during query execution.
-
+to **reduce the amount of data read from storage during query execution**.
 - It involves skipping unnecessary data blocks or partitions that do not contain relevant data for a given query.
 - The goal is to minimize disk I/O and improve query performance by avoiding the need to read entire data sets.
 
@@ -147,13 +146,11 @@ In distributed databases, cluster pruning is often associated with query optimiz
 - predicate pushdown (where filters are applied as early as possible in the query execution process) and
 - partition pruning (where unnecessary partitions are excluded from query processing based on query predicates).
 
-
-# Cluster pruning
 **Context**
 
-Filter-pushdown allows processing less data in later stages, but does not reduce the initial amount of data read.
+Filter-pushdown allows processing less data in later stages, but **does not reduce** the initial amount of data read.
 
-Reading all table data can become a bottleneck as data grows.
+Reading entire table data can become a bottleneck as data grows.
 
 ```sql
 SELECT *
@@ -182,7 +179,7 @@ graph TD
 # Clustering vs Cluster Pruning
 **Clustering** is the organization of data based on specified columns to improve performance.
 
-**Cluster pruning** is the process that occurs when the database engine skips irrelevant data during a query because of that clustering.
+**Cluster pruning** is the **process** that occurs when the database engine skips irrelevant data during a query because of that clustering.
 
 
 Clustering refers to the method of organizing data in a way that optimizes query performance.
@@ -199,26 +196,28 @@ CLUSTER BY patient_id;
 
 Cluster pruning is a specific optimization technique that occurs as a result of clustering.
 When you run a query that includes filters on the clustered columns, the database engine
-can "prune" or skip entire sections of the dataset that do not meet the query criteria.
+can **"prune" or skip entire sections** of the dataset that do not meet the query criteria.
 This means that only the relevant clusters (or sorted sections of data) are read,
 which improves query performance and reduces costs.
 ```sql
+-- CLUSTER BY patient_id
 SELECT *
 FROM your_dataset.patient_visits
 WHERE patient_id = 'P001';
 ```
 BigQuery uses cluster pruning to only scan the segments of data that contain records for P001, skipping over all other patient IDs.
 
-
 # Data materialization
 **Context**
 
-Queries often use real-time data, leading to high computation costs as views are recalculated on each query execution.
+Queries often use real-time data, leading to high computation costs as **views are recalculated** on each query execution.
 
 **Solution**
 
-Materialize data using scheduled queries or materialized views.
+Materialize data using scheduled queries or materialized views. !!TODO:CHECK WITH SOMEONE
+- Calculate Once and re-use multiple times
 
+## Materialized Views
 ```sql
 CREATE MATERIALIZED VIEW `project.dataset.MATERIALIZED_VIEW` AS
 SELECT
@@ -227,10 +226,46 @@ SELECT
 FROM `project.dataset.SOURCE_TABLE` e
 ```
 
-```mermaid!
-graph TD
-    A[SOURCE_TABLE] -->|Materialize| B[MATERIALIZED_VIEW]
+## Scheduled Query
+**1. Create the Destination Table**: 
+- Before creating the scheduled query, you need a destination table where the results will be stored.
+```sql
+CREATE TABLE `project.dataset.destination_table` AS
+SELECT
+    e.ENTITY_ID,
+    e.ATTRIBUTE
+FROM `project.dataset.SOURCE_TABLE` e
+WHERE FALSE;  -- Create an empty table with the correct schema
 ```
+
+**2: Set Up the Scheduled Query**:
+- Go to the BigQuery Console.
+- In the navigation pane, click on "Scheduled queries."
+- Click on "Create Scheduled Query."
+- In the SQL section, enter the query:
+```sql
+--Ensuring no duplicate record insertion into destination table
+TRUNCATE TABLE `project.dataset.destination_table`;
+
+INSERT INTO `project.dataset.destination_table`
+SELECT
+    e.ENTITY_ID,
+    e.ATTRIBUTE
+FROM `project.dataset.SOURCE_TABLE` e
+--This filter ensures that only rows from the last three months are selected.
+WHERE e.date_column >= DATE_SUB(CURRENT_DATE(), INTERVAL 3 MONTH);
+```
+
+**3: Configure the Schedule**:
+
+Choose how frequently you want the query to run (e.g., hourly, daily).
+Set the time zone and start time as needed.
+
+## Key Differences
+**Materialized Views**: Automatically refresh and maintain the results based on the underlying data. !!TODO:: HOW??
+
+**Scheduled Queries**: You control when to run the query, and the results are stored in a table you specify. 
+You may need to handle the refresh logic (e.g., truncating the table before inserting new data) if necessary.
 
 # Avoiding repeated reads and transformations
 **Context**
@@ -238,14 +273,15 @@ graph TD
 Common Table Expressions (CTEs) can lead to repeated reads if not used carefully.
 
 ```sql
+--3 CTE's
 WITH entity_data AS (
     SELECT * FROM `project.dataset.ENTITY_TABLE`
 ),
-entity_details AS (
-    SELECT * FROM entity_data WHERE ENTITY_TYPE = 'TypeA'
+entity_details AS ( -- read from the entity_data CTE
+    SELECT * FROM entity_data WHERE ENTITY_TYPE = 'EntityDetails'
 ),
-entity_summary AS (
-    SELECT * FROM entity_data WHERE ENTITY_TYPE = 'TypeB'
+entity_summary AS ( -- read from the entity_data CTE second time
+    SELECT * FROM entity_data WHERE ENTITY_TYPE = 'EntitySummary'
 )
 
 SELECT * FROM entity_details
@@ -255,7 +291,7 @@ SELECT * FROM entity_summary
 
 **Issue**:
 
-ENTITY_TABLE is read multiple times.
+ENTITY_TABLE is read multiple times.!! TODO: Check if the entity_data CTE is called twice means it executes twice thus executing Entity Table twice
 
 **Solution**
 
@@ -269,9 +305,9 @@ WITH entity_data AS (
     FROM `project.dataset.ENTITY_TABLE`
 )
 
-SELECT * FROM entity_data WHERE ENTITY_TYPE = 'TypeA'
+SELECT * FROM entity_data WHERE ENTITY_TYPE = 'EntityDetails'
 UNION ALL
-SELECT * FROM entity_data WHERE ENTITY_TYPE = 'TypeB'
+SELECT * FROM entity_data WHERE ENTITY_TYPE = 'EntitySummary'
 ```
 
 ```mermaid!
