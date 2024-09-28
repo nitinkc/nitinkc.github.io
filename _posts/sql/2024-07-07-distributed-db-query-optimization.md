@@ -370,3 +370,123 @@ If you expect many queries to filter by patient_id, you could modify the primary
 PRIMARY KEY (facility_id, patient_id, visit_date, visit_id)
 ```
 
+
+
+# Additional Concepts for Query Optimization
+
+## Indexing:
+An index is a data structure that improves the speed of data retrieval operations on a database table.
+
+**Use in BigQuery**: While BigQuery doesn’t support traditional indexing like other databases, 
+leveraging partitioning and clustering effectively serves a similar purpose by optimizing data access paths.
+
+## Denormalization:
+In a distributed database, especially in data warehouses, denormalization (storing redundant data) 
+can **reduce the need for complex joins** and improve query performance.
+
+**Example**: Instead of normalizing patient data across multiple tables, you might store it all in one table, which can speed up read queries.
+```sql
+CREATE TABLE `project.dataset.denormalized_patient_data` AS
+SELECT 
+    p.patient_id,
+    p.name,
+    p.gender,
+    v.visit_date,
+    v.visit_reason
+FROM `project.dataset.patients` p
+JOIN `project.dataset.visits` v ON p.patient_id = v.patient_id;
+```
+
+## Data Types:
+**Optimization**: Choosing appropriate data types can reduce storage costs and improve performance. For instance, using INTEGER instead of STRING for numeric values can yield better performance.
+```sql
+-- Using INTEGER instead of STRING for IDs
+CREATE TABLE `project.dataset.optimized_table` (
+    patient_id INT64,  -- Better performance than STRING
+    visit_date DATE,
+    visit_reason STRING
+);
+```
+
+## Query Rewrite:
+**Optimization**: Sometimes, rewriting queries for better performance can help. For instance, 
+- using JOIN instead of UNION when the same dataset is being merged can reduce the overhead.
+- Avoiding subqueries when possible can also enhance performance.
+```sql
+-- Instead of using UNION, use JOIN if applicable
+SELECT * FROM `project.dataset.table_a` a
+JOIN `project.dataset.table_b` b ON a.id = b.id;
+```
+
+subquery that retrieves the average visit count for each patient and then filters the results based on that average
+```sql
+SELECT *
+FROM `project.dataset.patients` p
+WHERE (
+    SELECT COUNT(*)
+    FROM `project.dataset.visits` v
+    WHERE v.patient_id = p.patient_id
+) > 5;
+```
+
+Instead of using a subquery, we can use a JOIN and a GROUP BY clause to achieve the same result more efficiently.
+```sql
+SELECT p.*
+FROM `project.dataset.patients` p
+JOIN (
+    SELECT patient_id, COUNT(*) AS visit_count
+    FROM `project.dataset.visits`
+    GROUP BY patient_id
+) v ON p.patient_id = v.patient_id
+WHERE v.visit_count > 5;
+```
+## Data Sampling:
+Use Case: For exploratory data analysis, consider using sampled data instead of the full dataset to speed up query times. 
+BigQuery supports sampling methods that can be utilized in your queries.
+```sql
+SELECT *
+FROM `project.dataset.large_table`
+TABLESAMPLE SYSTEM (10 PERCENT);
+```
+## Load Balancing:
+Context: In distributed databases, balancing the load among nodes can prevent some nodes from becoming bottlenecks. 
+Ensure that your data distribution is even across partitions or shards.
+
+In Spanner, you can ensure even distribution by defining a well-thought-out primary key.
+```sql
+CREATE TABLE patient_visits (
+    visit_id STRING(36) NOT NULL,
+    patient_id STRING(36),
+    facility_id STRING(36),
+    visit_date DATE,
+    visit_reason STRING(255),
+) PRIMARY KEY (facility_id, visit_date, patient_id);
+```
+
+
+# Avoiding Cross-Joins:
+Context: Cross-joins can lead to significant performance degradation. Always ensure that join conditions are specified to avoid cartesian products.
+```sql
+-- Always include join conditions
+SELECT *
+FROM `project.dataset.table_a` a JOIN `project.dataset.table_b` b 
+    ON a.id = b.id;  -- Avoiding cross-join
+```
+# Caching:
+Context: If your queries frequently access the same datasets, consider caching results where possible.
+This can significantly reduce load times for repeat queries.
+```sql
+-- You can utilize materialized views for caching results
+CREATE MATERIALIZED VIEW `project.dataset.cached_view` AS
+SELECT patient_id, COUNT(*) AS visit_count
+FROM `project.dataset.visits`
+GROUP BY patient_id;
+```
+
+# Using Approximate Algorithms: !!TODO : CHECK
+Context: For analytics queries, using approximate algorithms (like APPROX_COUNT_DISTINCT) can drastically reduce computation time and resources.
+```sql
+SELECT 
+    APPROX_COUNT_DISTINCT(patient_id) AS unique_patients
+FROM `project.dataset.visits`;
+```
