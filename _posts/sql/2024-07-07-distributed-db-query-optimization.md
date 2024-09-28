@@ -84,6 +84,30 @@ WHERE patient_id = 'P001'
 AND visit_date = '2023-07-01';
 ```
 
+# Clustering v/s Partitioning
+**Use Clustering When:**
+- You have high cardinality columns that are frequently queried but not suitable for partitioning (e.g., `patient_id`).
+- Queries often filter or aggregate on specific columns, and sorting by those columns can help reduce the amount of data scanned.
+- You want to optimize the performance of queries that involve filtering or joining based on certain attributes.
+- Low Cardinality Example:
+  - If you frequently filter by a status column(Low Cardinality), clustering can help optimize queries even if it has low cardinality 
+  because the data is organized to speed up access.
+
+**Use Partitioning When:**
+- The column used for partitioning has a **time-based nature** (e.g., dates), which is common for datasets that grow over time.
+- The query patterns predominantly filter on a specific **range of values**, especially if those values are well-defined (like date ranges).
+- You want to significantly **reduce the amount of data scanned** for queries that filter on that column.
+- High Cardinality Example:
+    - If you're partitioning by a timestamp column representing the date of an event, this is a good use case for partitioning,
+      as it can optimize queries focused on specific time frames.
+
+**Combined Use Cases**
+
+**Partitioning and Clustering Together**:
+You can use both strategies together for maximum performance. For example, 
+- partition by a date column (high cardinality, time-based) and 
+- cluster by facility_id (high cardinality) and status (low cardinality) to optimize a variety of queries.
+
 # Sharding
 Sharding is a technique used in distributed databases to **horizontally partition** data across multiple servers or nodes (shards). 
 Each shard independently stores a subset of the data, and together they form a logical whole. 
