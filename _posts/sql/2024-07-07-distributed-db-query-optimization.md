@@ -114,7 +114,6 @@ You can use both strategies together for maximum performance. For example,
 - partition by a date column (high cardinality, time-based) and 
 - cluster by facility_id (high cardinality) and status (low cardinality) to optimize a variety of queries.
 
-
 # Sharding
 Sharding is a technique used in distributed databases to **horizontally partition** data across multiple servers or nodes (shards). 
 Each shard independently stores a subset of the data, and together they form a logical whole. 
@@ -177,24 +176,17 @@ In distributed databases, cluster pruning is often associated with query optimiz
 - predicate pushdown (where filters are applied as early as possible in the query execution process) and
 - partition pruning (where unnecessary partitions are excluded from query processing based on query predicates).
 
-**Context**
-
-Filter-pushdown allows processing less data in later stages, but **does not reduce** the initial amount of data read.
+**Context**: Filter-pushdown allows processing less data in later stages, but **does not reduce** the initial amount of data read.
 
 Reading entire table data can become a bottleneck as data grows.
-
 ```sql
 SELECT *
 FROM `project.dataset.BIG_TABLE`
 WHERE ENTITY_ID = '67890'
 ```
-**Issue:**
+**Issue:** The query reads the entire table before filtering.
 
-The query reads the entire table before filtering.
-
-**Solution**
-
-Cluster the table on the ENTITY_ID column.
+**Solution:** Cluster the table on the ENTITY_ID column.
 
 ```sql
 CREATE TABLE `project.dataset.BIG_TABLE_CLUSTERED`
@@ -239,13 +231,9 @@ WHERE patient_id = 'P001';
 BigQuery uses cluster pruning to only scan the segments of data that contain records for P001, skipping over all other patient IDs.
 
 # Data materialization
-**Context**
+**Context:** Queries often use real-time data, leading to high computation costs as **views are recalculated** on each query execution.
 
-Queries often use real-time data, leading to high computation costs as **views are recalculated** on each query execution.
-
-**Solution**
-
-Materialize data using scheduled queries or materialized views. !!TODO:CHECK WITH SOMEONE
+**Solution:** Materialize data using scheduled queries or materialized views. !!TODO:CHECK WITH SOMEONE
 - Calculate Once and re-use multiple times
 
 ## Materialized Views
@@ -274,6 +262,7 @@ WHERE FALSE;  -- Create an empty table with the correct schema
 - In the navigation pane, click on "Scheduled queries."
 - Click on "Create Scheduled Query."
 - In the SQL section, enter the query:
+
 ```sql
 --Ensuring no duplicate record insertion into destination table
 TRUNCATE TABLE `project.dataset.destination_table`;
@@ -288,9 +277,8 @@ WHERE e.date_column >= DATE_SUB(CURRENT_DATE(), INTERVAL 3 MONTH);
 ```
 
 **3: Configure the Schedule**:
-
-Choose how frequently you want the query to run (e.g., hourly, daily).
-Set the time zone and start time as needed.
+- Choose how frequently you want the query to run (e.g., hourly, daily).
+- Set the time zone and start time as needed.
 
 ## Key Differences
 **Materialized Views**: Automatically refresh and maintain the results based on the underlying data. !!TODO:: HOW??
@@ -466,7 +454,7 @@ CREATE TABLE patient_visits (
 ) PRIMARY KEY (facility_id, visit_date, patient_id);
 ```
 
-# Avoiding Cross-Joins:
+## Avoiding Cross-Joins:
 Context: Cross-joins can lead to significant performance degradation. Always ensure that join conditions are specified to avoid cartesian products.
 ```sql
 -- Always include join conditions
@@ -475,7 +463,7 @@ FROM `project.dataset.table_a` a JOIN `project.dataset.table_b` b
     ON a.id = b.id;  -- Avoiding cross-join
 ```
 
-# Caching:
+## Caching:
 Context: If your queries frequently access the same datasets, consider caching results where possible.
 This can significantly reduce load times for repeat queries.
 ```sql
@@ -486,7 +474,7 @@ FROM `project.dataset.visits`
 GROUP BY patient_id;
 ```
 
-# Using Approximate Algorithms: !!TODO : CHECK
+## Using Approximate Algorithms: !!TODO : CHECK
 Context: For analytics queries, using approximate algorithms (like APPROX_COUNT_DISTINCT) can drastically reduce computation time and resources.
 ```sql
 SELECT 
