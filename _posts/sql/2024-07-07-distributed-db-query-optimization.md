@@ -9,7 +9,7 @@ tags: ['SQL']
 In Google Cloud Platform's BigQuery, clustering and partitioning are optimization
 techniques used to improve query performance and manage costs when working with large datasets.
 
-## Indexing:
+# Indexing
 An index is a data structure that improves the speed of data retrieval operations on a database table.
 
 **Use in BigQuery**: While BigQuery doesn’t support traditional indexing like other databases,
