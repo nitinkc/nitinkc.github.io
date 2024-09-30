@@ -10,10 +10,12 @@ In Google Cloud Platform's BigQuery, clustering and partitioning are optimizatio
 techniques used to improve query performance and manage costs when working with large datasets.
 
 # Indexing
-An index is a data structure that improves the speed of data retrieval operations on a database table.
+For Tradition and Old DBs, an index is a data structure that improves the speed of data retrieval operations on a database table.
 
 **Use in BigQuery**: While BigQuery doesn’t support traditional indexing like other databases,
 leveraging partitioning and clustering effectively serves a similar purpose by optimizing data access paths.
+
+> Indexes are a performance drag when modifying records (Write Heavy DBs).
 
 # Partitioning
 Partitioning involves dividing a large database table into smaller, 
@@ -29,28 +31,42 @@ Partition can be based on:
 - Time-based columns: Such as DATE or TIMESTAMP.
 - Integer range: You can also partition by integer values, which can be useful for datasets that can be grouped into ranges.
 
+## Maximum Partitions in Google BigQuery
+As of now BigQuery supports:
+- Up to 4,000 partitions **per table** for partitioned tables based on **a single column**.
+- However, if a table is partitioned by ingestion time, it can support **daily partitions**,
+  - which allows for a much larger number of partitions.
+
+```sql
+CREATE TABLE my_dataset.my_partitioned_table (
+    event_id INT64,
+    event_name STRING,
+    event_date DATE
+) PARTITION BY event_date;
+```
+
 # Clustering
 Clustering further organizes data **within the partitions**.
 It **sorts** the data based on specific columns, allowing for more efficient querying.
 
-Let’s consider a scenario with 2,000 facilities and 200,000 patients with Visit Table
-
-Table Schema for Visit Table
 ```sql
 CREATE TABLE `project_name.dataset_id.patient_visits`
-    PARTITION BY CAST(FARM_FINGERPRINT(facility_id) % 100 AS INT64)  -- Partition by hashed facility_id
-    CLUSTER BY patient_id  -- Cluster by patient_id
+    PARTITION BY CAST(FARM_FINGERPRINT(facility_id) % 100 AS INT64)  -- Partition by hashed(UUID) facility_id, LOW CARDINALITY
+    --TODO: CHECK IF this is POSSIBLE
+    CLUSTER BY patient_id, visit_date -- Cluster by both patient_id and visit_date  
+    -- Cluster by patient_id (High Cardinality), visit_Date(medium cardinality)
+     
 AS
 SELECT
     visit_id, --STRING
-    patient_id, --STRING
-    facility_id, --STRING, UUID format
+    patient_id, --STRING, HIGH CARDINALITY
+    facility_id, --STRING, UUID format, LOW CARDINALITY
     visit_date, --DATE
     visit_reason --STRING
 FROM
     `project_name.dataset_id.source_table`;
 
--- Data insert
+-- Data insert, for 2 patinets in same facility
 INSERT INTO `project_name.dataset_id.patient_visits` (visit_id, patient_id, facility_id, visit_date, visit_reason)
 VALUES
     ('V001', 'P001', '550e8400-e29b-41d4-a716-446655440000', '2023-07-01', 'Checkup'),
@@ -59,15 +75,14 @@ VALUES
 ```
 
 **Partitioning**:
-
-If you partition your table by the `visit_date`, and if you’re analyzing patient visits for July 2023, 
+- If you partition your table by the `visit_date`, and if you’re analyzing patient visits for July 2023, 
 BigQuery would only look at the partition for that month, significantly reducing the amount of data processed.
 
 **Clustering**:
 - By Facility ID: If many queries focus on specific facilities, clustering by this column can reduce the amount of data scanned.
 - By Patient ID or other attributes: Clustering by patient attributes might also be beneficial if queries often filter on patient demographics.
 
-Within each partition (e.g., July 2023), you could cluster your data by facility_id.
+Within each partition (e.g., July 2023), you could cluster your data by patient_id or facility_id.
 
 If a query is run to get patient visit details for Facility A in July 2023,
 BigQuery can quickly find the relevant data without scanning all the records for other facilities.
@@ -79,7 +94,6 @@ SELECT *
 FROM `project_name.dataset_id.patient_visits`
 WHERE CAST(FARM_FINGERPRINT(facility_id) % 100 AS INT64) = 00576
 AND visit_date BETWEEN '2023-07-01' AND '2023-07-31';
-
 ```
 
 ## Querying by Patient ID
@@ -90,71 +104,108 @@ WHERE patient_id = 'P001'
 AND visit_date = '2023-07-01';
 ```
 
-# Clustering v/s Partitioning
-**Use Clustering When:**
-- You have high cardinality columns that are frequently queried but not suitable for partitioning (e.g., `patient_id`).
-- Queries often filter or aggregate on specific columns, and sorting by those columns can help reduce the amount of data scanned.
-- You want to optimize the performance of queries that involve filtering or joining based on certain attributes.
-- Low Cardinality Example:
-  - If you frequently filter by a status column(Low Cardinality), clustering can help optimize queries even if it has low cardinality 
-  because the data is organized to speed up access.
-
+# Partitioning v/s Clustering
 **Use Partitioning When:**
-- The column used for partitioning has a **time-based nature** (e.g., dates), which is common for datasets that grow over time.
-- The query patterns predominantly filter on a specific **range of values**, especially if those values are well-defined (like date ranges).
-- You want to significantly **reduce the amount of data scanned** for queries that filter on that column.
-- High Cardinality Example:
-    - If you're partitioning by a timestamp column representing the date of an event, this is a good use case for partitioning,
-      as it can optimize queries focused on specific time frames.
+- The column used for partitioning has a **time-based nature** (dates, medium cardinality)
+- The query patterns filter on a specific **range of values**, especially if those values are well-defined (like date ranges).
+- You want to significantly **reduce the amount of data scanned** for queries that filter on a **low cardinality** column.
 
-**Combined Use Cases**
+**Use Clustering When:**
+- You have **high cardinality** columns frequently queried (e.g., `patient_id`) but unsuitable for partitioning.
+- Queries filter or aggregate on specific columns, benefiting from sorting.
+- You want to enhance performance for filtering or joining based on certain attributes.
 
-**Partitioning and Clustering Together**:
-You can use both strategies together for maximum performance. For example, 
+**Combined Use Cases : Partitioning and Clustering Together**:
+Use both strategies together for maximum performance. For example, 
 - partition by a date column (high cardinality, time-based) and 
-- cluster by facility_id (high cardinality) and status (low cardinality) to optimize a variety of queries.
+- cluster by `facility_id (medium cardinality)` and `status (low cardinality)` to optimize a variety of queries.
 
 # Sharding
-Sharding is a technique used in distributed databases to **horizontally partition** data across multiple servers or nodes (shards). 
-Each shard independently stores a subset of the data, and together they form a logical whole. 
+Sharding is a technique for **horizontally partitioning** data across multiple servers or nodes (shards). Each shard independently stores a subset of the data, collectively forming a logical whole.
 
-Sharding is typically used to improve scalability and performance by distributing the workload across multiple machines, 
-allowing for parallel processing of queries and transactions.
+### Benefits of Sharding
+- **Improves Scalability**: Distributes data across multiple machines, making it easier to handle large datasets.
+- **Enhances Performance**: Allows for parallel processing of queries and transactions, leading to faster query execution.
+
+### Sharding in BigQuery
+While BigQuery does not explicitly use the term "sharding," you can achieve similar results by:
+1. **Partitioned Tables**: Use time-based columns to partition your data, optimizing query performance and reducing costs.
+2. **Sharded Tables**: Create multiple tables with a common naming convention (e.g., `dataset.table_2021`, `dataset.table_2022`) to distribute data across different tables.
 
 # Early data filtering
-**Context**
-
-Most analyzed data access patterns are **entity-centric**, where data is fetched by passing a unique identifier (e.g., ENTITY_ID) 
-as a filter while running queries. 
+**Context:** Most analyzed data access patterns are **entity-centric**, where data is fetched by passing a unique identifier 
+(e.g., ENTITY_ID) as a filter while running queries. 
 
 However, only a few tables in the domain contain the same identifier, resulting in poor performance as data from multiple 
 joined tables needs to be read and filtered **_after the join_**.
 
+For the two tables
+```mermaid!
+erDiagram
+    ENTITY_TABLE {
+        INT ENTITY_ID PK "Unique identifier"
+        STRING MASTER_IDENTIFIER "Secondary identifier"
+        STRING NAME "Name of the entity"
+        DATETIME CREATED_AT "Timestamp of creation"
+    }
+    
+    DETAILS_TABLE {
+        INT ENTITY_ID FK "Link to ENTITY_TABLE"
+        STRING DETAILS "Descriptive information"
+        DATETIME LAST_UPDATED "Timestamp of last update"
+    }
+    
+    ENTITY_TABLE ||--o{ DETAILS_TABLE : "has"
+```
+
+**Issue:** Only ENTITY_TABLE is filtered by MASTER_IDENTIFIER, causing all records in DETAILS_TABLE to be processed before filtering.
 ```sql
 SELECT
   e.MASTER_IDENTIFIER,
   e.ENTITY_ID,
   d.DETAILS
 FROM `project.dataset.ENTITY_TABLE` e
-JOIN `project.dataset.DETAILS_TABLE` d USING (ENTITY_ID) --check here
+JOIN `project.dataset.DETAILS_TABLE` d USING (ENTITY_ID)
 WHERE e.MASTER_IDENTIFIER = '12345'
 ```
 
-**Issue:**
-- Only the ENTITY_TABLE is filtered by MASTER_IDENTIFIER.
-- Other tables are joined without prior filtering.
+**Execution Plan Breakdown**
+Table Scans:
 
-**Solution**
+Full Table Scan on ENTITY_TABLE: 
+- The database starts by scanning the entire ENTITY_TABLE to find rows where MASTER_IDENTIFIER = '12345'. 
+- This can be inefficient if the table is large, as it reads all rows.
 
-Filter data earlier using **a column present in all tables**, such as ENTITY_ID.
+Full Table Scan on DETAILS_TABLE: 
+-  The join will also require scanning the DETAILS_TABLE to gather all records associated with the ENTITY_ID, 
+regardless of whether they match the MASTER_IDENTIFIER.
 
+Join Operation:
+
+After filtering ENTITY_TABLE, the database will perform a join operation using the ENTITY_ID column. 
+Since the filtering occurred after the join, all rows from DETAILS_TABLE must be considered for joining, leading to unnecessary data processing.
+
+Result Filtering:
+
+Once the join is complete, the system then filters out any results that don’t match the 
+specified MASTER_IDENTIFIER. This means that a lot of unnecessary data was processed before filtering, which leads to poor performance.
+
+Issues Identified
+Lack of Early Filtering: The main issue is that filtering is applied only to ENTITY_TABLE, 
+meaning all records from DETAILS_TABLE are processed before the result is narrowed down.
+
+Inefficient Data Retrieval: Full table scans on both tables, especially if they are large , 
+can lead to slow performance and high resource usage.
+
+
+**Solution:** Filter data earlier using **a common column present in all tables**, such as `ENTITY_ID`.
 ```sql
 SELECT
     e.MASTER_IDENTIFIER,
     e.ENTITY_ID,
     d.DETAILS
 FROM `project.dataset.ENTITY_TABLE` e
-JOIN `project.dataset.DETAILS_TABLE` d USING (ENTITY_ID) -- instead of MASTER_IDENTIFIER
+JOIN `project.dataset.DETAILS_TABLE` d USING (ENTITY_ID)
 WHERE e.ENTITY_ID = '67890'; -- instead of MASTER_IDENTIFIER
 ```
 
