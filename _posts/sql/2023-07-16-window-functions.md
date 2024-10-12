@@ -5,15 +5,16 @@ categories: ['SQL']
 tags: ['SQL']
 ---
 
-
 # WHAT IS A FUNCTION?
-A named block of code which returns same value when it is called, using the same argument.
+
+A named block of code which returns same value when it is called, using the same
+argument.
 -- WINDOW Functions / Analytic Functions
 
 ROW_NUMBER
 
 RANK
- 
+
 DENSE_RANK
 
 LEAD
@@ -29,6 +30,7 @@ NTH_VALUE
 NTILE
 
 ##### Not used much
+
 CUME_DIST
 
 PERCENT_RANK

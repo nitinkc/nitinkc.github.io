@@ -4,30 +4,38 @@ date:   2024-09-23 20:14:00
 categories: ["DevOps","GitOps"]
 tags: ["DevOps","GitOps"]
 ---
+
 {% include toc title="Index" %}
 
-Start Docker 
+Start Docker
 
 Start minikube
+
 ```shell
 minikube start
 ```
 
 In a separate terminal tab, start minikube dashboard
+
 ```shell
 minikube dashboard
 ```
 
-All Dev Ops projects are at [https://github.com/nitinkc/GitOps](https://github.com/nitinkc/GitOps)
+All Dev Ops projects are
+at [https://github.com/nitinkc/GitOps](https://github.com/nitinkc/GitOps)
 
+## Microservice
 
-## Microservice 
-Make any changes to the [https://github.com/nitinkc/messenger-spring-boot/tree/master](https://github.com/nitinkc/messenger-spring-boot/tree/master)
+Make any changes to
+the [https://github.com/nitinkc/messenger-spring-boot/tree/master](https://github.com/nitinkc/messenger-spring-boot/tree/master)
 
-The circle-ci pipeline is setup to push the latest build image to docker. [Code](https://github.com/nitinkc/messenger-spring-boot/blob/master/.circleci/config.yml)
+The circle-ci pipeline is setup to push the latest build image to
+docker. [Code](https://github.com/nitinkc/messenger-spring-boot/blob/master/.circleci/config.yml)
 
 ## Release with flux
-The release to be done AFTER the helm project is up and running through the github repo via pages server
+
+The release to be done AFTER the helm project is up and running through the
+github repo via pages server
 
 On the minikube cluster running on local
 

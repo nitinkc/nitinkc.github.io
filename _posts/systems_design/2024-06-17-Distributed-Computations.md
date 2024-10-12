@@ -4,25 +4,29 @@ date:   2024-06-17 11:45:00
 categories: [System Design]
 tags: [System Design]
 ---
+
 {% include toc title="Index" %}
 
 Comes into being after deploying distributed data storage
 
 # Scatter/Gather
-Scatter the data to a lots of individual nodes where its processed and gather those results back together.
+
+Scatter the data to a lots of individual nodes where its processed and gather
+those results back together.
+
 - Data stored locally is the key
 
 Spark :  scatter/Gather rater than map-reduce
 
+Map-reduce
 
-Map-reduce 
 - Hadoop - legacy pattern
-
 
 Apache Storm : event based processing rather than Batch processing.
 
 # Map reduce
-mappers and reducers 
+
+mappers and reducers
 
 ```markdown
 1. **Map Phase:**
@@ -77,15 +81,17 @@ mappers and reducers
 ```
 
 # Hadoop
+
 Distributed Computing Framework
 
 - map reduce API
 - map reduce job management
 - HDFS (Hadoop distributed filesystem)
 - Enormous eco system
-  - hbase, hive, pig, zoo keeper, mahaut, sqoop, flume
+    - hbase, hive, pig, zoo keeper, mahaut, sqoop, flume
 
 ## HDFS
+
 - files & directories
 - metadata management by a replicated master
 - files stored in large, immutable, replicated blocks

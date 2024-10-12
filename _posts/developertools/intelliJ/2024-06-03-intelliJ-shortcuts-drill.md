@@ -9,9 +9,9 @@ tags: [Shortcuts]
 **LEGEND :**
 **⌘** Cmd &emsp;
 **⇧** Shift &emsp;
-**^** Ctrl  &emsp;
-**⌥** Opt  &emsp;
-**⎋** Esc  &emsp;
+**^** Ctrl &emsp;
+**⌥** Opt &emsp;
+**⎋** Esc &emsp;
 **↵** Return &emsp;  
 **⌫** Delete
 **↑ ↓ → ←** &emsp;

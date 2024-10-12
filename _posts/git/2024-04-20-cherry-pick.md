@@ -5,8 +5,10 @@ categories: ['Git']
 tags: ['Git']
 ---
 
-Git cherry-pick is a command used to apply a specific commit from one branch to another. 
-It's useful when you want to pick only certain commits from one branch and apply them to another branch, without merging the entire branch
+Git cherry-pick is a command used to apply a specific commit from one branch to
+another.
+It's useful when you want to pick only certain commits from one branch and apply
+them to another branch, without merging the entire branch
 
 ```shell
 #Get the commit hash of the commit that needs to be cherry picked or use intelliJ History

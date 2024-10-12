@@ -4,10 +4,12 @@ date:   2024-04-19 21:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+
 {% include toc title="Index" %}
 
 Solution for the issue on Local microservice testing
-Caused by: `javax.net.ssl.SSLHandshakeException`: PKIX path building failed: `sun.security.provider.certpath.SunCertPathBuilderException`: 
+Caused by: `javax.net.ssl.SSLHandshakeException`: PKIX path building failed:
+`sun.security.provider.certpath.SunCertPathBuilderException`:
 unable to find valid certification path to requested target
 
 Certificate issue for Mac and Windows users when opening GKE URLs from UI:
@@ -25,10 +27,13 @@ For Macbook double-click, and it will install or open `Key Chain Access`
 
 Export the certificate from Keychain access and Save it as pem file
 
-If you would like to convert your binary .cer file to an ascii .pem file run this command
+If you would like to convert your binary .cer file to an ascii .pem file run
+this command
+
 ```shell
 openssl x509 -inform der -in "My_Enterprise_Root_CA.cer" -out "My_Enterprise_Root_CA.pem"
 ```
+
 # Application
 
 ![sslIssueFix.png]({{ site.url }}/assets/images/sslIssueFix.png)
@@ -41,10 +46,11 @@ Turn On/Off based on the certificate
 
 # Install the certificate in JDK
 
-When developing microservice that needs connection to GKE endpoints, 
+When developing microservice that needs connection to GKE endpoints,
 the local machines need have cert imported to java keystore.
 
-path of jdk installation: /Library/Java/JavaVirtualMachines/jdk-11.0.8.jdk/Contents/Home/lib/security/cacerts.
+path of jdk installation:
+/Library/Java/JavaVirtualMachines/jdk-11.0.8.jdk/Contents/Home/lib/security/cacerts.
 
 please execute the command with the path added in it:
 
@@ -54,5 +60,6 @@ sudo keytool -import -file /Users/${UserName}/Documents/My_Enterprise_Root_CA.ce
 ```
 
 if it asks for 2 passwords then
+
 - 1st password would be your mac/windows login password
 - 2nd password would be "changeit"

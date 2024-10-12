@@ -4,6 +4,7 @@ date:   2023-09-15 21:30:00
 categories: Spring Microservices
 tags: [Spring Microservices]
 ---
+
 {% include toc title="Index" %}
 
 [Simple Global Exception Handler Project with Notes](https://github.com/nitinkc/SpringBoot-GlobalExceptionHandling)
@@ -11,6 +12,7 @@ tags: [Spring Microservices]
 [SpringBoot Reference Project with more complexities](https://github.com/nitinkc/SpringBoot-reference)
 
 If the data doesn't exist, a custom exception can be thrown if needed
+
 ```java
 //Retrieve specific users
 @GetMapping(path = "/user/{id}")
@@ -46,12 +48,16 @@ public class UserNotFoundException extends BusinessException {
 
 Similar format of exception for all the Exception Classes.
 
-The `ResponseEntityExceptionHandler` class in Spring MVC is designed to handle exceptions and provide appropriate 
-responses. By extending ResponseEntityExceptionHandler, you inherit its functionality and can override methods 
+The `ResponseEntityExceptionHandler` class in Spring MVC is designed to handle
+exceptions and provide appropriate
+responses. By extending ResponseEntityExceptionHandler, you inherit its
+functionality and can override methods
 to customize the exception handling behavior.
 
-However, **it's not strictly necessary** to extend ResponseEntityExceptionHandler to create a global exception 
-handler. You can create a global exception handler without extending ResponseEntityExceptionHandler, 
+However, **it's not strictly necessary** to extend
+ResponseEntityExceptionHandler to create a global exception
+handler. You can create a global exception handler without extending
+ResponseEntityExceptionHandler,
 but you would need to handle the response creation manually.
 
 ```java
@@ -72,28 +78,39 @@ public class ValidationExceptionHandler {
     ...
 }
 ```
+
 # Difference between RestControllerAdvice and ControllerAdvice
 
 `@ControllerAdvice`
 
-- Targets all Spring MVC controllers, including those that return views (ModelAndView).
-It is typically used in applications where controllers return both views and data (JSON/XML responses).
-The handler methods in a class annotated with @ControllerAdvice can return a variety of objects including ModelAndView, ResponseEntity, HttpHeaders, HttpEntity, etc., providing flexibility in response handling.
+- Targets all Spring MVC controllers, including those that return views (
+  ModelAndView).
+  It is typically used in applications where controllers return both views and
+  data (JSON/XML responses).
+  The handler methods in a class annotated with @ControllerAdvice can return a
+  variety of objects including ModelAndView, ResponseEntity, HttpHeaders,
+  HttpEntity, etc., providing flexibility in response handling.
 
 `@RestControllerAdvice`
 
-- Targets only classes annotated with `@RestController` or those that return `@ResponseBody`.
-- It is specifically designed for RESTful web services where controllers exclusively produce data in the form of JSON or XML responses.
-- The handler methods in a class annotated with @RestControllerAdvice typically return response entities like ResponseEntity or plain objects (which are automatically serialized to JSON/XML), 
-as they are designed to handle data-centric exceptions in a RESTful context.
+- Targets only classes annotated with `@RestController` or those that return
+  `@ResponseBody`.
+- It is specifically designed for RESTful web services where controllers
+  exclusively produce data in the form of JSON or XML responses.
+- The handler methods in a class annotated with @RestControllerAdvice typically
+  return response entities like ResponseEntity or plain objects (which are
+  automatically serialized to JSON/XML),
+  as they are designed to handle data-centric exceptions in a RESTful context.
 
 ### @ResponseStatus
 
 Use `@ResponseStatus(HttpStatus.NOT_FOUND)` to denote the exception code
 
-The custom exception class can extend Exception or RunTimeException. 
+The custom exception class can extend Exception or RunTimeException.
 
-The `@ResponseStatus` of Global Exception class (The one with `@ControllerAdvice`) **takes precedence** if it's used in both
+The `@ResponseStatus` of Global Exception class (The one with
+`@ControllerAdvice`) **takes precedence** if it's used in both
+
 ```java
 @ResponseStatus(HttpStatus.NO_CONTENT)//200 series, //Seems Optional, the one in the Global exceptional handler takes precedence
 public class StudentNotFoundException extends Exception {
@@ -103,7 +120,8 @@ public class StudentNotFoundException extends Exception {
 }
 ```
 
-If the requirement is to send the exception in business defined format, like below
+If the requirement is to send the exception in business defined format, like
+below
 
 ```json
 {
@@ -113,7 +131,9 @@ If the requirement is to send the exception in business defined format, like bel
 }
 ```
 
-Then the Custom Response class can be defined and be called into the GlobalException handler class
+Then the Custom Response class can be defined and be called into the
+GlobalException handler class
+
 ```java
 public class ExceptionResponse {//Use Getters and Setters to avoid HttpMediaTypeNotAcceptableException
     private String errorCode;
@@ -151,6 +171,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 ```
 
 Sample response from a properly handled exception
+
 ```json5
 {
     "from": "From Exception Response",
@@ -188,7 +209,7 @@ Handle the `ConstraintViolationException`
 
 ```java
 @ExceptionHandler(ConstraintViolationException.class)
-protected ResponseEntity<MyExceptionResponse> handleRequestParamNotValid(Exception exception, final HttpServletRequest request) {
+private ResponseEntity<MyExceptionResponse> handleRequestParamNotValid(Exception exception, final HttpServletRequest request) {
 
     MyExceptionResponse error = MyExceptionResponse.builder()
             .from("Validation Exception Response from handleRequestParamNotValid")
@@ -222,9 +243,12 @@ protected ResponseEntity<MyExceptionResponse> handleRequestParamNotValid(Excepti
 
 # Ordered.HIGHEST_PRECEDENCE
 
-If there are two handlers for an exception in two separate classes, the one with higher precedence will execute first.
+If there are two handlers for an exception in two separate classes, the one with
+higher precedence will execute first.
 
-Example for `BadInputException`, the one from `ValidationExceptionHandler` takes priority
+Example for `BadInputException`, the one from `ValidationExceptionHandler` takes
+priority
+
 ```java
 @ControllerAdvice
 @Slf4j
@@ -241,6 +265,7 @@ public class ValidationExceptionHandler {
 ```
 
 Same exception is handled in another class
+
 ```java
 @Slf4j
 @RestControllerAdvice

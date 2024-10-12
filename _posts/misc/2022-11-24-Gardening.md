@@ -10,12 +10,13 @@ The 16 milestones of Life
 
 # SooraDasa (1478 AD to 1581 AD)
 
-Sooradasa envisioned Krishna in His childhood form. Explaining him the 16 stages of life.
+Sooradasa envisioned Krishna in His childhood form. Explaining him the 16 stages
+of life.
 
 प्रथम संस्कार  : गर्भाधान संस्कार, Getting ready for Parent hood
 
 
-सीमन्तोन्नयन संस्कार 
+सीमन्तोन्नयन संस्कार
 : Punsayaman Sanskara -
 
 जातकर्म संस्कार : 6th day after birth - (naam karma)

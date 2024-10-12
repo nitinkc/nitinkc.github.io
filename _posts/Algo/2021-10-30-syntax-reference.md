@@ -9,16 +9,16 @@ tags: [Algorithms]
 
 # Syntax Reference for Coding Interviews
 
-
 ### Boolean Logic (multiple if statements into switch)
+
 {% gist nitinkc/96387a9700c9c58185a969ae48bfdc45 %}
 
-
 ### For Loop Traps
+
 {% gist nitinkc/382798a984e00a732d86a12a6637e0a2 %}
 
-
 ### Reading, Parsing and Type Checking Command Line Inputs.
+
 ```java
 // Assuming 2 command line arguments <Nitin 29>
 if (args.length == 0 || args.length > 2) {
@@ -30,12 +30,14 @@ int age = Integer.parseInt(args[1]);
 ```
 
 ### Running time of a method
+
 ```java
 System.currentTimeMillis();//type long, from Jan 1 1970
 System.nanoTime();
 ```
 
 ### Random
+
 ```java
 import java.util.Random;
 
@@ -93,6 +95,7 @@ import java.util.Scanner;
 ## Output File Handling
 
 ### Writing text to File
+
 ```java
 import java.io.PrintWriter;
  final String FILENAME = "nitin.txt";
@@ -106,6 +109,7 @@ import java.io.PrintWriter;
 ```
 
 ### Appending Text to file
+
 ```java
 FileWriter fw = new FileWriter("Names.txt", true);
 PrintWriter pw = new PrintWriter(fw);
@@ -114,6 +118,7 @@ PrintWriter pw = new PrintWriter(new FileWriter("Names.txt, true"));
 ```
 
 ### Reading Data from a file
+
 ```java
 File myFile = new File("customer.txt");
 Scanner ipFile = new Scanner(myFile); //instead of System.in

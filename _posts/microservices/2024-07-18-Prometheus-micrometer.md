@@ -4,12 +4,17 @@ date:   2024-07-18 17:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+
 {% include toc title="Index" %}
 
-In Prometheus, metrics can be categorized into several types based on the **nature of the data** they represent.
+In Prometheus, metrics can be categorized into several types based on the *
+*nature of the data** they represent.
 
 # Counter
-A counter is a cumulative metric that represents a single numerical value that only ever goes up (and resets when the process restarts). Counters are typically used to represent counts of events or increments over time.
+
+A counter is a cumulative metric that represents a single numerical value that
+only ever goes up (and resets when the process restarts). Counters are typically
+used to represent counts of events or increments over time.
 
 ```java
 private final MeterRegistry meterRegistry;
@@ -35,8 +40,14 @@ public void processRequest() {
     requestCounter.increment();
 }
 ```
+
 # Gauge
-A gauge is a metric that represents a single numerical value that can arbitrarily go up and down. Gauges are used for measured values like temperatures or current memory usage, where the value can both increase and decrease.
+
+A gauge is a metric that represents a single numerical value that can
+arbitrarily go up and down. Gauges are used for measured values like
+temperatures or current memory usage, where the value can both increase and
+decrease.
+
 ```java
 private final MeterRegistry meterRegistry;
 AtomicInteger activeUsers = new AtomicInteger(0);
@@ -59,8 +70,12 @@ public int userLoggedIn() {
     return activeUsers.incrementAndGet();
 }
 ```
+
 # Summary
-Similar to a histogram, a summary samples observations (usually durations or sizes) over a sliding time window and calculates configurable quantiles over these samples.
+
+Similar to a histogram, a summary samples observations (usually durations or
+sizes) over a sliding time window and calculates configurable quantiles over
+these samples.
 
 ```java
 private final MeterRegistry meterRegistry;
@@ -84,12 +99,18 @@ public void processHttpResponse() {
     responseSizesSummary.record(simulateHttpResponseSize);
 }
 ```
-# Histogram
-A histogram samples observations (usually durations or sizes) and counts them in configurable buckets. It also provides a sum of all observed values.
 
+# Histogram
+
+A histogram samples observations (usually durations or sizes) and counts them in
+configurable buckets. It also provides a sum of all observed values.
 
 # Untyped
-Untyped metrics are similar to gauges, but they don't have a specified type. They can be used when the value semantics don't fit the typical gauge or counter models.
+
+Untyped metrics are similar to gauges, but they don't have a specified type.
+They can be used when the value semantics don't fit the typical gauge or counter
+models.
+
 ```java
 private final MeterRegistry meterRegistry;
 private final AtomicLong customValue = new AtomicLong(0);
@@ -175,8 +196,8 @@ a_timer_http_request_duration_seconds_sum 0.296439955
 a_timer_http_request_duration_seconds_max 0.296439955
 ```
 
-
 global:
 scrape_interval: 60s
 
-Grafana queries the data stored in Prometheus (or other data sources) to create visualizations on its dashboards.
+Grafana queries the data stored in Prometheus (or other data sources) to create
+visualizations on its dashboards.

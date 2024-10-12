@@ -5,53 +5,101 @@ categories: [Microservices]
 tags: [Microservices]
 ---
 
-Kafka can be used in both messaging and event-driven architectures, but the terminology and concepts fit both scenarios
+Kafka can be used in both messaging and event-driven architectures, but the
+terminology and concepts fit both scenarios
 
 # Kafka Terminology
-- **Producer**: A producer is a client that sends messages to the Kafka server to the specified topic.
-  - Sends messages to Kafka topics. In an event-driven architecture, a producer might publish events (e.g., "OrderPlaced"), while in a messaging architecture, it might send messages with specific instructions (e.g., "ProcessOrder").
-- **Consumer**: Consumers are the recipients who receive messages from the Kafka server.
-  - Receives messages from Kafka topics. Consumers process the data or events they receive. In an event-driven architecture, consumers react to events, while in a messaging system, consumers handle specific instructions or requests.
-- **Broker**: Brokers can create a Kafka cluster by sharing information using Zookeeper. A broker receives messages from producers and consumers fetch messages from the broker by topic, partition, and offset.
-  - A Kafka broker is a server that stores and serves messages. Brokers handle the distribution of messages across partitions and ensure that consumers can access the messages they need.
-- **Cluster**: Kafka is a distributed system. A Kafka cluster contains multiple brokers sharing the workload.
-  -  A Kafka cluster is a group of brokers working together to provide fault tolerance and scalability. Both messaging and event-driven systems benefit from Kafka's distributed nature.
-- **Topic**: A topic is a category name to which messages are published and from which consumers can receive messages.
-  - Topics are categories or channels to which messages are published. Topics can be used for both event streams (e.g., "UserActivity") and messaging queues (e.g., "OrderRequests").
-- **Partition**: Messages published to a topic are spread across a Kafka cluster into several partitions. Each partition can be associated with a broker to allow consumers to read from a topic in parallel.
-  - Topics are divided into partitions to allow parallel processing and scalability. Partitions enable Kafka to handle high-throughput messaging and event streaming.
-- **Offset**: Offset is a pointer to the last message that Kafka has already sent to a consumer.
-  -Each message in a partition has a unique offset. This allows consumers to keep track of which messages they have processed, which is useful for both event processing and message handling.
 
-In an **event-driven system**, Kafka's role is to broadcast events to multiple consumers, often with the assumption that consumers might process these events independently.
+- **Producer**: A producer is a client that sends messages to the Kafka server
+  to the specified topic.
+    - Sends messages to Kafka topics. In an event-driven architecture, a
+      producer might publish events (e.g., "OrderPlaced"), while in a messaging
+      architecture, it might send messages with specific instructions (e.g., "
+      ProcessOrder").
+- **Consumer**: Consumers are the recipients who receive messages from the Kafka
+  server.
+    - Receives messages from Kafka topics. Consumers process the data or events
+      they receive. In an event-driven architecture, consumers react to events,
+      while in a messaging system, consumers handle specific instructions or
+      requests.
+- **Broker**: Brokers can create a Kafka cluster by sharing information using
+  Zookeeper. A broker receives messages from producers and consumers fetch
+  messages from the broker by topic, partition, and offset.
+    - A Kafka broker is a server that stores and serves messages. Brokers handle
+      the distribution of messages across partitions and ensure that consumers
+      can access the messages they need.
+- **Cluster**: Kafka is a distributed system. A Kafka cluster contains multiple
+  brokers sharing the workload.
+    - A Kafka cluster is a group of brokers working together to provide fault
+      tolerance and scalability. Both messaging and event-driven systems benefit
+      from Kafka's distributed nature.
+- **Topic**: A topic is a category name to which messages are published and from
+  which consumers can receive messages.
+    - Topics are categories or channels to which messages are published. Topics
+      can be used for both event streams (e.g., "UserActivity") and messaging
+      queues (e.g., "OrderRequests").
+- **Partition**: Messages published to a topic are spread across a Kafka cluster
+  into several partitions. Each partition can be associated with a broker to
+  allow consumers to read from a topic in parallel.
+    - Topics are divided into partitions to allow parallel processing and
+      scalability. Partitions enable Kafka to handle high-throughput messaging
+      and event streaming.
+- **Offset**: Offset is a pointer to the last message that Kafka has already
+  sent to a consumer.
+  -Each message in a partition has a unique offset. This allows consumers to
+  keep track of which messages they have processed, which is useful for both
+  event processing and message handling.
 
-In a **messaging system**, Kafka serves more as a traditional queue where messages are consumed and processed, potentially requiring acknowledgments or responses.
+In an **event-driven system**, Kafka's role is to broadcast events to multiple
+consumers, often with the assumption that consumers might process these events
+independently.
+
+In a **messaging system**, Kafka serves more as a traditional queue where
+messages are consumed and processed, potentially requiring acknowledgments or
+responses.
 
 ## Kafka Message Processing
 
-In Kafka, messages are not "queued" in the traditional sense. 
-Instead, they are published to Kafka topics and stored in log files within Kafka brokers. 
-Kafka uses a distributed commit log to store messages, and consumers read messages from these log files.
+In Kafka, messages are not "queued" in the traditional sense.
+Instead, they are published to Kafka topics and stored in log files within Kafka
+brokers.
+Kafka uses a distributed commit log to store messages, and consumers read
+messages from these log files.
 
-Producers Publish Messages: Producers send messages to Kafka topics. Kafka appends these messages to the end of the topic's log.
+Producers Publish Messages: Producers send messages to Kafka topics. Kafka
+appends these messages to the end of the topic's log.
 
-Messages are Retained: Messages in Kafka logs are retained for a configurable period, even after consumers have read them. This retention period is typically set by the Kafka configuration.
+Messages are Retained: Messages in Kafka logs are retained for a configurable
+period, even after consumers have read them. This retention period is typically
+set by the Kafka configuration.
 
-Consumers Read Messages: Consumers subscribe to topics and read messages from Kafka logs. They maintain an offset to keep track of which messages they have consumed.
+Consumers Read Messages: Consumers subscribe to topics and read messages from
+Kafka logs. They maintain an offset to keep track of which messages they have
+consumed.
 
-Parallel Processing: Multiple consumers can read messages from the same topic in parallel. Each message is read by only one consumer within a consumer group.
+Parallel Processing: Multiple consumers can read messages from the same topic in
+parallel. Each message is read by only one consumer within a consumer group.
 
-Offset Management: Kafka keeps track of the offset (position) of each consumer within a topic. This allows consumers to resume reading from where they left off, making Kafka a distributed message processing system.
+Offset Management: Kafka keeps track of the offset (position) of each consumer
+within a topic. This allows consumers to resume reading from where they left
+off, making Kafka a distributed message processing system.
 
-Kafka is a distributed streaming platform, designed for high-throughput, fault-tolerant, and distributed data streaming. While messages are not queued in the traditional sense, Kafka's design allows for efficient and scalable message processing.
+Kafka is a distributed streaming platform, designed for high-throughput,
+fault-tolerant, and distributed data streaming. While messages are not queued in
+the traditional sense, Kafka's design allows for efficient and scalable message
+processing.
 
-Messages are not removed immediately after being consumed, but they will eventually be deleted based on the retention policy. The retention policy ensures that Kafka can handle large volumes of data while allowing consumers to catch up on messages they might have missed.
-
+Messages are not removed immediately after being consumed, but they will
+eventually be deleted based on the retention policy. The retention policy
+ensures that Kafka can handle large volumes of data while allowing consumers to
+catch up on messages they might have missed.
 
 ###
+
 Download kafka : https://kafka.apache.org/downloads
 
-Run the following commands 
+Run the following commands
+
 ```shell
 cd /Applications/Development/kafka_2.13-3.6.0
 bin/zookeeper-server-start.sh config/zookeeper.properties
@@ -65,6 +113,7 @@ bin/kafka-server-start.sh config/server.properties
 ```
 
 ## Conduktor
+
 - https://docs.conduktor.io/gateway/
 
 Download and install. Run once the kafka server is running on local

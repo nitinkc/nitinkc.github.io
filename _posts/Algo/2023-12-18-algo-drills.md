@@ -4,10 +4,13 @@ date:  2023-12-18 18:27:00
 categories: Algorithms
 tags: [Algorithms]
 ---
+
 {% include toc title="Index" %}
 
 ##### Primitive with parse
-`parseInt` & `parseDouble`: Used for parsing a **String** to a **primitive int or double**.
+
+`parseInt` & `parseDouble`: Used for parsing a **String** to a **primitive int
+or double**.
 
 ```java 
 int i = Integer.parseInt("12345");
@@ -18,7 +21,9 @@ int k = Integer.valueOf(23).intValue();
 `String.valueOf()` converts every **primitive** and **char array** into String
 
 ##### Wrapper using valueOf
-`valueOf` is Used for creating instances of wrapper classes from **String or primitive** to Wrapper
+
+`valueOf` is Used for creating instances of wrapper classes from **String or
+primitive** to Wrapper
 
 ```java
 Integer fromPrimitiveInt = Integer.valueOf(25);//From String or primitive to Wrapper
@@ -27,45 +32,56 @@ Integer fromString = Integer.valueOf("90");
 
 # Difference between parse and format
 
-`parse` takes a string and returns the DataType of the Class being parsed, for example, LocalDate.parse returns LocalDate
+`parse` takes a string and returns the DataType of the Class being parsed, for
+example, LocalDate.parse returns LocalDate
+
 ```java
 LocalDate startLocalDate = LocalDate.parse("2023-10-30");//yyyy-mm-dd format by default
 ```
 
-`format` returns a string from an object. 
+`format` returns a string from an object.
 Eg:
+
 ```java
 String format = startLocalDate.format(DateTimeFormatter.ofPattern("dd-MMM-YYYY"));
 ```
 
 # Difference between parse and valueOf
+
 [https://nitinkc.github.io/java/wrapper-class/](https://nitinkc.github.io/java/wrapper-class/)
 
 # 1D Array
+
 - `a.length` is a field in array
 - Declare simple array
+
 ```java
 int[] a = new int[3];//use [] for array instead of ()
 int[] a = new int[] {1,2,3};
 // Same as above
 int[] b = {1,2,3};
 ```
+
 - Declare an ArrayList using `Arrays.asList()`
+
 ```java
 List<String> list = Arrays.asList("str1","str2");
 ```
 
 - Linearity vs circularity
+
 ```java
 arr[idx] = element; idx = idx+1; //Linear condition until the in = arr.lenght-1;
 arr[idx] = element; idx = (idx+1) % arr.length;//Circularity
 ```
 
 # 2D Array
+
 Declare and Iterate through the 2D Array
+
 ```java
 // Declaring a Rectangular Matrix
-String arr[][] = new String[6][7];
+String[][] arr = new String[6][7];
 int row = arr.length;// Row = 6
 int col = arr[0].length; // Columns = 7
 for (int i = 0; i < arr[0].length; i++) {
@@ -76,6 +92,7 @@ for (int i = 0; i < arr[0].length; i++) {
 ```
 
 using List of List
+
 ```java
 // Declaring a 2D Matrix
 List<List<Integer>> list = new ArrayList<>();
@@ -99,25 +116,31 @@ for (int i = 0; i < list.size(); i = i + 1) {
 ```java
 int size = 10;//any chosen size
         
-boolean arr[] = new boolean[size];//primitive array : Initialized to False
+boolean[] arr = new boolean[size];//primitive array : Initialized to False
 
 Boolean[] array = new Boolean[size];//Wrapper Class
 Arrays.fill(array, Boolean.FALSE);//Initialize entire Array
 ```
 
 # Maps
+
 - contains key or value
+
 ```java
 boolean containsValue = map.containsValue(3);
 boolean containsKey = map.containsKey("Harry");// returns true if the key is in the map, false otherwise
 ```
+
 - getOrDefault
+
 ```java
 for (String str: list){
     map.put(str, map.getOrDefault(str,0) + 1);//count number of occurances
 }
 ```
-- Traditional  
+
+- Traditional
+
 ```java
 for (String str: namesList) {
    if(treeMap.containsKey(str))
@@ -126,6 +149,7 @@ for (String str: namesList) {
        treeMap.put(str,1);
 }
 ```
+
 - put key-value
     ```java
     Map<Integer,Integer> map = new HashMap<>();
@@ -137,7 +161,8 @@ for (String str: namesList) {
     map.putIfAbsent(1, 100); //Inserts the key-value pair (1, 100)
     map.putIfAbsent(1, 200); //Does nothing because key 1 already exists, returns 100
     ```
-- Remove from Map 
+- Remove from Map
+
 ```java
 /* removes the key/value pair for this key if present. Does nothing if the key is not present. */
 map.remove(key); //Concurrent Modification Exception in a Loop
@@ -145,7 +170,9 @@ itr.remove(); //used to avoid concurrent modification exception using an Iterato
 ```
 
 ### Map Iterator
+
 - `map.keySet().iterator()`
+
 ```java
 Iterator<String> itr = map.keySet().iterator();
 while (itr.hasNext()) {
@@ -153,7 +180,9 @@ while (itr.hasNext()) {
     Integer value = map.get(key);
 }
 ```
+
 - `map.entrySet()`
+
 ```java
 // Iterate over the map using entrySet()
 for (Map.Entry<String, Integer> entry : map.entrySet()) {
@@ -161,13 +190,17 @@ for (Map.Entry<String, Integer> entry : map.entrySet()) {
     Integer value = entry.getValue();
 }
 ```
+
 - map forEach - Takes in a BiConsumer (key,value)
+
 ```java
 treeMap.forEach((name, length) -> System.out.println(name + ": " + length));
 ```
 
 ### TreeMap with Comparator
+
 Tree map keeps the **Default Natural Sorting Order** with **the Keys**
+
 ```java
 Map<String, Integer> treeMap = new TreeMap<>();//Default Natural Sorting Order
 Map<String, Integer> treeMapReversed =new TreeMap<>(Comparator.reverseOrder());
@@ -179,7 +212,9 @@ for (String name : namesList) {//From a list of Strints, put String as key
 ```
 
 # Integer & Double
+
 - to Wrapper Classes
+
 ```java
   Integer fromPrimitiveInt = Integer.valueOf(12);
   Integer fromString = Integer.valueOf("123");//NOT NULL SAFE
@@ -187,7 +222,9 @@ for (String name : namesList) {//From a list of Strints, put String as key
   Double fromPrimitiveInt = Double.valueOf(12.36);//From String or primitive to Wrapper
   Double fromString = Double.valueOf("90.25");
 ```
+
 - to primitive Ints
+
 ```java
   //To Primitive Ints
   int i = Integer.parseInt("12345");//Parses strings into primitive int; From String to primitive
@@ -200,17 +237,23 @@ for (String name : namesList) {//From a list of Strints, put String as key
 ```
 
 # Character
+
 - primitive to Wrapper
+
 ```java
   Character d = Character.valueOf('c');//From primitive to Wrapper
 ```
+
 - get ascii value from character
+
 ```java
   char myChar = 'a';
-  int asciiValue = (int) myChar;
+  int asciiValue = myChar;
   System.out.println("From type Casting "+asciiValue);
 ```
+
 - `getNumericValue()` returns Integer value from character
+
 ```java
   // Same can be achieved through the library method
   //Returns unicode for characters from 10 to 35
@@ -218,12 +261,16 @@ for (String name : namesList) {//From a list of Strints, put String as key
   System.out.println(Character.getNumericValue(myChar));
   System.out.println(Character.getNumericValue('1'));
 ```
+
 - get int from char with `-'0'`
+
 ```java
 char charNum2 = '2';
 int num2 = charNum2 - '0';
 ```
+
 - `isLetterOrDigit()` checks for punctuation marks or
+
 ```java
   System.out.println(Character.isLetter('r'));
   System.out.println(Character.isDigit('4'));
@@ -231,10 +278,23 @@ int num2 = charNum2 - '0';
           
   System.out.println(Character.compare('1','1'));//Compare character
 ```
-- int array to keep char ascii as index and array value as count. Use of HashMap can be avoided to keep the count.
-  - primitive int array initializes all the values with 0.
+
+- int array to keep char ascii as index and array value as count. Use of HashMap
+  can be avoided to keep the count.
+    - primitive int array initializes all the values with 0.
+
 ```java
-int chars[] = new int[127];
+int[] chars = new int[127];
+char test = 'a';
+chars[test]++;
+chars['A']++;
+System.out.println(Arrays.toString(chars));//The value of Array at index = asciiVal of char is increased by 1
+/*
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ##1##, 0, 0, 0, 0, 0, 0, 
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,##1##, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]        
+*/] = new int[127];
 char test = 'a';
 chars[test]++;
 chars['A']++;
@@ -245,10 +305,12 @@ System.out.println(Arrays.toString(chars));//The value of Array at index = ascii
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,##1##, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]        
 */
-``` 
+```
 
 # String
+
 - length(), equals() & str.compareTo("");
+
 ```java
   str1.equals(str2);//For Equality, DO NOT USE == (will compare objects)
 
@@ -257,16 +319,20 @@ System.out.println(Arrays.toString(chars));//The value of Array at index = ascii
   // positive if str is "lexicographically" greater than str2
   // ZERO is both strings are equal
 ```
+
 - isBlank()
     ```java
     System.out.println(" ".isBlank());//True -> Returns true if the string is empty or contains only white space 
     ```
 - split()
+
 ```java
     //Cut the Strings from spaces into a words
     String[] words = strList.split(",");
   ```
+
 - trim() and strip()
+
 ```java
   String s = " Malgudi Days   ";
   
@@ -278,6 +344,7 @@ System.out.println(Arrays.toString(chars));//The value of Array at index = ascii
  ```
 
 - contains
+
 ```java
   String sentence = "Hello, world!";
   // Check if the string contains a specific substring
@@ -326,29 +393,35 @@ System.out.println(Arrays.toString(chars));//The value of Array at index = ascii
 
 - Turn anything into String
   ```java
-  char c = 'C';
-  int d = 5;
-  Integer i = 5;
-  String newStr = String.valueOf(i));
-  
-  char c[] = {'T','e','s','t'};
-  String newStr = String.valueOf(c);
-  ```
+char c = 'C';
+int d = 5;
+Integer i = 5;
+String newStr = String.valueOf(i));
+
+char[] c = {'T','e','s','t'};
+String newStr = String.valueOf(c);
+```
 
 # Sorting
+
 All sorts (`Arrays.sort`, `listObj.sort`, `Collections.sort`)
+
 - returns void
 - changes the input array
 
 ### Arrays Sort
+
 ```java
-int intArray[] = {4,5,3,8,2,71};
+int[] intArray = {4,5,3,8,2,71};
 Arrays.sort(intArray);//Default Natural Sorting Order
 Arrays.sort(intArray, Comparator.reverseOrder());//Reverse sorting
 ```
 
 ### List Sort
-- `Comparator.nullsFirst()` or `Comparator.nullsLast()` can be used to accommodate null values.
+
+- `Comparator.nullsFirst()` or `Comparator.nullsLast()` can be used to
+  accommodate null values.
+
 ```java
   List<Integer> list = Arrays.asList(null,4,5,null,3,8,2,71,null);
   list.sort(Comparator.nullsLast(Comparator.naturalOrder()));
@@ -359,6 +432,7 @@ Arrays.sort(intArray, Comparator.reverseOrder());//Reverse sorting
 ```
 
 ### Collections sort
+
 - takes care of arranging the `null` values
 -   ```java
     List<Integer> integerListWithNull = Arrays.asList(5, 6, null, 71, 2, 3);
@@ -382,6 +456,7 @@ treeSet.addAll(namesList);
 // Ordering NOT guaranteed in HashSet
 Set<Integer> set = new HashSet<Integer>();
 ```
+
 - Add elements in a Set
   ```java
   /* Adds the element to the set and returns true if this set does not have this element.
@@ -405,6 +480,7 @@ Set<Integer> set = new HashSet<Integer>();
   ```
 
 ##### Set Iteration
+
 ```java
 Iterator<String> itr = set.iterator();
 while(itr.hasNext()){
@@ -415,6 +491,7 @@ while(itr.hasNext()){
 ```
 
 # Heap
+
 - Declaring min and max heaps
   ```java
   // Primitive Types
@@ -436,11 +513,16 @@ while(itr.hasNext()){
   ```
 
 # Queue
+
 * offer() Enqueue (add) elements to the queue****
-* peek() Retrieves, but **does not remove**, the head of this queue, or returns null if this queue is empty.
-* poll() Retrieves and removes **the head** of this queue, or returns null if this queue is empty.
-* remove() Removes a single instance of the specified element from this queue, if it is present.
-* element() Retrieves, but does not remove, the head of this queue, differs from peek -> throws an exception if queue is empty.
+* peek() Retrieves, but **does not remove**, the head of this queue, or returns
+  null if this queue is empty.
+* poll() Retrieves and removes **the head** of this queue, or returns null if
+  this queue is empty.
+* remove() Removes a single instance of the specified element from this queue,
+  if it is present.
+* element() Retrieves, but does not remove, the head of this queue, differs from
+  peek -> throws an exception if queue is empty.
 
 ```java
 // Declare a queue using LinkedList
@@ -453,11 +535,13 @@ queue.offer("Orange");
 ```
 
 # Stack
+
 - push(E item): Pushes an item onto the top of the stack.
 - pop(): Removes the object at the top of the stack and returns that object.
 - peek(): Looks at the object at the top of the stack **without removing** it.
 - empty(): Checks if the stack is empty.
-- search(Object o): Searches for the specified object in the stack and returns its position.
+- search(Object o): Searches for the specified object in the stack and returns
+  its position.
 
 ```java
 Stack<Integer> stack = new Stack<>();
@@ -517,57 +601,64 @@ for (int i = 0; i < stack.size(); i++) {
 
 # Bitwise
 
-- `Left Shift (<<)`: Shifts the bits to the left by a specified number of positions (n) value << n.
-  - The vacant positions on the right are filled with zeros.
-  - it effectively **multiplies** the operand by `2^n`
+- `Left Shift (<<)`: Shifts the bits to the left by a specified number of
+  positions (n) value << n.
+    - The vacant positions on the right are filled with zeros.
+    - it effectively **multiplies** the operand by `2^n`
 
-- `Signed Right Shift (>>)`: Shifts the bits of the operand to the right by a specified number of positions.
-  - It fills the vacant positions on the left with the sign bit (the leftmost bit) to preserve the sign of the number.
-  - If the number is positive, it fills with 0, and if negative, it fills with 1.
-  - **Divides** the number by `2^n`
+- `Signed Right Shift (>>)`: Shifts the bits of the operand to the right by a
+  specified number of positions.
+    - It fills the vacant positions on the left with the sign bit (the leftmost
+      bit) to preserve the sign of the number.
+    - If the number is positive, it fills with 0, and if negative, it fills with
+      1.
+    - **Divides** the number by `2^n`
 
 - `Unsigned Right Shift (>>>)`
-  - It fills the vacant positions on the left with zeros, regardless of the sign bit.
-  - It is used for **logical right shifts**, and it treats the operand as an unsigned quantity.
-  - ALWAYS use this for the while loop, else infinite loop for negative numbers
+    - It fills the vacant positions on the left with zeros, regardless of the
+      sign bit.
+    - It is used for **logical right shifts**, and it treats the operand as an
+      unsigned quantity.
+    - ALWAYS use this for the while loop, else infinite loop for negative
+      numbers
 
 
-- **Bit representation**                
+- **Bit representation**
   ```java
   short x = 0b11101011;
   Integer.toBinaryString(235)
   ```
-- **Negative number**                   
+- **Negative number**
   ```java
   int positiveNum= 0b00101100;//44
   int twoScomplement = 0b11010100;
   ````
-- **Extracts the LSB of a number**      
+- **Extracts the LSB of a number**
   ```java
   (number & 1)
   ```
-- **Clear/Unset the rightmost set bit** 
+- **Clear/Unset the rightmost set bit**
   ```java
   x & (x - 1)
   ```
-  
-- **Extracts the rightmost set bit**    
+
+- **Extracts the rightmost set bit**
   ```java
   x & ~(x - 1)` isolates the rightmost 1-bit of y and sets all other bits to 0 
   ```
-- **Set the Nth bit** Bitmask           
+- **Set the Nth bit** Bitmask
   ```java
   1 << n
   ```
-- **XOR #1 Cancels when same**          
+- **XOR #1 Cancels when same**
   ```java
   (x^x);//0
   (x^(~x));//-1
   ```
-- **XOR #2 Adding Without Carrying**    
+- **XOR #2 Adding Without Carrying**
   ```java
   ```
-- **Parity = 1 When #1's Odd**          
+- **Parity = 1 When #1's Odd**
   ```java
   x = (x & (x-1));
   parity = (parity ^ 1);

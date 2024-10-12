@@ -4,7 +4,9 @@ date:   2023-10-17 08:30:00
 categories: ['Java',"Performance Engineering"]
 tags: ['Java',"Performance Engineering"]
 ---
+
 {% include toc title="Index" %}
+
 ## Stats
 
 ```java
@@ -13,7 +15,8 @@ tags: ['Java',"Performance Engineering"]
  System.out.println("Fork Join Pool : " + ForkJoinPool.commonPool());
 ```
 
-Notice the difference between the total number of processors and parallelism in the thread pool complying
+Notice the difference between the total number of processors and parallelism in
+the thread pool complying
 `# of threads <= # of cores`
 
 ```log

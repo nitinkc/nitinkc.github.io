@@ -8,7 +8,6 @@ tags: ["Spring Microservices", Spring Boot, GCP]
 
 # Find Latitude and Longitude
 
-
 Required dependency for accessing the API via Java/Spring
 
 ```sh
@@ -37,10 +36,13 @@ public GeocodingResult[] getLatLngFromGeoAPI(String address){
 }
 
 ```
-From the invoking method, extract the latitude and longitude from the GeoCodingResult Array
+
+From the invoking method, extract the latitude and longitude from the
+GeoCodingResult Array
 
 GeocodingResult -> Geometry -> LatLng -> has double lat & double lng;
-USe 
+USe
+
 ```java
 GeocodingResult[] results = getLatLngFromGeoAPI(address);
 Gson gson = new GsonBuilder().setPrettyPrinting().create();

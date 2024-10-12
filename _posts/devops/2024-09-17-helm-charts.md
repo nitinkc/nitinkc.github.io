@@ -4,6 +4,7 @@ date:   2024-09-17 23:02:00
 categories: ["DevOps","GitOps"]
 tags: ["DevOps","GitOps"]
 ---
+
 {% include toc title="Index" %}
 
 ```shell
@@ -13,8 +14,8 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo remove bitnami
 ```
 
-
 # Search the repository:
+
 ```shell
 helm search repo mysql
 
@@ -24,12 +25,15 @@ helm search repo database --versions
 ```
 
 # Installation
+
 ## Default namespace
+
 ```shell
 helm install mydb bitnami/mysql
 ```
 
 ## custom namespace
+
 ```shell
 # Create a namespace
 kubectl create ns non-prod
@@ -39,6 +43,7 @@ helm install --n non-prod mydb2 bitnami/mysql
 ```
 
 # Check the cluster and docker
+
 ```shell
 kubectl get pods
 
@@ -48,11 +53,13 @@ docker images
 ```
 
 # To check the installation status:
+
 ```shell
 helm status mydb
 ```
 
 # Upgrade:
+
 Get the default password
 
 `ROOT_PASSWORD=$(kubectl get secret --namespace default mydb-mysql -o jsonpath="{.data.mysql-root-password}" | base64 --decode)`
@@ -62,12 +69,13 @@ helm upgrade --namespace default mysql-release bitnami/mysql --set auth.rootPass
 ```
 
 # Uninstallation
+
 ```shell
 helm uninstall mysql-release
 ```
 
-
 ## Create custom helm charts
+
 ```shell
 helm create my-first-chart
 helm package my-first-chart
@@ -75,11 +83,13 @@ helm repo index .
 ```
 
 Update the repo
+
 ```shell
 helm repo update
 ```
 
 Install
+
 ```shell
 helm repo add myrepo https://nitinkc.github.io/HelmCharts
 ```
@@ -88,9 +98,8 @@ helm repo add myrepo https://nitinkc.github.io/HelmCharts
 helm install myapp myrepo/my-first-chart
 ```
 
-Changes in the [values file](https://github.com/nitinkc/HelmCharts/blob/main/todo-app/values.yaml#L10-L58)
-
-
+Changes in
+the [values file](https://github.com/nitinkc/HelmCharts/blob/main/todo-app/values.yaml#L10-L58)
 
 # Docker image
 
@@ -108,6 +117,7 @@ Changes pertaining to Dockerimage
 [https://github.com/nitinkc/HelmCharts/commit/bb599c519d66dcb7de5a4457b9e36d33f64cdf0e](https://github.com/nitinkc/HelmCharts/commit/bb599c519d66dcb7de5a4457b9e36d33f64cdf0e)
 
 After helm file changes
+
 ```shell
 helm package todo-app
 helm repo index . 
@@ -116,26 +126,31 @@ helm repo index .
 helm repo update 
 ```
 
-
 Install
+
 ```shell
 helm install todo-service-app myrepo/todo-app 
 ```
 
 Upgrade
+
 ```shell
 helm upgrade --install todo-service-app myrepo/todo-app
 ```
 
 to avoid the hassles of commit and repo update, try
+
 ```shell
 cd todo-app
 helm upgrade --install todo-service-app myrepo/todo-app -f values.yaml
 ```
+
 # Interact with the pod
+
 Get the IP's, names etc from `minikube dashboard`
 
 Check logs
+
 ```shell
 #pod name from minikube Dashboard
 kubectl logs todo-service-app-todo-app-7b45c8749b-ltmfw  
@@ -144,11 +159,15 @@ kubectl logs -f todo-service-app-todo-app-7b45c8749b-ltmfw
 
 Test Connectivity from Inside the Pod
 
-use a temporary pod to check if the application is reachable from within the cluster
+use a temporary pod to check if the application is reachable from within the
+cluster
+
 ```shell
 kubectl run -it --rm --restart=Never busybox --image=busybox -- sh
 ```
+
 Then, inside the busybox shell, try to curl your application:
+
 ```shell
 wget -qO- http://<your-pod-ip>:5000/actuator/health
 ```

@@ -4,15 +4,18 @@ date:  2024-07-14 18:27:00
 categories: Algorithms
 tags: [Algorithms]
 ---
+
 {% include toc title="Index" %}---
 
-The common characteristic : 
-- **the optimum value** (maximum or minimum) 
+The common characteristic :
+
+- **the optimum value** (maximum or minimum)
 - or the number of ways
 - future "decisions" depend on earlier decisions
-  - This characteristic makes a greedy algorithm invalid for a DP problem
-- If you can think of an example where earlier decisions affect future decisions, then DP is applicable. 
-  
+    - This characteristic makes a greedy algorithm invalid for a DP problem
+- If you can think of an example where earlier decisions affect future
+  decisions, then DP is applicable.
+
 # Bottom-up (Tabulation)
 
 bottom-up implementations usually use an array
@@ -33,11 +36,13 @@ public int dp(int n) {
 ```
 
 # Top-down (Memoization)
-Climbing Stairs Problem, 
+
+Climbing Stairs Problem,
 for recurrence relations `dp(i) = dp(i - 1) + dp(i - 2)`
+
 ```java
 // store calculated values inside a hashmap to refer to in the future
-private HashMap<Integer, Integer> memo = new HashMap<>();
+private final HashMap<Integer, Integer> memo = new HashMap<>();
 
 private int dp(int i) {
     if (i <= 2) return i;
@@ -49,8 +54,11 @@ private int dp(int i) {
 ```
 
 ### With Recursion, the time complexity is high.
-Without memoization The code above has a time complexity of `𝑂(2^𝑛)` because every call to
+
+Without memoization The code above has a time complexity of `𝑂(2^𝑛)` because
+every call to
 `dp()` creates 2 more calls to `dp()`
+
 ```java
 private int dp(int i) {
     if (i <= 2) return i; // Base cases
@@ -59,8 +67,11 @@ private int dp(int i) {
 ```
 
 # Min Cost Climbing Stairs
+
 [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/description/)
+
 - Go reversed
+
 ```java
 public int minCostClimbingStairs(int[] cost) {
     int size = cost.length;
@@ -78,9 +89,10 @@ public int minCostClimbingStairs(int[] cost) {
 ```
 
 - Fill from the beginning
+
 ```java
 public int minCostClimbingStairs(int[] cost) {
-    int dp[] = new int[cost.length + 1];
+    int[] dp = new int[cost.length + 1];
     // step 0 and step 1 is 0, no need to set as its by-default
 
     // Start iteration from step 2, since the minimum cost of reaching
@@ -94,11 +106,15 @@ public int minCostClimbingStairs(int[] cost) {
     return dp[dp.length - 1];
 }
 ```
+
 # House Robber
+
 [House Robber](https://leetcode.com/problems/house-robber/description/)
 
-- If decided not to rob the house, then we don't gain any money. Whatever money from the previous house is how much money have at this house -  `dp(i - 1)`
-- If we decide to rob the house, then gain = `money[i]` from current house PLUS the money from the previous house `dp(i - 2)`  
+- If decided not to rob the house, then we don't gain any money. Whatever money
+  from the previous house is how much money have at this house -  `dp(i - 1)`
+- If we decide to rob the house, then gain = `money[i]` from current house PLUS
+  the money from the previous house `dp(i - 2)`
 
 Recurrence Relation : `dp(i)=max(dp(i - 1), dp(i - 2) + money[i])`
 

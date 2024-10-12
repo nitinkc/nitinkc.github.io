@@ -8,7 +8,6 @@ tags: ["Spring Microservices", Spring Boot, GCP]
 
 # Find Latitude and Longitude
 
-
 Required dependency for accessing the API via Java/Spring
 
 ```sh
@@ -36,6 +35,7 @@ public TimeZone getTimeZone(Pair<String,String> latLng){
     }
 
 ```
+
 From the invoking method, the response can be collected with java.util.TimeZone
 
 ```java
@@ -53,14 +53,15 @@ Returning wrong timezone info for places near timezone border
 ## Alternate Node js API's for TimeZone
 
 [https://npm.io/package/tz-lookup](https://npm.io/package/tz-lookup)
+
 ```js
 var tzlookup = require("tz-lookup");
 
 console.log(tzlookup(42.7235, -73.6931)); // prints "America/New_York"
 ```
 
-
 [https://www.npmjs.com/package/geo-tz](https://www.npmjs.com/package/geo-tz)
+
 ```javascript
 const { find } = require('geo-tz')
 

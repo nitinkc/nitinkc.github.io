@@ -4,12 +4,14 @@ date:   2024-06-20 00:10:00
 categories: ['Java',"Performance Engineering"]
 tags: ['Java',"Performance Engineering"]
 ---
+
 {% include toc title="Index" %}
 
 # Java Performance Optimization Techniques
 
 # 1. Efficient Data Structures
-   Choosing the right data structures can significantly impact performance.
+
+Choosing the right data structures can significantly impact performance.
 
 Using ArrayList for random access instead of LinkedList.
 
@@ -20,10 +22,13 @@ List<String> list = new ArrayList<>();
 ```
 
 # 2. Minimizing Object Creation
-   Excessive object creation can lead to high memory usage and increased garbage collection overhead.
+
+Excessive object creation can lead to high memory usage and increased garbage
+collection overhead.
 
 Example:
-Use StringBuilder for string concatenation in loops instead of creating new String objects.
+Use StringBuilder for string concatenation in loops instead of creating new
+String objects.
 
 ```java
 StringBuilder sb = new StringBuilder();
@@ -34,10 +39,12 @@ String result = sb.toString();
 ```
 
 # 3. Using Primitives Instead of Wrappers
+
 Primitives are faster and use less memory compared to their wrapper classes.
 
 Example:
 Use int instead of Integer where possible.
+
 ```java
 int sum = 0;
 for (int i = 0; i < 1000; i++) {
@@ -46,7 +53,9 @@ for (int i = 0; i < 1000; i++) {
 ```
 
 # 4. Avoiding Synchronization Overhead
-Use synchronization only when necessary, as it can introduce significant overhead.
+
+Use synchronization only when necessary, as it can introduce significant
+overhead.
 
 Example:
 Use ConcurrentHashMap instead of Hashtable or synchronized HashMap.
@@ -62,7 +71,9 @@ Map<String, String> map = new ConcurrentHashMap<>();
 Unnecessary operations inside loops can degrade performance.
 
 Example:
-Cache the size of a list in a variable instead of calling the size() method repeatedly.
+Cache the size of a list in a variable instead of calling the size() method
+repeatedly.
+
 ```java
 for (int i = 0, size = list.size(); i < size; i++) {
     // Perform operations
@@ -70,6 +81,7 @@ for (int i = 0, size = list.size(); i < size; i++) {
 ```
 
 # 6. Efficient I/O Operations
+
 Buffered I/O can significantly improve performance for reading and writing data.
 
 Example:
@@ -85,7 +97,8 @@ try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"))) {
 ```
 
 7. Reducing Method Calls
-   Avoid method calls in tight loops, especially if the method is small and called frequently.
+   Avoid method calls in tight loops, especially if the method is small and
+   called frequently.
 
 Example:
 Inline small methods where possible.

@@ -4,10 +4,12 @@ date:   2024-07-25 17:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+
 {% include toc title="Index" %}
 
 [Project - https://github.com/nitinkc/springboot-caffeine-cachine](https://github.com/nitinkc/springboot-caffeine-cachine)
-Enable the Cache config 
+Enable the Cache config
+
 ```java
 @Configuration
 @EnableCaching
@@ -32,7 +34,9 @@ public class CacheConfig {
 ```
 
 # View
+
 View the values of the cache at the given point of time
+
 ```java
 @Component
 public class CacheViewer {
@@ -44,8 +48,7 @@ public class CacheViewer {
 
     public void viewCache(String cacheName) {
         Cache cache = cacheManager.getCache(cacheName);
-        if (cache instanceof CaffeineCache) {
-            CaffeineCache caffeineCache = (CaffeineCache) cache;
+        if (cache instanceof CaffeineCache caffeineCache) {
             Map<Object, Object> cacheMap = caffeineCache.getNativeCache().asMap();
             cacheMap.forEach((key, value) ->
                     System.out.println("Key: " + key + ", Value: " + value)

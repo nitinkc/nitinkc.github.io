@@ -19,7 +19,6 @@ https://github.com/spring-microservices-learning
 | 4. Currency Exchange Microservice | git clone https://github.com/spring-microservices-learning/currency-exchange.git          
 | 5. Currency Converter             | git clone https://github.com/spring-microservices-learning/currency-exchange.git          |
 
-
 ## URLs
 
 | Application                                  | URL                                                                                                                                                                                      |
@@ -33,6 +32,7 @@ https://github.com/spring-microservices-learning
 | Zuul - Currency Exchange & Exchange Services | http://localhost:8765/currency-exchange-service/currency-exchange/from/EUR/to/INR http://localhost:8765/currency-conversion-service/currency-converter-feign/from/USD/to/INR/quantity/10 |
 
 ## VM Argument to run multiple instances of a microservice
+
 `Dserver.port=8001`
 
 ## Ports

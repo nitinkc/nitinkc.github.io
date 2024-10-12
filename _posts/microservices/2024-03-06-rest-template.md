@@ -9,9 +9,10 @@ tags: [Spring Microservices, CRUD]
 
 Both Uri Variables and Request Entities are maps
 
-
 # With UriVariables
-The Uri variables needed for call like `https://api.datamuse.com/words?ml={word}&max={max}`
+
+The Uri variables needed for call like
+`https://api.datamuse.com/words?ml={word}&max={max}`
 
 ```java
 Map<String, String> uriVariables = new HashMap<>();
@@ -19,7 +20,7 @@ uriVariables.put("word", (String) requestBody.get("word"));
 uriVariables.put("max", (String) requestBody.get("max"));
 ```
 
-## GET .getForEntity 
+## GET .getForEntity
 
 ```java
 ResponseEntity<WordResponse[]> response = 
@@ -45,14 +46,17 @@ ResponseEntity<WordResponse[]> response = restTemplate.exchange(
         uriVariables);//Uri variables are needed when the URL needs
 ```
 
-
 # With request entity
-Create request header with the Request body/entity which is a map and is collected from the method parameter
+
+Create request header with the Request body/entity which is a map and is
+collected from the method parameter
+
 ```java
 public List<String> getData(@RequestBody Map<String,Object> requestBody){ ... }
 ```
 
 HTTP Entity is created with the headers and request body.
+
 ```java
 HttpHeaders headers = new HttpHeaders();
 headers.setContentType(MediaType.APPLICATION_JSON);
@@ -104,12 +108,8 @@ public Map<String, Object> uploadFile(MultipartFile file, HttpHeaders headers){
 
     // Extract and return the response body
     Map<String, Object> responseBody = responseEntity.getBody();
-    if (responseBody != null) {
-        // Assuming the response contains a list of strings under the key "result"
-        return responseBody;
-    } else {
-        // Handle the case where the response body is null
-        return null;
-    }
+    // Assuming the response contains a list of strings under the key "result"
+    // Handle the case where the response body is null
+    return responseBody;
 }
 ```

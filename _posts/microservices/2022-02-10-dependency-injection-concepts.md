@@ -5,18 +5,24 @@ date:   2022-02-10 20:55:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+
 {% include toc title="Index" %}
 
 # Dependency Injection Concepts using Spring 5
 
 **IOC(Inversion Of Control)**
 
-Giving control to the container to get instance of object is called Inversion of Control. 
-* instead of you are creating object using new operator, let the container do that for you.
+Giving control to the container to get instance of object is called Inversion of
+Control.
 
-**DI(Dependency Injection)**: Way of injecting properties to an object is called Dependency injection.
+* instead of you are creating object using new operator, let the container do
+  that for you.
+
+**DI(Dependency Injection)**: Way of injecting properties to an object is called
+Dependency injection.
 
 We have three types of Dependency injection
+
 * Constructor Injection
 * Setter/Getter Injection
 * Interface Injection
@@ -25,10 +31,12 @@ Spring support only Constructor Injection and Setter/Getter Injection.
 
 ### Dependency Injection is done in 3 ways
 
-1. By class properties - least preferred 
-  * Using private properties is <span style="color:red">**EVIL**</span>
+1. By class properties - least preferred
+
+* Using private properties is <span style="color:red">**EVIL**</span>
+
 2. By Setters - Area of much debate
-	
+
 ```java
 private GreetingService greetingService;
 @Autowired
@@ -39,6 +47,7 @@ public void setGreetingService(@Qualifier("setterGreetingService") GreetingServi
 ```
 
 3. By Constructor - Most Preferred
+
 ```java
 private GreetingService greetingService;
 //Constructor, With Spring 5 no need to explicitly mention @Autowired, but its a good practice
@@ -48,6 +57,7 @@ public A3ConstructorInjectedController(GreetingService greetingService) {
 ```
 
 #### DI via Interfaces is highly preferred
+
 * Allows runtime to decide implementation to inject
 * Follows Interface Segregation Principle of SOLID
 * Also, makes your code more testable
@@ -55,13 +65,16 @@ public A3ConstructorInjectedController(GreetingService greetingService) {
 **Types of Injection:**
 
 ##### Field Injection
+
 AVOID THIS
 {: .notice--danger}
-it's generally not recommended because it makes testing and mocking dependencies more challenging.
+it's generally not recommended because it makes testing and mocking dependencies
+more challenging.
 
 **Constructor injection is preferred for better testability.**
 
-You can annotate a class field directly with `@Autowired`. Spring will find the appropriate
+You can annotate a class field directly with `@Autowired`. Spring will find the
+appropriate
 bean to inject based on the field's type.
 
 ```java
@@ -78,11 +91,14 @@ public class StudentServiceWithDb {
 ```
 
 ##### Setter Injection
+
 AVOID THIS
 {: .notice--danger}
-Like field injection, it's less recommended than constructor injection for the same reasons—it can make testing and mocking dependencies more complex.
+Like field injection, it's less recommended than constructor injection for the
+same reasons—it can make testing and mocking dependencies more complex.
 
-Annotate a setter method with @Autowired. Spring will call this method and pass the required dependency when
+Annotate a setter method with @Autowired. Spring will call this method and pass
+the required dependency when
 initializing the bean.
 
 ```java
@@ -105,9 +121,11 @@ public class StudentServiceWithDb {
   // Other methods of StudentServiceWithDb
 }
 ```
+
 ##### Constructor Injection
 
-Annotate a constructor with @Autowired. Spring will use this constructor to create
+Annotate a constructor with @Autowired. Spring will use this constructor to
+create
 the bean and pass the required dependencies as constructor arguments.
 
 > Constructor injection is considered a best practice
@@ -130,17 +148,20 @@ public class StudentServiceWithDb {
     // Other methods of StudentServiceWithDb
 }
 ```
-Dependency Resolution: If there are multiple beans of the same type that can be injected, Spring will perform
+
+Dependency Resolution: If there are multiple beans of the same type that can be
+injected, Spring will perform
 dependency resolution based on the bean's name (if provided) or type.
 
 You can also use `@Qualifier` in conjunction  
-with `@Autowired` to specify which bean to inject if there are multiple candidates.
+with `@Autowired` to specify which bean to inject if there are multiple
+candidates.
 
-
-- `@Primary` - Multiple beans of the same type and one is intended to go in by **default**
-- `@Qualifier` - Used to specify which exact bean should be injected when multiple beans of the same type are available. 
+- `@Primary` - Multiple beans of the same type and one is intended to go in by *
+  *default**
+- `@Qualifier` - Used to specify which exact bean should be injected when
+  multiple beans of the same type are available.
   It allows to explicitly select a bean by name or identifier
-
 
 ```java
 public interface PaymentService {
@@ -159,6 +180,7 @@ public class CreditCardPaymentService implements PaymentService{
     }
 }
 ```
+
 ```java
 @Service("onlineBankingService")
 public class OnlineBankingService implements PaymentService{
@@ -168,6 +190,7 @@ public class OnlineBankingService implements PaymentService{
     }
 }
 ```
+
 The use of `@Qualifier`
 
 ```java
@@ -175,7 +198,7 @@ The use of `@Qualifier`
 @RequestMapping("/payment")
 public class PaymentController {
     private PaymentService creditCardpaymentService;//Can be resolved byNAme or with @Qualifier
-    private PaymentService onlineBankingpaymentService;
+    private final PaymentService onlineBankingpaymentService;
 
     @Autowired
     public PaymentController(@Qualifier("creditCardService") PaymentService creditCardPaymentService,
@@ -190,7 +213,10 @@ public class PaymentController {
 # Autowiring
 
 #### byType - Class or Interface
-- By Type (Interface): Use `@Qualifier` when there are multiple implementations of an interface and you need to specify which implementation should be injected.
+
+- By Type (Interface): Use `@Qualifier` when there are multiple implementations
+  of an interface and you need to specify which implementation should be
+  injected.
   ```java
   private final SortAlgorithm sortAlgorithm;//SortAlgorithm Interface is implemented by multiple classes
   @Autowired//Optional for Constructor injection 
@@ -198,7 +224,8 @@ public class PaymentController {
       this.sortAlgorithm = sortAlgorithm;
   }
   ```
-- By Type (Class): Directly inject beans of a specific class when there is no ambiguity or when dealing with distinct classes.
+- By Type (Class): Directly inject beans of a specific class when there is no
+  ambiguity or when dealing with distinct classes.
   ```java
   private final StringService stringService;//Class
   private final NumberService numberService;//Class
@@ -211,8 +238,12 @@ public class PaymentController {
   ```
 
 #### byName
-- if two Classes implement the same interface, the name is used to resolve the dependency
-- or by the @Qualifier - use @Qualifier to specify which bean to inject when there are multiple implementations of an interface.
+
+- if two Classes implement the same interface, the name is used to resolve the
+  dependency
+- or by the @Qualifier - use @Qualifier to specify which bean to inject when
+  there are multiple implementations of an interface.
+
 ```java
 @Component
 public class QuickSortAlgorithm implements SortAlgorithm {
@@ -238,18 +269,22 @@ public class ComplexAlgorithmImpl {
 ```
 
 #### constructor
+
 - similar to `byType`, but through constuctor
 -
 
 # Exceptions
 
 ### `NoSuchBeanDefinitionException`
+
 - `@Component` missing
 - or `@ComponentScan` not defined properly
 
 ### `NoUniqueBeanDefinitionException`
-When there are multiple implementations of a single interface and is no declared 
-- `@Primary` or 
+
+When there are multiple implementations of a single interface and is no declared
+
+- `@Primary` or
 - with `@Qualifier`
 
 ```java

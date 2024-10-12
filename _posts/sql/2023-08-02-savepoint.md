@@ -4,18 +4,26 @@ date:   2023-08-02 14:03:00
 categories: ['SQL']
 tags: ['SQL']
 ---
+
 {% include toc title="Index" %}
 
 [Oracle Live SQL](https://livesql.oracle.com/apex/livesql/s/ehw922orljedhs8ikbguduh0)
 
-In Oracle, you can view the savepoints defined within a transaction using the `DBMS_TRANSACTION` package.
-Specifically, you can use the `DBMS_TRANSACTION.SAVEPOINT_EXISTS` function to check if a particular savepoint exists,
-and the `DBMS_TRANSACTION.SET_SAVEPOINT` function to set a savepoint within the transaction.
+In Oracle, you can view the savepoints defined within a transaction using the
+`DBMS_TRANSACTION` package.
+Specifically, you can use the `DBMS_TRANSACTION.SAVEPOINT_EXISTS` function to
+check if a particular savepoint exists,
+and the `DBMS_TRANSACTION.SET_SAVEPOINT` function to set a savepoint within the
+transaction.
 
-Please note that savepoints are useful primarily for debugging and error handling purposes. 
-In most scenarios, you don't need to explicitly check for the existence of savepoints. 
-Instead, you can use them in exception blocks to handle errors more gracefully and roll back to 
+Please note that savepoints are useful primarily for debugging and error
+handling purposes.
+In most scenarios, you don't need to explicitly check for the existence of
+savepoints.
+Instead, you can use them in exception blocks to handle errors more gracefully
+and roll back to
 specific points within a transaction if needed.
+
 ```sql
 drop table if exists employees;
 

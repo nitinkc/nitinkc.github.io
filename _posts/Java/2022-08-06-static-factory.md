@@ -5,17 +5,18 @@ categories: ['Java']
 tags: ['Java']
 ---
 
-
 # What is Static Factory Method?
 
-When a static method returns the same Class Object (reference type) of its own class, its called Static Factory Method
+When a static method returns the same Class Object (reference type) of its own
+class, its called Static Factory Method
 
-example        
+example
+
 ```java
 Runtime r = Runtime.getRuntime();
 ```
 
- JAVA 9 Enhancement; of() method is static factory method 
+JAVA 9 Enhancement; of() method is static factory method
 
  ```java
 // shortcut way to create UNMODIFIABLE Collection Object (no add or remove works after it)

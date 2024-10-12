@@ -4,23 +4,32 @@ date:   2023-09-15 20:30:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+
 {% include toc title="Index" %}
 
 ##### Validations applied?
 
 **Validation at Request Body/Path Param/Request Param or Response Body**
 
-Validation annotations like `@Pattern`,`@NotNull`, etc., are typically used to validate **input parameters or fields**
+Validation annotations like `@Pattern`,`@NotNull`, etc., are typically used to
+validate **input parameters or fields**
 of Java objects **before** they are processed by the application logic.
 
-Validations are **NOT** automatically applied to the response body (for ex, if the email field to be sent to UI, is a proper email),
+Validations are **NOT** automatically applied to the response body (for ex, if
+the email field to be sent to UI, is a proper email),
 it can be done manually
 
 ##### Dependencies
-- The `@NotBlank` annotation is part of the `javax.validation.constraints` package, which is a standard part of the Java Bean Validation (JSR 380) specification.
-- The implementation of  the rules specified by the Bean Validation specification (including the actual validation logic for annotations like `@NotBlank`), is provided by validation frameworks like Hibernate Validator.
+
+- The `@NotBlank` annotation is part of the `javax.validation.constraints`
+  package, which is a standard part of the Java Bean Validation (JSR 380)
+  specification.
+- The implementation of the rules specified by the Bean Validation
+  specification (including the actual validation logic for annotations like
+  `@NotBlank`), is provided by validation frameworks like Hibernate Validator.
 
 Both the dependencies are required for the validations to work well
+
 ```groovy
 // https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api
 implementation group: 'jakarta.validation', name: 'jakarta.validation-api', version: '3.1.0-M1'
@@ -29,22 +38,28 @@ implementation group: 'org.hibernate.validator', name: 'hibernate-validator', ve
 ```
 
 ### @Validated and @Valid
+
 A brief summary of the differences between @Validated and @Valid:
 
-**`@Validated`**: Spring-specific, enables method-level validation, and supports method parameter 
+**`@Validated`**: Spring-specific, enables method-level validation, and supports
+method parameter
 and return value validation.
 
-`**@Valid**`: Standard Java EE annotation, primarily used for validating bean properties and method parameters at 
+`**@Valid**`: Standard Java EE annotation, primarily used for validating bean
+properties and method parameters at
 the field or method level.
 
-In summary, @Validated is a useful annotation for enabling method-level validation in Spring MVC controllers, allowing you to validate method parameters and return values with ease.
+In summary, @Validated is a useful annotation for enabling method-level
+validation in Spring MVC controllers, allowing you to validate method parameters
+and return values with ease.
 
 ##### @Valid
 
-Use of `@Valid` in the Controller class forces a validation check. The validation is defined in the Entity class
-
+Use of `@Valid` in the Controller class forces a validation check. The
+validation is defined in the Entity class
 
 **in Controller**
+
 ```java
 //Add a new User
 @PostMapping("/users")
@@ -53,7 +68,8 @@ public ResponseEntity<Object> addNewUser(@Valid  @RequestBody User user)
 
 **User Entity Class (Using Lombok)**
 
-`@ValidPhoneNumber`is a user defined Validator mentioned in the end of this blog.
+`@ValidPhoneNumber`is a user defined Validator mentioned in the end of this
+blog.
 
 ```java
 @Data
@@ -78,7 +94,9 @@ public class User {
 }
 ```
 
-**`MethodArgumentNotValidException` for Failed Validations and exception handler**
+**`MethodArgumentNotValidException` for Failed Validations and exception handler
+**
+
 ```java
 @ExceptionHandler(MethodArgumentNotValidException.class)
 public ResponseEntity<MyExceptionResponse> handleValidationExceptions(MethodArgumentNotValidException ex, final HttpServletRequest request) {
@@ -132,8 +150,7 @@ public ResponseEntity<MyExceptionResponse> handleValidationExceptions(MethodArgu
 }
 ```
 
-
-##### Explore 
+##### Explore
 
 ```java
 @NotNull
@@ -164,6 +181,7 @@ public @interface ValidPhoneNumber {
 ```
 
 Invoke the custom validator using the required Annotation
+
 ```java
 @Data
 public class ExampleRequest {
@@ -184,8 +202,8 @@ public ResponseEntity<AdminDTO> createAdmin(@Validated(AdminDTO.AdminValidation.
 }
 ```
 
-The AdminValidation interface is a marker interface used for defining a validation group in Bean Validation (JSR 380)
-
+The AdminValidation interface is a marker interface used for defining a
+validation group in Bean Validation (JSR 380)
 
 ```java
 @Data
@@ -265,6 +283,7 @@ public class PasswordConstraintValidator implements ConstraintValidator<Password
 ```
 
 The newly created annotation can be applied as
+
 ```java
 public class AdminDTO {
 

@@ -7,7 +7,8 @@ tags: ['Developer tools']
 
 {% include toc title="Index" %}
 
-Create a blog with naming convention of yyyy-mm-dd-name-of-the-blog.md and save it in \_posts directory
+Create a blog with naming convention of yyyy-mm-dd-name-of-the-blog.md and save
+it in \_posts directory
 
 On a new machine (mac) use this link
 
@@ -26,6 +27,7 @@ jekyll serve
 2. Jekyll - for static site and blogging
 
 ### Build the site
+
 ```
 bundle install
 bundle exec jekyll serve

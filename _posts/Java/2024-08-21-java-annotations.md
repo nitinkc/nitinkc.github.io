@@ -4,9 +4,11 @@ date:   2024-08-21 00:17:00
 categories: ['Java']
 tags: ['Java']
 ---
+
 {% include toc title="Index" %}
 
-Before, JDK 1.5 XML was used to access metadata. Annotations have replaced it since java 1.5
+Before, JDK 1.5 XML was used to access metadata. Annotations have replaced it
+since java 1.5
 
 Spring 2.X was XML based and Spring 3 was Annotation based
 
@@ -23,9 +25,11 @@ Spring 2.X was XML based and Spring 3 was Annotation based
 </beans>
 ```
 
-With Spring 3.x and later, you can use annotations for configuration, which simplifies the setup.
+With Spring 3.x and later, you can use annotations for configuration, which
+simplifies the setup.
 
 With just one line of Annotation, the xml document was eliminated
+
 ```java
 @Component
 public class MyBean {
@@ -38,11 +42,13 @@ public class MyBean {
 }
 ```
 
-In Java, annotations have two main types of syntax: 
-- declaration and 
-- utilization. 
+In Java, annotations have two main types of syntax:
+
+- declaration and
+- utilization.
 
 ### Declaration Syntax
+
 Annotations are defined using the `@interface` keyword.
 
 ```java
@@ -54,23 +60,30 @@ public @interface MyCustomAnnotation {
 ```
 
 **@Retention**
-- Runtime level : `RetentionPolicy.RUNTIME)`: Specifies that the annotation should be retained at runtime and be available for reflection.
+
+- Runtime level : `RetentionPolicy.RUNTIME)`: Specifies that the annotation
+  should be retained at runtime and be available for reflection.
 - Source level - `RetentionPolicy.SOURCE`
 - Classlevel - `RetentionPolicy.CLASS`
 
 **@Target**
-- Method level - `ElementType.METHOD` Specifies that this annotation can only be applied to methods.
+
+- Method level - `ElementType.METHOD` Specifies that this annotation can only be
+  applied to methods.
 - Class Level - `ElementType.TYPE`
 - Field level - `ElementType.FIELD`
 - Package level - `ElementType.PACKAGE`
-- local variable level - `ElementType.LOCAL_VARIABLE` 
+- local variable level - `ElementType.LOCAL_VARIABLE`
 
 **`description() default "No description"`**:
+
 - An element of the annotation with a default value.
 
 ### Utilization Syntax
-This is where annotation in the code is used. 
-Apply annotation to various Java elements (such as methods, classes, fields, etc.) according to its `@Target` specification.
+
+This is where annotation in the code is used.
+Apply annotation to various Java elements (such as methods, classes, fields,
+etc.) according to its `@Target` specification.
 
 **Marker Annotation** : `@Override`
 
@@ -87,6 +100,7 @@ public @interface MultiValueAnnotation {
     String[] tags() default {};  // Default empty array
 }
 ```
+
 **Usage**
 
 ```java
@@ -101,7 +115,9 @@ public class MyClass {
 ```
 
 # Useful Custom Annotation
+
 Annotation to mark code that is duplicated and be moved to a common place
+
 ```java
 /**
  * Annotation to mark classes or methods that can be moved to a common library.
@@ -113,7 +129,9 @@ public @interface MoveToCommonLibrary {
 }
 ```
 
-**`@ReviewRequired`** custom annotation for keepping a watch on the tech debt items
+**`@ReviewRequired`** custom annotation for keepping a watch on the tech debt
+items
+
 ```java
 @Target({ElementType.LOCAL_VARIABLE, ElementType.FIELD,ElementType.TYPE, ElementType.METHOD, ElementType.PACKAGE})
 @Retention(RetentionPolicy.SOURCE) //discarded by the compiler.

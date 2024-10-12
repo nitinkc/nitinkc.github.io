@@ -6,7 +6,8 @@ categories: "Spring Microservices"
 tags: ["Spring Microservices", Spring Boot, GCP]
 ---
 
-Once the data is received, convert (serialize) the results data into DTO, using defauklt jackson mapper
+Once the data is received, convert (serialize) the results data into DTO, using
+defauklt jackson mapper
 
 ```java
 private void convertFromBQResponseToDto(BigQueryResponse results, List<BusinessDto> list) {
@@ -22,7 +23,8 @@ private void convertFromBQResponseToDto(BigQueryResponse results, List<BusinessD
 }
 ```
 
-If more control is needed, then individual fields can set adn the naming can be controlled from the DTO
+If more control is needed, then individual fields can set adn the naming can be
+controlled from the DTO
 
 ```java
 results.getData().forEach(result -> {
@@ -45,6 +47,7 @@ private BusinessDto getBusinessDtoFromMap(Map<String, Object> map) {
 ```
 
 Dto with much more control
+
 ```java
 
 @Data
@@ -66,7 +69,7 @@ public class BusinessDto {
     private Long orderNumber;
 
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private final Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 
     @JsonAnyGetter

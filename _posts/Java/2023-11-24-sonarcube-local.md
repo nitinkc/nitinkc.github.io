@@ -8,6 +8,7 @@ tags: ['Java']
 {% include toc title="Index" %}
 
 # Run sonarcube from Docker
+
 ```shell
 docker run -d \
   --name sonarqube \
@@ -19,17 +20,21 @@ docker run -d \
 ## Run sonarcube analysis
 
 **Local project**
+
 - Open sonarcube and create a new Local project
-[http://localhost:9000/projects](http://localhost:9000/projects)
+  [http://localhost:9000/projects](http://localhost:9000/projects)
 - provide project display name, project key, main branch name
 
 **Set up project for Clean as You Code**
+
 - Use the global Setting
 
-**Analysis Method** 
+**Analysis Method**
+
 - locally
 
 **Analyze your project**
+
 1. Provide a token
 2. Run analysis on your project
 

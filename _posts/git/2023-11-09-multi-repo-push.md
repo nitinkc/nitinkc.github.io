@@ -4,9 +4,11 @@ date:   2023-11-13 14:30:00
 categories: ['Git']
 tags: ['Git']
 ---
+
 {% include toc title="Index" %}
 
 ### git init
+
 `git init` creates the following entry in config file in `.git` folder
 
 ```
@@ -20,7 +22,9 @@ tags: ['Git']
 ```
 
 ### 1. remote add
+
 The following `remote add` creates the next config `remote "origin"`
+
 ```shell
 # Commands provided from git repo
 git remote add origin https://github.com/nitinkc/git-tests.git
@@ -33,13 +37,17 @@ git remote add origin https://github.com/nitinkc/git-tests.git
 ```
 
 ### 2. remote set-url
+
 The remote repo can be **set to another repo** if needed
+
 - if the project already exists. This will **replace** the old remote
+
 ```shell
 # If the project is already a git project and you want to set github repo to the existing project
 git remote set-url <remote_name> <remote_url>
 git remote set-url origin https://github.com/nitinkc/x.git
 ```
+
 - replacing the old repo `git-tests.git` with the new one `x.git`
     ```
     [remote "origin"]
@@ -48,10 +56,13 @@ git remote set-url origin https://github.com/nitinkc/x.git
     ```
 
 ### 3. The `push` switch
+
 ```shell
 git remote set-url --push origin https://github.com/nitinkc/git-tests.git
 ```
+
 This sets up the push url
+
 ```
 [remote "origin"]
 	url = https://github.com/nitinkc/git-tests.git
@@ -60,28 +71,34 @@ This sets up the push url
 ```
 
 # git push
+
 The full command for the push is
+
 ```shell
 git push <remote-name> <branch-name>
 ```
 
 If you set up tracking for your **existing** branch using
+
 ```shell
 git branch --set-upstream-to=<remote>/<remote-branch> <local-branch>
 ```
 
 Or set up a new branch with `-u` or `--set-upstream`
+
 ```shell
 git push -u <remote-name> your-new-branch
 git push --set-upstream origin feature/intermittant-failures
 ```
 
 then the simple command will do the job
+
 ```shell
 git push
 ```
 
-When there is main branch created, after git init, for the first time, in workspace/local repository, before pushing it to repo, `-u` or `--set-upstream` 
+When there is main branch created, after git init, for the first time, in
+workspace/local repository, before pushing it to repo, `-u` or `--set-upstream`
 option is used which adds an entry into the git config
 
 ```shell
@@ -97,13 +114,16 @@ git push --set-upstream origin main
 ```
 
 For each subsequent push to a new feature branch,
+
 ```shell
 git checkout -b feature/new-feature-branch
 
 git push # fatal: The current branch feature/new-feature-branch has no upstream branch.
 git push --set-upstream origin feature/new-feature-branch
 ```
+
 git config gets one entry
+
 ```
 [branch "feature/new-feature-branch"]
 	remote = origin
@@ -111,24 +131,32 @@ git config gets one entry
 ```
 
 # git pull
-The git pull command is used to fetch & merge changes from a **remote** repository into the current branch
+
+The git pull command is used to fetch & merge changes from a **remote**
+repository into the current branch
+
 ```shell
 git pull [<remote>] [<branch>]
 git pull both main
 ```
-notice that both remote and branch names are optional. When there is tracking from that particular branch,
+
+notice that both remote and branch names are optional. When there is tracking
+from that particular branch,
 a simple `git pull` will do the job.
 
-
 # Multi Repo setup
-Taking the leverage of the remote created automatically, we can create multiple **remotes** and push explicitly into those
+
+Taking the leverage of the remote created automatically, we can create multiple
+**remotes** and push explicitly into those
 
 We can create a new remote called **bb** by
+
 ```shell
 git remote add bb https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
 ```
 
 Following entry gets made in gitconfig
+
 ```
 [remote "bb"]
     url = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
@@ -136,11 +164,13 @@ Following entry gets made in gitconfig
 ```
 
 Also, set the push url with
+
 ```shell
 git remote set-url --push gh https://github.com/nitinkc/git-tests.git
 ```
 
 This will modify the gitconfig as below :-
+
 ```
 [remote "bb"]
 	url = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
@@ -159,7 +189,9 @@ git remote set-url --add --push both https://github.com/nitinkc/git-tests.git
 git remote set-url --add --push both https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
 ```
 
-Adds two repositories into remote `both` and sets them up for simultaneous pushes and pulls.
+Adds two repositories into remote `both` and sets them up for simultaneous
+pushes and pulls.
+
 ```
 [remote "both"]
 	url = https://github.com/nitinkc/git-tests.git
@@ -168,10 +200,10 @@ Adds two repositories into remote `both` and sets them up for simultaneous pushe
 	pushurl = https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
 ```
 
-
 ```shell
 git branch --set-upstream-to=both/feature/new-feature-branch feature/new-feature-branch 
 ```
+
 ```
 [branch "feature/new-feature-branch"]
 remote = both
@@ -179,8 +211,8 @@ merge = refs/heads/feature/new-feature-branch
 ```
 
 ## The final gitconfig file
-{% gist nitinkc/81c53424cf60e8742b30df02a844906c %}
 
+{% gist nitinkc/81c53424cf60e8742b30df02a844906c %}
 
 if `git push both` is issued on the repo
 
@@ -198,12 +230,14 @@ To https://bitbucket.org/nitinc/git-tests-bb.git
 # Summary
 
 ##### Add multiple remote Repo
+
 ```shell
 git remote add bb https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
 git remote add gh https://github.com/nitinkc/git-tests.git
 ```
 
 ##### Apply actions
+
 ```shell
 git remote set-url --push bb https://nitinc@bitbucket.org/nitinc/git-tests-bb.git
 git remote set-url --push gh https://github.com/nitinkc/git-tests.git
@@ -224,7 +258,6 @@ git branch --set-upstream-to=both/feature/new-feature-branch feature/new-feature
 # After some commits 
 git push #takes the changes to bb
 ```
-
 
 ```shell
 git pull gh

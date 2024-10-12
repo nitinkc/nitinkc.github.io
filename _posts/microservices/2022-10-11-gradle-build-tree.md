@@ -18,11 +18,13 @@ apply plugin: 'project-report'
 ```
 
 ## Dependencies on command prompt
+
 ```sh
  gradle dependencies   
 ```
 
-## Build Scan 
+## Build Scan
+
 ```sh
 gradle build --scan 
 ```

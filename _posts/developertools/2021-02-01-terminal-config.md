@@ -10,13 +10,15 @@ tags: ['Developer tools','Macbook']
 ### Unix shell and Framework installation
 
 Install any of the available shell
+
 ```sh
 brew install --cask iterm2 
 brew install --cask wezterm
 brew install --cask alacritty
 ```
 
-Instead of using the Mac default Bash shell, preferred here is zsh with multiple plugin support.
+Instead of using the Mac default Bash shell, preferred here is zsh with multiple
+plugin support.
 
 * Install latest version of zsh using brew and verify the version.
 
@@ -25,17 +27,21 @@ brew install zsh
 zsh --version
 ```
 
-with zsh installed, the default profile will be from .zshrc file, where customized profiles can be added
+with zsh installed, the default profile will be from .zshrc file, where
+customized profiles can be added
+
 - Make zsh as system’s default shell
 
 ```sh
 chsh -s $(which zsh)
 ```
+
 - Verify:
 
 ```sh
 echo $SHELL
 ```
+
 expected result: **/bin/zsh**
 
 - Install oh-my-zsh using [https://ohmyz.sh/#install](https://ohmyz.sh/#install)
@@ -45,16 +51,21 @@ expected result: **/bin/zsh**
 ```sh
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
+
 Run either
+
 ```
 p10k configure
 ```
+
 OR
 
 Edit `~/.zshrc` and `set ZSH_THEME="powerlevel10k/powerlevel10k"`.
 
 ### Eza instead of ls
+
 [https://formulae.brew.sh/formula/eza](https://formulae.brew.sh/formula/eza)
+
 ```sh
 brew install eza
 ```
@@ -63,9 +74,11 @@ brew install eza
 
 Standard plugins are at `$ZSH/plugins/` or `~/.oh-my-zsh/plugins`
 
-Custom plugins may be added to `$ZSH_CUSTOM/plugins/` or `~/.oh-my-zsh/custom/plugins`
+Custom plugins may be added to `$ZSH_CUSTOM/plugins/` or
+`~/.oh-my-zsh/custom/plugins`
 
 Pluions can be added to the `.zshrc` file lile below
+
 ```shell
 plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting)
 ```
@@ -93,6 +106,7 @@ Follow the documentation for further instructions.
 * [Zsh Completions](https://github.com/zsh-users/zsh-completions/#Manual%20installation)
 * [Zsh history substring](https://github.com/zsh-users/zsh-history-substring-search)
 * [Zsh Apple touchbar](https://github.com/zsh-users/zsh-apple-touchbar)
+
 - [Time Warrior](https://timewarrior.net/docs/install/)
 
 ```sh
@@ -111,7 +125,8 @@ brew install timewarrior
 | **⌘ ⌥ B**    | Show Interactive History   |
 | **⌥ ⌘ Drag** | Select Rectangular Block   |
 
-Once iTerm is set with above plugins, other terminals can simply be installed and with its corrosponding configs
+Once iTerm is set with above plugins, other terminals can simply be installed
+and with its corrosponding configs
 
 # Alacritty
 
@@ -120,6 +135,7 @@ Once iTerm is set with above plugins, other terminals can simply be installed an
 [https://www.josean.com/posts/7-amazing-cli-tools](https://www.josean.com/posts/7-amazing-cli-tools)
 
 # WezTerm
+
 [https://www.josean.com/posts/how-to-setup-wezterm-terminal](https://www.josean.com/posts/how-to-setup-wezterm-terminal)
 
 ## References

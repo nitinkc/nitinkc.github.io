@@ -4,22 +4,30 @@ date:  2024-06-16 18:27:00
 categories: Algorithms
 tags: [Algorithms]
 ---
+
 {% include toc title="Index" %}
 
 # Disjoint Set data structure
 
-The primary use of disjoint sets is to address the connectivity between the components of a network. 
-Given the vertices and edges between the vertices, how could we quickly check whether two vertices are connected?
+The primary use of disjoint sets is to address the connectivity between the
+components of a network.
+Given the vertices and edges between the vertices, how could we quickly check
+whether two vertices are connected?
 
-**“disjoint set”** data structure is also known as the **“union-find”** data structure
+**“disjoint set”** data structure is also known as the **“union-find”** data
+structure
 
-To check if two vertices are connected, we only need to check if they have the **same root node**.
+To check if two vertices are connected, we only need to check if they have the *
+*same root node**.
 
 The two most important functions for the “disjoint set”
-- The find function locates the root node of a given vertex.
-- The union function connects two previously unconnected vertices by giving them the same root node.
 
-> memorize the implementation of “disjoint set with path compression and union by rank”.
+- The find function locates the root node of a given vertex.
+- The union function connects two previously unconnected vertices by giving them
+  the same root node.
+
+> memorize the implementation of “disjoint set with path compression and union
+> by rank”.
 
 ```java
 public class UnionFind {
@@ -33,8 +41,10 @@ public class UnionFind {
 ```
 
 # 1. Quick Find
+
 - Eager Approach
-- defect : union is too expensive. Takes $ O(N) $ array access to process sequence of N union commands on N objects
+- defect : union is too expensive. Takes $ O(N) $ array access to process
+  sequence of N union commands on N objects
 - find: O(1). but the trade-offis in union O(N)
 
 ```java
@@ -67,7 +77,8 @@ O(n) worst case complexity when the graph is a chain `1->2->3->4->5->6`
 Find : O(N)
 
 Union : O(N)
-The union operation consists of two find operations which (only in the worst-case) will take O(N) time,
+The union operation consists of two find operations which (only in the
+worst-case) will take O(N) time,
 
 ```java
 public int find(int x) {
@@ -99,7 +110,8 @@ public void quickUnion(int x, int y) {
 
 The “rank” refers to the height of each vertex
 
-Merge the shorter tree under the taller tree and assign the root node of the taller 
+Merge the shorter tree under the taller tree and assign the root node of the
+taller
 tree as the root node for both vertices
 
 ```java
@@ -190,12 +202,13 @@ public void union(int x, int y) {
 
 # 5. Path Compression and Union by Rank - Optimized “disjoint set” with
 
-O(1) time for the best case (when the parent node for some vertex is the root node itself). In the worst case, it would be
-O(N) time when the tree is skewed. However, on average, the time complexity will be
+O(1) time for the best case (when the parent node for some vertex is the root
+node itself). In the worst case, it would be
+O(N) time when the tree is skewed. However, on average, the time complexity will
+be
 O(logN).
 
 [Top-Down Analysis of Path Compression](https://www.cs.tau.ac.il/~michas/ufind.pdf)
-
 
 ```java
  public UnionFind(int size) {
@@ -249,10 +262,12 @@ O(logN).
 
 # Path Compression and Union by Rank
 
-When using the combination of union by rank and the path compression optimization, the find operation will take
-O(α(N)) time on average. Since union and connected both make calls to find and all other operations require constant time, union and connected functions will also take
+When using the combination of union by rank and the path compression
+optimization, the find operation will take
+O(α(N)) time on average. Since union and connected both make calls to find and
+all other operations require constant time, union and connected functions will
+also take
 O(α(N)) time on average.
-
 
 # Dynamic Connectivity Problem
 

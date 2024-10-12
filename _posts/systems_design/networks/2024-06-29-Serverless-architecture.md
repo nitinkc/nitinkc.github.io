@@ -4,18 +4,24 @@ date:   2024-06-29 21:02:00
 categories: [System Design]
 tags: [System Design]
 ---
+
 {% include toc title="Index" %}
 
-Serverless architecture is a cloud computing execution model where the cloud provider dynamically manages the 
+Serverless architecture is a cloud computing execution model where the cloud
+provider dynamically manages the
 allocation and provisioning of servers.
 
-Despite the name, servers are still used, but developers don't have to manage them. Instead, they focus on writing code.
+Despite the name, servers are still used, but developers don't have to manage
+them. Instead, they focus on writing code.
 
-One of the most popular serverless architectures is **Function as a Service** (FaaS)
+One of the most popular serverless architectures is **Function as a Service** (
+FaaS)
 
-When a function is invoked (triggered by an event), the cloud provider 
+When a function is invoked (triggered by an event), the cloud provider
+
 - either executes the function on a running server
-- or, if there is no server currently running, it spins up a new server to execute the function.
+- or, if there is no server currently running, it spins up a new server to
+  execute the function.
 
 ```plantuml!
 actor User
@@ -34,33 +40,46 @@ executed on demand.
 end note
 ```
 
-
 # Key Characteristics
-**No Server Management**: Developers don't have to worry about server provisioning, scaling, or maintenance.
 
-**Event-Driven**: Functions are triggered by events such as HTTP requests, database changes, file uploads, etc.
+**No Server Management**: Developers don't have to worry about server
+provisioning, scaling, or maintenance.
 
-**Automatic Scaling**: The infrastructure automatically scales up or down based on the load.
+**Event-Driven**: Functions are triggered by events such as HTTP requests,
+database changes, file uploads, etc.
 
-**Cost-Efficient**: You pay only for the compute time you consume, not for pre-allocated resources.
+**Automatic Scaling**: The infrastructure automatically scales up or down based
+on the load.
+
+**Cost-Efficient**: You pay only for the compute time you consume, not for
+pre-allocated resources.
 
 # How Serverless Works
 
-**Function Deployment**: Developers write functions and deploy them to a serverless platform.
+**Function Deployment**: Developers write functions and deploy them to a
+serverless platform.
 
-**Event Triggering**: Functions are triggered by specific events like HTTP requests, database changes, or scheduled tasks.
+**Event Triggering**: Functions are triggered by specific events like HTTP
+requests, database changes, or scheduled tasks.
 
-**Execution**: The serverless platform executes the function in a stateless compute container.
+**Execution**: The serverless platform executes the function in a stateless
+compute container.
 
-**Scaling**: The platform scales the number of running instances of the function as needed.
+**Scaling**: The platform scales the number of running instances of the function
+as needed.
 
-**Billing**: Users are billed based on the number of executions and the resources consumed during execution.
+**Billing**: Users are billed based on the number of executions and the
+resources consumed during execution.
 
 # Serverless Platforms
-- AWS Lambda: A service that lets you run code without provisioning or managing servers.
-- Google Cloud Functions: A lightweight, event-based asynchronous compute solution.
+
+- AWS Lambda: A service that lets you run code without provisioning or managing
+  servers.
+- Google Cloud Functions: A lightweight, event-based asynchronous compute
+  solution.
 
 # Advantages
+
 - Reduced Operational Complexity: No need to manage infrastructure.
 - Cost Efficiency: Pay-as-you-go pricing model.
 - Scalability: Automatic scaling based on demand.
@@ -73,7 +92,9 @@ end note
 - Configure the trigger type to HTTP.
 - Write Function Code:
 
-Java Cloud Function code that handles an HTTP POST request and returns a response.
+Java Cloud Function code that handles an HTTP POST request and returns a
+response.
+
 ```java
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
@@ -116,7 +137,9 @@ public class HelloWorld implements HttpFunction {
 }
 
 ```
+
 Request
+
 ```curl
 curl -X POST \
   https://region-project-id.cloudfunctions.net/function-name \
@@ -127,6 +150,7 @@ curl -X POST \
 ```
 
 Response
+
 ```json
 {
   "message": "Hello, Alice! Your HTTP request was successful!"
@@ -138,21 +162,36 @@ Response
 ## Container Architecture
 
 **Overview:**
-- Containers are lightweight, standalone, and executable software packages that include everything needed to run a piece of software, including the code, runtime, libraries, and system tools.
-- Containers use the host system's kernel but isolate the application's processes, ensuring that each container is independent of others.
+
+- Containers are lightweight, standalone, and executable software packages that
+  include everything needed to run a piece of software, including the code,
+  runtime, libraries, and system tools.
+- Containers use the host system's kernel but isolate the application's
+  processes, ensuring that each container is independent of others.
 
 **Advantages:**
-1. **Portability:** Containers can run on any system that supports the container runtime, ensuring consistent environments across development, testing, and production.
-2. **Isolation:** Containers provide a high level of process isolation, helping to prevent conflicts and enhance security.
-3. **Efficiency:** Containers are lightweight and use fewer resources than virtual machines, allowing for higher density on the same hardware.
-4. **Flexibility:** Full control over the runtime environment, enabling custom configurations and optimizations.
+
+1. **Portability:** Containers can run on any system that supports the container
+   runtime, ensuring consistent environments across development, testing, and
+   production.
+2. **Isolation:** Containers provide a high level of process isolation, helping
+   to prevent conflicts and enhance security.
+3. **Efficiency:** Containers are lightweight and use fewer resources than
+   virtual machines, allowing for higher density on the same hardware.
+4. **Flexibility:** Full control over the runtime environment, enabling custom
+   configurations and optimizations.
 
 **Disadvantages:**
-1. **Management Overhead:** Containers require orchestration tools (like Kubernetes) for managing deployment, scaling, and operations.
-2. **Complexity:** Container orchestration can be complex and may require a steep learning curve.
-3. **Security:** Containers share the host OS kernel, which can pose security risks if not properly managed.
+
+1. **Management Overhead:** Containers require orchestration tools (like
+   Kubernetes) for managing deployment, scaling, and operations.
+2. **Complexity:** Container orchestration can be complex and may require a
+   steep learning curve.
+3. **Security:** Containers share the host OS kernel, which can pose security
+   risks if not properly managed.
 
 **Use Cases:**
+
 - Microservices architecture
 - Continuous integration/continuous deployment (CI/CD) pipelines
 - Applications requiring consistent environments across different stages
@@ -160,19 +199,23 @@ Response
 
 ## Comparison
 
-| Aspect                  | Serverless Architecture                               | Container Architecture                                   |
-|-------------------------|-------------------------------------------------------|---------------------------------------------------------|
-| **Cost Model**          | Pay-per-execution                                     | Pay for allocated resources                              |
-| **Scaling**             | Automatic, event-driven scaling                       | Manual or automated scaling with orchestration tools     |
-| **Deployment Speed**    | Fast deployment, less setup required                  | Slower, more setup needed                                |
-| **Management**          | Minimal operational management                        | Requires management of orchestration and underlying infrastructure |
-| **Execution Time**      | Typically limited by provider constraints             | No inherent limits, depends on resource allocation       |
-| **Control**             | Limited control over the runtime environment          | Full control over the runtime environment                |
-| **Isolation**           | Function-level isolation                              | Process-level isolation                                  |
-| **Use Cases**           | Event-driven tasks, microservices, data processing    | Microservices, CI/CD, consistent environments            |
+| Aspect               | Serverless Architecture                            | Container Architecture                                             |
+|----------------------|----------------------------------------------------|--------------------------------------------------------------------|
+| **Cost Model**       | Pay-per-execution                                  | Pay for allocated resources                                        |
+| **Scaling**          | Automatic, event-driven scaling                    | Manual or automated scaling with orchestration tools               |
+| **Deployment Speed** | Fast deployment, less setup required               | Slower, more setup needed                                          |
+| **Management**       | Minimal operational management                     | Requires management of orchestration and underlying infrastructure |
+| **Execution Time**   | Typically limited by provider constraints          | No inherent limits, depends on resource allocation                 |
+| **Control**          | Limited control over the runtime environment       | Full control over the runtime environment                          |
+| **Isolation**        | Function-level isolation                           | Process-level isolation                                            |
+| **Use Cases**        | Event-driven tasks, microservices, data processing | Microservices, CI/CD, consistent environments                      |
 
 ## Conclusion
 
-**Serverless architecture** is ideal for event-driven applications, microservices, and workloads that require automatic scaling without the need for managing infrastructure.
- 
-**Container architecture** is suitable for applications that need consistent environments, full control over the runtime, and efficient resource utilization with container orchestration.
+**Serverless architecture** is ideal for event-driven applications,
+microservices, and workloads that require automatic scaling without the need for
+managing infrastructure.
+
+**Container architecture** is suitable for applications that need consistent
+environments, full control over the runtime, and efficient resource utilization
+with container orchestration.

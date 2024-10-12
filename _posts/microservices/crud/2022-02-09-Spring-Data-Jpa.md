@@ -19,6 +19,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 > Avoiding Service layer for simplicity
 
 ##### Get a list of all the users
+
 ```java
 @RestController
 @RequestMapping("/jpa")
@@ -33,7 +34,7 @@ public class StudentController {
 }
 ```
 
-##### Get a student based on id 
+##### Get a student based on id
 
 With support of the use of Java 8 OPTIONAL, Null values can be easily avoided.
 
@@ -65,7 +66,9 @@ public Student retrieveUserById(@PathVariable("id") @NotBlank Long id) {
 
 ## POST Rest Calls (Creating a new Entity)
 
-Doing this in Controller Class is not recommended. Service Layer is avoided for simplicity.
+Doing this in Controller Class is not recommended. Service Layer is avoided for
+simplicity.
+
 ```java
 @PostMapping("/student")
 public ResponseEntity<Object> createStudent(@Valid @RequestBody Student student){
@@ -82,7 +85,9 @@ public ResponseEntity<Object> createStudent(@Valid @RequestBody Student student)
 }
 ```
 
-In Postman, create a POST call **{{address}}{{port}}/api/jpa/student** with Request Body RAW and JSON as 
+In Postman, create a POST call **{{address}}{{port}}/api/jpa/student** with
+Request Body RAW and JSON as
+
 ```json
 {
 "name": "Nitin",
@@ -90,13 +95,15 @@ In Postman, create a POST call **{{address}}{{port}}/api/jpa/student** with Requ
 }
 ```
 
-
-## PUT Request (modifying an existing Value) 
+## PUT Request (modifying an existing Value)
 
 Use of Java 8 Map.
 
-In this approach, A PUT Request can also be used to Create a new entry in case the passed id DOES NOT Exist in the DB.
-**Not recommended** to save, if ID doesn't exist as **id would not be known** for a new entry
+In this approach, A PUT Request can also be used to Create a new entry in case
+the passed id DOES NOT Exist in the DB.
+**Not recommended** to save, if ID doesn't exist as **id would not be known**
+for a new entry
+
 ```java
 @PutMapping("/student/{id}")
 public Student modifyValue(@RequestBody Student newStudent, @PathVariable Long id){
@@ -133,6 +140,7 @@ public class CustomizedResponseEntiryExceptionHandler extends ResponseEntityExce
 ## DELETE Rest Call
 
 In Controller
+
 ```java
 //Delete a User
 @DeleteMapping(path = "/user/{id}")
@@ -148,6 +156,7 @@ public User deleteUserById(@PathVariable int id) throws UserNotFoundException {
 ```
 
 in DAOService
+
 ```java
 //Delete a user
 public User deleteById(int id){
@@ -165,14 +174,17 @@ public User deleteById(int id){
     return deletedUser;
 }
 ```
-Delete a user by passing its ID to a delete postman request- **{{address}}{{port}}/api/hardCodedData/user/1**
 
+Delete a user by passing its ID to a delete postman request- *
+*{{address}}{{port}}/api/hardCodedData/user/1**
 
 ## Validations
 
-Use of @Valid in the Controller class forces a validation check. The validation is defined in the Entity class
+Use of @Valid in the Controller class forces a validation check. The validation
+is defined in the Entity class
 
 in Controller
+
 ```java
 //Add a new User
 @PostMapping("/users")
@@ -180,6 +192,7 @@ public ResponseEntity<Object> addNewUser(@Valid  @RequestBody User user){
 ```
 
 User Entity Class (Using Lombok)
+
 ```java
 @Data
 public class User {
@@ -191,11 +204,13 @@ public class User {
 }
 ```
 
-Exception for Failed Validations in the customized response entity exception handler
+Exception for Failed Validations in the customized response entity exception
+handler
+
 ```java
  //Exception for Failed Validations
 @Override
-protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request){
+private ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request){
 
     ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), "Validation Failed", ex.getBindingResult().toString());
     return  new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);

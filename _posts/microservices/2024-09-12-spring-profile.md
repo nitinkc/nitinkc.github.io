@@ -4,17 +4,20 @@ date:   2024-09-12 15:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+
 {% include toc title="Index" %}
 
 # Setting a profile
+
 - Using `-Dspring.profiles.active=prod` in VM Arguments
 - In application.properties, `spring.profiles.active=prod`
 
+# `@Profile`
 
-# `@Profile` 
 - making a profile active from the application.properties
 - **default** profile is added with the argument
-  - `@Profile({"qa","default"})` on a bean
+    - `@Profile({"qa","default"})` on a bean
+
 ```java
 @Profile({"qa","default"})
 @Bean

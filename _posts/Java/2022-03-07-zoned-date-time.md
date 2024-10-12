@@ -4,9 +4,11 @@ date:   2022-03-08 00:27:00
 categories: ['Java']
 tags: ['Java']
 ---
+
 {% include toc title="Index" %}
 
 **Current Formatted Date, from the server running JVM, using ZonedDateTime**
+
 ```java
 String formattedCurrentTimeStamp = ZonedDateTime.now()
         .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS a z(O)"));
@@ -14,9 +16,11 @@ String formattedCurrentTimeStamp = ZonedDateTime.now()
 ```
 
 **Convert from UTC to EST/EDT**
+
 - First convert the Input String into ZonedDateTime using parse
 - Manipulate the zoneDateTime object
-- Convert the zonedDateTimeObject into the Output String using the required format
+- Convert the zonedDateTimeObject into the Output String using the required
+  format
 
 [Difference between Parse and Format](https://nitinkc.github.io/algorithms/Drills/#difference-between-parse-and-format)
 
@@ -30,6 +34,7 @@ zdtBasedOnCity = zonedDateTime
         .withZoneSameInstant(ZoneId.of(ZoneOffset.UTC.getId()))
         .truncatedTo(ChronoUnit.MILLIS);
 ```
+
 {% gist nitinkc/ee92e4e37a323bfe0785a5c3ce4f628e %}
 
 ```java
@@ -56,26 +61,32 @@ From `java.time` package
 The `LocalDateTime` class represents a date and time without a time zone,
 while the `ZonedDateTime` class represents a date and time with a time zone.
 
-* ZonedDateTime : A date-time with a time-zone in the ISO-8601 calendar system, 
-eg. `2007-12-03T10:15:30+01:00 Europe/Paris}`.
+* ZonedDateTime : A date-time with a time-zone in the ISO-8601 calendar system,
+  eg. `2007-12-03T10:15:30+01:00 Europe/Paris}`.
 
-**When would you use OffsetDateTime instead of ZonedDateTime?** 
+**When would you use OffsetDateTime instead of ZonedDateTime?**
 
-If you are writing complex software that models its own rules for date and time calculations based on geographic locations, 
-or if you are storing time-stamps in a database that track only absolute offsets from Greenwich/UTC time, 
+If you are writing complex software that models its own rules for date and time
+calculations based on geographic locations,
+or if you are storing time-stamps in a database that track only absolute offsets
+from Greenwich/UTC time,
 then you might want to use OffsetDateTime.
 
 ## LocalDate
+
 {% gist nitinkc/79309bfcaf2b3f44c993e827cecd5814 %}
 
 ## LocalDateTime
+
 {% gist nitinkc/cae344eab0c8d789d2013665eefd9272 %}
 
 ## ZonedDateTime
+
 **Parse Input String into ZonedDate time**
 {% gist nitinkc/c82dd66846fe166d5ac5d7d40b9d87ff %}
 
-**Format ZonedDateTime into desired output String format (to be used as json strings)**
+**Format ZonedDateTime into desired output String format (to be used as json
+strings)**
 {% gist nitinkc/4621ddf2c4efa980dfe32b89aa63bb1e %}
 
 ### ZoneId vs ZoneOffset
@@ -87,32 +98,44 @@ ZoneId india   = ZoneId.of("Asia/Kolkata");//UTC+05:30
 ZoneId chicago = ZoneId.of("US/Central");
 ZoneId ny      = ZoneId.of("UTC-05:00");
 ```
+
 **ZoneId**
-- Represents a time zone identifier, such as "America/New_York" or "Europe/London".
-- It provides a way to identify regions with distinct rules for adjusting time, 
-including daylight saving time (DST) rules.
-- ZoneId is used to create ZonedDateTime instances, which represent a specific date and time in a particular time zone.
+
+- Represents a time zone identifier, such as "America/New_York" or "
+  Europe/London".
+- It provides a way to identify regions with distinct rules for adjusting time,
+  including daylight saving time (DST) rules.
+- ZoneId is used to create ZonedDateTime instances, which represent a specific
+  date and time in a particular time zone.
 
 **ZoneOffset**
+
 - Represents a fixed offset from UTC, such as +03:00 or -08:00.
-- It **_does not handle_** daylight saving time or historical changes in time zone rules; 
-it simply represents a constant time difference from UTC.
+- It **_does not handle_** daylight saving time or historical changes in time
+  zone rules;
+  it simply represents a constant time difference from UTC.
+
 ```java
 String ist = ZoneOffset.SHORT_IDS.get("IST");//Asia/Kolkata
 //Get zoneOffset from Zone Id
 ZoneOffset standardOffset =  zoneId.getRules().getStandardOffset(Instant.now()).toString();//+05:30
 ```
-# A case with Z
-As per [Java 17 documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html)
 
-Capital Z would format the date with timezone in the end with + or - sign indicating the timezone compared to UTC. 
+# A case with Z
+
+As
+per [Java 17 documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html)
+
+Capital Z would format the date with timezone in the end with + or - sign
+indicating the timezone compared to UTC.
 {% gist nitinkc/22f8f3ea4afcf340d49a2610407297fc %}
 
-For ZoneDateTime 
-`yyyy-MM-dd'T'HH:mm:ss.SSSZ` format would look like `2022-03-03T09:08:56.064+0000`  
+For ZoneDateTime
+`yyyy-MM-dd'T'HH:mm:ss.SSSZ` format would look like
+`2022-03-03T09:08:56.064+0000`
 
+## Date comparison with ZonedDateTime
 
-## Date comparison with ZonedDateTime 
 It is easy to compare the dates with `ZonedDateTime`
 
 {% gist nitinkc/7e3dc6cb2ac498e478a8a1d92b3537f9 %}
@@ -123,7 +146,8 @@ Working with Legacy DB that uses Timestamp
 
 > toInstant connects ZonedDateTime with sql Timestamp
 
-Java provides a way to convert between ZonedDateTime and Timestamp using the `toInstant()`
+Java provides a way to convert between ZonedDateTime and Timestamp using the
+`toInstant()`
 
 ```java
 //converts a ZonedDateTime to a Timestamp
@@ -139,7 +163,7 @@ SQL Timestamp to LocalDate
 
 SQL Timestamp to LocalDateTime
 
-### SQL Timestamp to ZonedDateTime 
+### SQL Timestamp to ZonedDateTime
 
 Often the timestamp conversion is needed to and from DB timestamp column
 
@@ -147,16 +171,18 @@ Often the timestamp conversion is needed to and from DB timestamp column
 
 ## to SQL Timestamp
 
-SQL Timestamp has Date and Time component. Thus, LocalDateTime is the connecting medium.
+SQL Timestamp has Date and Time component. Thus, LocalDateTime is the connecting
+medium.
 
 ### LocalDate to SQL Timestamp
-Instead of just using Date, convert the Date into DateTime by using `startOfDay` or `endOfDay` to properly 
+
+Instead of just using Date, convert the Date into DateTime by using `startOfDay`
+or `endOfDay` to properly
 convert into SQL Timestamp
 
 ### LocalDateTime to SQL Timestamp
 
 {% gist nitinkc/11cc696554e57fb40327223f5f349de4 %}
-
 
 ### ZonedDateTime to SQL Timestamp
 
@@ -168,10 +194,11 @@ public static Timestamp fromDate(ZonedDateTime date) {
 
 {% gist nitinkc/1c5a4ee935450d075580e40108a8b413 %}
 
+### SQL Timestamp from current time with UTC timezone
 
-### SQL Timestamp from current time with UTC timezone 
+Often, to save current time stamp in DB (ex. updateTime column in a table), with
+multiple timezones, it is a good idea to save in UTC
 
-Often, to save current time stamp in DB (ex. updateTime column in a table), with multiple timezones, it is a good idea to save in UTC 
 ```java
 public static Timestamp currentTimestamp() {
         return Timestamp.from(ZonedDateTime.now(ZoneOffset.UTC).toInstant());
@@ -218,10 +245,10 @@ public static Timestamp currentTimestamp() {
 |   x    | +0000; -08; -0830; -08:30; -083015; -08:30:15; | zone-offset                |
 |   Z    | +0000; -0800; -08:00;                          | zone-offset                |
 
-
 # Troubleshooting `LocalDate.now()` Discrepancy in Cloud GKE
 
-If your application uses `LocalDate.now()` and returns an outdated date after deployment to GKE, follow these steps to resolve the issue:
+If your application uses `LocalDate.now()` and returns an outdated date after
+deployment to GKE, follow these steps to resolve the issue:
 
 ## Potential Causes and Solutions
 
@@ -231,23 +258,28 @@ Ensure that the time on your Kubernetes nodes is accurate and synchronized:
 
 - **Check Node Time**
     - SSH into a Kubernetes node.
-    - Use commands like `date` or `timedatectl` to verify the current date and time.
+    - Use commands like `date` or `timedatectl` to verify the current date and
+      time.
     - Ensure nodes are synchronized with NTP servers.
 
 - **GKE and NTP**
-    - GKE nodes should be managed to sync time automatically. Verify if there are any issues with NTP configuration.
+    - GKE nodes should be managed to sync time automatically. Verify if there
+      are any issues with NTP configuration.
 
 ### 2. Review Container Time Configuration
 
-Containers inherit the time settings from the host system but may have specific configurations:
+Containers inherit the time settings from the host system but may have specific
+configurations:
 
 - **Check Container Time**
-    - Run a command like `date` inside the container to check if the time is correct.
+    - Run a command like `date` inside the container to check if the time is
+      correct.
     - Ensure no container-specific settings are overriding the time.
 
 ### 3. Inspect Deployment Scripts and Configurations
 
-Your deployment scripts or Kubernetes configurations might influence the observed time:
+Your deployment scripts or Kubernetes configurations might influence the
+observed time:
 
 - **Review Jenkins Pipeline**
     - Ensure Jenkins doesn’t inject any deployment-specific time settings.
@@ -260,7 +292,8 @@ Your deployment scripts or Kubernetes configurations might influence the observe
 Timezone differences can affect the date and time values:
 
 - **Verify Timezone Settings**
-    - Ensure that timezone settings are consistent across your local environment, Kubernetes nodes, and containers.
+    - Ensure that timezone settings are consistent across your local
+      environment, Kubernetes nodes, and containers.
     - Check both system and application timezone settings.
 
 ### 5. Update and Restart Pods
@@ -276,11 +309,13 @@ If time discrepancies are due to stale data or configurations:
 For critical applications, consider using a consistent time source:
 
 - **External Time Services**
-    - Integrate an external time service or API if you need to ensure accurate and consistent time across environments.
+    - Integrate an external time service or API if you need to ensure accurate
+      and consistent time across environments.
 
 ## Example Code
 
-If using `LocalDate.now()` is crucial, ensure it’s called at the point of execution:
+If using `LocalDate.now()` is crucial, ensure it’s called at the point of
+execution:
 
 ```java
 import java.time.LocalDate;

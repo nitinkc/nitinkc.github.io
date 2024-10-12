@@ -12,16 +12,15 @@ tags: [Algorithms]
 
 ### 7 Step Process
 
-Before jumping into the Coding  
+Before jumping into the Coding
 
- 1. Method Signature (Understand the problem statement)
- 2. Some examples (test cases) to understand the edge cases
- 3. Brainstorming
- 4. (Talking the problem and bring some approach)
- 5. Find the Data structure and Algorithm to be used
- 6. Write Code (use paper or whiteboard)
- 7. Test for more test cases to avoid edge cases and
-
+1. Method Signature (Understand the problem statement)
+2. Some examples (test cases) to understand the edge cases
+3. Brainstorming
+4. (Talking the problem and bring some approach)
+5. Find the Data structure and Algorithm to be used
+6. Write Code (use paper or whiteboard)
+7. Test for more test cases to avoid edge cases and
 
 ##### Queue using two Stacks
 
@@ -29,7 +28,7 @@ One Stack to hold values, the second one to hold the poped values from one
 
 ```java
 private Stack<Integer> main = new Stack<Integer>();
-private Stack<Integer> temp = new Stack<Integer>();
+private final Stack<Integer> temp = new Stack<Integer>();
 
 //O(1) operation
 public void enque(int item){
@@ -80,7 +79,6 @@ public void reverseList(Node head){
 
 ##### Find a cycle in a Linked List (Iteratively)
 
-
 ##### UnCoupled Integer in an Array.
 
 O(n) Space and O(n) time Complexity in a set
@@ -108,7 +106,6 @@ for (int i = 0; i < arr.length; arr++){
 
 return xor;
 ```
-
 
 ##### Balanced Parenthesis
 
@@ -141,8 +138,6 @@ Push on opener and pop on closers.
         return true;
 ```
 
-
-
 ##### Find minimum in a Stack
 
 Maintain 2 Stacks, One internally for keeping track of the Max/Min Stack
@@ -163,7 +158,6 @@ int getHeight(BSTNode root){
 }
 ```
 
-
 ##### Binary Search
 
 ```java
@@ -183,8 +177,6 @@ else
     return mid;           
 ```
 
-
-
 ##### FizzBuzz Problem
 
 Importacnce of placing if statements are tested here!!
@@ -203,8 +195,6 @@ public String fizzString2(int n) {
         return "Buzz!";  
 }
 ```
-
-
 
 ### Tree Traversals
 
@@ -250,7 +240,6 @@ public String fizzString2(int n) {
     }
 ```
 
-
 ### Test Cases
 
 ##### String
@@ -263,6 +252,6 @@ public String fizzString2(int n) {
 
 ##### Arrays
 
- 1. if Null
- 2. if arr.length == 0
- 3. if arr.length > required size
+1. if Null
+2. if arr.length == 0
+3. if arr.length > required size

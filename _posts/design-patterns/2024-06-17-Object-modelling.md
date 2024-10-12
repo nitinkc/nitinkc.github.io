@@ -10,7 +10,9 @@ tags: ['Java']
 Usecase : identify Nouns and verbs
 
 Domain model : System abstraction and hierarchies
-  - Static, dunamic and functional modelling
 
-Diagrams 
+- Static, dunamic and functional modelling
+
+Diagrams
+
 - Class, state 

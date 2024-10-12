@@ -4,6 +4,7 @@ date:   2024-06-18 13:30:00
 categories: ['Git']
 tags: ['Git']
 ---
+
 {% include toc title="Index" %}
 
 [https://blog.gitbutler.com/fosdem-git-talk/](https://blog.gitbutler.com/fosdem-git-talk/)
@@ -15,63 +16,75 @@ tags: ['Git']
 ```shell
 git config --list
 ```
-# Create multiple Git Config
-With single repo and user `git config --global user.name "John Doe" && git config --global user.email "john.doe@example.com"` would suffice
 
-`--global` writes a system-wide config file and `--local` (the default) that writes to `.git/config` in the project repo.
+# Create multiple Git Config
+
+With single repo and user
+`git config --global user.name "John Doe" && git config --global user.email "john.doe@example.com"`
+would suffice
+
+`--global` writes a system-wide config file and `--local` (the default) that
+writes to `.git/config` in the project repo.
+
 ```shell
 git config  user.name "John Doe" 
 #Or
 git config --local user.name "John Doe" 
 ```
 
-To ensure multiple git or bitbucket repositories work seamlessly with respective userId's on one machine, 
-configure the global `.gitconfig` such that it picks up right id for specific repo.
+To ensure multiple git or bitbucket repositories work seamlessly with respective
+userId's on one machine,
+configure the global `.gitconfig` such that it picks up right id for specific
+repo.
 
 global `.gitconfig` file is located in home folder `~`
 
 - with commnd
-  - Add Config
-    ```shell
-    git config --file ~/.gitconfig-work user.name "Your Name"
-    git config --file ~/.gitconfig-work user.email "xxx@xxx.com"
-    ```
-  - Add the config file
-    ```shell
-    git config --global includeIf.gitdir:~/ClonedCodeWork/.path .gitconfig-work
-    git config --global includeIf.gitdir:~/Programming/.path .gitconfig-learn
-    ```
+    - Add Config
+      ```shell
+      git config --file ~/.gitconfig-work user.name "Your Name"
+      git config --file ~/.gitconfig-work user.email "xxx@xxx.com"
+      ```
+    - Add the config file
+      ```shell
+      git config --global includeIf.gitdir:~/ClonedCodeWork/.path .gitconfig-work
+      git config --global includeIf.gitdir:~/Programming/.path .gitconfig-learn
+      ```
 - manually
-  - create the files and open in a text editor
+    - create the files and open in a text editor
+        ```shell
+        touch ~/.gitconfig-learn | open .gitconfig-learn
+        touch ~/.gitconfig-work  | open .gitconfig-work
+        ```
+    - Update the (relevant) information as needed in both the file under
+      `[user]` tag
+        ```shell
+        [user]
+            email = xxx@xxx.com
+            name = Your Name
+        ```
+    - Or, Manually add the config
       ```shell
-      touch ~/.gitconfig-learn | open .gitconfig-learn
-      touch ~/.gitconfig-work  | open .gitconfig-work
+      [includeIf "gitdir:~/Documents/ClonedCodeWork/"]
+      path = .gitconfig-work
+      [includeIf "gitdir:~/Programming/"]
+      path = .gitconfig-learn
       ```
-  - Update the (relevant) information as needed in both the file under `[user]` tag
-      ```shell
-      [user]
-          email = xxx@xxx.com
-          name = Your Name
-      ```
-  - Or, Manually add the config
-    ```shell
-    [includeIf "gitdir:~/Documents/ClonedCodeWork/"]
-    path = .gitconfig-work
-    [includeIf "gitdir:~/Programming/"]
-    path = .gitconfig-learn
-    ```
 
 - Check
   ```shell
   git config --global --get-regexp includeIf
   ```
-  
-`gitdir` takes the folder where multiple projects can reside from same repository (eg: bitbucket enterprise server)
 
-> While using git clients (github desktop, source tree etc), ensure that it does not overwrite the git config file
+`gitdir` takes the folder where multiple projects can reside from same
+repository (eg: bitbucket enterprise server)
+
+> While using git clients (github desktop, source tree etc), ensure that it does
+> not overwrite the git config file
 
 # Create global GitIgnore via separate file
-- Create `.gitignore_global` file in the home directory `~` 
+
+- Create `.gitignore_global` file in the home directory `~`
     ```shell
     touch ~/.gitignore_global
     ```
@@ -86,11 +99,15 @@ global `.gitconfig` file is located in home folder `~`
     ```
 
 # templatedir
-**Template Directory**: When you initialize a new Git repository with git init,
-Git **copies** files from the directory specified by `init.templatedir` into the **.git directory of the new repository**.
 
-The `git config --global init.templatedir` command is used to set a global configuration option in Git 
-that specifies a directory template to be used when **initializing new repositories**. 
+**Template Directory**: When you initialize a new Git repository with git init,
+Git **copies** files from the directory specified by `init.templatedir` into the
+**.git directory of the new repository**.
+
+The `git config --global init.templatedir` command is used to set a global
+configuration option in Git
+that specifies a directory template to be used when **initializing new
+repositories**.
 
 ```text
 ~/.git-templates/
@@ -98,11 +115,14 @@ that specifies a directory template to be used when **initializing new repositor
     ├── info/
     └── attributes/
 ```
-This allows you to pre-configure new repositories with certain files, including 
-- Git hooks, 
+
+This allows you to pre-configure new repositories with certain files, including
+
+- Git hooks,
 - configuration files, etc.
 
 ### Summary Commands
+
 ```shell
 # Create Template Directory
 mkdir -p ~/.git-templates/hooks ~/.git-templates/info ~/.git-templates/attributes
@@ -120,6 +140,7 @@ git config --global commit.template '~/.git-templates/.gitmessage'
 ```
 
 ## Configure Git to Use the Global Hooks Directory:
+
 This setting ensures that the hooks from `~/.git-templates/hooks` are copied to
 the `.git/hooks` directory in every **new repository** you create.
 
@@ -133,7 +154,9 @@ git config --global init.templatedir '~/.git-templates'
 ```
 
 ### For Existing Repositories:
-Need to manually copy the hooks from the global directory into each repository's `.git/hooks` directory.
+
+Need to manually copy the hooks from the global directory into each repository's
+`.git/hooks` directory.
 
 ```shell
 for repo in $(find /path/to/your/repos -type d -name '.git'); do
@@ -142,7 +165,8 @@ done
 ```
 
 ## Create global GitIgnore via templated dir
-File names present under `.git/info/exclude` are ignored 
+
+File names present under `.git/info/exclude` are ignored
 
 ```shell
 # ~/.git-templates/info/exclude
@@ -154,6 +178,7 @@ File names present under `.git/info/exclude` are ignored
 ```
 
 ## Default Commit Message Templates
+
 ```shell
 # ~/.git-templates/.gitmessage
 # Commit message template
@@ -177,6 +202,7 @@ Description:
   ```
 
 # Creating global alias
+
 - Creating Alias
   ```shell
   git config --global alias.cob 'checkout -b'
@@ -197,7 +223,9 @@ Description:
   ```
 
 # Branch Sorter
-- sort by `objectsize`, `authordate`, `committerdate`, `creatordate`, or `taggerdate` with the `--sort` option 
+
+- sort by `objectsize`, `authordate`, `committerdate`, `creatordate`, or
+  `taggerdate` with the `--sort` option
   ```shell
   git branch --sort=-committerdate
   ```
@@ -206,16 +234,19 @@ Description:
   ```shell
   git config --global branch.sort -committerdate
   ```
-  
-> the -committerdate has a leading  -  not a double dash. 
+
+> the -committerdate has a leading - not a double dash.
 
 # Column UI
+
 Set the default response in Columns. Try with `git branch`
+
 ```shell
 git config --global column.ui auto
 ```
 
-`git column` 
+`git column`
+
 ```shell
 seq 1 12 | git column --mode=column --padding=10
 1           2           3           4           5           6           7           8           9           10          11          12   
@@ -224,15 +255,14 @@ seq 1 12 | git column --mode=column --padding=10
 1      2      3      4      5      6      7      8      9      10     11     12            
 ```
 
-
 # Safe Force Pushing
-
 
 ```shell
 git config --global alias.fpush push --force-with-lease
 ```
 
-
 # Git Maintenance
-[Git Maintenance]({{ site.baseurl }}{% post_url /git/2023-11-14-git-maintenance %}
+
+[Git Maintenance]({{ site.baseurl }}{% post_url
+/git/2023-11-14-git-maintenance %}
 

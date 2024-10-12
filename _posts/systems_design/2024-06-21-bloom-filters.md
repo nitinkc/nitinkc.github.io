@@ -4,6 +4,7 @@ date:   2024-06-18 11:45:00
 categories: [System Design]
 tags: [System Design]
 ---
+
 {% include toc title="Index" %}
 
 # Bloom Filters - Probabilistic Data structure
@@ -11,32 +12,42 @@ tags: [System Design]
 [https://hur.st/bloomfilter/](https://hur.st/bloomfilter/)
 
 A Bloom filter is a probabilistic data structure that is used to **test whether
-an element is a member of a set**. 
+an element is a member of a set**.
 
-It is highly space-efficient and allows for fast membership queries, but it can produce false positives
+It is highly space-efficient and allows for fast membership queries, but it can
+produce false positives
 
 # Applications
-- Databases: To quickly check if a value might be in a database before doing a more expensive query.
+
+- Databases: To quickly check if a value might be in a database before doing a
+  more expensive query.
 - Networking: For efficient routing and packet processing.
 - Security: To filter out malicious URLs or content quickly.
-
 
 # How Bloom Filters Work
 
 ### Initialization:
+
 A Bloom filter is represented by an **array of m bits**, all set to 0 initially.
 
-It uses **k different hash functions**, each of which maps an element to one of the m bit positions.
+It uses **k different hash functions**, each of which maps an element to one of
+the m bit positions.
 
 ### Adding Elements:
-To add an element to the Bloom filter, the element is **hashed using each of the k hash functions**.
+
+To add an element to the Bloom filter, the element is **hashed using each of the
+k hash functions**.
+
 - Each hash function produces a position in the bit array.
 - The bits at all k positions are set to 1.
 
 ### Checking Membership:
 
-To check if an element is in the set, it is hashed using the same k hash functions.
-- If all k bits at the positions specified by the hash functions are 1, the element is considered to be in the set.
+To check if an element is in the set, it is hashed using the same k hash
+functions.
+
+- If all k bits at the positions specified by the hash functions are 1, the
+  element is considered to be in the set.
 - If any of the k bits is 0, the element is definitely not in the set.
 
 ```markdown

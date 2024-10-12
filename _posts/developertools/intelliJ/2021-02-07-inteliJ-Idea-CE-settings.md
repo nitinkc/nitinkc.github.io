@@ -12,9 +12,11 @@ sidebar:
 
 # Comments on new Class File created
 
-For the personalized comments, use the following the template in the Preferences as below
+For the personalized comments, use the following the template in the Preferences
+as below
 
-Goto : `Preferences -> Editor -> File and Code Templates` and create a pattern of choice
+Goto : `Preferences -> Editor -> File and Code Templates` and create a pattern
+of choice
 
 ```java
 /**
@@ -25,50 +27,64 @@ Goto : `Preferences -> Editor -> File and Code Templates` and create a pattern o
 ![](/assets/images/intelliJ/intelliJ.png)
 
 # Show line numbers and Method separator
+
 ![show_lineNumbers.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fshow_lineNumbers.png)
 
 # Configure Tabs
+
 ![](/assets/images/intelliJ/2lineTabs.png)
 
-Ensure to check the MARK MODIFIED check box and Open the working Tabs on the left side.
+Ensure to check the MARK MODIFIED check box and Open the working Tabs on the
+left side.
 ![](/assets/images/intelliJ/tabsLeft.png)
 
 ##### Arrange Tab in two rows on Top
-If opening on the top, uncheck the "Show tabs in one row, so that all the tabs appear like this
+
+If opening on the top, uncheck the "Show tabs in one row, so that all the tabs
+appear like this
 ![](/assets/images/intelliJ/oneRowTab.png)
 
 ##### Show Pinned Tab in Separate Row
+
 ![pinned_tab.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fpinned_tab.png)
 
 # Configure font size for Presenting
+
 ![font_size.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Ffont_size.png)
 
 ##### Change Editor Font
+
 ![changeFont.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FchangeFont.png)
 
 # Hide Usages
+
 ![](/assets/images/intelliJ/hideUsages.png)
 
 # Hard Wrap
+
 ![hardWrap.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FhardWrap.png)
 
 # Useful Plugins
 
 [Generate All Setters](https://plugins.jetbrains.com/plugin/9360-generateallsetter)
-* When entity or DTO classes have lots of fields, it is easy to miss fields that are set,
-to Generate all Setters for long entity classes, use this plugin
+
+* When entity or DTO classes have lots of fields, it is easy to miss fields that
+  are set,
+  to Generate all Setters for long entity classes, use this plugin
 
 [properties to yml convert](https://plugins.jetbrains.com/plugin/8000-properties-to-yaml-converter)
+
 * Converting application.properties into aplication.yml
 
 [Pom to Gradle](https://plugins.jetbrains.com/plugin/7937-gradle-dependencies-formatter)
-* While converting maven project to Gradle. USe this plugin for converting pom dependencies into gradle.
 
-##### List of all downloaded plugins, 
+* While converting maven project to Gradle. USe this plugin for converting pom
+  dependencies into gradle.
+
+##### List of all downloaded plugins,
 
 Select all (CTRL+A) and copy for a list of installed Plugins
 ![downloaded_plugin.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fdownloaded_plugin.png)
-
 
 - .env files support (2023.2)
 - CodeGlance Pro (1.7.6)
@@ -97,22 +113,26 @@ Classic screen most used features
 **Top Left** : Back button `CMD [` , Forward `CMD ]`
 
 **Sidebar**
+
 * **Left** : Project, Commit, Structure, Bookmark
 * **Right** : Gradle, Code Coverage
 
 ![classic_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fclassic_intelliJ.png)
 
 ##### Customize the Toolbar
+
 ![customize_toolbar_new_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fcustomize_toolbar_new_intelliJ.png)
 
-# Final look 
+# Final look
+
 ![new_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fnew_intelliJ.png)
 
-
 # Show ByteCode
+
 ![showByteCode.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FshowByteCode.png)
 
 # Flatten the package
+
 ![flattenPackages.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FflattenPackages.png)
 
 # Enable Auto restart with Devtools
@@ -123,12 +143,14 @@ Put the dependency in the gradle/maven file
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
 implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '3.2.3'
 ```
+
 Make the following changes in the intelliJ settings
 ![autoRestart1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FautoRestart1.png)
 
 ![autoRestart2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FautoRestart2.png)
 
 # Enable SonarCube
+
 Install the SonarLint plugin and configure it in IntelliJ
 
 ![sonar1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar1.png)
@@ -139,9 +161,11 @@ Set the Token, instead of user/password
 ![sonar3.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar3.png)
 
 # Enable Google Code Format
+
 ![google-format1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fgoogle-format1.png)
 
 ![google-format2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fgoogle-format2.png)
 
 # Enable Font Zoom/Font Size change
+
 ![font-zoom.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Ffont-zoom.png)

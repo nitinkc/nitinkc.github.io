@@ -4,6 +4,7 @@ date:   2024-04-04 02:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+
 {% include toc title="Index" %}
 
 ## Actuator Settings
@@ -39,6 +40,7 @@ public class RedisHealthIndicator implements HealthIndicator {
 [http://localhost:8080/actuator](http://localhost:8080/actuator)
 
 ## Check Health for Redis custom-url
+
 http://localhost:8080/actuator/health/redis-health](http://localhost:8080/actuator/health/redis-health)
 
 ```json
@@ -60,14 +62,20 @@ http://localhost:8080/actuator/health/redis-health](http://localhost:8080/actuat
 }
 ```
 
-The "redis" entry is provided by default by Spring Boot Actuator when it detects that Redis is available as a dependency 
+The "redis" entry is provided by default by Spring Boot Actuator when it detects
+that Redis is available as a dependency
 It checks if the Redis connection is up by pinging the Redis server.
 
-The "redis-health" entry is my custom health indicator RedisHealthIndicator. 
-This indicator checks the health of the Redis connection in more detail, providing additional information 
-such as the version of Redis and a custom message indicating that the connection to Redis was successful.
+The "redis-health" entry is my custom health indicator RedisHealthIndicator.
+This indicator checks the health of the Redis connection in more detail,
+providing additional information
+such as the version of Redis and a custom message indicating that the connection
+to Redis was successful.
 
-If you only want to see one entry, you can choose to use either the default health indicator provided by 
-Spring Boot Actuator or your custom health indicator, depending on your requirements. 
+If you only want to see one entry, you can choose to use either the default
+health indicator provided by
+Spring Boot Actuator or your custom health indicator, depending on your
+requirements.
 
-If you prefer to use only your custom health indicator, you can disable the default health indicators provided by Spring Boot Actuator.
+If you prefer to use only your custom health indicator, you can disable the
+default health indicators provided by Spring Boot Actuator.

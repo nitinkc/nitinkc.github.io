@@ -14,7 +14,9 @@ Binary Search : O(log n). n,n/2,n/4,n/8,....
 
 Pre processing over head. Elements need to be in sorted order.
 
-Pick the middle element and match if the element is the requested element, else check if the mid is > or < than the requested element. based on that recursively call the binary search.
+Pick the middle element and match if the element is the requested element, else
+check if the mid is > or < than the requested element. based on that recursively
+call the binary search.
 
 ```java
 public boolean binarySearch(int[] arr, int x){

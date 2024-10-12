@@ -4,11 +4,13 @@ date:   2024-03-13 22:50:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
+
 {% include toc title="Index" %}
 
 # Scheduling with Cron
 
 using `@Scheduled` annotation on the method
+
 ```java
 @Component
 @Slf4j
@@ -25,7 +27,9 @@ public class ChronService {
 ```
 
 # Application yml file
-create cron expression using [https://crontab.guru/](https://crontab.guru/#0_1_*_*_1-7)
+
+create cron expression
+using [https://crontab.guru/](https://crontab.guru/#0_1_*_*_1-7)
 
 ```yaml
 report:
@@ -35,7 +39,8 @@ report:
 
 # Async Scheduling
 
-use the two annotations `@EnableAsync` and `@EnableScheduling` at the application level
+use the two annotations `@EnableAsync` and `@EnableScheduling` at the
+application level
 
 ```java
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -52,6 +57,7 @@ public class MemoryIssuesApplication {
 ```
 
 Method scheduled to run periodically
+
 ```java
 //@Scheduled(fixedDelay = 1000)
 public void runTask() {

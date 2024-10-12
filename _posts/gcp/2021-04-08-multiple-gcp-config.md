@@ -8,9 +8,10 @@ tags: [Google Cloud Platform]
 
 # Create Multiple config for GCP Accounts
 
-Inorder to create a new profile, always use `gcloud init` and follow the prompts.
-select the project, by either providing the number given or by provifing the exact project ID.
-
+Inorder to create a new profile, always use `gcloud init` and follow the
+prompts.
+select the project, by either providing the number given or by provifing the
+exact project ID.
 
 To change from one profile to another
 
@@ -20,14 +21,19 @@ alias gcpNitin='gcloud config configurations activate learn'
 ```
 
 Check all the users and the active user will have an asterisk
+
 ```shell
 gcloud auth list
 ```
+
 After Switching. change the account with the correspoding profile
+
 ```shell
 gcloud config set account ACCOUNT
 ```
+
 Ensure that the default login is set
+
 ```shell
 gcloud auth application-default login
 
@@ -35,9 +41,11 @@ gcloud auth application-default login
 gcloud auth application-default print-access-token
 ```
 
-Follow this link https://stackoverflow.com/questions/53306131/difference-between-gcloud-auth-application-default-login-and-gcloud-auth-logi
+Follow this
+link https://stackoverflow.com/questions/53306131/difference-between-gcloud-auth-application-default-login-and-gcloud-auth-logi
 
 ### Check all the config available on the system
+
 ```shell
 gcloud config configurations list
 ```
@@ -49,23 +57,27 @@ gcloud config configurations activate [CONFIG_NAME]
 ```
 
 ### Set another project within same GCloud account
+
 ```shell
 gcloud config set project <PROJECT ID>
 ```
 
-
 ### Add new GCP Account
-In case a new GCP Account is to be added, use following to create a new configuration and initialize
+
+In case a new GCP Account is to be added, use following to create a new
+configuration and initialize
 
 ```shell
 gcloud config configurations create [CONFIG_NAME]
 
 gcloud init
 ```
-Select re-initialize the config just created and login as a new user and get redirected into web Browser for GCP Console login
 
+Select re-initialize the config just created and login as a new user and get
+redirected into web Browser for GCP Console login
 
 To check the GCP properties of the active user use
+
 ```shell
 gcloud config list
 ```
@@ -74,12 +86,15 @@ gcloud config list
 # If no account is given, it revokes the current account
 gcloud auth revoke
 ```
+
 ## Delete a configuration
+
 ```shell
 gcloud config configurations delete <CONFIG_NAME>>
 ```
 
 ### See listings
+
 ```shell
 gcloud auth list
 gcloud config list
@@ -111,7 +126,8 @@ gcloud spanner databases create spanner-db --instance=development-nc
 
 ```
 
-# After Finishing 
+# After Finishing
+
 ```shell
 gcloud spanner instances delete development-nc
 # if current user is to be revoked

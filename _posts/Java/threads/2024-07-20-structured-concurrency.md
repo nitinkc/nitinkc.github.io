@@ -10,36 +10,44 @@ tags: ['Java','Multithreading']
 Java 21 Virtual Threads and Structured Concurrency
 
 # Scenario
-When there are multiple independent tasks to be completed, and one of the tasks fail, there should be 
-some mechanism to let others know that it has failed 
+
+When there are multiple independent tasks to be completed, and one of the tasks
+fail, there should be
+some mechanism to let others know that it has failed
 and let others also fail-fast (instead of waiting for the other tasks to finish)
 
 # Interrupts and Thread Cancellation
 
 `void interrupt()`
+
 - Interrupts a thread by setting its interrupted flag.
 
 `static boolean interrupted()`
+
 - Checks and clears the interrupted status of the current thread.
 
 `boolean isInterrupted()`
-Effect: Checks the interrupted status of the specified thread **without** clearing it.
+Effect: Checks the interrupted status of the specified thread **without**
+clearing it.
 
 # Expected features
-**Cooperative Interruption**: Threads should check their interrupted status periodically to respond appropriately to interruption requests.
 
-**Handling Interruption**: Proper handling of interruptions improves application responsiveness and thread management.
+**Cooperative Interruption**: Threads should check their interrupted status
+periodically to respond appropriately to interruption requests.
 
-- Interrupter must call `interrupt()` to set the flag (its own) 
-- Interrupted thread 
-  - may choose to ignore the interrupt
-  - check interrupted status periodically (polling)
-  - `wait()`, `sleep()`, `join()` will check status automatically
-    - throws `InterruptedException()`
-    - clears the interrupted status flag
-  - Cancel using `cancel(true)`
+**Handling Interruption**: Proper handling of interruptions improves application
+responsiveness and thread management.
 
-# Futures - Class build on top of Threads. 
+- Interrupter must call `interrupt()` to set the flag (its own)
+- Interrupted thread
+    - may choose to ignore the interrupt
+    - check interrupted status periodically (polling)
+    - `wait()`, `sleep()`, `join()` will check status automatically
+        - throws `InterruptedException()`
+        - clears the interrupted status flag
+    - Cancel using `cancel(true)`
+
+# Futures - Class build on top of Threads.
 
 ```java
 Future<TaskResponse> taskFuture = excecutor.submit(callable);
@@ -47,17 +55,21 @@ taskFuture.cancel(true);
 ```
 
 # Structured Task
+
 - StructuredTaskScope
 - Subtask
 
 following examples are based on the list of tasks
+
 ```java
 var tasks = List.of(new BlockingIOTasks("Price-1", 3, true), 
         new BlockingIOTasks("Price-2", 10,true));
 ```
 
 ### StructuredTaskScope
+
 Shuts down when **all child** threads complete
+
 ```java
 try(var scope = new StructuredTaskScope<TaskResponse>()){
     // Start running the tasks in parallel
@@ -78,7 +90,9 @@ try(var scope = new StructuredTaskScope<TaskResponse>()){
 ```
 
 ### StructuredTaskScope.ShutdownOnSuccess
+
 Shuts down when the first child thread **succeeds**
+
 ```java
 try(var scope = new StructuredTaskScope.ShutdownOnSuccess<TaskResponse>()) {
     // Start running the tasks in parallel 
@@ -93,7 +107,9 @@ try(var scope = new StructuredTaskScope.ShutdownOnSuccess<TaskResponse>()) {
 ```
 
 ### StructuredTaskScope.ShutdownOnFailure()
+
 Shuts down when **the first** child thread fails
+
 ```java 
 try(var scope = new StructuredTaskScope.ShutdownOnFailure()){
     // Start running the tasks in parallel
@@ -108,7 +124,8 @@ try(var scope = new StructuredTaskScope.ShutdownOnFailure()){
 ```
 
 ### Custom
-extend `StructuredTaskScope` and implement the `handleComplete()` method. 
+
+extend `StructuredTaskScope` and implement the `handleComplete()` method.
 
 # handle parallel tasks using CompletionService
 

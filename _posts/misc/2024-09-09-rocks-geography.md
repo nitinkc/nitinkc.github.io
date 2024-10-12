@@ -7,7 +7,6 @@ tags: ['Miscellaneous']
 
 ![](https://149361288.v2.pressablecdn.com/wp-content/uploads/store-img/P/agesofrock.jpg)
 
-
 ![](https://static.vecteezy.com/system/resources/previews/000/097/773/original/vector-geologic-time-of-grand-canyon.jpg)
 
 # Arches National Park

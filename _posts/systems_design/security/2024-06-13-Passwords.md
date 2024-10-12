@@ -4,8 +4,8 @@ date:   2024-06-13 11:02:00
 categories: [System Design]
 tags: [System Design]
 ---
-{% include toc title="Index" %}
 
+{% include toc title="Index" %}
 
 ![](https://www.youtube.com/watch?v=zt8Cocdy15c)
 
@@ -14,13 +14,13 @@ tags: [System Design]
 [OWASP guidelines](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#:~:text=Hashing%20and%20encryption%20can%20keep,appropriate%20approach%20for%20password%20validation.)
 
 ### One way Password **Hashing** Algorithm
+
 - slower thus discourages Brute force att
 - MD5, SHA-1 -> Fast, less secured so shouldn't be used
 
 Vulnerable to pre-computation attacks like
-    - rainbow tables
-    - databased-based lookups
-
+- rainbow tables
+- databased-based lookups
 
 ### Adding Salt to Password
 
@@ -34,4 +34,5 @@ PAssword mnatching
 
 Inm the DB, salt and hash value is kept in two columns
 
-when the uses tries to login, the salt is fetched, added to the password user input, and hash value is calculated and matched with the DB column
+when the uses tries to login, the salt is fetched, added to the password user
+input, and hash value is calculated and matched with the DB column

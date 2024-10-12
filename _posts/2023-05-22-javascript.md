@@ -5,8 +5,8 @@ categories: [javascript]
 tags: [javascript]
 ---
 
-
 ### Variable
+
 {% gist nitinkc/af2ab379fbb188271b3f9bb41a8e3621 %}
 
 ### Lambda
@@ -21,9 +21,8 @@ Arrow function helps with the "this" keyword
 {% gist nitinkc/e8c10e5678bb19cfbe3de098cec4d3f2 %}
 
 ### Varargs or 3 dot operator
+
 {% gist nitinkc/a2cdf57a67fb9cccabeee9f0185ff9a2 %}
-
-
 
 ### Destructuring objects
 

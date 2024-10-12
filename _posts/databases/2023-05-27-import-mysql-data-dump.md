@@ -8,9 +8,8 @@ tags: [Database]
 
 # Import MySql data dump from dump file
 
-
-
-![Import mySql data from dump file]({{ site.url }}/assets/images/datadump_mysql.png)
+![Import mySql data from dump file]({{ site.url
+}}/assets/images/datadump_mysql.png)
 
 
 

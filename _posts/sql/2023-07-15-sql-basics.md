@@ -5,8 +5,8 @@ categories: ['SQL']
 tags: ['SQL']
 ---
 
-
 ## Default schemas
+
 * Postgres - public
 * SQL Server - dbo
 * MySQL -
@@ -18,37 +18,46 @@ select * from information_schema.tables
 where table_schema='public';
 ```
 
-## Constraints 
+## Constraints
+
 -- CONSTRAINTS
-* PRIMARY KEY -- Make sure that the column does not have null values and is always having unique records
+
+* PRIMARY KEY -- Make sure that the column does not have null values and is
+  always having unique records
 * FOREIGN KEY
-* NOT NULL -- Define a column as not null if you never want to have null values in it.
+* NOT NULL -- Define a column as not null if you never want to have null values
+  in it.
 * **CHECK** -- Validates with the given list of values
+
 ```sql
 create table test
 (
 	gender	varchar(10) check (gender in ('M', 'F', 'Male', 'Female'))
 );
 ```
+
 * UNIQUE -- Avoid duplicate values. But it allows NULL values.
+
 ```sql
 create table test
 (
 	id	varchar(15) unique,
 );
 ```
-* IDENTITY column 
+
+* IDENTITY column
 
 
-
-- [Exercise 1](https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management){:target="\_blank"}
+- [Exercise 1](https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management){:
+  target="\_blank"}
 - [Exercise 2](https://en.wikibooks.org/wiki/SQL_Exercises){:target="\_blank"}
 
 #### How many ways to delete data?
 
 - truncate (deletes data but not table): TRUNCATE removes all rows from a table
 - The DELETE command is used to remove rows from a table
-    - you need to COMMIT or ROLLBACK the transaction to make the change permanent
+    - you need to COMMIT or ROLLBACK the transaction to make the change
+      permanent
 - drop table/database : deletes a table/database
     - All the tables' rows, indexes and privileges will also be removed
     - The operation cannot be rolled back.
@@ -64,6 +73,7 @@ select count(*) AS "# employees", d.dname
 ```
 
 **SET Theory**: Inline-view, TOP-N Analysis
+
 ```sql
 -- Select 11th highest salary.
 select EMP_ID, SALARY
@@ -86,15 +96,20 @@ select d.dname
 ```
 
 ## JOINS
+
 [https://nitinkc.github.io/sql/sql-joins/](https://nitinkc.github.io/sql/sql-joins/)
 
 ### The USING clause
 
-The USING clause is used if several columns share the same name but you don’t want to join using all of these common columns. The columns listed in the USING clause can’t have any qualifiers in the statement, including the WHERE clause.
+The USING clause is used if several columns share the same name but you don’t
+want to join using all of these common columns. The columns listed in the USING
+clause can’t have any qualifiers in the statement, including the WHERE clause.
 
 ### The ON clause
 
-The ON clause is used to join tables where the column names don’t match in both tables. The join conditions are removed from the filter conditions in the WHERE clause.
+The ON clause is used to join tables where the column names don’t match in both
+tables. The join conditions are removed from the filter conditions in the WHERE
+clause.
 
 ```SQL
 -- OUTER JOIN is smarter than INNER
@@ -126,7 +141,6 @@ SELECT SSN, E.Name AS EName, LastName, D.Name AS DName, Department, Code, Budget
  FROM **Employees E, Departments D**
  **where** E.Department = D.Code;
 ```
-
 
 **SELF JOIN** – only one table is involved in join <br>
 

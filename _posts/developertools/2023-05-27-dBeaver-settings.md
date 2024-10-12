@@ -6,7 +6,6 @@ categories: Database
 tags: [Database]
 ---
 
-
 ## PDF Reference
 
 <object data="https://nitinkc.github.io/assets/media/dBeaverSettings.pdf" type="application/pdf" width="700px" height="700px">

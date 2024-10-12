@@ -70,7 +70,9 @@ Collection(I)
        |----ConcurrentSkipListSet
 
 ```
-[Collection Interface](http://blogs.bgsu.edu/nitinc/2017/02/11/collection/){:target="_blank"}
+
+[Collection Interface](http://blogs.bgsu.edu/nitinc/2017/02/11/collection/){:
+target="_blank"}
 
 Collection Interface:
 ![alt text](https://blogs.bgsu.edu/nitinc/files/2015/01/Screen-Shot-2015-01-24-at-4.15.39-PM.png)

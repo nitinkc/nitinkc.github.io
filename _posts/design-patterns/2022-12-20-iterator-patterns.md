@@ -4,8 +4,8 @@ date:   2023-11-06 08:30:00
 categories: ['Java','Design Patterns']
 tags: ['Java']
 ---
-{% include toc title="Index" %}
 
+{% include toc title="Index" %}
 
 break & limit of Imperative style coding
 
@@ -26,7 +26,9 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
-`limit` and `takeWhile` are the functional equivalent of `break` from the imperative style.
+`limit` and `takeWhile` are the functional equivalent of `break` from the
+imperative style.
+
 ```java
  List<Integer> numbers = Stream.iterate(1, n -> n + 1)
                 .takeWhile(n -> n <= 10) // Take elements while the condition is true (less than or equal to 10).
@@ -35,9 +37,12 @@ for (int i = 0; i < 10; i++) {
 ```
 
 # Shared Mutability
-**Impurity in Functional Programming** : The given functional pipeline is *not* pure due to shared mutability.
 
-The result may be unpredictable if we ever **change** this code to run in **parallel** by adding 
+**Impurity in Functional Programming** : The given functional pipeline is *not*
+pure due to shared mutability.
+
+The result may be unpredictable if we ever **change** this code to run in *
+*parallel** by adding
 `.parallel()` or by changing `.stream()` to `.parallelStream()`
 
 ```java
@@ -53,6 +58,7 @@ list.parallelStream()
 ```
 
 Change the above code to use `collect(Collectors.toList())` to collect the list
+
 ```java
 var ret = list.parallelStream()
             .filter(Objects::nonNull)
@@ -76,6 +82,7 @@ names.stream()
 ```
 
 Functional pipeline offers internal iterators
+
 * is less complex
 * easy to modify
 * easy to understand
@@ -86,4 +93,6 @@ Functional pipeline offers internal iterators
 * Ensure that we make the functional pipeline pure
 
 # What is a pure function:
-[functional-programming/#pure-function]({% post_url /Java/2022-08-06-functional-programming %})
+
+[functional-programming/#pure-function]({% post_url
+/Java/2022-08-06-functional-programming %})

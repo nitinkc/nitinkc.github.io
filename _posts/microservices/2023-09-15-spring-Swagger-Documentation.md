@@ -4,6 +4,7 @@ date:   2023-09-15 21:30:00
 categories: Spring Microservices
 tags: [CRUD]
 ---
+
 {% include toc title="Index" %}
 
 # Swagger Dcoumentation
@@ -26,6 +27,7 @@ Add Maven Dependencies
 ```
 
 Add a Swagger Config Class
+
 ```java
 @Configuration
 @EnableSwagger2

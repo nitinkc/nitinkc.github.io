@@ -11,21 +11,28 @@ tags: [Google Cloud Platform, Database]
 [MySQL to Cloud Spanner via HarbourBridge](https://opensource.googleblog.com/2020/09/mysql-to-cloud-spanner-via-harbourbridge.html)
 
 Install GO using the download option and setting the path into profile as
+
 ```shell
 export GOPATH=/usr/local/go
 export PATH=$GOPATH/bin:$PATH
 ````
 
-and install harbourbridge using 'git clone https://github.com/cloudspannerecosystem/harbourbridge\ncd harbourbridge'
-and directly CD into harbourbridge directory. If needed, the go installation option can be used as given 
-[here](https://github.com/cloudspannerecosystem/harbourbridge#installing-harbourbridge) and 
+and install harbourbridge using 'git
+clone https://github.com/cloudspannerecosystem/harbourbridge\ncd harbourbridge'
+and directly CD into harbourbridge directory. If needed, the go installation
+option can be used as given
+[here](https://github.com/cloudspannerecosystem/harbourbridge#installing-harbourbridge)
+and
 set the environment variable as follows.
+
 ```shell
 export X=$GOPATH/bin/harbourbridge
 export PATH=$X/bin:$PATH
 ```
 
-After the setup, ensure the GCP profile is set to the intended account, with intended project and intended spanner instance
+After the setup, ensure the GCP profile is set to the intended account, with
+intended project and intended spanner instance
+
 ```shell
 gcloud init
 
@@ -48,10 +55,12 @@ gcloud spanner databases create spanner-db --instance=development-nc
 
 ```
 
-After everything is set in order, pick up the correct schema from MySql DB that needs importing. Ensure that MySql DB is 
+After everything is set in order, pick up the correct schema from MySql DB that
+needs importing. Ensure that MySql DB is
 running and keep the user and password ready. Follow the steps
 
 [Follow this link for argument options](https://github.com/cloudspannerecosystem/harbourbridge/blob/master/mysql/README.md#using-harbourbridge-with-mysqldump)
+
 ```shell
 # Importing Data directly from running instance of MySql
 mysqldump employees -u root -p | $GOPATH/bin/harbourbridge -driver=mysqldump -dbname employees-db
@@ -64,16 +73,17 @@ harbourbridge -driver=mysqldump -instance development-nc -dbname hr < hrDB.txt
 
 mysqldump classicmodels -u root -p | harbourbridge -driver=mysqldump -instance development-nc -dbname spanner-db
 ```
-here classicmodels is the schema name.
 
+here classicmodels is the schema name.
 
 # Importing Employees Database.
 
-Import the Data into MySql and then use harbourBridge to migrate the data into Spanner
+Import the Data into MySql and then use harbourBridge to migrate the data into
+Spanner
 
 [Download the Sample Data here](https://github.com/datacharmer/test_db)
 
-Schema : 
+Schema :
 https://github.com/datacharmer/test_db/blob/master/images/employees.jpg
 
 ```shell

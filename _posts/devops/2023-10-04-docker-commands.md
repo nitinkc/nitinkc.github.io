@@ -9,7 +9,7 @@ tags: ["DevOps","GitOps"]
 
 # Docker container
 
-Running an image that exist on local machine 
+Running an image that exist on local machine
 
 ### Start existing
 
@@ -22,7 +22,7 @@ docker stop <CONTAINER ID>
 docker rm <CONTAINER ID>
 ```
 
-### Start new 
+### Start new
 
 Run Docker Image in Docker Container
 
@@ -123,14 +123,12 @@ docker rmi $(docker images -f dangling=true)
 docker system prune 
 ```
 
-
 # Docker build
 
 ### Tagging an image
 
 * the build command takes image name
 * the run command takes container name
-
 
 ```shell
 # Last parameter specifies the directory of files/folders to use for a build
@@ -147,11 +145,12 @@ docker run -p 8080:8080 nitinkc/simpleweb
 
 1. Create Repository on https://hub.docker.com/ . <repo-name>
 2. Log into the Docker Hub from the command line
-`docker login --username=xxxxx --email=xxxxx` or simply `docker login`
+   `docker login --username=xxxxx --email=xxxxx` or simply `docker login`
 2. Check the image ID (on local machine)using `docker images`
-3. Tag the image `docker tag <image-name> dockerhub-user-name/<repo-name>:tag-name`
-4. Push the image to the repository  created `docker push dockerhub-user-name/<repo-name>`
-
+3. Tag the image
+   `docker tag <image-name> dockerhub-user-name/<repo-name>:tag-name`
+4. Push the image to the repository created
+   `docker push dockerhub-user-name/<repo-name>`
 
 ```shell
 # Build the image using the Dockerfile in the project
@@ -173,7 +172,7 @@ docker push nitinkc/test-image
 docker image push nitinkc/test-image 
 ```
 
-# Directory Binding 
+# Directory Binding
 
 Bind a Directory in Docker Container to a Directory on Host Machine
 
@@ -198,6 +197,7 @@ docker network ls
 #Create Custom Docker Bridge Network
 docker network create --driver bridge <NETWORK NAME>
 ```
+
 Run Docker container in the newly created custom bridge network
 
 ```shell
@@ -210,7 +210,9 @@ Make Docker Container use Host Network to Avoid Port Binding
 
 > docker run <IMAGE ID> --network host
 
-Spring boot on Docker container running on port 5000, mapped with port 8080 of the local machine.
+Spring boot on Docker container running on port 5000, mapped with port 8080 of
+the local machine.
+
 ```shell
 docker run --publish 8080:5000 -t nitinkc/todo-app:todo-backend-26
 
@@ -273,9 +275,11 @@ ENTRYPOINT exec java -jar $APP_HOME/build/libs/$JAR_NAME
 
 # Automate Docker push
 
-The Automation can be done via circle-ci, github-work flow or any other automation engines
+The Automation can be done via circle-ci, github-work flow or any other
+automation engines
 
 ### Gradle Project
+
 Automatically publish image to dockerhub with github actions
 [using dockerhub](https://github.com/nitinkc/SpringBoot-reference/blob/main/.github/workflows/docker-publish.yml)
 
@@ -287,7 +291,8 @@ Check the version numebr increment in the git workflow `docker-publish.yml` file
 
 ### Maven Project
 
-[Maven Project](https://github.com/nitinkc/messenger-spring-boot/tree/master) with [docker file](https://github.com/nitinkc/messenger-spring-boot/blob/master/Dockerfile)
+[Maven Project](https://github.com/nitinkc/messenger-spring-boot/tree/master)
+with [docker file](https://github.com/nitinkc/messenger-spring-boot/blob/master/Dockerfile)
 
 [Example of Circle-ci](https://github.com/nitinkc/messenger-spring-boot/blob/master/.circleci/config.yml)
 
@@ -295,11 +300,9 @@ Check the version numebr increment in the git workflow `docker-publish.yml` file
 
 {% gist nitinkc/369ffd7a41871c1fbc335529fb6be9e0 %}
 
-
 ##### Simpler Version
 
 {% gist nitinkc/7965906df336c8d19ff5315e0f1f0549 %}
-
 
 # Docker compose with SpringBoot
 
@@ -307,7 +310,8 @@ Check the version numebr increment in the git workflow `docker-publish.yml` file
 
 [https://github.com/nitinkc/DockerConcepts/tree/master/6-dockerCompose-springboot-redis/visits#readme](https://github.com/nitinkc/DockerConcepts/tree/master/6-dockerCompose-springboot-redis/visits#readme)
 
-The `docker-compose` file which uses the Dockerfile to build and execute the `Dockerfile`
+The `docker-compose` file which uses the Dockerfile to build and execute the
+`Dockerfile`
 
 [https://github.com/nitinkc/DockerConcepts/blob/master/6-dockerCompose-springboot-redis/visits/docker-compose.yaml](https://github.com/nitinkc/DockerConcepts/blob/master/6-dockerCompose-springboot-redis/visits/docker-compose.yaml)
 

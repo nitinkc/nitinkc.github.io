@@ -4,11 +4,13 @@ date:   2023-09-15 21:30:00
 categories: Spring Microservices
 tags: [CRUD]
 ---
+
 {% include toc title="Index" %}
 
 # DELETE Rest Call
 
 in DAOService
+
 ```java
 //Delete a user
 public User deleteById(int id){
@@ -28,6 +30,7 @@ public User deleteById(int id){
 ```
 
 In Controller
+
 ```java
 //Delete a User
 @DeleteMapping(path = "/user/{id}")
@@ -41,6 +44,7 @@ public User deleteUserById(@PathVariable int id) throws UserNotFoundException {
     return user;
 }
 ```
+
 Delete a user by passing its ID to a delete postman request-
 
 `{{address}}{{port}}/api/hardCodedData/user/1`

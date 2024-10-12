@@ -4,11 +4,14 @@ date: 2022-08-06 15:45:00
 categories: ['Java']
 tags: ['Java']
 ---
+
 {% include toc title="Index" %}
 
-**Methods signature** 
+**Methods signature**
 
-method name + Argument/Parameters (type and order) ==> does not involve return Type
+method name + Argument/Parameters (type and order) ==> does not involve return
+Type
+
 ```java
 public List<BusinessDto> myMethod(String a, Integer b);
 // Method Signature = myMethod(String a, Integer b);
@@ -17,6 +20,7 @@ public List<BusinessDto> myMethod(String a, Integer b);
 **Overriding** => same signature, child and parent but different implementation
 
 **Overloading** is when method is loaded with different argument
+
 ```java
 //Overloaded methods
 public List<BusinessDto> myMethod(String a);
@@ -39,26 +43,36 @@ List<String> arrayListObj = new ArrayList();
 
 ## Overriding (Inheritance)
 
-**Method Overriding**: Dynamic polymorphism in Java is achieved through method overriding. 
-Method overriding occurs when a subclass provides a specific implementation of a method that is already defined in its superclass.
+**Method Overriding**: Dynamic polymorphism in Java is achieved through method
+overriding.
+Method overriding occurs when a subclass provides a specific implementation of a
+method that is already defined in its superclass.
 
 * private and final methods cannot be overridden
-* Static methods **cannot** be overridden BUT no contribution in Polymorphism (no dynamic binding)
-* Static method in subclass is hidden (if extended) by static method of parent class
+* Static methods **cannot** be overridden BUT no contribution in Polymorphism (
+  no dynamic binding)
+* Static method in subclass is hidden (if extended) by static method of parent
+  class
 * Cannot reduce visibility
-* Covariant return type (allows to return a more specific type (subtype) in the overriding method
-  * the return type in the subclass method must be a subtype of the return type in the superclass method.
-  * The method signatures must be the same, except for the return types.
+* Covariant return type (allows to return a more specific type (subtype) in the
+  overriding method
+    * the return type in the subclass method must be a subtype of the return
+      type in the superclass method.
+    * The method signatures must be the same, except for the return types.
 
-After java 5 return type may vary i.e possible to override method by changing return type
+After java 5 return type may vary i.e possible to override method by changing
+return type
 
 ## Dynamic Binding or Late Binding
 
 **Binding is done at runtime**
-* Dynamic binding makes polymorphism possible. Compiler is not able to resolve the call.
+
+* Dynamic binding makes polymorphism possible. Compiler is not able to resolve
+  the call.
 * In dynamic polymorphism, the method to call is determined at runtime.
-* This is called dynamic binding or late binding because the decision of which method implementation to execute is made
-during program execution, not at compile time.
+* This is called dynamic binding or late binding because the decision of which
+  method implementation to execute is made
+  during program execution, not at compile time.
 
 ```java
 Parent p = new Child();
@@ -77,8 +91,8 @@ p.m1();// dynamic binding, at run time, it invokes childs m1()
 * Static Binding or **Method Overloading**
 * Happens in **compile time**
 * Uses type information (class in Java) for binding.
-* private, static, final, static variables methods, not participate in polymorphism.
-
+* private, static, final, static variables methods, not participate in
+  polymorphism.
 
 ```java
 List<Integer> list = new ArrayList<>(getIntegers());//Polymnorphism
@@ -101,13 +115,18 @@ list3.remove(1);System.out.println(list3);
 
 > You Program for Interfaces rather than implementation
 
-* Abstraction is applied in the process of identifying s/w artifacts to model the problem domain
+* Abstraction is applied in the process of identifying s/w artifacts to model
+  the problem domain
 
-* The Chef analogy : `{Customer -> Waiter}` -> {Head chef -> {Indian, Chinese, Italian, Mexican} ->> multiple chefs/cooks} . 
-Anyone can leave (deprecated) from the junior chefs and new can come. Customers need not be worried
+* The Chef analogy : `{Customer -> Waiter}` -> {Head chef -> {Indian, Chinese,
+  Italian, Mexican} ->> multiple chefs/cooks} .
+  Anyone can leave (deprecated) from the junior chefs and new can come.
+  Customers need not be worried
 
-REAL AIM : 
-* FLEXIBILITY (code can be changed but the abstraction remains the same) and not hiding
+REAL AIM :
+
+* FLEXIBILITY (code can be changed but the abstraction remains the same) and not
+  hiding
 * Segregation of code, free to change without affecting the business
 
 Constructor chaining <=> for inheritance
@@ -115,36 +134,51 @@ Constructor chaining <=> for inheritance
 > IT IS POLYMORPHISM WHICH LINKS ABSTRACT CODE TO CONCRETE IMPLEMENTATION.
 
 ### Overriding
+
 ```java
 Collection<T>       remote(T) object     <---- Compiler performs the boxing at compile time and at runtime, ends up calling for Collection
 List<T>             remove(T) object
 ```
 
 ### Overloading
+
 ```java
 List<T>         remove(T) object
 List<T>         remove(int index) index  <---- Compiler binds to this at compile time when List is used
 ```
 
 #### compile-time (or static) polymorphism and
+
 * known as method overloading or method overriding at compile time
-* The appropriate method to be called is determined at compile time based on the method signature.
-* Compile-time polymorphism is resolved during compilation and not during runtime.
+* The appropriate method to be called is determined at compile time based on the
+  method signature.
+* Compile-time polymorphism is resolved during compilation and not during
+  runtime.
 
 #### runtime (or dynamic) polymorphism
-* Also known as method overriding at runtime.
-* Occurs when a subclass provides a specific implementation of a method that is already defined in its superclass.
-* The decision about which method to call is made at runtime, based on the actual type of the object.
-    * At runtime, it is going to choose an appropriate function based on the receiver
-    * the method that is called is based on the runtime 'type' of a reference rather tha the compile time
-      type of the reference of the receiver.
-* Runtime polymorphism is a key feature for implementing interfaces and abstract classes.
 
-> Polymorphism does not consider the type of the parameters at runtime. That is resolved at compile time
+* Also known as method overriding at runtime.
+* Occurs when a subclass provides a specific implementation of a method that is
+  already defined in its superclass.
+* The decision about which method to call is made at runtime, based on the
+  actual type of the object.
+    * At runtime, it is going to choose an appropriate function based on the
+      receiver
+    * the method that is called is based on the runtime 'type' of a reference
+      rather tha the compile time
+      type of the reference of the receiver.
+* Runtime polymorphism is a key feature for implementing interfaces and abstract
+  classes.
+
+> Polymorphism does not consider the type of the parameters at runtime. That is
+> resolved at compile time
 
 # Multi-methods
-Polymorphism on steroids - the method that is called is based on the runtime type of both the
-reference of the receiver and the runtime type of the parameters of the functions
+
+Polymorphism on steroids - the method that is called is based on the runtime
+type of both the
+reference of the receiver and the runtime type of the parameters of the
+functions
 
 Language on JVM that supports Multi-methods -> Groovy
 

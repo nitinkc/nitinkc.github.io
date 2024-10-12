@@ -8,7 +8,6 @@ tags: [Miscellaneous]
 
 Jiffy Natural & Organic Seed Starter Mix, 12
 
-
 Expert Gardener Indoor and Outdoor Potting Soil Mix, 1 cu. ft. Bag
 
 Jiffy Biodegradable Seed Starting Peat Strips, 4 Strips (32 Pots)

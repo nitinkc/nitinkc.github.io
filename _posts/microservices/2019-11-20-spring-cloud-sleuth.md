@@ -5,7 +5,7 @@ categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 
-## Assigning Trace id to all the Microservices 
+## Assigning Trace id to all the Microservices
 
 All Microservices Projects are hosted on different servers on different ports.
 
@@ -27,6 +27,7 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 # Sleuth with Zipkin over RabbitMQ or Kafka
 
-Messaging queue is utilized to keep all the logs from different servers into a central location.
+Messaging queue is utilized to keep all the logs from different servers into a
+central location.
 
 [https://nitinkc.github.io/spring/microservices/zipkin-distributed-tracing/](https://nitinkc.github.io/spring/microservices/zipkin-distributed-tracing/)

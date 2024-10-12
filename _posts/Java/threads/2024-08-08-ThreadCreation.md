@@ -7,9 +7,11 @@ tags: ['Java','Multithreading']
 
 {% include toc title="Index" %}
 
-Considering a method `BigInteger compute(long inputNumber)` in class `Factorial` that takes a Long integer and computes the Factorial of the long number
+Considering a method `BigInteger compute(long inputNumber)` in class `Factorial`
+that takes a Long integer and computes the Factorial of the long number
 
 # Sequential
+
 ```java
 private static void sequential(List<Long> inputNumbers, Factorial factorial) {
     startTimer();
@@ -21,6 +23,7 @@ private static void sequential(List<Long> inputNumbers, Factorial factorial) {
 ```
 
 # Sequential with Stream
+
 ```java
 private static void sequentialWithStreams(List<Long> inputNumbers, Factorial factorial) {
     startTimer();
@@ -32,6 +35,7 @@ private static void sequentialWithStreams(List<Long> inputNumbers, Factorial fac
 ```
 
 # Traditional Platform Threads
+
 [https://nitinkc.github.io/java/multithreading/Multithreading/#defining-platform-threads](https://nitinkc.github.io/java/multithreading/Multithreading/#defining-platform-threads)
 
 ```java
@@ -59,6 +63,7 @@ private static void runWithTraditionalFactorial(List<Long> inputNumbers, Factori
 ```
 
 # Parallel Stream
+
 ```java
 private static void parallelStream(List<Long> inputNumbers, Factorial factorial) {
     startTimer();
@@ -70,13 +75,16 @@ private static void parallelStream(List<Long> inputNumbers, Factorial factorial)
 ```
 
 # Executor & Futures
+
 [https://nitinkc.github.io/java/multithreading/Multithreading/#create-executorservices](https://nitinkc.github.io/java/multithreading/Multithreading/#create-executorservices)
 
 **Pros:**
- - Provides better control over thread management.
- - Automatically handles thread pooling and task scheduling.
+
+- Provides better control over thread management.
+- Automatically handles thread pooling and task scheduling.
 
 **Cons:**
+
 - Requires managing the lifecycle of the ExecutorService.
 
 ```java
@@ -106,6 +114,7 @@ private static void runParallelFactorialWithExecutor(List<Long> inputNumbers, Fa
 ```
 
 # Completable futures
+
 [https://nitinkc.github.io/java/multithreading/asynchronous-programming/#creating-a-new-completablefuture](https://nitinkc.github.io/java/multithreading/asynchronous-programming/#creating-a-new-completablefuture)
 
 ```java
@@ -123,15 +132,19 @@ private static void runWithCompletableFuture(List<Long> inputNumbers, Factorial 
 ```
 
 # Virtual threads
+
 [https://nitinkc.github.io/java/multithreading/java21-virtualthreads/#virtual-thread-creation](https://nitinkc.github.io/java/multithreading/java21-virtualthreads/#virtual-thread-creation)
 
 **Pros:**
+
 - More scalable and efficient for I/O-bound tasks.
 - Reduces the overhead of managing many threads.
-  
+
 **Cons:**
+
 - Requires Java 21 or later.
-- **Not suitable for CPU-bound** tasks where traditional threads or parallel streams might be better.
+- **Not suitable for CPU-bound** tasks where traditional threads or parallel
+  streams might be better.
 
 ```java
 private static void runParallelFactorialWithVirtualThreads(List<Long> inputNumbers, Factorial factorial) throws InterruptedException {
@@ -160,7 +173,10 @@ private static void runParallelFactorialWithVirtualThreads(List<Long> inputNumbe
 ```
 
 # Java Concurrency Utilities
-use other concurrency utilities from `java.util.concurrent`, such as `CountDownLatch` or `CyclicBarrier`, to manage parallel execution
+
+use other concurrency utilities from `java.util.concurrent`, such as
+`CountDownLatch` or `CyclicBarrier`, to manage parallel execution
+
 ```java
 private static void runWithCountDownLatch(List<Long> inputNumbers, Factorial factorial) throws InterruptedException {
     CountDownLatch latch = new CountDownLatch(inputNumbers.size());

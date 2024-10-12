@@ -4,6 +4,7 @@ date:   2023-11-16 18:55:00
 categories: [Microservices]
 tags: [Microservices]
 ---
+
 {% include toc title="Index" %}
 
 **SUMMARY**
@@ -25,31 +26,48 @@ Mockito with Junit
 ### Autowired vs InjectMock
 
 **`@Autowired`:**
-- Use `@Autowired` when Spring should inject real beans (actual instances managed by the Spring container) into Spring-managed components.
-- It's a **Spring Framework annotation** for automatic dependency injection in Spring-managed components (e.g., services, controllers, and repositories).
-- Spring injects the dependency into the field or constructor of the class when `@Autowired` is used.
-- Commonly employed in **integration tests** or when testing Spring components that rely on other Spring-managed beans.
+
+- Use `@Autowired` when Spring should inject real beans (actual instances
+  managed by the Spring container) into Spring-managed components.
+- It's a **Spring Framework annotation** for automatic dependency injection in
+  Spring-managed components (e.g., services, controllers, and repositories).
+- Spring injects the dependency into the field or constructor of the class when
+  `@Autowired` is used.
+- Commonly employed in **integration tests** or when testing Spring components
+  that rely on other Spring-managed beans.
 
 **`@InjectMocks`:**
-- Use `@InjectMocks` when Mockito should inject mocks into the fields of your test class for unit testing.
-- It's a **Mockito annotation** used to automatically inject mocked dependencies into the fields of a test class.
-- Especially useful when **testing a class in isolation** and controlling the behavior of its dependencies.
-- Typically applied in unit tests when mocking the dependencies of the class under test.
+
+- Use `@InjectMocks` when Mockito should inject mocks into the fields of your
+  test class for unit testing.
+- It's a **Mockito annotation** used to automatically inject mocked dependencies
+  into the fields of a test class.
+- Especially useful when **testing a class in isolation** and controlling the
+  behavior of its dependencies.
+- Typically applied in unit tests when mocking the dependencies of the class
+  under test.
 
 ### Mock vs MockBean
 
 **`@Mock`:**
-- Part of the **Mockito framework** and used for creating mock objects in **unit tests**.
-- Mockito creates a mock for each field annotated with `@Mock` and injects the mocks into fields annotated with `@InjectMocks`.
+
+- Part of the **Mockito framework** and used for creating mock objects in **unit
+  tests**.
+- Mockito creates a mock for each field annotated with `@Mock` and injects the
+  mocks into fields annotated with `@InjectMocks`.
 
 **`@MockBean`:**
+
 - Used in **Spring Boot tests**, particularly for **integration testing**.
 - When using `@MockBean`, you create a mock of a Spring bean.
-- It's beneficial when replacing a real bean with a mock in the Spring application context during the test.
+- It's beneficial when replacing a real bean with a mock in the Spring
+  application context during the test.
 
-### Unit Testing 
+### Unit Testing
+
 - with `@ExtendWith(MockitoExtension.class)`
-- Used in conjunction with Mockito annotations like `@Mock`, `@InjectMocks`, etc.
+- Used in conjunction with Mockito annotations like `@Mock`, `@InjectMocks`,
+  etc.
 - Does not start the Spring context; it's focused on unit testing.
 
 ```java
@@ -58,33 +76,46 @@ Mockito with Junit
 class MyClassTest {
 }
 ```
+
 {% gist nitinkc/331712fb268a8922178daee046c2d24f %}
 
 ### Integration Testing
 
 **Annotations:**
-- Use `@SpringBootTest` and `@ExtendWith(SpringExtension.class)` with JUnit 5 for integration testing.
-- When `@SpringBootTest` is applied, it implicitly includes `@ExtendWith(SpringExtension.class)`.
+
+- Use `@SpringBootTest` and `@ExtendWith(SpringExtension.class)` with JUnit 5
+  for integration testing.
+- When `@SpringBootTest` is applied, it implicitly includes
+  `@ExtendWith(SpringExtension.class)`.
 
 **Context Loading:**
+
 - `@SpringBootTest` loads the full Spring application context.
-- Enables Spring integration with JUnit 5, creating a testing environment with a fully configured Spring application context.
+- Enables Spring integration with JUnit 5, creating a testing environment with a
+  fully configured Spring application context.
 
 **JUnit 5 Compatibility:**
+
 - Replaces the usage of `@RunWith(SpringRunner.class)` when utilizing JUnit 5.
 
 **Testing Environment:**
+
 - Tests the application as if it were running in a real environment.
-- Suitable for end-to-end testing, ensuring that various components work together seamlessly.
+- Suitable for end-to-end testing, ensuring that various components work
+  together seamlessly.
 
 **Code Coverage:**
+
 - Offers higher code coverage as it exercises the entire application stack.
 
 **Context Management:**
-- Sets up the Spring context before test methods are executed and closes it afterward.
+
+- Sets up the Spring context before test methods are executed and closes it
+  afterward.
 
 If you are using both Spring and Mockito in the same test class
-ensure that you initialize Mockito annotations using `MockitoAnnotations.openMocks(this)` in the `@BeforeEach` method to
+ensure that you initialize Mockito annotations using
+`MockitoAnnotations.openMocks(this)` in the `@BeforeEach` method to
 correctly set up the mocks.
 {: .notice--info}
 
@@ -104,6 +135,7 @@ class MyIntegrationTest {
 **Test Annotation:**
 
 - `@Test` : Identifies a method as a test method.
+
 ```java
    @Test
    void myTestMethod() {
@@ -113,15 +145,16 @@ class MyIntegrationTest {
 
 **Lifecycle Annotations:**
 
-- `@BeforeAll` : Denotes a method that should be run before all tests in a class.
+- `@BeforeAll` : Denotes a method that should be run before all tests in a
+  class.
 - `@BeforeEach`: Denotes a method that should be run before each test method.
 - `@AfterEach` : Denotes a method that should be run after each test method.
 - `@AfterAll` : Denotes a method that should be run after all tests in a class.
 
-
 **Test Assertion Annotations:**
 
-`Assertions` : Class for multiple assertion annotations like `@assertTrue`, `@assertFalse`, etc.
+`Assertions` : Class for multiple assertion annotations like `@assertTrue`,
+`@assertFalse`, etc.
 
 ```java
 @Test
@@ -145,10 +178,11 @@ FutureException exception = org.junit.jupiter.api.Assertions.assertThrows(Future
 
 **Parameterized Tests:**
 
-- `@ParameterizedTest` : Denotes that the annotated method is a parameterized test.
+- `@ParameterizedTest` : Denotes that the annotated method is a parameterized
+  test.
 - `@ValueSource` : Provides a single value for a parameterized test.
 - `@CsvSource` : Provides CSV-formatted values for a parameterized test.
-- `@NullSource`	:  pass a null value
+- `@NullSource`    :  pass a null value
 
 {% gist nitinkc/c717619a463c0e5dad5d111c5b938a3c%}
 
@@ -177,15 +211,16 @@ void disabledTest() {
 
 - `@Tag` : Allows tagging tests for later filtering.
 - `@DisplayName` : Defines a custom display name for a test class or method.
-{% gist nitinkc/0bb4ecd84922071d63b19212ec3e979b%}
+  {% gist nitinkc/0bb4ecd84922071d63b19212ec3e979b%}
 
 # Mockito Annotations:
- 
+
 **Mocking Annotations:**
 
 - `@Mock` : Creates a mock object.
-- `@Spy` : Creates a spy (partial mock) object. 
-  - The real methods of the object are invoked unless they are explicitly stubbed.
+- `@Spy` : Creates a spy (partial mock) object.
+    - The real methods of the object are invoked unless they are explicitly
+      stubbed.
 
 {% gist nitinkc/5ee058d8b256f9a2148853d90357230c%}
 
@@ -199,8 +234,10 @@ void disabledTest() {
 
 **@MockitoSettings(strictness = Strictness.LENIENT)**
 
-- Mockito allows leniency regarding stubbed methods that are not explicitly invoked during the test.
-- The key point is that Mockito won't enforce strict verification of interactions with the mock.
+- Mockito allows leniency regarding stubbed methods that are not explicitly
+  invoked during the test.
+- The key point is that Mockito won't enforce strict verification of
+  interactions with the mock.
 
 ```java
 @MockitoSettings(strictness = Strictness.LENIENT)//Can be applies at class level as well
@@ -212,7 +249,8 @@ void lenientMockingTest() {
 }
 ```
 
-- **VerificationMode** : Configures the verification mode (times, atLeastOnce, etc.).
+- **VerificationMode** : Configures the verification mode (times, atLeastOnce,
+  etc.).
 
 {% gist nitinkc/eb5d1c7c09a7cb437324c8d7f7602352%}
 
@@ -227,7 +265,8 @@ private ArgumentCaptor<String> stringCaptor;
 
 **Integration Testing:**
 
-- `@SpringBootTest` : Loads the Spring application context for integration tests.
+- `@SpringBootTest` : Loads the Spring application context for integration
+  tests.
 - `@DataJpaTest` : Configures a test for JPA-based tests.
 
 **Dependency Injection:**
@@ -239,7 +278,8 @@ private ArgumentCaptor<String> stringCaptor;
 
 **Transaction Management:**
 
-- `@Transactional` : Specifies that a test method should be run within a transaction.
+- `@Transactional` : Specifies that a test method should be run within a
+  transaction.
 
 ```java
 @Transactional
@@ -248,6 +288,7 @@ void transactionalTest() {
     // Test logic within a transaction
 }
 ```
+
 **Web Testing:** Testing a Controller
 
 - `@WebMvcTest` : Configures a test for Spring MVC-based tests.
@@ -258,6 +299,7 @@ class MyControllerTest {
     // Web testing logic
 }
 ```
+
 {% gist nitinkc/fc3a9ce93277e2bdb29322230b823378 %}
 
 **Testing Components:**
@@ -296,21 +338,24 @@ class MyPropertySourceTest {
 ### **Test Static Methods**
 
 With Junit 3+ Static methods can be tested with
+
 ```java
 MockedStatic<UuidUtils> utilities = Mockito.mockStatic(UuidUtils.class)
 ```
 
 {% gist nitinkc/3436fd1f2aa6e4c78ca7bf9dc8392e60 %}
 
-
-###  Argument Matchers
+### Argument Matchers
 
 - `anyString()` and `any()` are argument matchers in Mockito.
-- `any()` - be generic always, by passing all the arguments as arg matchers or be specific
-- They are more lenient, allowing matching for any argument of the specified type.
+- `any()` - be generic always, by passing all the arguments as arg matchers or
+  be specific
+- They are more lenient, allowing matching for any argument of the specified
+  type.
 - `@MockitoSettings(strictness = Strictness.LENIENT)`:
     - Configures the strictness level of Mockito.
-    - In lenient mode, Mockito is more permissive with interactions, allowing non-stubbed method calls.
+    - In lenient mode, Mockito is more permissive with interactions, allowing
+      non-stubbed method calls.
 
 **Use Argument matchers only on the Mocks**
 
@@ -320,7 +365,8 @@ List<Map<String, Object>> mockDBCall = dataAccessObjectMock.getRecordFromView(an
 when(mockDBCall).thenReturn(data);//mockDBCall == data initialized in @BeforeEach void setUp()
 ```
 
-**DO NOT** use the argument Matchers on SUT, or injectableMocks and Do no mix hardcoded values with arg matchers
+**DO NOT** use the argument Matchers on SUT, or injectableMocks and Do no mix
+hardcoded values with arg matchers
 
 ```java
 // Call the method under test
@@ -336,13 +382,14 @@ Invalid use of argument matchers!
 **Create with Dummy data**
 {% gist nitinkc/769c03ae85f79b0af7d1bf95f82133c5 %}
 
-
 **Create from a json file**
 {% gist nitinkc/0420dcc14a5d0a4094fd85c32ae80a16 %}
 
 # Debugging
 
-Get the JSON Response from IntelliJ Debugger (after the DB Call) or from service request. Use breakpoint to evaluate expression
+Get the JSON Response from IntelliJ Debugger (after the DB Call) or from service
+request. Use breakpoint to evaluate expression
+
 ```java
 new com.fasterxml.jackson.databind.ObjectMapper()
         .registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule())
