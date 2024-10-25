@@ -7,6 +7,14 @@ tags: ['Git']
 
 {% include toc title="Index" %}
 
+
+# Git Config
+[https://nitinkc.github.io/git/git-config/](https://nitinkc.github.io/git/git-config/)
+
+# Git Hooks
+[https://nitinkc.github.io/git/Git-hooks/](https://nitinkc.github.io/git/Git-hooks/)
+
+# Useful Commands
 Most used git commands after cloning a project. Target is to create a new
 feature branch to be used for development and be used for a pull request.
 
@@ -29,7 +37,7 @@ git commit -m <file names>
 git push -u origin <branch> # (-u short for --set-upstream option)
 ```
 
-# Swith commits
+# Switch commits
 
 ### uncommited changes
 
@@ -162,8 +170,24 @@ bring back into the other branch
 It safer to run `git stash apply` as it does not remove stashed changes instead
 of `git stash pop`. Conflicts might also occur.
 
+# Git Reset/Revert	
+[https://nitinkc.github.io/git/git-reset-revert/](https://nitinkc.github.io/git/git-reset-revert/)
+
+# Git logs
+[https://nitinkc.github.io/git/git-log/](https://nitinkc.github.io/git/git-log/)
+
+# Git Maintenance
+[https://nitinkc.github.io/git/git-maintenance/](https://nitinkc.github.io/git/git-maintenance/)
+
+# Git Cherrypick
+[https://nitinkc.github.io/git/cherry-pick/](https://nitinkc.github.io/git/cherry-pick/)
+
 # Links
 
 [https://ndpsoftware.com/git-cheatsheet.html#loc=workspace](https://ndpsoftware.com/git-cheatsheet.html#loc=workspace)
 
 [https://git-school.github.io/visualizing-git/#cherry-pick](https://git-school.github.io/visualizing-git/#cherry-pick)
+
+[https://git-scm.com/](https://git-scm.com/)
+
+Rebase :[https://nitinkc.github.io/git/git-rebase/](https://nitinkc.github.io/git/git-rebase/)

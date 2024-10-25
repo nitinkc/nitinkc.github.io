@@ -146,6 +146,37 @@ public void initializeMetrics() {
 }
 ```
 
+# App yml
+On Kubernetes cluster, if the matrix is not available(if you have metric all 
+disabled upstream to avoid getting excess metrics from kafaka bindings), 
+then try enabling required matrix individually
+```
+#Enable Actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    enable:
+      a_long_task_http_request_duration_seconds: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+  context-path: /actuator
+  health:
+    vault:
+      enabled: false
+    mail:
+      enabled: false
+  endpoint:
+    env:
+      show-values: ALWAYS
+    configprops:
+      show-values: ALWAYS
+```
+
 # Final output
 
 [http://localhost:8090/actuator/prometheus](http://localhost:8090/actuator/prometheus)
@@ -199,5 +230,11 @@ a_timer_http_request_duration_seconds_max 0.296439955
 global:
 scrape_interval: 60s
 
-Grafana queries the data stored in Prometheus (or other data sources) to create
+**Grafana** queries the data stored in Prometheus (or other data sources) to create
 visualizations on its dashboards.
+
+**Dynatrace** is a comprehensive _application performance monitoring_ (**APM**) solution 
+that offers deep insights into 
+- application performance, 
+- user experience, and 
+- infrastructure.
