@@ -36,8 +36,13 @@ Use the mini circuit board with adjustable power supply
 ## Simple LED 0.3 or 0.5 mm
 - longer leg - positive side/Anode
 - shorter leg - negative side/Cathode
+  - if inner filament is visible, the larger one is cathode
+  - if the filament is not visible & legs are already cut,
+    - then locate the flat edge on the round base of the LED
 
-- Forward Voltage (V<sub>f</sub>): Appx. voltage of the LED is 2.0V (common for red LEDs).
+![Led diode anode cathode ](https://www.robot-maker.com/shop/img/cms/tuto-led/ledwiring.jpg)
+ 
+-Forward Voltage (V<sub>f</sub>): Appx. voltage of the LED is 2.0V (common for red LEDs).
 - Forward Current (I<sub>f</sub>): Typically around 20 mA (0.020 A)
 
 # 3. **Switches**
@@ -65,6 +70,7 @@ Use the mini circuit board with adjustable power supply
 - Photoresistor (LDR).
 - Temperature sensor (LM35 or similar).
 
+IR Sensor
 # 7. **Motors**
 - Small DC motors.
 - Servo motors.

@@ -17,8 +17,6 @@ Power + ---- Resistor ----+---|diode>|----+ Motor +
                             |  C3   |       |
                             +-------+       |
                             GND         GND
-
-
 ```
 
 ## Components
