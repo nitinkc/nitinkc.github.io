@@ -1,8 +1,8 @@
 ---
 title:  "Electronics"
 date:   2024-10-25 22:00:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: [Electronics] 
+tags: [Electronics]
 ---
 
 **Concepts**: Voltage, current, resistance.

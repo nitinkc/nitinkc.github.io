@@ -1,8 +1,8 @@
 ---
 title:  "Simple Drone"
 date:   2024-10-29 12:00:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: [Electronics] 
+tags: [Electronics]
 ---
 
 # Components Required

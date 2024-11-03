@@ -1,8 +1,8 @@
 ---
 title:  "Raspberry Pi"
 date:   2024-10-29 12:00:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: [Electronics] 
+tags: [Electronics]
 ---
 
 I have Raspberry Pi3 2015 model

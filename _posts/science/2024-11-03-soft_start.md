@@ -1,8 +1,8 @@
 ---
 title:  "Soft Starter"
 date:   2024-11-03 01:00:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: [Electronics] 
+tags: [Electronics]
 ---
 
 

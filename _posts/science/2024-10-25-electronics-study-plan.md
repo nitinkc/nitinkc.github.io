@@ -1,8 +1,8 @@
 ---
 title:  "Teaching Electronics"
 date:   2024-10-25 12:00:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: [Electronics] 
+tags: [Electronics]
 ---
 
 # Sequence of Topics and Components
