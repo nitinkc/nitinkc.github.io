@@ -21,7 +21,8 @@ bundle exec jekyll build
 jekyll serve
 ```
 
-### Making a personal website using GitHubs free Hosting for the Jekyll Sites
+### Making a personal website 
+using GitHub's free Hosting for the Jekyll Sites
 
 1. Ruby (Pre requisites for Jekyll) : https://jekyllrb.com/docs/installation/
 2. Jekyll - for static site and blogging

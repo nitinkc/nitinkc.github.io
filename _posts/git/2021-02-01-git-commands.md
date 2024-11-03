@@ -170,16 +170,19 @@ bring back into the other branch
 It safer to run `git stash apply` as it does not remove stashed changes instead
 of `git stash pop`. Conflicts might also occur.
 
-# Git Reset/Revert	
+# Rebase
+[https://nitinkc.github.io/git/git-rebase/](https://nitinkc.github.io/git/git-rebase/)
+
+# Reset/Revert	
 [https://nitinkc.github.io/git/git-reset-revert/](https://nitinkc.github.io/git/git-reset-revert/)
 
-# Git logs
+# Logs
 [https://nitinkc.github.io/git/git-log/](https://nitinkc.github.io/git/git-log/)
 
 # Git Maintenance
 [https://nitinkc.github.io/git/git-maintenance/](https://nitinkc.github.io/git/git-maintenance/)
 
-# Git Cherrypick
+# Cherry-pick
 [https://nitinkc.github.io/git/cherry-pick/](https://nitinkc.github.io/git/cherry-pick/)
 
 # Links
@@ -190,4 +193,3 @@ of `git stash pop`. Conflicts might also occur.
 
 [https://git-scm.com/](https://git-scm.com/)
 
-Rebase :[https://nitinkc.github.io/git/git-rebase/](https://nitinkc.github.io/git/git-rebase/)

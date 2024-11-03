@@ -255,21 +255,18 @@ unlucky,
 only that in absence of much additional information I prefer to reserve my
 judgment. It is safer.
 
-LOSER TAKES ALL - ON THE
-NONLINEARlTlES OF LIFE
+LOSER TAKES ALL - ON THE NONLINEARlTlES OF LIFE
 
 The twist: life is unfair in a nonlinear way.
 
 First we define nonlinearity. There are many ways to present it,
-but one of the most popular ones in science is what is called the Sandpile
-effect,
+but one of the most popular ones in science is what is called the **Sandpile
+effect**. It could be said that **the last grain of sand** is responsible for the destruction
+of the entire structure. 
 
-It could be said that the last grain of sand is responsible for the destruction
-of the entire structure. What we are witnessing here is a nonlinear effect
-resulting
-from a linear force exerted on an object. A very small additional input, here
-the grain of sand,
-caused a disproportionate result, namely the destruction of my starter tower of
+What we are witnessing here is a nonlinear effect
+resulting from a linear force exerted on an object. A very small additional input, here
+the grain of sand, caused a disproportionate result, namely the destruction of my starter tower of
 Babel.
 
 "the straw that broke the camel's back"
