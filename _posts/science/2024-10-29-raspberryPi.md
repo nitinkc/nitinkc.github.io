@@ -4,6 +4,7 @@ date:   2024-10-29 12:00:00
 categories: [Electronics] 
 tags: [Electronics]
 ---
+{% include toc title="Index" %}
 
 I have Raspberry Pi3 2015 model
 

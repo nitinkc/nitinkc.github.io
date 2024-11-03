@@ -4,6 +4,7 @@ date:   2024-10-29 12:00:00
 categories: [Electronics] 
 tags: [Electronics]
 ---
+{% include toc title="Index" %}
 
 # Components Required
 - Coreless Motors (2 pairs): One pair for the front and one for the back, with clockwise (CW) and counterclockwise (CCW) versions.

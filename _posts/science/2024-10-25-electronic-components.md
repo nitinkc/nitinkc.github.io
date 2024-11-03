@@ -4,6 +4,7 @@ date:   2024-10-25 12:00:00
 categories: [Electronics] 
 tags: [Electronics]
 ---
+{% include toc title="Index" %}
 
 # 1. **Supplies**
 - AA batteries (or a small rechargeable battery pack).

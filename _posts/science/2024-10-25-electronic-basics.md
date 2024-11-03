@@ -4,6 +4,7 @@ date:   2024-10-25 22:00:00
 categories: [Electronics] 
 tags: [Electronics]
 ---
+{% include toc title="Index" %}
 
 **Concepts**: Voltage, current, resistance.
 

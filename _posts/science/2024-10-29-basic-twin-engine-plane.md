@@ -4,6 +4,7 @@ date:   2024-10-29 12:00:00
 categories: [Electronics] 
 tags: [Electronics]
 ---
+{% include toc title="Index" %}
 
 With same components as that of a Drone
 
