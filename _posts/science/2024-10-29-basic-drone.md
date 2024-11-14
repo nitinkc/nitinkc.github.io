@@ -7,7 +7,7 @@ tags: [Electronics]
 {% include toc title="Index" %}
 
 # Components Required
-- Coreless Motors (2 pairs): One pair for the front and one for the back, with clockwise (CW) and counterclockwise (CCW) versions.
+- Brushless Motors (2 pairs): One pair for the front and one for the back, with clockwise (CW) and counterclockwise (CCW) versions.
 - Propellers (CW and CCW): Front and back propellers should be installed in opposite directions to counteract each other’s torque, which stabilizes the drone.
 - Drone Frame: A small, lightweight frame to mount the motors and propellers. Can be ice cream stick
 - Power Source and Control Board: A drone control board (like a flight controller) and battery are essential to manage motor speed and stabilize the drone.
