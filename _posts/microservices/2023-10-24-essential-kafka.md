@@ -105,7 +105,7 @@ catch up on messages they might have missed.
 
 ### Test Locally
 
-Download kafka : https://kafka.apache.org/downloads
+Download kafka : [https://kafka.apache.org/downloads](https://kafka.apache.org/downloads)
 
 Run the following commands
 
@@ -122,14 +122,11 @@ bin/kafka-server-start.sh config/server.properties
 ```
 
 ## Conduktor
+Download and install [https://docs.conduktor.io/gateway/](https://docs.conduktor.io/gateway/)
 
-- https://docs.conduktor.io/gateway/
-
-Download and install. Run once the kafka server is running on local
+Run once the kafka server is running on local
 
 ## Naming conventions
-
 {consuming system}-{kafka topic name}-{consuming service}-group
 
-register-reg.student.engineering-hostelservice-group
-
+`register-reg.student.engineering-hostelservice-group`
