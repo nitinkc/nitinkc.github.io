@@ -10,6 +10,7 @@ terminology and concepts fit both scenarios
 
 [https://nitinkc.github.io/system%20design/Distributed-messaging/](https://nitinkc.github.io/system%20design/Distributed-messaging/)
 
+[course: Apache Kafka 101](https://developer.confluent.io/courses/apache-kafka/events/)
 # 4 actors of Messaging
 > **Producer** --> Sends message --> to an **exchange** --> Routed to --> **Queue** --> Delivered to --> a **Consumer**
 
@@ -56,8 +57,8 @@ terminology and concepts fit both scenarios
   keep track of which messages they have processed, which is useful for both
   event processing and message handling.
 
-In an **event-driven system**, Kafka's role is to broadcast events to multiple
-consumers, often with the assumption that consumers might process these events
+In an **event-driven system**, Kafka's role is **to broadcast events to multiple
+consumers**, often with the assumption that consumers might process these events
 independently.
 
 In a **messaging system**, Kafka serves more as a traditional queue where
@@ -66,7 +67,6 @@ responses.
 
 ## Kafka Message Processing
 Messages are stores as **LOGS** & are **immutable**.
-
 
 In Kafka, messages are not "queued" in the traditional sense.
 Instead, they are **published to Kafka topics** and stored in **log files**(flat files) within Kafka

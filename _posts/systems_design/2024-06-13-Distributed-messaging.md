@@ -29,7 +29,7 @@ tags: [System Design]
 
 
 # Messages vs Events
-In terms of OOP, `Message` is the Super class with `Event` and `Command`ß as
+In terms of OOP, `Message` is the Super class with `Event` and `Command` as
 subclasses.
 
 What is typically understood by message is actually a command.
