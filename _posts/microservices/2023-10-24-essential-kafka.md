@@ -21,7 +21,8 @@ terminology and concepts fit both scenarios
     - Sends messages to Kafka topics. In an event-driven architecture, a
       producer might publish events (e.g., "OrderPlaced"), while in a messaging
       architecture, it might send messages with specific instructions (e.g., "
-      ProcessOrder").[Diff between Event and Message](https://nitinkc.github.io/system%20design/Distributed-messaging/#messages-vs-events)
+      ProcessOrder").
+    - [Diff between Event and Message](https://nitinkc.github.io/system%20design/Distributed-messaging/#messages-vs-events)
 - **Consumer**: Consumers are the recipients who receive messages from the Kafka
   server.
     - Receives messages from Kafka topics. Consumers process the data or events
