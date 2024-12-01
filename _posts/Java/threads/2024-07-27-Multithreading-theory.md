@@ -371,6 +371,7 @@ There is Direct Memory Access (DMA) involved, acting as a buffer between
 Peripheral controller, RAM and CPU
 
 [Diagram Code](https://app.eraser.io/workspace/T6P7KpKfUkWkbqsVJbqC?origin=share)
+
 ![dma.png](../../../assets/images/dma.png){:width="400" height="300"}
 
 ### IO Bound Application

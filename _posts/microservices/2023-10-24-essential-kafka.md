@@ -10,6 +10,9 @@ terminology and concepts fit both scenarios
 
 [https://nitinkc.github.io/system%20design/Distributed-messaging/](https://nitinkc.github.io/system%20design/Distributed-messaging/)
 
+# 4 actors of Messaging
+> **Producer** --> Sends message --> to an **exchange** --> Routed to --> **Queue** --> Delivered to --> a **Consumer**
+
 # Kafka Terminology
 
 - **Producer**: A producer is a client that sends messages to the Kafka server

@@ -18,6 +18,16 @@ tags: [System Design]
   - Rabbit MQ 
   - Kafka
 
+# 4 actors of Messaging
+> **Producer** --> Sends message --> to an **exchange** --> Routed to --> **Queue** --> Delivered to --> a **Consumer**
+
+### Exchanges
+- Actual AMQP elements where messages are sent at first
+- takes a message and routes it into one or more queues
+- Routing Algo decides where to send messages from exchange
+- Routing algo depends on exchange type and rules called "bindings"
+
+
 # Messages vs Events
 In terms of OOP, Message is the Super class with Event and Command as
 subclasses.
@@ -85,24 +95,13 @@ Queue helps keeping track of requests and redirect in case of a failure
 - Asynchronous requests
 - In a queue, data persistence
 
-# 4 actors of Messaging
-> **Producer** --> Sends message --> to an **exchange** --> Routed to --> **Queue** --> Delivered to --> a **Consumer**
-
-### Exchanges
-- Actual AMQP elements where messages are sent at first
-- takes a message and routes it into one or more queues
-- Routing Algo decides where to send messages from exchange
-- Routing algo depends on exchange type and rules called "bindings"
-
 # Why is kafka fast
 
 ![](https://www.youtube.com/watch?v=UNUz1-msbOM)
 Kafka is optimized for high Throughput.
 
 ### Reliance of Sequential I/O
-
 2 types of Disk Access patterns
-
 - Random access
 - Sequential access
 
