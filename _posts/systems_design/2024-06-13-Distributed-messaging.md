@@ -9,19 +9,14 @@ tags: [System Design]
 
 > Means of loosely coupling sub-systems
 
+[Kafka Basics](https://nitinkc.github.io/microservices/essential-kafka/)
+
 # Messaging Protocols
-
-- STOMP - Simple Text Oriented Messaging Protocol
-- MQTT - Message Queue Telemetry Protocol (for machine to machine - IOT)
-- AMQP - Asynchronous Messaging Queueing Protocol
-
-Rabbit MQ is the implementation of AMQP - Supports clustering and fault
-tolerance
-
-## AMQP - Asynchronous Messaging Queuing Processes
-
-- Rabbit MQ
-- Kafka
+- **STOMP** - Simple Text Oriented Messaging Protocol
+- **MQTT** - Message Queue Telemetry Protocol (for machine to machine - IOT)
+- **AMQP** - Asynchronous Messaging Queueing Protocol
+  - Rabbit MQ 
+  - Kafka
 
 # Messages vs Events
 In terms of OOP, Message is the Super class with Event and Command as
@@ -29,7 +24,7 @@ subclasses.
 
 What is typically understood by message is actually a command.
 
-# Event
+## Event
 - Has already happened, in the past
 - **order of events can't be changed** as history can't be altered
 - Can be sent via the **Event Streaming Platform** like Apache Kafka Streams
@@ -45,7 +40,7 @@ What is typically understood by message is actually a command.
 - **Immutable**: Once an event is created and published, it doesn’t change.
   It’s a record(log) of something that had happened.
 
-# Command/Message
+## Command/Message
 - request for a task to be done
 - order and priority can change
 - Can be sent via API calls (point to point or async) or via "Message Brokers"

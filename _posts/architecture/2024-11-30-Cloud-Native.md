@@ -1,6 +1,6 @@
 ---
 title:  "Cloud Native"
-date:   2024-11-3012 14:02:00
+date:   2024-11-30 14:02:00
 categories: [System Design]
 tags: [System Design]
 ---
