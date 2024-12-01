@@ -8,24 +8,68 @@ tags: ["Spring Microservices", Spring Boot]
 
 {% include toc title="Index" %}
 
+# Summary
+**Transaction Propagation**
+
+Propagation defines how transactions behave when a method is called **within
+an existing transaction**. The common propagation types are:
+
+- **REQUIRED**: (Default) If a transaction exists, use it; otherwise, create a new one.
+- **REQUIRES_NEW**: Always create a new transaction, suspending the existing one if necessary.
+- **SUPPORTS**: If a transaction exists, use it; otherwise, proceed without a transaction.
+- **NOT_SUPPORTED**: Always proceed without a transaction, suspending any existing transaction.
+- **MANDATORY**: A transaction must exist; throws an exception if none exists.
+- **NEVER**: A transaction should not exist; throws an exception if one does.
+- **NESTED**: Executes within a nested transaction if a current transaction exists, otherwise behaves like REQUIRED.
+
+**Transaction Isolation Levels**
+
+Isolation defines the degree to which a transaction is isolated from the effects
+of other concurrent transactions. The levels are:
+- **DEFAULT**: Inherits the default isolation level of the underlying database.
+- **READ_UNCOMMITTED**: Allows dirty reads (reading uncommitted data).
+- **READ_COMMITTED**: Prevents dirty reads but allows non-repeatable reads.
+- **REPEATABLE_READ**: Prevents dirty and non-repeatable reads but may allow phantom reads.
+- **SERIALIZABLE**: Highest isolation level, preventing dirty reads, non-repeatable reads, and phantom reads by locking the data.
+
+```java
+// Requires new propagation, serializable isolation, rollback on checked exceptions
+@Transactional(propagation = Propagation.REQUIRES_NEW, 
+               isolation = Isolation.SERIALIZABLE, 
+               rollbackFor = Exception.class)
+public void requiresNewTransaction() throws Exception {
+    myRepository.saveData();
+    // Simulate a checked exception
+    if (true) throw new Exception("Checked exception, triggering rollback");
+}
+
+// Supports propagation, read committed isolation
+@Transactional(propagation = Propagation.SUPPORTS, 
+               isolation = Isolation.READ_COMMITTED)
+public void supportsTransaction() {
+    myRepository.saveData();
+```
+
 # Spring Transactions
 
 Transactions typically group related operations that should be treated as a
-single unit of work, allowing for
+**single unit of work**, allowing for
 atomicity, consistency, isolation, and durability (ACID properties).
 
-Spring transactions are commonly used for operations within a single database (
-could be distributed db). In fact, this is one of the most common
-use cases for Spring's transaction management features.
+Spring transactions are commonly used for operations within **a single database** (
+could be distributed db for Distributed Transactions).
 
-Spring provides robust support for transaction management in relational
-databases, NoSQL databases, and other
-data access technologies. Whether you're using JDBC, JPA (Java Persistence API),
+Spring provides robust support for transaction management in 
+- relational databases, 
+- NoSQL databases, and 
+- other data access technologies.
+
+Whether you're using JDBC, JPA (Java Persistence API),
 Hibernate, or Spring Data JPA,
-Spring's transaction management can be applied to ensure data integrity and
-consistency within a single database.
+Spring's transaction management can be applied to ensure **data integrity and
+consistency within a single database**.
 
-[https://github.com/nitinkc/Spring-Transactions](https://github.com/nitinkc/Spring-Transactions/tree/master/src/main/java/com/learn/transaction/myAdmissionService)
+[Spring Project for the topic](https://github.com/nitinkc/Spring-Transactions/tree/master/src/main/java/com/learn/transaction/myAdmissionService)
 
 ## Admission Service Example
 
@@ -38,41 +82,35 @@ All are within one DB, inserting data into multiple tables within one DB
 
 The transaction is propagated in the same order as mentioned above.
 
-## Transaction Propagation
+# Transaction Propagation
 
 [Tx Pitfalls](https://medium.com/@safa_ertekin/common-transaction-propagation-pitfalls-in-spring-framework-2378ee7d6521)
 
 [Tx Propagation](https://www.javainuse.com/spring/boot-transaction-propagation)
 
+### @Transactional
 **Method-Level @Transactional**
-
 - method should execute within a transaction.
-- Transactional behavior is applied only to the annotated method. Other methods
-  within the same class are not affected.
+- Transactional behavior is applied only to the annotated method. 
+  - Other methods within the same class are not affected.
 - This allows for fine-grained control over transactional behavior,
     - enables to specify different transactional settings for different methods
       within the same class.
 
 **Class-Level @Transactional:**
-
 - When you annotate a class with @Transactional, all **public methods** of that
   class become transactional
-    - unless they are annotated with @Transactional themselves (which would
-      override the class-level annotation).
+- if a method within the class is annotated with `@Transactional`, 
+**it overrides the class-level annotation** for that specific method.
 - This provides a convenient way to apply a default transactional behavior to
   all methods in the class without explicitly annotating each method.
-- It's important to note that if a method within the class is annotated with
-  @Transactional, **it overrides the class-level annotation** for that specific
-  method.
 
-Let's consider a transaction : `Student Service -> Department Service`
+> Let's consider a transaction : `Student Service -> Department Service`
 
-##### **REQUIRED** (Default Transaction Propagation)
-
+### **REQUIRED** (Default Transaction Propagation)
 This is the default propagation behavior if not specified explicitly.
-
 - It always executes in a transaction.
-  If there is an existing transaction, it participates in it; otherwise, it
+- If there is an existing transaction, it participates in it; otherwise, it
   creates a new one.
 
 If StudentService is not annotated with `@Transactional`, and DepartmentService
@@ -80,16 +118,14 @@ is annotated with
 `@Transactional(propagation = Propagation.REQUIRED)`, then a new transaction
 will be created by DepartmentService if none exists.
 
-##### **MANDATORY**
-
-It always executes in a transaction. It requires an existing transaction;
-otherwise, it throws an exception.
+### **MANDATORY**
+Always executes in a transaction. It requires an existing transaction;
+- otherwise, **it throws an exception**.
 
 If StudentService is not annotated with `@Transactional`, and DepartmentService
 is annotated with
 `@Transactional(propagation = Propagation.MANDATORY)`, and if DepartmentService
-is invoked without an existing
-transaction, it will throw an exception.
+is invoked without an existing transaction, it will throw an exception.
 
 ```java
 nested exception is org.springframework.transaction.IllegalTransactionStateException: 
@@ -98,8 +134,7 @@ org.springframework.transaction.IllegalTransactionStateException:
     No existing transaction found for transaction marked with propagation 'mandatory' 
 ```
 
-##### **NEVER**
-
+### **NEVER**
 It executes without any transaction context. It throws an exception if an
 existing transaction is found.
 If StudentService has a transactional annotation and DepartmentService is
@@ -112,8 +147,7 @@ Then there should be an exception. In the Replicated Example, appears that the
 default save method of
 JPA creates an internal Tx which is why it works.
 
-##### **REQUIRES_NEW**
-
+### **REQUIRES_NEW**
 It always executes in a new transaction. It suspends the existing transaction if
 any.
 
@@ -142,9 +176,9 @@ DepartmentService.
 20-02-02 Sun 01:17:18.432 DEBUG JpaTransactionManager Committing JPA transaction on EntityManager [SessionImpl(1422485332<open>)]
 ```
 
-## Isolation - For Concurrent Transactions
+# Isolation - For Concurrent Transactions
 
-The default transaction isolation taken is that of the underlying database.
+The default transaction isolation taken is that of the **underlying database**.
 
 * The default isolation level is **REPEATABLE READ**  for MySQL database.
 * H2 - The default is **read committed**. H2 supports only three isolation
@@ -153,9 +187,8 @@ The default transaction isolation taken is that of the underlying database.
 * Oracle only supports **read committed** (default) and serializable.
 
 ## Isolation Problems
-
-[Isolation Eg](https://www.javainuse.com/spring/boot-transaction-isolation)
-[Isolation Article](https://medium.com/@elliotchance/sql-transaction-isolation-levels-explained-50d1a2f90d8f)
+- [Isolation Eg](https://www.javainuse.com/spring/boot-transaction-isolation)
+-[Isolation Article](https://medium.com/@elliotchance/sql-transaction-isolation-levels-explained-50d1a2f90d8f)
 
 * **Dirty Reads** : When current transaction reads a row written by another
   uncommitted transaction that is in progress.
@@ -163,7 +196,7 @@ The default transaction isolation taken is that of the underlying database.
   data within one Transaction, but gets two
   different values, because another transaction has been committed during the
   life of the current transaction.
-* **Phantom Reads** : (special case of non repeatable read) A phantom read
+* **Phantom Reads** : (special case of non-repeatable read) A phantom read
   happens when current transaction re-executes
   a query with search condition, receiving different results, because there has
   been a recently-committed transaction
@@ -173,16 +206,16 @@ The default transaction isolation taken is that of the underlying database.
 
 The SQL Standard defines four isolation levels
 
-* **Read uncommitted** permits dirty reads, non repeatable reads and phantom
+* **Read uncommitted** permits dirty reads, non-repeatable reads and phantom
   reads.
-* **Read committed** permits non repeatable reads and phantom reads.
+* **Read committed** permits non-repeatable reads and phantom reads.
 * **Repeatable read** permits only phantom reads.
 * **Serializable** does not permit any read errors but is slower as it is
   absolute Isolation.
 
 # Rollback
 
-Programatically handle roll back in the event of a checked exception.
+Programmatically handle roll back in the event of a checked exception.
 
 In case of a checked exceptions the previously executed transactions do not get
 rolled back automatically even if transaction annotation is used.

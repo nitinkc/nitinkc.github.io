@@ -1,5 +1,5 @@
 ---
-title:  "API Protocols"
+title:  "API Communication Protocols"
 date:   2024-05-22 11:02:00
 categories: [System Design]
 tags: [System Design]
@@ -7,24 +7,30 @@ tags: [System Design]
 
 {% include toc title="Index" %}
 
+# Communication Standards:
 [https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#communication-protocols](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#communication-protocols)
 
+# SOAP 
+XML Based for enterprise applications 
+
 # REST API
-
-Top pick for Web API's
-
+Resource based for web servers
+- Top pick for Web API's
+- Built on top of HTTP using standard HTTP Methods
 - Simple
 - Scalable and works well with web services
-- standard HTTP Methods
-- Stateless so scaling up easily achieved
-- Over fetching data issue
-- to get related data, multiple network calls, thus increasing latency
+- **Stateless** so scaling up is easily achieved (require each request to contain all of the information
+  necessary for the server to authenticate it)
+- **Over-fetching** data is an issue
+- to get related data, multiple network calls, thus increasing **latency**
+- Requests are cacheable
 
 # GraphQL
 
-UI can ask the precise data and its sent in one go
-
-- strongly types schema & precised data retrieval
+UI can ask the precise data and it's sent in one go
+- no over-fetching or under-fetching
+- - steep learning curve
+- strongly typed schema & precised data retrieval
 - supports realtime updates through subscriptions
 - But, the flexibility can overwhelm the backend
 - since its dynamic, caching is trickier
@@ -33,34 +39,21 @@ UI can ask the precise data and its sent in one go
 
 ![](https://www.youtube.com/watch?v=yWzKJPw_VzM)
 
-# Webhooks
+### GraphQL
 
-# Web socket - persistent bidirectional full duplex connections
+we can request the specific attributes. So it saves bandwidth and also
+providessecurity
 
-[https://nitinkc.github.io/system%20design/websockets/](https://nitinkc.github.io/system%20design/websockets/)
 
 # gRPC
-
-Modern, high-performance, Protocol Buffers
+- Uses Protocol Buffers
+- High performance for microservices
+- is generally used by microservices to communicate **internally**.
+- It is written over HTTP 2.0
 
 Suitable for microservices architectures
 
 [https://nitinkc.github.io//system%20design/gRPC-RPC/](https://nitinkc.github.io//system%20design/gRPC-RPC/)
-
-# SOAP
-
-# Communication Standards:
-
-### REST
-
-very common protocol and is used over HTTP.
-
-It is stateless because rather than relying on the server to remember the
-previous requests,
-REST applications require each request to contain all of the information
-necessary for the server to understand it.
-
-Requests are cacheable
 
 Thrift
 
@@ -68,15 +61,12 @@ Thrift has a code generator which generates data structures that can be
 serialized using Thrift,
 and client and server stubs for RPC, in different languages.
 
-### GraphQL
+# Webhooks
 
-we can request the specific attributes. So it saves bandwidth and also
-providessecurity
+# Web socket - persistent bidirectional full duplex connections
 
-### gPRC
+[https://nitinkc.github.io/system%20design/websockets/](https://nitinkc.github.io/system%20design/websockets/)
 
-is generally used by microservices to communicate internally.It is written over
-HTTP 2.0
 
 # Head-of-Line Blocking in HTTP
 

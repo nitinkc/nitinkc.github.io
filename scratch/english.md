@@ -237,3 +237,152 @@ rendezvous
 
 
 
+----------
+
+# **Whom**
+
+### **Definition**:
+"Whom" is a pronoun used to refer to the object of a verb or preposition. 
+It's more formal than "who," and is often used in writing or formal speech.
+
+### **Usage**:
+1. **Object of a verb**:
+  - The person **whom** I met yesterday is my cousin.
+  - She is the one **whom** I trust most.
+2. **Object of a preposition**:
+  - To **whom** did you send the invitation?
+  - The person **to whom** you spoke is the manager.
+3. **Formal questions** (less common in modern spoken English):
+  - **Whom** did you invite to the party?
+  - **Whom** are you looking for?
+
+---
+
+# **What**
+
+### **Definition**:
+"What" can be used as a pronoun (asking about something) or as a determiner (introducing a noun).
+
+### **Usage**:
+1. **As a question pronoun**:
+  - **What** is your name?
+  - **What** time is the meeting?
+  - **What** happened at the concert last night?
+2. **As a determiner**:
+  - I don’t know **what** he is doing.
+  - She showed me **what** she bought.
+  - Do you remember **what** I said earlier?
+3. **In exclamations**:
+  - **What** a beautiful day!
+  - **What** an amazing performance!
+4. **In indirect questions**:
+  - She asked me **what** I wanted for my birthday.
+  - Can you tell me **what** happened?
+
+---
+
+# **Ever**
+
+### **Definition**:
+"Ever" is an adverb used to mean "at any time" or to emphasize something (like "always").
+
+### **Usage**:
+1. **Referring to any time** (usually in questions or negative statements):
+  - Have you **ever** been to Paris?
+  - I don’t think I have **ever** seen that movie.
+2. **With superlative adjectives** (emphasizing the extreme):
+  - This is the **best** book I’ve **ever** read!
+  - It was the **worst** day **ever**!
+3. **In expressions of time**:
+  - **Ever** since I met her, I’ve been happy.
+  - I will love you **ever** more.
+4. **With “who,” “whatever,” “whenever,” etc.**:
+  - **Whoever** you are, I don’t care.
+  - **Whatever** you decide, I’ll support you.
+  - **Whenever** you’re ready, we can go.
+5. **In comparisons or emphasis**:
+  - She’s the most talented player I’ve **ever** seen.
+  - I’ll be your friend **forever**.
+
+---
+
+# **Where**
+
+### **Definition**:
+"Where" is an adverb or pronoun used to refer to a location or place.
+
+### **Usage**:
+1. **As a question pronoun**:
+  - **Where** is the nearest train station?
+  - **Where** are we meeting tomorrow?
+2. **As a relative pronoun (to introduce a place)**:
+  - This is the house **where** I grew up.
+  - The city **where** I live is beautiful.
+3. **In indirect questions**:
+  - Can you tell me **where** she went?
+  - Do you know **where** I can find a good restaurant?
+4. **As part of a clause with "wherever" or similar words**:
+  - **Wherever** you go, I will follow you.
+  - **Where** there's smoke, there's fire.
+5. **In idiomatic expressions**:
+  - Do you know **where** I’m coming from?
+  - This is **where** the magic happens.
+
+---
+
+# **However**
+
+### **Definition**:
+"However" is an adverb or conjunction used to express contrast or introduce a manner or method of doing something.
+
+### **Usage**:
+1. **As a conjunction for contrast**:
+  - I wanted to go to the park; **however**, it started raining.
+  - She’s very intelligent, **however**, she lacks experience.
+  - I love chocolate; **however**, I’m trying to avoid sweets.
+2. **To mean "in whatever way"**:
+  - **However** you choose to do it, make sure it’s safe.
+  - Do it **however** you want.
+3. **To introduce an exception**:
+  - You can come, **however** you must leave by 9 PM.
+  - We will go out, **however**, not until it stops raining.
+4. **As an adverb for emphasis**:
+  - The decision was **however** difficult to make.
+  - She was **however** very brave during the whole ordeal.
+
+---
+
+# **Combined Forms with "Ever"**
+
+### **Examples of combined forms**:
+1. **Whoever**: Refers to any person or group of people.
+  - **Whoever** is calling me, please stop.
+  - **Whoever** made this cake did an amazing job!
+2. **Whatever**: Refers to any thing or things.
+  - You can choose **whatever** you want for dinner.
+  - I’ll do **whatever** it takes to succeed.
+3. **Wherever**: Refers to any place or location.
+  - Go **wherever** you feel like.
+  - We will go **wherever** the road takes us.
+4. **However**: Refers to any way or manner, or to contrast.
+  - Do it **however** you like.
+  - **However**, I would recommend caution.
+
+---
+
+### Summary Table
+
+| Word        | Definition                                                                 | Example Sentence(s)                                              |
+|-------------|---------------------------------------------------------------------------|------------------------------------------------------------------|
+| **Whom**    | Object of a verb or preposition                                           | To **whom** did you give the book?                               |
+| **What**    | As a question pronoun or a determiner introducing a noun                  | **What** is your favorite color?                                 |
+| **Ever**    | At any time or emphasizing something                                      | Have you **ever** visited Spain?                                 |
+| **Where**   | Asking about a place or referring to a location                           | **Where** did you go for vacation?                               |
+| **However** | Expressing contrast or introducing a manner of doing something            | **However**, I decided to stay home.                             |
+| **Whoever** | Any person                                                                  | **Whoever** wins the contest will get a prize.                    |
+| **Whatever**| Any thing or things                                                        | I’ll eat **whatever** you cook for dinner.                       |
+| **Wherever**| Any place or location                                                      | **Wherever** you go, I’ll be there with you.                     |
+
+---
+
+

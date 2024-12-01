@@ -262,6 +262,17 @@ automatically inject the required dependency (another Spring bean) at runtime.
 - Constructor Injection for Mandatory Dependencies
 - Setter Injection for Optional Dependencies
 
+### Lombok
+To use the `@RequiredArgsConstructor` annotation. Mark the fields you want to
+include in the constructor as `final` or annotate them with `@NonNull`.
+
+```java
+@RequiredArgsConstructor
+public class UserService {
+    private final UserRepository userRepository;
+```
+
+
 # Sequence of execution
 
 ```
