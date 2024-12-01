@@ -29,10 +29,14 @@ tags: [System Design]
 
 
 # Messages vs Events
-In terms of OOP, Message is the Super class with Event and Command as
+In terms of OOP, `Message` is the Super class with `Event` and `Command`ß as
 subclasses.
 
 What is typically understood by message is actually a command.
+
+![eventVsMessage1.png](../../assets/images/eventVsMessage1.png)
+
+![eventVsMessage2.png](../../assets/images/eventVsMessage2.png)
 
 ## Event
 - Has already happened, in the past
@@ -67,10 +71,6 @@ What is typically understood by message is actually a command.
 - **Contextual**: Messages can include commands, requests, or data that needs to
   be acted upon.
   The sender and receiver usually have a defined relationship.
-
-![eventVsMessage1.png](../../assets/images/eventVsMessage1.png)
-
-![eventVsMessage2.png](../../assets/images/eventVsMessage2.png)
 
 # Example
 - Payment service creates an **event** `<<payment received>>` and published it
