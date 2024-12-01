@@ -58,6 +58,10 @@ What is typically understood by message is actually a command.
   be acted upon.
   The sender and receiver usually have a defined relationship.
 
+![eventVsMessage1.png](../../assets/images/eventVsMessage1.png)
+
+![eventVsMessage2.png](../../assets/images/eventVsMessage2.png)
+
 # Example
 - Payment service creates an **event** `<<payment received>>` and published it
   to kafka event streaming platform.
@@ -69,10 +73,6 @@ What is typically understood by message is actually a command.
 
 ![paymentProcessingArchitecture.png](../../assets/images/paymentProcessingArchitecture.png){:
 width="50%" height="50%"}
-
-![eventVsMessage1.png](../../assets/images/eventVsMessage1.png)
-
-![eventVsMessage2.png](../../assets/images/eventVsMessage2.png)
 
 # Messages
 - immutable array of bytes
