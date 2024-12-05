@@ -9,7 +9,7 @@ tags: [System Design]
 
 [Cloud Native Landscape](https://landscape.cncf.io/?view-mode=grid)
 
-![cloudNativeLandscape.png]({{ site.baseurl }}{% post_url /assets/images/cloudNativeLandscape.png)
+![cloudNativeLandscape.png]({{ site.baseurl }}{% post_url /assets/images/cloudNativeLandscape.png  %})
 
 # Cloud Hosting Models: 
 > IaaS - CaaS - PaaS - FaaS - SaaS - Serverless
