@@ -8,7 +8,7 @@ tags: [Spring Microservices, Spring Boot]
 
 # Spring Boot Startup Process
 [Demo Project](https://github.com/nitinkc/springboot-lifecycle)
-
+---
 # 1. **Application Entry Point**
 - The entry point for a Spring Boot application is typically a class annotated with `@SpringBootApplication`.
 - The `@SpringBootApplication` annotation is a combination of:
@@ -26,10 +26,10 @@ public class Application {
     }
 }
 ```
-
+---
 # 2. **Startup Process**
 
-### 2.1 **SpringApplication Initialization & Detection**
+## 2.1 **SpringApplication Initialization & Detection**
 - A `SpringApplication` object is created when the application is run.
 - Key tasks during initialization include:
   - Detecting the application type (`SERVLET`, `REACTIVE`, or `NONE`).
@@ -105,7 +105,7 @@ Based on the detected type, Spring Boot selects the appropriate ApplicationConte
 - SERVLET: The `DispatcherServlet` is configured for handling HTTP requests.
 - REACTIVE: The `DispatcherHandler` is initialized for reactive request handling.
 
-### 2.2 **Application Listeners Execution**
+## 2.2 **Application Listeners Execution**
 - `ApplicationListeners` handle various lifecycle events during startup, such as environment preparation and context initialization.
 - Examples of lifecycle events include:
   - Preparing the environment.
@@ -159,6 +159,7 @@ public static void main(String[] args) {
   app.run(args);
 }
 ```
+---
 
 # 3. **Environment Preparation**
 Spring Boot creates and configures an `Environment` object to manage application properties and profiles. 
@@ -184,7 +185,7 @@ public class Application {
     }
 }
 ```
-
+---
 # 4. **Creating the Application Context**
 Spring Boot creates the appropriate type of `ApplicationContext` based on the application type:
 - For **servlet-based** applications, a `ServletWebServerApplicationContext` is used.
@@ -198,7 +199,7 @@ public static void main(String[] args) {
     app.run(args);
 }
 ```
-
+---
 # 5. **Auto-Configuration and Component Scanning**
 
 ### 5.1 **Component Scanning**
@@ -231,7 +232,7 @@ public class MyServiceAutoConfiguration {
     }
 }
 ```
-
+---
 # 6. **Bean Definitions and Dependency Injection**
 
 ### 6.1 **Bean Creation**
@@ -269,7 +270,7 @@ public class MyBeanConsumer {
     }
 }
 ```
-
+---
 # 7. **Application Context Refresh**
 
 The application context is refreshed to perform tasks such as:
@@ -285,7 +286,7 @@ public class ContextRefreshListener implements ApplicationListener<ContextRefres
     }
 }
 ```
-
+---
 # 8. **Embedded Server Initialization (For Web Applications)**
 
 ### 8.1 **Server Startup**
@@ -303,7 +304,7 @@ public class MyController {
     }
 }
 ```
-
+---
 # 9. **Application Execution**
 
 ### 9.1 **Lifecycle Events**
@@ -322,13 +323,13 @@ public class MyCommandLineRunner implements CommandLineRunner {
     }
 }
 ```
-
+---
 # 10. **Application Ready**
 
 The application is fully initialized and ready to handle its tasks:
 - For web applications, the server is ready to process requests.
 - For CLI or batch applications, the main process begins execution.
-
+---
 # Summary
 
 The Spring Boot startup process consists of several well-defined steps:
