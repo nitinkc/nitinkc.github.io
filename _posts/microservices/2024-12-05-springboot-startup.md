@@ -109,6 +109,8 @@ Based on the detected type, Spring Boot selects the appropriate ApplicationConte
 
 ### **How to Listen to Events**
 
+### 1. **Implementing `ApplicationListener` Interface**
+
 `@Component` gets initiated with with `SpringApplication.run(DemoApplication.class, args);`
 ```java
 @Slf4j
@@ -146,6 +148,30 @@ public static void main(String[] args) {
         }
     });
 
+    app.run(args);
+}
+```
+
+### 2. Using `@EventListener` Annotation
+```java
+@Component
+public class MyEventListener {
+    @EventListener
+    public void handleReadyEvent(ApplicationReadyEvent event) {
+        log.info("Application is ready!");
+    }
+}
+```
+
+### 3. Programmatically Adding Listeners
+```java
+public static void main(String[] args) {
+    SpringApplication app = new SpringApplication(Application.class);
+    app.addListeners(event -> {
+        if (event instanceof ApplicationReadyEvent) {
+            System.out.println("Application is ready!");
+        }
+    });
     app.run(args);
 }
 ```
