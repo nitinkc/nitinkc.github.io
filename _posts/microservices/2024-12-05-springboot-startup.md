@@ -1,12 +1,11 @@
 ---
-title:  "SpringBoot Startup"
+title:  "Spring Boot Startup Process"
 date:   2024-12-05 15:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---
 {% include toc title="Index" %}
 
-# Spring Boot Startup Process
 ### [Demo Project](https://github.com/nitinkc/springboot-lifecycle)
 ---
 # 1. **Application Entry Point**
@@ -39,22 +38,17 @@ public class Application {
 > The application type is set using the `SpringApplication` class.
 > The detection logic is encapsulated in the `deduceApplicationType()` method.
 
-**SERVLET**: A traditional web application based on the Servlet API.
+**SERVLET**: A traditional web application based on the [Servlet API](https://www.linkedin.com/advice/0/what-java-servlet-skills-web-development-zaqff#:~:text=The%20web%20server%20passes%20the,displays%20it%20on%20the%20screen).
 - Detected if `javax.servlet.Servlet` or `javax.servlet.http.HttpServletRequest` is on the classpath.
-- Common dependencies that trigger this type include `spring-boot-starter-web`.
+- `spring-boot-starter-web` dependency.
 
 **REACTIVE**: A reactive web application built using Spring WebFlux.
 - Detected if `org.springframework.web.reactive.DispatcherHandler` or related WebFlux classes are present on the classpath.
-- Common dependencies that trigger this type include `spring-boot-starter-webflux`.
+- `spring-boot-starter-webflux` dependency.
 
 **NONE**: A non-web application, such as a batch or CLI tool.
 - Selected if neither the SERVLET nor REACTIVE indicators are found.
 - This is typical for applications that do not need a web server, such as CLI tools or batch processing jobs.
-
-on the classpath:
-- If `javax.servlet.Servlet` is found, the type is set to SERVLET.
-- If `org.springframework.web.reactive.DispatcherHandler` is found, the type is set to REACTIVE.
-- If neither is found, the type defaults to NONE.
 
 ```java
 //CONSTRUCTOR
@@ -151,7 +145,14 @@ app.run(args);
 }
 ```
 
-
+## 2.3 **Banner**
+Either use app config
+```yaml
+spring:
+  main:
+    banner-mode: "off"
+```
+Or use java code
 ```java
 public static void main(String[] args) {
   SpringApplication app = new SpringApplication(Application.class);
