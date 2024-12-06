@@ -138,15 +138,8 @@ Explicit adding
 ```java
 public static void main(String[] args) {
     SpringApplication app = new SpringApplication(DemoApplication.class);
-
     // Add event listeners for logging application lifecycle
     app.addListeners(new ApplicationStartingListener());
-
-    app.addListeners(event -> {
-        if (event instanceof ApplicationEnvironmentPreparedEvent) {
-            log.info("[LOG] ApplicationEnvironmentPreparedEvent from Main: Environment prepared.");
-        }
-    });
 
     app.run(args);
 }
