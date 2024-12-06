@@ -107,6 +107,8 @@ Based on the detected type, Spring Boot selects the appropriate ApplicationConte
   - Preparing the environment.
   - Initializing the application context.
 
+### **How to Listen to Events**
+
 `@Component` gets initiated with with `SpringApplication.run(DemoApplication.class, args);`
 ```java
 @Slf4j
@@ -132,26 +134,26 @@ public class ApplicationStartingListener implements ApplicationListener<Applicat
 
 Explicit adding
 ```java
-SpringApplication app = new SpringApplication(DemoApplication.class);
+public static void main(String[] args) {
+    SpringApplication app = new SpringApplication(DemoApplication.class);
 
-// Add event listeners for logging application lifecycle
-app.addListeners(new ApplicationStartingListener());
+    // Add event listeners for logging application lifecycle
+    app.addListeners(new ApplicationStartingListener());
 
-app.addListeners(event -> {
-    if (event instanceof ApplicationEnvironmentPreparedEvent) {
-        log.info("[LOG] ApplicationEnvironmentPreparedEvent from Main: Environment prepared.");
-    }
-});
+    app.addListeners(event -> {
+        if (event instanceof ApplicationEnvironmentPreparedEvent) {
+            log.info("[LOG] ApplicationEnvironmentPreparedEvent from Main: Environment prepared.");
+        }
+    });
 
-app.run(args);
+    app.run(args);
 }
 ```
 
 ### **Sequence of Events**
-
-1. **ApplicationStartingEvent**
-  - Triggered when the application starts.
-  - No context or environment is available.
+**ApplicationStartingEvent**
+- Triggered when the application starts.
+- No context or environment is available.
 
 2. **ApplicationEnvironmentPreparedEvent**
   - Triggered when the environment is prepared (properties, profiles, etc.).
