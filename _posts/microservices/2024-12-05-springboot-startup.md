@@ -189,6 +189,26 @@ public class Application {
 ```
 ---
 # 4. **Creating the Application Context**
+
+## **Types of Application Contexts in Spring Boot**
+
+Spring Boot uses different types of `ApplicationContext` implementations depending on the detected application type:
+
+1. **Servlet-Based Applications**:
+  - **Context Used**: `ServletWebServerApplicationContext`
+  - **Purpose**: Configures a servlet-based web application with an embedded web server like Tomcat or Jetty.
+  - **Usage**: Typical for traditional web applications built with Spring MVC.
+
+2. **Reactive Applications**:
+  - **Context Used**: `ReactiveWebServerApplicationContext`
+  - **Purpose**: Configures a reactive web application using WebFlux and an embedded reactive server like Netty.
+  - **Usage**: For modern, non-blocking, and event-driven applications.
+
+3. **CLI or Non-Web Applications**:
+  - **Context Used**: `GenericApplicationContext`
+  - **Purpose**: Configures an application without a web server, such as batch jobs or command-line tools.
+  - **Usage**: For non-web Spring Boot applications
+
 Spring Boot creates the appropriate type of `ApplicationContext` based on the application type:
 - For **servlet-based** applications, a `ServletWebServerApplicationContext` is used.
 - For reactive applications, a `ReactiveWebServerApplicationContext` is used.
@@ -218,7 +238,22 @@ following functionalities:
 3. Publishing and listening to application events.
 4. Integrating with the environment.
 
-Spring Boot dynamically selects the appropriate `ApplicationContext` implementation based on the application type.
+Spring Boot **dynamically** selects the appropriate `ApplicationContext`
+implementation based on the application type.
+
+## What Happens During Application Context Creation
+**Bean Definitions:**
+- The ApplicationContext scans for and registers bean definitions (via @ComponentScan, @Configuration, etc.).
+
+**Configuration Processing:**
+- Processes configuration classes (@Configuration) and applies Spring Boot’s auto-configuration.
+
+**Environment Integration:**
+- Integrates application properties and profiles into the context.
+
+**Lifecycle Event Publishing:**
+- Publishes lifecycle events such as ApplicationStartedEvent and ContextRefreshedEvent.
+
 
 ---
 # 5. **Auto-Configuration and Component Scanning**
