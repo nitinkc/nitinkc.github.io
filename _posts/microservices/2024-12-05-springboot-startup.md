@@ -301,9 +301,12 @@ public static void main(String[] args) {
 ---
 
 # 5. **Auto-Configuration and Component Scanning**
+Spring Boot evaluates conditions defined in each auto-configuration class
+(e.g., `@ConditionalOnClass`, `@ConditionalOnProperty`) to decide if the class should be applied.
 
 ### 5.1 **Component Scanning**
-- The `@ComponentScan` annotation scans the base package and sub-packages for Spring-managed components, such as:
+- The `@ComponentScan` annotation scans the base package and sub-packages for 
+Spring-managed components, such as:
   - Services
   - Repositories
   - Controllers

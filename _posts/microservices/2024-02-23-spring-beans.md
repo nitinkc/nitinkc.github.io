@@ -10,7 +10,8 @@ tags: [Microservices]
 A bean is simply a Spring-managed component or object.
 
 It is an instance of a Java class that is instantiated, configured, and managed
-by the Spring IoC (Inversion of Control) container.
+by the **Spring IoC (Inversion of Control) container**.
+
 Beans are the fundamental building blocks of a Spring application.
 
 - The singleton scope is the **default** scope in Spring.
