@@ -226,23 +226,24 @@ depending on the detected application type:
 public static void main(String[] args) {
     SpringApplication app = new SpringApplication(Application.class);
     app.setApplicationContextClass(AnnotationConfigApplicationContext.class); // Setting custom ApplicationContext
-    app.run(args);
+    ConfigurableApplicationContext context = app.run(args);
+    log.info("[LOG] ApplicationContext in use: {}", context.getClass().getName());
 }
 ```
 
 ## What Happens During Application Context Creation
 **Bean Definitions:**
-- The ApplicationContext scans for and registers bean definitions (via @ComponentScan, @Configuration, etc.).
+- The `ApplicationContext` scans for and registers bean definitions
+(via `@ComponentScan`, `@Configuration`, etc.).
 
 **Configuration Processing:**
-- Processes configuration classes (@Configuration) and applies Spring Boot’s auto-configuration.
+- Processes configuration classes (`@Configuration`) and applies Spring Boot’s auto-configuration.
 
 **Environment Integration:**
-- Integrates application properties and profiles into the context.
+- Integrates application **properties and profiles** into the context.
 
 **Lifecycle Event Publishing:**
-- Publishes lifecycle events such as ApplicationStartedEvent and ContextRefreshedEvent.
-
+- Publishes lifecycle events such as `ApplicationStartedEvent` and `ContextRefreshedEvent`.
 
 ---
 # 5. **Auto-Configuration and Component Scanning**
