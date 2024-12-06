@@ -159,6 +159,9 @@ spring:
       location: logo.png
 ```
 
+# Springboot Startup process
+[https://nitinkc.github.io/spring/microservices/springboot-startup/](https://nitinkc.github.io/spring/microservices/springboot-startup/)
+
 # Initial Data Setup
 
 keep the sql script in the resources folder by the name `data.sql`
