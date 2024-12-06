@@ -27,14 +27,83 @@ public class Application {
 }
 ```
 
-# 2. **Steps in the Startup Process**
+# 2. **Startup Process**
 
-### 2.1 **SpringApplication Initialization**
+### 2.1 **SpringApplication Initialization & Detection**
 - A `SpringApplication` object is created when the application is run.
 - Key tasks during initialization include:
   - Detecting the application type (`SERVLET`, `REACTIVE`, or `NONE`).
   - Loading `ApplicationContextInitializers` and `ApplicationListeners`.
   - Setting default properties for the application.
+
+> The application type is set using the `SpringApplication` class.
+> The detection logic is encapsulated in the `deduceApplicationType()` method.
+
+**SERVLET**: A traditional web application based on the Servlet API.
+- Detected if `javax.servlet.Servlet` or `javax.servlet.http.HttpServletRequest` is on the classpath.
+- Common dependencies that trigger this type include `spring-boot-starter-web`.
+
+**REACTIVE**: A reactive web application built using Spring WebFlux.
+- Detected if `org.springframework.web.reactive.DispatcherHandler` or related WebFlux classes are present on the classpath.
+- Common dependencies that trigger this type include `spring-boot-starter-webflux`.
+
+**NONE**: A non-web application, such as a batch or CLI tool.
+- Selected if neither the SERVLET nor REACTIVE indicators are found.
+- This is typical for applications that do not need a web server, such as CLI tools or batch processing jobs.
+
+on the classpath:
+- If `javax.servlet.Servlet` is found, the type is set to SERVLET.
+- If `org.springframework.web.reactive.DispatcherHandler` is found, the type is set to REACTIVE.
+- If neither is found, the type defaults to NONE.
+
+```java
+//CONSTRUCTOR
+public SpringApplication(ResourceLoader resourceLoader, Class<?>... primarySources) {
+  this.resourceLoader = resourceLoader;
+  Assert.notNull(primarySources, "PrimarySources must not be null");
+  this.primarySources = new LinkedHashSet<>(Arrays.asList(primarySources));
+  //NOTE THIS
+  this.properties.setWebApplicationType(WebApplicationType.deduceFromClasspath());
+  this.bootstrapRegistryInitializers = new ArrayList<>(
+          getSpringFactoriesInstances(BootstrapRegistryInitializer.class));
+  setInitializers((Collection) getSpringFactoriesInstances(ApplicationContextInitializer.class));
+  setListeners((Collection) getSpringFactoriesInstances(ApplicationListener.class));
+  this.mainApplicationClass = deduceMainApplicationClass();
+}
+
+//DEDUCE LOGIC
+static WebApplicationType deduceFromClasspath() {
+		if (ClassUtils.isPresent(WEBFLUX_INDICATOR_CLASS, null) && !ClassUtils.isPresent(WEBMVC_INDICATOR_CLASS, null)
+				&& !ClassUtils.isPresent(JERSEY_INDICATOR_CLASS, null)) {
+			return WebApplicationType.REACTIVE;
+		}
+		for (String className : SERVLET_INDICATOR_CLASSES) {
+			if (!ClassUtils.isPresent(className, null)) {
+				return WebApplicationType.NONE;
+			}
+		}
+		return WebApplicationType.SERVLET;
+	}
+```
+
+### What Happens After Detection
+**1. Setting the Application Context**
+
+Based on the detected type, Spring Boot selects the appropriate ApplicationContext implementation:
+- `AnnotationConfigServletWebServerApplicationContext` for SERVLET.
+- `AnnotationConfigReactiveWebServerApplicationContext` for REACTIVE.
+- `AnnotationConfigApplicationContext` for NONE.
+
+**2. Configuring the Embedded Server**
+
+- For SERVLET applications, an **embedded servlet container** (e.g., Tomcat, Jetty) is initialized.
+- For REACTIVE applications, **a reactive server** (e.g., Netty) is initialized.
+- For NONE, no server is started.
+
+**3. Initializing Dispatcher**
+
+- SERVLET: The `DispatcherServlet` is configured for handling HTTP requests.
+- REACTIVE: The `DispatcherHandler` is initialized for reactive request handling.
 
 ### 2.2 **Application Listeners Execution**
 - `ApplicationListeners` handle various lifecycle events during startup, such as environment preparation and context initialization.
