@@ -189,13 +189,19 @@ public class Application {
 ```
 ---
 # 4. **Creating the Application Context**
-The **Application Context** is the core container in Spring that holds
-- the configuration,
-- bean definitions,
-- and manages the lifecycle of the beans.
-
 In Spring Boot, the creation of the `ApplicationContext` is a critical step that
 determines the environment and structure of the application.
+
+## **What is the Application Context?**
+The `ApplicationContext` is an **interface** in Spring that provides the
+following functionalities:
+1. Loading and managing beans.
+2. Resolving dependencies.
+3. Publishing and listening to application events.
+4. Integrating with the environment.
+
+Spring Boot **dynamically** selects the appropriate `ApplicationContext`
+implementation based on the application type.
 
 ## **Types of Application Contexts in Spring Boot**
 Spring Boot uses different types of `ApplicationContext` implementations 
@@ -223,18 +229,6 @@ public static void main(String[] args) {
     app.run(args);
 }
 ```
-
-## **What is the Application Context?**
-
-The `ApplicationContext` is an **interface** in Spring that provides the 
-following functionalities:
-1. Loading and managing beans.
-2. Resolving dependencies.
-3. Publishing and listening to application events.
-4. Integrating with the environment.
-
-Spring Boot **dynamically** selects the appropriate `ApplicationContext`
-implementation based on the application type.
 
 ## What Happens During Application Context Creation
 **Bean Definitions:**
