@@ -26,6 +26,8 @@ Resource based for web servers
 - Requests are cacheable
 
 # GraphQL
+we can request the specific attributes. So it saves bandwidth and also
+provides security 
 
 UI can ask the precise data and it's sent in one go
 - no over-fetching or under-fetching
@@ -38,12 +40,6 @@ UI can ask the precise data and it's sent in one go
 [https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#rest-api-vs-graphql](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#rest-api-vs-graphql)
 
 ![](https://www.youtube.com/watch?v=yWzKJPw_VzM)
-
-### GraphQL
-
-we can request the specific attributes. So it saves bandwidth and also
-providessecurity
-
 
 # gRPC
 - Uses Protocol Buffers
@@ -69,7 +65,6 @@ and client and server stubs for RPC, in different languages.
 
 
 # Head-of-Line Blocking in HTTP
-
 Head-Of-Line blocking occurs when the message/data packet at the head of the
 queue cannot move forward due to congestion
 even if other messages/packets behind this one could
@@ -88,7 +83,6 @@ logical streams, they are not independent because they are running on the same
 TCP
 
 # Protocols for video transmission
-
 HTTP is not good for video transmission because:Videos are broken into chunks.
 Since HTTP is stateless, the client has
 to specify which chunk it wants because the server does not know about the
@@ -99,7 +93,7 @@ live streaming, if the video packet does
 not reach the client then there is no point in retrying because the data is
 old.So UDP is better for live-streaming.
 
-However, in some cases where we need, guaranteeddelivery TCP is preferred.
+However, in some cases where we need, guaranteed delivery TCP is preferred.
 
 ##### HTTP-DASH
 
