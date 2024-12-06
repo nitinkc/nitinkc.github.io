@@ -7,7 +7,7 @@ tags: [Spring Microservices, Spring Boot]
 {% include toc title="Index" %}
 
 # Spring Boot Startup Process
-[Demo Project](https://github.com/nitinkc/springboot-lifecycle)
+### [Demo Project](https://github.com/nitinkc/springboot-lifecycle)
 ---
 # 1. **Application Entry Point**
 - The entry point for a Spring Boot application is typically a class annotated with `@SpringBootApplication`.
