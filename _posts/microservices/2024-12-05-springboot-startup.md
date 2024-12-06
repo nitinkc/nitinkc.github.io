@@ -151,7 +151,7 @@ public static void main(String[] args) {
 ```
 
 ### **Sequence of Events**
-**ApplicationStartingEvent**
+1. **ApplicationStartingEvent**
 - Triggered when the application starts.
 - No context or environment is available.
 
