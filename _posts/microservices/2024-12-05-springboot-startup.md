@@ -7,21 +7,7 @@ tags: [Spring Microservices, Spring Boot]
 {% include toc title="Index" %}
 
 # Spring Boot Startup Process
-
-```mermaid!
-graph TD
-    A[Start] --> B["Run SpringApplication.run()"]
-    B --> C[Prepare Environment]
-    C --> D[Display Banner]
-    D --> E[Create ApplicationContext]
-    E --> F[Auto-Configuration]
-    F --> G[Execute Runners]
-    G --> H[Start Web Server]
-    H --> I[Application Ready]
-    I --> J[Serve Requests]
-```
-
----
+[Demo Project](https://github.com/nitinkc/springboot-lifecycle)
 
 # 1. **Application Entry Point**
 - The entry point for a Spring Boot application is typically a class annotated with `@SpringBootApplication`.
