@@ -25,7 +25,9 @@ public class Application {
     }
 }
 ```
+
 ---
+
 # 2. **Startup Process**
 
 ## 2.1 **SpringApplication Initialization & Detection**
@@ -145,6 +147,34 @@ app.run(args);
 }
 ```
 
+### **Sequence of Events**
+
+1. **ApplicationStartingEvent**
+  - Triggered when the application starts.
+  - No context or environment is available.
+
+2. **ApplicationEnvironmentPreparedEvent**
+  - Triggered when the environment is prepared (properties, profiles, etc.).
+  - Context is not created yet.
+
+3. **ApplicationContextInitializedEvent**
+  - Triggered after the context is initialized but before bean definitions are loaded.
+
+4. **ApplicationPreparedEvent**
+  - Triggered after the context is prepared but before it is refreshed.
+
+5. **ApplicationStartedEvent**
+  - Triggered after the context is refreshed and before runners are invoked.
+
+6. **ApplicationReadyEvent**
+  - Triggered after runners have been executed and the application is ready to serve requests.
+
+7. **ContextClosedEvent**
+  - Triggered during shutdown when the context is closing.
+
+8. **ApplicationFailedEvent**
+  - Triggered if the application fails to start due to an exception.
+
 ## 2.3 **Banner**
 Either use app config
 ```yaml
@@ -187,7 +217,9 @@ public class Application {
     }
 }
 ```
+
 ---
+
 # 4. **Creating the Application Context**
 In Spring Boot, the creation of the `ApplicationContext` is a critical step that
 determines the environment and structure of the application.
@@ -246,6 +278,7 @@ public static void main(String[] args) {
 - Publishes lifecycle events such as `ApplicationStartedEvent` and `ContextRefreshedEvent`.
 
 ---
+
 # 5. **Auto-Configuration and Component Scanning**
 
 ### 5.1 **Component Scanning**
