@@ -163,7 +163,8 @@ public static void main(String[] args) {
 ---
 
 # 3. **Environment Preparation**
-Spring Boot creates and configures an `Environment` object to manage application properties and profiles. 
+Spring Boot creates and configures an `Environment` object to manage application 
+properties and profiles. 
 
 Key steps include:
 - Loading properties from various sources:
@@ -200,6 +201,25 @@ public static void main(String[] args) {
     app.run(args);
 }
 ```
+The **Application Context** is the core container in Spring that holds 
+- the configuration, 
+- bean definitions, 
+- and manages the lifecycle of the beans. 
+
+In Spring Boot, the creation of the `ApplicationContext` is a critical step that
+determines the environment and structure of the application.
+
+## **What is the Application Context?**
+
+The `ApplicationContext` is an **interface** in Spring that provides the 
+following functionalities:
+1. Loading and managing beans.
+2. Resolving dependencies.
+3. Publishing and listening to application events.
+4. Integrating with the environment.
+
+Spring Boot dynamically selects the appropriate `ApplicationContext` implementation based on the application type.
+
 ---
 # 5. **Auto-Configuration and Component Scanning**
 
