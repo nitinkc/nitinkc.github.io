@@ -745,3 +745,7 @@ public class DailyTaskScheduler {
 # Aspect Oriented Programming - AOP
 
 [https://nitinkc.github.io/spring/microservices/spring-aop/](https://nitinkc.github.io/spring/microservices/spring-aop/)
+
+
+# Bean Scope
+[https://nitinkc.github.io/microservices/spring-beans/#bean-scope](https://nitinkc.github.io/microservices/spring-beans/#bean-scope)

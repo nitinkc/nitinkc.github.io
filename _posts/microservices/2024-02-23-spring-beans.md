@@ -15,13 +15,11 @@ by the **Spring IoC (Inversion of Control) container**.
 Beans are the fundamental building blocks of a Spring application.
 
 - The singleton scope is the **default** scope in Spring.
-- The `Gang of Four` defines Singleton as having one **instance per ClassLoader
-  **.
-    - in their book
-      _**Design Patterns: Elements of Reusable Object-Oriented Software**_,
+- The `Gang of Four` defines Singleton as having one **instance per ClassLoader**.
+    - in their book **Design Patterns: Elements of Reusable Object-Oriented Software**-,
       ensures that a class has only one instance and provides a global point of
       access to it.
-    -
+
 - However, Spring singleton is defined as one instance of bean definition per
   container.
     - In the Spring Framework, a singleton bean is defined as a bean that is
@@ -125,3 +123,14 @@ created once when the application starts up.
        // Bean definition
    }
    ```
+
+
+# **Comparison of Scopes**
+
+| Scope           | Instance Per              | Typical Use Case                | Lifetime                  |
+|:----------------|:--------------------------|:--------------------------------|:--------------------------|
+| **Singleton**   | Application               | Stateless services, utilities   | Application lifecycle     |
+| **Prototype**   | Each request or injection | Stateful or temporary objects   | Per request/injection     |
+| **Request**     | HTTP request              | Request-specific logic          | HTTP request lifecycle    |
+| **Session**     | HTTP session              | User-specific data              | HTTP session lifecycle    |
+| **Application** | Servlet context           | Global settings, resource pools | Servlet context lifecycle |
