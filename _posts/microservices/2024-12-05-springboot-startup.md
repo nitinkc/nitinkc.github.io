@@ -56,6 +56,47 @@ public class Application {
   - Preparing the environment.
   - Initializing the application context.
 
+`@Component` gets initiated with with `SpringApplication.run(DemoApplication.class, args);`
+```java
+@Slf4j
+@Component
+public class ApplicationReadyListener implements ApplicationListener<ApplicationReadyEvent> {
+    @Override
+    public void onApplicationEvent(ApplicationReadyEvent event) {
+        log.info("[LOG] ApplicationReadyEvent Listner via Component: Application is ready.");
+    }
+}
+```
+
+whereas, if Stereotype annotation is not used, then add explicitly
+```java
+@Slf4j
+public class ApplicationStartingListener implements ApplicationListener<ApplicationStartingEvent> {
+    @Override
+    public void onApplicationEvent(ApplicationStartingEvent event) {
+        log.info("[LOG] ApplicationStartingEvent: Application is starting...");
+    }
+}
+```
+
+Explicit adding
+```java
+SpringApplication app = new SpringApplication(DemoApplication.class);
+
+// Add event listeners for logging application lifecycle
+app.addListeners(new ApplicationStartingListener());
+
+app.addListeners(event -> {
+    if (event instanceof ApplicationEnvironmentPreparedEvent) {
+        log.info("[LOG] ApplicationEnvironmentPreparedEvent from Main: Environment prepared.");
+    }
+});
+
+app.run(args);
+}
+```
+
+
 ```java
 public static void main(String[] args) {
   SpringApplication app = new SpringApplication(Application.class);
@@ -74,11 +115,34 @@ Key steps include:
   - Command-line arguments.
 - Determining and activating profiles for different environments, such as `dev` or `prod`.
 
+```java
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication app = new SpringApplication(Application.class);
+        app.addListeners(event -> {
+            if (event instanceof ApplicationEnvironmentPreparedEvent) {
+                System.out.println("Environment Prepared: " + event);
+            }
+        });
+        app.run(args);
+    }
+}
+```
+
 # 4. **Creating the Application Context**
 Spring Boot creates the appropriate type of `ApplicationContext` based on the application type:
 - For **servlet-based** applications, a `ServletWebServerApplicationContext` is used.
 - For reactive applications, a `ReactiveWebServerApplicationContext` is used.
 - For CLI or non-web applications, a `GenericApplicationContext` is used.
+
+```java
+public static void main(String[] args) {
+    SpringApplication app = new SpringApplication(Application.class);
+    app.setApplicationContextClass(AnnotationConfigApplicationContext.class); // Setting custom ApplicationContext
+    app.run(args);
+}
+```
 
 # 5. **Auto-Configuration and Component Scanning**
 
@@ -88,11 +152,30 @@ Spring Boot creates the appropriate type of `ApplicationContext` based on the ap
   - Repositories
   - Controllers
   - Configuration classes
+  
+```java
+@Component
+public class MyService {
+    public void serve() {
+        System.out.println("Service is running");
+    }
+}
+```
 
 ### 5.2 **Auto-Configuration**
 - Auto-configuration uses the `@EnableAutoConfiguration` annotation.
 - It leverages `META-INF/spring.factories` to load relevant configuration classes automatically.
 - Conditional annotations (`@Conditional`) determine which configurations should be applied.
+```java
+@Configuration
+@ConditionalOnMissingBean(MyService.class)
+public class MyServiceAutoConfiguration {
+    @Bean
+    public MyService myService() {
+        return new MyService();
+    }
+}
+```
 
 # 6. **Bean Definitions and Dependency Injection**
 
@@ -108,12 +191,45 @@ Spring Boot creates the appropriate type of `ApplicationContext` based on the ap
   - Field injection.
   - Setter injection.
 
+```java
+@Configuration
+public class MyConfiguration {
+    @Bean
+    public MyBean myBean() {
+        return new MyBean();
+    }
+}
+
+@Component
+public class MyBeanConsumer {
+    private final MyBean myBean;
+
+    @Autowired
+    public MyBeanConsumer(MyBean myBean) {
+        this.myBean = myBean;
+    }
+
+    public void printMessage() {
+        log.info("Bean is injected: " + myBean);
+    }
+}
+```
+
 # 7. **Application Context Refresh**
 
 The application context is refreshed to perform tasks such as:
 - Instantiating and configuring all beans.
 - Resolving placeholders and configuration properties.
 - Registering and initializing any lifecycle components or runners.
+```java
+@Component
+public class ContextRefreshListener implements ApplicationListener<ContextRefreshedEvent> {
+    @Override
+    public void onApplicationEvent(ContextRefreshedEvent event) {
+        System.out.println("Context Refreshed: " + event);
+    }
+}
+```
 
 # 8. **Embedded Server Initialization (For Web Applications)**
 
@@ -122,6 +238,16 @@ The application context is refreshed to perform tasks such as:
 
 ### 8.2 **DispatcherServlet Initialization**
 - The `DispatcherServlet` is registered in the servlet context and initialized to handle HTTP requests.
+
+```java
+@RestController
+public class MyController {
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to Spring Boot!";
+    }
+}
+```
 
 # 9. **Application Execution**
 
@@ -132,6 +258,15 @@ The application context is refreshed to perform tasks such as:
 
 ### 9.2 **Custom Logic Execution**
 - Any custom initialization logic defined in `CommandLineRunner` or `ApplicationRunner` beans is executed.
+```java
+@Component
+public class MyCommandLineRunner implements CommandLineRunner {
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("Executing custom logic at startup");
+    }
+}
+```
 
 # 10. **Application Ready**
 
