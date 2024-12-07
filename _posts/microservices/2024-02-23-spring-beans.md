@@ -14,9 +14,8 @@ by the **Spring IoC (Inversion of Control) container**.
 
 Beans are the fundamental building blocks of a Spring application.
 
-# Bean Scope
 
-## **Singleton Scope**:
+# **Singleton Scope**:
 Singleton scope is the **default scope** in Spring, where only one instance of the
 bean is created and shared throughout the application context.
 
@@ -55,9 +54,10 @@ bean is created and shared throughout the application context.
 - Efficient memory usage.
 - Shared state across the application.
 
-## **Prototype Scope**:
-Prototype scope instructs the Spring IoC container to create a new instance of
-the bean whenever it is requested.
+# **Prototype Scope**:
+### **Description**:
+- Prototype scope instructs the Spring IoC container to create **a new instance of
+the bean** whenever it is requested.
 
 ```java
 @Component
@@ -66,8 +66,6 @@ public class PrototypeBean {
    // Bean definition
 }
 ```
-### **Description**:
-- A new instance of the bean is created every time it is requested.
 
 ### **Use Cases**:
 1. **Stateful Components**:
@@ -85,9 +83,11 @@ public class PrototypeBean {
 - Isolation between instances.
 - Ideal for beans with mutable state.
 
-## **Request Scope**:
-Request scope is used in web-based applications, where a new instance of the
-bean is created once per HTTP request.
+# **Request Scope**:
+### **Description**:
+- A new instance of the bean is created **for each HTTP request** in a web application.
+- Request scope is used in web-based applications, where a new instance of the
+bean is **created once per HTTP request**.
 
 ```java
 @Component
@@ -96,9 +96,6 @@ public class RequestScopedBean {
    // Bean definition
 }
 ```
-
-### **Description**:
-- A new instance of the bean is created for each HTTP request in a web application.
 
 ### **Use Cases**:
 1. **Request-Specific Data Processing**:
@@ -115,10 +112,10 @@ public class RequestScopedBean {
 - Scoped to a single HTTP request lifecycle.
 - Avoids memory leaks from request-specific data in global beans.
 
-
-## **Session Scope**:
-Session scope is tied to the HTTP session lifecycle, with a new instance of the
-bean created once per HTTP session.
+# **Session Scope**:
+### **Description**:
+- A new instance of the bean is created for **each HTTP session** in a web application.
+- Session scope is tied to the HTTP session lifecycle, 
 
 ```java
 @Component
@@ -127,8 +124,6 @@ public class SessionScopedBean {
    // Bean definition
 }
 ```
-### **Description**:
-- A new instance of the bean is created for each HTTP session in a web application.
 
 ### **Use Cases**:
 1. **User-Specific Session Data**:
@@ -144,7 +139,7 @@ public class SessionScopedBean {
 - Isolated state per user session.
 - Useful for managing user-specific resources.
 
-## **Application Scope**:
+# **Application Scope**:
 Application scope represents a single instance of the bean per servlet context,
 created once when the application starts up.
 
