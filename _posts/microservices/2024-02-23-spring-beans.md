@@ -140,8 +140,9 @@ public class SessionScopedBean {
 - Useful for managing user-specific resources.
 
 # **Application Scope**:
-Application scope represents a single instance of the bean per servlet context,
-created once when the application starts up.
+### **Description**:
+- A single instance of the bean is created for the entire servlet context.
+- created once when the application starts up.
 
 ```java
 @Component
@@ -150,9 +151,6 @@ public class ApplicationScopedBean {
    // Bean definition
 }
 ```
-
-### **Description**:
-- A single instance of the bean is created for the entire servlet context.
 
 ### **Use Cases**:
 1. **Application-Wide Resources**:
