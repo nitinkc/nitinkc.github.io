@@ -128,16 +128,34 @@ public class SessionScopedBean {
 ### **Use Cases**:
 1. **User-Specific Session Data**:
     - Beans holding user preferences, shopping cart data, or session-specific attributes.
-
+    - Collaborative Web Applications
 2. **Authentication and Authorization**:
     - Beans to store user credentials or session tokens during the session lifecycle.
 
 3. **Stateful Web Applications**:
     - Applications requiring user-specific state across multiple requests.
 
+# Example Scenario: Collaborative Editing
+Imagine a collaborative editing application where multiple API endpoints allow a 
+user to update their session-specific editing preferences or perform operations 
+concurrently. Each HTTP request might be processed by a separate thread, 
+but all updates belong to the same session.
+
 ### **Advantages**:
 - Isolated state per user session.
 - Useful for managing user-specific resources.
+
+## Why Use Session Beans in Multithreading?
+### State Isolation:
+Each user’s session has its own instance of the bean.
+Even when multiple threads handle requests concurrently, the state remains tied to the specific session.
+Simplified State Management:
+
+The bean eliminates the need to manually pass session attributes or manage synchronization across requests.
+
+### Real-World Examples:
+Shopping Carts: Multiple requests for adding/removing items in a single session.
+Collaborative Workflows: Multiple operations (e.g., saving drafts, updating settings) performed concurrently by a user.
 
 # **Application Scope**:
 ### **Description**:
@@ -165,7 +183,6 @@ public class ApplicationScopedBean {
 ### **Advantages**:
 - Shared across the entire application lifecycle.
 - Suitable for long-lived resources.
-
 
 # **Comparison of Scopes**
 
