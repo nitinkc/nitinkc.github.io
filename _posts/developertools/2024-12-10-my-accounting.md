@@ -1,9 +1,13 @@
 ---
-title:  "Kuber Accounting App "
+title:  "Kuber Accounting App - React, Firebase, Firestore"
 date:   2024-12-14 13:45:00
 categories: ['Developer tools']
 tags: ['Developer tools']
 ---
+{% include toc title="Index" %}
+
+Integrate **Firebase with React**, manage CI/CD pipelines (**Github Actions**),
+and deploy a fully functional app on **Firebase** Hosting.
 
 # Summary of Kuber App Requirements
 **Purpose**: A P/L tracking app for managing account data related to profits, losses, 
@@ -45,7 +49,7 @@ Fields:
 }
 ```
 
-# 2. Transactions (for deposits, withdrawals, misc activities):
+### 2. Transactions (for deposits, withdrawals, misc activities):
 **Transactions Collection:**
 accountAlias, date, amount, comment, type (deposit, withdrawal, misc).
 
@@ -66,7 +70,7 @@ Fields:
 
 ```
 
-# 3. Monthly Accounting:
+### Monthly Accounting:
 **Monthly Accounting:**
 accountAlias, date, profitLossAmount.
 
@@ -96,13 +100,7 @@ Use Firebase Hosting to serve the static frontend.
 Use Firebase Functions to process transactions and business logic (e.g., storing deposits and withdrawals, calculating profits/losses).
 Use Firestore to store all the data and allow real-time syncing across devices.
 
-# UI
-
-```bash
-npm install -g firebase-tools
-
-firebase init
-```
+---
 
 # Building and Deploying the React App with Firebase Firestore: A Journey
 
@@ -112,6 +110,7 @@ firebase init
   npx create-react-app my-app
   cd my-app
   ```
+  
 - Installed necessary dependencies:
   ```bash
   npm install react-router-dom firebase react-icons
@@ -119,6 +118,12 @@ firebase init
 
 ## 2. **Firebase Integration**
 - Set up a Firebase project and configured Firestore.
+```bash
+npm install -g firebase-tools
+
+firebase init
+```
+
 - Created a `firebase.js` file to initialize Firebase:
   ```javascript
   import { initializeApp } from 'firebase/app';
@@ -141,15 +146,15 @@ firebase init
 
 ## 3. **Environment Variables**
 - Added a `.env` file to store Firebase configuration securely:
-  ```env
-  REACT_APP_API_KEY=your-api-key
-  REACT_APP_AUTH_DOMAIN=your-auth-domain
-  REACT_APP_PROJECT_ID=your-project-id
-  REACT_APP_STORAGE_BUCKET=your-storage-bucket
-  REACT_APP_MESSAGING_SENDER_ID=your-messaging-sender-id
-  REACT_APP_APP_ID=your-app-id
-  ```
 - Ensured `.env` was not committed by adding it to `.gitignore`.
+```shell
+REACT_APP_API_KEY=your-api-key
+REACT_APP_AUTH_DOMAIN=your-auth-domain
+REACT_APP_PROJECT_ID=your-project-id
+REACT_APP_STORAGE_BUCKET=your-storage-bucket
+REACT_APP_MESSAGING_SENDER_ID=your-messaging-sender-id
+REACT_APP_APP_ID=your-app-id
+```
 
 ## 4. **Authentication**
 - Implemented user login/logout using Firebase Authentication in the `Login` and `Dashboard` components.
@@ -197,12 +202,3 @@ firebase init
   ```bash
   firebase deploy
   ```
-
-## 8. **Key Learnings**
-- Keep your environment variables secure and manage them carefully.
-- Regularly clean up unused code to prevent CI failures.
-- Understand Firestore indexing and create composite indexes when needed.
-- Always test thoroughly in development before deploying to production.
-
-This project taught us how to integrate Firebase with React, manage CI/CD pipelines, and deploy a fully functional app on Firebase Hosting.
-

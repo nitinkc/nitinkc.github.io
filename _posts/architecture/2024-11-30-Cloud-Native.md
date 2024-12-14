@@ -6,6 +6,14 @@ tags: [System Design]
 ---
 
 {% include toc title="Index" %}
+# Cloud Native Computing Foundation
+- Non-profit organization under the Linux Foundation
+- supports cloud-native open-source projects
+
+## Role of CNCF
+- Creating sustainable ecosystems for cloud-native software
+- Improving developer experience
+- Hosting influential open-source projects (e.g., Kubernetes, Prometheus, Helm, Envoy, gRPC)
 
 [Cloud Native Landscape](https://landscape.cncf.io/?view-mode=grid)
 
@@ -52,3 +60,21 @@ tags: [System Design]
 # Cloud-Native Pillars
 
 ![cloudNativeArchitecture.png]({{ site.url }}/assets/images/cloudNativeArchitecture.png)
+
+
+# Cloud Native Architecture Design Principles
+- Designed as Loosely Coupled Microservices
+- Developed with Best-optimum Languages and Frameworks
+- API Centric Interaction and Collaboration
+- Stateless and Massively Scalable
+- Elasticity and Dynamic Scaling
+- Design for Resiliency
+- Polyglot Architecture - Utilize the most appropriate language or technology 
+for each component, considering team skill sets and time-to-market.
+- Packaged Lightweight Containers and Orchestration
+- Immutable Infrastructure - S
+- Servers for hosting cloud-native applications remain unchanged after deployment.
+By avoiding manual upgrades, immutable infrastructure makes cloud-native deployment 
+a predictable process
+
+# The Conway's Law and 12 Factor App
