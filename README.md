@@ -11,7 +11,7 @@ bundle install
 bundle exec jekyll serve
 
 # if package.json not found exception
-rm -r  _site | bundle exec jekyll serve 
+rm -r _site | bundle exec jekyll serve 
 ```
 
 ```sh

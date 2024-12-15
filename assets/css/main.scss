@@ -75,6 +75,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0.5em 0;
 }
 
+.page__content h1 {
+  border-bottom: 2px solid #bfbfbf; /* Simplified border shorthand */
+}
+
 // Specific color for each heading level
 h1, h2, h3, h4, h5, h6 {
   color: $primary_color;
