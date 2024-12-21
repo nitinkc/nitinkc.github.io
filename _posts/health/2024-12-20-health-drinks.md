@@ -142,3 +142,50 @@ Made with equal amounts of natural seeds, this powder is easy to prepare and con
 
 ### 5. **Supports Gut Health**
 - Fennel seeds (saunf) soothe the stomach and promote better digestion.
+
+
+# **Diet Plan for a Healthy Lifestyle**
+This diet plan emphasizes natural and wholesome foods, focusing on specific eating 
+windows, hydration, and fasting.
+
+
+## **Morning Routine**
+1. **Cumin and Fennel Water**:
+   - Soak **equal amounts of cumin seeds (jeera)** and **fennel seeds (saunf)** in water overnight.
+   - In the morning, boil the mixture, strain it, and drink warm.
+
+## **First Eating Window (Morning to 2 PM)**
+### **Guidelines:**
+- Eat only **seasonal fruits**, avoiding mango and chiku.
+- Consume **one fruit at a time**.
+- If hungry, include:
+   - **Dry Fruits**: Consume only one type at a time in small quantities.
+   - **Salads or Seeds**: As a healthy snack option.
+- **Avoid Sugar** entirely during this window.
+
+
+## **Second Eating Window (2 PM to Nightfall)**
+### **Guidelines:**
+- **No Wheat or Rice**: Consume them only **once a week**.
+- Focus on **millets or other fat grains**, rotating one millet per week.
+- Include:
+   - **Jau Water (Barley Water)**:
+      - Boil barley, strain the starch, and add **cumin seeds** and **sendha namak**.
+      - Drink in small quantities.
+   - **Milk Products**: Add dairy as part of your meals.
+
+## **Third Window (After Sunset)**
+This is the **fasting window** for 12–18 hours.
+### **Guidelines:**
+- **Allowed Beverages**:
+   - Green tea, chamomile tea, or lukewarm water.
+- **If Extremely Hungry**:
+   - Consume **plain dal soup** (saadi dal ka soup).
+- **Before Sleeping**:
+   - Drink **warm water** with **apple cider vinegar** or **lemon juice**.
+
+## **Key Highlights**
+1. **Hydration**: Stay hydrated throughout the day.
+2. **Fasting**: A 12–18-hour fasting window helps detoxify the body.
+3. **Avoid Processed Foods**: No sugar or processed items for better health.
+4. **Wholesome Meals**: Focus on natural, seasonal, and nutrient-rich foods.
