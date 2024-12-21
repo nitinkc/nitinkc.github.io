@@ -84,66 +84,6 @@ Made with equal amounts of natural seeds, this powder is easy to prepare and con
 - Consume this drink **first thing in the morning** or **30 minutes before meals**.
 - Use consistently for a few weeks to observe noticeable benefits.
 
-# **Benefits**
-###  **Detoxification**
-- Apple cider vinegar helps flush out toxins and improves digestion.
-
-###  **Anti-Inflammatory Properties**
-- Turmeric contains **curcumin**, known for its powerful anti-inflammatory and antioxidant effects.
-- Turmeric and ginger work together to reduce inflammation and support overall health.
-
-### **Immune Boost**
-- Lemon juice is rich in Vitamin C, which strengthens the immune system.
-
-### **Digestive Aid**
-- Ginger supports digestion and reduces bloating or nausea.
-### **Soothes the Stomach**
-- Ginger root reduces acidity and nausea, promoting a calm digestive system.
-
-
-### **Enhances Digestion**
-- Saunf (fennel seed powder) is known to improve digestion and reduce bloating.
-
-### **Boosts Metabolism**
-- Cinnamon aids in balancing blood sugar levels and improving metabolism.
-
-
-### 1. **Methi Dana (Fenugreek Seeds)**
-- Helps regulate blood sugar levels.
-- Improves digestion and reduces bloating.
-- Supports weight management.
-
-### 2. **Cumin Seeds (Jeera)**
-- Boosts metabolism and aids in digestion.
-- Rich in antioxidants, which help reduce inflammation.
-- Improves nutrient absorption in the body.
-
-### 3. **Pumpkin Seeds**
-- Packed with magnesium, zinc, and healthy fats.
-- Supports heart health and immune function.
-- Promotes skin and hair health.
-
-### 4. **Ajwain (Carom Seeds)**
-- Relieves acidity and indigestion.
-- Acts as a natural detoxifier.
-- Supports respiratory health.
-
-### 1. **Improves Digestion**
-- The combination of seeds helps reduce bloating, acidity, and indigestion.
-
-### 2. **Boosts Metabolism**
-- Supports weight management by enhancing metabolic rate.
-
-### 3. **Detoxifies the Body**
-- Lemon juice and apple cider vinegar work with the seeds to flush out toxins.
-
-### 4. **Balances Blood Sugar**
-- Fenugreek (methi dana) helps regulate blood sugar levels naturally.
-
-### 5. **Supports Gut Health**
-- Fennel seeds (saunf) soothe the stomach and promote better digestion.
-
-
 # **Diet Plan for a Healthy Lifestyle**
 This diet plan emphasizes natural and wholesome foods, focusing on specific eating 
 windows, hydration, and fasting.
@@ -189,3 +129,53 @@ This is the **fasting window** for 12–18 hours.
 2. **Fasting**: A 12–18-hour fasting window helps detoxify the body.
 3. **Avoid Processed Foods**: No sugar or processed items for better health.
 4. **Wholesome Meals**: Focus on natural, seasonal, and nutrient-rich foods.
+
+
+# **Categorized Benefits**
+
+## **1. Detoxification and Cleansing**
+- **Apple Cider Vinegar**: Flushes out toxins and improves digestion.
+- **Lemon Juice**: Works as a natural detoxifier when combined with seeds.
+- **Ajwain (Carom Seeds)**: Detoxifies the body effectively.
+
+## **2. Digestive Health**
+- **Ginger**: Supports digestion, reduces bloating, acidity, and nausea.
+- **Saunf (Fennel Seed Powder)**: Improves digestion and reduces bloating.
+- **Cumin Seeds (Jeera)**: Enhances nutrient absorption and metabolism.
+- **Methi Dana (Fenugreek Seeds)**: Reduces bloating and improves digestion.
+- **Ajwain (Carom Seeds)**: Relieves acidity and indigestion.
+
+## **3. Anti-Inflammatory and Antioxidant Properties**
+- **Turmeric (Curcumin)**: Reduces inflammation and provides antioxidant benefits.
+- **Turmeric + Ginger**: Work synergistically to reduce inflammation and support overall health.
+- **Cumin Seeds**: Rich in antioxidants, which reduce inflammation.
+
+## **4. Metabolism and Weight Management**
+- **Cinnamon**: Balances blood sugar levels and boosts metabolism.
+- **Methi Dana (Fenugreek Seeds)**: Supports weight management by enhancing metabolic rate.
+
+## **5. Immune Support**
+- **Lemon Juice**: Rich in Vitamin C, which strengthens the immune system.
+- **Pumpkin Seeds**: Provides magnesium and zinc to support immune function.
+
+## **6. Nutritional Support**
+- **Pumpkin Seeds**:
+   - Rich in magnesium, zinc, and healthy fats.
+   - Promotes heart health and supports skin and hair health.
+
+
+## **7. Specific Functional Benefits of Ingredients**
+### **Methi Dana (Fenugreek Seeds)**
+- Regulates blood sugar levels.
+- Supports digestion and weight management.
+
+### **Cumin Seeds (Jeera)**
+- Improves nutrient absorption.
+- Boosts metabolism and aids digestion.
+
+### **Pumpkin Seeds**
+- Improves heart health, immune function, and hair/skin health.
+
+### **Ajwain (Carom Seeds)**
+- Reduces acidity and indigestion.
+- Supports respiratory health.
