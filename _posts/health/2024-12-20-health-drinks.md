@@ -52,6 +52,37 @@ Support your digestion and overall wellness with this aromatic and flavorful dri
 
 **Boil the mixture on medium heat until it reduces to half its original quantity.**
 
+# **Digestive Seed Powder with Apple Cider Vinegar or Lemon Juice**
+Made with equal amounts of natural seeds, this powder is easy to prepare and consume daily for maximum benefits.
+
+## **Ingredients**
+- **Cumin Seeds (Jeera)**: Equal part
+- **Fennel Seeds (Saunf)**: Equal part
+- **Fenugreek Seeds (Methi Dana)**: Equal part
+- **Carom Seeds (Ajwain)**: Equal part
+
+## **Preparation**
+1. **Dry Roast the Seeds**:
+    - Roast each type of seed on low heat until they release a light aroma.
+    - Be careful not to burn them.
+
+2. **Grind into Powder**:
+    - Let the roasted seeds cool.
+    - Grind them into a fine powder using a grinder or blender.
+
+3. **Store**:
+    - Transfer the powder to an airtight container and store it in a cool, dry place.
+
+## **How to Consume**
+1. Take **half a teaspoon** of the seed powder.
+2. Mix it with:
+    - **5–10 ml of apple cider vinegar** diluted in a cup of lukewarm water.
+    - OR juice from **half a lemon** in a cup of lukewarm water.
+3. Stir well and drink on an empty stomach for best results.
+
+## **Tips for Best Results**
+- Consume this drink **first thing in the morning** or **30 minutes before meals**.
+- Use consistently for a few weeks to observe noticeable benefits.
 
 # **Benefits**
 ###  **Detoxification**
@@ -66,6 +97,9 @@ Support your digestion and overall wellness with this aromatic and flavorful dri
 
 ### **Digestive Aid**
 - Ginger supports digestion and reduces bloating or nausea.
+### **Soothes the Stomach**
+- Ginger root reduces acidity and nausea, promoting a calm digestive system.
+
 
 ### **Enhances Digestion**
 - Saunf (fennel seed powder) is known to improve digestion and reduce bloating.
@@ -73,8 +107,6 @@ Support your digestion and overall wellness with this aromatic and flavorful dri
 ### **Boosts Metabolism**
 - Cinnamon aids in balancing blood sugar levels and improving metabolism.
 
-### **Soothes the Stomach**
-- Ginger root reduces acidity and nausea, promoting a calm digestive system.
 
 ### 1. **Methi Dana (Fenugreek Seeds)**
 - Helps regulate blood sugar levels.
@@ -94,4 +126,19 @@ Support your digestion and overall wellness with this aromatic and flavorful dri
 ### 4. **Ajwain (Carom Seeds)**
 - Relieves acidity and indigestion.
 - Acts as a natural detoxifier.
-- Supports respiratory health.  
+- Supports respiratory health.
+
+### 1. **Improves Digestion**
+- The combination of seeds helps reduce bloating, acidity, and indigestion.
+
+### 2. **Boosts Metabolism**
+- Supports weight management by enhancing metabolic rate.
+
+### 3. **Detoxifies the Body**
+- Lemon juice and apple cider vinegar work with the seeds to flush out toxins.
+
+### 4. **Balances Blood Sugar**
+- Fenugreek (methi dana) helps regulate blood sugar levels naturally.
+
+### 5. **Supports Gut Health**
+- Fennel seeds (saunf) soothe the stomach and promote better digestion.
