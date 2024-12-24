@@ -6,8 +6,6 @@ tags: ['Health']
 ---
 {% include toc title="Index" %}
 
-# Balanced and Nutritious Salad Plan for Lunch (With Spring Mix Focus)
-
 # **Day 1: Spring Mix and Sprouted Bean Delight**
 - **Salad Base**:
   - 2 cups organic spring mix
