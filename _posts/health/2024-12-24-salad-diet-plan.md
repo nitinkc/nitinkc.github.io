@@ -119,4 +119,3 @@ tags: ['Health']
 3. **Batch Prep Sprouts**: Prepare sprouted moong and chana ahead of time to save effort.
 4. **Rotate Add-Ons**: Add fresh or roasted veggies, seeds, or nuts for new textures and flavors.
 
-Would you like detailed preparation steps for any of these recipes?
