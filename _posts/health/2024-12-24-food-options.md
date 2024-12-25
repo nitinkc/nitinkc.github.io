@@ -7,6 +7,7 @@ tags: ['Health']
 {% include toc title="Index" %}
 
 # Summary 
+
 | **Category**  | **Definition**                                   | **Examples**                       | **Nutritional Highlights**                 |
 |:--------------|:-------------------------------------------------|:-----------------------------------|:-------------------------------------------|
 | **Seeds**     | Embryonic plants with protective outer covering. | Chia, flax, sunflower, quinoa      | High in fats, fiber, protein, vitamins     |
@@ -16,6 +17,7 @@ tags: ['Health']
 | **Dals**      | Split, dried pulses.                             | Toor Dal, Moong Dal, Masoor Dal    | High protein, easy to digest, low fat      |
 
 # Summary of Processed Foods
+
 | **Item**            | **Base Ingredient**    | **Nutritional Highlights**    | **Use**                         |
 |:--------------------|:-----------------------|:------------------------------|:--------------------------------|
 | **Sabudana**        | Tapioca starch         | High carbs, gluten-free       | Fasting dishes, desserts        |
