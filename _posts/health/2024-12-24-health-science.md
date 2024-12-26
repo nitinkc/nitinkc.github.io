@@ -43,7 +43,6 @@ tags: ['Health']
 - **Tip**: Stay hydrated throughout the day.
 
 ## Dietary Tips for Managing Sugar and Weight
-
 1. **Avoid Refined Sugars**:
     - Minimize sweets, sugary drinks, and white flour products.
 
@@ -98,4 +97,5 @@ tags: ['Health']
 
 # Foxtail Millet Biryani 
 Millet Biryani: A flavorful dish made with foxtail millet, 
-this biryani offers a delightful twist on the classic rice-based version, making it a great option for special occasions or everyday meals. 
+this biryani offers a delightful twist on the classic rice-based version, 
+making it a great option for special occasions or everyday meals. 

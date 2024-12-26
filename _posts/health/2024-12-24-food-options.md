@@ -18,31 +18,25 @@ tags: ['Health']
 
 # Summary of Processed Foods
 
-# Comparison of Processed Foods
-
-| **Item**                 | **Base Ingredient**        | **Nutritional Highlights**              | **Use**                              |
-|:-------------------------|:---------------------------|:----------------------------------------|:-------------------------------------|
-| Sabudana                 | Tapioca starch             | High carbs, gluten-free                 | Fasting dishes, desserts             |
-| Gnocchi                  | Potatoes and flour         | High carbs, gluten-containing           | Pasta alternative                    |
-| Rava (Semolina)          | Durum wheat                | Moderate carbs, protein                 | Upma, dosa, pasta                    |
-| Couscous                 | Semolina wheat             | High carbs, low fiber                   | Salads, side dishes                  |
-| Poha                     | Flattened rice             | High carbs, gluten-free                 | Breakfast, snacks                    |
-| Vermicelli               | Refined/semolina flour     | High carbs, low nutrients               | Desserts, savory dishes              |
-| Cornflakes               | Milled corn                | High carbs, often fortified             | Breakfast cereal                     |
-| Instant Noodles          | Refined flour              | High carbs, fats, sodium                | Quick meals                          |
-| Besan (Chickpea Flour) | Ground chickpeas         | High protein, low glycemic index, moderate carbs | Curries, fritters, flatbreads |
-| **Soy Chunks (TVP)**     | Defatted soy flour         | High protein, very low carbs            | Curries, stir-fries, salads          |
-| **Tofu**                 | Soy milk (curdled)         | Low carbs, high protein, healthy fats   | Grilled, stir-fried, soups           |
-| **Paneer**               | Milk curd                  | Low carbs, high protein, fat            | Curries, snacks                      |
-| **Cheese**               | Milk                       | Low carbs, high protein, fat            | Snacks, salads, melted dishes        |
-| **Egg Protein Noodles**  | Eggs, almond flour         | Low carbs, high protein                 | Pasta alternative                    |
-| **Low-Carb Bread/Wraps** | Almond/coconut flour       | Low carbs, high fiber, moderate protein | Sandwiches, wraps                    |
-| **Zoodles**              | Zucchini                   | Very low carbs, fiber                   | Pasta alternative                    |
-| **Cauliflower Rice**     | Cauliflower                | Very low carbs, fiber                   | Rice substitute, low-carb meals      |
-
-### Updated Table Notes
-- **Low-Carb Options**: Added rows for soy chunks, tofu, paneer, cheese, and other low-carb processed foods.
-- **Diverse Uses**: Expanded the "Use" column to highlight their application in various diets and meals.
+| **Item**                 | **Base Ingredient**    | **Nutritional Highlights**                       | **Use**                         |
+|:-------------------------|:-----------------------|:-------------------------------------------------|:--------------------------------|
+| Sabudana                 | Tapioca starch         | High carbs, gluten-free                          | Fasting dishes, desserts        |
+| Gnocchi                  | Potatoes and flour     | High carbs, gluten-containing                    | Pasta alternative               |
+| Rava (Semolina)          | Durum wheat            | Moderate carbs, protein                          | Upma, dosa, pasta               |
+| Couscous                 | Semolina wheat         | High carbs, low fiber                            | Salads, side dishes             |
+| Poha                     | Flattened rice         | High carbs, gluten-free                          | Breakfast, snacks               |
+| Vermicelli               | Refined/semolina flour | High carbs, low nutrients                        | Desserts, savory dishes         |
+| Cornflakes               | Milled corn            | High carbs, often fortified                      | Breakfast cereal                |
+| Instant Noodles          | Refined flour          | High carbs, fats, sodium                         | Quick meals                     |
+| Besan (Chickpea Flour)   | Ground chickpeas       | High protein, low glycemic index, moderate carbs | Curries, fritters, flatbreads   |
+| **Soy Chunks (TVP)**     | Defatted soy flour     | High protein, very low carbs                     | Curries, stir-fries, salads     |
+| **Tofu**                 | Soy milk (curdled)     | Low carbs, high protein, healthy fats            | Grilled, stir-fried, soups      |
+| **Paneer**               | Milk curd              | Low carbs, high protein, fat                     | Curries, snacks                 |
+| **Cheese**               | Milk                   | Low carbs, high protein, fat                     | Snacks, salads, melted dishes   |
+| **Egg Protein Noodles**  | Eggs, almond flour     | Low carbs, high protein                          | Pasta alternative               |
+| **Low-Carb Bread/Wraps** | Almond/coconut flour   | Low carbs, high fiber, moderate protein          | Sandwiches, wraps               |
+| **Zoodles**              | Zucchini               | Very low carbs, fiber                            | Pasta alternative               |
+| **Cauliflower Rice**     | Cauliflower            | Very low carbs, fiber                            | Rice substitute, low-carb meals |
 
 # 1. Seeds
 **Definition**: A seed is the embryonic plant enclosed in a protective covering.
