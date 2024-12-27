@@ -184,9 +184,39 @@ Traditional tabbouleh is heavy on parsley
 - **Meal prep**: Store the dressing separately and add it before serving to keep the salad fresh.
 
 
+# Chopped Vegetable Salad Recipe (Costco Mediterranean Salad)
+
+## Ingredients
+- **Romaine lettuce**: 2 cups, chopped
+- **Broccoli**: 1 cup, small florets
+- **Carrots**: 1 medium, julienned or shredded
+- **Red cabbage**: 1 cup, thinly sliced
+- **Cauliflower**: 1 cup, small florets
+- **Chicory (endive)**: 1 cup, chopped
+- **Flatbread strips**: 1/2 cup (toasted or baked)
+### Dressing
+- **Organic balsamic vinegar**: 3 tablespoons
+
 # General Tips
 1. **Maximize Spring Mix Usage**: Use it as the primary base, mixing in small amounts of lettuce for variety.
 2. **Balance Nutrition**: Incorporate proteins (eggs, beans), healthy fats (avocado, nuts), and carbs (quinoa, sweet potato).
 3. **Batch Prep Sprouts**: Prepare sprouted moong and chana ahead of time to save effort.
 4. **Rotate Add-Ons**: Add fresh or roasted veggies, seeds, or nuts for new textures and flavors.
 
+# Crunch
+- Toasted (not fried) chickpeas (Boiled, cooked, dried and in oven on 425 for 30 to 40 mins)\
+- chana
+- Croutons
+- pita chips
+- roasted nuts
+
+
+# Condensed Dry Fruit Meal Plan
+Costco unsalted hearth healthy mixed nuts bag
+- Almonds: 6–8 pieces
+- Walnuts: 2–3 halves
+
+- Raisins: 1 tablespoon (10–12 pieces)
+- Pumpkin or Sunflower Seeds: 1 tablespoon (optional, for added crunch)
+- Apricot
+- dates
