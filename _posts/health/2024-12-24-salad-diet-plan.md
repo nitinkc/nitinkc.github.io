@@ -21,7 +21,7 @@ tags: ['Health']
   - 1 small garlic clove, minced
   - Salt and pepper to taste
 
-# ** Protein-Rich Power Bowl**
+# Protein-Rich Power Bowl
 - **Salad Base**:
   - 1 cup organic spring mix
   - 1/2 cup cooked quinoa
@@ -36,7 +36,7 @@ tags: ['Health']
   - 1 tsp Dijon mustard
   - Salt and pepper to taste
 
-# ** Mediterranean Sprouted Salad**
+# Mediterranean Sprouted Salad
 - **Salad Base**:
   - 1 cup organic spring mix
   - 1/4 cup sprouted chana
@@ -52,7 +52,7 @@ tags: ['Health']
   - 1 tsp garlic powder
   - Salt and pepper to taste
 
-# ** Warm Salad with Sweet Potato and Beans**
+# Warm Salad with Sweet Potato and Beans
 - **Salad Base**:
   - 2 cups organic spring mix
   - 1/2 cup roasted sweet potatoes (cubed)
@@ -67,7 +67,7 @@ tags: ['Health']
   - 1 tsp cumin powder
   - Salt to taste
 
-# ** Spinach-Spring Mix Energy Bowl**
+# Spinach-Spring Mix Energy Bowl
 - **Salad Base**:
   - 1 cup organic spring mix
   - 1 cup baby spinach
@@ -82,7 +82,7 @@ tags: ['Health']
   - 2 tbsp water
   - Salt and pepper to taste
 
-# ** Crunchy Veggie Mix with Yogurt Dressing**
+# Crunchy Veggie Mix with Yogurt Dressing
 - **Salad Base**:
   - 1.5 cups organic spring mix
   - A handful of shredded lettuce
@@ -98,7 +98,7 @@ tags: ['Health']
   - 1 tsp fresh dill or parsley, chopped
   - Salt and pepper to taste
 
-# ** Filling Sprouted Bean and Avocado Bowl**
+# Filling Sprouted Bean and Avocado Bowl
 - **Salad Base**:
   - 2 cups organic spring mix
   - 1/4 cup sprouted moong beans
