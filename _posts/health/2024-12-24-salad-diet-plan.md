@@ -210,13 +210,29 @@ Traditional tabbouleh is heavy on parsley
 - pita chips
 - roasted nuts
 
+# Quinoa Salad (Costco)
+**Ingredients**:
+- 3 cups quinoa, cooked
+- 1 cup chickpeas, roasted
+- 1/2 cups tomatoes, roasted
+- 2 cups arugula
+- 1 cup cucumber, sliced
+- 1/4 cup mixed basil and mint leaves
+- 1/2 cup feta, crumbled
+- 1/2 cup Kalamata olives, pitted and sliced
+- 1/4 cup red onion, diced
+- 1/4 cup pine nuts, toasted
+- 2 garlic cloves, grated
+- 1 cup Italian dressing, divided
+- 1/4 tsp sea salt
+- Freshly ground black pepper, to taste
+- Red pepper flakes, to taste
 
-# Condensed Dry Fruit Meal Plan
-Costco unsalted hearth healthy mixed nuts bag
-- Almonds: 6–8 pieces
-- Walnuts: 2–3 halves
+- **Instructions**:
+  1. In a large bowl, combine the quinoa, tomatoes, arugula, cucumber, basil and mint, feta, olives, onion, pine nuts, and garlic.
+  2. Toss to combine, then drizzle with half the dressing and toss again.
+  3. Sprinkle with the salt, black pepper, and a few pinches of red pepper flakes, then toss again.
+  4. Season to taste, tossing with more dressing as desired.
+  5. Top with the roasted chickpeas and serve.
 
-- Raisins: 1 tablespoon (10–12 pieces)
-- Pumpkin or Sunflower Seeds: 1 tablespoon (optional, for added crunch)
-- Apricot
-- dates
+- **Servings**: Makes 6 servings.
