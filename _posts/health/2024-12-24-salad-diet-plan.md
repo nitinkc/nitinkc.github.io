@@ -6,7 +6,7 @@ tags: ['Health']
 ---
 {% include toc title="Index" %}
 
-# ** Spring Mix and Sprouted Bean Delight**
+# Spring Mix and Sprouted Bean Delight
 - **Salad Base**:
   - 2 cups organic spring mix
   - 1/4 cup sprouted moong beans
