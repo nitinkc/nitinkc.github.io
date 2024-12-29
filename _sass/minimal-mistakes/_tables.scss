@@ -25,11 +25,17 @@ th {
   padding: 0.5em;
   font-weight: bold;
   text-align: start;
+  border-right: double;
+  border-left: double;
+  border-top: double;
+  border-bottom: double;
 }
 
 td {
   padding: 0.5em;
   border-bottom: 1px solid mix(#000, $border-color, 25%);
+  border-right: 1px solid mix(#000, $border-color, 10%); // Add right border for column separation
+  border-left: 1px solid mix(#000, $border-color, 10%); // Add right border for column separation
 }
 
 tr,
