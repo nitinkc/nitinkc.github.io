@@ -63,3 +63,8 @@ tags: ['Health']
     - Shake ingredients in a jar until mixed.
 - **Salad Pairing**:
     - Mixed greens, shredded cabbage, radishes, avocado, and scrambled eggs.
+
+# Balsamic Vinegar
+
+- Kirkland Balsamic Vinegar
+
