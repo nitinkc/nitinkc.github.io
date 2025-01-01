@@ -37,8 +37,7 @@ tags: ['Developer tools']
     + chmod for changing file permission (chmod 771 file.sh)
 
 ### what is there in exe Folder.
-
-    + *[Important Linux Files]({% post_url 2016-04-14-linux-files %})*.
+[Important Linux Files]({% post_url misc/2016-04-14-linux-files %})*.
 
 ### grep : Search a pattern in File.
 

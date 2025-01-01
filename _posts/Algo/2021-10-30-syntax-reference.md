@@ -1,5 +1,5 @@
 ---
-title:  "Syntax Reference"
+title:  "Coding Interview - Syntax Reference"
 date:   2021-10-30 21:55:00
 categories: Algorithms
 tags: [Algorithms]
@@ -7,17 +7,16 @@ tags: [Algorithms]
 
 {% include toc title="Index" %}
 
-# Syntax Reference for Coding Interviews
-
-### Boolean Logic (multiple if statements into switch)
+[See Also : Algo Drills]({{ site.baseurl }}{% post_url /Algo/2023-12-18-algo-drills %})
+# Boolean Logic (multiple if statements into switch)
 
 {% gist nitinkc/96387a9700c9c58185a969ae48bfdc45 %}
 
-### For Loop Traps
+# For Loop Traps
 
 {% gist nitinkc/382798a984e00a732d86a12a6637e0a2 %}
 
-### Reading, Parsing and Type Checking Command Line Inputs.
+# Reading, Parsing and Type Checking Command Line Inputs.
 
 ```java
 // Assuming 2 command line arguments <Nitin 29>
@@ -29,14 +28,14 @@ String name = args[0];
 int age = Integer.parseInt(args[1]);
 ```
 
-### Running time of a method
+# Running time of a method
 
 ```java
 System.currentTimeMillis();//type long, from Jan 1 1970
 System.nanoTime();
 ```
 
-### Random
+# Random
 
 ```java
 import java.util.Random;
@@ -53,9 +52,9 @@ generator.nextInt(); // 2^31 to 2^31 -1
 generator.nextDouble();//Range: 0.0 to 1.1
 ```
 
-## Java Input
+# Java Input
 
-### Key Board Input
+## Key Board Input
 
 ```java
 import java.util.Scanner;
@@ -74,7 +73,7 @@ import java.util.Scanner;
  char a = in.nextLine.charAt(0);
 ```
 
-### File Input
+## File Input
 
 ```java
 //Open the File
@@ -92,9 +91,9 @@ import java.util.Scanner;
  in.close();
 ```
 
-## Output File Handling
+# Output File Handling
 
-### Writing text to File
+## Writing text to File
 
 ```java
 import java.io.PrintWriter;
@@ -108,7 +107,7 @@ import java.io.PrintWriter;
  PrintWriter pw = new PrintWriter(new FileWriter("nitin.txt", true));
 ```
 
-### Appending Text to file
+## Appending Text to file
 
 ```java
 FileWriter fw = new FileWriter("Names.txt", true);
@@ -117,7 +116,7 @@ PrintWriter pw = new PrintWriter(fw);
 PrintWriter pw = new PrintWriter(new FileWriter("Names.txt, true"));
 ```
 
-### Reading Data from a file
+## Reading Data from a file
 
 ```java
 File myFile = new File("customer.txt");

@@ -39,9 +39,6 @@ tags: [Finances]
 | 14  | December 2007   | June 2009     | 18                | Housing bubble burst, financial crisis, global economic downturn (The Great Recession)                 | S&P 500: ~57%                                        |
 | 15  | February 2020   | April 2020    | 2                 | COVID-19 pandemic, resulting in widespread business closures and economic disruption                   | S&P 500: ~34%                                        |
 
-
-
-
 ### Unemployment vs Production
 <iframe
 src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1tsHN&width=870&height=475"
@@ -49,7 +46,6 @@ scrolling="no" frameborder="0" style="overflow:hidden;
 width:870px; height:525px;"
 allowTransparency="true" loading="lazy">
 </iframe>
-
 
 ### CPI vs Retail Trade
 <iframe

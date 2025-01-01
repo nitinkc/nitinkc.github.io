@@ -7,148 +7,168 @@ tags: [Algorithms]
 
 {% include toc title="Index" %}
 
-##### Primitive with parse
+# String Parsing and Conversion in Java
 
-`parseInt` & `parseDouble`: Used for parsing a **String** to a **primitive int
-or double**.
+## Strings to Primitives using `parse`
+### `parseInt()` and `parseDouble()`
+- Used for parsing a **String** into a **primitive int or double**.
+  ```java
+  int i = Integer.parseInt("12345");
+  int j = Integer.valueOf("1234").intValue();//From String to Wrapper to Primitive
+  ```
 
-```java 
-int i = Integer.parseInt("12345");
-int j = Integer.valueOf("1234").intValue();//From String
-int k = Integer.valueOf(23).intValue();
-```
+## Creating Wrapper Instances using `valueOf`
+### `valueOf()`
+- Used to create instances of wrapper classes from a **String or primitive**.
+  ```java
+  Integer fromPrimitiveInt = Integer.valueOf(25); // From primitive
+  Integer fromString = Integer.valueOf("90");   // From String
+  ```
 
-`String.valueOf()` converts every **primitive** and **char array** into String
+### `String.valueOf()`
+- Converts **primitives** and **char arrays** into Strings.
+  ```java
+  String intAsString = String.valueOf(42); 
+  String doubleAsString = String.valueOf(3.14159);
+  String booleanAsString = String.valueOf(true);
+  String charArrayAsString = String.valueOf(new char[] {'H', 'e', 'l', 'l', 'o'});
+  ```
+  
+## Key Differences
+### Between `parse` and `valueOf`
+- `parse`: Converts a **String** to a **primitive type**.
+- `valueOf`: Converts a **String** or **primitive type** to a **Wrapper object**.
 
-##### Wrapper using valueOf
+[Read more about parse and valueOf](https://nitinkc.github.io/java/wrapper-class/)
 
-`valueOf` is Used for creating instances of wrapper classes from **String or
-primitive** to Wrapper
-
-```java
-Integer fromPrimitiveInt = Integer.valueOf(25);//From String or primitive to Wrapper
-Integer fromString = Integer.valueOf("90");
-```
-
-# Difference between parse and format
-
-`parse` takes a string and returns the DataType of the Class being parsed, for
-example, LocalDate.parse returns LocalDate
-
-```java
-LocalDate startLocalDate = LocalDate.parse("2023-10-30");//yyyy-mm-dd format by default
-```
-
-`format` returns a string from an object.
-Eg:
-
-```java
-String format = startLocalDate.format(DateTimeFormatter.ofPattern("dd-MMM-YYYY"));
-```
-
-# Difference between parse and valueOf
-
-[https://nitinkc.github.io/java/wrapper-class/](https://nitinkc.github.io/java/wrapper-class/)
+### Between `parse` and `format`
+- **`parse`**: Converts a **String** to the data type of the class being parsed.
+  ```java
+  LocalDate startLocalDate = LocalDate.parse("2023-10-30"); // yyyy-MM-dd format by default
+  ```
+- **`format`**: Converts an **object** to a formatted **String**.
+  ```java
+  String formattedDate = startLocalDate.format(DateTimeFormatter.ofPattern("dd-MMM-YYYY"));
+  ```
 
 # 1D Array
-
 - `a.length` is a field in array
-- Declare simple array
-
-```java
-int[] a = new int[3];//use [] for array instead of ()
-int[] a = new int[] {1,2,3};
-// Same as above
-int[] b = {1,2,3};
-```
+- Declare simple array 
+  ```java
+  int[] a = new int[3];//use [] for array instead of ()
+  int[] a = new int[] {1,2,3};
+  int[] b = {1,2,3};//Same as above
+  ```
 
 - Declare an ArrayList using `Arrays.asList()`
-
-```java
-List<String> list = Arrays.asList("str1","str2");
-```
+  ```java
+  List<String> list = Arrays.asList("str1","str2");
+  ```
 
 - Linearity vs circularity
-
-```java
-arr[idx] = element; idx = idx+1; //Linear condition until the in = arr.lenght-1;
-arr[idx] = element; idx = (idx+1) % arr.length;//Circularity
-```
+  ```java
+  arr[idx] = element; // Assign the element at the current index
+  
+  idx = idx + 1;      // Increment the index linearly until idx reaches arr.length - 1
+  idx = (idx + 1) % arr.length;  // Increment the index circularly. The modulo operator ensures that idx wraps around to 0 when it reaches arr.length
+  ```
 
 # 2D Array
-
-Declare and Iterate through the 2D Array
-
-```java
-// Declaring a Rectangular Matrix
-String[][] arr = new String[6][7];
-int row = arr.length;// Row = 6
-int col = arr[0].length; // Columns = 7
-for (int i = 0; i < arr[0].length; i++) {
-   for (int j = 0; j < arr[i].length; j++) {
-        arr2[i][j] = "-" + i + "_" + j;
-   }
-}
-```
-
-using List of List
-
-```java
-// Declaring a 2D Matrix
-List<List<Integer>> list = new ArrayList<>();
-
-//Adding Elements into 2D ArrayList
-list.add(0, Arrays.asList(11,12,13));
-list.add(1, Arrays.asList(21,22,23));
-list.add(2, Arrays.asList(31,32,33));
-
-//Printing the Matrix using FOR Loop
-for (int i = 0; i < list.size(); i = i + 1) {
-    for (int j = 0; j < list.get(i).size(); j = j + 1) {
-        System.out.print(list.get(i).get(j) + "\t");
+- Declare and Iterate through the 2D Array
+  ```java
+  // Declaring a Rectangular Matrix
+  String[][] arr = new String[6][7]; // 6 rows and 7 columns
+  
+  // Iterating through the 2D array and assigning values
+  for (int i = 0; i < arr.length; i++) { // Loop through rows
+    for (int j = 0; j < arr[i].length; j++) { // Loop through columns
+        arr[i][j] = "-" + i + "_" + j;//Do something
     }
-    System.out.println();
-}
-```
+  }
+  ```
 
-# Arrays
+- using List of List
+  ```java
+  // Declaring a 2D Matrix
+  List<List<Integer>> list = new ArrayList<>();
+  
+  //Adding Elements into 2D ArrayList
+  list.add(0, Arrays.asList(11,12,13));
+  list.add(1, Arrays.asList(21,22,23));
+  list.add(2, Arrays.asList(31,32,33));
+  
+  //Printing the Matrix using FOR Loop
+  for (int i = 0; i < list.size(); i = i + 1) {
+      for (int j = 0; j < list.get(i).size(); j = j + 1) {
+          System.out.print(list.get(i).get(j) + "\t");
+      }
+      System.out.println();
+  }
+  ```
+
+# The Arrays Class
 
 ```java
 int size = 10;//any chosen size
         
 boolean[] arr = new boolean[size];//primitive array : Initialized to False
-
+// Wrapper class array
 Boolean[] array = new Boolean[size];//Wrapper Class
 Arrays.fill(array, Boolean.FALSE);//Initialize entire Array
+
+int[] intArr = new int[size];// Primitive array: initialized to 0
+// Wrapper class array
+Integer[] wrapperIntArr = new Integer[size];
+Arrays.fill(wrapperIntArr, Integer.valueOf(0)); // Initialize entire array to 0
+```
+
+### Copying and Comparing Arrays
+```java
+int[] original = {1, 2, 3, 4, 5};
+
+// Copy array
+int[] copy = Arrays.copyOf(original, original.length);
+
+// Compare arrays
+boolean areEqual = Arrays.equals(original, copy);
+```
+
+### Sorting
+```java
+String[] stringArr = new String[5];
+Arrays.fill(stringArr, "Default Value");// Initialize all elements
+stringArr[2] = "Custom Value"; // Replacing specific elements
+
+// Sorting the array
+Arrays.sort(stringArr);//returns void, Changes the original array
 ```
 
 # Maps
-
 - contains key or value
-
-```java
-boolean containsValue = map.containsValue(3);
-boolean containsKey = map.containsKey("Harry");// returns true if the key is in the map, false otherwise
-```
+  ```java
+  boolean containsValue = map.containsValue(3);
+  boolean containsKey = map.containsKey("Harry");// returns true if the key is in the map, false otherwise
+  ```
 
 - getOrDefault
-
-```java
-for (String str: list){
-    map.put(str, map.getOrDefault(str,0) + 1);//count number of occurances
-}
-```
+  ```java
+  Map<String,Integer> map = new HashMap<>();
+  for (String str: list){//Considering a list of Strings
+    // Use getOrDefault to fetch the current count (default to 0 if the key is not present)
+    int count = map.getOrDefault(str, 0);
+    map.put(str, count + 1); // Increment the count and update the map
+  }
+  ```
 
 - Traditional
-
-```java
-for (String str: namesList) {
-   if(treeMap.containsKey(str))
-       treeMap.put(str, map.get(str) + 1);
-   else
-       treeMap.put(str,1);
-}
-```
+  ```java
+  for (String str: namesList) {
+     if(treeMap.containsKey(str))
+         treeMap.put(str, map.get(str) + 1);
+     else
+         treeMap.put(str,1);
+  }
+  ```
 
 - put key-value
     ```java
@@ -162,40 +182,38 @@ for (String str: namesList) {
     map.putIfAbsent(1, 200); //Does nothing because key 1 already exists, returns 100
     ```
 - Remove from Map
-
-```java
-/* removes the key/value pair for this key if present. Does nothing if the key is not present. */
-map.remove(key); //Concurrent Modification Exception in a Loop
-itr.remove(); //used to avoid concurrent modification exception using an Iterator
-```
+  ```java
+  /* removes the key/value pair for this key if present. Does nothing if the key is not present. */
+  map.remove(key); //Concurrent Modification Exception in a Loop
+  itr.remove(); //used to avoid concurrent modification exception using an Iterator
+  ```
 
 ### Map Iterator
-
 - `map.keySet().iterator()`
-
-```java
-Iterator<String> itr = map.keySet().iterator();
-while (itr.hasNext()) {
-    String key = itr.next();
-    Integer value = map.get(key);
-}
-```
+  ```java
+  Iterator<String> itr = map.keySet().iterator();//Returns iterator to all the keys
+  while (itr.hasNext()) {
+      String key = itr.next();
+      Integer value = map.get(key);
+  }
+  ```
 
 - `map.entrySet()`
-
-```java
-// Iterate over the map using entrySet()
-for (Map.Entry<String, Integer> entry : map.entrySet()) {
-    String key = entry.getKey();
-    Integer value = entry.getValue();
-}
-```
+  - The `entrySet()` method of a Map returns a set of all the `key-value` pairs in the map.
+  - Each pair is represented as a `Map.Entry<K, V>` object, where K is the key type and V is the value type.
+  - `Map.Entry<KeyType, ValueType> entry : map.entrySet()`
+    ```java
+    // Iterate over the map using entrySet()
+    for (Map.Entry<String, Integer> entry : map.entrySet()) {
+        String key = entry.getKey();
+        Integer value = entry.getValue();
+    }
+    ```
 
 - map forEach - Takes in a BiConsumer (key,value)
-
-```java
-treeMap.forEach((name, length) -> System.out.println(name + ": " + length));
-```
+  ```java
+  treeMap.forEach((key, value) -> System.out.println(key + "->" + value));
+  ```
 
 ### TreeMap with Comparator
 
@@ -211,102 +229,58 @@ for (String name : namesList) {//From a list of Strints, put String as key
 }
 ```
 
-# Integer & Double
-
-- to Wrapper Classes
-
-```java
-  Integer fromPrimitiveInt = Integer.valueOf(12);
-  Integer fromString = Integer.valueOf("123");//NOT NULL SAFE
-          
-  Double fromPrimitiveInt = Double.valueOf(12.36);//From String or primitive to Wrapper
-  Double fromString = Double.valueOf("90.25");
-```
-
-- to primitive Ints
-
-```java
-  //To Primitive Ints
-  int i = Integer.parseInt("12345");//Parses strings into primitive int; From String to primitive
-  int j = Integer.valueOf("1234").intValue();//From String or primitive to Wrapper
-  int k =  Integer.valueOf(23).intValue();
-  
-  double i = Double.parseDouble("12345");//Parses strings into primitive int; From String to primitive
-  double j = Double.valueOf("1234").doubleValue();//From String or primitive to Wrapper
-  double k = Double.valueOf(23);
-```
-
 # Character
-
 - primitive to Wrapper
+  ```java
+    Character d = Character.valueOf('c');//From primitive to Wrapper
+  ```
 
-```java
-  Character d = Character.valueOf('c');//From primitive to Wrapper
-```
+- get ascii value of a character
+  ```java
+    char myChar = 'a';
+    int asciiValue = myChar;
+    System.out.println("From type Casting "+asciiValue);
+  ```
 
-- get ascii value from character
+- get int from char (with numerical value) with `-'0'`
+  ```java
+  char charNum2 = '2';
+  int num2 = charNum2 - '0';
+  ```
 
-```java
-  char myChar = 'a';
-  int asciiValue = myChar;
-  System.out.println("From type Casting "+asciiValue);
-```
-
-- `getNumericValue()` returns Integer value from character
-
-```java
-  // Same can be achieved through the library method
-  //Returns unicode for characters from 10 to 35
-  System.out.println(Character.getNumericValue('A'));//DO NOT USE THIS
-  System.out.println(Character.getNumericValue(myChar));
-  System.out.println(Character.getNumericValue('1'));
-```
-
-- get int from char with `-'0'`
-
-```java
-char charNum2 = '2';
-int num2 = charNum2 - '0';
-```
-
-- `isLetterOrDigit()` checks for punctuation marks or
-
-```java
-  System.out.println(Character.isLetter('r'));
-  System.out.println(Character.isDigit('4'));
-  System.out.println(!Character.isLetterOrDigit('!'));//punctuation mark
-          
-  System.out.println(Character.compare('1','1'));//Compare character
-```
+- `Character.isLetterOrDigit()` checks for punctuation marks or
+  ```java
+    System.out.println(Character.isLetter('r'));//true 'r' is a letter
+    System.out.println(Character.isDigit('4'));//true
+    System.out.println(!Character.isLetterOrDigit('!'));//true : punctuation mark
+            
+    System.out.println(Character.compare('1','1'));//Compare character
+  ```
 
 - int array to keep char ascii as index and array value as count. Use of HashMap
   can be avoided to keep the count.
-    - primitive int array initializes all the values with 0.
+  ```java
+  int[] chars = new int[127];//primitive int array initializes all the values with 0
+  char test = 'a';
+  chars[test]++;
+  chars['A']++;
+  System.out.println(Arrays.toString(chars));//The value of Array at index = asciiVal of char is increased by 1
+  /*
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ##1##, 0, 0, 0, 0, 0, 0, 
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,##1##, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]        
+  */
+  ```
 
-```java
-int[] chars = new int[127];
-char test = 'a';
-chars[test]++;
-chars['A']++;
-System.out.println(Arrays.toString(chars));//The value of Array at index = asciiVal of char is increased by 1
-/*
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
- 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ##1##, 0, 0, 0, 0, 0, 0, 
- 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,##1##, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
- 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]        
-*/] = new int[127];
-char test = 'a';
-chars[test]++;
-chars['A']++;
-System.out.println(Arrays.toString(chars));//The value of Array at index = asciiVal of char is increased by 1
-/*
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
- 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ##1##, 0, 0, 0, 0, 0, 0, 
- 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,##1##, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
- 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]        
-*/
-```
-
+- `getNumericValue()` returns Integer value from character
+  ```java
+    // Same can be achieved through the library method
+    //Returns unicode for characters from 10 to 35
+    System.out.println(Character.getNumericValue('A'));//DO NOT USE THIS
+    System.out.println(Character.getNumericValue(myChar));
+    System.out.println(Character.getNumericValue('1'));
+  ```
 # String
 
 - length(), equals() & str.compareTo("");
