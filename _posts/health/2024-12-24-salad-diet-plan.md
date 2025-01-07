@@ -11,7 +11,7 @@ tags: ['Health']
 - Spring mix
 - carrot , peeled and shredded or sliced into thin strips
 - cucumber , peeled and thinly sliced
-- tofu/paneer - grilled or fried
+- grilled or fried tofu/paneer OR Avocado
 - bunch fresh mint leaves
 - bunch fresh basil leaves
 - bunch fresh cilantro
