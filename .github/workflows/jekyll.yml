@@ -33,6 +33,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install Ruby Manually
+        run: |
+          if [ ! -f /opt/hostedtoolcache/Ruby/3.1.4/x64.complete ]; then
+            git clone https://github.com/rbenv/ruby-build.git
+            cd ruby-build
+            sudo ./install.sh
+            sudo ruby-build 3.1.4 /opt/hostedtoolcache/Ruby/3.1.4/x64
+            sudo touch /opt/hostedtoolcache/Ruby/3.1.4/x64.complete
+          fi
       - name: Setup Ruby
         uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
         with:
