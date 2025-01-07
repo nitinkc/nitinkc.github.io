@@ -6,6 +6,18 @@ tags: ['Health']
 ---
 {% include toc title="Index" %}
 
+# Fresh Spring Rolls
+- rice wrappers
+- Spring mix
+- carrot , peeled and shredded or sliced into thin strips
+- cucumber , peeled and thinly sliced
+- tofu/paneer - grilled or fried
+- bunch fresh mint leaves
+- bunch fresh basil leaves
+- bunch fresh cilantro
+- vermicelli rice noodles (Optional)
+- mangos, thin strips (Optional)
+
 # Spring Mix and Sprouted Bean Delight
 - **Salad Base**:
   - 2 cups organic spring mix

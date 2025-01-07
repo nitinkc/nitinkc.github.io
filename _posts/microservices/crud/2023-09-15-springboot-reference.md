@@ -18,7 +18,7 @@ dependent on each other.
   in one component have little to no impact on others.
 - By Autowiring, we achieve loose coupling.
 
-> By using `new` keyword (instantiating an obejct), we "**tightly couple**" the
+> By using `new` keyword (instantiating an obejct), we **tightly couple** the
 > dependency which is not good
 
 - **Tightly Coupled:**
@@ -27,7 +27,8 @@ dependent on each other.
       private final UserRepository userRepository = new UserRepository(); // Directly creating a dependency
       // Methods using userRepository
   }
-```
+  ```
+
 - **Loosely Coupled (using Dependency Injection):**
   ```java
   public class UserService {
@@ -38,7 +39,7 @@ dependent on each other.
       }
       // Methods using userRepository
   }
-```
+  ```
 
 Here, `UserService` is loosely coupled with `UserRepository` because it doesn’t
 create the dependency itself.
@@ -50,8 +51,8 @@ swap out `UserRepository` implementations.
 Instead of the Class taking responsibility of creating the object, the framework
 manages it for you
 
-- the control of **object creation** and **dependency management** is *
-  *_inverted_** from the application code to a framework.
+- the control of **object creation** and **dependency management** is 
+**_inverted_** from the application code to a framework.
 - The framework manages the lifecycle and interactions of objects.
 
 ## Dependency Injection

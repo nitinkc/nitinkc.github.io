@@ -7,6 +7,112 @@ tags: [Algorithms]
 
 {% include toc title="Index" %}
 
+# Summary - Object Declarations in Java
+- **Array Declaration**:  
+  ```java
+  int[] a = new int[3];//use [] for array instead of ()
+  int[] a = new int[] {1,2,3};
+  int[] b = {1,2,3};//Same as above
+  
+  // Declaring a Rectangular Matrix
+  String[][] arr = new String[6][7]; // 6 rows and 7 columns
+  // Iterating through the 2D array and assigning values
+  for (int i = 0; i < arr.length; i++) { // Loop through rows
+    for (int j = 0; j < arr[i].length; j++) { // Loop through columns
+        arr[i][j] = "-" + i + "_" + j;//Do something
+    }
+  }
+  ```
+- **ArrayList Declaration**:  
+  ```java
+  List<Integer> list = new ArrayList<>();
+  list.add(10);
+  list.get(0);
+  ```
+- **LinkedList Declaration**:  
+  ```java
+  List<String> list = new LinkedList<>();
+  list.add("Hello");
+  list.add("World");
+  list.getFirst();
+  list.getLast();
+  list.removeFirst();
+  list.removeLast();
+  ```
+
+- **Stack Declaration**:
+  ```java
+  Stack<Integer> stack = new Stack<>();
+  stack.push(10);           // Add 10
+  stack.push(20);           // Add 20
+  System.out.println(stack.peek());  // 20 (top element)
+  stack.pop();              // Removes 20
+  System.out.println(stack.isEmpty()); // false
+  System.out.println(stack.size());   // 1
+  stack.clear();            // Clear the stack
+  ```
+- **Queue Declaration**:  
+  ```java
+  Queue<Integer> queue = new LinkedList<>();
+  Deque<Integer> deque = new ArrayDeque<>();//Doubly ended Queue
+  
+  // Queue Methods
+  queue.add(10);        // Adds element to queue at the rear, // Throws an exception if the operation fails
+  queue.offer(20);      // Adds element to queue at the rear, // Returns false if the operation fails
+  queue.poll();         // Removes element from front
+  queue.peek();         // Retrieves front element
+  queue.size();         // Returns size
+  queue.clear();        // Clears queue
+  
+  // Deque Methods
+  deque.addFirst(10);   // Adds element to front
+  deque.offerFirst(20); // Adds element to front
+  deque.removeLast();   // Removes element from back
+  deque.peekLast();     // Retrieves last element
+  deque.size();         // Returns size
+  deque.clear();        // Clears deque
+  ```
+  
+- **PriorityQueue Declaration**:  
+  ```java
+  Queue<Integer> pq = new PriorityQueue<>();
+  pq.add(10);              // Add 10
+  pq.offer(20);            // Add 20
+  System.out.println(pq.peek());  // 10 (head of the queue)
+  pq.poll();               // Removes 10
+  System.out.println(pq.isEmpty()); // false
+  System.out.println(pq.size());   // 1
+  pq.clear();              // Clear the queue
+  ```
+  
+- **Set Declaration**:  
+  ```java
+  HashSet<Integer> set = new HashSet<>();
+  Set<String> treeSet = new TreeSet<>(Comparator.reverseOrder());
+  ```
+  
+- **Map Declaration**:  
+  ```java
+  Map<String, Integer> map = new HashMap<>();
+  Map<Integer, String> map = new TreeMap<>(Comparator.reverseOrder());
+  
+  boolean containsValue = map.containsValue(3);
+  boolean containsKey = map.containsKey("Harry");// returns true if the key is in the map, false otherwise
+  
+  // Iterate over the map using entrySet()
+  for (Map.Entry<String, Integer> entry : map.entrySet()) {
+      String key = entry.getKey();
+      Integer value = entry.getValue();
+  }
+  
+  // Iterate over the map using iterator
+  Iterator<String> itr = map.keySet().iterator();//Returns iterator to all the keys
+  while (itr.hasNext()) {
+      String key = itr.next();
+      Integer value = map.get(key);
+  }
+  ```
+
 # String Parsing and Conversion in Java
 
 ## Strings to Primitives using `parse`
@@ -281,162 +387,152 @@ for (String name : namesList) {//From a list of Strints, put String as key
     System.out.println(Character.getNumericValue(myChar));
     System.out.println(Character.getNumericValue('1'));
   ```
+
 # String
-
-- length(), equals() & str.compareTo("");
-
-```java
-  str1.equals(str2);//For Equality, DO NOT USE == (will compare objects)
-
-  str1.compareTo(str2);
-  // negative if str is "lexicographically" less than str2
-  // positive if str is "lexicographically" greater than str2
-  // ZERO is both strings are equal
-```
+- `length()`, `equals()` & `str.compareTo("")`;
+  ```java
+    str1.equals(str2);//For Equality, DO NOT USE == (will compare objects)
+  
+    str1.compareTo(str2);
+    // negative if str is "lexicographically" less than str2
+    // positive if str is "lexicographically" greater than str2
+    // ZERO is both strings are equal
+  ```
 
 - isBlank()
     ```java
     System.out.println(" ".isBlank());//True -> Returns true if the string is empty or contains only white space 
     ```
 - split()
-
-```java
+  ```java
     //Cut the Strings from spaces into a words
     String[] words = strList.split(",");
   ```
 
 - trim() and strip()
-
-```java
-  String s = " Malgudi Days   ";
-  
-  System.out.println(s.trim());//Trimmed blank spaces with all leading and trailing space removed
-  
-  System.out.println(s.strip());//Strip is Unicode Aware
-  System.out.println(s.stripLeading());
-  System.out.println(s.stripTrailing());
- ```
+  ```java
+    String s = " Malgudi Days   ";
+    System.out.println(s.trim());//Trimmed blank spaces with all leading and trailing space removed
+    
+    System.out.println(s.strip());//Strip is Unicode Aware
+    System.out.println(s.stripLeading());
+    System.out.println(s.stripTrailing());
+  ```
 
 - contains
-
-```java
-  String sentence = "Hello, world!";
-  // Check if the string contains a specific substring
-  boolean containsHello = sentence.contains("Hello");
-```
+  ```java
+    String sentence = "Hello, world!";
+    // Check if the string contains a specific substring
+    boolean containsHello = sentence.contains("Hello");
+  ```
 
 - charAt & substring()
   ```java
-  //returns a character at a given index i
-  str.chatAt(i);
-  str.substring(i,j);//index j not included
-  str.substring(i);//from i till end
+    //returns a character at a given index i
+    str.chatAt(i);
+    str.substring(i,j);//index j not included
+    str.substring(i);//from i till end
   ```
 
 - indexOf & lastIndexOf
   ```java
-  //2 if "er" begins from index 1, -1 if not Found
-  str.indexOf("er");
-  str.indexOf("er", 2); //start the search from index 2
-  
-  str.lastIndexOf("ew");//searches right to left
-  str.lastIndexOf("ew", 5);//right to left, from index 5
+    //2 if "er" begins from index 1, -1 if not Found
+    str.indexOf("er");
+    str.indexOf("er", 2); //start the search from index 2
+    
+    str.lastIndexOf("ew");//searches right to left
+    str.lastIndexOf("ew", 5);//right to left, from index 5
   ```
 
 - case change
   ```java
-  str.toLowerCase();
-  str.toUpperCase();
+    str.toLowerCase();
+    str.toUpperCase();
   ```
 
 - compare & replace
   ```java
-  System.out.println(str.replace("a","$$"));
-  System.out.println(str.replace('e','*'));//Character Replace
-  String str1 = str.replaceAll(" ", "" );//Replace All, takes RegEx
+    System.out.println(str.replace("a","$$"));
+    System.out.println(str.replace('e','*'));//Character Replace
+    String str1 = str.replaceAll(" ", "" );//Replace All, takes RegEx
   ```
 
 - String to Char Array to String
   ```java
-  String str = "Pneumonia";
-  char[] c = str.toLowerCase().toCharArray();
-  Arrays.sort(c);//Returns a void
-  
-  String revStr = new String(c);
+    String str = "Pneumonia";
+    char[] c = str.toLowerCase().toCharArray();
+    Arrays.sort(c);//Returns a void
+    
+    String revStr = new String(c);
   ```
 
 - Turn anything into String
   ```java
-char c = 'C';
-int d = 5;
-Integer i = 5;
-String newStr = String.valueOf(i));
-
-char[] c = {'T','e','s','t'};
-String newStr = String.valueOf(c);
-```
+    char c = 'C';
+    int d = 5;
+    Integer i = 5;
+    String newStr = String.valueOf(i));
+    
+    char[] c = {'T','e','s','t'};
+    String newStr = String.valueOf(c);
+  ```
 
 # Sorting
-
-All sorts (`Arrays.sort`, `listObj.sort`, `Collections.sort`)
-
+All sorts - `Arrays.sort`, `listObj.sort`, `Collections.sort`
 - returns void
 - changes the input array
 
 ### Arrays Sort
-
 ```java
 int[] intArray = {4,5,3,8,2,71};
 Arrays.sort(intArray);//Default Natural Sorting Order
 Arrays.sort(intArray, Comparator.reverseOrder());//Reverse sorting
 ```
 
-### List Sort
-
-- `Comparator.nullsFirst()` or `Comparator.nullsLast()` can be used to
-  accommodate null values.
+### ListObject Sort
+`Comparator.nullsFirst()` or `Comparator.nullsLast()` can be used to accommodate null values.
 
 ```java
-  List<Integer> list = Arrays.asList(null,4,5,null,3,8,2,71,null);
-  list.sort(Comparator.nullsLast(Comparator.naturalOrder()));
-  list.sort(Comparator.nullsFirst(Comparator.reverseOrder()));
-  
-  List<String> stringList = Arrays.asList("apple", "banana", "orange");
-  stringList.sort(Comparator.comparing(String::length).reversed());
+List<Integer> list = Arrays.asList(null,4,5,null,3,8,2,71,null);
+list.sort(Comparator.nullsLast(Comparator.naturalOrder())); //Output: [2, 3, 4, 5, 8, 71, null, null, null]
+list.sort(Comparator.nullsFirst(Comparator.reverseOrder()));//Output: [null, null, null, 71, 8, 5, 4, 3, 2]
+
+List<String> stringList = Arrays.asList("apple", "banana", "orange");
+stringList.sort(Comparator.comparing(String::length).reversed());//Output: [banana, orange, apple] (since "banana" and "orange" have 6 characters, and "apple" has 5)
 ```
 
 ### Collections sort
+takes care of arranging the `null` values
+```java
+List<Integer> integerListWithNull = Arrays.asList(5, 6, null, 71, 2, 3);
+Collections.sort(integerListWithNull, Comparator.nullsLast(Comparator.naturalOrder()));// Output: [2, 3, 5, 6, 71, null]
+Collections.sort(integerListWithoutNull, Collections.reverseOrder());// Output: [71, 6, 5, 3, 2]
+List<String> stringList = Arrays.asList("apple","banana", "orange");
 
-- takes care of arranging the `null` values
--   ```java
-    List<Integer> integerListWithNull = Arrays.asList(5, 6, null, 71, 2, 3);
-    Collections.sort(integerListWithNull, Comparator.nullsLast(Comparator.naturalOrder()));
-    Collections.sort(integerListWithoutNull, Collections.reverseOrder());
-    
-    List<String> stringList = Arrays.asList("apple","banana", "orange");
-    Collections.sort(stringList, Comparator
-                                      .comparing(String::length)
-                                      .thenComparing(Comparator.reverseOrder()));
-    ```
+Collections.sort(stringList, Comparator.comparing(String::length)
+                                        .thenComparing(Comparator.reverseOrder()));
+// Output: [banana, orange, apple] 
+// "banana" and "orange" have the same length (6), but "orange" is lexicographically after "banana".
+```
 
 # Set
-
 ```java
 List<String> namesList = Arrays.asList("Harry", "Hermione", "Ron","Harry", "Ron", "Ron", "Remus");
 // Sorted values returned while iterating in TreeSet
 Set<String> treeSet = new TreeSet<>(Comparator.reverseOrder());
-treeSet.addAll(namesList);
+treeSet.addAll(namesList);// Output: [Ron, Remus, Hermione, Harry]
 
 // Ordering NOT guaranteed in HashSet
-Set<Integer> set = new HashSet<Integer>();
+Set<Integer> hashSet = new HashSet<Integer>();
+hashSet.addAll(namesList);// Output: (Unordered, but no duplicates, e.g., [Hermione, Remus, Harry, Ron])
 ```
 
 - Add elements in a Set
   ```java
+  //boolean add(E e);
   /* Adds the element to the set and returns true if this set does not have this element.
   if the element already exist the call leaves the set unchanged and returns false*/
   set.add(value);
-  //boolean add(E e);
   ```
 
 - Find an element in a set
@@ -454,7 +550,6 @@ Set<Integer> set = new HashSet<Integer>();
   ```
 
 ##### Set Iteration
-
 ```java
 Iterator<String> itr = set.iterator();
 while(itr.hasNext()){
@@ -465,7 +560,6 @@ while(itr.hasNext()){
 ```
 
 # Heap
-
 - Declaring min and max heaps
   ```java
   // Primitive Types
@@ -487,7 +581,6 @@ while(itr.hasNext()){
   ```
 
 # Queue
-
 * offer() Enqueue (add) elements to the queue****
 * peek() Retrieves, but **does not remove**, the head of this queue, or returns
   null if this queue is empty.
@@ -509,7 +602,6 @@ queue.offer("Orange");
 ```
 
 # Stack
-
 - push(E item): Pushes an item onto the top of the stack.
 - pop(): Removes the object at the top of the stack and returns that object.
 - peek(): Looks at the object at the top of the stack **without removing** it.
@@ -534,7 +626,6 @@ for (int i = 0; i < stack.size(); i++) {
 ```
 
 # Math
-
 - min & max
   ```java
   int maxNumber = Math.max(10, 20);
@@ -574,7 +665,6 @@ for (int i = 0; i < stack.size(); i++) {
   ```
 
 # Bitwise
-
 - `Left Shift (<<)`: Shifts the bits to the left by a specified number of
   positions (n) value << n.
     - The vacant positions on the right are filled with zeros.
