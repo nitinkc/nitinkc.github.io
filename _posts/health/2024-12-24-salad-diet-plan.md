@@ -7,7 +7,7 @@ tags: ['Health']
 {% include toc title="Index" %}
 
 # Fresh Spring Rolls
-- rice wrappers
+- rice paprs/wrappers
 - Spring mix
 - carrot , peeled and shredded or sliced into thin strips
 - cucumber , peeled and thinly sliced
@@ -16,22 +16,31 @@ tags: ['Health']
 - bunch fresh basil leaves
 - bunch fresh cilantro
 - vermicelli rice noodles (Optional)
-- mangos, thin strips (Optional)
+- mangoes strips (Optional)
 
-# Spring Mix and Sprouted Bean Delight
-- **Salad Base**:
-  - 2 cups organic spring mix
-  - 1/4 cup sprouted moong beans
-  - 1/4 cup sprouted chana
-- **Add-Ons**:
-  - Sliced cucumber
-  - Grated carrots
-  - A handful of toasted seeds (pumpkin or sunflower)
-- **Dressing**: Lemon Garlic Vinaigrette
-  - 3 tbsp olive oil
-  - 2 tbsp fresh lemon juice
-  - 1 small garlic clove, minced
-  - Salt and pepper to taste
+# Tabbouleh Mediterranean Salad
+Traditional tabbouleh is heavy on parsley
+## Ingredients
+- **Curly parsley**: 1 large bunch, finely chopped
+- **Bulgur wheat**: 1/2 cup (soaked or cooked as per instructions)
+- **Tomatoes**: 2-3 medium, finely diced
+- **Cucumber** (optional): Finely diced
+- **Mint leaves**: A handful, finely chopped
+- **Lemon juice**: 2-3 tablespoons (to taste)
+- **Olive oil**: 3-4 tablespoons
+- **Salt and pepper**: To taste
+- Green onions: Finely chopped (Optional)
+- Garlic: Finely minced (if you prefer a garlicky flavor)
+
+## Instructions
+**Prepare the bulgur**:  
+Soak the bulgur in hot water for 15–20 minutes or until soft, or cook it according to package instructions. Drain any excess water.
+
+- Finely chop the parsley, tomatoes, mint, and any optional ingredients like cucumber or green onions.
+- In a large bowl, combine the cooked bulgur, parsley, tomatoes, mint, and optional cucumber.
+- Add lemon juice, olive oil, salt, and pepper to taste. Mix well.
+- Let the salad sit in the refrigerator for about 30 minutes to allow the flavors to meld. Serve chilled or at room temperature.
+
 
 # Protein-Rich Power Bowl
 - **Salad Base**:
@@ -46,6 +55,21 @@ tags: ['Health']
   - 2 tbsp apple cider vinegar
   - 4 tbsp olive oil
   - 1 tsp Dijon mustard
+  - Salt and pepper to taste
+
+# Spring Mix and Sprouted Bean Delight
+- **Salad Base**:
+  - 2 cups organic spring mix
+  - 1/4 cup sprouted moong beans
+  - 1/4 cup sprouted chana
+- **Add-Ons**:
+  - Sliced cucumber
+  - Grated carrots
+  - A handful of toasted seeds (pumpkin or sunflower)
+- **Dressing**: Lemon Garlic Vinaigrette
+  - 3 tbsp olive oil
+  - 2 tbsp fresh lemon juice
+  - 1 small garlic clove, minced
   - Salt and pepper to taste
 
 # Mediterranean Sprouted Salad
@@ -140,31 +164,6 @@ tags: ['Health']
 - **Add-ons**: include pomegranate seeds, roasted peanuts, or sunflower seeds for added crunch and flavor.
 - **Customizable dressing**: Replace lemon juice with a light yogurt or tahini dressing for a creamy twist.
 - **Meal prep**: Store the sprouts and chopped veggies separately, and mix them fresh for each meal to retain crunchiness.
-
-
-# Tabbouleh Mediterranean Salad
-Traditional tabbouleh is heavy on parsley
-## Ingredients
-- **Curly parsley**: 1 large bunch, finely chopped
-- **Bulgur wheat**: 1/2 cup (soaked or cooked as per instructions)
-- **Tomatoes**: 2-3 medium, finely diced
-- **Cucumber** (optional): Finely diced
-- **Mint leaves**: A handful, finely chopped
-- **Lemon juice**: 2-3 tablespoons (to taste)
-- **Olive oil**: 3-4 tablespoons
-- **Salt and pepper**: To taste
-- Green onions: Finely chopped (Optional)
-- Garlic: Finely minced (if you prefer a garlicky flavor)
-
-## Instructions
-**Prepare the bulgur**:  
-   Soak the bulgur in hot water for 15–20 minutes or until soft, or cook it according to package instructions. Drain any excess water.
-
-- Finely chop the parsley, tomatoes, mint, and any optional ingredients like cucumber or green onions.
-- In a large bowl, combine the cooked bulgur, parsley, tomatoes, mint, and optional cucumber.
-- Add lemon juice, olive oil, salt, and pepper to taste. Mix well.
-- Let the salad sit in the refrigerator for about 30 minutes to allow the flavors to meld. Serve chilled or at room temperature.
-
 
 # Beet Root Salad Recipe
 - **Beets**: 2 medium, boiled, roasted, or grated raw
