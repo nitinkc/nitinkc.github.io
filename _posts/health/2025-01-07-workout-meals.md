@@ -19,6 +19,7 @@ tags: ['Health']
 - A protein-rich smoothie with plant-based protein, banana, and almond milk
 - Scrambled eggs with avocado and whole-grain bread
 - Cottage cheese with a handful of nuts and fruit
+  - other types of cheese like feta can also work, but opt for low-sodium and high-protein options where possible
 
 
 
