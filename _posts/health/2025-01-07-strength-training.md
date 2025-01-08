@@ -1,9 +1,10 @@
 ---
-title: "Breakfast Healthy"
+title: "Strength Training"
 date: 2025-01-07 22:00:00
 categories: ['Health']
 tags: ['Health']
 ---
+{% include toc title="Index" %}
 
 1. **Warm-Up & Cool Down:** Start with 5–10 minutes of dynamic stretching before workouts and finish with static stretching.
 2. **Progressive Overload:** Gradually increase weights or reps to challenge your muscles.
@@ -19,27 +20,6 @@ tags: ['Health']
 - **Dumbbell Flyes** – 3 sets of 10–12 reps
 - **Tricep Dips** – 3 sets until failure
 - **Overhead Dumbbell Extension** – 3 sets of 10–12 reps
-## Bench Press (Flat/Incline)
-[![PureGym Dumbbell Bench Press](https://img.youtube.com/vi/VzvfWLr4qk/maxresdefault.jpg)](https://youtu.be/VzvfWLr4qk)
-
-[![Men's Journal Incline Press](https://img.youtube.com/vi/BkrcY_iz9EU/maxresdefault.jpg)](https://youtu.be/BkrcY_iz9EU)
-
-## Push-Ups
-[![Men's Journal Push-Ups](https://img.youtube.com/vi/IODxDxX7oi4/maxresdefault.jpg)](https://youtu.be/IODxDxX7oi4)
-
-[![Juice & Toya Push-Up Workout](https://img.youtube.com/vi/oj_rkIAzQRs/maxresdefault.jpg)](https://youtu.be/oj_rkIAzQRs)
-
-## Dumbbell Flyes
-[![Rob Riches Dumbbell Flyes](https://img.youtube.com/vi/QFFihiRpOLo/maxresdefault.jpg)](https://youtu.be/QFFihiRpOLo)
-
-## Tricep Dips
-[![Men's Journal Tricep Dips](https://img.youtube.com/vi/0326dy_SzLc/maxresdefault.jpg)](https://youtu.be/0326dy_SzLc)
-
-## Overhead Dumbbell Extension
-[![BODi Tricep Extension](https://img.youtube.com/vi/ZP9oRfRK1oM/maxresdefault.jpg)](https://youtu.be/ZP9oRfRK1oM)
-
-[![Muscle & Strength Tricep Extension](https://img.youtube.com/vi/ghVqEPxqrM4/maxresdefault.jpg)](https://youtu.be/ghVqEPxqrM4)
-
 
 ### Day 2: Back & Biceps
 - **Pull-Ups or Lat Pulldowns** – 3 sets until failure or 10–12 reps

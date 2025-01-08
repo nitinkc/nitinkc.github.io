@@ -4,6 +4,7 @@ date: 2025-01-07 22:00:00
 categories: ['Health']
 tags: ['Health']
 ---
+{% include toc title="Index" %}
 
 # Pre-Workout Nutrition
 **Timing:** Eat 60–90 minutes **before** your workout.
