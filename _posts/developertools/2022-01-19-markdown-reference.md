@@ -38,14 +38,12 @@ CMYK : 85, 0, 34, 29
     - Will be replaced with the ToC, excluding the "Contents" header `{:toc}`
 
 # Escape Liquid template tags in Jekyll posts
-
 - Use backtick(`) to display a liquid tag as a span of code .
 
 * to begin `{{ "{% raw " }}%}` and end with `{{ "{% endraw " }}%} `
 * Another way to escape `{{ "{{ tag " }}}}`
 
 # Include gists
-
 Include code as a gist into the Jekyll post. Uses jekyll-gist plugin.
 {% raw %}
 `{% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}`

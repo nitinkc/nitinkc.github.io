@@ -1,12 +1,12 @@
 ---
-title: "Sugar free salad-dressings & pairings"
+title: "Salad-dressings & Pairings - Sugar free"
 date: 2024-12-20 09:45:00
 categories: ['Health']
 tags: ['Health']
 ---
 {% include toc title="Index" %}
 
-# 1. Classic Lemon Vinaigrette
+# Classic Lemon Vinaigrette
 - **Ingredients**:
     - 3 tbsp olive oil
     - 2 tbsp fresh lemon juice
@@ -17,7 +17,7 @@ tags: ['Health']
 - **Salad Pairing**:
     - Mixed greens, cucumber, cherry tomatoes, and grilled tofu/paneer.
 
-# 2. Creamy Avocado Dressing
+# Creamy Avocado Dressing
 - **Ingredients**:
     - 1 ripe avocado
     - 3 tbsp Greek yogurt (unsweetened)
@@ -29,7 +29,7 @@ tags: ['Health']
 - **Salad Pairing**:
     - Romaine lettuce, corn, black beans, and diced red bell peppers.
 
-# 3. Herby Olive Oil Dressing
+# Herby Olive Oil Dressing
 - **Ingredients**:
     - 4 tbsp olive oil
     - 1 tbsp red wine vinegar
@@ -41,7 +41,7 @@ tags: ['Health']
 - **Salad Pairing**:
     - Baby spinach, olives, feta cheese, and red onion slices.
 
-# 4. Tahini Lemon Dressing
+# Tahini Lemon Dressing
 - **Ingredients**:
     - 2 tbsp tahini
     - 2 tbsp lemon juice
@@ -53,7 +53,7 @@ tags: ['Health']
 - **Salad Pairing**:
     - Kale, roasted chickpeas, shredded carrots, and sesame seeds.
 
-# 5. Apple Cider Vinegar Dressing
+# Apple Cider Vinegar Dressing
 - **Ingredients**:
     - 2 tbsp apple cider vinegar
     - 4 tbsp olive oil
@@ -74,7 +74,6 @@ tags: ['Health']
 - Reduce heat to low and simmer until glaze is reduced by half and coats the back of a spoon (about 20 minutes)
 
 
-
 # Simple peanut sauce
 - 3/4 cup **sweet chili sauce**
 - 1/3 cup **peanut butter** , smooth or crunchy
@@ -84,10 +83,10 @@ tags: ['Health']
 ### Preparation
 Add all ingredients to a blender and pulse until smooth.
 
-# Vietnamese Peanut Sauce (Dark)
+# Vietnamese Peanut Sauce (Cooked,Dark)
 - 2 tbsp cooking oil
 - 4 cloves garlic minced
-- 5 tbsp hoisin sauce (hoisin is double the ratio of the peanut)
+- 5 tbsp hoisin sauce (hoisin is over double the ratio of the peanut)
 - 2 tbsp smooth peanut butter
 - 1/2 cup water
 - 1 tsp chile paste
@@ -100,7 +99,6 @@ Add all ingredients to a blender and pulse until smooth.
 - Once it hits a boil, shut off the heat and add the 1 tsp chile paste.
 - The sauce will thicken a lot as it cools.
 - top with a little bit of 3 tbsp crushed peanuts split among each dipping bowl.
-
 
 # Peanut Sauce (Uncooked)
 - **Peanut butter**: 1/4 cup

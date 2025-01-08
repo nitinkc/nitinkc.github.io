@@ -7,16 +7,18 @@ tags: ['Health']
 {% include toc title="Index" %}
 
 # Fresh Spring Rolls
-- rice paprs/wrappers
+- rice papers/wrappers
 - Spring mix
 - carrot , peeled and shredded or sliced into thin strips
 - cucumber , peeled and thinly sliced
-- grilled or fried tofu/paneer OR Avocado
+- grilled or fried tofu/paneer OR Avocado OR Egg
 - bunch fresh mint leaves
 - bunch fresh basil leaves
 - bunch fresh cilantro
 - vermicelli rice noodles (Optional)
 - mangoes strips (Optional)
+
+**Dip Sauce :** [Peanut Sauce](https://nitinkc.github.io/health/salad-dressings/#vietnamese-peanut-sauce-dark)
 
 # Tabbouleh Mediterranean Salad
 Traditional tabbouleh is heavy on parsley
@@ -193,7 +195,6 @@ Soak the bulgur in hot water for 15–20 minutes or until soft, or cook it accor
 ## Tips
 - **Customization**: Add avocado slices or cooked quinoa for extra creaminess and protein.
 - **Meal prep**: Store the dressing separately and add it before serving to keep the salad fresh.
-
 
 # Chopped Vegetable Salad Recipe (Costco Mediterranean Salad)
 
