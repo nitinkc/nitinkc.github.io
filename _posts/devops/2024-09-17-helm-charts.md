@@ -173,3 +173,24 @@ wget -qO- http://<your-pod-ip>:5000/actuator/health
 ```
 
 
+```sh
+docker run -d --name oci-registry -p 5000:5000 registry
+
+helm package firstchart
+
+helm push firstchart-0.1.0.tgz oci://localhost:5000/helm-charts
+
+helm show all oci://localhost:5000/helm-charts/firstchart --version 0.1.0
+
+helm pull oci://localhost:5000/helm-charts/firstchart --version 0.1.0
+
+helm template myrelease oci://localhost:5000/helm-charts/firstchart --version 0.1.0
+
+helm install myrelease oci://localhost:5000/helm-charts/firstchart --version 0.1.0
+
+helm upgrade myrelease oci://localhost:5000/helm-charts/firstchart --version 0.2.0
+
+helm registry login -u myuser <oci registry>
+
+helm registry logout <oci registry url>
+```
