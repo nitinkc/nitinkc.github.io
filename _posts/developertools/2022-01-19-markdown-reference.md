@@ -147,9 +147,7 @@ height="700px">
 ```
 
 # DateFormatting with Liquid
-
-Use the [**date filter
-**](https://cloud.google.com/looker/docs/best-practices/how-to-use-liquid-to-format-dates#strftime-reference)
+Use the [**date filter**](https://cloud.google.com/looker/docs/best-practices/how-to-use-liquid-to-format-dates#strftime-reference)
 to change the display format of dates.
 
 - {% raw %}`{{ '2023-04-06' | date: "%B %d, %Y" }}`{% endraw %}: Displays the
@@ -174,7 +172,6 @@ to change the display format of dates.
     - {{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
 
 # Notices with theme
-
 - Default `{: .notice}`
 - Primary {: .notice--primary}
 - Info {: .notice--info}
@@ -183,7 +180,6 @@ to change the display format of dates.
 - Danger {: .notice--danger}
 
 # Writing Math Equations
-
 Traditional using subscript and super-script
 
 - `log<sub>base</sub>index = power` ==> log<sub>base</sub>index = power
@@ -192,13 +188,9 @@ Traditional using subscript and super-script
   b</sub><sup>x</sup>+log<sub>b</sub><sup>y</sup>
 
 # $$ \LaTeX $$ - Using Lib
-
--
-From [https://yihui.org/en/2018/07/latex-math-markdown/](https://yihui.org/en/2018/07/latex-math-markdown/)
-- Cheatsheet -
-  html [https://quickref.me/latex.html](https://quickref.me/latex.html)
-- Cheatsheet -
-  pdf [https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf](https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf)
+- From [https://yihui.org/en/2018/07/latex-math-markdown/](https://yihui.org/en/2018/07/latex-math-markdown/)
+- Cheatsheet - html [https://quickref.me/latex.html](https://quickref.me/latex.html)
+- Cheatsheet - pdf [https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf](https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf)
 
 [https://nitinkc.github.io/developer%20tools/LaTex/](https://nitinkc.github.io/developer%20tools/LaTex/)
 
@@ -221,15 +213,12 @@ From [https://yihui.org/en/2018/07/latex-math-markdown/](https://yihui.org/en/20
 | 24\times 60\times 60 \approx \text{90K secs}, \text{1 Day has 86400 seconds} | $ 24\times 60\times 60 \approx \text{90K secs}, \text{1 Day has 86400 seconds} $ |
 
 ### Spaceship - LaTex, Table, Media, Math, Plant UML
-
 [Jeykll Spaceship](https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#table-of-contents)
 
 # Diagrams
-
 [Plant UML Sequence Diagram](https://plantuml.com/sequence-diagram)
 
 ### Mermaid Diagram
-
 [Mermaid Live Editor with gist code load](https://mermaid.live/edit?gist=https://gist.github.com/nitinkc/404befd918e8109cc830d23e3f7206fc#pako:eNqVUz1PwzAQ_SuWpyK1EiuRQIIi0YEKRBEDmOGSXBLTxI7OzlC1_e84cRM3bRm46d353cc721ue6BR5xHOCumDvD0IxZ6aJfWBlIVn7WGvV5lka-4bZl-AeswlhhoQqQWY1uyeCLn4l-HfI8whVKtRJgwVCHXhDuqs_4FGllSWp8pf4xzE8ZpMFEG3Yq7YWadx3AaZYQu3pB6cjXGjJZrO7XaKVBakMO1a1C13_FrJEC6aGBEPp1p5KHUP5AeQGyHssIS6R3bKb65Nh5iUY01ZKwYLL6HzWB0bSRtRu9nk_u1SZZhDrxu6CvH9nht2diR6eQZc9rMqctRvUt8Sjuw61Tw6GRR_F-ZRXSBXI1L3TbcsT3BZYoeCRgynQWnCh9o4HjdWrjUp4ZKnBKSfd5AWPMiiN85raKcZHCe7Gqp6CqbSalv4XdJ9hymtQn1pXh8T9L4IkBGE)
 
 use the tag `mermaid!`
