@@ -5,7 +5,7 @@ categories: [Miscellaneous]
 tags: [Miscellaneous]
 ---
 
-# adada
+# Book Binding Basics
 
 Print in Booklet mode, both sided, portrait mode for rectangular page (Letter or
 A4)
