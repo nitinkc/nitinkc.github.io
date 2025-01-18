@@ -5,6 +5,9 @@ categories: Miscellaneous
 tags: [Miscellaneous]
 ---
 
+{% include toc title="Index" %}
+
+
 # General Legal Terms
 - **Affidavit**: A written statement confirmed by oath or affirmation, used as evidence in court.
 - **Allegation**: A claim or assertion that someone has done something illegal or wrong.

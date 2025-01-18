@@ -4,6 +4,7 @@ date:   2024-09-19 20:14:00
 categories: [Miscellaneous] 
 tags: [Miscellaneous]
 ---
+{% include toc title="Index" %}
 
 # Book Binding Basics
 

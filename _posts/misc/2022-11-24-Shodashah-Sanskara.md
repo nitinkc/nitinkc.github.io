@@ -5,6 +5,7 @@ date:   2022-01-26 21:55:00
 categories: Miscellaneous
 tags: [Miscellaneous]
 ---
+{% include toc title="Index" %}
 
 The 16 milestones of Life
 
