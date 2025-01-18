@@ -178,10 +178,12 @@ import java.util.Queue;
 public class QueueExample {
     public static void main(String[] args) {
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(1);
+        queue.add(1);//ENQUEUE
         queue.add(2);
-        queue.poll();
-        System.out.println(queue);
+        int val = queue.poll();//Poll method removes and returns the head of the queue.DEQUEUE
+      // Check if the queue is empty
+      System.out.println("Is the queue empty? " + queue.isEmpty()); // true
+      System.out.println(queue);
     }
 }
 ```
@@ -193,6 +195,9 @@ import java.util.PriorityQueue;
 public class PriorityQueueExample {
     public static void main(String[] args) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
+        Queue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
+        Queue<Integer> priorityQueue = new PriorityQueue<>();
+
         pq.add(3);
         pq.add(1);
         pq.add(2);
