@@ -14,6 +14,12 @@ tags: [Algorithms]
 
 # For Loop Traps
 
+```java
+for (int i = 0; i < arr.length; i = i+2){ ...} // if lenght = 9, loop will run 0,2,4,6.. 8 is never included.
+for (int i = 1; i < num.length; i++) if (num[i-1] == num[i]) return true;
+for (int i = 0; i < num.length - 1; i++) if (num[i] == num[i+1]) return true;
+for (char i = 'a'; i <= 'z'; i++){ sout(i); //Prints alphabets from 'a' to 'z' }
+```
 {% gist nitinkc/382798a984e00a732d86a12a6637e0a2 %}
 
 # Reading, Parsing and Type Checking Command Line Inputs.
