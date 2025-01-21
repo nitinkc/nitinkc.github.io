@@ -144,7 +144,6 @@ Maintain 2 Stacks, One internally for keeping track of the Max/Min Stack
 
 ## Recursion based
 
-sadsad
 
 ##### Find BST Height
 
@@ -179,7 +178,7 @@ else
 
 ##### FizzBuzz Problem
 
-Importacnce of placing if statements are tested here!!
+Importance of placing if statements are tested here!!
 
 ```java
 public String fizzString2(int n) {
@@ -194,50 +193,6 @@ public String fizzString2(int n) {
     if (n%5 == 0)
         return "Buzz!";  
 }
-```
-
-### Tree Traversals
-
-##### Inorder
-
-```java
- /* Function for inorder traversal */
-    public void inorder(BSTNode r)
-    {
-        if(r != null){
-        inorder(r.left);
-        System.out.print(r.data + " ");
-        inorder(r.right);
-        }
-    }
-```
-
-##### PreOrder
-
-```java
-    /* Function for pre-order traversal */
-    public void preorder(BSTNode r)
-    {
-       if(r != null){
-           System.out.print(r.data + " ");
-           preorder(r.left);
-           preorder(r.right);
-       }
-    }
-```
-
-##### PostOrder
-
-```java
-    /* Function for postorder traversal */
-    public void postorder(BSTNode r)
-    {
-         if(r != null){
-           preorder(r.left);
-           preorder(r.right);
-           System.out.print(r.data + " ");
-         }     
-    }
 ```
 
 ### Test Cases

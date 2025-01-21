@@ -110,6 +110,17 @@ if (flag1 ^ flag2)
 //is equivalent to
 (flag1 && !flag2) || (!flag1 && flag2);
 ```
+nullability test
+```java
+if(root.left == null && root.right !=null)
+    return false;
+if(root.left != null && root.right ==null)
+    return false;
+
+//same as above
+if ((root.left == null) ^ (root.right == null))
+    return false;
+```
 
 The logic is used for finding a unique element among duplicates (Stolen Drone
 problem (21) in Interview cake)
