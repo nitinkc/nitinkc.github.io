@@ -217,15 +217,12 @@ efficient searching of text data.
 **Spatial Index**: Used for indexing geographical data types.
 
 # Datastructures used in Indexing
-
 Indices can be saved in
-
-- B-Tree (Balanced Tree) or variation of it
+- B-Tree (Balanced Tree) or variation of it 
 - HashMaps
 - Bitmap Index
 
-For where clause, comparisons should be SARGABLE - **S**earch **ARG**ument *
-*ABLE**
+For where clause, comparisons should be SARGABLE - **S**earch **ARG**ument **ABLE**
 
 - refers to queries that can use indices for faster execution
 
