@@ -1,5 +1,5 @@
 ---
-title: "Strength Training"
+title: "Strength Training - Muscle Building Plan"
 date: 2025-01-07 22:00:00
 categories: ['Health']
 tags: ['Health']
@@ -11,22 +11,20 @@ tags: ['Health']
 3. **Rest & Recovery:** Ensure 7–8 hours of sleep and at **least 48 hours rest for the same muscle group**.
 4. **Hydration:** Drink plenty of water throughout the day.
 
-# Muscle Building Plan
-
-
 ### Day 1: Chest & Triceps
 - **Bench Press (Flat/Incline)** – 3 sets of 8–12 reps
-![](https://cdn.shopify.com/s/files/1/0047/4657/5970/files/Is_an_Incline_Bench_Press_Harder_Than_a_Flat_Bench_Press_480x480.png?v=1697461749){width="600px" height="400px"}
 - **Push-Ups** – 3 sets until failure
+![](https://www.youtube.com/watch?v=IODxDxX7oi4)
 - **Dumbbell Flyes** – 3 sets of 10–12 reps
+![](https://www.youtube.com/watch?v=T4okLh2eppw&t=23s)
 - **Tricep Dips** – 3 sets until failure
+![](https://www.youtube.com/watch?v=5XkOdAtPn2Y)
 - **Overhead Dumbbell Extension** – 3 sets of 10–12 reps
-![](https://cdn-0.weighttraining.guide/wp-content/uploads/2023/07/Standing-dumbbell-overhead-triceps-extension.png?ezimgfmt=ng%3Awebp%2Fngcb4){width="600px" height="400px"}
-
-<img src="https://cdn-0.weighttraining.guide/wp-content/uploads/2023/07/Standing-dumbbell-overhead-triceps-extension.png?ezimgfmt=ng%3Awebp%2Fngcb4" width="600" height="400">
+![](https://www.youtube.com/watch?v=iHgtJiwcODo)
 
 ### Day 2: Back & Biceps
 - **Pull-Ups or Lat Pulldowns** – 3 sets until failure or 10–12 reps
+![](https://www.youtube.com/watch?v=trZQjegcRx0&t=8s)
 - **Bent-Over Rows** – 3 sets of 10–12 reps
 - **Dumbbell Bicep Curls** – 3 sets of 10–12 reps
 - **Hammer Curls** – 3 sets of 10–12 reps
