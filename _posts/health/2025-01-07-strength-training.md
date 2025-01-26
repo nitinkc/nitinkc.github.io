@@ -34,7 +34,9 @@ tags: ['Health']
 
 ### Day 4: Shoulders & Abs
 - **Overhead Dumbbell Press** – 3 sets of 10–12 reps
+![](https://upload.wikimedia.org/wikipedia/commons/1/15/Dumbbell-shoulder-press-1.png)
 - **Lateral Raises** – 3 sets of 10–12 reps
+![](https://upload.wikimedia.org/wikipedia/commons/f/fd/Dumbbell-lateral-raises-1.png)
 - **Front Raises** – 3 sets of 10–12 reps
 - **Plank** – Hold for 60–90 seconds, 3 times
 - **Hanging Leg Raises** – 3 sets of 15 reps

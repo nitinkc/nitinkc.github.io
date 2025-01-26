@@ -99,3 +99,23 @@ tags: ['Health']
 Millet Biryani: A flavorful dish made with foxtail millet, 
 this biryani offers a delightful twist on the classic rice-based version, 
 making it a great option for special occasions or everyday meals. 
+
+
+
+# Waist measure
+- For Indians, BMI is not a good measure. Don't look obese but there is FAT inside the body so don't get fooled by the weight
+- waist size around belly button 
+  - if > 80cms in women and >90 cms in men, there there is some fat inside the body (around internal organs like heart, lever, pancreas, intestines)
+  - alarming - > 90 for women and > 100 for men
+
+4:05 sleep,7:05 Essential Fatty Acids(Walnut -upto 10 Max in a day over the period of the day..not at a time) ,9:45 Butter Milk,9:56 Selenium(min 55mg)-BrazilNuts(2-3)
+
+# Waist to hip ratio
+Circumference around belly button to Circumference around the widest part of the hip
+- if >0.90 for men and > 0.85 for women => increased risk of inner fat
+
+
+Pulses & Daals are - Complex Carbohydrates with Protien.
+
+Focus on Caloric intake
+
