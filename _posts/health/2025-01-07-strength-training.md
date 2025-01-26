@@ -26,12 +26,16 @@ tags: ['Health']
 - **Pull-Ups or Lat Pulldowns** – 3 sets until failure or 10–12 reps
 ![](https://www.youtube.com/watch?v=trZQjegcRx0&t=8s)
 - **Bent-Over Rows** – 3 sets of 10–12 reps
+![](https://www.youtube.com/watch?v=QFq5jdwWwX4&t=50s)
 - **Dumbbell Bicep Curls** – 3 sets of 10–12 reps
+![](https://www.youtube.com/watch?v=ykJmrZ5v0Oo&t=44s)
 - **Hammer Curls** – 3 sets of 10–12 reps
+![](https://www.youtube.com/watch?v=TwD-YGVP4Bk&t=50s)
 - **Deadlifts** – 3 sets of 6–8 reps
+![Romanian Deadlift](https://www.youtube.com/watch?v=7j-2w4-P14I&t=6s)
 
 ### Day 3: Rest or Active Recovery
-- **Light Stretching or Yoga**
+- **Yoga** : []()
 - **Walking or Light Cardio** (20–30 minutes)
 
 ### Day 4: Shoulders & Abs
