@@ -88,8 +88,7 @@ in a post from specific folder
 ### Resize an image
 
 - `<img src="assets/images/image.png" width="300" height="200">`
--
-`![platformThreads.png](../../../assets/images/platformThreads.png){:width="70%" height="50%"}`
+- `![platformThreads.png](../../../assets/images/platformThreads.png){:width="70%" height="50%"}`
 
 # Video
 

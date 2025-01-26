@@ -16,11 +16,14 @@ tags: ['Health']
 
 ### Day 1: Chest & Triceps
 - **Bench Press (Flat/Incline)** – 3 sets of 8–12 reps
+![](https://cdn.shopify.com/s/files/1/0047/4657/5970/files/Is_an_Incline_Bench_Press_Harder_Than_a_Flat_Bench_Press_480x480.png?v=1697461749){width="600px" height="400px"}
 - **Push-Ups** – 3 sets until failure
 - **Dumbbell Flyes** – 3 sets of 10–12 reps
 - **Tricep Dips** – 3 sets until failure
 - **Overhead Dumbbell Extension** – 3 sets of 10–12 reps
 ![](https://cdn-0.weighttraining.guide/wp-content/uploads/2023/07/Standing-dumbbell-overhead-triceps-extension.png?ezimgfmt=ng%3Awebp%2Fngcb4){width="600px" height="400px"}
+
+<img src="https://cdn-0.weighttraining.guide/wp-content/uploads/2023/07/Standing-dumbbell-overhead-triceps-extension.png?ezimgfmt=ng%3Awebp%2Fngcb4" width="600" height="400">
 
 ### Day 2: Back & Biceps
 - **Pull-Ups or Lat Pulldowns** – 3 sets until failure or 10–12 reps
