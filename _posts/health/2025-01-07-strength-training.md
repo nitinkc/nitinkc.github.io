@@ -8,7 +8,7 @@ tags: ['Health']
 
 1. **Warm-Up & Cool Down:** Start with 5–10 minutes of dynamic stretching before workouts and finish with static stretching.
 2. **Progressive Overload:** Gradually increase weights or reps to challenge your muscles.
-3. **Rest & Recovery:** Ensure 7–8 hours of sleep and at least 48 hours rest for the same muscle group.
+3. **Rest & Recovery:** Ensure 7–8 hours of sleep and at **least 48 hours rest for the same muscle group**.
 4. **Hydration:** Drink plenty of water throughout the day.
 
 # Muscle Building Plan
@@ -20,6 +20,7 @@ tags: ['Health']
 - **Dumbbell Flyes** – 3 sets of 10–12 reps
 - **Tricep Dips** – 3 sets until failure
 - **Overhead Dumbbell Extension** – 3 sets of 10–12 reps
+![](https://cdn-0.weighttraining.guide/wp-content/uploads/2023/07/Standing-dumbbell-overhead-triceps-extension.png?ezimgfmt=ng%3Awebp%2Fngcb4){width="600px" height="400px"}
 
 ### Day 2: Back & Biceps
 - **Pull-Ups or Lat Pulldowns** – 3 sets until failure or 10–12 reps
@@ -34,9 +35,9 @@ tags: ['Health']
 
 ### Day 4: Shoulders & Abs
 - **Overhead Dumbbell Press** – 3 sets of 10–12 reps
-![](https://upload.wikimedia.org/wikipedia/commons/1/15/Dumbbell-shoulder-press-1.png)
+![](https://upload.wikimedia.org/wikipedia/commons/1/15/Dumbbell-shoulder-press-1.png){width="600px" height="400px"}
 - **Lateral Raises** – 3 sets of 10–12 reps
-![](https://upload.wikimedia.org/wikipedia/commons/f/fd/Dumbbell-lateral-raises-1.png)
+![](https://upload.wikimedia.org/wikipedia/commons/f/fd/Dumbbell-lateral-raises-1.png){width="600px" height="400px"}
 - **Front Raises** – 3 sets of 10–12 reps
 - **Plank** – Hold for 60–90 seconds, 3 times
 - **Hanging Leg Raises** – 3 sets of 15 reps
