@@ -35,7 +35,7 @@ tags: ['Health']
 ![Romanian Deadlift](https://www.youtube.com/watch?v=7j-2w4-P14I&t=6s)
 
 ### Day 3: Rest or Active Recovery
-- **Yoga** : []()
+- **Yoga** : [https://nitinkc.github.io/health/Yog/](https://nitinkc.github.io/health/Yog/)
 - **Walking or Light Cardio** (20–30 minutes)
 
 ### Day 4: Shoulders & Abs
@@ -49,9 +49,13 @@ tags: ['Health']
 
 ### Day 5: Legs
 - **Squats (Bodyweight or Weighted)** – 3 sets of 10–12 reps
+![](https://www.youtube.com/watch?v=C_VtOYc6j5c)
 - **Lunges** – 3 sets of 12 reps per leg
+![](https://www.youtube.com/watch?v=Z2n58m2i4jg)
 - **Deadlifts (Romanian or Conventional)** – 3 sets of 6–8 reps
+![Romanian Deadlift](https://www.youtube.com/watch?v=7j-2w4-P14I&t=6s)
 - **Calf Raises** – 3 sets of 15–20 reps
+![](https://www.youtube.com/watch?v=CtyIVeJH6lI&t=65s)
 
 ### Optional Day 6: Full Body or Cardio
 - **Combine Compound Exercises** like deadlifts, squats, and push-ups
