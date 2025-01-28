@@ -6,7 +6,6 @@ tags: [Finances]
 ---
 
 # Employee Deferral and Safe Harbor Match
-
 In a **401(k) plan**, an **Employee Deferral** refers to the portion of your salary that you choose to contribute to your 
 retirement account. These contributions are deducted from your paycheck **before taxes**, lowering your taxable income for the year.
 
