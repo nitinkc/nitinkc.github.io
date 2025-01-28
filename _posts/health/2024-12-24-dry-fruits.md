@@ -9,7 +9,8 @@ tags: ['Health']
 Costco unsalted hearth healthy mixed nuts bag
 
 - Almonds: 6–8 pieces
-- Walnuts: 2–3 halves
+- Walnuts: 10 halves through out the day
+- brasil nuts - 2-3
 
 Add
 - Raisins: 1 tablespoon (10–12 pieces)
