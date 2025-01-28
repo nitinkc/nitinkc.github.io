@@ -4,7 +4,7 @@ date:   2024-09-06 20:14:00
 categories: [Finances] 
 tags: [Finances]
 ---
-
+{% include toc title="Index" %}
 
 | Year | S&P 500 (Approx. Year-End) | % Change | U.S. GDP (Nominal, Approx.) | % Change | U.S. National Debt (Approx.) | % Change |
 |:-----|:---------------------------|:---------|:----------------------------|:---------|:-----------------------------|:---------|
