@@ -31,18 +31,21 @@ transforming them into different data structures or aggregating their values.
 | `maxBy`            | `Optional<T>`           | Finds the maximum element according to a comparator.                                | Returns an `Optional` containing the maximum element, if any.                  |
 | `minBy`            | `Optional<T>`           | Finds the minimum element according to a comparator.                                | Returns an `Optional` containing the minimum element, if any.                  |
 
+## Streams vs Collectors
+
+| Concept        | Context        | Description                                       |
+|:---------------|:---------------|:--------------------------------------------------|
+| `map`          | Streams        | Transforms from one style to another.             |
+| `mapping`      | Reduce         | Transforming in the middle of a reduce.           |
+| `filter`       | Streams        | Filtering elements.                               |
+| `filtering`    | Reduce         | Filtering elements during a reduce operation.     |
+
+## Nuances
 - Teeing -> Java 12 -  to combine 2 collectors together
 - teeing(Collector, Collector, operation)
 - groupingBy and mapping (apply a Function, and then Collector as a second argument)
 - collectingAndThen      (Collection, then use a Function as a second argument)
 
-## Streams vs Collectors
-| Concept       | Context       | Description                                      |
-|---------------|---------------|--------------------------------------------------|
-| `map`         | Streams       | Transforms from one style to another.            |
-| `mapping`     | Reduce        | Transforming in the middle of a reduce.          |
-| `filter`      | Streams       | Filtering elements.                              |
-| `filtering`   | Reduce        | Filtering elements during a reduce operation.    |
 
 # `groupingBy`
 Categorize elements of a stream based on **a classification function**. 
