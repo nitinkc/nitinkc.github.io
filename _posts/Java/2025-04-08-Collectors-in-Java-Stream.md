@@ -12,7 +12,6 @@ tags: ['Java']
 Collectors (from `java.util.stream.Collectors` package) are used to perform **mutable reduction operations** on the elements of a stream,
 transforming them into different data structures or aggregating their values.
 
-
 # Summary of Java Stream Collectors
 
 5. **Recursive Structure**
@@ -45,7 +44,7 @@ transforming them into different data structures or aggregating their values.
     ```java
     .collect(collectingAndThen(toList(), list -> list.size()));
     ```
-
+    
 3. **teeing**
   - Introduced in Java 12 to combine two collectors together.
   - Syntax: `teeing(Collector, Collector, operation)`
@@ -66,6 +65,19 @@ transforming them into different data structures or aggregating their values.
     .collect(groupingBy(element -> element, counting())); // Equivalent to Function.identity()
     .collect(groupingBy(identity(), counting()));
     ```
+9. **Streams vs Collectors**
+   1. **map (Streams)**
+   - Takes a `Stream<T>` and returns `Stream<R>`.
+   - Transforms elements from one type to another.
+
+   2. **mapping (Reduce)**
+   - Used for transforming elements in the middle of a reduce operation.
+
+   3. **filter (Streams)**
+   - Filters elements in a stream based on a predicate.
+
+   4. **filtering (Reduce)**
+   - Filters elements during a reduce operation.
 
 # `collect`
 - Collect the data into a list using 
