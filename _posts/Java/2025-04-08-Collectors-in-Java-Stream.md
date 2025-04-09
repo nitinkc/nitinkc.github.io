@@ -7,13 +7,12 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
-# Recursive Structure
-Collector(Function, Collector(Function, Collector))
+[Collectors - Deep Dive](https://nitinkc.github.io/java/collectors-deep-dive/)
 
-[Collectors - Deep Dive]()
 Collectors (from `java.util.stream.Collectors` package) are used to perform **mutable reduction operations** on the elements of a stream,
 transforming them into different data structures or aggregating their values.
 
+# Summary
 | Function           | Return Type             | Summary                                                                             | Important Details                                                              |
 |:-------------------|:------------------------|:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|
 | `groupingBy`       | `Map<K, List<T>>`       | Groups elements by a classifier function.                                           | Can be combined with downstream collectors for more complex groupings.         |
@@ -45,6 +44,13 @@ transforming them into different data structures or aggregating their values.
 | `filtering`    | Reduce         | Filtering elements during a reduce operation.                                  |
 
 ## Nuances
+- Recursive Structure - first argument is a function, second is another collection
+  - Collector(Function, Collector(Function, Collector))
+  - ```java
+    .collect(groupingBy(str -> str.length(), mapping(str->str.toUpperCase(),toList())));
+    ```
+    - key is the length of the string, value is obtained after applying the mapping collector
+    - mapping(str->str.toUpperCase(),toList()) - Returns another collector with mapping applied
 - groupingBy can **create multiple groups** based on the classification function,
   - while partitioningBy always creates exactly **two groups** based on the predicate.
 - groupingBy uses the **_result of the classification function as keys_**, which can be any type, 
@@ -65,6 +71,7 @@ transforming them into different data structures or aggregating their values.
   //Single-Argument groupingBy: Uses the classifier function and defaults to collecting elements into a List.
     .collect(Collectors.groupingBy(String::length));
   ```
+
 # `collect`
 - Collect the data into a list using 
   - `.collect(Collectors.toList())` or just `.toList()`
@@ -154,7 +161,7 @@ Set<Integer> numberSet = numbers.stream()
 # `toMap`
 Converts a stream into a Map, where you can specify the key and value mapping functions.
 
-_Create a Map where each string is mapped to its length_
+**_Create a Map where each string is mapped to its length_**
 ```java
 List<String> strings = Arrays.asList("apple", "banana", "cherry");
 Map<String, Integer> stringLengthMap = strings.stream()
