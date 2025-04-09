@@ -47,6 +47,19 @@ transforming them into different data structures or aggregating their values.
 - collectingAndThen      (Collection, then use a Function as a second argument)
 
 
+# `collect`
+- Collect the data into a list using 
+  - `.collect(Collectors.toList())` or just `.toList()`
+- Pass a **key mapper function** and **value mapper function** to create a map
+  - `.collect(Collectors.toMap(Function.identity(), String::length))`
+- If data need to be passed to a client, it's a good idea to use unmodifiable collection 
+  - `.collect(Collectors.toUnmodifiableList())`
+- Returns an immutable list containing only one specified object(singleton) 
+  - `Collections.singletonList(s)`
+    ```java
+        parentDto.setStringList(Collections.singletonList(businessDto.getStringList()));
+    ```
+
 # `groupingBy`
 Categorize elements of a stream based on **a classification function**. 
 It **returns a Map** where 
@@ -80,11 +93,33 @@ Map<Integer, Long> countedByLength = strings.stream()
     .collect(Collectors.groupingBy(String::length, Collectors.counting()));
 ```
 
-# `partitioningBy`
-The `partitioningBy` collector is used to **divide** elements of a stream **into two groups** based on a **predicate**. 
-It returns **a Map** 
-- with Boolean keys (true and false)
-- the values are lists of items that match or do not match the predicate.
+# Partitioning
+Split the elements of a stream into **2** groups based on a **predicate**.
+
+`Collectors.partitioningBy` accepts a predicate and returns **a map** 
+- with one key for `true` with all the values with true results and 
+- another with false results.
+- The values are lists of items that match or do not match the predicate
+
+
+```java
+List<Integer> list = Arrays.asList(1,2,1,3,3,4,5,6,7,8,6,5,4,3,2,1);
+Map<Boolean, List<Integer>> collect = list.stream()
+        .collect(partitioningBy(number -> number % 2 == 0));
+        System.out.println(collect);//{false=[1, 1, 3, 3, 5, 7, 5, 3, 1], true=[2, 4, 6, 8, 6, 4, 2]}
+```
+
+Predicate can be extracted out and can be passed as an argument
+
+```java
+Map<Boolean, List<Integer>> listMap = employees.stream()
+                .filter(Objects::nonNull).filter(emp -> null != emp.getAge())
+                .filter(emp -> null != emp.getAge())
+                //.collect(partitioningBy(x -> evenAgedEmpPredicate.test(x)));
+                .collect(partitioningBy(evenAgedEmpPredicate));
+```
+
+### `partitioningBy`
 
 ## Differences
 **Number of Groups**: groupingBy can **create multiple groups** based on the classification function, 

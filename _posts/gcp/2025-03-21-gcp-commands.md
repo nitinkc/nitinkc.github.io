@@ -6,8 +6,10 @@ tags: [ GCP ]
 ---
 
 gcloud compute instances list --sort-by=ZONE
-
-
+# VM Instance
+```shell
+gcloud compute instances create vpc-demo-instance1 --machine-type=e2-medium --zone "ZONE" --subnet vpc-demo-subnet1
+```
 ```shell
 export LOCATION=US
 
@@ -196,13 +198,17 @@ cp setup.html firstlevel/secondlevel
 gsutil rsync -r ./firstlevel gs://$BUCKET_NAME_1/firstlevel
 ```
 
-# VPC
+# VPC & Cloud Interconnect
+
 ```shell
+# create a VPC network called vpc-demo
 gcloud compute networks create vpc-demo --subnet-mode custom
 
+# create subnet vpc-demo-subnet1 in the region REGION 1
 gcloud compute networks subnets create vpc-demo-subnet1 \
 --network vpc-demo --range 10.1.1.0/24 --region "us-east1"
 
+# Create subnet vpc-demo-subnet2 in the region REGION 2:
 gcloud compute networks subnets create vpc-demo-subnet2 \
 --network vpc-demo --range 10.2.1.0/24 --region us-central1
 
@@ -211,10 +217,174 @@ gcloud compute firewall-rules create vpc-demo-allow-custom \
   --network vpc-demo \
   --allow tcp:0-65535,udp:0-65535,icmp \
   --source-ranges 10.0.0.0/8
-  
+
+# Create a firewall rule to allow SSH, ICMP traffic from anywhere
 gcloud compute firewall-rules create vpc-demo-allow-ssh-icmp \
     --network vpc-demo \
     --allow tcp:22,icmp
+```
+### Create HA VPN
+
+In Cloud Shell, create an HA VPN in the vpc-demo & on-prem network
+```shell
+gcloud compute vpn-gateways create vpc-demo-vpn-gw1 --network vpc-demo --region "REGION"
+gcloud compute vpn-gateways create on-prem-vpn-gw1 --network on-prem --region "REGION"
+# Output
+Creating VPN Gateway...done.   
+NAME: vpc-demo-vpn-gw1
+INTERFACE0: 35.242.117.95
+INTERFACE1: 35.220.73.93
+NETWORK: vpc-demo
+REGION: "REGION"
+```
+View details of the vpc-demo-vpn-gw1 gateway to verify its settings:
+```shell
+gcloud compute vpn-gateways describe vpc-demo-vpn-gw1 --region "REGION"
+gcloud compute vpn-gateways describe on-prem-vpn-gw1 --region "Region"
+```
+
+### Create Cloud Routers
+Create a cloud router in the vpc-demo & on-prem network
+```shell
+gcloud compute routers create vpc-demo-router1 \
+    --region "REGION" \
+    --network vpc-demo \
+    --asn 65001
+    
+gcloud compute routers create on-prem-router1 \
+    --region "REGION" \
+    --network on-prem \
+    --asn 65002
+```
+
+### Create VPN Tunnels
+```shell
+# Create the first VPN tunnel in the vpc-demo network:
+
+gcloud compute vpn-tunnels create vpc-demo-tunnel0 \
+    --peer-gcp-gateway on-prem-vpn-gw1 \
+    --region "REGION" \
+    --ike-version 2 \
+    --shared-secret [SHARED_SECRET] \
+    --router vpc-demo-router1 \
+    --vpn-gateway vpc-demo-vpn-gw1 \
+    --interface 0
+
+# Create the second VPN tunnel in the vpc-demo network:
+gcloud compute vpn-tunnels create vpc-demo-tunnel1 \
+    --peer-gcp-gateway on-prem-vpn-gw1 \
+    --region "REGION" \
+    --ike-version 2 \
+    --shared-secret [SHARED_SECRET] \
+    --router vpc-demo-router1 \
+    --vpn-gateway vpc-demo-vpn-gw1 \
+    --interface 1
+    
+# Create the first VPN tunnel in the on-prem network:
+gcloud compute vpn-tunnels create on-prem-tunnel0 \
+    --peer-gcp-gateway vpc-demo-vpn-gw1 \
+    --region "REGION" \
+    --ike-version 2 \
+    --shared-secret [SHARED_SECRET] \
+    --router on-prem-router1 \
+    --vpn-gateway on-prem-vpn-gw1 \
+    --interface 0
+    
+# Create the second VPN tunnel in the on-prem network:
+gcloud compute vpn-tunnels create on-prem-tunnel1 \
+    --peer-gcp-gateway vpc-demo-vpn-gw1 \
+    --region "REGION" \
+    --ike-version 2 \
+    --shared-secret [SHARED_SECRET] \
+    --router on-prem-router1 \
+    --vpn-gateway on-prem-vpn-gw1 \
+    --interface 1
+```
+
+### Create Border Gateway Protocol (BGP) peering for each tunnel
+
+Create the router interface for tunnel0 in network vpc-demo:
+```shell
+gcloud compute routers add-interface vpc-demo-router1 \
+--interface-name if-tunnel0-to-on-prem \
+--ip-address 169.254.0.1 \
+--mask-length 30 \
+--vpn-tunnel vpc-demo-tunnel0 \
+--region "REGION"
+```
+Create the BGP peer for tunnel0 in network vpc-demo:
+```shell
+gcloud compute routers add-bgp-peer vpc-demo-router1 \
+--peer-name bgp-on-prem-tunnel0 \
+--interface if-tunnel0-to-on-prem \
+--peer-ip-address 169.254.0.2 \
+--peer-asn 65002 \
+--region "REGION"
+````
+Create a router interface for tunnel1 in network vpc-demo:
+```shell
+gcloud compute routers add-interface vpc-demo-router1 \
+--interface-name if-tunnel1-to-on-prem \
+--ip-address 169.254.1.1 \
+--mask-length 30 \
+--vpn-tunnel vpc-demo-tunnel1 \
+--region "REGION"
+```
+
+Create the BGP peer for tunnel1 in network vpc-demo:
+```shell
+gcloud compute routers add-bgp-peer vpc-demo-router1 \
+--peer-name bgp-on-prem-tunnel1 \
+--interface if-tunnel1-to-on-prem \
+--peer-ip-address 169.254.1.2 \
+--peer-asn 65002 \
+--region "REGION"
+```
+
+Create a router interface for tunnel0 in network on-prem:
+```shell
+gcloud compute routers add-interface on-prem-router1 \
+--interface-name if-tunnel0-to-vpc-demo \
+--ip-address 169.254.0.2 \
+--mask-length 30 \
+--vpn-tunnel on-prem-tunnel0 \
+--region "REGION"
+```
+
+Create the BGP peer for tunnel0 in network on-prem:
+```shell
+gcloud compute routers add-bgp-peer on-prem-router1 \
+--peer-name bgp-vpc-demo-tunnel0 \
+--interface if-tunnel0-to-vpc-demo \
+--peer-ip-address 169.254.0.1 \
+--peer-asn 65001 \
+--region "REGION"
+```
+Create a router interface for tunnel1 in network on-prem:
+```shell
+gcloud compute routers add-interface  on-prem-router1 \
+--interface-name if-tunnel1-to-vpc-demo \
+--ip-address 169.254.1.2 \
+--mask-length 30 \
+--vpn-tunnel on-prem-tunnel1 \
+--region "REGION"
+```
+
+Create the BGP peer for tunnel1 in network on-prem:
+```shell
+gcloud compute routers add-bgp-peer  on-prem-router1 \
+--peer-name bgp-vpc-demo-tunnel1 \
+--interface if-tunnel1-to-vpc-demo \
+--peer-ip-address 169.254.1.1 \
+--peer-asn 65001 \
+--region "REGION"
+```
+View details of Cloud Router vpc-demo-router1 to verify its settings:
+```shell
+gcloud compute routers describe vpc-demo-router1 \
+    --region "REGION"
+gcloud compute routers describe on-prem-router1 \
+    --region "REGION"
 ```
 
 # Connect K8S
