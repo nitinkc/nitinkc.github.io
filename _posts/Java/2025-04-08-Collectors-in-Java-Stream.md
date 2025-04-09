@@ -12,42 +12,60 @@ tags: ['Java']
 Collectors (from `java.util.stream.Collectors` package) are used to perform **mutable reduction operations** on the elements of a stream,
 transforming them into different data structures or aggregating their values.
 
-# Composing
-* groupingBy, mapping takes a function as first argument and a Collector second argument
-* groupingBy and mapping (apply a Function, and then Collector as a second argument)
-* collectingAndThen (Collection, then use a Function as a second argument)
-* teeing(Collector, Collector, operation)
-* filtering takes a predicate as first argument and a Collector second argument
-  * It means, first apply the function or Predicate and then Collect
-* collectingAndThen -> Collector as first argument and then Function as second argument
-* Teeing -> Java 12 - to combine 2 collectors together
-- Recursive Structure - first argument is a function, second is another collection
-  - Collector(Function, Collector(Function, Collector))
-  - ```java
-    .collect(groupingBy(str -> str.length(), mapping(str->str.toUpperCase(),toList())));
-    ```
-    - key is the length of the string, value is obtained after applying the mapping collector
-    - mapping(str->str.toUpperCase(),toList()) - Returns another collector with mapping applied
-- groupingBy can **create multiple groups** based on the classification function,
-  - while partitioningBy always creates exactly **two groups** based on the predicate.
-- groupingBy uses the **_result of the classification function as keys_**, which can be any type, 
-  - whereas partitioningBy uses **Boolean keys** (true and false).
-- Teeing -> introduced in Java 12 -  to combine 2 collectors together
-  - teeing(Collector, Collector, operation)
-- `groupingBy` and `mapping` (apply a Function, and then **Collector** as a **second** argument)
-- `collectingAndThen`(Collection as first parameter, then use a **Function as a second argument**)
-- `Function.identity()` is used when the element is the key itself
-  - ```java
-        .collect(groupingBy(element -> element, counting()));// Function.identity() Equivalent to an i in a for loop
-        .collect(groupingBy(identity(), counting()));//collect takes a COLLECTOR as parameter(with single argument overloaded method). any method that returns a collector can be used
-  ```
-- single vs 2 argument `groupingBy` 
+
+# Summary of Java Stream Collectors
+
+5. **Recursive Structure**
+- The first argument is a function, and the second is another collection.
+- Example:
   ```java
-  //Two-Argument groupingBy: Uses the classifier function and a specified downstream collector to determine how the grouped elements are collected.
-    .collect(Collectors.groupingBy(str -> str.length(), Collectors.toList()));
-  //Single-Argument groupingBy: Uses the classifier function and defaults to collecting elements into a List.
-    .collect(Collectors.groupingBy(String::length));
+  Collector(Function, Collector(Function, Collector))
   ```
+
+8. **Single vs Two-Argument groupingBy**
+- **Two-Argument groupingBy**: Uses the classifier function and a specified downstream collector.
+  ```java
+  .collect(Collectors.groupingBy(str -> str.length(), Collectors.toList()));
+  ```
+- **Single-Argument groupingBy**: Uses the classifier function and defaults to collecting elements into a list.
+  ```java
+  .collect(Collectors.groupingBy(String::length));//Method Reference
+  ```
+
+1. **groupingBy and mapping**
+  - `groupingBy` and `mapping` take a function as the first argument and a collector as the second argument.
+    ```java
+    .collect(groupingBy(str -> str.length(), mapping(str -> str.toUpperCase(), toList())));
+    ```
+    - Key: Length of the string.
+    - Value: Result after applying the mapping collector.
+
+2. **collectingAndThen**
+  - Takes a collector as the first argument and a function as the second argument.
+    ```java
+    .collect(collectingAndThen(toList(), list -> list.size()));
+    ```
+
+3. **teeing**
+  - Introduced in Java 12 to combine two collectors together.
+  - Syntax: `teeing(Collector, Collector, operation)`
+
+4. **filtering**
+  - Takes a predicate as the first argument and a collector as the second argument.
+  - First applies the predicate, then collects the result.
+
+6. **groupingBy vs partitioningBy**
+  - `groupingBy` can create multiple groups based on the classification function.
+  - `partitioningBy` always creates exactly two groups based on the predicate.
+  - `groupingBy` uses the result of the classification function as keys, which can be any type.
+  - `partitioningBy` uses Boolean keys (true and false).
+
+7. **Function.identity()**
+  - Used when the element itself is the key.
+    ```java
+    .collect(groupingBy(element -> element, counting())); // Equivalent to Function.identity()
+    .collect(groupingBy(identity(), counting()));
+    ```
 
 # `collect`
 - Collect the data into a list using 

@@ -12,6 +12,7 @@ tags: ['Java']
 ![](https://www.youtube.com/watch?v=pGroX3gmeP8)
 
 # Summary
+
 | Function           | Return Type             | Summary                                                                             | Important Details                                                              |
 |:-------------------|:------------------------|:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|
 | `groupingBy`       | `Map<K, List<T>>`       | Groups elements by a classifier function.                                           | Can be combined with downstream collectors for more complex groupings.         |
