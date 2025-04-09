@@ -33,19 +33,20 @@ transforming them into different data structures or aggregating their values.
 
 ## Streams vs Collectors
 
-| Concept        | Context        | Description                                       |
-|:---------------|:---------------|:--------------------------------------------------|
-| `map`          | Streams        | Transforms from one style to another.             |
-| `mapping`      | Reduce         | Transforming in the middle of a reduce.           |
-| `filter`       | Streams        | Filtering elements.                               |
-| `filtering`    | Reduce         | Filtering elements during a reduce operation.     |
+| Concept        | Context        | Description                                                                    |
+|:---------------|:---------------|:-------------------------------------------------------------------------------|
+| `map`          | Streams        | Takes a `Stream<T>` returns `Stream<R>`. Transforms from one style to another. |
+| `mapping`      | Reduce         | Transforming in the middle of a reduce.                                        |
+| `filter`       | Streams        | Filtering elements.                                                            |
+| `filtering`    | Reduce         | Filtering elements during a reduce operation.                                  |
 
 ## Nuances
+- groupingBy can **create multiple groups** based on the classification function, while partitioningBy always creates exactly **two groups** based on the predicate.
+- groupingBy uses the **_result of the classification function as keys_**, which can be any type, whereas partitioningBy uses **Boolean keys** (true and false).
 - Teeing -> Java 12 -  to combine 2 collectors together
 - teeing(Collector, Collector, operation)
 - groupingBy and mapping (apply a Function, and then Collector as a second argument)
-- collectingAndThen      (Collection, then use a Function as a second argument)
-
+- collectingAndThen(Collection, then use a Function as a second argument)
 
 # `collect`
 - Collect the data into a list using 
@@ -60,79 +61,68 @@ transforming them into different data structures or aggregating their values.
         parentDto.setStringList(Collections.singletonList(businessDto.getStringList()));
     ```
 
-# `groupingBy`
+# Grouping `groupingBy`
 Categorize elements of a stream based on **a classification function**. 
 It **returns a Map** where 
-- the keys are the result of applying the classification function, 
-- and the values are **lists of items** that match the classification
+- the keys are the result of applying the classification function (takes a function as first parameter), 
+- and the values are **lists of items** that match the classification. It's another Collector that can have the values.
+  - **The collector can be another operation that returns a collector like filtering, mapping, filtering etc.**
 
-_Find frequency of all the numbers_
-```java
-List<Integer> list = Arrays.asList(1, 2, 1, 3, 3, 4, 5, 6, 7, 8, 6, 5, 4, 3, 2, 1);
+**Single-Argument** groupingBy: Uses the classifier function and defaults to collecting elements into a List.
 
-//Find frequency of all the numbers
-Map<Integer, Long> map = list.stream()
-        //.collect(groupingBy(element -> element, counting()));// Function.identity() Equivalent to an i in a for loop
-        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));//collect takes a COLLECTOR as parameter. any method that returns a collector can be used
+**Two-Argument** groupingBy: Uses the classifier function and a specified downstream collector to determine how 
+the grouped elements are collected.
 
-System.out.println(map);//{1=3, 2=2, 3=3, 4=2, 5=2, 6=2, 7=1, 8=1}
-```
-
-_Categorize a list of strings based on their length._
+**_Categorize a list of strings based on their length._**
 ```java
 List<String> strings = Arrays.asList("apple", "banana", "cherry", "date");
 // The Map will have the lengths as keys and lists of strings with those lengths as values
 Map<Integer, List<String>> categorizedByLength = strings.stream()
-    .collect(Collectors.groupingBy(String::length));
+        //.collect(Collectors.groupingBy(str -> str.length(), Collectors.toList()));//Two-Argument groupingBy: Uses the classifier function and a specified downstream collector to determine how the grouped elements are collected.
+        .collect(Collectors.groupingBy(String::length));//Single-Argument groupingBy: Uses the classifier function and defaults to collecting elements into a List.
+
+System.out.println(categorizedByLength);//{4=[date], 5=[apple], 6=[banana, cherry]}
 ```
 
-_Categorize a list of strings based on their length and count the number of strings in each category._
+**_Categorize a list of strings based on their length and count the number of strings in each category._**
 ```java
 List<String> strings = Arrays.asList("apple", "banana", "cherry", "date");
 Map<Integer, Long> countedByLength = strings.stream()
-    .collect(Collectors.groupingBy(String::length, Collectors.counting()));
+      .collect(Collectors.groupingBy(String::length, Collectors.counting()));
+//    .collect(Collectors.groupingBy(String::length, 
+//            Collectors.collectingAndThen(Collectors.mapping(s -> s, Collectors.toList()),
+//                    list -> (long) list.size())
+//    ));
 ```
 
-# Partitioning
-Split the elements of a stream into **2** groups based on a **predicate**.
+**_Count Frequency of each integer_**
+```java
+List<Integer> list = Arrays.asList(1,2,1,3,3,4,5,6,7,8,6,5,4,3,2,1);
+
+//Find frequency of all the numbers
+Map<Integer,Long> map = list.stream()
+     //.collect(groupingBy(element -> element, counting()));// Function.identity() Equivalent to an i in a for loop
+       .collect(Collectors.groupingBy(Function.identity(), counting()));//collect takes a COLLECTOR as parameter. any method that returns a collector can be used
+
+System.out.println(map);//{1=3, 2=2, 3=3, 4=2, 5=2, 6=2, 7=1, 8=1}
+```
+
+# Partitioning - `partitioningBy`
+Split the elements of a stream into **two** groups based on a **predicate**.
 
 `Collectors.partitioningBy` accepts a predicate and returns **a map** 
 - with one key for `true` with all the values with true results and 
 - another with false results.
 - The values are lists of items that match or do not match the predicate
 
-
+_Partition a list of integers into even and odd numbers._
 ```java
 List<Integer> list = Arrays.asList(1,2,1,3,3,4,5,6,7,8,6,5,4,3,2,1);
 Map<Boolean, List<Integer>> collect = list.stream()
         .collect(partitioningBy(number -> number % 2 == 0));
-        System.out.println(collect);//{false=[1, 1, 3, 3, 5, 7, 5, 3, 1], true=[2, 4, 6, 8, 6, 4, 2]}
-```
+        //.collect(partitioningBy(evenAgedEmpPredicate));//Predicate can be extracted out and can be passed as an argument
 
-Predicate can be extracted out and can be passed as an argument
-
-```java
-Map<Boolean, List<Integer>> listMap = employees.stream()
-                .filter(Objects::nonNull).filter(emp -> null != emp.getAge())
-                .filter(emp -> null != emp.getAge())
-                //.collect(partitioningBy(x -> evenAgedEmpPredicate.test(x)));
-                .collect(partitioningBy(evenAgedEmpPredicate));
-```
-
-### `partitioningBy`
-
-## Differences
-**Number of Groups**: groupingBy can **create multiple groups** based on the classification function, 
-while partitioningBy always creates exactly **two groups** based on the predicate.
-
-**Type of Keys**: groupingBy uses the result of the classification function as keys, 
-which can be any type, whereas partitioningBy uses **Boolean keys** (true and false).
-
-_Partition a list of integers into even and odd numbers._
-```java
-List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
-Map<Boolean, List<Integer>> partitioned = numbers.stream()
-    .collect(Collectors.partitioningBy(n -> n % 2 == 0));
+System.out.println(collect);//{false=[1, 1, 3, 3, 5, 7, 5, 3, 1], true=[2, 4, 6, 8, 6, 4, 2]}
 ```
 
 # `toSet`
