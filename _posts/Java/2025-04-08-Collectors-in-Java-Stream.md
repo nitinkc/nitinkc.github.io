@@ -14,14 +14,13 @@ transforming them into different data structures or aggregating their values.
 
 # Summary of Java Stream Collectors
 
-5. **Recursive Structure**
+1. **Recursive Structure**
 - The first argument is a function, and the second is another collection.
-- Example:
   ```java
   Collector(Function, Collector(Function, Collector))
   ```
 
-8. **Single vs Two-Argument groupingBy**
+2. **Single vs Two-Argument groupingBy**
 - **Two-Argument groupingBy**: Uses the classifier function and a specified downstream collector.
   ```java
   .collect(Collectors.groupingBy(str -> str.length(), Collectors.toList()));
@@ -31,7 +30,7 @@ transforming them into different data structures or aggregating their values.
   .collect(Collectors.groupingBy(String::length));//Method Reference
   ```
 
-1. **groupingBy and mapping**
+3. **groupingBy and mapping**
   - `groupingBy` and `mapping` take a function as the first argument and a collector as the second argument.
     ```java
     .collect(groupingBy(str -> str.length(), mapping(str -> str.toUpperCase(), toList())));
@@ -39,27 +38,27 @@ transforming them into different data structures or aggregating their values.
     - Key: Length of the string.
     - Value: Result after applying the mapping collector.
 
-2. **collectingAndThen**
+4. **collectingAndThen**
   - Takes a collector as the first argument and a function as the second argument.
     ```java
     .collect(collectingAndThen(toList(), list -> list.size()));
     ```
     
-3. **teeing**
+5. **teeing**
   - Introduced in Java 12 to combine two collectors together.
   - Syntax: `teeing(Collector, Collector, operation)`
 
-4. **filtering**
+6. **filtering**
   - Takes a predicate as the first argument and a collector as the second argument.
   - First applies the predicate, then collects the result.
 
-6. **groupingBy vs partitioningBy**
+7. **groupingBy vs partitioningBy**
   - `groupingBy` can create multiple groups based on the classification function.
   - `partitioningBy` always creates exactly two groups based on the predicate.
   - `groupingBy` uses the result of the classification function as keys, which can be any type.
   - `partitioningBy` uses Boolean keys (true and false).
 
-7. **Function.identity()**
+8. **Function.identity()**
   - Used when the element itself is the key.
     ```java
     .collect(groupingBy(element -> element, counting())); // Equivalent to Function.identity()
