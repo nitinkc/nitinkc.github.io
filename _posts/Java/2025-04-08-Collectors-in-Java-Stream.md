@@ -45,13 +45,26 @@ transforming them into different data structures or aggregating their values.
 | `filtering`    | Reduce         | Filtering elements during a reduce operation.                                  |
 
 ## Nuances
-- groupingBy can **create multiple groups** based on the classification function, while partitioningBy always creates exactly **two groups** based on the predicate.
-- groupingBy uses the **_result of the classification function as keys_**, which can be any type, whereas partitioningBy uses **Boolean keys** (true and false).
-- Teeing -> Java 12 -  to combine 2 collectors together
-- teeing(Collector, Collector, operation)
-- groupingBy and mapping (apply a Function, and then Collector as a second argument)
-- collectingAndThen(Collection, then use a Function as a second argument)
-
+- groupingBy can **create multiple groups** based on the classification function,
+  - while partitioningBy always creates exactly **two groups** based on the predicate.
+- groupingBy uses the **_result of the classification function as keys_**, which can be any type, 
+  - whereas partitioningBy uses **Boolean keys** (true and false).
+- Teeing -> introduced in Java 12 -  to combine 2 collectors together
+  - teeing(Collector, Collector, operation)
+- `groupingBy` and `mapping` (apply a Function, and then **Collector** as a **second** argument)
+- `collectingAndThen`(Collection as first parameter, then use a **Function as a second argument**)
+- `Function.identity()` is used when the element is the key itself
+  - ```java
+        .collect(groupingBy(element -> element, counting()));// Function.identity() Equivalent to an i in a for loop
+        .collect(groupingBy(identity(), counting()));//collect takes a COLLECTOR as parameter(with single argument overloaded method). any method that returns a collector can be used
+  ```
+- single vs 2 argument `groupingBy` 
+  ```java
+  //Two-Argument groupingBy: Uses the classifier function and a specified downstream collector to determine how the grouped elements are collected.
+    .collect(Collectors.groupingBy(str -> str.length(), Collectors.toList()));
+  //Single-Argument groupingBy: Uses the classifier function and defaults to collecting elements into a List.
+    .collect(Collectors.groupingBy(String::length));
+  ```
 # `collect`
 - Collect the data into a list using 
   - `.collect(Collectors.toList())` or just `.toList()`
