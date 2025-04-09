@@ -7,6 +7,9 @@ tags: ['Java']
 
 {% include toc title="Index" %}
 
+# Recursive Structure
+Collector(Function, Collector(Function, Collector))
+
 Collectors (from `java.util.stream.Collectors` package) are used to perform **mutable reduction operations** on the elements of a stream,
 transforming them into different data structures or aggregating their values.
 
