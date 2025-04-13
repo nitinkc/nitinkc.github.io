@@ -13,7 +13,10 @@ Levis Jeans
 ### Formal Pants
 32W 29L
 
-
+- Van Heusen Flex 3 Slim Fit Dress Pant 32W X 29L|Blu Barge - good fit but expensive
+- Haggar® Mens Premium Comfort Slim Fit Flat Front Dress Pant  32W X 29L|Grey -  NOT Good fit
+- Kenneth Cole Reaction Men's Slim-Fit Performance Stretch Mini-Plaid Dress Pants 32x29 Grey - Macy's good fit
+  
 # Jackets
 Small Jackets, Small Shirts
 
