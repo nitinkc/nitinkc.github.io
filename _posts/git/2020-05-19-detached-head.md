@@ -5,9 +5,9 @@ categories: ['Git']
 tags: ['Git']
 ---
 
-While using Git Submodules, after cloning a submodule, the projects are in
-detached
-mode.
+{% include toc title="Index" %}
+
+While using Git Submodules, after cloning a submodule, the projects are in detached mode.
 
 ### [Use this link for the resolution](https://github.com/nitinkc/git-submodule-demo/blob/master/README.md)
 
@@ -22,43 +22,38 @@ git merge temp
 git branch -d temp
 ```
 
-# Add a new project
-
+# Add a new project in an existing submodule
 ```shell
 git submodule add <GitHub Repo Name>
 ```
 
-# Clone submodules
-
-Fetch up to 6 submodules at a time with `-j6`
-
+# Initialize new submodule
 ```shell
-git clone --recurse-submodules -j6 https://github.com/nitinkc/spring-microservices.git
-```
-
-In case `git clone` is used on a submodule parent project
-
-```shell
-git clone https://github.com/nitinkc/spring-microservices.git
-cd spring-microservices
-
 git submodule init
 git submodule update 
 ```
 
-## Clone all projects
+# Clone all projects in submodule
+Fetch up to 6 submodules at a time (in parallel) with `-j6`
 
-```
+```shell
+git clone --recurse-submodules -j6 https://github.com/nitinkc/spring-microservices.git
+
 git clone --recurse-submodules -j8 https://github.com/nitinkc/SpringBootProjects.git
 ```
 
+In case `git clone` is used on a submodule parent project
+```shell
+git clone https://github.com/nitinkc/spring-microservices.git
+cd spring-microservices
 ## Update all the submodules
-
-```
 git pull --recurse-submodules
 ```
 
-### In case the projects needs be deleted
+
+
+
+# In case the projects needs be deleted
 
 ```shell
 git submodule deinit -f -- my-project #provide the project to be removed
