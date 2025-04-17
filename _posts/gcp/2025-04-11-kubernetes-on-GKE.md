@@ -222,12 +222,10 @@ spec:
 Springboot application runs on port 5000(resources.yaml). Load balancer should allow only port 8080
 ```shell
 kubectl create deployment hello-service \
-        --image=gcr.io/my-kubernetes-project-52188/hello-world:v1 \
-&& \
+        --image=gcr.io/my-kubernetes-project-52188/hello-world:v1
+
 kubectl expose deployment hello-service \
         --type=LoadBalancer --port=8080 --target-port=5000
-
-
 ```
 
 ### Subsequent deployments

@@ -50,9 +50,6 @@ cd spring-microservices
 git pull --recurse-submodules
 ```
 
-
-
-
 # In case the projects needs be deleted
 
 ```shell
@@ -68,6 +65,5 @@ Cleaning the local `.git` repo.
 * delete the entry from `.git/config` file
 * delete the project folder from `.git/modules/<git-project-name>`
 
-> Instead of this, just commit the `.gitmodules` changes and re-clone the
-> project
+> Instead of this, just commit the `.gitmodules` changes and re-clone the project
 
