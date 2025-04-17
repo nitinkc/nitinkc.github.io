@@ -5,6 +5,7 @@ date:   2021-04-08 02:15:00
 categories: GCP
 tags: [Google Cloud Platform]
 ---
+{% include toc title="Index" %}
 
 For making full use of the free tier, The Database and it's corrosponding
 instance need to be up and running only while development and testing.

@@ -5,6 +5,8 @@ categories: [ GCP ]
 tags: [ GCP ]
 ---
 
+{% include toc title="Index" %}
+
 gcloud compute instances list --sort-by=ZONE
 # VM Instance
 ```shell

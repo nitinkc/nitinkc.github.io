@@ -5,10 +5,11 @@ date:   2022-08-15 20:04:00
 categories: "Spring Microservices"
 tags: ["Spring Microservices", Spring Boot, GCP]
 ---
+{% include toc title="Index" %}
 
 Once the data is received, convert (serialize) the results data into DTO, using
-defauklt jackson mapper
-
+default jackson mapper
+[2022-08-12-google-timeZoneApi.md](2022-08-12-google-timeZoneApi.md)
 ```java
 private void convertFromBQResponseToDto(BigQueryResponse results, List<BusinessDto> list) {
     if (!CollectionUtils.isEmpty(results.getData())){
