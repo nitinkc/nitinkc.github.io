@@ -2,10 +2,11 @@
 title:  "The Pipeline (or Pipe-Filter) architectural style"
 date:   2025-04-22 14:02:00
 categories: [System Design]
-tags: [Architectural Styles]
+tags: ["Architectural Styles", "Concurrency Architecture"]
 ---
 
 {% include toc title="Index" %}
+> Category : Concurrency Architecture
 
 The **Pipeline (or Pipe-Filter) architectural style** is a design pattern used in concurrent programming to process data streams. 
 

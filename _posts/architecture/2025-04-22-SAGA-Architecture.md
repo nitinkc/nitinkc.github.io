@@ -26,6 +26,20 @@ Two different approaches to implementing the Saga pattern in distributed systems
 
 ---
 
+# Achieving 2PC in Spring Boot:
+
+## Use JTA (Java Transaction API):
+- Spring Boot supports JTA for managing distributed transactions. Configure JTA in your application to handle 2PC.
+
+## Configure Transaction Manager:
+- Set up a transaction manager that supports 2PC, such as Atomikos or Bitronix.
+
+## Define Transactional Boundaries:
+- Annotate methods with `@Transactional` to define transactional boundaries.
+
+## Handle Distributed Transactions:
+- Ensure all participating services and databases are configured to support JTA transactions
+
 # **Saga with Choreography:**
 In the choreography approach, each service involved in the transaction listens for events and performs its local transaction.
 
