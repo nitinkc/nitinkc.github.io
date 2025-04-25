@@ -11,28 +11,56 @@ tags: [System Design]
 
 [Kafka Basics](https://nitinkc.github.io/microservices/essential-kafka/)
 
+Apache Kafka is primarily an event streaming platform
+- Kafka uses topics to manage the distribution of events
+- Event Streaming : New Consumers will have access to old events and can replay if they want
+  - provides reliable delivery
+  - used in Pattern/Anomaly detection (Consumers need access to all the past events)
+- Kafka uses **append only logs** as its primary data structure which adds new data to the **end of the file**
+
+
+Rabbit MQ Supports pub sub via Queues. Pub/Sub (Publish/Subscribe) is a messaging service that supports message streaming
+- Fire and Forget
+
 # Messaging Protocols
 - **STOMP** - Simple Text Oriented Messaging Protocol
 - **MQTT** - Message Queue Telemetry Protocol (for machine to machine - IOT)
 - **AMQP** - Asynchronous Messaging Queueing Protocol
-  - Rabbit MQ 
-  - Kafka
 
-# 4 actors of Messaging
-> **Producer** --> Sends message --> to an **exchange** --> Routed to --> **Queue** --> Delivered to --> a **Consumer**
+Rabbit MQ Supports all of the above
 
-### Exchanges
-- Actual AMQP elements where messages are sent at first
-- takes a message and routes it into one or more queues
-- Routing Algo decides where to send messages from exchange
-- Routing algo depends on exchange type and rules called "bindings"
+# 4 actors of Messaging Pattern
+> **Producer** --> Sends mvfessage --> to an **exchange** --> Routed to --> **Queue** --> Delivered to --> a **Consumer**
 
+- **Producer**: Sends messages to an exchange.
+- **Exchanges**: Receive messages from producers and route them to queues based on certain rules.
+  - Routing Algo decides where to send messages from exchange
+  - Routing algo depends on exchange type and rules called "bindings"
+- **Queues**: Store messages until they are consumed by subscribers.
+- **Consumer**: Subscribes to the queues and processes the messages.
+
+RabbitMQ supports the publish/subscribe (pub/sub) messaging pattern
+
+# Actors of Event Streaming
+- **Event**: A record of an action or occurrence within a system, often containing data about the event.
+- **Stream**: A sequence of events ordered by time.
+- **Producer**: An entity that generates and sends events to a stream.
+- **Consumer**: An entity that reads and processes events from a stream.
+- **Topic**: A category or feed name to which records are sent by producers and from which records are received by consumers.
+- **Partition**: A division within a topic that allows for parallel processing of events.
+- **Broker**: A server that stores and serves streams of events.
+- **Offset**: A unique identifier for each event within a partition, used to track the position of events.
+- **Retention**: The duration for which events are stored in a stream before being deleted.
+- **Schema**: The structure that defines the format of events.
+- **Replication**: The process of copying events across multiple brokers to ensure reliability and fault tolerance.
+- **Consumer Group**: A group of consumers that work together to process events from a stream.
+- **Checkpointing**: The process of saving the state of a consumer to ensure it can resume processing from the last known position in case of failure.
+- **Backpressure**: A mechanism to handle situations where the rate of event production exceeds the rate of event consumption.
 
 # Messages vs Events
-In terms of OOP, `Message` is the Super class with `Event` and `Command` as
-subclasses.
+> In terms of OOP, `Message` is the Super class with `Event` and `Command` as subclasses.
 
-What is typically understood by message is actually a command.
+What is typically understood by message is actually a **command**.
 
 ![eventVsMessage1.png](../../assets/images/eventVsMessage1.png)
 
@@ -47,14 +75,13 @@ What is typically understood by message is actually a command.
   that other parts of the system might be interested in.
 
 ### Characteristics
-- **Decoupling**: Events are usually published to an **event queue** or **an
-  event stream**,
-  and consumers (or subscribers) can process these events independently.
-  The producer of the event doesn’t need to know who the consumers are.
-- **Immutable**: Once an event is created and published, it doesn’t change.
-  It’s a record(log) of something that had happened.
+- **Decoupling**: Events are usually published to an **event queue** or **an event stream**,
+- and consumers (or subscribers) can process these events independently.
+- The producer of the event doesn’t need to know who the consumers are.
+- **Immutable**: Once an event is created and published, it doesn’t change. It’s a record(log) of something that had happened.
 
 ## Command/Message
+Pub/Sub Model : Message Broaker as a temporary storage
 - request for a task to be done
 - order and priority can change
 - Can be sent via API calls (point to point or async) or via "Message Brokers"
@@ -65,6 +92,10 @@ What is typically understood by message is actually a command.
   specific action or response
 
 ### Characteristics
+- Fire & Forget 
+- Buffering
+- Broadcasting
+- Infinite streams or events
 - **Direct Communication**: Messages are often used in point-to-point
   communication or request-response patterns. The sender of the message
   typically expects a specific response or action from the receiver.
