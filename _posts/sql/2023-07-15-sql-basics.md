@@ -5,8 +5,9 @@ categories: ['SQL']
 tags: ['SQL']
 ---
 
-## Default schemas
+{% include toc title="Index" %}
 
+## Default schemas
 * Postgres - public
 * SQL Server - dbo
 * MySQL -
@@ -19,37 +20,27 @@ where table_schema='public';
 ```
 
 ## Constraints
-
--- CONSTRAINTS
-
 * PRIMARY KEY -- Make sure that the column does not have null values and is
   always having unique records
 * FOREIGN KEY
 * NOT NULL -- Define a column as not null if you never want to have null values
   in it.
 * **CHECK** -- Validates with the given list of values
-
-```sql
-create table test
-(
-	gender	varchar(10) check (gender in ('M', 'F', 'Male', 'Female'))
-);
-```
-
+  ```sql
+  create table test(
+      gender	varchar(10) check (gender in ('M', 'F', 'Male', 'Female'))
+  );
+  ```
 * UNIQUE -- Avoid duplicate values. But it allows NULL values.
-
-```sql
-create table test
-(
-	id	varchar(15) unique,
-);
-```
-
+  ```sql
+  create table test(
+      id	varchar(15) unique,
+  );
+  ```
 * IDENTITY column
 
 
-- [Exercise 1](https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management){:
-  target="\_blank"}
+- [Exercise 1](https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management){:target="\_blank"}
 - [Exercise 2](https://en.wikibooks.org/wiki/SQL_Exercises){:target="\_blank"}
 
 #### How many ways to delete data?
@@ -99,19 +90,39 @@ select d.dname
 
 [https://nitinkc.github.io/sql/sql-joins/](https://nitinkc.github.io/sql/sql-joins/)
 
+### INNER JOIN
+#### Explicit JOIN Syntax:
+
+```sql
+SELECT a.col, b.col
+FROM A a
+JOIN B b ON a.col = b.col;
+```
+
+#### Implicit JOIN Syntax (Comma Syntax)
+```sql
+SELECT a.col, b.col
+FROM A a, B b
+WHERE a.col = b.col;
+```
+- This syntax uses a comma to list the tables and specifies the join condition in the WHERE clause.
+- It is an older style of writing joins and can be less clear, especially in complex queries with multiple joins.
+
 ### The USING clause
 
 The USING clause is used if several columns share the same name but you don’t
-want to join using all of these common columns. The columns listed in the USING
+want to join using all of these common columns. 
+- The columns listed in the USING
 clause can’t have any qualifiers in the statement, including the WHERE clause.
 
 ### The ON clause
 
 The ON clause is used to join tables where the column names don’t match in both
-tables. The join conditions are removed from the filter conditions in the WHERE
+tables. 
+- The join conditions are removed from the filter conditions in the WHERE
 clause.
 
-```SQL
+```sql
 -- OUTER JOIN is smarter than INNER
 -- Customer – cust_id - 1,2,3
 -- Sales – cust_id - 3, 6
@@ -156,4 +167,26 @@ OR can be written as
 SELECT e1.ename||' works for '||e2.ename  AS
 "Employees and their Managers"
 FROM emp e1, emp e2 where (e1.mgr = e2.empno);
+```
+
+# Group By
+
+**Identify Aggregated Columns**: Look for columns that are being aggregated using functions like `SUM()`, `COUNT()`, `AVG()`, etc. 
+- These columns **do not go** into the GROUP BY clause.
+
+**Non-Aggregated Columns**: Any column that is not part of an aggregation function and is **included** in the **SELECT**
+statement must be in the GROUP BY clause. 
+- These are typically the columns you want to group your results by.
+
+**Logical Grouping**: Think about the logical grouping of your data. 
+- For example, if you want to group data by continent, then continent should be in the GROUP BY clause.
+
+
+Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+```sql
+SELECT co.CONTINENT AS continent, SUM(ci.POPULATION) AS s
+FROM Country co, City c
+WHERE ci.CountryCode = co.Code
+AND co.CONTINENT = 'Asia'
+GROUP BY co.CONTINENT;
 ```

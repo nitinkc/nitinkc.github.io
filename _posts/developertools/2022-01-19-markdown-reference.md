@@ -49,14 +49,12 @@ Include code as a gist into the Jekyll post. Uses jekyll-gist plugin.
 `{% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}`
 {% endraw %}
 
-# Hyperlinks
+# Hyperlinks - External links
 
-External links
-
-- Open link in another tab
+- Open link in new/other tab -  `{:target="\_blank"}`
   `[Try me for another Tab](https://www.google.com/){:target="_blank"}`
 - Open link in same tab
-  `[Link title](https://www.google.com/)`
+  `[Link title](https://www.google.com/)` 
 
 ### Markdown hyperlinks syntax
 

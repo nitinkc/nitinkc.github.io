@@ -10,6 +10,25 @@ tags: [ GCP ]
 [Kubernetes & Springboot HelloWorld](https://github.com/nitinkc/K8SHelloWorld)
 
 # Create a cluster
+### Via Shell
+```shell
+gcloud beta container \
+--project "playground-s-11-7221e07f" \
+clusters create-auto "autopilot-cluster-1" \
+--region "us-central1" \
+--release-channel "regular" \
+--tier "standard"\
+--enable-dns-access \
+--enable-ip-access --no-enable-google-cloud-access --network "projects/playground-s-11-7221e07f/global/networks/default"\
+--subnetwork "projects/playground-s-11-7221e07f/regions/us-central1/subnetworks/default" \
+--cluster-ipv4-cidr "/21"\
+--binauthz-evaluation-mode=DISABLED \
+--enable-ray-operator \
+--enable-dataplane-v2-flow-observability \
+--enable-secret-manager
+```
+
+### Via UI
 ```shell
 export my_region=us-east4
 export my_cluster=autopilot-cluster-1
