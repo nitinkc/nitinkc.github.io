@@ -36,8 +36,6 @@ String secondElement = linkedList.get(1);
 // Removing elements
 linkedList.remove("Banana");
 linkedList.remove(3);
-}
-
 ```
 
 ## Singly Linked List
@@ -90,7 +88,7 @@ while(runner.next.next != null){
 }
 ```
 
-### Traversal accross all elements
+### Traversal across all elements
 
 ```java
  Node runner = head;//head
@@ -145,3 +143,161 @@ head = new Node(value, head);
 ##### Delete from the end
 
 {% gist nitinkc/b0021888f69349f08614edc484f7d050 %}
+
+
+**Reversal:**
+
+```java
+Node reverse(Node head) {
+    Node prev = null;
+    Node current = head;
+    Node next = null;
+    while (current != null) {
+        next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+    }
+    head = prev;
+    return head;
+}
+```
+
+**Cycle Detection:**
+```java
+boolean hasCycle(Node head) {
+    if (head == null || head.next == null) return false;
+    Node slow = head, fast = head.next;
+    while (fast != null && fast.next != null) {
+        if (slow == fast) return true;
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return false;
+}
+```
+
+#### Doubly Linked List
+**Insertion:**
+```java
+class DoublyNode {
+    int data;
+    DoublyNode next, prev;
+    DoublyNode(int d) { data = d; next = prev = null; }
+}
+
+class DoublyLinkedList {
+    DoublyNode head;
+
+    void insert(int data) {
+        DoublyNode newNode = new DoublyNode(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            DoublyNode temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+            newNode.prev = temp;
+        }
+    }
+}
+```
+
+**Deletion:**
+```java
+void delete(DoublyNode head, DoublyNode del) {
+    if (head == null || del == null) return;
+    if (head == del) head = del.next;
+    if (del.next != null) del.next.prev = del.prev;
+    if (del.prev != null) del.prev.next = del.next;
+    return;
+}
+```
+
+**Reversal:**
+```java
+DoublyNode reverse(DoublyNode head) {
+    DoublyNode temp = null;
+    DoublyNode current = head;
+    while (current != null) {
+        temp = current.prev;
+        current.prev = current.next;
+        current.next = temp;
+        current = current.prev;
+    }
+    if (temp != null) {
+        head = temp.prev;
+    }
+    return head;
+}
+```
+
+#### Circular Linked List
+**Insertion:**
+```java
+class CircularNode {
+    int data;
+    CircularNode next;
+    CircularNode(int d) { data = d; next = null; }
+}
+
+class CircularLinkedList {
+    CircularNode head;
+
+    insert(int data) {
+        CircularNode newNode = new CircularNode(data);
+        if (head == null) {
+            head = newNode;
+            newNode.next = head;
+        } else {
+            CircularNode temp = head;
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+            newNode.next = head;
+        }
+    }
+}
+```
+
+**Deletion:**
+```java
+void delete(int key) {
+    if (head == null) return;
+    CircularNode temp = head, prev = null;
+    if (head.data == key && head.next == head) {
+        head = null;
+        return;
+    }
+    if (head.data == key) {
+        while (temp.next != head) {
+            temp = temp.next;
+        }
+        temp.next = head.next;
+        head = temp.next;
+        return;
+    }
+    while (temp.next != head && temp.data != key) {
+        prev = temp;
+        temp = temp.next;
+    }
+    if (temp.data == key) {
+        prev.next = temp.next;
+    }
+}
+```
+
+**Traversal:**
+```java
+void traverse() {
+    if (head == null) return;
+    CircularNode temp = head;
+    do {
+        System.out.print(temp.data + " ");
+        temp = temp.next;
+    } while (temp != head);
+}
+```
