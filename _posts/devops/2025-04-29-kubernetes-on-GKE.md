@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes on Google Kubernetes Engine (GKE)"
-date: 2025-04-11 05:00:00
+date: 2025-04-29 05:00:00
 categories: [ GCP ]
 tags: [ GCP ]
 ---
@@ -190,20 +190,7 @@ kubectl port-forward new-nginx 10081:80
 
 ### Kind : Service
 service-nginx.yaml
-```shell
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx
-spec:
-  type: LoadBalancer
-  selector:
-    app: nginx
-  ports:
-  - protocol: TCP
-    port: 60000
-    targetPort: 80
-```
+{% gist nitinkc/81a87ef5084c8c83a355634f2623e035%}
 
 
 # Perform a canary deployment

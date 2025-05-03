@@ -50,6 +50,22 @@ A deployment manages the **creation and updating of instances** of your applicat
 **Example**: If you have a Spring Boot application, you would create a deployment to ensure multiple instances of
 your application are running for high availability.
 
+### Deployment YAML
+- **apiVersion**: Specifies the API version.
+- **kind**: Defines the type of Kubernetes object, which is a Deployment.
+- **metadata**: Contains the name of the deployment.
+- **spec**: Defines the desired state of the deployment.
+  - **replicas**: Specifies the number of pod replicas.
+  - **selector**: Matches the pods with the label `app: springboot`.
+  - **template**: Describes the pods to be created.
+    - **metadata**: Labels the pods.
+    - **spec**: Defines the container specifications.
+      - **containers**: Lists the containers in the pod.
+        - **name**: Names the container.
+        - **image**: Specifies the container image.
+        - **ports**: Defines the container port.
+
+
 `deployment.yaml`
 ```yaml
 apiVersion: apps/v1
@@ -76,6 +92,19 @@ spec:
 
 # **Types of Services:**
 
+> The correct URL to access the application can be found by the `minikube service springboot-service --url` command.
+
+##### Service YAML
+- **apiVersion**: Specifies the API version.
+- **kind**: Defines the type of Kubernetes object, which is a Service.
+- **metadata**: Contains the name of the service.
+- **spec**: Defines the desired state of the service.
+  - **selector**: Matches the pods with the label `app: springboot`.
+  - **ports**: Defines the service ports.
+    - **protocol**: Specifies the protocol (TCP).
+    - **port**: Defines the port on which the service is exposed.
+    - **targetPort**: Specifies the port on the container to which traffic should be directed.
+
 ### **ClusterIP (default):**
 Exposes the service on an internal IP within the cluster. This type of service is only accessible from within the cluster.
 - **Use Case:** Ideal for internal communication between services within the cluster.
@@ -95,6 +124,8 @@ Exposes the service on an internal IP within the cluster. This type of service i
   ```
 
 ### **NodePort:**
+NodePort: Exposes the application on a specific port on each Node.
+
 Exposes the service on each Node's IP at a static port (the NodePort). This makes the service accessible from outside the cluster using `<NodeIP>:<NodePort>`.
 - **Use Case:** Useful for exposing services for external access during development or testing.
     ```yaml
@@ -114,6 +145,8 @@ Exposes the service on each Node's IP at a static port (the NodePort). This make
     ```
 
 ### **LoadBalancer:**
+LoadBalancer: Provides an external IP and port, accessible via minikube tunnel.
+
 **Creates an external load balancer** (if supported by the cloud provider) and assigns a fixed, external IP to the service. 
 - A service provides **a stable endpoint** to access your pods from outside the cluster.
   - It abstracts away the details of the pods and provides a consistent way to access them, even as pods are created and destroyed.
