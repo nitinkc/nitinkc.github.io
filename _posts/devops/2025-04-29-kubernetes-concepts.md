@@ -6,8 +6,6 @@ tags: [ DevOps ]
 ---
 {% include toc title="Index" %}
 
-Great question! Let's break it down:
-
 # Pods Vs Container
 
 **Container:** A lightweight, standalone, **executable package** that includes everything needed to run a piece of software, including 
@@ -41,6 +39,11 @@ Both containers can communicate with each other using localhost, and they share 
 
 External services can access the web server via the pod's IP address and port 80, and the database server via the pod's IP address and port 5432.
 
+# Kubernetes Architecture
+
+[https://kubernetes.io/docs/concepts/architecture/](https://kubernetes.io/docs/concepts/architecture/)
+
+![](https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg){:width="70%" height="50%"}
 
 # **Deployment**
 A deployment manages the **creation and updating of instances** of your application (**pods**).
@@ -93,6 +96,7 @@ spec:
 # **Types of Services:**
 
 > The correct URL to access the application can be found by the `minikube service springboot-service --url` command.
+> Access the Service: Open your browser and navigate to http://NodeIP:NodePort
 
 ##### Service YAML
 - **apiVersion**: Specifies the API version.
@@ -190,7 +194,6 @@ Maps a service to a DNS name by returning a CNAME record with the specified exte
 - **LoadBalancer:** External access via a cloud provider's load balancer.
 - **ExternalName:** Maps to an external DNS name.
 
-> Access the Service: Open your browser and navigate to http://<NodeIP>:<NodePort>
 
 ```shell
 # Find the NodePort
