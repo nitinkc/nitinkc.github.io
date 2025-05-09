@@ -1,6 +1,6 @@
 ---
 title:  "Kubernetes Commands"
-date: 2025-04-11 05:00:00
+date: 2025-04-29 05:00:00
 categories: ["DevOps","GitOps"]
 tags: ["DevOps","GitOps"]
 ---
@@ -125,4 +125,11 @@ kubectl config get-contexts
 #  command to change the active context:
 kubectl config use-context gke_${DEVSHELL_PROJECT_ID}_Region_autopilot-cluster-1
 source <(kubectl completion bash)
+```
+
+
+```shell
+kubectl get networkpolicy
+
+
 ```

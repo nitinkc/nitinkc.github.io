@@ -30,10 +30,12 @@ public int dp(int n) {
     for (int i = 3; i <= n; i++) {
         dp[i] = dp[i - 1] + dp[i - 2]; // Recurrence relation
     }
-
     return dp[n];
 }
 ```
+
+- [Climbing Stairs Problem](https://leetcode.com/problems/climbing-stairs/description/){:target="_blank"}
+- [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/description/){:target="_blank"}
 
 # Top-down (Memoization)
 
@@ -68,7 +70,7 @@ private int dp(int i) {
 
 # Min Cost Climbing Stairs
 
-[Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/description/)
+[Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/description/){:target="_blank"}
 
 - Go reversed
 
@@ -109,7 +111,7 @@ public int minCostClimbingStairs(int[] cost) {
 
 # House Robber
 
-[House Robber](https://leetcode.com/problems/house-robber/description/)
+[House Robber](https://leetcode.com/problems/house-robber/description/){:target="_blank"}
 
 - If decided not to rob the house, then we don't gain any money. Whatever money
   from the previous house is how much money have at this house -  `dp(i - 1)`
@@ -120,16 +122,17 @@ Recurrence Relation : `dp(i)=max(dp(i - 1), dp(i - 2) + money[i])`
 
 ```java
 public int rob(int[] money) {
-    if(money.length == 1)
-    return money[0];
-    
+    if (money.length == 1)
+        return money[0];
+
     int[] dp = new int[money.length];
     dp[0] = money[0];
-    dp[1] = Math.max(money[0],money[1]);
-    
-    for(int i = 2; i <nums.length; i++){
-        dp[i] = Math.max(dp[i-1], dp[i-2]+money[i]);
+    dp[1] = Math.max(money[0], money[1]);
+
+    for (int i = 2; i < nums.length; i++) {
+        dp[i] = Math.max(dp[i - 1], dp[i - 2] + money[i]);
     }
 
-    return dp[money.length -1];
+    return dp[money.length - 1];
+}
 ```

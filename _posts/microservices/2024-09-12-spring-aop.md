@@ -8,8 +8,7 @@ tags: [Spring Microservices, Spring Boot]
 
 {% include toc title="Index" %}
 
-Aspect-Oriented Programming (AOP) in Spring Boot is used to separate *
-*cross-cutting concerns (like logging exceptions)**
+Aspect-Oriented Programming (AOP) in Spring Boot is used to separate **cross-cutting concerns (like logging exceptions)**
 from the business logic of an application.
 
 Cross-cutting concerns are aspects of a program that affect multiple modules,
@@ -56,10 +55,8 @@ runtime.
 
 - **Define Aspects**: Create **classes** annotated with `**@Aspect**` that
   define the cross-cutting concerns.
-- **Configure Pointcuts**: Specify where and when the advice should be applied *
-  *using pointcut expressions**.
-- **Apply Advice**: Use annotations to define the **type of advice** and *
-  *associate** it with the pointcuts.
+- **Configure Pointcuts**: Specify where and when the advice should be applied **using pointcut expressions**.
+- **Apply Advice**: Use annotations to define the **type of advice** and **associate** it with the pointcuts.
 
 ![aopConcepts.png]({{ site.url }}/assets/images/aopConcepts.png)
 

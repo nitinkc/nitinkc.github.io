@@ -14,6 +14,7 @@ For Arrays, Strings and Lists
 
 # Single Pointer Technique
 - Iterate through LEFT
+  - `int idx = 0`
 - Iterate through RIGHT
     - `int idx = arr.length-1`
     - `int idx = list.size()-1`
@@ -23,7 +24,7 @@ For Arrays, Strings and Lists
 
 # Two Pointer Technique
 - One begins from left/start, other from the right end.
-- The while loop
+- The while loop with `left < right`
   ```java
   int left = 0, right = str.length() - 1;
   while(left < right){
@@ -35,14 +36,16 @@ For Arrays, Strings and Lists
   ```java
   for(int low = 0, high = s.length-1; low < high; low++,high--){
   ```
-
+  
+#### 2 pointer movements with/without if condition.
 {% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
 
-##### Left pointer and Right pointer movements based on if condition.
-
+[Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/){:target="_blank"}
 {% gist nitinkc/00b4970b6d3d13d6b52c7c57cc06af41 %}
 
-##### Find count of given Sum in all pairs in the Array
+#### 2-Sum Problem  
+
+##### **count** of given Sum in all pairs in the Array
 
 **Checks**
 ```java
@@ -57,8 +60,18 @@ if (array size < 2)
 makes sense
 {% gist nitinkc/a084561f90c18fba94ae9aab66b2d72a %}
 
+##### 2-Sum with indices to be returned
 **Approach 3** : Hash map and variant approach
-{% gist nitinkc/216dfdbb277577d5285334cf82c6f626 %}
+- 2-Sum problem with index to be returned
+- [Two Sum](https://leetcode.com/problems/two-sum/description/)
+- The array can't be sorted (`Arrays.sort`) as the index can't be changed
+- Use a hashmap to keep track of the indices with the diff involved
+{% gist nitinkc/e68ab190b3ae9babcb140cb02b0525b2 %}
+- {% gist nitinkc/216dfdbb277577d5285334cf82c6f626 %}
+
+
+### Search in Rotated Sorted Array
+{% gist nitinkc/f0ac783652a74a2fdcdf91b0285da6f7 %}
 
 ### Left & Right Array approach
 Create two temporary arrays, 
