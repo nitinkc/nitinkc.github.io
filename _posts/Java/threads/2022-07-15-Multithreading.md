@@ -10,11 +10,11 @@ tags: ['Java','Multithreading']
 
 # Runnable vs Callable
 
-[Runnable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html#run())
-doesn't return anything (`void`) nor does it explicitly indicate a check
+- [Runnable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html#run())
+doesn't return anything (`void`) nor does it explicitly indicate a checked
 exception.
 
-Whereas [Callable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html#call())
+- Whereas [Callable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html#call())
 returns an object of type `T` and throws exception
 
 # Daemon Threads:
@@ -22,18 +22,17 @@ returns an object of type `T` and throws exception
 A daemon thread is a thread that runs in the background and does not prevent the
 JVM from exiting.
 
-- When all non-daemon threads finish, the JVM can shut down, even if daemon
+- When all **non-daemon** threads finish, the JVM can shut down, even if daemon
   threads are still running.
 - Daemon threads are typically used for background services like garbage
   collection or background monitoring.
 
 # Defining Platform Threads
 
-In Java, by default, all threads are **non-daemon threads** (unless explicitly
-modified)
+##### [Ways to create Threads](https://nitinkc.github.io/java/multithreading/ThreadCreation/)
 
-- The Java Virtual Machine (JVM will not terminate until all non-daemon threads
-  have finished executing.
+In Java, by default, all threads are **non-daemon threads** (unless explicitly modified)
+- The Java Virtual Machine (JVM will not terminate until all non-daemon threads have finished executing.
 - This is true even if the main thread has terminated.
 
 ```java

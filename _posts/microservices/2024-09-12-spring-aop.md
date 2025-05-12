@@ -1,7 +1,6 @@
 ---
-title:  "Aspect Oriented Programming (AOP)"
-date:  
-  2024-09-12 16:00:00
+title: "Aspect Oriented Programming (AOP)"
+date: 2024-09-12 16:00:00
 categories: Spring Microservices
 tags: [Spring Microservices, Spring Boot]
 ---

@@ -187,5 +187,18 @@ the CompletableFutures is a good optipn
 
 # Virtual Threads with ForkJoinPool
 
-![virtualthreadWithFJPool.png]({{ site.url
-}}/assets/images/virtualthreadWithFJPool.png)
+![virtualthreadWithFJPool.png]({{ site.url }}/assets/images/virtualthreadWithFJPool.png)
+
+## Executor Framework:
+
+- ExecutorService: Manages a pool of threads and allows you to submit tasks for execution.
+- Fixed Thread Pool: Creates a pool with a fixed number of threads.
+- submit(): Submits a task for execution.
+- shutdown(): Initiates an orderly shutdown of the executor.
+- awaitTermination(): Waits for all tasks to complete.
+
+
+## CompletableFuture:
+- runAsync(): Runs a task asynchronously.
+- allOf(): Waits for all provided CompletableFutures to complete.
+- join(): Waits for the completion of the CompletableFuture.
