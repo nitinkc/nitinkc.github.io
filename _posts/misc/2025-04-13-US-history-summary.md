@@ -6,7 +6,6 @@ tags: [Miscellaneous]
 ---
 {% include toc title="Index" %}
 
-Sure! Here's a nicely formatted summary with headings and bullet points:
 
 ## Early Settlements
 

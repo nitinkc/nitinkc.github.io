@@ -25,8 +25,7 @@ tags: ['Java','Multithreading']
   operates in **LIFO** mode.
 
 [Diagram code](https://app.eraser.io/workspace/7T1zn0AFYP9i1gxvb6ZS)
-![platformThreads.png](../../../assets/images/platformThreads.png){:width="70%"
-height="50%"}
+![platformThreads.png](../../../assets/images/platformThreads.png){:width="70%" height="50%"}
 
 ### Virtual Threads
 

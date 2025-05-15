@@ -7,22 +7,22 @@ tags: ['Java','Multithreading']
 
 {% include toc title="Index" %}
 
-Each thread has its own instance of a map that stores thread-local variables.
+Each thread has its own **instance of a map** that stores **thread-local variables**.
 
-This map holds the associations between the thread-local variables and their
-corresponding values,
-ensuring that the variables are unique to the thread and are not shared across
-other threads.
+This map holds the associations between the thread-local variables and their corresponding values,
+ensuring that the variables are unique to the thread and are not shared across other threads.
 
-This allows threads to maintain isolated states, preventing race conditions and
-ensuring data consistency within each thread.
+This allows threads to maintain 
+- isolated states, 
+- preventing race conditions and
+- ensuring data consistency within each thread.
 
 ```java
 public static ThreadLocal<Student> studentThreadLocal = new ThreadLocal<Student>();
 ```
 
 `studentThreadLocal` has the global scope, but the value inside the
-studentThreadLocal has the scope only for the duration of a thread
+studentThreadLocal has the scope **only for the duration of a thread**
 
 ```java
 //Sets the current thread's value

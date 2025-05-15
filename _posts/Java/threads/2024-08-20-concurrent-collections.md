@@ -14,10 +14,11 @@ In multi-threaded environments, traditional collections like `ArrayList`, `HashM
 - To address these issues, Java provides **concurrent collections** in the `java.util.concurrent` package.
 
 ### Traditional Collections and Their Limitations
+- **Non-Thread-Safe Collections**: Most traditional collections are not designed for concurrent access.
 
-1. **Non-Thread-Safe Collections**: Most traditional collections are not designed for concurrent access.
-2. **Synchronized Wrappers**: Collections like `Vector` and `Hashtable` use primitive synchronized methods, which can lead to performance bottlenecks due to excessive locking.
-   3. Java also provides synchronized wrappers like `Collections.synchronizedList`, `Collections.synchronizedSet`, and `Collections.synchronizedMap`, but these too can suffer from performance issues.
+**Synchronized Wrappers**: 
+- Collections like `Vector` and `Hashtable` use **primitive synchronized methods**, which can lead to performance bottlenecks due to **excessive locking**.
+- synchronized wrappers like `Collections.synchronizedList`, `Collections.synchronizedSet`, and `Collections.synchronizedMap` too can suffer from performance issue
 
 ##### Performance Issues with Synchronized Wrappers
 - **Lock Contention**: When multiple threads attempt to access a synchronized collection, they must acquire a lock before proceeding. If one thread holds the lock, other threads are blocked until the lock is released. This contention can lead to significant delays, especially under high concurrency.
@@ -25,17 +26,16 @@ In multi-threaded environments, traditional collections like `ArrayList`, `HashM
 - **Memory Barriers**: Synchronization introduces memory barriers, which force the JVM to flush data to main memory to ensure visibility across threads. This can prevent certain optimizations and increase the overhead of synchronization.
 
 ### Concurrent Collections in Java
+Java's `java.util.concurrent` package offers a variety of **thread-safe collections** designed to **handle concurrent access efficiently**:
 
-Java's `java.util.concurrent` package offers a variety of thread-safe collections designed to **handle concurrent access efficiently**:
-
-1. **BlockingQueue**: Supports operations that wait for the queue to become non-empty when retrieving an element and for space to become available when storing an element. 
-   2. Examples include `ArrayBlockingQueue` and `LinkedBlockingQueue`.
-2. **ConcurrentMap**: Provides atomic operations for put and remove. 
-   3. The most commonly used implementation is `ConcurrentHashMap`, which allows concurrent read and write operations without locking the entire map.
-3. **ConcurrentNavigableMap**: Extends `ConcurrentMap` and `NavigableMap`, providing concurrent access and navigation methods.
-   4. `ConcurrentSkipListMap` is a common implementation, which is a concurrent version of `TreeMap`.
-4. **CopyOnWriteArrayList** and **CopyOnWriteArraySet**: These collections create a copy of the underlying array on each modification, making them ideal for scenarios with frequent reads and infrequent writes.
-5. **ConcurrentSkipListSet**: A concurrent version of `TreeSet`, providing scalable and thread-safe sorted sets.
+- **BlockingQueue**: Supports operations that wait for the queue to become non-empty when retrieving an element and for space to become available when storing an element. 
+  - Examples include `ArrayBlockingQueue` and `LinkedBlockingQueue`.
+- **ConcurrentMap**: Provides atomic operations for put and remove. 
+  - The most commonly used implementation is `ConcurrentHashMap`, which allows concurrent read and write operations without locking the entire map.
+- **ConcurrentNavigableMap**: Extends `ConcurrentMap` and `NavigableMap`, providing concurrent access and navigation methods.
+  - `ConcurrentSkipListMap` is a common implementation, which is a concurrent version of `TreeMap`.
+- **CopyOnWriteArrayList** and **CopyOnWriteArraySet**: These collections create a copy of the underlying array on each modification, making them ideal for scenarios with frequent reads and infrequent writes.
+- **ConcurrentSkipListSet**: A concurrent version of `TreeSet`, providing scalable and thread-safe sorted sets.
 
 ### Fail-Fast and Fail-Safe Iterators
 
@@ -93,11 +93,31 @@ public class CopyOnWriteArrayListExample {
         list.add("A");
         list.add("B");
 
-        // Concurrent read and write operations
-        list.add("C");
-        list.forEach(System.out::println);
+        // Thread for adding elements
+        Thread writerThread = new Thread(() -> {
+            list.add("C");
+            list.add("D");
+        });
+
+        // Thread for reading elements
+        Thread readerThread = new Thread(() -> {
+            list.forEach(System.out::println);
+        });
+
+        // Start both threads
+        writerThread.start();
+        readerThread.start();
+
+        // Wait for both threads to finish
+        try {
+            writerThread.join();
+            readerThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
+
 ```
 
 ### Benefits of Operation-Level Locking
