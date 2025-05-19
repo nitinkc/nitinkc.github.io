@@ -118,7 +118,7 @@ public class Car {
 ### **4. Master Exception Handling**
 
 ✅ **Good**: Catch specific exceptions  
-❌ **Bad**: Catch `Exception` or ignore it
+❌ **Bad**: Catch `Exception` or ignore/swallow it
 
 ```java
 // ✅ Good
@@ -152,6 +152,50 @@ map.put("key", 1);
 Map<String, Integer> map = new HashMap<>();
 map.put("key", 1); // Not thread-safe
 ```
+
+#### ✅ **Why Use `ConcurrentHashMap`?**
+
+- **Thread Safety Without Synchronization Bottlenecks**: Unlike `HashMap`, which is not thread-safe, or `Collections.synchronizedMap()`, which locks the entire map, `ConcurrentHashMap` uses **fine-grained locking** (bucket-level or segment-level), allowing better concurrency.
+- **No `ConcurrentModificationException`**: Iterators are **weakly consistent**, meaning they reflect some, but not necessarily all, updates made after the iterator was created.
+- **Atomic Operations**: Methods like `putIfAbsent`, `computeIfAbsent`, and `compute` allow atomic updates, which are crucial in concurrent environments.
+
+
+**Scenarios Where `ConcurrentHashMap` Is Useful**
+
+#### 1. **Caching Frequently Accessed Data**
+```java
+ConcurrentHashMap<String, Object> cache = new ConcurrentHashMap<>();
+cache.putIfAbsent("user_123", fetchUserFromDB("user_123"));
+```
+- Multiple threads can read/write to the cache without blocking each other.
+
+#### 2. **Counting Word Frequencies in Parallel**
+```java
+ConcurrentHashMap<String, Integer> wordCounts = new ConcurrentHashMap<>();
+words.parallelStream().forEach(word ->
+    wordCounts.merge(word, 1, Integer::sum)
+);
+```
+- Efficiently aggregates counts without race conditions.
+
+#### 3. **Storing Session Data in a Web Server**
+```java
+ConcurrentHashMap<String, Session> sessions = new ConcurrentHashMap<>();
+```
+- Each thread handling a request can safely read/write session data.
+
+#### 4. **Tracking Active Users in a Chat App**
+```java
+ConcurrentHashMap<String, UserConnection> activeUsers = new ConcurrentHashMap<>();
+```
+- Threads can add/remove users as they join/leave without locking the whole map.
+
+#### 5. **Implementing a Thread-Safe Singleton Registry**
+```java
+ConcurrentHashMap<String, Object> registry = new ConcurrentHashMap<>();
+registry.computeIfAbsent("serviceA", k -> new ServiceA());
+```
+- Ensures only one instance is created even under concurrent access.
 
 ---
 
