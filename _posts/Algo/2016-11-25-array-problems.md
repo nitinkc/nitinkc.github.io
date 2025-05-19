@@ -63,7 +63,7 @@ makes sense
 ##### 2-Sum with indices to be returned
 **Approach 3** : Hash map and variant approach
 - 2-Sum problem with index to be returned
-- [Two Sum](https://leetcode.com/problems/two-sum/description/)
+- [Two Sum](https://leetcode.com/problems/two-sum/description/){:target="_blank"}
 - The array can't be sorted (`Arrays.sort`) as the index can't be changed
 - Use a hashmap to keep track of the indices with the diff involved
 {% gist nitinkc/e68ab190b3ae9babcb140cb02b0525b2 %}
@@ -79,18 +79,18 @@ Create two temporary arrays,
 - Same for Right array.
 
 ##### Replace each element with the greatest element to the Right in an Array
-[https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/](https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/)
+[replace-elements-with-greatest-element-on-right-side](https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/){:target="_blank"}
 
 {% gist nitinkc/c326860cffb8fc3cf2d87c193cc0a33d %}
 
 ##### Replace a number with product of all other without division
-[https://leetcode.com/problems/product-of-array-except-self/](https://leetcode.com/problems/product-of-array-except-self/)
+[product-of-array-except-self/](https://leetcode.com/problems/product-of-array-except-self/){:target="_blank"}
 
 {% gist nitinkc/2f07a7eab2eaffc1609fbc7211eadb1a %}
 
 ##### Trapping Rain Water
 
-[Trapping Rain Water Problem](https://leetcode.com/problems/trapping-rain-water/)
+[Trapping Rain Water Problem](https://leetcode.com/problems/trapping-rain-water/){:target="_blank"}
 
 ```java
 left[i] = Math.max(left[i-1], arr[i]);//arr[i] means including current element

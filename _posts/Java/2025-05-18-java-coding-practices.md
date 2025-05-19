@@ -65,53 +65,7 @@ for (Person p : people) {
 
 ✅ **Good**: Use Builder for complex object creation  
 ❌ **Bad**: Telescoping constructors
-
-```java
-// ✅ Good - Builder Pattern
-public class Car {
-    private final String engine;
-    private final int wheels;
-
-    private Car(Builder builder) {
-        this.engine = builder.engine;
-        this.wheels = builder.wheels;
-    }
-
-    public static class Builder {
-        private String engine;
-        private int wheels;
-
-        public Builder engine(String engine) {
-            this.engine = engine;
-            return this;
-        }
-
-        public Builder wheels(int wheels) {
-            this.wheels = wheels;
-            return this;
-        }
-
-        public Car build() {
-            return new Car(this);
-        }
-    }
-}
-
-// ❌ Bad - Telescoping Constructor
-public class Car {
-    private String engine;
-    private int wheels;
-
-    public Car(String engine) {
-        this(engine, 4);
-    }
-
-    public Car(String engine, int wheels) {
-        this.engine = engine;
-        this.wheels = wheels;
-    }
-}
-```
+{% gist nitinkc/456cae4080354d855553419b5f09a82d %}
 
 ---
 
@@ -171,28 +125,33 @@ cache.putIfAbsent("user_123", fetchUserFromDB("user_123"));
 
 #### 2. **Counting Word Frequencies in Parallel**
 ```java
-ConcurrentHashMap<String, Integer> wordCounts = new ConcurrentHashMap<>();
+Map<String, Integer> wordCounts = new ConcurrentHashMap<>();
 words.parallelStream().forEach(word ->
     wordCounts.merge(word, 1, Integer::sum)
+    wordCounts.merge(word, 1, (oldVal,newVal) -> oldVal + newVal)
 );
+// key: The key with which the resulting value is to be associated.
+// value: The non-null value to be merged with the existing value.
+// remappingFunction: A function that takes the existing value and the new value, 
+    // and returns the value to be associated with the key.
 ```
 - Efficiently aggregates counts without race conditions.
 
 #### 3. **Storing Session Data in a Web Server**
 ```java
-ConcurrentHashMap<String, Session> sessions = new ConcurrentHashMap<>();
+Map<String, Session> sessions = new ConcurrentHashMap<>();
 ```
 - Each thread handling a request can safely read/write session data.
 
 #### 4. **Tracking Active Users in a Chat App**
 ```java
-ConcurrentHashMap<String, UserConnection> activeUsers = new ConcurrentHashMap<>();
+Map<String, UserConnection> activeUsers = new ConcurrentHashMap<>();
 ```
 - Threads can add/remove users as they join/leave without locking the whole map.
 
 #### 5. **Implementing a Thread-Safe Singleton Registry**
 ```java
-ConcurrentHashMap<String, Object> registry = new ConcurrentHashMap<>();
+Map<String, Object> registry = new ConcurrentHashMap<>();
 registry.computeIfAbsent("serviceA", k -> new ServiceA());
 ```
 - Ensures only one instance is created even under concurrent access.
@@ -204,33 +163,7 @@ registry.computeIfAbsent("serviceA", k -> new ServiceA());
 ✅ **Good**: Use interfaces and delegate  
 ❌ **Bad**: Deep inheritance trees
 
-```java
-// ✅ Good
-interface Engine {
-    void start();
-}
-
-class Car {
-    private final Engine engine;
-
-    public Car(Engine engine) {
-        this.engine = engine;
-    }
-
-    public void start() {
-        engine.start();
-    }
-}
-
-// ❌ Bad
-class Vehicle {
-    void start() {}
-}
-
-class Car extends Vehicle {
-    // tightly coupled
-}
-```
+{% gist nitinkc/f6dae5e1acae8ecbda28efb79515141f %}
 
 ---
 
@@ -263,21 +196,7 @@ class InvoiceManager {
 ✅ **Good**: Inject via constructor  
 ❌ **Bad**: Instantiate dependencies inside class
 
-```java
-// ✅ Good
-class Service {
-    private final Repository repo;
-
-    public Service(Repository repo) {
-        this.repo = repo;
-    }
-}
-
-// ❌ Bad
-class Service {
-    private final Repository repo = new Repository(); // hard to test
-}
-```
+{% gist nitinkc/fe84f4f5b4621919ab0927347922c83d %}
 
 ---
 
@@ -315,8 +234,8 @@ void testAddition() {
 
 ---
 
-Use Optional to Avoid Nulls
-Optional<T> is a powerful tool to avoid NullPointerException.
-Use it in return types, not in fields or parameters.
+### **11. Use Optional to Avoid Nulls**
+- Optional<T> is a powerful tool to avoid NullPointerException.
+- Use it in return types, not in fields or parameters.
 
 

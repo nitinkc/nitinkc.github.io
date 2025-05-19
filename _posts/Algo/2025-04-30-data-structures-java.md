@@ -8,9 +8,6 @@ tags: [Algorithms]
 {% include toc title="Index" %}
 
 
-
-Absolutely, let's continue with **Trees**!
-
 #### Heaps
 **Min-Heap:**
 ```java
@@ -244,5 +241,3 @@ boolean startsWith(String prefix) {
     return true;
 }
 ```
-
-Feel free to let me know when you'd like to move on to **Graphs** or if you need more details on any of these tree-related topics!

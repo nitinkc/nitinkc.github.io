@@ -125,3 +125,58 @@ public class CopyOnWriteArrayListExample {
 1. **Improved Concurrency**: By locking only the necessary parts of the collection, multiple threads can perform operations concurrently, leading to better throughput.
 2. **Reduced Contention**: Finer-grained locks reduce the likelihood of contention between threads, which can improve performance in multi-threaded environments.
 3. **Scalability**: Operation-level locking allows collections to scale better with the number of threads, as different threads can work on different parts of the collection simultaneously.
+
+### 🧰 **Thread-Safe Collections in Java**
+
+#### 1. **ConcurrentHashMap**
+- A high-performance, thread-safe hash table.
+- Allows concurrent reads and updates without locking the entire map.
+
+#### 2. **CopyOnWriteArrayList**
+- A thread-safe variant of `ArrayList`.
+- Ideal for scenarios with **frequent reads** and **infrequent writes**.
+- On write, it creates a **new copy** of the underlying array.
+
+#### 3. **CopyOnWriteArraySet**
+- Backed by a `CopyOnWriteArrayList`.
+- Thread-safe set with similar characteristics: good for read-heavy workloads.
+
+#### 4. **ConcurrentLinkedQueue**
+- A non-blocking, thread-safe queue based on linked nodes.
+- Suitable for **FIFO** (first-in-first-out) operations in concurrent environments.
+
+#### 5. **ConcurrentLinkedDeque**
+- A thread-safe, non-blocking **double-ended queue**.
+- Allows insertion and removal from both ends concurrently.
+
+#### 6. **BlockingQueue Interface and Implementations**
+Used for **producer-consumer** scenarios with blocking behavior.
+
+- **ArrayBlockingQueue** – bounded, backed by an array.
+- **LinkedBlockingQueue** – optionally bounded, backed by linked nodes.
+- **PriorityBlockingQueue** – unbounded, orders elements based on priority.
+- **DelayQueue** – elements become available after a delay.
+- **SynchronousQueue** – no internal capacity; each insert waits for a remove.
+
+#### 7. **BlockingDeque Interface and Implementations**
+- **LinkedBlockingDeque** – supports blocking operations on both ends.
+
+#### 8. **ConcurrentSkipListMap / ConcurrentSkipListSet**
+- Thread-safe sorted map and set.
+- Based on **skip list** data structure.
+- Maintains elements in **sorted order**.
+
+---
+
+### 🧠 When to Use What?
+
+| Collection              | Best For                                     |
+|:------------------------|:---------------------------------------------|
+| `ConcurrentHashMap`     | Shared key-value store with high concurrency |
+| `CopyOnWriteArrayList`  | Read-heavy lists with rare modifications     |
+| `ConcurrentLinkedQueue` | Non-blocking FIFO queue                      |
+| `BlockingQueue`         | Producer-consumer patterns                   |
+| `ConcurrentSkipListMap` | Sorted concurrent map                        |
+
+
+

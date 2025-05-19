@@ -15,18 +15,18 @@ such as logging, security, and transaction management.
 
 **Key Concepts**
 
-## Aspect:
+# Aspect:
 
 A module that encapsulates a cross-cutting concern.
 It defines the code that should be executed at specific points in the
 application.
 
-## Join Point:
+# Join Point:
 
 A point during the execution of the application where an aspect can be applied.
 Examples include method execution, object instantiation, etc.
 
-## Advice:
+# Advice:
 
 The **action** taken (method) by an aspect at a join point. There are several
 types of advice:
@@ -50,6 +50,84 @@ The process of integrating aspects into the codebase.
 This can happen at various times, such as at compile-time, load-time, or
 runtime.
 
+# Interceptors
+interceptors are components that allow you to **insert behavior** `before, after, or around` method 
+executions or other `join points` (like field access or object construction) without modifying the actual code of those methods.
+
+- Interceptors are a type of advice in AOP. 
+- They are used to intercept the execution of a method or process and apply cross-cutting concerns such as:
+  - Logging
+  - Security checks
+  - Transaction management
+  - Performance monitoring
+  - Caching
+
+### How Interceptors Work
+Interceptors are typically used in "around" advice, which means they can:
+- Execute before the target method
+- Optionally proceed to the target method
+- Execute after the target method
+
+This gives them full control over the method execution.
+
+```java
+@Around("execution(* com.example.service.*.*(..))")
+public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
+    long start = System.currentTimeMillis();
+    Object result = joinPoint.proceed(); // Proceed to the actual method
+    long duration = System.currentTimeMillis() - start;
+    System.out.println("Execution time: " + duration + "ms");
+    return result;
+}
+
+```
+
+
+#### Method Interceptors: Wrap method calls
+Execute logic before and after a method runs.
+```java
+@Aspect
+public class LoggingAspect {
+
+    @Around("execution(* com.example.service.MyService.doWork(..))")
+    public Object logMethodCall(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("Before method: " + joinPoint.getSignature());
+        Object result = joinPoint.proceed(); // Proceed to the actual method
+        System.out.println("After method: " + joinPoint.getSignature());
+        return result;
+    }
+}
+```
+##### Constructor Interceptors: Wrap object creation
+Intercept and wrap logic around object instantiation.
+
+```java
+@Aspect
+public class ConstructorAspect {
+
+    @Before("execution(com.example.model.User.new(..))")
+    public void beforeConstructor(JoinPoint joinPoint) {
+        System.out.println("Creating instance of: " + joinPoint.getSignature().getDeclaringTypeName());
+    }
+}
+```
+#### Field Interceptors: Wrap field access (read/write)
+Intercept reading or writing to a field.
+```java
+@Aspect
+public class FieldAccessAspect {
+
+    @Before("get(String com.example.model.User.name)")
+    public void beforeFieldRead(JoinPoint joinPoint) {
+        System.out.println("Reading field: " + joinPoint.getSignature());
+    }
+
+    @Before("set(String com.example.model.User.name)")
+    public void beforeFieldWrite(JoinPoint joinPoint) {
+        System.out.println("Writing to field: " + joinPoint.getSignature());
+    }
+}
+```
 # How AOP Works in Spring Boot
 
 - **Define Aspects**: Create **classes** annotated with `**@Aspect**` that
