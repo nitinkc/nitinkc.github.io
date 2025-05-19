@@ -124,7 +124,7 @@ maximize concurrency and performance.
 {% gist /nitinkc/9b122aaa11f92b38cb42a8ae27cf3b42 %}
 
 ---
-### **`CopyOnWriteArrayList`**
+### **`CopyOnWriteArrayList` and Operation-Level Locking**
 operation-level locking, but in a different way:
 
 1. **Copy on Write**: When a write operation (such as `add` or `remove`) is performed, the entire underlying array is copied.
