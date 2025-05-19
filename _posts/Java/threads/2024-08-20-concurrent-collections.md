@@ -84,21 +84,46 @@ Used for **producer-consumer** scenarios with blocking behavior.
 **Fail-Safe Iterators**: These iterators operate on **a copy of the collection**, allowing modifications without throwing exceptions. 
 - Examples: iterators for `CopyOnWriteArrayList`, `CopyOnWriteArraySet`, and `ConcurrentSkipListSet`.
 
-# Operation-Level Locking vs Object-Level Locking
+---
 
-**Operation-level locking** means that the lock is applied only to **the specific operation** being performed, rather than locking the entire object. 
-- This allows multiple threads to perform different operations on the same collection concurrently, as long as those operations do not interfere with each other.
+# 🧩 Operation-Level Locking vs Object-Level Locking
+**Operation-level locking** means that the lock is applied only to the **specific operation** being performed, 
+rather than locking the entire object.  
 
-### **`ConcurrentHashMap`** 
-ConcurrentHashMap uses operation-level locking.
-Instead of locking the entire map for every read or write operation, `ConcurrentHashMap` uses a technique called **lock striping**.
+This allows multiple threads to perform different operations on the same collection **concurrently**, 
+as long as those operations don’t interfere with each other.
 
-1. **Lock Striping**: The map is divided into segments, each of which can be locked independently. This means that multiple threads can access different segments of the map concurrently without contention.
-2. **Fine-Grained Locks**: Each segment has its own lock, and operations on different segments can proceed in parallel. For example, if one thread is updating a key in one segment, another thread can simultaneously read or write a key in a different segment.
-3. **Optimistic Reads**: For read operations, `ConcurrentHashMap` uses an optimistic locking strategy. It allows reads to proceed without locking, but if a modification is detected during the read, the operation is retried with a lock.
+### 🔐 **`ConcurrentHashMap` and Operation-Level Locking**
+Instead of locking the entire map for every read or write, it uses **fine-grained locking mechanisms** to 
+maximize concurrency and performance.
+
+#### ✅ **1. Lock Striping (Java 7 and earlier)**
+- The map was divided into **segments** (like mini hash tables).
+- Each segment had its own lock, allowing multiple threads to access different segments **simultaneously**.
+- This significantly reduced contention compared to synchronizing the entire map.
+
+#### 🔄 **2. Bucket-Level Synchronization (Java 8 and later)**
+- Java 8 replaced segments with a **lock-free, bucket-based structure**.
+- Internally, it uses a `Node[]` table (similar to `HashMap`) and **CAS (Compare-And-Swap)** operations for atomic updates.
+- For hash collisions:
+   - Initially uses **linked lists**.
+   - Converts to **balanced trees (TreeNodes)** when a bucket becomes too full, improving lookup performance.
+
+#### 🔍 **3. Fine-Grained Synchronization**
+- Only **individual buckets** are locked during updates like `put` or `remove`.
+- **Read operations (`get`) are non-blocking** and extremely fast, thanks to minimal locking.
+
+#### 🧠 **4. Optimistic Reads**
+- `ConcurrentHashMap` uses an **optimistic locking strategy** for reads.
+- Reads proceed without locking. If a concurrent modification is detected, the operation is retried with a lock to ensure consistency.
+
+#### ⚙️ **5. Atomic Methods**
+- Methods like `putIfAbsent`, `compute`, `merge`, and `computeIfAbsent` are **atomic**.
+- These ensure thread-safe updates without requiring external synchronization.
 
 {% gist /nitinkc/9b122aaa11f92b38cb42a8ae27cf3b42 %}
 
+---
 ### **`CopyOnWriteArrayList`**
 operation-level locking, but in a different way:
 
@@ -109,7 +134,7 @@ operation-level locking, but in a different way:
 
 {% gist nitinkc/b67916c4147ab0657bfbfe133e47a256 %}
 
-#### Benefits of Operation-Level Locking
+## Benefits of Operation-Level Locking
 
 1. **Improved Concurrency**: By locking only the necessary parts of the collection, multiple threads can perform operations concurrently, leading to better throughput.
 2. **Reduced Contention**: Finer-grained locks reduce the likelihood of contention between threads, which can improve performance in multi-threaded environments.
@@ -123,6 +148,7 @@ operation-level locking, but in a different way:
 - **Result**: High contention and poor scalability in multi-threaded environments.
 
 # Summary
+
 | Feature         | Object-Level Locking           | Operation-Level Locking                       |
 |:----------------|:-------------------------------|:----------------------------------------------|
 | **Granularity** | Coarse (entire object)         | Fine (specific operation or segment)          |
