@@ -13,7 +13,7 @@ In multi-threaded environments, traditional collections like `ArrayList`, `HashM
 - can lead to issues such as `ConcurrentModificationException` (one thread modifies a collection while another thread is iterating over it)
 - To address these issues, Java provides **concurrent collections** in the `java.util.concurrent` package.
 
-### Traditional Collections and Their Limitations
+##### Traditional Collections and Their Limitations
 - **Non-Thread-Safe Collections**: Most traditional collections are not designed for concurrent access.
 
 **Synchronized Wrappers**: 
@@ -25,17 +25,60 @@ In multi-threaded environments, traditional collections like `ArrayList`, `HashM
 - **Single Lock for Entire Collection**: This means that even read operations, which could be performed concurrently, are serialized. This reduces the overall throughput of the application.
 - **Memory Barriers**: Synchronization introduces memory barriers, which force the JVM to flush data to main memory to ensure visibility across threads. This can prevent certain optimizations and increase the overhead of synchronization.
 
-### Concurrent Collections in Java
+### Concurrent/Thread-Safe Collections in Java
 Java's `java.util.concurrent` package offers a variety of **thread-safe collections** designed to **handle concurrent access efficiently**:
 
-- **BlockingQueue**: Supports operations that wait for the queue to become non-empty when retrieving an element and for space to become available when storing an element. 
-  - Examples include `ArrayBlockingQueue` and `LinkedBlockingQueue`.
-- **ConcurrentMap**: Provides atomic operations for put and remove. 
-  - The most commonly used implementation is `ConcurrentHashMap`, which allows concurrent read and write operations without locking the entire map.
-- **ConcurrentNavigableMap**: Extends `ConcurrentMap` and `NavigableMap`, providing concurrent access and navigation methods.
-  - `ConcurrentSkipListMap` is a common implementation, which is a concurrent version of `TreeMap`.
-- **CopyOnWriteArrayList** and **CopyOnWriteArraySet**: These collections create a copy of the underlying array on each modification, making them ideal for scenarios with frequent reads and infrequent writes.
-- **ConcurrentSkipListSet**: A concurrent version of `TreeSet`, providing scalable and thread-safe sorted sets.
+#### 1. **ConcurrentHashMap**
+- A high-performance, thread-safe hash table.
+- Allows concurrent reads and updates without locking the entire map.
+
+#### 2. **CopyOnWriteArrayList**
+- A thread-safe variant of `ArrayList`.
+- Ideal for scenarios with **frequent reads** and **infrequent writes**.
+- On write, it creates a **new copy** of the underlying array.
+
+#### 3. **CopyOnWriteArraySet**
+- Backed by a `CopyOnWriteArrayList`.
+- Thread-safe set with similar characteristics: good for read-heavy workloads.
+
+#### 4. **ConcurrentLinkedQueue**
+- A non-blocking, thread-safe queue based on linked nodes.
+- Suitable for **FIFO** (first-in-first-out) operations in concurrent environments.
+
+#### 5. **ConcurrentLinkedDeque**
+- A thread-safe, non-blocking **double-ended queue**.
+- Allows insertion and removal from both ends concurrently.
+
+#### 6. **BlockingQueue Interface and Implementations**
+Used for **producer-consumer** scenarios with blocking behavior.
+- **ArrayBlockingQueue** – bounded, backed by an array.
+- **LinkedBlockingQueue** – optionally bounded, backed by linked nodes.
+- **PriorityBlockingQueue** – unbounded, orders elements based on priority.
+- **DelayQueue** – elements become available after a delay.
+- **SynchronousQueue** – no internal capacity; each insert waits for a remove.
+
+#### 7. **BlockingDeque Interface and Implementations**
+- **LinkedBlockingDeque** – supports blocking operations on both ends.
+
+#### 8. **ConcurrentSkipListMap / ConcurrentSkipListSet**
+- Thread-safe sorted map and set.
+- Based on **skip list** data structure.
+- Maintains elements in **sorted order**.
+
+
+### 🧠 When to Use What?
+
+| Collection Type                 | Description                                                                                                                                                                |
+|:--------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **ConcurrentHashMap**           | High-performance, thread-safe map with **lock striping**.                                                                                                                  |
+| **CopyOnWriteArrayList**        | Thread-safe list optimized for read-heavy workloads with rare modifications.                                                                                               |
+| **CopyOnWriteArraySet**         | Set backed by `CopyOnWriteArrayList`.                                                                                                                                      |
+| **ConcurrentLinkedQueue**       | Non-blocking, FIFO queue.                                                                                                                                                  |
+| **ConcurrentLinkedDeque**       | Non-blocking, double-ended queue.                                                                                                                                          |
+| **BlockingQueue**               | Producer-consumer patterns. Supports blocking operations. <br/>Includes `ArrayBlockingQueue`,<br/> `LinkedBlockingQueue`, <br/>`PriorityBlockingQueue`, <br/>`DelayQueue`,<br/> `SynchronousQueue`. |
+| **BlockingDeque**               | Double-ended blocking queue. Example: `LinkedBlockingDeque`.                                                                                                               |
+| **ConcurrentSkipListMap / Set** | Thread-safe, sorted concurrent map/set using skip lists.                                                                                                                              
+
 
 ### Fail-Fast and Fail-Safe Iterators
 
@@ -125,58 +168,3 @@ public class CopyOnWriteArrayListExample {
 1. **Improved Concurrency**: By locking only the necessary parts of the collection, multiple threads can perform operations concurrently, leading to better throughput.
 2. **Reduced Contention**: Finer-grained locks reduce the likelihood of contention between threads, which can improve performance in multi-threaded environments.
 3. **Scalability**: Operation-level locking allows collections to scale better with the number of threads, as different threads can work on different parts of the collection simultaneously.
-
-### 🧰 **Thread-Safe Collections in Java**
-
-#### 1. **ConcurrentHashMap**
-- A high-performance, thread-safe hash table.
-- Allows concurrent reads and updates without locking the entire map.
-
-#### 2. **CopyOnWriteArrayList**
-- A thread-safe variant of `ArrayList`.
-- Ideal for scenarios with **frequent reads** and **infrequent writes**.
-- On write, it creates a **new copy** of the underlying array.
-
-#### 3. **CopyOnWriteArraySet**
-- Backed by a `CopyOnWriteArrayList`.
-- Thread-safe set with similar characteristics: good for read-heavy workloads.
-
-#### 4. **ConcurrentLinkedQueue**
-- A non-blocking, thread-safe queue based on linked nodes.
-- Suitable for **FIFO** (first-in-first-out) operations in concurrent environments.
-
-#### 5. **ConcurrentLinkedDeque**
-- A thread-safe, non-blocking **double-ended queue**.
-- Allows insertion and removal from both ends concurrently.
-
-#### 6. **BlockingQueue Interface and Implementations**
-Used for **producer-consumer** scenarios with blocking behavior.
-
-- **ArrayBlockingQueue** – bounded, backed by an array.
-- **LinkedBlockingQueue** – optionally bounded, backed by linked nodes.
-- **PriorityBlockingQueue** – unbounded, orders elements based on priority.
-- **DelayQueue** – elements become available after a delay.
-- **SynchronousQueue** – no internal capacity; each insert waits for a remove.
-
-#### 7. **BlockingDeque Interface and Implementations**
-- **LinkedBlockingDeque** – supports blocking operations on both ends.
-
-#### 8. **ConcurrentSkipListMap / ConcurrentSkipListSet**
-- Thread-safe sorted map and set.
-- Based on **skip list** data structure.
-- Maintains elements in **sorted order**.
-
----
-
-### 🧠 When to Use What?
-
-| Collection              | Best For                                     |
-|:------------------------|:---------------------------------------------|
-| `ConcurrentHashMap`     | Shared key-value store with high concurrency |
-| `CopyOnWriteArrayList`  | Read-heavy lists with rare modifications     |
-| `ConcurrentLinkedQueue` | Non-blocking FIFO queue                      |
-| `BlockingQueue`         | Producer-consumer patterns                   |
-| `ConcurrentSkipListMap` | Sorted concurrent map                        |
-
-
-

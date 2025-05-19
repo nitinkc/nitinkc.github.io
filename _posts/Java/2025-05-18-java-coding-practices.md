@@ -9,13 +9,17 @@ tags: ['Java']
 
 ### **1. Embrace Immutability**
 
-✅ **Good**: Use `final` and immutable classes  
+✅ **Good**: Use `final` and immutable classes
 ❌ **Bad**: Mutable fields and public setters
 
+##### `final` Fields
+- To clearly express intent that a field is constant **after construction**
+- For immutable objects (e.g., User, Car, Config).
+- To guarantee thread safety for shared data.
 ```java
 // ✅ Good
 public final class User {
-    private final String name;
+    private final String name;// ✅ Immutable
 
     public User(String name) {
         this.name = name;
@@ -36,6 +40,18 @@ public class MutableUser {
 }
 ```
 
+##### `final` Method Parameters
+Use final to prevent accidental reassignment of method arguments.
+
+- In large methods where reassignment might cause confusion.
+- When passing parameters to inner classes or lambdas (required to be effectively final).
+
+```java
+public void printUser(final String name) {
+    System.out.println(name);
+    name = "New Name"; // ❌ Compilation error
+}
+```
 ---
 
 ### **2. Leverage Streams and Functional Programming**
