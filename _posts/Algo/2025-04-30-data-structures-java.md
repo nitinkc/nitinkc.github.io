@@ -1,5 +1,5 @@
 ---
-title: "Data Structures"
+title: "Data Structures - Implementations"
 date:  2025-04-30 15:06:00
 categories: Algorithms
 tags: [Algorithms]
@@ -8,8 +8,97 @@ tags: [Algorithms]
 {% include toc title="Index" %}
 
 
+# **Graph and Tree Structures**
+Java does not provide built-in graph or tree libraries (except `TreeMap`/`TreeSet`). Use libraries like:
+- **JGraphT**: For graph data structures and algorithms.
+- **Apache Commons Graph**: For directed and undirected graphs.
+
+## **Third-Party Libraries**
+For advanced data structures, consider:
+
+### **Google Guava**
+- **`Multimap`**: A map that allows multiple values for a key.
+- **`Table`**: Two-dimensional data structure.
+- **`BiMap`**: A map that enforces unique values.
+
+### **Apache Commons Collections**
+- **`Bag`**: A collection that counts occurrences of elements.
+- **`Trie`**: A prefix tree implementation.
+
+
+# **Graph (Adjacency List)**
+```java
+import java.util.ArrayList;
+
+public class GraphExample {
+    static class Graph {
+        int vertices;
+        ArrayList<ArrayList<Integer>> adjList;
+
+        Graph(int vertices) {
+            this.vertices = vertices;
+            adjList = new ArrayList<>();
+            for (int i = 0; i < vertices; i++) {
+                adjList.add(new ArrayList<>());
+            }
+        }
+
+        void addEdge(int src, int dest) {
+            adjList.get(src).add(dest);
+            adjList.get(dest).add(src); // For undirected graph
+        }
+
+        void printGraph() {
+            for (int i = 0; i < adjList.size(); i++) {
+                System.out.println(i + " -> " + adjList.get(i));
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Graph graph = new Graph(3);
+        graph.addEdge(0, 1);
+        graph.addEdge(1, 2);
+        graph.printGraph();
+    }
+}
+```
+
+# **Binary Tree**
+```java
+class TreeNode {
+    int value;
+    TreeNode left, right;
+
+    TreeNode(int value) {
+        this.value = value;
+        left = right = null;
+    }
+}
+
+public class BinaryTreeExample {
+    TreeNode root;
+
+    void inOrderTraversal(TreeNode node) {
+        if (node != null) {
+            inOrderTraversal(node.left);
+            System.out.print(node.value + " ");
+            inOrderTraversal(node.right);
+        }
+    }
+
+    public static void main(String[] args) {
+        BinaryTreeExample tree = new BinaryTreeExample();
+        tree.root = new TreeNode(1);
+        tree.root.left = new TreeNode(2);
+        tree.root.right = new TreeNode(3);
+        tree.inOrderTraversal(tree.root);
+    }
+}
+```
+
 #### Heaps
-**Min-Heap:**
+##### **Min-Heap:**
 ```java
 class MinHeap {
     private int[] Heap;
@@ -76,7 +165,7 @@ class MinHeap {
 }
 ```
 
-**Max-Heap:**
+##### **Max-Heap:**
 ```java
 class MaxHeap {
     private int[] Heap;
@@ -143,7 +232,7 @@ class MaxHeap {
 }
 ```
 
-**Heapify:**
+##### **Heapify:**
 ```java
 void heapify(int[] arr, int n, int i) {
     int largest = i;
@@ -162,19 +251,55 @@ void heapify(int[] arr, int n, int i) {
 }
 ```
 
-**Priority Queue:**
-```java(10);
-        pq.add(20);
-        pq.add(15);
+##### **Priority Queue:**
+```java
+pq.add(20);
+pq.add(15);
 
-        System.out.println(pq.peek()); // 10
-        System.out.println(pq.poll()); // 10
-        System.out.println(pq.peek()); // 15
+System.out.println(pq.peek()); // 10
+System.out.println(pq.poll()); // 10
+System.out.println(pq.peek()); // 15
+```
+
+# Trie
+
+```java
+class TrieNode {
+    TrieNode[] children = new TrieNode[26];
+    boolean isEndOfWord;
+}
+
+public class TrieExample {
+    TrieNode root = new TrieNode();
+
+    void insert(String word) {
+        TrieNode node = root;
+        for (char ch : word.toCharArray()) {
+            if (node.children[ch - 'a'] == null) {
+                node.children[ch - 'a'] = new TrieNode();
+            }
+            node = node.children[ch - 'a'];
+        }
+        node.isEndOfWord = true;
+    }
+
+    boolean search(String word) {
+        TrieNode node = root;
+        for (char ch : word.toCharArray()) {
+            if (node.children[ch - 'a'] == null) return false;
+            node = node.children[ch - 'a'];
+        }
+        return node.isEndOfWord;
+    }
+
+    public static void main(String[] args) {
+        TrieExample trie = new TrieExample();
+        trie.insert("hello");
+        System.out.println(trie.search("hello")); // true
+        System.out.println(trie.search("world")); // false
     }
 }
 ```
-
-#### Trie
 **Insertion:**
 ```java
 class TrieNode {

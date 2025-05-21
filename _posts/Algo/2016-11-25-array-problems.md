@@ -12,6 +12,11 @@ For Arrays, Strings and Lists
 * For String, **length** is a method - `str.length()`
 * List has a **size** method = `list.size()`
 
+```java
+int[] a = new int[3]; // use [] for array instead of ()
+int[] a = new int[] {1, 2, 3};
+int[] b = {1, 2, 3}; // Same as above
+```
 # Single Pointer Technique
 - Iterate through LEFT
   - `int idx = 0`

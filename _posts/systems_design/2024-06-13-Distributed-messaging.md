@@ -62,9 +62,13 @@ RabbitMQ supports the publish/subscribe (pub/sub) messaging pattern
 
 What is typically understood by message is actually a **command**.
 
+> Use Queues in a point-to-point messaging system
+> Use topic in publish-subscribe messaging system
+
 ![eventVsMessage1.png](../../assets/images/eventVsMessage1.png)
 
 ![eventVsMessage2.png](../../assets/images/eventVsMessage2.png)
+
 
 ## Event
 - Has already happened, in the past
