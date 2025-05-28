@@ -69,7 +69,15 @@ What is typically understood by message is actually a **command**.
 
 ![eventVsMessage2.png](../../assets/images/eventVsMessage2.png)
 
+It is very easy to wiretap into a topic but not on queue. if a rogue service did listen to a queue,
+the corrosponding point-to-point service will not receive the message and a notification would be
+immediately be sent about the data loss.
 
+topic model does not support monitoring of the messages, and hence autoscaling capabilities
+
+
+
+topic only supports homogenous contracts
 ## Event
 - Has already happened, in the past
 - **order of events can't be changed** as history can't be altered
