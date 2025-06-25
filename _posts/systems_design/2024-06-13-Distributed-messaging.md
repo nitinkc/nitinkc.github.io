@@ -154,6 +154,8 @@ data to the **end of the file**
 HHD is 1/3 of the price, but 3 times capacity due to which kafka can keep
 messages (cost effectively) over a long period of time
 
+![Disk Access](https://youtu.be/aZjYr87r1b8?t=148)
+
 ### Zero Copy principle
 The data page is loaded from the disk to the OS buffer (RAM??) - zero copy
 

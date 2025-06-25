@@ -42,3 +42,6 @@ handle the exception **as error** rather than exception
 - 70% unit tests, 20% service tests, 10% UI tests
 
 ![](https://www.researchgate.net/publication/375982003/figure/fig3/AS:11431281207360823@1701189466064/The-agile-test-automation-pyramid-by-Mike-Cohn-1.jpg)
+
+
+![Quality-Attributes.png]({{ site.url }}/assets/images/Quality-Attributes.png)

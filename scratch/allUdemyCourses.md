@@ -12,3 +12,16 @@
 - Multithreading,Parallel & Asynchronous Coding in Modern Java - Pragmatic Code School
 - Functional & Reactive programming in Java : Modern Style - Basics Strong
 - Java Object Oriented Programming:OOPS OOAD & Design Patterns - Basics Strong
+
+# Books
+
+Foundations of Scalable Systems
+by Ian Gorton
+Released June 2022
+
+
+Software Architecture Metrics
+by Christian Ciceri, Dave Farley, Neal Ford, Andrew Harmel-Law, Michael Keeling, Carola Lilienthal, João Rosa, Alexander von Zitzewitz, Rene Weiss, Eoin Woods
+Released May 2022
+
+
