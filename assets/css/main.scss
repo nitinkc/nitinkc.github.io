@@ -252,3 +252,13 @@ ul li::marker {
 .fluid-width-video-wrapper {
   padding-top: 25.25% !important;
 }
+
+#main, .page__content {
+  margin-right: 350px; // Adjust to match your sidebar width
+}
+
+@media (min-width: 1024px) {
+  #main, .page__content {
+    margin-right: 350px; // Match $right-sidebar-width
+  }
+}
