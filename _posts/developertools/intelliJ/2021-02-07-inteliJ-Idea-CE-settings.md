@@ -169,3 +169,7 @@ Set the Token, instead of user/password
 # Enable Font Zoom/Font Size change
 
 ![font-zoom.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Ffont-zoom.png)
+
+
+# Invalidate Caches and Restore
+![invalidateCache.png](..%2F..%2F..%2Fassets%2Fimages%2FintelliJ%2FinvalidateCache.png)
