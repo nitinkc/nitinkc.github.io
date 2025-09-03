@@ -27,3 +27,46 @@ Stream Mode: Collect as and when the data is generated
 
 # Azure Databricks Platform Architecture
 ![azure-databrics-platform-architecture.png]({{ site.url }}/assets/images/Fazure-databrics-platform-architecture.png){:width="70%" height="50%"}
+
+
+# Magic Commands
+
+```shell
+%sql
+SELECT "Hello World" as msg
+
+%fs
+ls /tmp
+
+%fs
+# Run Linux shell commands
+
+%scala
+
+%md
+# Header1 Markdown
+
+%lsmagic
+```
+
+# Databrics Utilities
+
+```shell
+dbutils.help()
+
+credentials: DatabricksCredentialUtils -> Utilities for interacting with credentials within notebooks
+data: DataUtils -> Utilities for understanding and interacting with datasets (EXPERIMENTAL)
+fs: DbfsUtils -> Manipulates the Databricks filesystem (DBFS) from the console
+jobs: JobsUtils -> Utilities for leveraging jobs features
+library: LibraryUtils -> Utilities for session isolated libraries
+meta: MetaUtils -> Methods to hook into the compiler (EXPERIMENTAL)
+notebook: NotebookUtils -> Utilities for the control flow of a notebook (EXPERIMENTAL)
+preview: Preview -> Utilities under preview category
+secrets: SecretUtils -> Provides utilities for leveraging secrets within notebooks
+widgets: WidgetsUtils -> Methods to create and get bound value of input widgets inside notebooks
+```
+
+Detailed documentation
+```shell
+dbutils.fs.help()
+```

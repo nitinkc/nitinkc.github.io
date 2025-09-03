@@ -172,4 +172,5 @@ Set the Token, instead of user/password
 
 
 # Invalidate Caches and Restore
+
 ![invalidateCache.png](..%2F..%2F..%2Fassets%2Fimages%2FintelliJ%2FinvalidateCache.png)
