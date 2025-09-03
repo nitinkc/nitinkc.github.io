@@ -7,7 +7,6 @@ tags: ['Git']
 
 {% include toc title="Index" %}
 
-
 # Git Config
 [https://nitinkc.github.io/git/git-config/](https://nitinkc.github.io/git/git-config/)
 
@@ -80,7 +79,7 @@ git rm -r --cached <filename or folder>
 Creating a fresh Project Local
 1. Create a repo on Github and copy the repo name.
 
-	2. Create an IntelliJ/ Eclipse Project as a new project and goto that path using command prompt
+2. Create an IntelliJ/ Eclipse Project as a new project and goto that path using command prompt
 
 Execute the following in Command prompt
 
@@ -144,6 +143,12 @@ git branch -m <newname>
 
 # Stash
 
+```shell
+git stash push -m "named_stash"
+
+git stash apply stash^{/named_stash}
+```
+
 ## View and Clear Stash
 
 Acts as local clipboard to git
@@ -155,15 +160,16 @@ git stash clear
 # Find all the stash with index Id
 git stash list
 
+git stash pop stash@{n}
+
 # Take the index from the stash list
 git stash drop stash@{index}
 ```
 
-Stash from one branch and bring it on another
+#### Stash from one branch and bring it on another
 
-If changes are made accidentally on a branch where its not needed, then stash
-the changes and then
-bring back into the other branch
+If changes are made accidentally on a branch where it's not needed, then stash
+the changes and then bring back into the other branch
 
 `--keep-index` allows to stash all changes that were not added to staging area.
 
