@@ -173,4 +173,4 @@ Set the Token, instead of user/password
 
 # Invalidate Caches and Restore
 
-![invalidateCache.png]({{ site.url }}/assets/images/intelliJ/invalidateCache.png)
+![invalidateCache.png]({{ site.url }}/assets/images/intelliJ/invalidateCache.png){:width="70%" height="50%"}
