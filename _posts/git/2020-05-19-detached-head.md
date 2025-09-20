@@ -7,21 +7,6 @@ tags: ['Git']
 
 {% include toc title="Index" %}
 
-While using Git Submodules, after cloning a submodule, the projects are in detached mode.
-
-### [Use this link for the resolution](https://github.com/nitinkc/git-submodule-demo/blob/master/README.md)
-
-```sh
-git log --graph --decorate --pretty=oneline --abbrev-commit master origin/master
-git log -n 2
-git checkout 957833d728b3249d22a3b3160f3a48b72c576d91
-git checkout -b temp
-git checkout master
-git merge temp
-# delete branch locally
-git branch -d temp
-```
-
 # Add a new project in an existing submodule
 ```shell
 git submodule add <GitHub Repo Name>
@@ -50,6 +35,20 @@ cd spring-microservices
 git pull --recurse-submodules
 ```
 
+** For Submodules to be tracked using a branch instead of a commit **.
+Add the branch name in the `.gitmodules` file
+```shell
+[submodule "foo"]
+    path = foo
+    url = ...
+    branch = main
+```
+
+This will check out the tip of the branch (e.g., main) in the submodule, instead of a fixed commit.
+```sh
+git submodule update --remote
+```
+
 # In case the projects needs be deleted
 
 ```shell
@@ -67,3 +66,18 @@ Cleaning the local `.git` repo.
 
 > Instead of this, just commit the `.gitmodules` changes and re-clone the project
 
+# Detached Head Problem
+While using Git Submodules, after cloning a submodule, the projects are in detached mode.
+
+### [Use this link for the resolution](https://github.com/nitinkc/git-submodule-demo/blob/master/README.md)
+
+```sh
+git log --graph --decorate --pretty=oneline --abbrev-commit master origin/master
+git log -n 2
+git checkout 957833d728b3249d22a3b3160f3a48b72c576d91
+git checkout -b temp
+git checkout master
+git merge temp
+# delete branch locally
+git branch -d temp
+```
