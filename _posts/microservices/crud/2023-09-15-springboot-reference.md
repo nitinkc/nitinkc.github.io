@@ -119,10 +119,10 @@ server.port=8089
 `@ConfigurationProperties` to ensure Type Safety
 
 ```yaml
-myConfig: 
-   flag: true
-   message: From YAML
-   number: 100
+myConfig:
+  flag: true
+  message: "From YAML"
+  number: 100
 ```
 
 Type Safety can be ensured with this
@@ -239,7 +239,7 @@ including `@ComponentScan`.
 
 [https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/#Autowiring](https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/#Autowiring)
 
-Eliminates the need of creating a new object and hence the need of constructors
+Eliminates the need to create a new object and hence the need of constructors
 from the components
 `StudentService studentService = new StudentService();`
 
@@ -293,7 +293,7 @@ Postman/browser/client -> Controller -> Service -> Repository -> Service -> Cont
 - Create a posts for a User - POST `/user/{id}/posts`
 - Retrieve details of a post - GET `/user/{id}/posts/{post_id}`
 
-## Best Practises
+## Best Practices
 
 - Use Plurals
 
@@ -750,3 +750,71 @@ public class DailyTaskScheduler {
 
 # Bean Scope
 [https://nitinkc.github.io/microservices/spring-beans/#bean-scope](https://nitinkc.github.io/microservices/spring-beans/#bean-scope)
+
+# Spring Security
+
+[Spring Security](https://nitinkc.github.io/spring/microservices/spring-security-concepts/)
+{: .notice--success}
+
+Spring Security is a powerful and highly customizable authentication and access-control framework. It is the de-facto standard for securing Spring-based applications.
+
+## Key Concepts
+
+- **Authentication**: The process of verifying the identity of a user, device, or system. It answers the question, "Who are you?".
+- **Authorization**: The process of determining whether an authenticated user has permission to access a specific resource or perform a particular action. It answers the question, "What are you allowed to do?".
+- **Principal**: The currently authenticated user. It can be represented as an object within Spring Security's `SecurityContext`.
+- **GrantedAuthority**: Represents a permission granted to the principal. It is typically expressed as a role (e.g., `ROLE_ADMIN`, `ROLE_USER`).
+- **SecurityContextHolder**: Provides access to the `SecurityContext`, which holds the `Authentication` object and other security-related information.
+
+## Configuration
+
+Spring Security can be configured using a `SecurityFilterChain` bean. This is the most common way to configure security in a Spring Boot application.
+
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/public/**").permitAll()
+                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(withDefaults());
+        return http.build();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        UserDetails user = User.withDefaultPasswordEncoder()
+            .username("user")
+            .password("password")
+            .roles("USER")
+            .build();
+        UserDetails admin = User.withDefaultPasswordEncoder()
+            .username("admin")
+            .password("password")
+            .roles("ADMIN")
+            .build();
+        return new InMemoryUserDetailsManager(user, admin);
+    }
+}
+```
+
+In this example:
+- Requests to `/public/**` are permitted for everyone.
+- Requests to `/admin/**` are only allowed for users with the `ADMIN` role.
+- All other requests require authentication.
+- A form-based login is enabled with default settings.
+- An in-memory user store is configured with two users: `user` and `admin`.
+
+## Annotations
+
+- **`@EnableWebSecurity`**: Enables Spring Security's web security support and provides the Spring MVC integration.
+- **`@EnableMethodSecurity`**: Enables method-level security.
+- **`@PreAuthorize`**: Used to secure methods with a SpEL (Spring Expression Language) expression. The method will only be invoked if the expression evaluates to `true`.
+- **`@PostAuthorize`**: Allows for authorization logic to be executed after the method has been invoked.
+- **`@Secured`**: A simpler annotation for role-based security. For example, `@Secured("ROLE_ADMIN")`.
