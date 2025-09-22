@@ -818,3 +818,274 @@ In this example:
 - **`@PreAuthorize`**: Used to secure methods with a SpEL (Spring Expression Language) expression. The method will only be invoked if the expression evaluates to `true`.
 - **`@PostAuthorize`**: Allows for authorization logic to be executed after the method has been invoked.
 - **`@Secured`**: A simpler annotation for role-based security. For example, `@Secured("ROLE_ADMIN")`.
+
+# Reactive Programming (Spring WebFlux)
+
+[Reactive Programming with Spring WebFlux](https://nitinkc.github.io/spring/microservices/spring-webflux-reactive/)
+{: .notice--success}
+
+Spring WebFlux is a fully non-blocking, reactive web framework for building modern, scalable applications. It is an alternative to Spring MVC and is built on top of Project Reactor.
+
+## Key Concepts
+
+- **Reactive Streams**: A standard for asynchronous stream processing with non-blocking backpressure. Key interfaces are `Publisher`, `Subscriber`, `Subscription`, and `Processor`.
+- **Mono**: A `Publisher` that emits 0 or 1 element. Represents a single, asynchronous value or an empty result.
+  - `Mono<User> findUserById(String id);`
+- **Flux**: A `Publisher` that emits 0 to N elements. Represents a sequence of asynchronous values.
+  - `Flux<User> findAllUsers();`
+- **Backpressure**: A mechanism that allows a `Subscriber` to control the rate at which a `Publisher` produces data, preventing the `Subscriber` from being overwhelmed.
+
+## WebFlux vs. Spring MVC
+
+| Feature           | Spring MVC (Blocking)                               | Spring WebFlux (Non-Blocking)                             |
+|-------------------|-----------------------------------------------------|-----------------------------------------------------------|
+| **Thread Model**  | Thread-per-request                                  | Event-loop model (few threads handle many requests)       |
+| **Dependencies**  | `spring-boot-starter-web`                           | `spring-boot-starter-webflux`                             |
+| **API Style**     | Imperative, synchronous (`User`, `List<User>`)      | Functional, reactive (`Mono<User>`, `Flux<User>`)          |
+
+# Advanced Testing
+
+[Advanced Testing in Spring Boot](https://nitinkc.github.io/spring/microservices/spring-advanced-testing/)
+{: .notice--success}
+
+Spring Boot provides a rich set of testing utilities to write comprehensive unit, integration, and end-to-end tests.
+
+## Test Slices
+
+Test slices allow you to test a specific layer or "slice" of your application in isolation. This is faster than loading the entire application context.
+
+- **`@WebMvcTest`**: For testing the web layer (controllers) without the full application context. It auto-configures `MockMvc`.
+  ```java
+  @WebMvcTest(UserController.class)
+  public class UserControllerTest {
+      @Autowired
+      private MockMvc mockMvc;
+
+      @MockBean
+      private UserService userService;
+
+      @Test
+      void shouldReturnUser() throws Exception {
+          given(userService.getUserById("1")).willReturn(new User("Nitin", "nitin@test.com"));
+          mockMvc.perform(get("/users/1"))
+              .andExpect(status().isOk())
+              .andExpect(jsonPath("$.name").value("Nitin"));
+      }
+  }
+  ```
+- **`@DataJpaTest`**: For testing the persistence layer (JPA repositories). It uses an in-memory database by default and rolls back transactions after each test.
+  ```java
+  @DataJpaTest
+  public class UserRepositoryTest {
+      @Autowired
+      private TestEntityManager entityManager;
+
+      @Autowired
+      private UserRepository userRepository;
+
+      @Test
+      void shouldFindUserByUsername() {
+          User user = new User("Nitin", "nitin@test.com");
+          entityManager.persist(user);
+          entityManager.flush();
+
+          Optional<User> found = userRepository.findByUsername("Nitin");
+          assertThat(found).isPresent();
+          assertThat(found.get().getEmail()).isEqualTo("nitin@test.com");
+      }
+  }
+  ```
+- **`@JsonTest`**: For testing JSON serialization and deserialization.
+
+## Testcontainers
+
+Testcontainers is a Java library that provides lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container. This is ideal for true integration testing.
+
+- **Dependency**: Add `org.testcontainers:junit-jupiter` and the specific container module (e.g., `postgresql`).
+- **Usage**:
+  ```java
+  @SpringBootTest
+  @Testcontainers
+  class UserServiceIntegrationTest {
+      @Container
+      static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:13-alpine");
+
+      @DynamicPropertySource
+      static void configureProperties(DynamicPropertyRegistry registry) {
+          registry.add("spring.datasource.url", postgres::getJdbcUrl);
+          registry.add("spring.datasource.username", postgres::getUsername);
+          registry.add("spring.datasource.password", postgres::getPassword);
+      }
+
+      @Autowired
+      private UserService userService;
+
+      @Test
+      void testWithRealDatabase() {
+          // Your integration test logic here
+      }
+  }
+  ```
+
+# Resilience and Fault Tolerance
+
+[Resilience with Resilience4J](https://nitinkc.github.io/spring/microservices/resilience4j-spring-boot/)
+{: .notice--success}
+
+In distributed systems, services can fail. Resilience patterns help your application gracefully handle such failures. Resilience4J is a lightweight, easy-to-use fault tolerance library inspired by Netflix Hystrix.
+
+## Key Patterns
+
+- **Circuit Breaker**: Prevents repeated calls to a failing service. After a certain number of failures, the circuit "opens," and all subsequent calls fail immediately (or are redirected to a fallback) for a configured duration. This gives the failing service time to recover.
+  - **States**: `CLOSED` (calls allowed), `OPEN` (calls fail-fast), `HALF_OPEN` (limited calls to check recovery).
+- **Retry**: Automatically re-invokes a failed operation. Useful for transient errors like temporary network glitches.
+- **Bulkhead**: Limits the number of concurrent calls to a specific service, preventing one slow service from exhausting all resources and causing cascading failures.
+- **Rate Limiter**: Controls the rate of requests to a service (e.g., 100 requests per second).
+- **Time Limiter**: Sets a timeout for asynchronous operations.
+
+## Example with Circuit Breaker
+
+1.  **Dependencies**: Add `spring-cloud-starter-circuitbreaker-resilience4j`.
+2.  **Configuration** (`application.yml`):
+    ```yaml
+    resilience4j.circuitbreaker:
+      instances:
+        myApiService:
+          registerHealthIndicator: true
+          slidingWindowSize: 10
+          minimumNumberOfCalls: 5
+          permittedNumberOfCallsInHalfOpenState: 3
+          automaticTransitionFromOpenToHalfOpenEnabled: true
+          waitDurationInOpenState: 5s
+          failureRateThreshold: 50
+          eventConsumerBufferSize: 10
+    ```
+3.  **Usage in Code**:
+    ```java
+    @Service
+    public class MyApiService {
+
+        @CircuitBreaker(name = "myApiService", fallbackMethod = "fallback")
+        public String fetchData() {
+            // Call to an external, potentially failing service
+            return restTemplate.getForObject("http://external-api/data", String.class);
+        }
+
+        public String fallback(Throwable t) {
+            // Return a default value or a cached response
+            return "Fallback data";
+        }
+    }
+    ```
+
+# Database Migration
+
+[Database Migration with Flyway](https://nitinkc.github.io/spring/microservices/flyway-database-migration/)
+{: .notice--success}
+
+Database migration tools like Flyway and Liquibase help you version-control your database schema, making it easy to evolve your database structure in a consistent and automated way.
+
+## Why Use It?
+
+- **Version Control for DB**: Treat your schema changes like code.
+- **Automation**: Apply schema changes automatically on application startup.
+- **Consistency**: Ensures all environments (dev, test, prod) are using the same schema version.
+- **Rollbacks**: Simplifies the process of reverting to a previous schema state (more supported in Liquibase).
+
+## Flyway
+
+Flyway is a popular open-source database migration tool that favors simplicity and convention over configuration.
+
+1.  **Dependency**: Add `org.flywaydb:flyway-core`.
+2.  **SQL Scripts**: Create SQL migration scripts in `src/main/resources/db/migration`. The naming convention is crucial: `V<VERSION>__<DESCRIPTION>.sql`.
+    - `V1__create_user_table.sql`
+    - `V2__add_email_to_user.sql`
+    ```sql
+    -- V1__create_user_table.sql
+    CREATE TABLE users (
+        id BIGINT PRIMARY KEY,
+        username VARCHAR(255) NOT NULL
+    );
+    ```
+    ```sql
+    -- V2__add_email_to_user.sql
+    ALTER TABLE users ADD COLUMN email VARCHAR(255);
+    ```
+3.  **Execution**: On startup, Spring Boot will automatically detect Flyway and run any new migration scripts. Flyway uses a `flyway_schema_history` table in your database to track which migrations have already been applied.
+
+## Liquibase
+
+Liquibase is another powerful migration tool that uses XML, YAML, or JSON changelogs instead of pure SQL, which can make it more database-agnostic.
+
+- **Changelog File**: You define changesets in a master changelog file.
+- **Changesets**: Each changeset is an atomic unit of change, identified by an `id` and `author`.
+
+# Containerization & Cloud-Native
+
+[Containerizing Spring Boot with Docker](https://nitinkc.github.io/spring/microservices/docker-spring-boot/)
+{: .notice--success}
+
+Containerization, particularly with Docker, is the standard for packaging and deploying modern applications. Cloud-native practices enable applications to be scalable, resilient, and manageable in dynamic environments like Kubernetes.
+
+## Docker
+
+Docker allows you to package your application and its dependencies into a standardized unit called a container.
+
+### Dockerfile
+
+A `Dockerfile` is a script containing instructions to build a Docker image.
+
+```dockerfile
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:17-jdk-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the fat jar into the container at /app
+COPY target/my-app-0.0.1-SNAPSHOT.jar app.jar
+
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
+
+# Run the jar file
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+### Multi-Stage Builds
+
+A multi-stage build is a best practice that helps keep your final image small and secure by separating the build environment from the runtime environment.
+
+```dockerfile
+# --- Build Stage ---
+FROM maven:3.8.5-openjdk-17 AS build
+WORKDIR /source
+COPY . .
+RUN mvn clean package -DskipTests
+
+# --- Runtime Stage ---
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /source/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+## Cloud-Native Best Practices
+
+- **Configuration Management**: Externalize configuration using ConfigMaps in Kubernetes or a dedicated config server (like Spring Cloud Config) instead of baking it into the image.
+- **Health Checks**: Implement liveness and readiness probes (`/actuator/health/liveness`, `/actuator/health/readiness`). Kubernetes uses these to know if your application is running correctly and ready to receive traffic.
+- **Graceful Shutdown**: Ensure your application handles `SIGTERM` signals to shut down gracefully, finishing in-flight requests and releasing resources. Spring Boot does this by default.
+- **Stateless Services**: Design your services to be stateless. State should be stored in an external database or cache (like Redis or a distributed database). This allows you to scale your application horizontally with ease.
+- **Distributed Tracing**: Use tools like Zipkin or Jaeger to trace requests as they travel across multiple microservices, which is essential for debugging in a distributed system.
+- **Changesets**: Each changeset is an atomic unit of change, identified by an `id` and `author`.
+            return "Fallback data";
+        }
+    }
+    ```
+          // Your integration test logic here
+      }
+  }
+  ```
+| **API Style**     | Imperative, synchronous (`User`, `List<User>`)      | Functional, reactive (`Mono<User>`, `Flux<User>`)          |
+- **`@Secured`**: A simpler annotation for role-based security. For example, `@Secured("ROLE_ADMIN")`.
