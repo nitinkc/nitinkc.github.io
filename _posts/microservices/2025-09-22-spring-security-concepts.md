@@ -53,22 +53,22 @@ sequenceDiagram
     participant UserDetailsService
     participant SecurityContextHolder
 
-    User->>+UsernamePasswordAuthenticationFilter: Submits credentials (username/password)
-    UsernamePasswordAuthenticationFilter->>+AuthenticationManager: Creates AuthenticationToken and calls authenticate()
-    AuthenticationManager->>+AuthenticationProvider: Delegates to appropriate provider
-    AuthenticationProvider->>+UserDetailsService: loadUserByUsername()
-    UserDetailsService-->>-AuthenticationProvider: Returns UserDetails
+    User->>UsernamePasswordAuthenticationFilter: Submits credentials (username/password)
+    UsernamePasswordAuthenticationFilter->>AuthenticationManager: Creates AuthenticationToken and calls authenticate()
+    AuthenticationManager->>AuthenticationProvider: Delegates to appropriate provider
+    AuthenticationProvider->>UserDetailsService: loadUserByUsername()
+    UserDetailsService-->>AuthenticationProvider: Returns UserDetails
     AuthenticationProvider->>AuthenticationProvider: Compares passwords (using PasswordEncoder)
     alt Credentials are valid
-        AuthenticationProvider-->>-AuthenticationManager: Returns fully authenticated Authentication object
-        AuthenticationManager-->>-UsernamePasswordAuthenticationFilter: Returns Authentication object
-        UsernamePasswordAuthenticationFilter->>+SecurityContextHolder: setAuthentication(authentication)
-        SecurityContextHolder-->>-UsernamePasswordAuthenticationFilter:
-        UsernamePasswordAuthenticationFilter-->>-User: Authentication successful, grants access
+        AuthenticationProvider-->>AuthenticationManager: Returns fully authenticated Authentication object
+        AuthenticationManager-->>UsernamePasswordAuthenticationFilter: Returns Authentication object
+        UsernamePasswordAuthenticationFilter->>SecurityContextHolder: setAuthentication(authentication)
+        SecurityContextHolder-->>UsernamePasswordAuthenticationFilter:
+        UsernamePasswordAuthenticationFilter-->>User: Authentication successful, grants access
     else Credentials are invalid
-        AuthenticationProvider-->>-AuthenticationManager: Throws AuthenticationException
-        AuthenticationManager-->>-UsernamePasswordAuthenticationFilter: Throws AuthenticationException
-        UsernamePasswordAuthenticationFilter-->>-User: Authentication failed, denies access
+        AuthenticationProvider-->>AuthenticationManager: Throws AuthenticationException
+        AuthenticationManager-->>UsernamePasswordAuthenticationFilter: Throws AuthenticationException
+        UsernamePasswordAuthenticationFilter-->>User: Authentication failed, denies access
     end
 ```
 
