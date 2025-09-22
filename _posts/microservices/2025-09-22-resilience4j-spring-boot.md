@@ -39,6 +39,7 @@ The Circuit Breaker pattern prevents an application from repeatedly trying to ca
 This diagram shows the three states of the Circuit Breaker: `CLOSED`, `OPEN`, and `HALF_OPEN`.
 
 ```mermaid
+
 stateDiagram-v2
     [*] --> CLOSED: Initial State
 
@@ -59,7 +60,6 @@ stateDiagram-v2
         direction LR
         [*] --> description: "Limited trial calls allowed"
     }
-
 ```
 
 - **How it works**: A circuit breaker acts like an electrical circuit breaker. It has three states:

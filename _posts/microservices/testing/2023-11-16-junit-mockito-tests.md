@@ -1,18 +1,21 @@
 ---
-title:  "Mockito Junit Tests"
+title:  "Comprehensive Guide to JUnit and Mockito Testing"
 date:   2023-11-16 18:55:00
-categories: [Microservices]
-tags: [Microservices]
+categories: [Microservices, Testing]
+tags: [Microservices, Testing, JUnit, Mockito, Unit Testing]
 ---
 
 {% include toc title="Index" %}
 
-**SUMMARY**
+# Introduction
 
-Mockito with Junit
+This comprehensive guide covers JUnit and Mockito testing frameworks for Java applications. It focuses on unit testing, integration testing, and best practices for writing maintainable and reliable tests.
 
+**Key Concepts:**
 - Class `MyService` is SUT (System Under Test)
-- Class `SomeService` is Dependency (which is mocked).
+- Class `SomeService` is Dependency (which is mocked)
+- Isolation of components for focused testing
+- Mocking external dependencies
 
 [Example Code](https://github.com/nitinkc/Mockito-Junit-Learning/tree/main/mockito-junit/src/main/java/com/nitin/mockito/business)
 
@@ -76,6 +79,29 @@ Mockito with Junit
 @ExtendWith(MockitoExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class MyClassTest {
+    
+    @BeforeAll
+    static void setUpBeforeClass() {
+        // Runs once before all test methods in this class
+        // Use for expensive setup operations
+    }
+    
+    @BeforeEach
+    void setUp() {
+        // Runs before each test method
+        MockitoAnnotations.openMocks(this);
+    }
+    
+    @AfterEach
+    void tearDown() {
+        // Runs after each test method
+        // Clean up resources
+    }
+    
+    @AfterAll
+    static void tearDownAfterClass() {
+        // Runs once after all test methods
+    }
 }
 ```
 
@@ -347,6 +373,55 @@ MockedStatic<UuidUtils> utilities = Mockito.mockStatic(UuidUtils.class)
 
 {% gist nitinkc/3436fd1f2aa6e4c78ca7bf9dc8392e60 %}
 
+# Advanced Mocking Techniques
+
+## Stubbing Consecutive Calls
+
+```java
+when(mockService.getData())
+    .thenReturn("first call")
+    .thenReturn("second call")
+    .thenThrow(new RuntimeException("third call"));
+```
+
+## Stubbing with Callbacks
+
+```java
+when(mockService.processData(anyString()))
+    .thenAnswer(invocation -> {
+        String arg = invocation.getArgument(0);
+        return "Processed: " + arg;
+    });
+```
+
+## Partial Mocking with Spies
+
+```java
+@Spy
+MyService spyService = new MyService();
+
+@Test
+void testPartialMocking() {
+    // Real methods are called unless stubbed
+    doReturn("mocked").when(spyService).expensiveOperation();
+    
+    String result = spyService.businessMethod();
+    
+    verify(spyService).expensiveOperation();
+}
+```
+
+## Custom Argument Matchers
+
+```java
+// Create custom matcher
+ArgumentMatcher<User> userMatcher = user -> 
+    user != null && "admin".equals(user.getRole());
+
+when(userService.processUser(argThat(userMatcher)))
+    .thenReturn("Admin processed");
+```
+
 ### Argument Matchers
 
 - `anyString()` and `any()` are argument matchers in Mockito.
@@ -387,6 +462,107 @@ Invalid use of argument matchers!
 **Create from a json file**
 {% gist nitinkc/0420dcc14a5d0a4094fd85c32ae80a16 %}
 
+## Test Data Builders
+
+```java
+public class UserTestDataBuilder {
+    private String name = "John Doe";
+    private String email = "john@example.com";
+    private String role = "USER";
+    
+    public UserTestDataBuilder withName(String name) {
+        this.name = name;
+        return this;
+    }
+    
+    public UserTestDataBuilder withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+    
+    public UserTestDataBuilder withRole(String role) {
+        this.role = role;
+        return this;
+    }
+    
+    public User build() {
+        return new User(name, email, role);
+    }
+}
+
+// Usage in tests
+@Test
+void testUserCreation() {
+    User user = new UserTestDataBuilder()
+        .withName("Alice")
+        .withRole("ADMIN")
+        .build();
+        
+    // Test logic here
+}
+```
+
+# Testing Best Practices
+
+## The AAA Pattern
+
+Structure your tests using **Arrange-Act-Assert**:
+
+```java
+@Test
+void shouldCalculateDiscountForPremiumUser() {
+    // Arrange
+    User premiumUser = new UserTestDataBuilder()
+        .withRole("PREMIUM")
+        .build();
+    when(userService.findById(1L)).thenReturn(premiumUser);
+    
+    // Act
+    BigDecimal discount = discountService.calculateDiscount(1L, new BigDecimal("100"));
+    
+    // Assert
+    assertThat(discount).isEqualByComparingTo(new BigDecimal("10.00"));
+    verify(userService).findById(1L);
+}
+```
+
+## Test Naming Conventions
+
+```java
+// Good naming patterns:
+@Test
+void shouldReturnEmptyListWhenNoUsersExist() { }
+
+@Test
+void shouldThrowExceptionWhenUserIdIsNull() { }
+
+@Test
+void givenInvalidEmail_whenValidatingUser_thenThrowValidationException() { }
+```
+
+## Mockito Verification Modes
+
+```java
+// Verify exact number of calls
+verify(mockService, times(3)).getData();
+
+// Verify at least/at most
+verify(mockService, atLeast(1)).getData();
+verify(mockService, atMost(5)).getData();
+
+// Verify no interactions
+verifyNoInteractions(mockService);
+
+// Verify no more interactions after specified ones
+verify(mockService).getData();
+verifyNoMoreInteractions(mockService);
+
+// Verify in order
+InOrder inOrder = inOrder(mockService1, mockService2);
+inOrder.verify(mockService1).methodA();
+inOrder.verify(mockService2).methodB();
+```
+
 # Debugging
 
 Get the JSON Response from IntelliJ Debugger (after the DB Call) or from service
@@ -398,4 +574,151 @@ new com.fasterxml.jackson.databind.ObjectMapper()
         .disable(com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS) 
         .writerWithDefaultPrettyPrinter() 
         .writeValueAsString(data);
+
+# Modern Testing Approaches
+
+## TestContainers for Integration Testing
+
+```java
+@SpringBootTest
+@Testcontainers
+class DatabaseIntegrationTest {
+    
+    @Container
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:13")
+            .withDatabaseName("testdb")
+            .withUsername("test")
+            .withPassword("test");
+    
+    @DynamicPropertySource
+    static void configureProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.datasource.url", postgres::getJdbcUrl);
+        registry.add("spring.datasource.username", postgres::getUsername);
+        registry.add("spring.datasource.password", postgres::getPassword);
+    }
+    
+    @Test
+    void shouldPersistUser() {
+        // Test with real database
+    }
+}
+```
+
+## AssertJ for Fluent Assertions
+
+```java
+// Instead of JUnit assertions, use AssertJ for better readability
+import static org.assertj.core.api.Assertions.*;
+
+@Test
+void shouldReturnFilteredUsers() {
+    List<User> users = userService.getActiveUsers();
+    
+    assertThat(users)
+        .isNotEmpty()
+        .hasSize(3)
+        .extracting(User::getName)
+        .containsExactly("Alice", "Bob", "Charlie")
+        .doesNotContain("Inactive User");
+}
+```
+
+## Testing Async Code
+
+```java
+@Test
+void shouldHandleAsyncOperation() throws Exception {
+    CompletableFuture<String> future = asyncService.processAsync("data");
+    
+    // Test async completion
+    assertThat(future).succeedsWithin(Duration.ofSeconds(5))
+                     .isEqualTo("Processed: data");
+}
+
+// Testing with @Async methods
+@Test
+void shouldProcessAsyncMethod() {
+    asyncService.processInBackground("test");
+    
+    // Use Awaitility for async verification
+    await().atMost(2, SECONDS)
+           .untilAsserted(() -> 
+               verify(mockService).save(argThat(data -> 
+                   "test".equals(data.getValue()))));
+}
+```
+
+## Common Testing Pitfalls to Avoid
+
+### 1. Over-Mocking
+```java
+// Bad - mocking everything
+@Mock List<String> mockList;
+@Mock String mockString;
+
+// Good - mock only external dependencies
+@Mock UserRepository userRepository;
+```
+
+### 2. Testing Implementation Details
+```java
+// Bad - testing internal method calls
+verify(userService).validateUser(user);
+verify(userService).encryptPassword(user);
+verify(userService).saveToDatabase(user);
+
+// Good - testing behavior
+User result = userService.createUser(userData);
+assertThat(result.getId()).isNotNull();
+```
+
+### 3. Brittle Tests
+```java
+// Bad - depending on exact order or timing
+verify(mockService, times(1)).method1();
+verify(mockService, times(1)).method2();
+
+// Good - verify what matters
+verify(mockService).saveUser(any(User.class));
+```
+
+# Test Coverage and Quality
+
+## JaCoCo Configuration
+
+```xml
+<plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.7</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>prepare-agent</goal>
+            </goals>
+        </execution>
+        <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+                <goal>report</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
+
+## Test Quality Guidelines
+
+- **F.I.R.S.T Principles:**
+  - **Fast**: Tests should run quickly
+  - **Independent**: Tests should not depend on each other
+  - **Repeatable**: Tests should be consistent
+  - **Self-Validating**: Tests should have boolean output
+  - **Timely**: Write tests before or with the code
+
+- **Test Pyramid**: More unit tests, fewer integration tests, minimal E2E tests
+- **Aim for 80-90% code coverage**, but focus on meaningful tests
+- **Test edge cases and error conditions**
+- **Keep tests simple and focused on one thing**
 ```
