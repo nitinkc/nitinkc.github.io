@@ -94,6 +94,10 @@ algolia:
 google:
   search_engine_id       : fa68a460423affeb0
   instant_search         : true # false (default), true
+# Client-side scripts loaded at the very end of <body>
+after_footer_scripts:
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+  - /assets/js/mermaid-init.js
 # SEO Related
 google_site_verification : google60e8efe70fe91d70.html
 bing_site_verification   :
