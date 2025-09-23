@@ -70,48 +70,48 @@ Here is a diagram comparing the traditional blocking thread model of Spring MVC 
 
 ```mermaid
 graph TD
-    subgraph "Spring MVC (Blocking)"
-        direction LR
-        R1(Request 1) --> T1[Thread 1]
-        T1 -- "Blocks for I/O" --> D1[DB Call]
-        D1 -- "Returns" --> T1
-        T1 --> Resp1(Response 1)
 
-        R2(Request 2) --> T2[Thread 2]
-        T2 -- "Blocks for I/O" --> D2[API Call]
-        D2 -- "Returns" --> T2
-        T2 --> Resp2(Response 2)
+    %% Spring MVC (Blocking)
+    subgraph Spring_MVC_Blocking
+        R1[Request 1] --> T1[Thread 1]
+        T1 -- Blocks for I/O --> D1[DB Call]
+        D1 -- Returns --> T1
+        T1 --> Resp1[Response 1]
 
-        R3(Request 3) --> T3[Thread 3]
-        T3 -- "Blocks for I/O" --> D3[File Read]
-        D3 -- "Returns" --> T3
-        T3 --> Resp3(Response 3)
+        R2[Request 2] --> T2[Thread 2]
+        T2 -- Blocks for I/O --> D2[API Call]
+        D2 -- Returns --> T2
+        T2 --> Resp2[Response 2]
+
+        R3[Request 3] --> T3[Thread 3]
+        T3 -- Blocks for I/O --> D3[File Read]
+        D3 -- Returns --> T3
+        T3 --> Resp3[Response 3]
     end
 
-    subgraph "Spring WebFlux (Non-Blocking)"
-        direction LR
-        subgraph "Event Loop (Few Threads)"
-            EL[Event Loop Thread]
-        end
+    %% Spring WebFlux (Non-Blocking)
+    subgraph Spring_WebFlux_NonBlocking
+        EL[Event Loop Thread]
+
+        WR1[Request 1] --> EL
+        EL -- Task 1 (Non-Blocking) --> WD1[DB Call]
         
-        WR1(Request 1) --> EL
-        EL -- "Task 1 (Non-Blocking)" --> WD1[DB Call]
-        
-        WR2(Request 2) --> EL
-        EL -- "Task 2 (Non-Blocking)" --> WA2[API Call]
+        WR2[Request 2] --> EL
+        EL -- Task 2 (Non-Blocking) --> WA2[API Call]
 
-        WR3(Request 3) --> EL
-        EL -- "Task 3 (Non-Blocking)" --> WF3[File Read]
+        WR3[Request 3] --> EL
+        EL -- Task 3 (Non-Blocking) --> WF3[File Read]
 
-        WD1 -- "Callback" --> EL
-        WA2 -- "Callback" --> EL
-        WF3 -- "Callback" --> EL
+        WD1 -- Callback --> EL
+        WA2 -- Callback --> EL
+        WF3 -- Callback --> EL
 
-        EL --> WResp1(Response 1)
-        EL --> WResp2(Response 2)
-        EL --> WResp3(Response 3)
+        EL --> WResp1[Response 1]
+        EL --> WResp2[Response 2]
+        EL --> WResp3[Response 3]
     end
 
+    %% Styling nodes
     style T1 fill:#f8d7da,stroke:#333
     style T2 fill:#f8d7da,stroke:#333
     style T3 fill:#f8d7da,stroke:#333
