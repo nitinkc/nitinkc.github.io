@@ -59,26 +59,31 @@ flowchart TD
     Brihaspati -->|Husband of| Tara
     Brihaspati -->|Forced Himself on| Mamta
     Mamta -->|Gave birth to| Vithatha
-    Vithatha -->|"Coronated as King instead of"| Brihaspati's
+    Vithatha -->|Coronated as King instead of| BrihaspatisSon["Brihaspati's son"]
     Brihaspati -->|Father of| King_Sudhumna
-    Tara -->|"Secret affair with"|`Moon/Chandra`
-    `Moon/Chandra` -->|Father of| Budha
-    Budha -->|"Son of"|`TaraandChandra`
+    MoonChandra["Moon/Chandra"]
+    Tara -->|Secret affair with| MoonChandra
+    MoonChandra -->|Father of| Budha
     Budha -->|Father of| Nahusha
     Nahusha -->|Father of| Yayati
     Yayati -->|Marries| Devyani
-    Yayati -->|"Has secret love with"|`Sharmishtha`
+    Yayati -->|Has secret love with| Sharmishtha
     Devyani -->|Daughter of| Shukracharya
-    `Sharmishtha` -->|"Kept as maid by"|`Devyani`
-    Yati -->|"Son of"|`DevyaniandYayati`
-    Yati -->|Marries| `Sharmishtha`
+    Sharmishtha
+    Sharmishtha -->|Kept as maid by| Devyani
+    Yati -->|Son of| Devyani
+    Yati -->|Son of| Yayati
+    Yati -->|Marries| Sharmishtha
     Yati -->|Father of| Yadu
-    Yadu -->|"Marries into"|`NagaTribe`
-    Yadu -->|"Cursed by his father to never be a king"| Puru
-    Puru -->|"One of the fathers of the"|`Kurudynasty`
+    NagaTribe["Naga Tribe"]
+    Yadu -->|Marries into| NagaTribe
+    Yadu -->|Cursed by his father to never be a king| Puru
+    Kurudynasty["Kuru dynasty"]
+    Puru -->|One of the fathers of the| Kurudynasty
     Preetha -->|"Given in adoption to her uncle"| Kuntibhoja
     Kuntibhoja -->|"Preetha is known as"| Kunti
-    Kunti -->|"Given a mantra for having baby by"|`SageDurvasa`
+    SageDurvasa["Sage Durvasa"]
+    Kunti -->|Given a mantra for having baby by| SageDurvasa
     Kunti -->|Marries| Pandu
     Pandu -->|"Brother-in-law of"| Vasudeva
     Vasudeva -->|Marries| Devki
@@ -89,9 +94,10 @@ flowchart TD
     Subhadra -->|Sister of| Rohini
     Rohini -->|Sister of| Devki
     Vasudeva -->|Brother of| Srutadevi
-    Srutadevi -->|"Has secret love with"| Sharmishtha
+    Srutadevi -->|Has secret love with| Sharmishtha
     Puru -->|Ancestor of| Vishwamitra
     Vishwamitra -->|Encounters| Urvashi
     Vishwamitra -->|Encounters| Menaka
-    Vishwamitra -->|Entraps|`KingDushyant`
+    KingDushyant["King Dushyant"]
+    Vishwamitra -->|Entraps| KingDushyant
 ```

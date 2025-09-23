@@ -40,25 +40,22 @@ This diagram shows the three states of the Circuit Breaker: `CLOSED`, `OPEN`, an
 
 ```mermaid
 stateDiagram-v2
-    [*] --> CLOSED: Initial State
+  [*] --> CLOSED
 
-    CLOSED --> OPEN: Failure threshold exceeded
-    OPEN --> HALF_OPEN: Wait time elapsed
-    HALF_OPEN --> CLOSED: Success threshold met
-    HALF_OPEN --> OPEN: Call fails
+  CLOSED --> OPEN: Failure threshold exceeded
+  OPEN --> HALF_OPEN: Wait time elapsed
+  HALF_OPEN --> CLOSED: Success threshold met
+  HALF_OPEN --> OPEN: Call fails
 
-    state CLOSED {
-        direction LR
-        [*] --> description: "Calls are allowed"
-    }
-    state OPEN {
-        direction LR
-        [*] --> description: "Calls fail-fast"
-    }
-    state HALF_OPEN {
-        direction LR
-        [*] --> description: "Limited trial calls allowed"
-    }
+  note right of CLOSED
+    Calls are allowed
+  end note
+  note right of OPEN
+    Calls fail fast
+  end note
+  note right of HALF_OPEN
+    Limited trial calls allowed
+  end note
 ```
 
 - **How it works**: A circuit breaker acts like an electrical circuit breaker. It has three states:

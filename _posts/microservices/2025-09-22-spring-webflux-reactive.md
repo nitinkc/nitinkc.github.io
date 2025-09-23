@@ -72,7 +72,8 @@ Here is a diagram comparing the traditional blocking thread model of Spring MVC 
 flowchart TD
 
     %% Spring MVC (Blocking)
-    subgraph Spring_MVC_Blocking ["Spring_MVC_Blocking"]`n        R1[Request 1] --> T1[Thread 1]
+    subgraph Spring_MVC_Blocking ["Spring_MVC_Blocking"]
+        R1[Request 1] --> T1[Thread 1]
         T1 -- Blocks for I/O --> D1[DB Call]
         D1 -- Returns --> T1
         T1 --> Resp1[Response 1]
@@ -89,7 +90,8 @@ flowchart TD
     end
 
     %% Spring WebFlux (Non-Blocking)
-    subgraph Spring_WebFlux_NonBlocking ["Spring_WebFlux_NonBlocking"]`n        EL[Event Loop Thread]
+    subgraph Spring_WebFlux_NonBlocking ["Spring_WebFlux_NonBlocking"]
+        EL[Event Loop Thread]
 
         WR1[Request 1] --> EL
         EL -- Task 1 (Non-Blocking) --> WD1[DB Call]

@@ -5,7 +5,7 @@
       try { window.mermaid.initialize({ startOnLoad: false }); } catch(e) {}
       // Convert GitHub-style highlighted blocks to Mermaid divs if needed
       var blocks = document.querySelectorAll(
-        "pre>code.language-mermaid, pre>code.mermaid, pre>code[class*='language-mermaid'], pre>code[class*='mermaid']"
+        "pre>code.language-mermaid, pre>code.mermaid, pre>code[class*='language-mermaid'], pre>code[class*='mermaid'], pre>code[class*='mermaid!']"
       );
       blocks.forEach(function(code){
         var pre = code.parentElement;
