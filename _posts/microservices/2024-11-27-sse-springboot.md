@@ -368,36 +368,28 @@ classDiagram
 
 ```mermaid
 flowchart TB
-    subgraph Dashboard Frontend
- ["Dashboard Frontend
-"]
+    subgraph DashboardFrontend ["Dashboard Frontend"]
         D1[Metrics Panel]
         D2[Alert Panel]
         D3[Log Panel]
         D4[Chart Components]
     end
     
-    subgraph SSE Streams
- ["SSE Streams
-"]
+    subgraph SSE_Streams ["SSE Streams"]
         S1[/metrics-stream]
         S2[/alerts-stream]
         S3[/logs-stream]
         S4[/system-health]
     end
     
-    subgraph Data Collection
- ["Data Collection
-"]
+    subgraph Data_Collection ["Data Collection"]
         DC1[Metrics Collector]
         DC2[Alert Manager]
         DC3[Log Aggregator]
         DC4[Health Monitor]
     end
     
-    subgraph Data Sources
- ["Data Sources
-"]
+    subgraph Data_Sources ["Data Sources"]
         DB1[(Metrics DB)]
         DB2[(Alert DB)]
         DB3[(Log Store)]
@@ -468,18 +460,14 @@ stateDiagram-v2
 
 ```mermaid
 flowchart LR
-    subgraph Client-Side JavaScript
- ["Client-Side JavaScript
-"]
+    subgraph Client_JS ["Client-Side JavaScript"]
         ES[EventSource]
         EL[Event Listeners]
         RM[Reconnection Manager]
         EM[Error Manager]
     end
     
-    subgraph Event Handling
- ["Event Handling
-"]
+    subgraph Event_Handling ["Event Handling"]
         OH[onopen handler]
         MH[onmessage handler]
         EH[onerror handler]
@@ -561,9 +549,7 @@ classDiagram
 
 ```mermaid
 flowchart TB
-    subgraph Security Layers
- ["Security Layers
-"]
+    subgraph Security_Layers ["Security Layers"]
         A1[CORS Configuration]
         A2[Authentication]
         A3[Authorization] 
@@ -572,18 +558,14 @@ flowchart TB
         A6[Connection Limits]
     end
     
-    subgraph Authentication Methods
- ["Authentication Methods
-"]
+    subgraph Authentication_Methods ["Authentication Methods"]
         B1[JWT Tokens]
         B2[Session Cookies]
         B3[API Keys]
         B4[OAuth2]
     end
     
-    subgraph Authorization Patterns
- ["Authorization Patterns
-"]
+    subgraph Authorization_Patterns ["Authorization Patterns"]
         C1[Role-based Access]
         C2[User-specific Streams]
         C3[Resource-based Filtering]
@@ -638,26 +620,20 @@ public class SSESecurityConfig {
 
 ```mermaid
 flowchart TB
-    subgraph Connection Pool
- ["Connection Pool
-"]
+    subgraph Connection_Pool ["Connection Pool"]
         CP[Connection Pool Manager]
         AC[Active Connections]
         CC[Connection Cleanup]
         HB[Heartbeat Monitor]
     end
     
-    subgraph Load Balancing
- ["Load Balancing
-"]
+    subgraph Load_Balancing ["Load Balancing"]
         LB[Load Balancer]
         SL[Sticky Sessions]
         HZ[Hazelcast Clustering]
     end
     
-    subgraph Scaling Strategies
- ["Scaling Strategies
-"]
+    subgraph Scaling_Strategies ["Scaling Strategies"]
         SS1[Vertical Scaling]
         SS2[Horizontal Scaling]  
         SS3[Event Bus Clustering]
@@ -686,18 +662,14 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    subgraph Memory Management
- ["Memory Management
-"]
+    subgraph Memory_Management ["Memory Management"]
         EM[Emitter Manager]
         GC[Garbage Collection]
         ML[Memory Limits]
         CS[Connection Sanitization]
     end
     
-    subgraph Resource Control
- ["Resource Control
-"]
+    subgraph Resource_Control ["Resource Control"]
         RC1[Max Connections/User]
         RC2[Memory per Connection]
         RC3[Timeout Management]
@@ -720,9 +692,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    subgraph Metrics Collection
- ["Metrics Collection
-"]
+    subgraph Metrics_Collection ["Metrics Collection"]
         M1[Active Connections]
         M2[Events Sent]
         M3[Connection Duration]
@@ -730,9 +700,7 @@ flowchart TB
         M5[Bandwidth Usage]
     end
     
-    subgraph Monitoring Tools
- ["Monitoring Tools
-"]
+    subgraph Monitoring_Tools ["Monitoring Tools"]
         MT1[Micrometer]
         MT2[Prometheus]
         MT3[Grafana]
@@ -768,26 +736,20 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-    subgraph Testing Levels
- ["Testing Levels
-"]
+    subgraph Testing_Levels ["Testing Levels"]
         E2E[End-to-End Tests]
         INT[Integration Tests]
         UNIT[Unit Tests]
     end
     
-    subgraph Test Components
- ["Test Components
-"]
+    subgraph Test_Components ["Test Components"]
         TC1[SSE Client Simulators]
         TC2[Event Generators]
         TC3[Load Test Scenarios]
         TC4[Mock External Systems]
     end
     
-    subgraph Test Scenarios
- ["Test Scenarios
-"]
+    subgraph Test_Scenarios ["Test Scenarios"]
         TS1[Connection Lifecycle]
         TS2[Event Delivery]
         TS3[Error Handling]
@@ -939,9 +901,7 @@ mindmap
 
 ```mermaid
 flowchart TB
-    subgraph Anti-Patterns to Avoid
- ["Anti-Patterns to Avoid
-"]
+    subgraph AntiPatterns ["Anti-Patterns to Avoid"]
         AP1[Large Event Payloads]
         AP2[No Connection Cleanup]
         AP3[Blocking Event Handlers]
@@ -949,7 +909,8 @@ flowchart TB
         AP5[Unlimited Connections]
     end
     
-    subgraph Consequences ["Consequences"]`n        C1[Memory Leaks]
+    subgraph Consequences ["Consequences"]
+        C1[Memory Leaks]
         C2[Performance Degradation]
         C3[System Instability]
         C4[Security Vulnerabilities]
@@ -969,25 +930,22 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-    subgraph Message Broker Integration
- ["Message Broker Integration
-"]
+    subgraph Message_Broker_Integration ["Message Broker Integration"]
         MB[Message Broker]
         T1[Topic: Notifications]
         T2[Topic: Updates]
         T3[Topic: Alerts]
     end
     
-    subgraph SSE Service
- ["SSE Service
-"]
+    subgraph SSE_Service ["SSE Service"]
         SS[SSE Service]
         EL[Event Listeners]
         EF[Event Formatters]
         EM[Emitter Manager]
     end
     
-    subgraph Clients ["Clients"]`n        C1[Web Client 1]
+    subgraph Clients ["Clients"]
+        C1[Web Client 1]
         C2[Mobile Client]
         C3[Dashboard]
     end
