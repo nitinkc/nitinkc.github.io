@@ -46,7 +46,7 @@ erDiagram
         String state
         String zipCode
     }
-    USER ||--|| ADDRESS : "has a"
+    USER ||--|| ADDRESS : has_a
 ```
 
 ```java
@@ -202,8 +202,8 @@ erDiagram
     WINTER_FRUIT {
         Boolean isCitrus
     }
-    FRUIT ||--|| SUMMER_FRUIT : "is a"
-    FRUIT ||--|| WINTER_FRUIT : "is a"
+    FRUIT ||--|| SUMMER_FRUIT : is_a
+    FRUIT ||--|| WINTER_FRUIT : is_a
 ```
 
 ```java

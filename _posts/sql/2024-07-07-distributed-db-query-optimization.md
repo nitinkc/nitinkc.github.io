@@ -201,20 +201,20 @@ For the two tables
 
 ```mermaid!
 erDiagram
-    ENTITY_TABLE {
-        INT ENTITY_ID PK "Unique identifier"
-        STRING MASTER_IDENTIFIER "Secondary identifier"
-        STRING NAME "Name of the entity"
-        DATETIME CREATED_AT "Timestamp of creation"
-    }
-    
-    DETAILS_TABLE {
-        INT ENTITY_ID FK "Link to ENTITY_TABLE"
-        STRING DETAILS "Descriptive information"
-        DATETIME LAST_UPDATED "Timestamp of last update"
-    }
-    
-    ENTITY_TABLE ||--o{ DETAILS_TABLE : "has"
+  ENTITY_TABLE {
+    INT ENTITY_ID PK
+    STRING MASTER_IDENTIFIER
+    STRING NAME
+    DATETIME CREATED_AT
+  }
+
+  DETAILS_TABLE {
+    INT ENTITY_ID FK
+    STRING DETAILS
+    DATETIME LAST_UPDATED
+  }
+
+  ENTITY_TABLE ||--o{ DETAILS_TABLE : has
 ```
 
 **Issue:** Only ENTITY_TABLE is filtered by MASTER_IDENTIFIER, causing all
