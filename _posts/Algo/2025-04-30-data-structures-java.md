@@ -1,8 +1,9 @@
 ---
-title: "Data Structures - Implementations"
-date:  2025-04-30 15:06:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2025-04-30 15:06:00
+tags:
+- Algorithms
+title: Data Structures - Implementations
 ---
 
 {% include toc title="Index" %}

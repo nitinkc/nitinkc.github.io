@@ -1,9 +1,11 @@
 ---
-title:  "Soft Starter"
-date:   2024-11-03 01:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-11-03 01:00:00
+tags:
+- Electronics
+title: Soft Starter
 ---
+
 {% include toc title="Index" %}
 
 

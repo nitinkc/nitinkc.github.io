@@ -1,4 +1,8 @@
-
+---
+categories: Miscellaneous
+tags:
+- Miscellaneous
+---
 
 # 📘 The Goal and the Theory of Constraints: 
 A Timeless Guide to Operational Excellence

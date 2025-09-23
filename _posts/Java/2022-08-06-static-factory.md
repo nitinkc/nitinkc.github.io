@@ -1,8 +1,9 @@
 ---
-title:  "Static Factory Methods"
-date:   2022-08-06 08:30:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2022-08-06 08:30:00
+tags:
+- Java
+title: Static Factory Methods
 ---
 
 # What is Static Factory Method?

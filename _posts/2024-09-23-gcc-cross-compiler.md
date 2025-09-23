@@ -1,8 +1,9 @@
 ---
-title: "GCC Cross Compiler - Mac installation"
+categories: Miscellaneous
 date: 2024-09-23 21:14:00
-categories: [ Miscellaneous ]
-tags: [ Miscellaneous ]
+tags:
+- Miscellaneous
+title: GCC Cross Compiler - Mac installation
 ---
 
 # Creating a Cross compiler on Mac
@@ -53,6 +54,3 @@ brew install libmpc
 brew install texinfo
 brew install libidl 
 ```
-
-
-

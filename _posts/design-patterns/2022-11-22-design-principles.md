@@ -1,8 +1,9 @@
 ---
-title:  "Design Principles"
-date:   2022-11-22 08:30:00
-categories: ['Java',"Object Oriented Design"]
-tags: ['Java',"Object Oriented Design"]
+categories: Design Patterns
+date: 2022-11-22 08:30:00
+tags:
+- Java
+title: Design Principles
 ---
 
 {% include toc title="Index" %}
@@ -31,5 +32,4 @@ you can CHANGE the behaviour at RUNTIME with interfaces
 
 inheritance : IS-A relationship
 
-aggregation : 
-
+aggregation :

@@ -1,8 +1,9 @@
 ---
-title: "Polymorphism"
+categories: Java
 date: 2022-08-06 15:45:00
-categories: ['Java']
-tags: ['OOPS Concepts']
+tags:
+- Java
+title: Polymorphism
 ---
 
 {% include toc title="Index" %}
@@ -159,4 +160,3 @@ REAL AIM :
 Constructor chaining <=> for inheritance
 
 > IT IS POLYMORPHISM WHICH LINKS ABSTRACT CODE TO CONCRETE IMPLEMENTATION.
-

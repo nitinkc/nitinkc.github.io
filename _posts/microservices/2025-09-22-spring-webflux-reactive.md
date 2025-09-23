@@ -1,8 +1,11 @@
 ---
-title:  "Reactive Programming with Spring WebFlux"
-date:   2025-09-22 12:00:00
-categories: [Spring, Microservices]
-tags: [Spring, WebFlux, Reactive, Project Reactor]
+categories:
+- Spring
+- Microservices
+date: 2025-09-22 12:00:00
+tags:
+- Spring
+title: Reactive Programming with Spring WebFlux
 ---
 
 {% include toc title="Index" %}
@@ -171,4 +174,3 @@ In this example:
 - **Functional Programming Style**: If you prefer a declarative, functional style of programming.
 
 You should **stick with Spring MVC** if your application uses blocking dependencies (like traditional JDBC or JPA), or if your team is not yet comfortable with the reactive programming paradigm, as it comes with a steeper learning curve.
-

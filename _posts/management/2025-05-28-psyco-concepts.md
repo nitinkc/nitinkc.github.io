@@ -1,8 +1,9 @@
 ---
-title: "Major psychological theories and behavioral science principles"
+categories: Management
 date: 2025-05-28 05:00:00
-categories: [ Miscellaneous ]
-tags: [ Miscellaneous ]
+tags:
+- Miscellaneous
+title: Major psychological theories and behavioral science principles
 ---
 
 ### 🧠 **Cognitive & Behavioral Theories**

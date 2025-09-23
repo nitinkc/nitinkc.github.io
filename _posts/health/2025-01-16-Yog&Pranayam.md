@@ -1,9 +1,11 @@
 ---
-title: "Pranayama - प्राणायाम"
+categories: Health
 date: 2025-01-16 22:00:00
-categories: ['Health']
-tags: ['Health']
+tags:
+- Health
+title: Pranayama - प्राणायाम
 ---
+
 {% include toc title="Index" %}
 
 # 45 minutes of Pranayama : अनुक्रम
@@ -57,4 +59,4 @@ tags: ['Health']
 ## निर्देश
 - हर मुद्रा को 10-15 मिनट तक करें।
 - आरामदायक मुद्रा में बैठकर गहरी सांस लें।
-- सुबह खाली पेट या भोजन के 5 घंटे बाद मुद्राएँ करें।  
+- सुबह खाली पेट या भोजन के 5 घंटे बाद मुद्राएँ करें।

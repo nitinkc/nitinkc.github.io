@@ -58,3 +58,27 @@ SiteMap : https://developers.google.com/search/docs/advanced/sitemaps/build-site
 
 
 pandoc -f docx -t markdown Buying\ a\ bigger\ machine.docx -o x.md  
+
+## Taxonomy and scripts
+
+We added a small Python helper to audit and normalize categories/tags across all posts.
+
+- Location: `scripts/taxonomy_audit.py`
+- Requirements: see `requirements.txt`
+
+Quick usage (PowerShell on Windows):
+
+1. Create/activate a virtual environment in the repo root
+	- `python -m venv .venv`
+	- `./.venv/Scripts/Activate.ps1`
+2. Install deps
+	- `pip install -r requirements.txt`
+3. Dry run audit (prints counts and proposed changes)
+	- `python scripts/taxonomy_audit.py audit-tags`
+4. Apply changes
+	- `python scripts/taxonomy_audit.py audit-tags --apply`
+
+Notes
+- Categories are inferred primarily from the top-level folder under `_posts/` and normalized for casing.
+- Tags are normalized, low-frequency singletons are dropped, and tags duplicating the primary category are removed.
+- Minimal Mistakes supports both string and list formats for `categories`; this script prefers a single canonical category when possible.

@@ -1,8 +1,9 @@
 ---
-title:  "Spring Actuator"
-date:   2024-04-04 02:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2024-04-04 02:00:00
+tags:
+- Spring Boot
+title: Spring Actuator
 ---
 
 {% include toc title="Index" %}

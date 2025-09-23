@@ -1,8 +1,9 @@
 ---
-title:  "Skip Lists"
-date:   2024-06-29 11:02:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-29 11:02:00
+tags:
+- System Design
+title: Skip Lists
 ---
 
 {% include toc title="Index" %}

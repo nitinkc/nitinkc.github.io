@@ -1,8 +1,9 @@
 ---
-title: "Union Find  - Disjoint Set Data structure"
-date:  2024-06-16 18:27:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2024-06-16 18:27:00
+tags:
+- Algorithms
+title: Union Find  - Disjoint Set Data structure
 ---
 
 {% include toc title="Index" %}
@@ -270,4 +271,3 @@ also take
 O(α(N)) time on average.
 
 # Dynamic Connectivity Problem
-

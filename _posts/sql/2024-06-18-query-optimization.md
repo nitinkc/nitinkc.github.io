@@ -1,8 +1,9 @@
 ---
-title: "SQL/Query Optimization"
+categories: SQL
 date: 2024-06-18 14:25:00
-categories: [ 'SQL' ]
-tags: [ 'SQL' ]
+tags:
+- SQL
+title: SQL/Query Optimization
 ---
 
 {% include toc title="Index" %}

@@ -1,10 +1,11 @@
 ---
-# layout: static
-title:  "षोडशः संस्कार (The 16 Sanskars)"
-date:   2022-01-26 21:55:00
 categories: Miscellaneous
-tags: [Miscellaneous]
+date: 2022-01-26 21:55:00
+tags:
+- Miscellaneous
+title: षोडशः संस्कार (The 16 Sanskars)
 ---
+
 {% include toc title="Index" %}
 
 The 16 milestones of Life
@@ -81,4 +82,4 @@ of life.
     - सांसारिक जीवन का त्याग।
 
 16. **अंत्येष्टि संस्कार (Antim Samskaar)**
-    - जीवन के अंतिम संस्कार।  
+    - जीवन के अंतिम संस्कार।

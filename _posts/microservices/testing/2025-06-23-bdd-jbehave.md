@@ -1,8 +1,10 @@
 ---
-title: "A Guide to Behavior-Driven Development (BDD) with JBehave"
+categories: Microservices
 date: 2025-06-23 05:00:00
-categories: [ Java, Testing ]
-tags: [ Java, BDD, TDD, Testing, JBehave ]
+tags:
+- Java
+- Testing
+title: A Guide to Behavior-Driven Development (BDD) with JBehave
 ---
 
 {% include toc title="Index" %}
@@ -230,4 +232,3 @@ Ultimately, the choice between them often comes down to team preference.
 - **Strong Collaboration Required**: BDD fails if teams work in silos. It requires active engagement from business, dev, and QA.
 - **Writing Good Scenarios**: It takes practice to write scenarios that are clear, concise, and focused on behavior rather than UI details.
 - **Maintenance**: As the system grows, maintaining a large suite of BDD tests can be challenging.
-

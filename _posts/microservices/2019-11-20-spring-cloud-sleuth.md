@@ -1,8 +1,9 @@
 ---
-title:  "Spring Cloud Sleuth"
-date:   2019-11-17 23:21:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2019-11-17 23:21:00
+tags:
+- Spring Boot
+title: Spring Cloud Sleuth
 ---
 
 ## Assigning Trace id to all the Microservices

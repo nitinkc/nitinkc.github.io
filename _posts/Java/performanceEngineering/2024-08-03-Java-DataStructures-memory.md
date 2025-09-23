@@ -1,8 +1,11 @@
 ---
-title:  "String Intern pool, Hashmaps and Collections"
-date:   2024-07-03 00:10:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2024-07-03 00:10:00
+tags:
+- Performance Engineering
+title: String Intern pool, Hashmaps and Collections
 ---
 
 {% include toc title="Index" %}

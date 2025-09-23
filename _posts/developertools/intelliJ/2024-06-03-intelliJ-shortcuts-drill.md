@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "IntelliJ Shortcuts - Daily Drills"
-date:   2024-06-03 20:50:00
-categories: Shortcuts
-tags: [Shortcuts]
+categories: Developer tools
+date: 2024-06-03 20:50:00
+tags:
+- Shortcuts
+title: IntelliJ Shortcuts - Daily Drills
 ---
 
 **LEGEND :**

@@ -1,8 +1,11 @@
 ---
-title:  "Terraform"
-date:   2024-09-17 23:02:00
-categories: ["DevOps","GitOps"]
-tags: ["DevOps","GitOps"]
+categories:
+- DevOps
+- GitOps
+date: 2024-09-17 23:02:00
+tags:
+- GitOps
+title: Terraform
 ---
 
 {% include toc title="Index" %}

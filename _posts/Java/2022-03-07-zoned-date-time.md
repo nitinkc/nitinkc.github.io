@@ -1,8 +1,9 @@
 ---
-title:  "Java ZonedDate Time"
-date:   2022-03-08 00:27:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2022-03-08 00:27:00
+tags:
+- Java
+title: Java ZonedDate Time
 ---
 
 {% include toc title="Index" %}

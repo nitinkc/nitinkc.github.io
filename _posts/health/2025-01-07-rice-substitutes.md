@@ -1,9 +1,11 @@
 ---
-title: "Rice Substitutes & Combinations"
+categories: Health
 date: 2025-01-07 22:00:00
-categories: ['Health']
-tags: ['Health']
+tags:
+- Health
+title: Rice Substitutes & Combinations
 ---
+
 {% include toc title="Index" %}
 
 Eat Dal-Rice for Dinner. Eat White Rice, not Brown. Must Add Ghee. 
@@ -16,4 +18,3 @@ Eat Dal-Rice for Dinner. Eat White Rice, not Brown. Must Add Ghee.
 # Couscous
 Couscous is traditionally made from semolina, the hardest part of the grain of 
 durum wheat (the hardest of all forms of wheat), which resists the grinding of the millstone.
-

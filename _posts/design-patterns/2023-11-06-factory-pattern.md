@@ -1,8 +1,11 @@
 ---
-title:  "Factory Design Pattern"
-date:   2023-11-06 08:30:00
-categories: ['Java','Design Patterns']
-tags: ['Java']
+categories:
+- Java
+- Design Patterns
+date: 2023-11-06 08:30:00
+tags:
+- Java
+title: Factory Design Pattern
 ---
 
 {% include toc title="Index" %}
@@ -46,4 +49,3 @@ uses inheritance as design tool
 uses factory METHOD
 
 Abstract Factory uses delegation as design tool
-

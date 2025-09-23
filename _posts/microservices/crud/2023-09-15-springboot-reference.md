@@ -1,8 +1,9 @@
 ---
-title:  "SpringBoot Reference"
-date:   2023-09-15 11:50:00
-categories: Spring Microservices
-tags: [Spring Microservices, CRUD]
+categories: Microservices
+date: 2023-09-15 11:50:00
+tags:
+- CRUD
+title: SpringBoot Reference
 ---
 
 {% include toc title="Index" %}

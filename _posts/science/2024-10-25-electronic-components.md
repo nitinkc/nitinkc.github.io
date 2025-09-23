@@ -1,9 +1,11 @@
 ---
-title:  "Electronic Components"
-date:   2024-10-25 12:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-10-25 12:00:00
+tags:
+- Electronics
+title: Electronic Components
 ---
+
 {% include toc title="Index" %}
 
 # 1. **Supplies**
@@ -105,4 +107,3 @@ converts it back into an electrical signal.
 - Small DC motors.
 - Servo motors.
 - brushless DC motor - Drone motor with Type A and B fans
-

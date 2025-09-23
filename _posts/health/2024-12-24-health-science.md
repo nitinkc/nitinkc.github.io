@@ -1,9 +1,11 @@
 ---
-title: "Nutrient Guide for a Healthier Diet"
+categories: Health
 date: 2024-12-24 09:45:00
-categories: ['Health']
-tags: ['Health']
+tags:
+- Health
+title: Nutrient Guide for a Healthier Diet
 ---
+
 {% include toc title="Index" %}
 
 # Macronutrients
@@ -118,4 +120,3 @@ Circumference around belly button to Circumference around the widest part of the
 Pulses & Daals are - Complex Carbohydrates with Protien.
 
 Focus on Caloric intake
-

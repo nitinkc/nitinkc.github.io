@@ -1,8 +1,11 @@
 ---
-title:  "Structured Concurrency"
-date:   2024-07-20 20:17:00
-categories: ['Java','Multithreading']
-tags: ['Java','Multithreading']
+categories:
+- Java
+- Multithreading
+date: 2024-07-20 20:17:00
+tags:
+- Multithreading
+title: Structured Concurrency
 ---
 
 {% include toc title="Index" %}

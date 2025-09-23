@@ -1,8 +1,9 @@
 ---
-title:  "Sonarcube on local"
-date:   2023-11-24 12:17:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2023-11-24 12:17:00
+tags:
+- Java
+title: Sonarcube on local
 ---
 
 {% include toc title="Index" %}

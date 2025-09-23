@@ -1,9 +1,11 @@
 ---
-title: "Veggie snacks"
+categories: Health
 date: 2024-12-28 09:45:00
-categories: ['Health']
-tags: ['Health']
+tags:
+- Health
+title: Veggie snacks
 ---
+
 {% include toc title="Index" %}
 
 # Black Bean Burger

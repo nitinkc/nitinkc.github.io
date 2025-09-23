@@ -1,8 +1,11 @@
 ---
-title:  "Object modelling"
-date:   2024-06-17 17:45:00
-categories: ['Java','Design Patterns', "Object Oriented Design"]
-tags: ['Java']
+categories:
+- Java
+- Design Patterns
+date: 2024-06-17 17:45:00
+tags:
+- Java
+title: Object modelling
 ---
 
 {% include toc title="Index" %}
@@ -15,4 +18,4 @@ Domain model : System abstraction and hierarchies
 
 Diagrams
 
-- Class, state 
+- Class, state

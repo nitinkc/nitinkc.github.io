@@ -30,3 +30,10 @@ _site
 
 # IntelliJ idea related files
 .idea/
+
+# Python virtual environments
+.venv/
+venv/
+
+# VS Code
+.vscode/

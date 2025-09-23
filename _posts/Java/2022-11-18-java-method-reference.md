@@ -1,10 +1,9 @@
 ---
-title:  "Method Reference"
-date:   2022-11-18 08:30:00
-categories: ['Java']
-tags: ['Java']
-# classes: single
-# layout: splash
+categories: Java
+date: 2022-11-18 08:30:00
+tags:
+- Java
+title: Method Reference
 ---
 
 {% include toc title="Index" %}

@@ -1,8 +1,11 @@
 ---
-title:  "Eclipse Memory Analyzer Tool (MAT)"
-date:   2024-03-14 21:30:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2024-03-14 21:30:00
+tags:
+- Performance Engineering
+title: Eclipse Memory Analyzer Tool (MAT)
 ---
 
 {% include toc title="Index" %}

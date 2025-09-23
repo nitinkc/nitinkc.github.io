@@ -1,8 +1,11 @@
 ---
-title:  "Kubernetes Commands"
+categories:
+- DevOps
+- GitOps
 date: 2025-04-29 05:00:00
-categories: ["DevOps","GitOps"]
-tags: ["DevOps","GitOps"]
+tags:
+- GitOps
+title: Kubernetes Commands
 ---
 
 {% include toc title="Index" %}

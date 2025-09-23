@@ -1,8 +1,9 @@
 ---
-title:  "Git Maintenance & Clean-up"
-date:   2023-11-14 20:30:00
-categories: ['Git']
-tags: ['Git']
+categories: Git
+date: 2023-11-14 20:30:00
+tags:
+- Git
+title: Git Maintenance & Clean-up
 ---
 
 {% include toc title="Index" %}

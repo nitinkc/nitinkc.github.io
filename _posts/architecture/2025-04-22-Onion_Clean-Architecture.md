@@ -1,8 +1,9 @@
 ---
-title:  "Onion/Clean Architecture Style"
-date:   2025-04-22 14:02:00
-categories: [System Design]
-tags: [Architectural Styles]
+categories: Architecture
+date: 2025-04-22 14:02:00
+tags:
+- Architectural Styles
+title: Onion/Clean Architecture Style
 ---
 
 {% include toc title="Index" %}
@@ -27,5 +28,4 @@ Onion Architecture, introduced by **Jeffrey Palermo**, also focuses on separatio
 ### Key Differences
 While both architectures aim to **decouple business logic from technical concerns**, 
 - Clean Architecture places a strong emphasis on **dependency inversion**, ensuring that the inner layers do not depend on the outer layers. 
-- Onion Architecture, on the other hand, structures layers around a central domain model 
-
+- Onion Architecture, on the other hand, structures layers around a central domain model

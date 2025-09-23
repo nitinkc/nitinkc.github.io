@@ -1,9 +1,11 @@
 ---
-title:  "Servo Motor"
-date:   2024-11-17 08:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-11-17 08:00:00
+tags:
+- Electronics
+title: Servo Motor
 ---
+
 {% include toc title="Index" %}
 
 Standard servo motor like the SG90 (quite common) and 

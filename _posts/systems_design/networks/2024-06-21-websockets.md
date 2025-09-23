@@ -1,8 +1,9 @@
 ---
-title:  "Web Sockets "
-date:   2024-06-21 20:00:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-21 20:00:00
+tags:
+- System Design
+title: 'Web Sockets '
 ---
 
 {% include toc title="Index" %}
@@ -110,8 +111,4 @@ Client -> Server : Close Frame (Opcode: 0x8, Optional Payload)
 Server --> Client : Close Frame (Acknowledge)
 
 Client <-> Server : TCP Connection Closure
-```   
-
-
-
-
+```

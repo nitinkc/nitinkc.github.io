@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "Hosting personal website on home router"
-date:   2022-01-22 21:55:00
-categories: ['Developer tools']
-tags: ['Developer tools']
+categories: Developer tools
+date: 2022-01-22 21:55:00
+tags:
+- Developer tools
+title: Hosting personal website on home router
 ---
 
 # Port Forwarding on Home Router
@@ -56,6 +56,4 @@ Using DDNS service, you can register this IP address with a Domain Name String.
 
 Since it is harder to remember IP addresses like 67.170.249.191, use DDNS
 service. You can find service providers, both paid and free. One free provider
-is 
-
-
+is

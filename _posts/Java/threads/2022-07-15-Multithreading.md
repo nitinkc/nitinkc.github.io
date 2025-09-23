@@ -1,9 +1,11 @@
 ---
-# layout: static
-title:  "Multithreading"
-date:   2021-10-18 13:10:00
-categories: ['Java','Multithreading']
-tags: ['Java','Multithreading']
+categories:
+- Java
+- Multithreading
+date: 2021-10-18 13:10:00
+tags:
+- Multithreading
+title: Multithreading
 ---
 
 {% include toc title="Index" %}

@@ -1,11 +1,11 @@
 ---
-# layout: static
-title: "Markdown Reference"
+categories: Developer tools
 date: 2022-01-19 21:55:00
-categories: [ 'Developer tools' ]
-tags: [ 'Developer tools' ]
 sidebar:
-  nav: "algo"
+  nav: algo
+tags:
+- Developer tools
+title: Markdown Reference
 ---
 
 {% include toc title="Index" %}

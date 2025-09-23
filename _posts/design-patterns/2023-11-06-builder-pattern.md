@@ -1,8 +1,11 @@
 ---
-title:  "Builder Design Pattern"
-date:   2023-11-06 08:30:00
-categories: ['Java','Design Patterns']
-tags: ['Java']
+categories:
+- Java
+- Design Patterns
+date: 2023-11-06 08:30:00
+tags:
+- Java
+title: Builder Design Pattern
 ---
 
 {% include toc title="Index" %}

@@ -1,8 +1,9 @@
 ---
-title:  "Spring Bean Scope"
-date:   2023-01-31 03:53:00
-categories: [Microservices]
-tags: [Microservices]
+categories: Microservices
+date: 2023-01-31 03:53:00
+tags:
+- Microservices
+title: Spring Bean Scope
 ---
 
 {% include toc title="Index" %}

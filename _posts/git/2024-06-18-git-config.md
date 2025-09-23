@@ -1,8 +1,9 @@
 ---
-title:  "Git Config"
-date:   2024-06-18 13:30:00
-categories: ['Git']
-tags: ['Git']
+categories: Git
+date: 2024-06-18 13:30:00
+tags:
+- Git
+title: Git Config
 ---
 
 {% include toc title="Index" %}
@@ -265,4 +266,3 @@ git config --global alias.fpush push --force-with-lease
 
 [Git Maintenance]({{ site.baseurl }}{% post_url
 /git/2023-11-14-git-maintenance %}
-

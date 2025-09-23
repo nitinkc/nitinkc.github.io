@@ -1,8 +1,9 @@
 ---
-title:  "MapStruct Mapper"
-date:   2023-02-21 09:16:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2023-02-21 09:16:00
+tags:
+- Spring Boot
+title: MapStruct Mapper
 ---
 
 {% include toc title="Index" %}

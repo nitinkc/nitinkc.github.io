@@ -1,9 +1,11 @@
 ---
-title: "Deployment process - From Dev to Release"
+categories: DevOps
 date: 2025-04-29 05:00:00
-categories: [ DevOps ]
-tags: [ DevOpsDevOps ]
+tags:
+- DevOps
+title: Deployment process - From Dev to Release
 ---
+
 {% include toc title="Index" %}
 
 The full cycle from code changes to deployment for a Spring Boot Java application on Google Kubernetes Engine (GKE) is as below

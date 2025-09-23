@@ -1,10 +1,10 @@
 ---
-title: "Trip from Denver to Nashville"
+categories: Miscellaneous
 date: 2025-03-07 05:00:00
-categories: [ Miscellaneous ]
-tags: [ Miscellaneous ]
+tags:
+- Miscellaneous
+title: Trip from Denver to Nashville
 ---
-
 
 # Trip to Nashville
 - crossing the states of Colorado, Kansas, Missouri, Illinois, Kantucky & Tennessee

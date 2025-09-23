@@ -1,9 +1,11 @@
 ---
-title:  "Arduino UNO"
-date:   2024-11-17 08:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-11-17 08:00:00
+tags:
+- Electronics
+title: Arduino UNO
 ---
+
 {% include toc title="Index" %}
 
 Arduino Uno has 14 digital I/O pins (0-13) and 6 analog pins (A0-A5). 
@@ -72,4 +74,3 @@ These pins can be used to create a **simulated analog output signal** using `ana
 # Interrupts:
 Pin 2 and Pin 3 on the Arduino Uno are capable of handling interrupts. 
 You can use `attachInterrupt()` to trigger actions when a signal changes on these pins.
-

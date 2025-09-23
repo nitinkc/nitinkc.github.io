@@ -1,8 +1,11 @@
 ---
-title:  "Memory Leaks"
-date:   2024-06-20 00:10:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2024-06-20 00:10:00
+tags:
+- Performance Engineering
+title: Memory Leaks
 ---
 
 {% include toc title="Index" %}
@@ -154,10 +157,4 @@ Memory leaks in Java can occur due to
 Using proper coding practices, such as clearing references, using static nested
 classes,
 and leveraging libraries with built-in eviction policies, can help prevent these
-leaks. 
-
-
-
-
-
-
+leaks.

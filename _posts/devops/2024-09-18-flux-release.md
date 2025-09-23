@@ -1,8 +1,11 @@
 ---
-title:  "Flux Release"
-date:   2024-09-18 18:02:00
-categories: ["DevOps","GitOps"]
-tags: ["DevOps","GitOps"]
+categories:
+- DevOps
+- GitOps
+date: 2024-09-18 18:02:00
+tags:
+- GitOps
+title: Flux Release
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,11 @@
 ---
-# layout: static
-title:  "MacBook : Configuring shell profile"
+categories:
+- Developer tools
+- MacBook
 date: 2023-07-12 22:10:00
-categories: ['Developer tools','MacBook']
-tags: ['Developer tools','Macbook']
+tags:
+- MacBook
+title: 'MacBook : Configuring shell profile'
 ---
 
 On Mac with iTerm2 and ZSH

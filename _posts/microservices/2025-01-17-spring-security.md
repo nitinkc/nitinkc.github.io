@@ -1,9 +1,11 @@
 ---
-title:  "Spring Security"
-date:   2024-12-05 15:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2024-12-05 15:00:00
+tags:
+- Spring Boot
+title: Spring Security
 ---
+
 {% include toc title="Index" %}
 
 

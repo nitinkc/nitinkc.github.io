@@ -1,8 +1,9 @@
 ---
-title: "GCP Commands"
+categories: GCP
 date: 2025-03-21 05:00:00
-categories: [ GCP ]
-tags: [ GCP ]
+tags:
+- GCP
+title: GCP Commands
 ---
 
 {% include toc title="Index" %}

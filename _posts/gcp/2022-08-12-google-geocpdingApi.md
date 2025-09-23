@@ -1,10 +1,12 @@
 ---
-# layout: static
-title:  "Google GeoCoding API"
-date:   2022-08-12 20:04:00
-categories: "Spring Microservices"
-tags: ["Spring Microservices", Spring Boot, GCP]
+categories: GCP
+date: 2022-08-12 20:04:00
+tags:
+- Microservices
+- Spring Boot
+title: Google GeoCoding API
 ---
+
 {% include toc title="Index" %}
 
 # Find Latitude and Longitude

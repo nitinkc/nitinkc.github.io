@@ -1,8 +1,9 @@
 ---
-title: "Complete Guide to SSL/TLS Certificates, Keystores & Trust Management"
+categories: Microservices
 date: 2025-09-22 10:00:00
-categories: Security
-tags: [Security, SSL, TLS, Certificates, Keystore, Truststore, PKI, Encryption, Java Security]
+tags:
+- Microservices
+title: Complete Guide to SSL/TLS Certificates, Keystores & Trust Management
 ---
 
 {% include toc title="Index" %}

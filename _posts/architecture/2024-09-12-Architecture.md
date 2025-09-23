@@ -1,8 +1,9 @@
 ---
-title:  "Architectural Patterns"
-date:   2024-09-12 14:02:00
-categories: [System Design]
-tags: [System Design]
+categories: Architecture
+date: 2024-09-12 14:02:00
+tags:
+- System Design
+title: Architectural Patterns
 ---
 
 {% include toc title="Index" %}

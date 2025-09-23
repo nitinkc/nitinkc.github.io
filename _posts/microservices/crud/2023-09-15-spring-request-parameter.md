@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "Spring Path variable & Request Parameter"
-date:   2023-09-15 20:04:00
-categories: "Spring Microservices"
-tags: ["Spring Microservices", Spring Boot]
+categories: Microservices
+date: 2023-09-15 20:04:00
+tags:
+- Spring Boot
+title: Spring Path variable & Request Parameter
 ---
 
 {% include toc title="Index" %}
@@ -91,4 +91,3 @@ Only Date is involved and not the time field.
 
 Notice the data format and required parameter
 {% gist nitinkc/eed96501e39f600a1c69969c378ba6ce %}
-

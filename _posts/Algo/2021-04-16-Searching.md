@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "Searching"
-date:   2021-04-16 01:25:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2021-04-16 01:25:00
+tags:
+- Algorithms
+title: Searching
 ---
 
 # Searching

@@ -1,8 +1,11 @@
 ---
-title:  "Decorator Pattern"
-date:   2024-06-17 17:45:00
-categories: ['Java','Design Patterns', "Object Oriented Design"]
-tags: ['Java']
+categories:
+- Java
+- Design Patterns
+date: 2024-06-17 17:45:00
+tags:
+- Java
+title: Decorator Pattern
 ---
 
 {% include toc title="Index" %}

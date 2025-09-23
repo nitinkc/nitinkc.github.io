@@ -1,8 +1,9 @@
 ---
-title:  "SQL Window Aggregate Functions"
-date:   2023-07-16 23:20:00
-categories: ['SQL']
-tags: ['SQL']
+categories: SQL
+date: 2023-07-16 23:20:00
+tags:
+- SQL
+title: SQL Window Aggregate Functions
 ---
 
 Window or Aggregate function

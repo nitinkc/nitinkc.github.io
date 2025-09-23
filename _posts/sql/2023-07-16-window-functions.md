@@ -1,8 +1,9 @@
 ---
-title:  "SQL Window Functions"
-date:   2023-07-16 23:20:00
-categories: ['SQL']
-tags: ['SQL']
+categories: SQL
+date: 2023-07-16 23:20:00
+tags:
+- SQL
+title: SQL Window Functions
 ---
 
 # WHAT IS A FUNCTION?
@@ -34,4 +35,3 @@ NTILE
 CUME_DIST
 
 PERCENT_RANK
-

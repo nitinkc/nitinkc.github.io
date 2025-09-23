@@ -1,8 +1,9 @@
 ---
-title:  "Linked List"
-date:   2016-04-06 05:14:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2016-04-06 05:14:00
+tags:
+- Algorithms
+title: Linked List
 ---
 
 {% include toc title="Index" %}

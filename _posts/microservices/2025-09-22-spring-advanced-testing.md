@@ -1,8 +1,12 @@
 ---
-title:  "Advanced Testing in Spring Boot"
-date:   2025-09-22 12:01:00
-categories: [Spring, Microservices, Testing]
-tags: [Spring, Testing, Testcontainers, JUnit]
+categories:
+- Spring
+- Microservices
+date: 2025-09-22 12:01:00
+tags:
+- Testing
+- JUnit
+title: Advanced Testing in Spring Boot
 ---
 
 {% include toc title="Index" %}
@@ -214,4 +218,3 @@ While in-memory databases are fast, they may not behave exactly like your produc
     ```
 
 In this example, the test runs against a real PostgreSQL database inside a Docker container, providing a much higher level of confidence than an in-memory database.
-

@@ -1,8 +1,9 @@
 ---
-title:  "SpringBoot Profile"
-date:   2024-09-12 15:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2024-09-12 15:00:00
+tags:
+- Spring Boot
+title: SpringBoot Profile
 ---
 
 {% include toc title="Index" %}

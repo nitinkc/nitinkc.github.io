@@ -1,8 +1,9 @@
 ---
-title:  "Gradle - build & tool"
-date:   2022-10-11 20:35:00
 categories: Microservices
-tags: [Microservices, Spring Boot]
+date: 2022-10-11 20:35:00
+tags:
+- Spring Boot
+title: Gradle - build & tool
 ---
 
 # Gradle build tree

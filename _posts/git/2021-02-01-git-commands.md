@@ -1,8 +1,9 @@
 ---
-title:  "Useful git commands"
-date:   2021-02-01 11:30:00
-categories: ['Git']
-tags: ['Git']
+categories: Git
+date: 2021-02-01 11:30:00
+tags:
+- Git
+title: Useful git commands
 ---
 
 {% include toc title="Index" %}
@@ -198,4 +199,3 @@ of `git stash pop`. Conflicts might also occur.
 [https://git-school.github.io/visualizing-git/#cherry-pick](https://git-school.github.io/visualizing-git/#cherry-pick)
 
 [https://git-scm.com/](https://git-scm.com/)
-

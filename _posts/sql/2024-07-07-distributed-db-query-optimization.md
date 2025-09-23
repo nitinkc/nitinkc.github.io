@@ -1,8 +1,9 @@
 ---
-title: "Distributed DB Query Optimization"
+categories: SQL
 date: 2024-07-07 14:25:00
-categories: [ 'SQL' ]
-tags: [ 'SQL' ]
+tags:
+- SQL
+title: Distributed DB Query Optimization
 ---
 
 {% include toc title="Index" %}

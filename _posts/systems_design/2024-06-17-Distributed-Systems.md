@@ -1,8 +1,9 @@
 ---
-title:  "Distributed Systems"
-date:   2024-06-17 11:45:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-17 11:45:00
+tags:
+- System Design
+title: Distributed Systems
 ---
 
 {% include toc title="Index" %}
@@ -37,4 +38,3 @@ Right answers slow
 Network time protocols
 
 Vector clocks
-

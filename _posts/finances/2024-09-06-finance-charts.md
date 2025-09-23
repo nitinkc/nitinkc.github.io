@@ -1,9 +1,11 @@
 ---
-title:  "Financial Charts"
-date:   2024-09-06 20:14:00
-categories: [Finances] 
-tags: [Finances]
+categories: Finance
+date: 2024-09-06 20:14:00
+tags:
+- Finances
+title: Financial Charts
 ---
+
 {% include toc title="Index" %}
 
 | Year | S&P 500 (Approx. Year-End) | % Change | U.S. GDP (Nominal, Approx.) | % Change | U.S. National Debt (Approx.) | % Change |

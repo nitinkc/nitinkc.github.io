@@ -1,8 +1,9 @@
 ---
-title: "Dynamic Programming - Iteration"
-date:  2024-07-15 18:27:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2024-07-15 18:27:00
+tags:
+- Algorithms
+title: Dynamic Programming - Iteration
 ---
 
 {% include toc title="Index" %}---

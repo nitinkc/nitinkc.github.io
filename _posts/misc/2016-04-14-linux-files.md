@@ -1,8 +1,9 @@
 ---
-title:  "Linux Files & Commands"
-date:   2016-04-14 20:11:00
-categories: ['Developer tools']
-tags: ['Developer tools']
+categories: Miscellaneous
+date: 2016-04-14 20:11:00
+tags:
+- Developer tools
+title: Linux Files & Commands
 ---
 
 {% include toc title="Index" %}

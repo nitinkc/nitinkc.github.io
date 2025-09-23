@@ -1,8 +1,9 @@
 ---
-title: "Algo Drills"
-date:  2023-12-18 18:27:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2023-12-18 18:27:00
+tags:
+- Algorithms
+title: Algo Drills
 ---
 
 {% include toc title="Index" %}

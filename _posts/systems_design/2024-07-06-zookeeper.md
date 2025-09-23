@@ -1,8 +1,9 @@
 ---
-title:  "Zookeeper"
-date:   2024-07-06 16:02:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-07-06 16:02:00
+tags:
+- System Design
+title: Zookeeper
 ---
 
 {% include toc title="Index" %}

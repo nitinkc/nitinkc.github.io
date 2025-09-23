@@ -1,11 +1,11 @@
 ---
-# layout: static
-title:  "IntelliJ Idea settings"
-date:   2021-02-07 02:15:00
-categories: ['Developer tools']
-tags: ['Developer tools']
+categories: Developer tools
+date: 2021-02-07 02:15:00
 sidebar:
-  nav: "algo"
+  nav: algo
+tags:
+- Developer tools
+title: IntelliJ Idea settings
 ---
 
 {% include toc title="Index" %}

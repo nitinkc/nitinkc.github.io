@@ -1,8 +1,9 @@
 ---
-title:  "Optional Use cases"
-date:   2021-10-13 21:55:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2021-10-13 21:55:00
+tags:
+- Java
+title: Optional Use cases
 ---
 
 {% include toc title="Index" %}

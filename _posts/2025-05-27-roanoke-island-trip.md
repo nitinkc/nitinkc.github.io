@@ -1,10 +1,10 @@
 ---
-title: "Trip to Roanoke Islands and Kitty Hawk"
+categories: Miscellaneous
 date: 2025-05-27 05:00:00
-categories: [ Miscellaneous ]
-tags: [ Miscellaneous ]
+tags:
+- Miscellaneous
+title: Trip to Roanoke Islands and Kitty Hawk
 ---
-
 
 # Trip to Roanoke Island
 

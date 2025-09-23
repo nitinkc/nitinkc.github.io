@@ -1,8 +1,9 @@
 ---
-title:  "Java Compiler Code Optimization"
-date:   2024-08-17 00:17:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2024-08-17 00:17:00
+tags:
+- Java
+title: Java Compiler Code Optimization
 ---
 
 {% include toc title="Index" %}

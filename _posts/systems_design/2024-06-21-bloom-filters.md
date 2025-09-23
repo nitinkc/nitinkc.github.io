@@ -1,8 +1,9 @@
 ---
-title:  "Bloom Filters"
-date:   2024-06-18 11:45:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-18 11:45:00
+tags:
+- System Design
+title: Bloom Filters
 ---
 
 {% include toc title="Index" %}

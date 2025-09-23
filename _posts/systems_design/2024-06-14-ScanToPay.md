@@ -1,8 +1,9 @@
 ---
-title: "Scan to Pay"
+categories: System Design
 date: 2024-06-14 11:02:00
-categories: [System Design]
-tags: [System Design]
+tags:
+- System Design
+title: Scan to Pay
 ---
 
 {% include toc title="Index" %}

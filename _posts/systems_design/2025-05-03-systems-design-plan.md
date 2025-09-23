@@ -1,11 +1,10 @@
 ---
-title:  "System Design Plan"
-date:   2025-05-03 22:30:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2025-05-03 22:30:00
+tags:
+- System Design
+title: System Design Plan
 ---
-
-
 
 | Difficulty  | Status  | Task                                                                   |
 |:------------|:--------|:-----------------------------------------------------------------------|
@@ -132,4 +131,3 @@ tags: [System Design]
 | Advanced    | To Do   | Design a Network Security Monitoring Tool                              |
 | Advanced    | To Do   | Design a Distributed OLTP Database                                     |
 | Advanced    | To Do   | Design a Domain Name System                                            |
-

@@ -1,8 +1,9 @@
 ---
-title:  "Lambda Expressions & Functional Interface"
-date:   2022-08-06 08:30:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2022-08-06 08:30:00
+tags:
+- Java
+title: Lambda Expressions & Functional Interface
 ---
 
 {% include toc title="Index" %}
@@ -138,4 +139,3 @@ System.out.println(totalValues(values, e -> e % 2 != 0));
 
 * Lambda expression can access static variables, instance variables,
 * effectively final variables and effectively Final local variables
-

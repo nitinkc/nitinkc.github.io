@@ -1,8 +1,9 @@
 ---
-title:  "Caffeine Cache"
-date:   2024-07-25 17:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2024-07-25 17:00:00
+tags:
+- Spring Boot
+title: Caffeine Cache
 ---
 
 {% include toc title="Index" %}

@@ -1,8 +1,9 @@
 ---
-title:  "Legal Vocabulary"
-date:   2025-01-15 10:15:00
 categories: Miscellaneous
-tags: [Miscellaneous]
+date: 2025-01-15 10:15:00
+tags:
+- Miscellaneous
+title: Legal Vocabulary
 ---
 
 {% include toc title="Index" %}

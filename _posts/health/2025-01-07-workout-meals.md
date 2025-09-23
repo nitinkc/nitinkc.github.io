@@ -1,9 +1,11 @@
 ---
-title: "Pre/Post Workout Meals"
+categories: Health
 date: 2025-01-07 22:00:00
-categories: ['Health']
-tags: ['Health']
+tags:
+- Health
+title: Pre/Post Workout Meals
 ---
+
 {% include toc title="Index" %}
 
 # Pre-Workout Nutrition
@@ -21,7 +23,3 @@ tags: ['Health']
 - Scrambled eggs with avocado and whole-grain bread
 - Cottage cheese with a handful of nuts and fruit
   - other types of cheese like feta can also work, but opt for low-sodium and high-protein options where possible
-
-
-
-

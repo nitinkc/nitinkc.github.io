@@ -1,8 +1,9 @@
 ---
-title:  "Exceptions in Java"
-date:   2023-11-24 23:23:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2023-11-24 23:23:00
+tags:
+- Java
+title: Exceptions in Java
 ---
 
 {% include toc title="Index" %}
@@ -286,6 +287,3 @@ For more information, visit:
 
 - [ClassNotFoundException vs NoClassDefFoundError](http://javaconceptoftheday.com/classnotfoundexception-vs-noclassdeffounderror-in-java/)
 - [Stack Overflow Discussion](http://stackoverflow.com/questions/1457863/what-causes-and-what-are-the-differences-between-noclassdeffounderror-and-classn)
-
-
-

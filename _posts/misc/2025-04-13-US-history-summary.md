@@ -1,9 +1,11 @@
 ---
-title:  "US History timeline and Government"
-date:   2025-04-13 16:50:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: Miscellaneous
+date: 2025-04-13 16:50:00
+tags:
+- Miscellaneous
+title: US History timeline and Government
 ---
+
 {% include toc title="Index" %}
 
 
@@ -70,4 +72,3 @@ tags: [Miscellaneous]
 ## End of the Revolutionary War
 
 - **October 19, 1781**: George Washington defeated British General Charles Cornwallis at Yorktown, VA after six long years of war
-

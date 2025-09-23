@@ -1,8 +1,9 @@
 ---
-title: "Dynamic Programming - DP"
-date:  2024-07-14 18:27:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2024-07-14 18:27:00
+tags:
+- Algorithms
+title: Dynamic Programming - DP
 ---
 
 {% include toc title="Index" %}---

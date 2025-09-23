@@ -1,8 +1,9 @@
 ---
-title:  "Back of the envelop estimations"
-date:   2024-01-15 17:30:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-01-15 17:30:00
+tags:
+- System Design
+title: Back of the envelop estimations
 ---
 
 {% include toc title="Index" %}

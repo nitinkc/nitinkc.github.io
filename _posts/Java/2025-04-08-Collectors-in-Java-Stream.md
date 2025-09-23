@@ -1,8 +1,9 @@
 ---
-title:  "Collectors in Java Streams"
-date:   2025-04-08 02:17:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2025-04-08 02:17:00
+tags:
+- Java
+title: Collectors in Java Streams
 ---
 
 {% include toc title="Index" %}
@@ -160,4 +161,3 @@ List<String> strings = Arrays.asList("apple", "banana", "cherry");
 String joined = strings.stream()
     .collect(Collectors.joining(", "));
 ```
-

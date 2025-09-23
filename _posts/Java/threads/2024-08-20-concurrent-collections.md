@@ -1,8 +1,11 @@
 ---
-title:  "Java Concurrent Collections"
-date:   2024-08-20 00:17:00
-categories: ['Java','Multithreading']
-tags: ['Java','Multithreading']
+categories:
+- Java
+- Multithreading
+date: 2024-08-20 00:17:00
+tags:
+- Multithreading
+title: Java Concurrent Collections
 ---
 
 {% include toc title="Index" %}

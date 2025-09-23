@@ -1,8 +1,9 @@
 ---
-title:  "Event Sourcing"
-date:   2025-06-05 14:02:00
-categories: [System Design]
-tags: [Architectural Styles]
+categories: Architecture
+date: 2025-06-05 14:02:00
+tags:
+- Architectural Styles
+title: Event Sourcing
 ---
 
 {% include toc title="Index" %}

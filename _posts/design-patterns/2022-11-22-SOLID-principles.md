@@ -1,8 +1,9 @@
 ---
-title:  "SOLID Principles"
-date:   2022-11-22 08:30:00
-categories: ['Java']
-tags: ['Java']
+categories: Design Patterns
+date: 2022-11-22 08:30:00
+tags:
+- Java
+title: SOLID Principles
 ---
 
 {% include toc title="Index" %}

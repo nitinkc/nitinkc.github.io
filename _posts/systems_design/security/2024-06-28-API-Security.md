@@ -1,8 +1,9 @@
 ---
-title:  "API Security"
-date:   2024-06-28 11:02:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-28 11:02:00
+tags:
+- System Design
+title: API Security
 ---
 
 {% include toc title="Index" %}
@@ -50,4 +51,4 @@ don't expose full stack trace as it can help an attacker
 
 - Avoids SQL Injection
 - Cross site scripting
-- 
+-

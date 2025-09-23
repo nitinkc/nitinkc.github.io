@@ -1,9 +1,11 @@
 ---
-title:  "Book Binding"
-date:   2024-09-19 20:14:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: Miscellaneous
+date: 2024-09-19 20:14:00
+tags:
+- Miscellaneous
+title: Book Binding
 ---
+
 {% include toc title="Index" %}
 
 # Book Binding Basics
@@ -28,5 +30,3 @@ page book)
 - 20 signatures of 5 sheets
 - 10 signatures of 10 sheets (too think for bending and printing, requires edge
   trimming tool)
-
-

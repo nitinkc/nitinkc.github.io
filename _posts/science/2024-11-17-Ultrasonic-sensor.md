@@ -1,9 +1,11 @@
 ---
-title:  "Ultrasonic Sensor"
-date:   2024-11-17 08:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-11-17 08:00:00
+tags:
+- Electronics
+title: Ultrasonic Sensor
 ---
+
 {% include toc title="Index" %}
 
 Ultrasonic sensor (HC-SR04):

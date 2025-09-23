@@ -1,8 +1,9 @@
 ---
-title:  "Git Reset - Revert"
-date:   2023-11-07 11:30:00
-categories: ['Git']
-tags: ['Git']
+categories: Git
+date: 2023-11-07 11:30:00
+tags:
+- Git
+title: Git Reset - Revert
 ---
 
 {% include toc title="Index" %}

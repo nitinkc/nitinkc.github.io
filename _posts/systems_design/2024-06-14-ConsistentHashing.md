@@ -1,8 +1,9 @@
 ---
-title:  "Consistent Hashing"
-date:   2024-06-14 08:02:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-14 08:02:00
+tags:
+- System Design
+title: Consistent Hashing
 ---
 
 {% include toc title="Index" %}

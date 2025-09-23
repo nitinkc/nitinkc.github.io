@@ -1,8 +1,9 @@
 ---
-title:  "ssl Security Certificate Issue"
-date:   2024-04-19 21:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2024-04-19 21:00:00
+tags:
+- Spring Boot
+title: ssl Security Certificate Issue
 ---
 
 {% include toc title="Index" %}

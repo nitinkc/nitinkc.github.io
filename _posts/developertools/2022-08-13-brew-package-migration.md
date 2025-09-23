@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "MacBook : Brew Package Migration"
-date:   2022-08-13 10:41:00
-categories: ['Developer tools']
-tags: ['Developer tools']
+categories: Developer tools
+date: 2022-08-13 10:41:00
+tags:
+- Developer tools
+title: 'MacBook : Brew Package Migration'
 ---
 
 {% include toc title="Index" %}

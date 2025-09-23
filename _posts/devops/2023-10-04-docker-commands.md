@@ -1,8 +1,11 @@
 ---
-title:  "Docker commands"
-date:   2023-10-04 20:01:00
-categories: ["DevOps","GitOps"]
-tags: ["DevOps","GitOps"]
+categories:
+- DevOps
+- GitOps
+date: 2023-10-04 20:01:00
+tags:
+- GitOps
+title: Docker commands
 ---
 
 {% include toc title="Index" %}

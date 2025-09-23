@@ -1,8 +1,9 @@
 ---
-title:  "Rate Limiting"
-date:   2024-01-21 09:30:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-01-21 09:30:00
+tags:
+- System Design
+title: Rate Limiting
 ---
 
 {% include toc title="Index" %}
@@ -59,4 +60,3 @@ Ways to identify the request overloading within the system
 - Age of meggases in the wait Queue : If the Queue is slowly processed, the
   average age of the request in the queue will be increasing
 - Increased number of requests in the Dead Letter Queue
-

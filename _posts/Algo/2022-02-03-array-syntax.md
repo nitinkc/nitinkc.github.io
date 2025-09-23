@@ -1,8 +1,9 @@
 ---
-title:  "Array Syntax"
-date:   2022-02-03 01:30:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2022-02-03 01:30:00
+tags:
+- Algorithms
+title: Array Syntax
 ---
 
 {% include toc title="Index" %}

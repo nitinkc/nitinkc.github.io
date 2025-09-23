@@ -1,9 +1,11 @@
 ---
-title:  "Simple Drone"
-date:   2024-10-29 12:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-10-29 12:00:00
+tags:
+- Electronics
+title: Simple Drone
 ---
+
 {% include toc title="Index" %}
 
 # Components Required

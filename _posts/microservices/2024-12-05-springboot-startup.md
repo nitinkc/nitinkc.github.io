@@ -1,9 +1,11 @@
 ---
-title:  "Spring Boot Startup Process"
-date:   2024-12-05 15:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2024-12-05 15:00:00
+tags:
+- Spring Boot
+title: Spring Boot Startup Process
 ---
+
 {% include toc title="Index" %}
 
 ### [Demo Project](https://github.com/nitinkc/springboot-lifecycle)

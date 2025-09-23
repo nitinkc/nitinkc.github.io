@@ -1,8 +1,11 @@
 ---
-title:  "Terminal Setup"
-date:   2021-02-01 14:00:00
-categories: ['Developer tools','MacBook']
-tags: ['Developer tools','Macbook']
+categories:
+- Developer tools
+- MacBook
+date: 2021-02-01 14:00:00
+tags:
+- MacBook
+title: Terminal Setup
 ---
 
 {% include toc title="Index" %}
@@ -145,5 +148,3 @@ and with its corrosponding configs
 [Follow this link as well](https://towardsdatascience.com/customising-the-mac-terminal-to-increase-productivity-and-improve-the-interface-894f6d86d573)
 
 [detailed link](https://towardsdatascience.com/the-ultimate-guide-to-your-terminal-makeover-e11f9b87ac99)
-
-

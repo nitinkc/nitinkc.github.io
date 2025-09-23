@@ -1,8 +1,9 @@
 ---
-title:  "Cloud Native"
-date:   2024-11-30 14:02:00
-categories: [System Design]
-tags: [System Design]
+categories: Architecture
+date: 2024-11-30 14:02:00
+tags:
+- System Design
+title: Cloud Native
 ---
 
 {% include toc title="Index" %}

@@ -1,8 +1,9 @@
 ---
-title:  "Caching with Redis"
-date:   2024-03-06 00:45:00
-categories: [Microservices]
-tags: [Spring Microservices, CRUD]
+categories: Microservices
+date: 2024-03-06 00:45:00
+tags:
+- CRUD
+title: Caching with Redis
 ---
 
 {% include toc title="Index" %}

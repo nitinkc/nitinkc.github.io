@@ -1,9 +1,11 @@
 ---
-title:  "Kuber Accounting App - React, Firebase, Firestore"
-date:   2024-12-14 13:45:00
-categories: ['Developer tools']
-tags: ['Developer tools']
+categories: Developer tools
+date: 2024-12-14 13:45:00
+tags:
+- Developer tools
+title: Kuber Accounting App - React, Firebase, Firestore
 ---
+
 {% include toc title="Index" %}
 
 Integrate **Firebase with React**, manage CI/CD pipelines (**Github Actions**),

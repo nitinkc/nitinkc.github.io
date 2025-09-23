@@ -1,8 +1,11 @@
 ---
-title:  "Synchronization Mechanisms in Java"
-date:   2024-08-17 20:17:00
-categories: ['Java','Multithreading']
-tags: ['Java','Multithreading']
+categories:
+- Java
+- Multithreading
+date: 2024-08-17 20:17:00
+tags:
+- Multithreading
+title: Synchronization Mechanisms in Java
 ---
 
 {% include toc title="Index" %}
@@ -137,4 +140,4 @@ Use Case: When you need high-performance read access with occasional writes.
 > applicable in distributed systems.
 
 Their usage and considerations differ compared to their usage in single-process
-applications. 
+applications.

@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "Dependency Injection"
-date:   2022-02-10 20:55:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2022-02-10 20:55:00
+tags:
+- Spring Boot
+title: Dependency Injection
 ---
 
 {% include toc title="Index" %}
@@ -301,4 +301,3 @@ public class ComplexAlgorithmImpl {
   private SortAlgorithm sortAlgorithm;
   }
 ```
-

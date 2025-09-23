@@ -1,9 +1,11 @@
 ---
-title:  "Electronics"
-date:   2024-10-25 22:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-10-25 22:00:00
+tags:
+- Electronics
+title: Electronics
 ---
+
 {% include toc title="Index" %}
 
 **Concepts**: Voltage, current, resistance.

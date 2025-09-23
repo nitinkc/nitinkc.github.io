@@ -1,8 +1,9 @@
 ---
-title:  "Data Consistency Levels"
-date:   2024-01-20 11:20:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-01-20 11:20:00
+tags:
+- System Design
+title: Data Consistency Levels
 ---
 
 {% include toc title="Index" %}

@@ -1,8 +1,12 @@
 ---
-title:  "Comprehensive Guide to JUnit and Mockito Testing"
-date:   2023-11-16 18:55:00
-categories: [Microservices, Testing]
-tags: [Microservices, Testing, JUnit, Mockito, Unit Testing]
+categories:
+- Microservices
+- Testing
+date: 2023-11-16 18:55:00
+tags:
+- Testing
+- JUnit
+title: Comprehensive Guide to JUnit and Mockito Testing
 ---
 
 {% include toc title="Index" %}

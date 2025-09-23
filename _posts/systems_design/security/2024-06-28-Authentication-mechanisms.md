@@ -1,8 +1,9 @@
 ---
-title:  "Authentication Mechanisms"
-date:   2024-06-28 11:02:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-28 11:02:00
+tags:
+- System Design
+title: Authentication Mechanisms
 ---
 
 {% include toc title="Index" %}
@@ -34,5 +35,3 @@ and clients
 
 User authentication information is used to verify and grant access to various
 systems and services
-
-

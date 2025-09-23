@@ -1,8 +1,9 @@
 ---
-title:  "Transaction Isolation Levels"
-date:   2024-01-20 12:15:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-01-20 12:15:00
+tags:
+- System Design
+title: Transaction Isolation Levels
 ---
 
 {% include toc title="Index" %}

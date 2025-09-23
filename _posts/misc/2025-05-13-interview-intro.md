@@ -1,9 +1,11 @@
 ---
-title:  "Intro"
-date:   2025-05-13 16:50:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: Miscellaneous
+date: 2025-05-13 16:50:00
+tags:
+- Miscellaneous
+title: Intro
 ---
+
 {% include toc title="Index" %}
 
 

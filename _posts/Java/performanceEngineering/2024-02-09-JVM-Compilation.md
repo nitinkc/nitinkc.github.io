@@ -1,8 +1,11 @@
 ---
-title:  "Compiler Flags"
-date:   2024-02-09 20:27:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2024-02-09 20:27:00
+tags:
+- Performance Engineering
+title: Compiler Flags
 ---
 
 {% include toc title="Index" %}

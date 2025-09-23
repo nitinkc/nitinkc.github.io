@@ -1,8 +1,9 @@
 ---
-title:  "Rocks"
-date:   2024-09-09 06:00:00
-categories: ['Miscellaneous']
-tags: ['Miscellaneous']
+categories: Miscellaneous
+date: 2024-09-09 06:00:00
+tags:
+- Miscellaneous
+title: Rocks
 ---
 
 ![](https://149361288.v2.pressablecdn.com/wp-content/uploads/store-img/P/agesofrock.jpg)

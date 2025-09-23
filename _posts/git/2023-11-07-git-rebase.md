@@ -1,8 +1,9 @@
 ---
-title:  "Git Merge, Rebase, Squash and Fast forward"
-date:   2023-11-07 11:30:00
-categories: ['Git']
-tags: ['Git']
+categories: Git
+date: 2023-11-07 11:30:00
+tags:
+- Git
+title: Git Merge, Rebase, Squash and Fast forward
 ---
 
 {% include toc title="Index" %}

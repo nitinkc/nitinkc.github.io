@@ -1,8 +1,9 @@
 ---
-title:  "Nested Classes in Java"
-date:   2024-08-21 00:17:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2024-08-21 00:17:00
+tags:
+- Java
+title: Nested Classes in Java
 ---
 
 {% include toc title="Index" %}

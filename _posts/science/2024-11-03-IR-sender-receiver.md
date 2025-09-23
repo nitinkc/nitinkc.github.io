@@ -1,9 +1,11 @@
 ---
-title:  "Transmitters & Receivers"
-date:   2024-11-03 01:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-11-03 01:00:00
+tags:
+- Electronics
+title: Transmitters & Receivers
 ---
+
 {% include toc title="Index" %}
 
 # IR Transmitter & Receivers
@@ -36,6 +38,4 @@ When the 2 circuits are in range, the LED will Glow
 # Ultrasonic Distance Sensors
 Need a microcontroller or R-Pi board to decode the signals received
 
-#  RF Transmitter and Receiver 
-
-
+#  RF Transmitter and Receiver

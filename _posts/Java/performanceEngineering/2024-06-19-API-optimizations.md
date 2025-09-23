@@ -1,8 +1,11 @@
 ---
-title:  "API Optimizations"
-date:   2024-06-19 00:10:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2024-06-19 00:10:00
+tags:
+- Performance Engineering
+title: API Optimizations
 ---
 
 {% include toc title="Index" %}
@@ -46,6 +49,3 @@ Enable compression on Large API Response payloads
 client decompresses the data
 
 # 7.Asynchronous Logging
-
-
-

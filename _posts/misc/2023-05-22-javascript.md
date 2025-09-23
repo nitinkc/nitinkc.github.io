@@ -1,8 +1,9 @@
 ---
-title:  "javascript"
-date:   2023-05-22 23:14:00
-categories: [javascript]
-tags: [javascript]
+categories: Miscellaneous
+date: 2023-05-22 23:14:00
+tags:
+- Miscellaneous
+title: javascript
 ---
 
 ### Variable
@@ -27,4 +28,3 @@ Arrow function helps with the "this" keyword
 ### Destructuring objects
 
 {% gist nitinkc/c0cd1081b1e05f04e2724f8fc1fe0e81 %}
-

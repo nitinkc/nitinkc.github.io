@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "Terminal Commands"
-date:   2022-02-12 23:23:00
-categories: ['Developer tools']
-tags: ['Developer tools']
+categories: Developer tools
+date: 2022-02-12 23:23:00
+tags:
+- Developer tools
+title: Terminal Commands
 ---
 
 {% include toc title="Index" %}

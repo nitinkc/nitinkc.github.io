@@ -1,8 +1,9 @@
 ---
-title:  "Complete Guide to Prometheus & Micrometer: Metrics, Monitoring & Observability"
-date:   2024-07-18 17:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot, Prometheus, Micrometer, Observability, Metrics, Monitoring]
+categories: Microservices
+date: 2024-07-18 17:00:00
+tags:
+- Spring Boot
+title: 'Complete Guide to Prometheus & Micrometer: Metrics, Monitoring & Observability'
 ---
 
 {% include toc title="Index" %}
@@ -1435,4 +1436,3 @@ management:
 ---
 
 This comprehensive guide covers all aspects of Prometheus and Micrometer integration with Spring Boot, from basic metric types to advanced production configurations and monitoring patterns.
-

@@ -1,9 +1,11 @@
 ---
-title:  "Raspberry Pi"
-date:   2024-10-29 12:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-10-29 12:00:00
+tags:
+- Electronics
+title: Raspberry Pi
 ---
+
 {% include toc title="Index" %}
 
 I have Raspberry Pi3 2015 model

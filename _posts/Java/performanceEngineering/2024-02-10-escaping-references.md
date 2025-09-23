@@ -1,8 +1,11 @@
 ---
-title:  "Escaping references"
-date:   2024-02-10 20:11:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2024-02-10 20:11:00
+tags:
+- Performance Engineering
+title: Escaping references
 ---
 
 {% include toc title="Index" %}

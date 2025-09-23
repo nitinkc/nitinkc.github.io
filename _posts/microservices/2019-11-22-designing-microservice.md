@@ -1,8 +1,9 @@
 ---
-title:  "Designing a microservice"
-date:   2019-11-22 21:35:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2019-11-22 21:35:00
+tags:
+- Spring Boot
+title: Designing a microservice
 ---
 
 All Microservices Projects are hosted in
@@ -47,4 +48,3 @@ https://github.com/spring-microservices-learning
 | Netflix Eureka Naming Server      | 8761                  |
 | Netflix Zuul API Gateway Server   | 8765                  |
 | Zipkin Distributed Tracing Server | 9411                  |
-

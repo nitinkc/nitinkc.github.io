@@ -1,8 +1,9 @@
 ---
-title: "Computer Networks - The OSI Model"
-date:  2024-01-07 08:44:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-01-07 08:44:00
+tags:
+- System Design
+title: Computer Networks - The OSI Model
 ---
 
 # 7 Layers of OSI

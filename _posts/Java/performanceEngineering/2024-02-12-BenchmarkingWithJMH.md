@@ -1,8 +1,11 @@
 ---
-title:  "Java Mission Control - JMC"
-date:   2024-02-17 12:40:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2024-02-17 12:40:00
+tags:
+- Performance Engineering
+title: Java Mission Control - JMC
 ---
 
 {% include toc title="Index" %}
@@ -29,9 +32,3 @@ requests.
 [JDK Mission Control (JMC) 8 Downloads](https://www.oracle.com/java/technologies/javase/products-jmc8-downloads.html)
 
 The app can be extracted and be used directly.
-
-
-
-
-
-

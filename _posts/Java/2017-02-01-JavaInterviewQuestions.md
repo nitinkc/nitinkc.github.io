@@ -1,8 +1,9 @@
 ---
-title:  "Java Interview Questions"
-date:   2018-01-31 00:20:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2018-01-31 00:20:00
+tags:
+- Java
+title: Java Interview Questions
 ---
 
 # Java Interview Questions

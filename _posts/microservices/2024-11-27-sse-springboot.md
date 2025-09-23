@@ -1,8 +1,10 @@
 ---
-title:  "Complete Guide to SpringBoot Server-Sent Events (SSE): Real-time Server Push"
-date:   2024-11-27 16:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot, SSE, Server-Sent Events, Real-time, EventStream]
+categories: Microservices
+date: 2024-11-27 16:00:00
+tags:
+- Spring Boot
+- Real-time
+title: 'Complete Guide to SpringBoot Server-Sent Events (SSE): Real-time Server Push'
 ---
 
 {% include toc title="Index" %}
@@ -1052,4 +1054,3 @@ This comprehensive outline provides the foundation for detailed implementation o
 6. **Advanced integration patterns**
 
 The architecture diagrams establish the visual framework for understanding SSE concepts, while the outlined sections provide a clear path for detailed documentation development.
-

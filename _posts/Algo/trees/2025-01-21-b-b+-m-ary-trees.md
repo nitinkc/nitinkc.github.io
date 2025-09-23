@@ -1,9 +1,11 @@
 ---
-title:  "B Trees, B+ Trees, m-ary/m-way Trees"
-date:   2025-01-21 09:26:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2025-01-21 09:26:00
+tags:
+- Algorithms
+title: B Trees, B+ Trees, m-ary/m-way Trees
 ---
+
 {% include toc title="Index" %}
 
 # HDD Key Concepts:
@@ -73,4 +75,4 @@ public void splitChild(int i) {
 # B+ Trees
 - No record pointers from inner nodes.
 - the inner nodes(every key) are replicated(have copy) into the leaf nodes and only leaf nodes has the record pointers
-- 
+-

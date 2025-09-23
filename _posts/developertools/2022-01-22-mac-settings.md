@@ -1,9 +1,11 @@
 ---
-# layout: static
-title:  "MacBook : Useful Settings"
-date:   2022-01-22 21:55:00
-categories: ['Developer tools','MacBook']
-tags: ['Developer tools','Macbook']
+categories:
+- Developer tools
+- MacBook
+date: 2022-01-22 21:55:00
+tags:
+- MacBook
+title: 'MacBook : Useful Settings'
 ---
 
 # Necessary UI Settings

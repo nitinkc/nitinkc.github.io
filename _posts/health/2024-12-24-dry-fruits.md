@@ -1,9 +1,11 @@
 ---
-title: "Dry Fruit: Meal Plan"
+categories: Health
 date: 2024-12-28 09:45:00
-categories: ['Health']
-tags: ['Health']
+tags:
+- Health
+title: 'Dry Fruit: Meal Plan'
 ---
+
 {% include toc title="Index" %}
 
 Costco unsalted hearth healthy mixed nuts bag

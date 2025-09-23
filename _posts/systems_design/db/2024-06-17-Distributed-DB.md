@@ -1,8 +1,9 @@
 ---
-title:  "Distributed Databases"
-date:   2024-06-17 11:45:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-17 11:45:00
+tags:
+- System Design
+title: Distributed Databases
 ---
 
 {% include toc title="Index" %}
@@ -186,4 +187,3 @@ Compromise on eventual consistency/weak consistency
       +----------------------+
 
 ```
-

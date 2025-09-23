@@ -1,8 +1,9 @@
 ---
-title:  "Passwords in DB"
-date:   2024-06-13 11:02:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-13 11:02:00
+tags:
+- System Design
+title: Passwords in DB
 ---
 
 {% include toc title="Index" %}

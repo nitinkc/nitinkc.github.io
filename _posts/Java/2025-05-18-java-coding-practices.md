@@ -1,8 +1,9 @@
 ---
-title:  "Java Coding Practices"
-date:   2025-05-18 23:17:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2025-05-18 23:17:00
+tags:
+- Java
+title: Java Coding Practices
 ---
 
 {% include toc title="Index" %}
@@ -253,5 +254,3 @@ void testAddition() {
 ### **11. Use Optional to Avoid Nulls**
 - Optional<T> is a powerful tool to avoid NullPointerException.
 - Use it in return types, not in fields or parameters.
-
-

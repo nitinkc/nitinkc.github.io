@@ -1,9 +1,11 @@
 ---
-title: "Health Drinks"
+categories: Health
 date: 2024-12-20 09:45:00
-categories: ['Health']
-tags: ['Health']
+tags:
+- Health
+title: Health Drinks
 ---
+
 {% include toc title="Index" %}
 
 # **4 Seeds to Boost Your Morning Wellness**

@@ -1,8 +1,9 @@
 ---
-title:  "Arrays, List and Collections Class"
-date:   2023-12-04 18:30:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2023-12-04 18:30:00
+tags:
+- Algorithms
+title: Arrays, List and Collections Class
 ---
 
 {% include toc title="Index" %}
@@ -169,4 +170,3 @@ Collections.sort(stringList, Comparator
     .comparing(String::length)
     .thenComparing(Comparator.reverseOrder()));
 ```
-

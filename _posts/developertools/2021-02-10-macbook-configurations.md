@@ -1,9 +1,11 @@
 ---
-# layout: static
-title:  "Configuring a new MacBook"
+categories:
+- Developer tools
+- MacBook
 date: 2021-02-10 02:15:00
-categories: ['Developer tools','MacBook']
-tags: ['Developer tools','Macbook']
+tags:
+- MacBook
+title: Configuring a new MacBook
 ---
 
 ## Contents

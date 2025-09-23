@@ -1,9 +1,11 @@
 ---
-title:  "Load Testing with Grafana K6"
-date:   2025-02-18 08:30:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2025-02-18 08:30:00
+tags:
+- Performance Engineering
+title: Load Testing with Grafana K6
 ---
 
 {% include toc title="Index" %}
-

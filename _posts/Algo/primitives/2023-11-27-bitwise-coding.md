@@ -1,8 +1,9 @@
 ---
-title:  "Bitwise Operators"
-date:   2023-11-27 08:30:00
-categories: ['Algorithms']
-tags: ['Algorithms']
+categories: Algorithms
+date: 2023-11-27 08:30:00
+tags:
+- Algorithms
+title: Bitwise Operators
 ---
 
 {% include toc title="Index" %}
@@ -378,5 +379,3 @@ determines whether the maximum or minimum value is selected.
 |             |                  |                 |                    | - Left shift num2 (num2 <<= 1) => num2 = 10000 (binary)    |
 | ----------- | ---------------- | --------------- | ------------------ | -----------------------------------------------            |
 |    Final    |        0         |      10000      |        110         | Algorithm terminates : num1 becomes 0  `while (num1 != 0)` |
-
-

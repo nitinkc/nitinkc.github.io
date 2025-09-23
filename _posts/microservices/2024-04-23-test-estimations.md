@@ -1,8 +1,9 @@
 ---
-title:  "Testing Estimations"
-date:   2024-04-23 21:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2024-04-23 21:00:00
+tags:
+- Spring Boot
+title: Testing Estimations
 ---
 
 {% include toc title="Index" %}

@@ -1,8 +1,9 @@
 ---
-title:  "Rest Template"
-date:   2024-03-06 00:45:00
-categories: [Microservices]
-tags: [Spring Microservices, CRUD]
+categories: Microservices
+date: 2024-03-06 00:45:00
+tags:
+- CRUD
+title: Rest Template
 ---
 
 {% include toc title="Index" %}

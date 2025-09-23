@@ -1,8 +1,9 @@
 ---
-title:  "Java Stream Issues"
-date:   2022-08-03 18:16:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2022-08-03 18:16:00
+tags:
+- Java
+title: Java Stream Issues
 ---
 
 ## Object Creation & Assignment In Streams
@@ -69,4 +70,3 @@ The behavoiur of list.parallelStream() or list.stream().parallel() is
 unpredictable in certain scenarios.
 
 {% gist nitinkc/c34b3f61fff2fe68f9d00b2ae95f635e %}
-

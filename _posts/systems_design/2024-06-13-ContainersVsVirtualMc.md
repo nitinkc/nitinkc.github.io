@@ -1,8 +1,9 @@
 ---
-title:  "Containers vs Virtual Machine"
-date:   2024-06-13 11:02:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-13 11:02:00
+tags:
+- System Design
+title: Containers vs Virtual Machine
 ---
 
 {% include toc title="Index" %}
@@ -32,4 +33,3 @@ that allows it to be deployed easily and consistently regardless of the
 environment.
 
 - container use Virtualization features of the host operating system.
-

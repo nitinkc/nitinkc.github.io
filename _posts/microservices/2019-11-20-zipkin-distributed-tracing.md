@@ -1,8 +1,9 @@
 ---
-title:  "Zipkin Distributed Tracing Server"
-date:   2019-11-17 23:21:00
-categories: Spring Microservices
-tags: [Spring Microservices]
+categories: Microservices
+date: 2019-11-17 23:21:00
+tags:
+- Microservices
+title: Zipkin Distributed Tracing Server
 ---
 
 # Zipkin Distributed Tracing Server

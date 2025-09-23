@@ -1,8 +1,9 @@
 ---
-title:  "Git Cherry Pick"
-date:   2024-04-20 13:30:00
-categories: ['Git']
-tags: ['Git']
+categories: Git
+date: 2024-04-20 13:30:00
+tags:
+- Git
+title: Git Cherry Pick
 ---
 
 Git cherry-pick is a command used to apply a specific commit from one branch to
@@ -22,6 +23,3 @@ git add README.md
 git cherry-pick --continue
 git push
 ```
-
-
-

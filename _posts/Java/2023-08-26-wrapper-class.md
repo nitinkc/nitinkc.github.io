@@ -1,8 +1,9 @@
 ---
-title:  "Wrapper Classes - Parse & ValueOf"
-date:   2023-01-03 02:30:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2023-01-03 02:30:00
+tags:
+- Java
+title: Wrapper Classes - Parse & ValueOf
 ---
 
 {% include toc title="Index" %}

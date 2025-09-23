@@ -1,10 +1,10 @@
 ---
-title:  "Behavioural"
-date:   2023-05-22 23:14:00
-categories: [Miscellaneous]
-tags: [Miscellaneous]
+categories: Miscellaneous
+date: 2023-05-22 23:14:00
+tags:
+- Miscellaneous
+title: Behavioural
 ---
-
 
 Interest Areas
 
@@ -35,4 +35,3 @@ Strengths/Weaknesses
 when you had a conflict your manager
 
 situation where manager is trying to persuade youa dn you feel its not right
-

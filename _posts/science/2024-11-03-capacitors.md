@@ -1,9 +1,11 @@
 ---
-title:  "Capacitors"
-date:   2024-11-03 01:00:00
-categories: [Electronics] 
-tags: [Electronics]
+categories: Electronics
+date: 2024-11-03 01:00:00
+tags:
+- Electronics
+title: Capacitors
 ---
+
 {% include toc title="Index" %}
 
 # Polarized Capacitors

@@ -1,8 +1,9 @@
 ---
-title:  "SpringBoot Interview - Deep Dive"
-date:   2025-06-03 11:50:00
-categories: Spring Microservices
-tags: [Spring Microservices, CRUD]
+categories: Microservices
+date: 2025-06-03 11:50:00
+tags:
+- CRUD
+title: SpringBoot Interview - Deep Dive
 ---
 
 {% include toc title="Index" %}

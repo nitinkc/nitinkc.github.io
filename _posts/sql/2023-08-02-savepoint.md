@@ -1,8 +1,9 @@
 ---
-title:  "Savepoint"
-date:   2023-08-02 14:03:00
-categories: ['SQL']
-tags: ['SQL']
+categories: SQL
+date: 2023-08-02 14:03:00
+tags:
+- SQL
+title: Savepoint
 ---
 
 {% include toc title="Index" %}

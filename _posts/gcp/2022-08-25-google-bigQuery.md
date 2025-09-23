@@ -1,10 +1,12 @@
 ---
-# layout: static
-title:  "Google BigQuery "
-date:   2022-08-15 20:04:00
-categories: "Spring Microservices"
-tags: ["Spring Microservices", Spring Boot, GCP]
+categories: GCP
+date: 2022-08-15 20:04:00
+tags:
+- Microservices
+- Spring Boot
+title: 'Google BigQuery '
 ---
+
 {% include toc title="Index" %}
 
 Once the data is received, convert (serialize) the results data into DTO, using

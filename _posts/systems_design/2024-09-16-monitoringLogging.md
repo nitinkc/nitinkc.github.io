@@ -1,8 +1,9 @@
 ---
-title:  "Monitoring & Logging"
-date:   2024-09-16 14:02:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-09-16 14:02:00
+tags:
+- System Design
+title: Monitoring & Logging
 ---
 
 {% include toc title="Index" %}
@@ -26,5 +27,3 @@ tags: [System Design]
 - Automated process that allows engineers to detect compliance and security
   threats
 - Helps identify and track key risks in real time because it used automation
-
-

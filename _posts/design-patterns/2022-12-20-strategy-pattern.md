@@ -1,8 +1,11 @@
 ---
-title:  "Strategy Pattern"
-date:   2023-11-06 08:30:00
-categories: ['Java','Design Patterns']
-tags: ['Java']
+categories:
+- Java
+- Design Patterns
+date: 2023-11-06 08:30:00
+tags:
+- Java
+title: Strategy Pattern
 ---
 
 {% include toc title="Index" %}
@@ -47,5 +50,3 @@ Language
 thus instead of Design patterns its design practise in Java now.
 
 No need to put efforts to create interfaces and classes
-
-

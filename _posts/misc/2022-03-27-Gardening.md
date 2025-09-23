@@ -1,10 +1,11 @@
 ---
-# layout: static
-title:  "Gardening"
-date:   2022-01-26 21:55:00
 categories: Miscellaneous
-tags: [Miscellaneous]
+date: 2022-01-26 21:55:00
+tags:
+- Miscellaneous
+title: Gardening
 ---
+
 {% include toc title="Index" %}
 
 Jiffy Natural & Organic Seed Starter Mix, 12
@@ -18,4 +19,3 @@ Osmocote Smart-Release Plant Food Plus Outdoor & Indoor, 2 lb.
 Expert Gardener Flower Plant Food Fertilizer 10-10-10, 10 lbs.
 
 RootBoost 100538120 Rooting Hormone Powder, 2 oz, Green
-

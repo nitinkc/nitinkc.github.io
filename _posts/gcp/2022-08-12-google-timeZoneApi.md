@@ -1,10 +1,12 @@
 ---
-# layout: static
-title:  "Google TimeZone API"
-date:   2022-08-15 20:04:00
-categories: "Spring Microservices"
-tags: ["Spring Microservices", Spring Boot, GCP]
+categories: GCP
+date: 2022-08-15 20:04:00
+tags:
+- Microservices
+- Spring Boot
+title: Google TimeZone API
 ---
+
 {% include toc title="Index" %}
 
 # Find Latitude and Longitude
@@ -68,4 +70,3 @@ const { find } = require('geo-tz')
 
     console.log(find(47.650499, -122.350070))  // ['America/Los_Angeles']
 ```
-

@@ -1,8 +1,11 @@
 ---
-title:  "Java Code Optimization"
-date:   2024-06-20 00:10:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2024-06-20 00:10:00
+tags:
+- Performance Engineering
+title: Java Code Optimization
 ---
 
 {% include toc title="Index" %}

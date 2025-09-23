@@ -1,9 +1,11 @@
 ---
-title: "Kubernetes Concepts"
+categories: DevOps
 date: 2025-04-29 05:00:00
-categories: [ DevOps ]
-tags: [ DevOps ]
+tags:
+- DevOps
+title: Kubernetes Concepts
 ---
+
 {% include toc title="Index" %}
 
 # Pods Vs Container

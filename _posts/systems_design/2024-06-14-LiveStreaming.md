@@ -1,8 +1,9 @@
 ---
-title: "Live Streaming"
+categories: System Design
 date: 2024-06-14 11:02:00
-categories: [System Design]
-tags: [System Design]
+tags:
+- System Design
+title: Live Streaming
 ---
 
 {% include toc title="Index" %}
@@ -57,6 +58,4 @@ the server for authentication.
 - mix of security and efficiency.
 
 Digital rights management (DRM) solutions can be used to prevent unauthorized
-copying or multiple IP addresses accessing the content. 
-
-
+copying or multiple IP addresses accessing the content.

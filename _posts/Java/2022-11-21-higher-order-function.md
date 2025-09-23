@@ -1,8 +1,9 @@
 ---
-title:  "Higher Order Functions"
-date:   2022-11-21 13:43:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2022-11-21 13:43:00
+tags:
+- Java
+title: Higher Order Functions
 ---
 
 {% include toc title="Index" %}
@@ -22,8 +23,3 @@ returns the argument unchanged||
 Methods that Return Functions
 
 Two common examples are filter and map.
-
-
-
-
-

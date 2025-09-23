@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "Sublime Settings"
-date:   2021-03-24 18:07:00
-categories: ['Developer tools']
-tags: ['Developer tools']
+categories: Developer tools
+date: 2021-03-24 18:07:00
+tags:
+- Developer tools
+title: Sublime Settings
 ---
 
 {% include toc title="Index" %}

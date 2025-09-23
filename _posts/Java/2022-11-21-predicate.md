@@ -1,8 +1,9 @@
 ---
-title:  "Predicate Functional Interface"
-date:   2022-11-21 08:30:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2022-11-21 08:30:00
+tags:
+- Java
+title: Predicate Functional Interface
 ---
 
 `java.util.function.Predicate` represents a simple function that takes a single

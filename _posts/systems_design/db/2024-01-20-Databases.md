@@ -1,8 +1,9 @@
 ---
-title:  "Databases"
-date:   2024-01-20 11:00:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-01-20 11:00:00
+tags:
+- System Design
+title: Databases
 ---
 
 {% include toc title="Index" %}

@@ -1,8 +1,9 @@
 ---
-title:  "Java Puzzles"
-date:   2023-10-20 15:16:00
-categories: ['Java']
-tags: ['Java']
+categories: Java
+date: 2023-10-20 15:16:00
+tags:
+- Java
+title: Java Puzzles
 ---
 
 {% include toc title="Index" %}

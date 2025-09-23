@@ -1,8 +1,9 @@
 ---
-title:  "Sidecar Pattern"
-date:   2024-09-15 20:02:00
-categories: [System Design]
-tags: [System Design]
+categories: Architecture
+date: 2024-09-15 20:02:00
+tags:
+- System Design
+title: Sidecar Pattern
 ---
 
 {% include toc title="Index" %}
@@ -17,4 +18,3 @@ Main microservice has a "side-car" microservice for
 - Logging
 - Config
 - Proxy to remote services etc.
-

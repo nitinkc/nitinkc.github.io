@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "Useful MS Excel Tools"
-date:   2022-01-17 21:55:00
-categories: Excel
-tags: [Excel]
+categories: Miscellaneous
+date: 2022-01-17 21:55:00
+tags:
+- Miscellaneous
+title: Useful MS Excel Tools
 ---
 
 ## Contents
@@ -59,4 +59,3 @@ Y (using VLOOKUP)*
 ## Find Duplicates
 
 ![]({{ site.url }}/assets/images/duplicates.png)
-

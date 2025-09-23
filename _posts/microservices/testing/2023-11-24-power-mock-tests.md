@@ -1,8 +1,12 @@
 ---
-title:  "PowerMock Testing Guide: When Standard Mocking Isn't Enough"
-date:   2023-11-24 03:53:00
-categories: [Microservices, Testing]
-tags: [Microservices, Testing, PowerMock, JUnit, Legacy Code]
+categories:
+- Microservices
+- Testing
+date: 2023-11-24 03:53:00
+tags:
+- Testing
+- JUnit
+title: 'PowerMock Testing Guide: When Standard Mocking Isn''t Enough'
 ---
 
 {% include toc title="Index" %}
@@ -541,5 +545,3 @@ Remember: **Good design reduces the need for PowerMock**. If you find yourself u
 JUnit5 and PowerMock are a big NO. There is no documentation for the
 combination. We have to stick with JUnit4.
 {: .notice--danger}
-
-

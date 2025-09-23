@@ -1,8 +1,9 @@
 ---
-title:  "Database Replication & Migrations"
-date:   2024-01-21 02:00:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-01-21 02:00:00
+tags:
+- System Design
+title: Database Replication & Migrations
 ---
 
 {% include toc title="Index" %}
@@ -79,4 +80,4 @@ Moving the Data from one Server into another.
   files or data dump), and loaded into new DB
 - Optimized approach is to keep the data copying from running DB into new DB,
   while keeping track of the timestamps
-  up to which the back up is taken. then repeat the process 
+  up to which the back up is taken. then repeat the process

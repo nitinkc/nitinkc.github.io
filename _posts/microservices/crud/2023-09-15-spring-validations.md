@@ -1,8 +1,9 @@
 ---
-title:  "Spring Validations"
-date:   2023-09-15 20:30:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2023-09-15 20:30:00
+tags:
+- Spring Boot
+title: Spring Validations
 ---
 
 {% include toc title="Index" %}

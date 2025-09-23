@@ -1,8 +1,10 @@
 ---
-title:  "Complete Guide to SpringBoot WebSockets: Real-time Communication Patterns"
-date:   2024-11-27 15:00:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot, WebSockets, Real-time, STOMP, SockJS]
+categories: Microservices
+date: 2024-11-27 15:00:00
+tags:
+- Spring Boot
+- Real-time
+title: 'Complete Guide to SpringBoot WebSockets: Real-time Communication Patterns'
 ---
 
 {% include toc title="Index" %}

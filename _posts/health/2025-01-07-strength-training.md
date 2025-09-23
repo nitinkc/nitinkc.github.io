@@ -1,9 +1,11 @@
 ---
-title: "Strength Training - Gym - Muscle Building Plan"
+categories: Health
 date: 2025-01-07 22:00:00
-categories: ['Health']
-tags: ['Health']
+tags:
+- Health
+title: Strength Training - Gym - Muscle Building Plan
 ---
+
 {% include toc title="Index" %}
 
 1. **Warm-Up & Cool Down:** Start with 5–10 minutes of dynamic stretching before workouts and finish with static stretching.

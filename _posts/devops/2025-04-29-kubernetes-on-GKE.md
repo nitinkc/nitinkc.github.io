@@ -1,9 +1,11 @@
 ---
-title: "Kubernetes on Google Kubernetes Engine (GKE)"
+categories: DevOps
 date: 2025-04-29 05:00:00
-categories: [ GCP ]
-tags: [ GCP ]
+tags:
+- GCP
+title: Kubernetes on Google Kubernetes Engine (GKE)
 ---
+
 {% include toc title="Index" %}
 
 # Code and Help

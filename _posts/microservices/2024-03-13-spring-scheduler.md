@@ -1,8 +1,9 @@
 ---
-title:  "Spring Scheduler"
-date:   2024-03-13 22:50:00
-categories: Spring Microservices
-tags: [Spring Microservices, Spring Boot]
+categories: Microservices
+date: 2024-03-13 22:50:00
+tags:
+- Spring Boot
+title: Spring Scheduler
 ---
 
 {% include toc title="Index" %}

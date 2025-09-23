@@ -1,8 +1,9 @@
 ---
-title: "Cassandra - Column-Oriented Database"
+categories: System Design
 date: 2025-05-08 11:02:00
-categories: [System Design]
-tags: [System Design]
+tags:
+- System Design
+title: Cassandra - Column-Oriented Database
 ---
 
 {% include toc title="Index" %}
@@ -283,4 +284,3 @@ public class User {
 ## Redis (Key-Value Store)
 Redis is an in-memory key-value store, known for its speed and simplicity.
 Ideal for caching, session management, and real-time data scenarios.
-

@@ -1,8 +1,11 @@
 ---
-title:  "JVM Arguments"
-date:   2024-04-09 12:30:00
-categories: ['Java',"Performance Engineering"]
-tags: ['Java',"Performance Engineering"]
+categories:
+- Java
+- Performance Engineering
+date: 2024-04-09 12:30:00
+tags:
+- Performance Engineering
+title: JVM Arguments
 ---
 
 {% include toc title="Index" %}
@@ -141,7 +144,3 @@ to 45% full. Change this from the 45% default by using this flag.
 
 `-XX:UseStringDeDuplication` : G1 Garbage Collector - Allows GC to make more
 space if it finds duplicate strings in the heap.
-
-
-
-

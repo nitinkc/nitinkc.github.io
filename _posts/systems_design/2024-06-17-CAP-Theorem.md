@@ -1,8 +1,9 @@
 ---
-title:  "CAP Theorem"
-date:   2024-06-17 11:45:00
-categories: [System Design]
-tags: [System Design]
+categories: System Design
+date: 2024-06-17 11:45:00
+tags:
+- System Design
+title: CAP Theorem
 ---
 
 {% include toc title="Index" %}
@@ -34,4 +35,3 @@ They provide high availability even in the event of a network partition,
 accepting that there might be temporary inconsistencies between nodes.
 
 ![](https://www.youtube.com/watch?v=BHqjEjzAicA)
-

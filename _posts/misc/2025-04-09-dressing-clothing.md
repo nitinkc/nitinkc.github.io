@@ -1,9 +1,11 @@
 ---
-title:  "Dressing Clothing"
-date:   2025-04-09 10:50:00
-categories: [Miscellaneous] 
-tags: [Miscellaneous]
+categories: Miscellaneous
+date: 2025-04-09 10:50:00
+tags:
+- Miscellaneous
+title: Dressing Clothing
 ---
+
 {% include toc title="Index" %}
 
 

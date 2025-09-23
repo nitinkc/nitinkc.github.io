@@ -1,8 +1,9 @@
 ---
-title:  "Character Utility Class"
-date:   2023-11-19 23:30:00
 categories: Algorithms
-tags: [Algorithms]
+date: 2023-11-19 23:30:00
+tags:
+- Algorithms
+title: Character Utility Class
 ---
 
 {% include toc title="Index" %}
@@ -59,5 +60,3 @@ Character.isDigit(c);//True
 c = 'S';
 Character.isLetter(c).//True
 ```
-
-

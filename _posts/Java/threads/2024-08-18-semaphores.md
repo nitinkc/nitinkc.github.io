@@ -1,8 +1,11 @@
 ---
-title:  "Semaphores"
-date:   2024-08-18 05:17:00
-categories: ['Java','Multithreading']
-tags: ['Java','Multithreading']
+categories:
+- Java
+- Multithreading
+date: 2024-08-18 05:17:00
+tags:
+- Multithreading
+title: Semaphores
 ---
 
 {% include toc title="Index" %}

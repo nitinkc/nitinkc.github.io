@@ -1,8 +1,9 @@
 ---
-title:  "Kafka Essentials"
-date:   2023-10-24 23:41:00
-categories: [Microservices]
-tags: [Microservices]
+categories: Microservices
+date: 2023-10-24 23:41:00
+tags:
+- Microservices
+title: Kafka Essentials
 ---
 
 Kafka can be used in both messaging and event-driven architectures, but the
