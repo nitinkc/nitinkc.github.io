@@ -131,7 +131,9 @@ This diagram shows the multi-stage build process, separating the build environme
 flowchart TD
     subgraph Docker Build Process
         direction LR
-        
+         ["Docker Build Process
+        direction LR
+        "]
         subgraph Stage 1: Build Environment
             A["Base Image (JDK + Maven)"]
             B["Source Code"]
@@ -161,3 +163,4 @@ flowchart TD
 - **Health Checks**: Use Spring Boot Actuator to expose health endpoints (`/actuator/health`). In orchestrators like Kubernetes, these are used as `liveness` and `readiness` probes to manage the container's lifecycle.
 - **Graceful Shutdown**: Ensure your application can shut down gracefully when it receives a `SIGTERM` signal from Docker. Spring Boot does this automatically, finishing in-flight requests before exiting.
 - **Stateless Services**: Design your services to be stateless. Any state should be stored in an external database or cache. This allows you to easily scale your application by simply running more instances of your container.
+

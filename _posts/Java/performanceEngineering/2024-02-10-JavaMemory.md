@@ -209,13 +209,13 @@ static Map<String, Integer> map = new HashMap<>();//Static Object
 
 ```mermaid!
 flowchart TB
-    subgraph Stack
+    subgraph Stack ["Stack"]
         myLocalVar["localVar = 10"]
         myListRef["myList (reference to ArrayList)"]
         book["book"]
     end
 
-    subgraph Heap
+    subgraph Heap ["Heap"]
         ArrayList["ArrayList"]
         StringObj["StringObject(Harry Potter)"]
         HashMapObj["HashMapObject[key:value]"]
@@ -223,7 +223,7 @@ flowchart TB
         ArrayList -->|contains reference to| StringObj
     end
 
-    subgraph Metaspace
+    subgraph Metaspace ["Metaspace"]
         GlobalVar["globalVariable = 90"]
         Map["map"]
         Map --> |reference in metadata| HashMapObj

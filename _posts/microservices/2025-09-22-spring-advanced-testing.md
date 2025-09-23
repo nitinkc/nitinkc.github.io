@@ -21,7 +21,9 @@ The diagram below illustrates the difference between a full `@SpringBootTest` an
 flowchart TD
     subgraph Testing Scopes
         direction LR
-
+ ["Testing Scopes
+        direction LR
+"]
         subgraph @SpringBootTest (Full Context)
             direction TB
             FullWeb[Web Layer]
@@ -213,3 +215,4 @@ While in-memory databases are fast, they may not behave exactly like your produc
     ```
 
 In this example, the test runs against a real PostgreSQL database inside a Docker container, providing a much higher level of confidence than an in-memory database.
+

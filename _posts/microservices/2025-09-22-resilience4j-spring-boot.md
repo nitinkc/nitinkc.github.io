@@ -39,7 +39,6 @@ The Circuit Breaker pattern prevents an application from repeatedly trying to ca
 This diagram shows the three states of the Circuit Breaker: `CLOSED`, `OPEN`, and `HALF_OPEN`.
 
 ```mermaid
-
 stateDiagram-v2
     [*] --> CLOSED: Initial State
 
@@ -170,19 +169,19 @@ Here is a diagram illustrating the Service Mesh architecture. It shows a **Contr
 
 ```mermaid
 flowchart TD
-    subgraph Service Mesh
-        subgraph Control Plane (e.g., Istio, Linkerd)
+    subgraph ServiceMesh ["Service Mesh"]
+        subgraph ControlPlane ["Control Plane (e.g., Istio, Linkerd)"]
             CP[Control Plane]
         end
 
-        subgraph Data Plane (Service Proxies)
-            subgraph Pod A
+        subgraph DataPlane ["Data Plane (Service Proxies)"]
+            subgraph PodA ["Pod A"]
                 ServiceA[Service A App]
                 ProxyA[Sidecar Proxy]
                 ServiceA <--> ProxyA
             end
 
-            subgraph Pod B
+            subgraph PodB ["Pod B"]
                 ServiceB[Service B App]
                 ProxyB[Sidecar Proxy]
                 ServiceB <--> ProxyB

@@ -15,20 +15,20 @@ tags: [Spring Microservices, Spring Boot, Prometheus, Micrometer, Observability,
 
 ```mermaid
 flowchart TB
-    subgraph Observability Pillars
+    subgraph ObservabilityPillars ["Observability Pillars"]
         M[Metrics]
         L[Logs]
         T[Traces]
     end
     
-    subgraph Prometheus Ecosystem
+    subgraph PrometheusEcosystem ["Prometheus Ecosystem"]
         PM[Prometheus Server]
         AM[AlertManager]
         PG[Pushgateway]
         GR[Grafana]
     end
     
-    subgraph Micrometer Integration
+    subgraph MicrometerIntegration ["Micrometer Integration"]
         MR[MeterRegistry]
         MT[Meter Types]
         MM[Metric Facades]
@@ -45,13 +45,15 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    subgraph Spring Boot Application
+    subgraph SpringBootApp ["Spring Boot Application"]
         APP[Application Code]
         MIC[Micrometer]
         ACT[Spring Actuator]
     end
     
     subgraph Metrics Collection
+ ["Metrics Collection
+"]
         PROM[Prometheus Server]
         SCRAP[Scraping]
     end
@@ -1433,3 +1435,4 @@ management:
 ---
 
 This comprehensive guide covers all aspects of Prometheus and Micrometer integration with Spring Boot, from basic metric types to advanced production configurations and monitoring patterns.
+
