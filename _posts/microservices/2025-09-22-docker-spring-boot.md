@@ -128,11 +128,11 @@ This `Dockerfile` creates a temporary "build" container, uses it to compile the 
 This diagram shows the multi-stage build process, separating the build environment from the final runtime environment.
 
 ```mermaid
-graph TD
-    subgraph "Docker Build Process"
+flowchart TD
+    subgraph Docker Build Process
         direction LR
         
-        subgraph "Stage 1: Build Environment"
+        subgraph Stage 1: Build Environment
             A["Base Image (JDK + Maven)"]
             B["Source Code"]
             C["mvn package"]
@@ -140,7 +140,7 @@ graph TD
             A & B --> C --> D
         end
 
-        subgraph "Stage 2: Runtime Environment"
+        subgraph Stage 2: Runtime Environment
             E["Base Image (JRE only)"]
             F["app.jar"]
             G["Final Lightweight Image"]

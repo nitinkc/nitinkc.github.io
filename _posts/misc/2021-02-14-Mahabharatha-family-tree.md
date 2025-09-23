@@ -54,7 +54,7 @@ Additional Lineages and Connections
 - Yayati: Ancestor of Puru and Yadu
 
 ```mermaid!
-graph TD
+flowchart TD
     Brihaspati -->|Father of| Kacha
     Brihaspati -->|Husband of| Tara
     Brihaspati -->|Forced Himself on| Mamta

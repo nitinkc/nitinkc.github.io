@@ -169,20 +169,20 @@ This means resilience logic like circuit breaking, retries, and timeouts can be 
 Here is a diagram illustrating the Service Mesh architecture. It shows a **Control Plane** that configures the **Sidecar Proxies** running alongside each service in the **Data Plane**. All service-to-service communication is intercepted and managed by these proxies.
 
 ```mermaid
-graph TD
-    subgraph "Service Mesh"
-        subgraph "Control Plane (e.g., Istio, Linkerd)"
+flowchart TD
+    subgraph Service Mesh
+        subgraph Control Plane (e.g., Istio, Linkerd)
             CP[Control Plane]
         end
 
-        subgraph "Data Plane (Service Proxies)"
-            subgraph "Pod A"
+        subgraph Data Plane (Service Proxies)
+            subgraph Pod A
                 ServiceA[Service A App]
                 ProxyA[Sidecar Proxy]
                 ServiceA <--> ProxyA
             end
 
-            subgraph "Pod B"
+            subgraph Pod B
                 ServiceB[Service B App]
                 ProxyB[Sidecar Proxy]
                 ServiceB <--> ProxyB

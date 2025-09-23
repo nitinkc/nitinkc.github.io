@@ -208,7 +208,7 @@ static Map<String, Integer> map = new HashMap<>();//Static Object
 ```
 
 ```mermaid!
-graph TB
+flowchart TB
     subgraph Stack
         myLocalVar["localVar = 10"]
         myListRef["myList (reference to ArrayList)"]

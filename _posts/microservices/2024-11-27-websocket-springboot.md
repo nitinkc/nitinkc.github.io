@@ -14,22 +14,22 @@ WebSockets provide **full-duplex communication** between client and server over 
 ## WebSocket vs HTTP vs Server-Sent Events
 
 ```mermaid
-graph TB
-    subgraph "HTTP Request-Response"
+flowchart TB
+    subgraph HTTPReqRes ["HTTP Request-Response"]
         A1[Client] -->|Request| B1[Server]
         B1 -->|Response| A1
         A1 -->|New Request| B1
         B1 -->|New Response| A1
     end
     
-    subgraph "Server-Sent Events (SSE)"
+    subgraph SSE ["Server-Sent Events (SSE)"]
         A2[Client] -->|Initial Request| B2[Server]
         B2 -->|Event Stream| A2
         B2 -->|Event| A2
         B2 -->|Event| A2
     end
     
-    subgraph "WebSocket"
+    subgraph WebSocket ["WebSocket"]
         A3[Client] <-->|Bidirectional| B3[Server]
         A3 <-->|Real-time| B3
         A3 <-->|Persistent Connection| B3
@@ -66,14 +66,14 @@ graph TB
 ## Overall Architecture
 
 ```mermaid
-graph TB
-    subgraph "Client Side"
+flowchart TB
+    subgraph ClientSide ["Client Side"]
         C1[Web Browser]
         C2[Mobile App]
         C3[JavaScript Client]
     end
     
-    subgraph "Spring Boot Application"
+    subgraph SpringBootApp ["Spring Boot Application"]
         WS[WebSocket Endpoint]
         STOMP[STOMP Protocol Layer]
         MB[Message Broker]
@@ -81,7 +81,7 @@ graph TB
         SB[Spring Bean Services]
     end
     
-    subgraph "Message Broker Options"
+    subgraph MessageBrokerOptions ["Message Broker Options"]
         SM[Simple Message Broker]
         RM[RabbitMQ]
         AM[ActiveMQ]
@@ -278,22 +278,22 @@ public class ChatController {
 ## Simple Message Broker vs External Broker
 
 ```mermaid
-graph TB
-    subgraph "Simple Message Broker (In-Memory)"
+flowchart TB
+    subgraph SimpleMessageBroker ["Simple Message Broker (In-Memory)"]
         SM[Simple Broker]
         SM --> T1[/topic/messages]
         SM --> T2[/queue/private]
         SM --> T3[/user/specific]
     end
     
-    subgraph "External Message Broker"
+    subgraph ExternalMessageBroker ["External Message Broker"]
         EB[RabbitMQ/ActiveMQ]
         EB --> E1[Exchange/Topic]
         EB --> E2[Queue]
         EB --> E3[Routing Key]
     end
     
-    subgraph "Scaling Considerations"
+    subgraph ScalingConsiderations ["Scaling Considerations"]
         S1[Single Instance] --> SM
         S2[Multiple Instances] --> EB
         S3[High Availability] --> EB
@@ -398,8 +398,8 @@ public enum MessageType {
 ## 1. Chat Application Architecture
 
 ```mermaid
-graph TB
-    subgraph "Chat Application"
+flowchart TB
+    subgraph ChatApplication ["Chat Application"]
         UI[Chat UI]
         WS[WebSocket Connection]
         CR[Chat Room Service]
@@ -414,7 +414,7 @@ graph TB
     CR <--> MS
     MS <--> DB
     
-    subgraph "Message Flow"
+    subgraph MessageFlow ["Message Flow"]
         M1[User Types Message] --> M2[Send via WebSocket]
         M2 --> M3[Server Processes]
         M3 --> M4[Store in DB]
@@ -529,21 +529,21 @@ public class LiveMetricsService {
 ## 3. Collaborative Editing
 
 ```mermaid
-graph LR
-    subgraph "User A"
+flowchart LR
+    subgraph UserA ["User A"]
         A1[Edit Document]
         A2[Generate Operation]
         A3[Send via WebSocket]
     end
     
-    subgraph "Server"
+    subgraph Server ["Server"]
         S1[Receive Operation]
         S2[Transform Operation]
         S3[Apply to Document]
         S4[Broadcast to Others]
     end
     
-    subgraph "User B"
+    subgraph UserB ["User B"]
         B1[Receive Operation]
         B2[Transform Locally]
         B3[Apply to Document]
@@ -711,8 +711,8 @@ export const useWebSocket = (url, subscriptions = []) => {
 ## WebSocket Security Architecture
 
 ```mermaid
-graph TB
-    subgraph "Security Layers"
+flowchart TB
+    subgraph SecurityLayers ["Security Layers"]
         A1[CORS Configuration]
         A2[Authentication]
         A3[Authorization]
@@ -812,15 +812,15 @@ public class SecureMessageController {
 ## Connection Management
 
 ```mermaid
-graph TB
-    subgraph "Connection Pool Management"
+flowchart TB
+    subgraph ConnectionPoolMgmt ["Connection Pool Management"]
         CM[Connection Manager]
         CS[Connection Store]
         HB[Heartbeat Monitor]
         CL[Connection Limiter]
     end
     
-    subgraph "Performance Metrics"
+    subgraph PerformanceMetrics ["Performance Metrics"]
         PM[Performance Monitor]
         TH[Throughput Tracking]
         LAT[Latency Measurement]
@@ -974,15 +974,15 @@ public class WebSocketMetrics {
 ## Testing Architecture
 
 ```mermaid
-graph TB
-    subgraph "Testing Layers"
+flowchart TB
+    subgraph TestingLayers ["Testing Layers"]
         UT[Unit Tests]
         IT[Integration Tests]
         E2E[End-to-End Tests]
         LT[Load Tests]
     end
     
-    subgraph "Test Components"
+    subgraph TestComponents ["Test Components"]
         TW[Test WebSocket Client]
         MS[Mock STOMP Server]
         TC[Test Controllers]
@@ -1202,24 +1202,24 @@ public class BackpressureHandler {
 ## Horizontal Scaling Architecture
 
 ```mermaid
-graph TB
-    subgraph "Load Balancer"
+flowchart TB
+    subgraph LoadBalancer ["Load Balancer"]
         LB[Sticky Sessions]
     end
     
-    subgraph "Application Instances"
+    subgraph ApplicationInstances ["Application Instances"]
         APP1[App Instance 1]
         APP2[App Instance 2]
         APP3[App Instance 3]
     end
     
-    subgraph "Message Broker Cluster"
+    subgraph MessageBrokerCluster ["Message Broker Cluster"]
         MB1[RabbitMQ Node 1]
         MB2[RabbitMQ Node 2]
         MB3[RabbitMQ Node 3]
     end
     
-    subgraph "Session Store"
+    subgraph SessionStore ["Session Store"]
         REDIS[(Redis Cluster)]
     end
     

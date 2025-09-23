@@ -69,7 +69,7 @@ In Reactive Streams, this is managed through the `Subscription` object. The `Sub
 Here is a diagram comparing the traditional blocking thread model of Spring MVC with the non-blocking event-loop model of WebFlux.
 
 ```mermaid
-graph TD
+flowchart TD
 
     %% Spring MVC (Blocking)
     subgraph Spring_MVC_Blocking

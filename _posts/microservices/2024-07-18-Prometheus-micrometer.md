@@ -14,21 +14,21 @@ tags: [Spring Microservices, Spring Boot, Prometheus, Micrometer, Observability,
 ## Key Concepts Overview
 
 ```mermaid
-graph TB
-    subgraph "Observability Pillars"
+flowchart TB
+    subgraph Observability Pillars
         M[Metrics]
         L[Logs]
         T[Traces]
     end
     
-    subgraph "Prometheus Ecosystem"
+    subgraph Prometheus Ecosystem
         PM[Prometheus Server]
         AM[AlertManager]
         PG[Pushgateway]
         GR[Grafana]
     end
     
-    subgraph "Micrometer Integration"
+    subgraph Micrometer Integration
         MR[MeterRegistry]
         MT[Meter Types]
         MM[Metric Facades]
@@ -44,19 +44,19 @@ graph TB
 ## Architecture Overview
 
 ```mermaid
-graph LR
-    subgraph "Spring Boot Application"
+flowchart LR
+    subgraph Spring Boot Application
         APP[Application Code]
         MIC[Micrometer]
         ACT[Spring Actuator]
     end
     
-    subgraph "Metrics Collection"
+    subgraph Metrics Collection
         PROM[Prometheus Server]
         SCRAP[Scraping]
     end
     
-    subgraph "Visualization & Alerting"
+    subgraph Visualization & Alerting
         GRAF[Grafana]
         ALERT[AlertManager]
     end

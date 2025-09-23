@@ -18,11 +18,11 @@ Test slices allow you to test a specific layer or "slice" of your application in
 The diagram below illustrates the difference between a full `@SpringBootTest` and focused test slices like `@WebMvcTest` and `@DataJpaTest`.
 
 ```mermaid
-graph TD
-    subgraph "Testing Scopes"
+flowchart TD
+    subgraph Testing Scopes
         direction LR
 
-        subgraph "@SpringBootTest (Full Context)"
+        subgraph @SpringBootTest (Full Context)
             direction TB
             FullWeb[Web Layer]
             FullService[Service Layer]
@@ -30,14 +30,14 @@ graph TD
             FullWeb --> FullService --> FullData
         end
 
-        subgraph "@WebMvcTest (Web Slice)"
+        subgraph @WebMvcTest (Web Slice)
             direction TB
             SliceWeb[Web Layer]
             SliceService["(@MockBean) Service Layer"]
             SliceWeb --> SliceService
         end
 
-        subgraph "@DataJpaTest (Data Slice)"
+        subgraph @DataJpaTest (Data Slice)
             direction TB
             DataSlice[Data Layer]
             TestDB[(In-Memory DB)]

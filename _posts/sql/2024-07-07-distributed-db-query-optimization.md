@@ -285,7 +285,7 @@ the join.
 Primary {: .notice--primary}
 
 ```mermaid!
-graph TD
+flowchart TD
     A[ENTITY_TABLE] -->|Filter: ENTITY_ID| B[DETAILS_TABLE]
 ```
 
@@ -331,7 +331,7 @@ FROM `project.dataset.BIG_TABLE`
 ```
 
 ```mermaid!
-graph TD
+flowchart TD
     A[BIG_TABLE_CLUSTERED] -->|Clustered Read: ENTITY_ID| B[Filtered Data]
 ```
 
@@ -496,7 +496,7 @@ WHERE ENTITY_TYPE = 'EntitySummary'
 ```
 
 ```mermaid!
-graph TD
+flowchart TD
     A[ENTITY_TABLE] -->|Single Read| B[ENTITY_DATA]
     B --> C[ENTITY_DETAILS]
     B --> D[ENTITY_SUMMARY]

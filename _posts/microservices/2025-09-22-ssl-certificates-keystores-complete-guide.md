@@ -16,8 +16,8 @@ This comprehensive guide covers everything from basic cryptographic concepts to 
 ## Why This Matters for Developers
 
 ```mermaid
-graph TB
-    subgraph "Developer Daily Tasks"
+flowchart TB
+    subgraph DailyTasks ["Developer Daily Tasks"]
         API[API Integration]
         DB[Database Connections]
         MSG[Message Queues]
@@ -25,7 +25,7 @@ graph TB
         MONITOR[Monitoring Systems]
     end
     
-    subgraph "Certificate Requirements"
+    subgraph CertReqs ["Certificate Requirements"]
         HTTPS[HTTPS Endpoints]
         MUTUAL[Mutual TLS]
         DB_SSL[Database SSL]
@@ -39,7 +39,7 @@ graph TB
     CACHE --> REDIS_TLS
     MONITOR --> MUTUAL
     
-    subgraph "Common Issues"
+    subgraph CommonIssues ["Common Issues"]
         CERT_EXP[Certificate Expired]
         TRUST_ERR[Trust Relationship Failed]
         HOSTNAME[Hostname Verification Failed]
@@ -57,14 +57,14 @@ graph TB
 ## Public Key Cryptography (Asymmetric Encryption)
 
 ```mermaid
-graph LR
-    subgraph "Key Pair Generation"
+flowchart LR
+    subgraph KeyGen ["Key Pair Generation"]
         KEYGEN[Key Generator]
         PRIVATE[Private Key]
         PUBLIC[Public Key]
     end
     
-    subgraph "Encryption Process"
+    subgraph EncProc ["Encryption Process"]
         PLAINTEXT[Plain Text]
         ENCRYPTED[Encrypted Data]
         DECRYPTED[Decrypted Data]
@@ -76,7 +76,7 @@ graph LR
     PLAINTEXT -->|Encrypt with Public Key| ENCRYPTED
     ENCRYPTED -->|Decrypt with Private Key| DECRYPTED
     
-    subgraph "Digital Signature"
+    subgraph DigSig ["Digital Signature"]
         DOCUMENT[Document]
         SIGNATURE[Digital Signature]
         VERIFIED[Verified Document]
@@ -183,8 +183,8 @@ timeline
 A **digital certificate** is an electronic document that uses a **digital signature** to bind a **public key** with an **identity** (person, organization, or device).
 
 ```mermaid
-graph TB
-    subgraph "Certificate Components"
+flowchart TB
+    subgraph CertComp ["Certificate Components"]
         CERT[Digital Certificate]
         SUBJECT[Subject Information]
         PUBKEY[Public Key]
@@ -201,7 +201,7 @@ graph TB
     CERT --> EXTENSIONS
     CERT --> SIGNATURE
     
-    subgraph "Subject Details"
+    subgraph SubjDetails ["Subject Details"]
         CN[Common Name]
         O[Organization]
         OU[Organizational Unit]
@@ -252,21 +252,21 @@ Not After: Jan 1, 2025 23:59:59 GMT
 ## Certificate Types and Use Cases
 
 ```mermaid
-graph TB
-    subgraph "Certificate Types"
+flowchart TB
+    subgraph CertTypes ["Certificate Types"]
         ROOT[Root CA Certificate]
         INTER[Intermediate CA Certificate]
         LEAF[End-Entity Certificate]
         SELF[Self-Signed Certificate]
     end
     
-    subgraph "Validation Levels"
+    subgraph ValLevels ["Validation Levels"]
         DV[Domain Validated]
         OV[Organization Validated]
         EV[Extended Validation]
     end
     
-    subgraph "Use Cases"
+    subgraph UseCases ["Use Cases"]
         WEB[Web Server SSL]
         CLIENT[Client Authentication]
         CODE[Code Signing]
@@ -301,21 +301,19 @@ graph TB
 ## Certificate Authority Hierarchy
 
 ```mermaid
-graph TB
-    subgraph "Certificate Authority Hierarchy"
-        ROOT[Root CA<br/>Self-signed<br/>Embedded in browsers/OS]
+flowchart TB
+    ROOT["Root CA<br/>Self-signed<br/>Embedded in browsers/OS"]
         
-        subgraph "Intermediate CAs"
-            INT1[Intermediate CA 1<br/>Issued by Root CA]
-            INT2[Intermediate CA 2<br/>Issued by Root CA]
-            SUB1[Sub-CA<br/>Issued by Int CA 1]
-        end
-        
-        subgraph "End-Entity Certificates"
-            WEB1[api.example.com<br/>Issued by Int CA 1]
-            WEB2[app.company.com<br/>Issued by Sub-CA]
-            WEB3[service.org<br/>Issued by Int CA 2]
-        end
+    subgraph IntermediateCAs ["Intermediate CAs"]
+        INT1["Intermediate CA 1<br/>Issued by Root CA"]
+        INT2["Intermediate CA 2<br/>Issued by Root CA"]
+        SUB1["Sub-CA<br/>Issued by Int CA 1"]
+    end
+    
+    subgraph EndEntity ["End-Entity Certificates"]
+        WEB1["api.example.com<br/>Issued by Int CA 1"]
+        WEB2["app.company.com<br/>Issued by Sub-CA"]
+        WEB3["service.org<br/>Issued by Int CA 2"]
     end
     
     ROOT --> INT1
@@ -325,7 +323,7 @@ graph TB
     SUB1 --> WEB2
     INT2 --> WEB3
     
-    subgraph "Trust Stores"
+    subgraph TrustStores ["Trust Stores"]
         BROWSER[Browser Trust Store]
         OS[Operating System Trust Store]
         JAVA[Java Trust Store]
@@ -387,8 +385,8 @@ sequenceDiagram
 ## Keystore vs Truststore Conceptual Difference
 
 ```mermaid
-graph LR
-    subgraph "Keystore (Identity Store)"
+flowchart LR
+    subgraph Keystore ["Keystore (Identity Store)"]
         KS[Keystore File]
         PRIV[Private Keys]
         CERT[My Certificates]
@@ -396,26 +394,26 @@ graph LR
         ALIAS[Key Aliases]
     end
     
-    subgraph "Truststore (Trust Store)"
+    subgraph Truststore ["Truststore (Trust Store)"]
         TS[Truststore File]
         ROOT_CA[Root CA Certificates]
         INT_CA[Intermediate CA Certificates]
         TRUSTED[Trusted Public Keys]
     end
     
-    subgraph "Usage Context"
-        SERVER[Server Authentication<br/>(I am who I say I am)]
-        CLIENT[Client Authentication<br/>(I trust who you say you are)]
+    subgraph UsageContext ["Usage Context"]
+        SERVER["Server Authentication<br/>(I am who I say I am)"]
+        CLIENT["Client Authentication<br/>(I trust who you say you are)"]
     end
     
     KS --> SERVER
     TS --> CLIENT
     
-    subgraph "Common Formats"
-        JKS[JKS (Java KeyStore)]
-        PKCS12[PKCS#12 (.p12/.pfx)]
-        PEM[PEM (.pem/.crt/.key)]
-        P7B[PKCS#7 (.p7b)]
+    subgraph CommonFormats ["Common Formats"]
+        JKS["JKS (Java KeyStore)"]
+        PKCS12["PKCS#12 (.p12/.pfx)"]
+        PEM["PEM (.pem/.crt/.key)"]
+        P7B["PKCS#7 (.p7b)"]
     end
 ```
 
@@ -528,19 +526,19 @@ sudo keytool -importcert \
 ## Common Certificate Formats
 
 ```mermaid
-graph TB
-    subgraph "Binary Formats"
-        DER[DER<br/>(.der, .cer)<br/>Binary ASN.1]
-        PKCS12[PKCS#12<br/>(.p12, .pfx)<br/>Password-protected container]
-        JKS[JKS<br/>(.jks)<br/>Java KeyStore]
+flowchart TB
+    subgraph BinaryFormats ["Binary Formats"]
+        DER["DER<br/>(.der, .cer)<br/>Binary ASN.1"]
+        PKCS12["PKCS#12<br/>(.p12, .pfx)<br/>Password-protected container"]
+        JKS["JKS<br/>(.jks)<br/>Java KeyStore"]
     end
     
-    subgraph "Text Formats"
-        PEM[PEM<br/>(.pem, .crt, .cer, .key)<br/>Base64 encoded DER]
-        PKCS7[PKCS#7<br/>(.p7b, .p7c)<br/>Certificate chain]
+    subgraph TextFormats ["Text Formats"]
+        PEM["PEM<br/>(.pem, .crt, .cer, .key)<br/>Base64 encoded DER"]
+        PKCS7["PKCS#7<br/>(.p7b, .p7c)<br/>Certificate chain"]
     end
     
-    subgraph "Contents"
+    subgraph Contents ["Contents"]
         CERT_ONLY[Certificate Only]
         KEY_ONLY[Private Key Only]
         BOTH[Certificate + Private Key]
@@ -1305,8 +1303,8 @@ public class CertificateRotationService {
 ## Certificate Validation Errors
 
 ```mermaid
-graph TB
-    subgraph "Common SSL Errors"
+flowchart TB
+    subgraph SSLErrors ["Common SSL Errors"]
         CERT_EXP[Certificate Expired]
         HOSTNAME[Hostname Verification Failed]
         CHAIN_ERR[Certificate Chain Broken]
@@ -1316,7 +1314,7 @@ graph TB
         CIPHER[Cipher Suite Mismatch]
     end
     
-    subgraph "Root Causes"
+    subgraph RootCauses ["Root Causes"]
         TIME_SYNC[System Time Incorrect]
         DNS_ISSUE[DNS Resolution Issue]
         MISSING_INTER[Missing Intermediate Cert]
@@ -1527,21 +1525,21 @@ public class SSLDiagnostics {
 ## Production Security Checklist
 
 ```mermaid
-graph TB
-    subgraph "Pre-Production Security Checklist"
-        CHECK1[✓ Certificate Validation Enabled]
-        CHECK2[✓ Strong TLS Versions Only]
-        CHECK3[✓ Secure Cipher Suites]
-        CHECK4[✓ Proper Certificate Chain]
-        CHECK5[✓ Hostname Verification]
-        CHECK6[✓ Certificate Expiry Monitoring]
-        CHECK7[✓ Key Size Requirements Met]
-        CHECK8[✓ Secure Key Storage]
-        CHECK9[✓ Regular Security Updates]
-        CHECK10[✓ Certificate Rotation Plan]
+flowchart TB
+    subgraph PreProdChecklist ["Pre-Production Security Checklist"]
+        CHECK1["✓ Certificate Validation Enabled"]
+        CHECK2["✓ Strong TLS Versions Only"]
+        CHECK3["✓ Secure Cipher Suites"]
+        CHECK4["✓ Proper Certificate Chain"]
+        CHECK5["✓ Hostname Verification"]
+        CHECK6["✓ Certificate Expiry Monitoring"]
+        CHECK7["✓ Key Size Requirements Met"]
+        CHECK8["✓ Secure Key Storage"]
+        CHECK9["✓ Regular Security Updates"]
+        CHECK10["✓ Certificate Rotation Plan"]
     end
     
-    subgraph "Runtime Monitoring"
+    subgraph RuntimeMonitoring ["Runtime Monitoring"]
         MONITOR1[Certificate Expiry Alerts]
         MONITOR2[SSL Handshake Failures]
         MONITOR3[Protocol Version Usage]
@@ -1558,8 +1556,8 @@ graph TB
 ## PKI (Public Key Infrastructure) Overview
 
 ```mermaid
-graph TB
-    subgraph "PKI Components"
+flowchart TB
+    subgraph PKIComponents ["PKI Components"]
         ROOT_CA[Root Certificate Authority]
         SUB_CA[Subordinate CAs]
         RA[Registration Authority]
@@ -1568,7 +1566,7 @@ graph TB
         CERT_STORE[Certificate Store]
     end
     
-    subgraph "PKI Operations"
+    subgraph PKIOperations ["PKI Operations"]
         ENROLL[Certificate Enrollment]
         VALIDATE[Certificate Validation]
         REVOKE[Certificate Revocation]

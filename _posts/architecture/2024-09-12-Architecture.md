@@ -42,7 +42,7 @@ business logic directly.
 - All JSP's
 
 ```mermaid!
-graph TD
+flowchart TD
     A[User Request] --> B[Servlet]
     B --> C[JSP]
     C --> D[User Response]
@@ -55,7 +55,7 @@ divided
 into three main components: Model, View, and Controller.
 
 ```mermaid!
-graph TD
+flowchart TD
     A[User Request] --> B[Front Controller]
     B --> C[Controller]
     C --> D[Model]
@@ -70,7 +70,7 @@ controllers,
 which then interact with the Model and View.
 
 ```mermaid!
-graph TD
+flowchart TD
     A[User Request] --> B[Front Controller]
     B --> C[Controller 1]
     B --> D[Controller 2]

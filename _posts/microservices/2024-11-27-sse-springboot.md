@@ -14,10 +14,10 @@ Server-Sent Events (SSE) provide **unidirectional, real-time communication** fro
 ## SSE vs WebSocket vs HTTP vs Long Polling
 
 ```mermaid
-graph TB
+flowchart TB
 
     %% HTTP Request-Response
-    subgraph HTTP_Request_Response
+    subgraph HTTP_Request_Response ["HTTP Request-Response"]
         A1[Client] -->|Request| B1[Server]
         B1 -->|Response| A1
         A1 -->|New_Request| B1
@@ -25,7 +25,7 @@ graph TB
     end
 
     %% Long Polling
-    subgraph Long_Polling
+    subgraph Long_Polling ["Long Polling"]
         A2[Client] -->|Request_Hold| B2[Server]
         B2 -.->|Wait_for_Data| B2
         B2 -->|Response_and_Data| A2
@@ -33,7 +33,7 @@ graph TB
     end
 
     %% Server-Sent Events SSE
-    subgraph Server_Sent_Events_SSE
+    subgraph Server_Sent_Events_SSE ["Server-Sent Events SSE"]
         A3[Client] -->|GET_events| B3[Server]
         B3 -->|Event_Stream_Header| A3
         B3 -->|Event_Data| A3
@@ -42,7 +42,7 @@ graph TB
     end
 
     %% WebSocket
-    subgraph WebSocket
+    subgraph WebSocket ["WebSocket"]
         A4[Client] <-->|Bidirectional| B4[Server]
     end      
 ```
@@ -82,15 +82,15 @@ graph TB
 ## High-Level Architecture
 
 ```mermaid
-graph TB
-    subgraph "Client Side"
+flowchart TB
+    subgraph ClientSide ["Client Side"]
         C1[Web Browser]
         C2[Mobile App]
         C3[EventSource API]
         C4[Custom SSE Client]
     end
     
-    subgraph "Spring Boot Application"
+    subgraph SpringBootApplication ["Spring Boot Application"]
         SE[SSE Endpoint]
         EM[Event Manager]
         ES[Event Streamer]
@@ -98,7 +98,7 @@ graph TB
         DS[Data Sources]
     end
     
-    subgraph "Data Sources"
+    subgraph DataSources ["Data Sources"]
         DB[(Database)]
         MQ[Message Queue]
         EXT[External APIs]
@@ -271,8 +271,8 @@ public class ReactiveSSEController {
 ## Event Broadcasting System
 
 ```mermaid
-graph TB
-    subgraph "Event Sources"
+flowchart TB
+    subgraph Event Sources
         DB[Database Changes]
         MQ[Message Queue]
         API[External APIs]
@@ -280,20 +280,20 @@ graph TB
         USER[User Actions]
     end
     
-    subgraph "Event Processing"
+    subgraph Event Processing
         EP[Event Processor]
         EF[Event Filter]
         ET[Event Transformer]
         ER[Event Router]
     end
     
-    subgraph "Client Management"
+    subgraph Client Management
         CM[Client Manager]
         CS[Client Store]
         CG[Client Groups]
     end
     
-    subgraph "SSE Emitters"
+    subgraph SSE Emitters
         SE1[Client 1 Emitter]
         SE2[Client 2 Emitter]  
         SE3[Client N Emitter]
@@ -367,29 +367,29 @@ classDiagram
 ## 1. Live Dashboard Architecture
 
 ```mermaid
-graph TB
-    subgraph "Dashboard Frontend"
+flowchart TB
+    subgraph Dashboard Frontend
         D1[Metrics Panel]
         D2[Alert Panel]
         D3[Log Panel]
         D4[Chart Components]
     end
     
-    subgraph "SSE Streams"
+    subgraph SSE Streams
         S1[/metrics-stream]
         S2[/alerts-stream]
         S3[/logs-stream]
         S4[/system-health]
     end
     
-    subgraph "Data Collection"
+    subgraph Data Collection
         DC1[Metrics Collector]
         DC2[Alert Manager]
         DC3[Log Aggregator]
         DC4[Health Monitor]
     end
     
-    subgraph "Data Sources"
+    subgraph Data Sources
         DB1[(Metrics DB)]
         DB2[(Alert DB)]
         DB3[(Log Store)]
@@ -456,15 +456,15 @@ stateDiagram-v2
 ## Browser EventSource API
 
 ```mermaid
-graph LR
-    subgraph "Client-Side JavaScript"
+flowchart LR
+    subgraph Client-Side JavaScript
         ES[EventSource]
         EL[Event Listeners]
         RM[Reconnection Manager]
         EM[Error Manager]
     end
     
-    subgraph "Event Handling"
+    subgraph Event Handling
         OH[onopen handler]
         MH[onmessage handler]
         EH[onerror handler]
@@ -545,8 +545,8 @@ classDiagram
 ## SSE Security Layers
 
 ```mermaid
-graph TB
-    subgraph "Security Layers"
+flowchart TB
+    subgraph Security Layers
         A1[CORS Configuration]
         A2[Authentication]
         A3[Authorization] 
@@ -555,14 +555,14 @@ graph TB
         A6[Connection Limits]
     end
     
-    subgraph "Authentication Methods"
+    subgraph Authentication Methods
         B1[JWT Tokens]
         B2[Session Cookies]
         B3[API Keys]
         B4[OAuth2]
     end
     
-    subgraph "Authorization Patterns"
+    subgraph Authorization Patterns
         C1[Role-based Access]
         C2[User-specific Streams]
         C3[Resource-based Filtering]
@@ -616,21 +616,21 @@ public class SSESecurityConfig {
 ## Connection Management
 
 ```mermaid
-graph TB
-    subgraph "Connection Pool"
+flowchart TB
+    subgraph Connection Pool
         CP[Connection Pool Manager]
         AC[Active Connections]
         CC[Connection Cleanup]
         HB[Heartbeat Monitor]
     end
     
-    subgraph "Load Balancing"
+    subgraph Load Balancing
         LB[Load Balancer]
         SL[Sticky Sessions]
         HZ[Hazelcast Clustering]
     end
     
-    subgraph "Scaling Strategies"
+    subgraph Scaling Strategies
         SS1[Vertical Scaling]
         SS2[Horizontal Scaling]  
         SS3[Event Bus Clustering]
@@ -658,15 +658,15 @@ graph TB
 ## Memory Management Patterns
 
 ```mermaid
-graph LR
-    subgraph "Memory Management"
+flowchart LR
+    subgraph Memory Management
         EM[Emitter Manager]
         GC[Garbage Collection]
         ML[Memory Limits]
         CS[Connection Sanitization]
     end
     
-    subgraph "Resource Control"
+    subgraph Resource Control
         RC1[Max Connections/User]
         RC2[Memory per Connection]
         RC3[Timeout Management]
@@ -688,8 +688,8 @@ graph LR
 ## SSE Metrics Architecture
 
 ```mermaid
-graph TB
-    subgraph "Metrics Collection"
+flowchart TB
+    subgraph Metrics Collection
         M1[Active Connections]
         M2[Events Sent]
         M3[Connection Duration]
@@ -697,14 +697,14 @@ graph TB
         M5[Bandwidth Usage]
     end
     
-    subgraph "Monitoring Tools"
+    subgraph Monitoring Tools
         MT1[Micrometer]
         MT2[Prometheus]
         MT3[Grafana]
         MT4[Custom Dashboards]
     end
     
-    subgraph "Alerts"
+    subgraph Alerts
         A1[High Connection Count]
         A2[Event Processing Delays]
         A3[Connection Failures]
@@ -732,21 +732,21 @@ graph TB
 ## Testing Pyramid for SSE
 
 ```mermaid
-graph TB
-    subgraph "Testing Levels"
+flowchart TB
+    subgraph Testing Levels
         E2E[End-to-End Tests]
         INT[Integration Tests]
         UNIT[Unit Tests]
     end
     
-    subgraph "Test Components"
+    subgraph Test Components
         TC1[SSE Client Simulators]
         TC2[Event Generators]
         TC3[Load Test Scenarios]
         TC4[Mock External Systems]
     end
     
-    subgraph "Test Scenarios"
+    subgraph Test Scenarios
         TS1[Connection Lifecycle]
         TS2[Event Delivery]
         TS3[Error Handling]
@@ -799,22 +799,22 @@ classDiagram
 ## Production Configuration Architecture
 
 ```mermaid
-graph TB
-    subgraph "Configuration Layers"
+flowchart TB
+    subgraph Configuration Layers
         CL1[Environment Variables]
         CL2[Application Properties]
         CL3[External Config Server]
         CL4[Runtime Parameters]
     end
     
-    subgraph "SSE Configuration"
+    subgraph SSE Configuration
         SC1[Connection Timeouts]
         SC2[Buffer Sizes]
         SC3[Event Batching]
         SC4[Retry Policies]
     end
     
-    subgraph "Infrastructure"
+    subgraph Infrastructure
         I1[Load Balancer Config]
         I2[Firewall Rules]
         I3[CDN Configuration]
@@ -835,15 +835,15 @@ graph TB
 ## Deployment Patterns
 
 ```mermaid
-graph LR
-    subgraph "Deployment Options"
+flowchart LR
+    subgraph Deployment Options
         D1[Single Instance]
         D2[Multi-Instance]
         D3[Microservices]
         D4[Serverless]
     end
     
-    subgraph "Clustering"
+    subgraph Clustering
         C1[Sticky Sessions]
         C2[Event Bus]
         C3[Shared State]
@@ -893,8 +893,8 @@ mindmap
 ## Common Anti-Patterns
 
 ```mermaid
-graph TB
-    subgraph "Anti-Patterns to Avoid"
+flowchart TB
+    subgraph Anti-Patterns to Avoid
         AP1[Large Event Payloads]
         AP2[No Connection Cleanup]
         AP3[Blocking Event Handlers]
@@ -902,7 +902,7 @@ graph TB
         AP5[Unlimited Connections]
     end
     
-    subgraph "Consequences"
+    subgraph Consequences
         C1[Memory Leaks]
         C2[Performance Degradation]
         C3[System Instability]
@@ -922,22 +922,22 @@ graph TB
 ## SSE with Message Brokers
 
 ```mermaid
-graph TB
-    subgraph "Message Broker Integration"
+flowchart TB
+    subgraph Message Broker Integration
         MB[Message Broker]
         T1[Topic: Notifications]
         T2[Topic: Updates]
         T3[Topic: Alerts]
     end
     
-    subgraph "SSE Service"
+    subgraph SSE Service
         SS[SSE Service]
         EL[Event Listeners]
         EF[Event Formatters]
         EM[Emitter Manager]
     end
     
-    subgraph "Clients"
+    subgraph Clients
         C1[Web Client 1]
         C2[Mobile Client]
         C3[Dashboard]
@@ -982,8 +982,8 @@ sequenceDiagram
 ## Technology Decision Matrix
 
 ```mermaid
-graph TB
-    subgraph "Use SSE When"
+flowchart TB
+    subgraph Use SSE When
         U1[One-way communication]
         U2[Real-time updates needed]
         U3[Simple implementation preferred]
@@ -991,14 +991,14 @@ graph TB
         U5[Automatic reconnection desired]
     end
     
-    subgraph "Consider WebSocket When"
+    subgraph Consider WebSocket When
         W1[Bidirectional communication]
         W2[High-frequency updates]
         W3[Binary data transfer]
         W4[Custom protocols needed]
     end
     
-    subgraph "Consider Polling When"
+    subgraph Consider Polling When
         P1[Infrequent updates]
         P2[Simple request-response]
         P3[Stateless preferred]
