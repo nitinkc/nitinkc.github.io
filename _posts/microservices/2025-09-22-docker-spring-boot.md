@@ -129,12 +129,10 @@ This diagram shows the multi-stage build process, separating the build environme
 
 ```mermaid
 flowchart TD
-    subgraph Docker Build Process
+    subgraph build [Docker Build Process]
         direction LR
-         ["Docker Build Process
-        direction LR
-        "]
-        subgraph Stage 1: Build Environment
+
+        subgraph stage1 [Stage 1: Build Environment]
             A["Base Image (JDK + Maven)"]
             B["Source Code"]
             C["mvn package"]
@@ -142,7 +140,7 @@ flowchart TD
             A & B --> C --> D
         end
 
-        subgraph Stage 2: Runtime Environment
+        subgraph stage2 [Stage 2: Runtime Environment]
             E["Base Image (JRE only)"]
             F["app.jar"]
             G["Final Lightweight Image"]

@@ -199,19 +199,19 @@ joined tables needs to be read and filtered **_after the join_**.
 
 For the two tables
 
-```mermaid!
+```mermaid
 erDiagram
   ENTITY_TABLE {
-    INT ENTITY_ID PK
-    STRING MASTER_IDENTIFIER
-    STRING NAME
-    DATETIME CREATED_AT
+    int ENTITY_ID PK
+    string MASTER_IDENTIFIER
+    string NAME
+    date CREATED_AT
   }
 
   DETAILS_TABLE {
-    INT ENTITY_ID FK
-    STRING DETAILS
-    DATETIME LAST_UPDATED
+    int ENTITY_ID FK
+    string DETAILS
+    date LAST_UPDATED
   }
 
   ENTITY_TABLE ||--o{ DETAILS_TABLE : has
@@ -284,7 +284,7 @@ This called a **filter (or predicate) pushdown**, where filtering happens before
 the join.
 Primary {: .notice--primary}
 
-```mermaid!
+```mermaid
 flowchart TD
     A[ENTITY_TABLE] -->|Filter: ENTITY_ID| B[DETAILS_TABLE]
 ```
@@ -330,7 +330,7 @@ SELECT *
 FROM `project.dataset.BIG_TABLE`
 ```
 
-```mermaid!
+```mermaid
 flowchart TD
     A[BIG_TABLE_CLUSTERED] -->|Clustered Read: ENTITY_ID| B[Filtered Data]
 ```
@@ -495,7 +495,7 @@ FROM entity_data
 WHERE ENTITY_TYPE = 'EntitySummary'
 ```
 
-```mermaid!
+```mermaid
 flowchart TD
     A[ENTITY_TABLE] -->|Single Read| B[ENTITY_DATA]
     B --> C[ENTITY_DETAILS]
