@@ -19,12 +19,11 @@ The diagram below illustrates the difference between a full `@SpringBootTest` an
 
 ```mermaid
 flowchart TD
-    subgraph Testing Scopes
+    %% Top-level grouping for clarity
+    subgraph Testing_Scopes["Testing Scopes"]
         direction LR
- ["Testing Scopes
-        direction LR
-"]
-        subgraph @SpringBootTest (Full Context)
+
+        subgraph FullContext["@SpringBootTest (Full Context)"]
             direction TB
             FullWeb[Web Layer]
             FullService[Service Layer]
@@ -32,14 +31,14 @@ flowchart TD
             FullWeb --> FullService --> FullData
         end
 
-        subgraph @WebMvcTest (Web Slice)
+        subgraph WebSlice["@WebMvcTest (Web Slice)"]
             direction TB
             SliceWeb[Web Layer]
             SliceService["(@MockBean) Service Layer"]
             SliceWeb --> SliceService
         end
 
-        subgraph @DataJpaTest (Data Slice)
+        subgraph DataSliceGroup["@DataJpaTest (Data Slice)"]
             direction TB
             DataSlice[Data Layer]
             TestDB[(In-Memory DB)]
