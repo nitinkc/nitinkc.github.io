@@ -5,7 +5,8 @@ Clone the code, goto root directory.
 Build site using default _config.yml file:
 
 ```sh
-bundle install 
+bundle install  # requires sudo
+bundle install --path vendor/bundle # non-sudo users
 
 #Serve site at http://localhost:4000
 bundle exec jekyll serve
