@@ -29,7 +29,7 @@ and clients
   Certificate.
 - It is called TLS Handshake
 
-![clientCertificate.png](../../../assets/images/clientCertificate.png)
+![clientCertificate.png](/assets/images/clientCertificate.png)
 
 # Credentials:
 

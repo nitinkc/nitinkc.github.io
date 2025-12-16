@@ -23,4 +23,4 @@ new com.fasterxml.jackson.databind.ObjectMapper()
 
 # Show ByteCode
 
-![showByteCode.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FshowByteCode.png)
+![showByteCode.png](/assets/images/intelliJ/showByteCode.png)

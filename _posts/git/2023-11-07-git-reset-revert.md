@@ -12,7 +12,7 @@ title: Git Reset - Revert
 the previous commits**
 
 [https://git-school.github.io/visualizing-git/#revert](https://git-school.github.io/visualizing-git/#revert)
-![1.png](..%2F..%2Fassets%2Fimages%2Fgit%2F1.png)
+![1.png](/assets/images/git/1.png)
 
 # Special Symbol usage
 
@@ -79,8 +79,8 @@ allowfullscreen>
 * git reset --mixed, keeps all files the same but unstages the changes. This is
   the most flexible option, it doesn’t modify files.
 
-![2.png](..%2F..%2Fassets%2Fimages%2Fgit%2F2.png)
-[//]: # (<img src="../assets/images/git/2.png" alt="2.png" style="width: 50%; height:60%; border: 1px solid #ccc;">)
+![2.png](/assets/images/git/2.png)
+[//]: # (<img src="/assets/images/git/2.png" alt="2.png" style="width: 50%; height:60%; border: 1px solid #ccc;">)
 
 `git revert` is useful when you want to undo the changes made by a specific
 commit without rewriting history

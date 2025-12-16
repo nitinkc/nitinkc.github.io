@@ -132,11 +132,11 @@ is **configurable**.
 Runs only when its needed, i.e, when it gets full. It is Heavy process
 
 The Visual GC Plugin of Visual VM
-![visualvm-plugin.png](..%2F..%2F..%2Fassets%2Fimages%2Fvisualvm-plugin.png)
+![visualvm-plugin.png](/assets/images/visualvm-plugin.png)
 Heap Spaces as shown in the Visual VM for a running process
-![gc-spaces.png](..%2F..%2F..%2Fassets%2Fimages%2Fgc-spaces.png)
+![gc-spaces.png](/assets/images/gc-spaces.png)
 GC Activity for OOM
-![GC_OOM.png](..%2F..%2F..%2Fassets%2Fimages%2FGC_OOM.png)
+![GC_OOM.png](/assets/images/GC_OOM.png)
 
 # Jshell
 

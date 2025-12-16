@@ -47,7 +47,7 @@ Status Code: 101 Switching Protocols
 ```
 
 then the persistent connection is established
-![webSockets.png](..%2F..%2Fassets%2Fimages%2FwebSockets.png)
+![webSockets.png](/assets/images/webSockets.png)
 
 ## How WebSockets Work:
 

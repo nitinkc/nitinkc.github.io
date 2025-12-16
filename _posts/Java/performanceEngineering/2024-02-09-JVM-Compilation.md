@@ -292,8 +292,8 @@ jconsole
 ```
 
 Choose the Remote process and provide appropriate parameters
-![jconsole.png](..%2F..%2F..%2Fassets%2Fimages%2Fjconsole.png)
-![jconsole-log.png](..%2F..%2F..%2Fassets%2Fimages%2Fjconsole-log.png)
+![jconsole.png](/assets/images/jconsole.png)
+![jconsole-log.png](/assets/images/jconsole-log.png)
 
 # 32 bit JVM vs 64 bit JVM
 

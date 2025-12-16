@@ -66,9 +66,9 @@ What is typically understood by message is actually a **command**.
 > Use Queues in a point-to-point messaging system
 > Use topic in publish-subscribe messaging system
 
-![eventVsMessage1.png](../../assets/images/eventVsMessage1.png)
+![eventVsMessage1.png](/assets/images/eventVsMessage1.png)
 
-![eventVsMessage2.png](../../assets/images/eventVsMessage2.png)
+![eventVsMessage2.png](/assets/images/eventVsMessage2.png)
 
 It is very easy to wiretap into a topic but not on queue. if a rogue service did listen to a queue,
 the corrosponding point-to-point service will not receive the message and a notification would be
@@ -125,7 +125,7 @@ Pub/Sub Model : Message Broaker as a temporary storage
 - Communication service subscribes to the message and reads the messages and
   processes it.
 
-![paymentProcessingArchitecture.png](../../assets/images/paymentProcessingArchitecture.png){:
+![paymentProcessingArchitecture.png](/assets/images/paymentProcessingArchitecture.png){:
 width="50%" height="50%"}
 
 # Messages

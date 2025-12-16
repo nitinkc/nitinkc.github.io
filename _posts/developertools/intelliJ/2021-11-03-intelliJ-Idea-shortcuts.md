@@ -66,26 +66,26 @@ title: IntelliJ Idea Shortcuts
 
 - ✅ ⌘Cmd E | Recent Files
 - ✅ ⌘Cmd E | Move to the last location edited ,Show recently opened Files
-  ![4.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F4.png)
+  ![4.png](/assets/images/intelliJ/4.png)
 
 
 - ✅ ⌘Cmd ⇧Shift E | See edited code in recently opened Files, Recent Locations
-  ![5.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F5.png)
+  ![5.png](/assets/images/intelliJ/5.png)
 
 - ✅ ⌘Cmd ⇧Shift I | Quick Definition,See definition of a symbol at caret
-  ![6.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F6.png)
+  ![6.png](/assets/images/intelliJ/6.png)
 
 - ⌘Cmd P | View Parameter Information
-  ![7.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F7.png)
+  ![7.png](/assets/images/intelliJ/7.png)
 
 - ✅ ⌃Ctrl ⇧Shift P | View Type Info
-  ![8.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F8.png)
+  ![8.png](/assets/images/intelliJ/8.png)
 
-![8.1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F8.1.png)
+![8.1.png](/assets/images/intelliJ/8.1.png)
 
 - ✅ ⌃Ctrl `Backtick | Quick Switch Scheme, enter presentation mode, etc
 
-![10.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F10.png)
+![10.png](/assets/images/intelliJ/10.png)
 
 ## Navigate
 
@@ -112,7 +112,7 @@ title: IntelliJ Idea Shortcuts
 
 - ✅ ⌃Ctrl ↓ Next Method / Class in package
 - ✅ ⌃Ctrl ↑ Previous Method / Class in package
-  ![13.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F13.png)
+  ![13.png](/assets/images/intelliJ/13.png)
 
 ## Find, Search & Edit, Replace in Files
 
@@ -157,7 +157,7 @@ title: IntelliJ Idea Shortcuts
 | ⌃Ctrl ⌘Cmd ␣         | Emoji & Symbols                                                                             |
 
 - ✅⌃Ctrl ⌘Cmd G | Select All Occurrences
-  ![3.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F3.png)
+  ![3.png](/assets/images/intelliJ/3.png)
 
 `Begin from ⇧⇧`
 
@@ -165,26 +165,26 @@ title: IntelliJ Idea Shortcuts
 - ✅ ⌘Cmd N | Class
 - ⌘Cmd ⇧Shift N -> File
 - ⌘Cmd ⇧Shift ⌥Opt N -> Symbol
-  ![15.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F15.png)
+  ![15.png](/assets/images/intelliJ/15.png)
 
 - ✅ ^Ctrl ⇧Shift F | Find in Files
-  ![16.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F16.png)
+  ![16.png](/assets/images/intelliJ/16.png)
 
 - ✅ ⌘Cmd F | Find in current file
-  ![17.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F17.png)
+  ![17.png](/assets/images/intelliJ/17.png)
 
 - ✅ ⌘Cmd ⇧Shift V | Paste from History…
-  ![18.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F18.png)
+  ![18.png](/assets/images/intelliJ/18.png)
 
 - ✅⌃Ctrl ⌘Cmd G
 
 Select All Occurrences
 Select and Right click opens menu
 
-![19.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F19.png)
+![19.png](/assets/images/intelliJ/19.png)
 
 - ✅ ⌘Cmd ⌥Opt F7
-  ![findUsages.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FfindUsages.png)
+  ![findUsages.png](/assets/images/intelliJ/findUsages.png)
 
 ## Code
 
@@ -229,7 +229,7 @@ Select and Right click opens menu
     - point, Hold Command key and left click
     - Just like moving into method definition(⌘Cmd ⌥Opt B )
 
-![14.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F14.png)
+![14.png](/assets/images/intelliJ/14.png)
 
 ##### Code selection
 
@@ -258,7 +258,7 @@ Collapse a code fragment
   If you want to collapse all regions in the file
 * `⌘Сmd ⇧Shift -` / `⌘Сmd ⇧Shift =`
 
-![collapse.gif](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fcollapse.gif)
+![collapse.gif](/assets/images/intelliJ/collapse.gif)
 
 ### Refactor
 
@@ -277,10 +277,10 @@ Collapse a code fragment
 | F5                 | Copy Class…                              |
 
 - ✅ ^ Ctrl T | Refactor This - Opens up all the options below
-  ![1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F1.png)
+  ![1.png](/assets/images/intelliJ/1.png)
 
 - ✅ ⌘Cmd ⌥Opt V | Declare the variable
-  ![2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F2.png)
+  ![2.png](/assets/images/intelliJ/2.png)
 
 ## Inheritance Hierarchy
 
@@ -340,14 +340,14 @@ Collapse a code fragment
   Display all methods in a file, on a pop-up window
 
 - Cmd⌘ 7 Structure
-  ![11.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F11.png)
+  ![11.png](/assets/images/intelliJ/11.png)
 
 - ✅ ⌘Cmd ⇧Shift - Collapse All
     - ⌘Cmd - Collapse
 - ✅ ⌘Cmd ⇧Shift + Expand All
     - ⌘Cmd + Expand
 
-![12.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2F12.png)
+![12.png](/assets/images/intelliJ/12.png)
 
 ## Coding Assistance
 
@@ -363,7 +363,7 @@ Collapse a code fragment
 ##### Surround with
 
 Surround With **⌘Сmd ⌥Opt T**
-![surround_with.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsurround_with.png)
+![surround_with.png](/assets/images/intelliJ/surround_with.png)
 
 ## PDF Reference
 

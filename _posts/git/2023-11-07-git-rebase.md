@@ -15,7 +15,7 @@ an `squash merge` or `interactive rebase`  approach can be used.
 
 Remove unnecessary commits by squashing intermediate commits into one.
 
-![squash_intelliJ.png](..%2F..%2Fassets%2Fimages%2Fgit%2Fsquash_intelliJ.png)
+![squash_intelliJ.png](/assets/images/git/squash_intelliJ.png)
 
 # Rebase
 
@@ -44,10 +44,10 @@ git push --force
 
 ### Using IntelliJ
 
-![IntelliJRebase.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FIntelliJRebase.png)
+![IntelliJRebase.png](/assets/images/intelliJ/IntelliJRebase.png)
 
 Squash the unwanted commits
-![intelliJInteractiverebase.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FintelliJInteractiverebase.png)
+![intelliJInteractiverebase.png](/assets/images/intelliJ/intelliJInteractiverebase.png)
 
 ## When to use Rebase?
 
@@ -76,6 +76,6 @@ git checkout develop
 git merge --no-ff feature/new-feature
 ```
 
-<img src="..%2F..%2Fassets%2Fimages%2Fgit%2Frebase.png" width="300" height="300">
+<img src="/assets/images/git/rebase.png" width="300" height="300">
 
 ![](https://www.youtube.com/watch?v=0chZFIZLR_0)

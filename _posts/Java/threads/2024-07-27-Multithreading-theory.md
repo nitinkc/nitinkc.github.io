@@ -60,7 +60,7 @@ All threads **share** Files, Heap, and Code
 
 [Image Code Link](https://app.eraser.io/workspace/tRdPDXKngDIyHNQeiKZE?origin=share)
 
-![process.png](../../../assets/images/process.png){:width="400" height="300"}
+![process.png](/assets/images/process.png){:width="400" height="300"}
 
 **Instruction Pointer**
 
@@ -111,7 +111,7 @@ context switch between different processes
 
 [Code Link](https://app.eraser.io/workspace/EoAeHbbnoamTb2aJzyMN?origin=share)
 
-![processWithThreads.png](../../../assets/images/processWithThreads.png)
+![processWithThreads.png](/assets/images/processWithThreads.png)
 
 ### Summary
 
@@ -375,7 +375,7 @@ Peripheral controller, RAM and CPU
 
 [Diagram Code](https://app.eraser.io/workspace/T6P7KpKfUkWkbqsVJbqC?origin=share)
 
-![dma.png](../../../assets/images/dma.png){:width="400" height="300"}
+![dma.png](/assets/images/dma.png){:width="400" height="300"}
 
 ### IO Bound Application
 
@@ -388,7 +388,7 @@ public List<Dto> getData(RequestBody req){
 }
 ```
 
-![cpu-dma.png](../../../assets/images/cpu-dma.png)
+![cpu-dma.png](/assets/images/cpu-dma.png)
 
 # Blocking vs Non blocking IO
 
@@ -461,7 +461,7 @@ sequenceDiagram
 ```
 
 In terms of Thread, blocking va non-blocking tasks would look like
-![blockingVsNonBlocking.png](../../../assets/images/blockingVsNonBlocking.png)
+![blockingVsNonBlocking.png](/assets/images/blockingVsNonBlocking.png)
 
 # Concurrency and Parallelism
 
@@ -473,7 +473,7 @@ In terms of Thread, blocking va non-blocking tasks would look like
 - No parallelism in a single core
 
 [Diagram](https://app.eraser.io/workspace/ptDSaZUOMF3oJpPoCun3)
-![task-per-core.png](../../../assets/images/task-per-core.png)
+![task-per-core.png](/assets/images/task-per-core.png)
 
 **Parallelism in Independent Tasks**
 
@@ -502,7 +502,7 @@ thread2 - Drink      |        D           D
 time  t=0------------^--------^-----------^-------->t
 ```
 
-![io-calls.png](../../../assets/images/io-calls.png)
+![io-calls.png](/assets/images/io-calls.png)
 
 # Asynchronous
 

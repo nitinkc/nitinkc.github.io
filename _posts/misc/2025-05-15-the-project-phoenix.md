@@ -133,7 +133,7 @@ _The Goal_ and the Theory of Constraints continue to offer timeless insights int
 ---
 
 # KATA
-![toyota_kata.png](../assets/images/toyota_kata.png)
+![toyota_kata.png](/assets/images/toyota_kata.png)
 
 [https://www.lean.org/lexicon-terms/kata/](https://www.lean.org/lexicon-terms/kata/)
 ![https://www.lean.org/wp-content/uploads/2021/10/what-is-improvement-kata-1024x473.jpg](https://www.lean.org/wp-content/uploads/2021/10/what-is-improvement-kata-1024x473.jpg)

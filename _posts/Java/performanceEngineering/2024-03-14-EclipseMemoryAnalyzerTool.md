@@ -18,7 +18,7 @@ yCrash for all the tools under one bucket.
 
 Use icon Assist : **⌥ Opt** + I or Help -> Icon Asist
 
-![eclipse_mat.png](../../../assets/images/eclipse_mat.png)
+![eclipse_mat.png](/assets/images/eclipse_mat.png)
 
 Import the `.hprof` file
 
