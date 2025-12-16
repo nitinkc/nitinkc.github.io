@@ -28,7 +28,7 @@ of choice
 
 # Show line numbers and Method separator
 
-![show_lineNumbers.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fshow_lineNumbers.png)
+![show_lineNumbers.png](/assets/images/intelliJ/show_lineNumbers.png)
 
 # Configure Tabs
 
@@ -46,15 +46,15 @@ appear like this
 
 ##### Show Pinned Tab in Separate Row
 
-![pinned_tab.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fpinned_tab.png)
+![pinned_tab.png](/assets/images/intelliJ/pinned_tab.png)
 
 # Configure font size for Presenting
 
-![font_size.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Ffont_size.png)
+![font_size.png](/assets/images/intelliJ/font_size.png)
 
 ##### Change Editor Font
 
-![changeFont.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FchangeFont.png)
+![changeFont.png](/assets/images/intelliJ/changeFont.png)
 
 # Hide Usages
 
@@ -62,7 +62,7 @@ appear like this
 
 # Hard Wrap
 
-![hardWrap.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FhardWrap.png)
+![hardWrap.png](/assets/images/intelliJ/hardWrap.png)
 
 # Useful Plugins
 
@@ -84,7 +84,7 @@ appear like this
 ##### List of all downloaded plugins,
 
 Select all (CTRL+A) and copy for a list of installed Plugins
-![downloaded_plugin.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fdownloaded_plugin.png)
+![downloaded_plugin.png](/assets/images/intelliJ/downloaded_plugin.png)
 
 - .env files support (2023.2)
 - CodeGlance Pro (1.7.6)
@@ -117,23 +117,23 @@ Classic screen most used features
 * **Left** : Project, Commit, Structure, Bookmark
 * **Right** : Gradle, Code Coverage
 
-![classic_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fclassic_intelliJ.png)
+![classic_intelliJ.png](/assets/images/intelliJ/classic_intelliJ.png)
 
 ##### Customize the Toolbar
 
-![customize_toolbar_new_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fcustomize_toolbar_new_intelliJ.png)
+![customize_toolbar_new_intelliJ.png](/assets/images/intelliJ/customize_toolbar_new_intelliJ.png)
 
 # Final look
 
-![new_intelliJ.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fnew_intelliJ.png)
+![new_intelliJ.png](/assets/images/intelliJ/new_intelliJ.png)
 
 # Show ByteCode
 
-![showByteCode.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FshowByteCode.png)
+![showByteCode.png](/assets/images/intelliJ/showByteCode.png)
 
 # Flatten the package
 
-![flattenPackages.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FflattenPackages.png)
+![flattenPackages.png](/assets/images/intelliJ/flattenPackages.png)
 
 # Enable Auto restart with Devtools
 
@@ -145,30 +145,30 @@ implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', 
 ```
 
 Make the following changes in the intelliJ settings
-![autoRestart1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FautoRestart1.png)
+![autoRestart1.png](/assets/images/intelliJ/autoRestart1.png)
 
-![autoRestart2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2FautoRestart2.png)
+![autoRestart2.png](/assets/images/intelliJ/autoRestart2.png)
 
 # Enable SonarCube
 
 Install the SonarLint plugin and configure it in IntelliJ
 
-![sonar1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar1.png)
+![sonar1.png](/assets/images/intelliJ/sonar1.png)
 
 Add & Configure the Connection
-![sonar2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar2.png)
+![sonar2.png](/assets/images/intelliJ/sonar2.png)
 Set the Token, instead of user/password
-![sonar3.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fsonar3.png)
+![sonar3.png](/assets/images/intelliJ/sonar3.png)
 
 # Enable Google Code Format
 
-![google-format1.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fgoogle-format1.png)
+![google-format1.png](/assets/images/intelliJ/google-format1.png)
 
-![google-format2.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Fgoogle-format2.png)
+![google-format2.png](/assets/images/intelliJ/google-format2.png)
 
 # Enable Font Zoom/Font Size change
 
-![font-zoom.png](..%2F..%2Fassets%2Fimages%2FintelliJ%2Ffont-zoom.png)
+![font-zoom.png](/assets/images/intelliJ/font-zoom.png)
 
 
 # Invalidate Caches and Restore
