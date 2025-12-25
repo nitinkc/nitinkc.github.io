@@ -1,5 +1,6 @@
 ---
-categories: Design Patterns
+categories:
+- Design Patterns
 date: 2024-06-17 17:45:00
 tags:
 - Java

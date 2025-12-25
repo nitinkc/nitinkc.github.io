@@ -1,5 +1,6 @@
 ---
-categories: Git
+categories:
+- Git
 date: 2020-05-19 19:14:00
 tags:
 - Troubleshooting

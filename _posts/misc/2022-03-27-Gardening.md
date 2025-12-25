@@ -1,5 +1,6 @@
 ---
-categories: Hobbies
+categories:
+- Hobbies
 date: 2022-01-26 21:55:00
 tags:
 - Hobbies

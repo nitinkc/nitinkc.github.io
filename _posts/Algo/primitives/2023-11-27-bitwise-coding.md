@@ -1,5 +1,6 @@
 ---
-categories: Algorithms
+categories:
+- Algorithms
 date: 2023-11-27 08:30:00
 tags:
 - Algorithms

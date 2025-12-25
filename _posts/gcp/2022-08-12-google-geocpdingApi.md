@@ -1,5 +1,6 @@
 ---
-categories: GCP
+categories:
+- GCP
 date: 2022-08-12 20:04:00
 tags:
 - Google Maps

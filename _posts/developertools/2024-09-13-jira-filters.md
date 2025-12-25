@@ -1,5 +1,6 @@
 ---
-categories: Developer Tools
+categories:
+- Developer Tools
 date: 2024-09-13 13:45:00
 tags:
 - Project Management

@@ -1,5 +1,6 @@
 ---
-categories: Database
+categories:
+- Database
 date: 2023-05-27 19:25:00
 tags:
 - MySQL

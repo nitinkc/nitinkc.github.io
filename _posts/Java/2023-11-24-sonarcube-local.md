@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2023-11-24 12:17:00
 tags:
 - Code Quality

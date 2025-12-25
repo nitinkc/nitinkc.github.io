@@ -1,5 +1,6 @@
 ---
-categories: Microservices
+categories:
+- Microservices
 date: 2025-06-03 11:50:00
 tags:
 - Spring Boot

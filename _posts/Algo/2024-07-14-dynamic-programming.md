@@ -1,5 +1,6 @@
 ---
-categories: Algorithms
+categories:
+- Algorithms
 date: 2024-07-14 18:27:00
 tags:
 - Dynamic Programming

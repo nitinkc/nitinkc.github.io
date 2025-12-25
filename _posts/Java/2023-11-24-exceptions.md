@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2023-11-24 23:23:00
 tags:
 - Error Handling

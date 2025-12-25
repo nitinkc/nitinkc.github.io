@@ -1,5 +1,6 @@
 ---
-categories: Algorithms
+categories:
+- Algorithms
 date: 2025-01-21 09:26:00
 tags:
 - Trees

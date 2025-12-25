@@ -1,5 +1,6 @@
 ---
-categories: System Design
+categories:
+- System Design
 date: 2024-01-20 11:20:00
 tags:
 - Consistency

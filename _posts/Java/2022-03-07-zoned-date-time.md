@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2022-03-08 00:27:00
 tags:
 - Java 8

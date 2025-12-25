@@ -1,5 +1,6 @@
 ---
-categories: Microservices
+categories:
+- Microservices
 date: 2022-10-11 20:35:00
 tags:
 - Build Tools

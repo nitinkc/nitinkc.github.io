@@ -1,5 +1,6 @@
 ---
-categories: SQL
+categories:
+- SQL
 date: 2024-07-07 14:25:00
 tags:
 - Query Optimization

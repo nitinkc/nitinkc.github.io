@@ -35,7 +35,8 @@ with CSV_IN.open('r', encoding='utf-8', newline='') as fh:
         # Update ONLY metadata
         meta = post.metadata
         if prop_cats:
-            meta['categories'] = prop_cats if len(prop_cats) > 1 else prop_cats[0]
+            # Always use array format for categories to match Jekyll schema
+            meta['categories'] = prop_cats
         else:
             meta.pop('categories', None)
 

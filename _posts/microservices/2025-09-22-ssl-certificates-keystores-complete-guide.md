@@ -1,5 +1,6 @@
 ---
-categories: Microservices
+categories:
+- Microservices
 date: 2025-09-22 10:00:00
 tags:
 - Security

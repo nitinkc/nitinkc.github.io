@@ -1,5 +1,6 @@
 ---
-categories: System Design
+categories:
+- System Design
 date: 2024-06-18 11:45:00
 tags:
 - Data Structures

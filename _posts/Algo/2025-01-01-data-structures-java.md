@@ -1,5 +1,6 @@
 ---
-categories: Algorithms
+categories:
+- Algorithms
 date: 2025-01-01 15:27:00
 tags:
 - Data Structures

@@ -1,5 +1,6 @@
 ---
-categories: Developer Tools
+categories:
+- Developer Tools
 date: 2016-07-31 15:04:00
 tags:
 - MacBook

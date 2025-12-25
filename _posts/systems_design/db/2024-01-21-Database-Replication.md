@@ -1,5 +1,6 @@
 ---
-categories: System Design
+categories:
+- System Design
 date: 2024-01-21 02:00:00
 tags:
 - Database

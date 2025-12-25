@@ -1,5 +1,6 @@
 ---
-categories: Developer Tools
+categories:
+- Developer Tools
 date: 2021-02-10 02:15:00
 tags:
 - MacOS

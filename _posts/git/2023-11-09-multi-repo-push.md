@@ -1,5 +1,6 @@
 ---
-categories: Git
+categories:
+- Git
 date: 2023-11-13 14:30:00
 tags:
 - Configuration

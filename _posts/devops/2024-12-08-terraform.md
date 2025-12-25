@@ -1,5 +1,6 @@
 ---
-categories: DevOps
+categories:
+- DevOps
 date: 2024-12-08 10:14:00
 tags:
 - Terraform

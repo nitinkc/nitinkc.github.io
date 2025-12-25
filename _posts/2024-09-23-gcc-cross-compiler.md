@@ -1,5 +1,6 @@
 ---
-categories: Developer Tools
+categories:
+- Developer Tools
 date: 2024-09-23 21:14:00
 tags:
 - Compiler

@@ -1,5 +1,6 @@
 ---
-categories: DevOps
+categories:
+- DevOps
 date: 2024-09-17 23:02:00
 tags:
 - Kubernetes

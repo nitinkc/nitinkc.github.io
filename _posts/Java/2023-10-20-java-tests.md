@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2023-10-20 15:16:00
 tags:
 - Interview

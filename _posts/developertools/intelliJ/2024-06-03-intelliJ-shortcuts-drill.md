@@ -1,5 +1,6 @@
 ---
-categories: Developer Tools
+categories:
+- Developer Tools
 date: 2024-06-03 20:50:00
 tags:
 - IntelliJ

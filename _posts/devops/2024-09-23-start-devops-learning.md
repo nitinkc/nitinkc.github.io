@@ -1,5 +1,6 @@
 ---
-categories: DevOps
+categories:
+- DevOps
 date: 2024-09-23 20:14:00
 tags:
 - Learning

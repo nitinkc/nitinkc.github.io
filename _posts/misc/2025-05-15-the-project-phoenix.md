@@ -1,5 +1,6 @@
 ---
-categories: Books
+categories:
+- Books
 tags:
 - DevOps
 ---

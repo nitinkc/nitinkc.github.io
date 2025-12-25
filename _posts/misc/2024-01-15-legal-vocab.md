@@ -1,5 +1,6 @@
 ---
-categories: Legal
+categories:
+- Legal
 date: 2025-01-15 10:15:00
 tags:
 - Reference

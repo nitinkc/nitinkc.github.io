@@ -1,5 +1,6 @@
 ---
-categories: Architecture
+categories:
+- Architecture
 date: 2024-11-30 14:02:00
 tags:
 - Cloud Native

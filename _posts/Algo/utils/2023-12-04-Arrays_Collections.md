@@ -1,5 +1,6 @@
 ---
-categories: Algorithms
+categories:
+- Algorithms
 date: 2023-12-04 18:30:00
 tags:
 - Arrays

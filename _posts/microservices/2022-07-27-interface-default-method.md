@@ -1,5 +1,6 @@
 ---
-categories: Microservices
+categories:
+- Microservices
 date: 2022-07-27 13:06:00
 tags:
 - Java

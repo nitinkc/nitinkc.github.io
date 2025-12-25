@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2018-01-24 00:32:00
 tags:
 - Collections

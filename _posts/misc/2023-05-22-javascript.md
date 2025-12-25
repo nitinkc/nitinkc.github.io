@@ -1,5 +1,6 @@
 ---
-categories: Programming
+categories:
+- Programming
 date: 2023-05-22 23:14:00
 tags:
 - JavaScript

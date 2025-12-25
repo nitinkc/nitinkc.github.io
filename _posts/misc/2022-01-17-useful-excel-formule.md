@@ -1,5 +1,6 @@
 ---
-categories: Productivity
+categories:
+- Productivity
 date: 2022-01-17 21:55:00
 tags:
 - Tools

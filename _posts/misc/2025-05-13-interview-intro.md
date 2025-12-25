@@ -1,5 +1,6 @@
 ---
-categories: Career
+categories:
+- Career
 date: 2025-05-13 16:50:00
 tags:
 - Interview

@@ -1,5 +1,6 @@
 ---
-categories: Lifestyle
+categories:
+- Lifestyle
 date: 2025-04-09 10:50:00
 tags:
 - Lifestyle

@@ -1,5 +1,6 @@
 ---
-categories: SQL
+categories:
+- SQL
 date: 2023-08-02 14:25:00
 tags:
 - Database

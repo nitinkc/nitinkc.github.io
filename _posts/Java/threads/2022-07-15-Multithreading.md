@@ -1,5 +1,6 @@
 ---
-categories: Multithreading
+categories:
+- Multithreading
 date: 2021-10-18 13:10:00
 tags:
 - Java

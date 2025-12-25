@@ -1,5 +1,6 @@
 ---
-categories: SQL
+categories:
+- SQL
 tags:
 - Partitioning
 - Database

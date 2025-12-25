@@ -1,5 +1,6 @@
 ---
-categories: Electronics
+categories:
+- Electronics
 date: 2024-10-29 12:00:00
 tags:
 - Raspberry Pi

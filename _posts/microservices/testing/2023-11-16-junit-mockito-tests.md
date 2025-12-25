@@ -1,5 +1,6 @@
 ---
-categories: Testing
+categories:
+- Testing
 date: 2023-11-16 18:55:00
 tags:
 - Spring Boot

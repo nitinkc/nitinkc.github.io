@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2022-08-23 23:35:00
 tags:
 - API

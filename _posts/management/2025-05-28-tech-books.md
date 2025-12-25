@@ -1,5 +1,6 @@
 ---
-categories: Management
+categories:
+- Management
 date: 2025-05-28 05:00:00
 tags:
 - Books

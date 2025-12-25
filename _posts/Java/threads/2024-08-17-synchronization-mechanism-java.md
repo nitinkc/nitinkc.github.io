@@ -1,5 +1,6 @@
 ---
-categories: Multithreading
+categories:
+- Multithreading
 date: 2024-08-17 20:17:00
 tags:
 - Java

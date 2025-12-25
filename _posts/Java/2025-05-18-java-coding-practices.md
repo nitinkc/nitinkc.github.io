@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2025-05-18 23:17:00
 tags:
 - Best Practices

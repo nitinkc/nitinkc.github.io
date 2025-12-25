@@ -1,5 +1,6 @@
 ---
-categories: Developer Tools
+categories:
+- Developer Tools
 date: 2016-04-14 20:11:00
 tags:
 - Linux

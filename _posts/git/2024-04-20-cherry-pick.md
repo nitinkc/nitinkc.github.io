@@ -1,5 +1,6 @@
 ---
-categories: Git
+categories:
+- Git
 date: 2024-04-20 13:30:00
 tags:
 - Commands

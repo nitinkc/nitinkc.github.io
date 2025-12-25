@@ -1,5 +1,6 @@
 ---
-categories: Culture
+categories:
+- Culture
 date: 2022-01-26 21:55:00
 tags:
 - Hindu

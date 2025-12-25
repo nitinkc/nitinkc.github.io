@@ -1,5 +1,6 @@
 ---
-categories: Developer Tools
+categories:
+- Developer Tools
 date: 2016-04-04 18:31:00
 tags:
 - Hosting

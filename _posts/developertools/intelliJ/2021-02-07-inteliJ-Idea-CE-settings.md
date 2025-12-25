@@ -1,5 +1,6 @@
 ---
-categories: Developer Tools
+categories:
+- Developer Tools
 date: 2021-02-07 02:15:00
 sidebar:
   nav: algo

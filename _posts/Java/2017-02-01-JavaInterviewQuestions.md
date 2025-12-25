@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2018-01-31 00:20:00
 tags:
 - Interview

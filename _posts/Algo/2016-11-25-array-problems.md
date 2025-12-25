@@ -1,5 +1,6 @@
 ---
-categories: Algorithms
+categories:
+- Algorithms
 date: 2016-11-25 20:20:00
 tags:
 - Arrays

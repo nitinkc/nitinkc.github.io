@@ -1,5 +1,6 @@
 ---
-categories: Database
+categories:
+- Database
 date: 2025-07-09 15:25:00
 tags:
 - Analytics

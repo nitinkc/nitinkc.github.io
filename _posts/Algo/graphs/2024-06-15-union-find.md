@@ -1,5 +1,6 @@
 ---
-categories: Algorithms
+categories:
+- Algorithms
 date: 2024-06-16 18:27:00
 tags:
 - Graphs

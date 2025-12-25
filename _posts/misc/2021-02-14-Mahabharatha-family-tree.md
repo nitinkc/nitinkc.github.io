@@ -1,5 +1,6 @@
 ---
-categories: Culture
+categories:
+- Culture
 date: 2021-02-13 02:15:00
 tags:
 - History

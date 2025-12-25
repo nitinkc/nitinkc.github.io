@@ -1,5 +1,6 @@
 ---
-categories: System Design
+categories:
+- System Design
 date: 2024-07-06 16:02:00
 tags:
 - Distributed Systems

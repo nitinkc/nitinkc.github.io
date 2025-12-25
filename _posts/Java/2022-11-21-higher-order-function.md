@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2022-11-21 13:43:00
 tags:
 - Functional Programming

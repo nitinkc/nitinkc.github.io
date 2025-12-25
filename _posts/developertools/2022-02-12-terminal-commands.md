@@ -1,5 +1,6 @@
 ---
-categories: Developer Tools
+categories:
+- Developer Tools
 date: 2022-02-12 23:23:00
 tags:
 - Terminal

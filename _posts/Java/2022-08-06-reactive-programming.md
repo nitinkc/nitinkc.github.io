@@ -1,5 +1,6 @@
 ---
-categories: Java
+categories:
+- Java
 date: 2022-08-06 08:30:00
 tags:
 - Reactive

@@ -1,5 +1,6 @@
 ---
-categories: GCP
+categories:
+- GCP
 date: 2025-03-21 05:00:00
 tags:
 - Google Cloud
