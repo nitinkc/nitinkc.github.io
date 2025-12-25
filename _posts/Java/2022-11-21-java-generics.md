@@ -101,8 +101,7 @@ of T**.
 - This is useful when you have a class hierarchy and want to compare elements
   based on properties defined in supertypes of T.
 
-**Restricts Comparator Flexibility**: `Comparator<? extends T>` would **restrict
-** the comparator to only accept types that extend T. This limits the comparator
+**Restricts Comparator Flexibility**: `Comparator<? extends T>` would **restrict** the comparator to only accept types that extend T. This limits the comparator
 to handle **only subclasses of T**,
 
 - excluding comparators for T itself or its superclasses, which might be needed

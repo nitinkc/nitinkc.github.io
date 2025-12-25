@@ -96,8 +96,7 @@ public class User {
 }
 ```
 
-**`MethodArgumentNotValidException` for Failed Validations and exception handler
-**
+**`MethodArgumentNotValidException` for Failed Validations and exception handler**
 
 ```java
 @ExceptionHandler(MethodArgumentNotValidException.class)

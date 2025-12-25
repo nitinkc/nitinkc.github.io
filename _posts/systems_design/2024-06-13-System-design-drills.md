@@ -201,8 +201,7 @@ Problems with Distributed Databases Running in Multiple Nodes
 - **Solution**: Implement mechanisms like read-repair, anti-entropy protocols,
   and tune replication factors to reduce staleness.
 
-**Load Balancing**:
-**Solution**: Use advanced load balancing techniques such as consistent hashing,
+**Load Balancing**:**Solution**: Use advanced load balancing techniques such as consistent hashing,
 random sampling, and dynamic load adjustment.
 
 **Partition Tolerance**:

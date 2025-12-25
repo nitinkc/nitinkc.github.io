@@ -129,8 +129,7 @@ Only try-with-resources statement is permitted to omit both the catch and
 finally blocks
 {: .notice--info}
 
-The resources created in the try clause are **only in scope within the try block
-**.
+The resources created in the try clause are **only in scope within the try block**.
 
 ### AutoCloseable
 

@@ -270,8 +270,7 @@ Inefficient Data Retrieval: Full table scans on both tables, especially if they
 are large ,
 can lead to slow performance and high resource usage.
 
-**Solution:** Filter data earlier using **a common column present in all tables
-**, such as `ENTITY_ID`.
+**Solution:** Filter data earlier using **a common column present in all tables**, such as `ENTITY_ID`.
 
 ```sql
 SELECT e.MASTER_IDENTIFIER,

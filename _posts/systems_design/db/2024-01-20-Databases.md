@@ -68,8 +68,7 @@ Not designed for horizontal scalability but excels in vertical scalability
 
 NoSQL Database, specifically a wide-column store.
 
-Distributed, highly scalable systems requiring **high write and read throughput
-**.
+Distributed, highly scalable systems requiring **high write and read throughput**.
 
 Suitable for time-series data, sensor data, event logging, and other scenarios
 where scalability and fault tolerance are critical.

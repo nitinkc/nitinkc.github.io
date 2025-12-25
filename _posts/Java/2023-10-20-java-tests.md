@@ -85,8 +85,7 @@ try {
 
 ### Static of()
 
-Quit using `Arrays.asList` and start using `List.of()`, **the immutable variant
-**. Similarly, use Static Factories `Set.of()` and `Map.of()`.
+Quit using `Arrays.asList` and start using `List.of()`, **the immutable variant**. Similarly, use Static Factories `Set.of()` and `Map.of()`.
 
 * The Set's `of()` does not permit duplicate
 * the `of` methods does not permit nulls.

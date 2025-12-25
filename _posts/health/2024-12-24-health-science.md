@@ -79,14 +79,12 @@ tags:
 - **Goodness**: Beneficial for heart health and helps in maintaining blood sugar levels.
 
 ## Finger Millet (Ragi)
-**Properties**: Contains 364 mg of calcium per 100g.
-**Goodness**: Excellent for bone health; provides more calcium than a glass of milk. 1
+**Properties**: Contains 364 mg of calcium per 100g.**Goodness**: Excellent for bone health; provides more calcium than a glass of milk. 1
 
 **Minor Millets**
 
 ## Foxtail Millet
-**Properties**: High in antioxidants and dietary fiber.
-**Goodness**: Supports metabolic health and aids in weight loss.
+**Properties**: High in antioxidants and dietary fiber.**Goodness**: Supports metabolic health and aids in weight loss.
 
 ## Proso Millet
 - **Properties**: Good source of protein and B vitamins.

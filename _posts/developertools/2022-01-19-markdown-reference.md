@@ -109,8 +109,7 @@ using Spaceship jekyll plugin
 
 # Insert Table
 
-**Jekyll Spaceship plugin Table
-** [https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#1-table-usage](https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#1-table-usage)
+**Jekyll Spaceship plugin Table** [https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#1-table-usage](https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#1-table-usage)
 
 ```markdown
 | Left Aligned Header 1  | Center Aligned Header                 | 

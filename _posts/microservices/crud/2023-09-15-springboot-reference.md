@@ -56,8 +56,7 @@ swap out `UserRepository` implementations.
 Instead of the Class taking responsibility of creating the object, the framework
 manages it for you
 
-- the control of **object creation** and **dependency management** is 
-**_inverted_** from the application code to a framework.
+- the control of **object creation** and **dependency management** is **_inverted_** from the application code to a framework.
 - The framework manages the lifecycle and interactions of objects.
 
 ## Dependency Injection

@@ -14,14 +14,7 @@ tags:
 # Shortcut Keys
 
 **LEGEND :**
-**⌘** Cmd &emsp;
-**⇧** Shift &emsp;
-**^** Ctrl &emsp;
-**⌥** Opt &emsp;
-**⎋** Esc &emsp;
-**↵** Return &emsp;  
-**⌫** Delete
-**↑ ↓ → ←** &emsp;
+**⌘** Cmd &emsp;**⇧** Shift &emsp;**^** Ctrl &emsp;**⌥** Opt &emsp;**⎋** Esc &emsp;**↵** Return &emsp;  **⌫** Delete**↑ ↓ → ←** &emsp;
 
 {: .notice--success}
 

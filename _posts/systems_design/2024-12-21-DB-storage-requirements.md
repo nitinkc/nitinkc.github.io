@@ -15,8 +15,7 @@ tags:
   - **100KB - 500KB per user/day** (depending on app type and usage).
 - **Media (e.g., images, videos)**:
   - **100KB - several MB per user** (depending on the app).
-- **Example**: A social media platform with **10M DAUs**, each generating 
-**100KB of data/day** results in **1TB/day** of data.
+- **Example**: A social media platform with **10M DAUs**, each generating **100KB of data/day** results in **1TB/day** of data.
 
 # 2. **Traffic Volume (API Calls)**
 - **API Calls per User per Day**:

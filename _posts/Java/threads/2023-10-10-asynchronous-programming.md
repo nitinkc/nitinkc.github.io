@@ -30,8 +30,7 @@ Javascript is dynamically typed
 
 ##### Java
 
-Java is statically typed, so we have to provide **the type of CompletableFuture
-** in the declaration
+Java is statically typed, so we have to provide **the type of CompletableFuture** in the declaration
 {% gist nitinkc/eea4fd28d7765ec964cbf9b5c270ec5c %}
 
 ### CompletableFuture - ThreadPool
@@ -174,8 +173,7 @@ and combine them
   second CompletableFuture.
 * The resulting CompletableFuture is a flattened chain.
 
-**compose()** --> sequencing dependent asynchronous tasks,
-**thenCombine()** --> combine the results of two independent asynchronous tasks
+**compose()** --> sequencing dependent asynchronous tasks,**thenCombine()** --> combine the results of two independent asynchronous tasks
 into a single result
 {: .notice--primary}
 

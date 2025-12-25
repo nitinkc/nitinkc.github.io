@@ -10,14 +10,7 @@ tags:
 ---
 
 **LEGEND :**
-**⌘** Cmd &emsp;
-**⇧** Shift &emsp;
-**^** Ctrl &emsp;
-**⌥** Opt &emsp;
-**⎋** Esc &emsp;
-**↵** Return &emsp;  
-**⌫** Delete
-**↑ ↓ → ←** &emsp;
+**⌘** Cmd &emsp;**⇧** Shift &emsp;**^** Ctrl &emsp;**⌥** Opt &emsp;**⎋** Esc &emsp;**↵** Return &emsp;  **⌫** Delete**↑ ↓ → ←** &emsp;
 
 Most important
 **⌥** Opt **↵** Return
