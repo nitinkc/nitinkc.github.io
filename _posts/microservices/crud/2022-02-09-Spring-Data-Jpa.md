@@ -5,10 +5,8 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- JPA
 - REST
 - Database
-- Hibernate
 ---
 
 {% include toc title="Index" %}

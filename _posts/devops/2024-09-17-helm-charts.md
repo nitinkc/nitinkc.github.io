@@ -5,8 +5,6 @@ categories:
 - DevOps
 tags:
 - Kubernetes
-- Charts
-- Package Manager
 ---
 
 {% include toc title="Index" %}

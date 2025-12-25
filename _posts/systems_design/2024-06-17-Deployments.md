@@ -4,9 +4,7 @@ date: 2024-06-17 11:02:00
 categories:
 - System Design
 tags:
-- Deployment
 - CI/CD
-- DevOps
 ---
 
 {% include toc title="Index" %}

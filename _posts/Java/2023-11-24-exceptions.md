@@ -4,7 +4,6 @@ date: 2023-11-24 23:23:00
 categories:
 - Java
 tags:
-- Error Handling
 - Best Practices
 ---
 

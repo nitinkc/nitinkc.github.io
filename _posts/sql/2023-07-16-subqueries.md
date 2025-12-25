@@ -4,7 +4,6 @@ date: 2023-07-16 23:20:00
 categories:
 - SQL
 tags:
-- Query
 - Database
 ---
 

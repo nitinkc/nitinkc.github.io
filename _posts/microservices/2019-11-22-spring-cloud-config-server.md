@@ -5,7 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Spring Cloud
 - Configuration
 ---
 

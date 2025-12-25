@@ -4,8 +4,6 @@ date: 2023-11-06 08:30:00
 categories:
 - Design Patterns
 tags:
-- Iterator
-- Behavioral
 - Java
 - Collections
 ---

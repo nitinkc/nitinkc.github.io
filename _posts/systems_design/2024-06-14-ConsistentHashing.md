@@ -4,9 +4,7 @@ date: 2024-06-14 08:02:00
 categories:
 - System Design
 tags:
-- Load Balancing
 - Distributed Systems
-- Partitioning
 ---
 
 {% include toc title="Index" %}

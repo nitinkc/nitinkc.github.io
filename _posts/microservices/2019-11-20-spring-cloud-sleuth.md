@@ -5,8 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Spring Cloud
-- Distributed Tracing
 ---
 
 ## Assigning Trace id to all the Microservices

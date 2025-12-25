@@ -4,9 +4,7 @@ date: 2022-10-11 20:35:00
 categories:
 - Microservices
 tags:
-- Build Tools
-- Gradle
-- Dependencies
+- Microservices
 ---
 
 # Gradle build tree

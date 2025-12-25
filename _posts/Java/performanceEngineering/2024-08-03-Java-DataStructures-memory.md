@@ -7,7 +7,6 @@ tags:
 - Java
 - Memory
 - Performance
-- HashMap
 - Collections
 ---
 

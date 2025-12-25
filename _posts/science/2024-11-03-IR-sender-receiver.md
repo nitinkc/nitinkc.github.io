@@ -4,8 +4,7 @@ date: 2024-11-03 01:00:00
 categories:
 - Electronics
 tags:
-- Communication
-- Sensors
+- Electronics
 ---
 
 {% include toc title="Index" %}

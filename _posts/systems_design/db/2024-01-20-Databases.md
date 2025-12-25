@@ -7,7 +7,6 @@ tags:
 - Database
 - SQL
 - NoSQL
-- RDBMS
 ---
 
 {% include toc title="Index" %}

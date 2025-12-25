@@ -4,7 +4,7 @@ date: 2025-02-02 08:00:00
 categories:
 - Electronics
 tags:
-- Education
+- Electronics
 ---
 
 {% include toc title="Index" %}

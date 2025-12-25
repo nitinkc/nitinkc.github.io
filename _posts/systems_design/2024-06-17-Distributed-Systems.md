@@ -7,7 +7,6 @@ tags:
 - Distributed Systems
 - Architecture
 - Scalability
-- Fault Tolerance
 ---
 
 {% include toc title="Index" %}

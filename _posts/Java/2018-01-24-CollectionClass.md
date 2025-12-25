@@ -6,7 +6,6 @@ categories:
 tags:
 - Collections
 - Data Structures
-- List
 ---
 
 {% include toc title="Index" %}

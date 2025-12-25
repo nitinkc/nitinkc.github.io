@@ -6,7 +6,6 @@ categories:
 tags:
 - Arrays
 - Data Structures
-- Syntax
 - Java
 - Programming
 ---

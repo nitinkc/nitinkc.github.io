@@ -5,7 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- WebSockets
 - Real-time
 - Guide
 ---

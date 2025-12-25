@@ -6,8 +6,6 @@ categories:
 tags:
 - Database
 - Distributed
-- Sharding
-- Replication
 ---
 
 {% include toc title="Index" %}

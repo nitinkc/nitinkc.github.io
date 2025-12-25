@@ -7,8 +7,6 @@ tags:
 - IntelliJ
 - IDE
 - Debugging
-- Tips
-- Shortcuts
 ---
 
 {% include toc title="Index" %}

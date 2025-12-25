@@ -5,7 +5,6 @@ categories:
 - DevOps
 tags:
 - Kubernetes
-- K8s
 - Commands
 - CLI
 ---

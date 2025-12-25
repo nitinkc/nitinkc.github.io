@@ -4,7 +4,7 @@ date: 2023-11-07 11:30:00
 categories:
 - Git
 tags:
-- Branching
+- Git
 ---
 
 {% include toc title="Index" %}

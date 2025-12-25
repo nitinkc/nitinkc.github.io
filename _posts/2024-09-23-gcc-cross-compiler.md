@@ -4,9 +4,7 @@ date: 2024-09-23 21:14:00
 categories:
 - Developer Tools
 tags:
-- Compiler
 - MacOS
-- Installation
 ---
 
 # Creating a Cross compiler on Mac

@@ -4,8 +4,6 @@ date: 2024-01-21 09:30:00
 categories:
 - System Design
 tags:
-- Rate Limiting
-- API Gateway
 - Security
 ---
 

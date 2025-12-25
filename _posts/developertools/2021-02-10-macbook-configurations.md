@@ -7,7 +7,6 @@ tags:
 - MacOS
 - Configuration
 - Setup
-- MacBook
 ---
 
 ## Contents

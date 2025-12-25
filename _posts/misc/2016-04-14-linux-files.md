@@ -4,11 +4,8 @@ date: 2016-04-14 20:11:00
 categories:
 - Developer Tools
 tags:
-- Linux
 - Commands
 - CLI
-- Terminal
-- Unix
 ---
 
 {% include toc title="Index" %}

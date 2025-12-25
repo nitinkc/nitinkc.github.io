@@ -5,7 +5,6 @@ categories:
 - History
 tags:
 - USA
-- Government
 ---
 
 {% include toc title="Index" %}

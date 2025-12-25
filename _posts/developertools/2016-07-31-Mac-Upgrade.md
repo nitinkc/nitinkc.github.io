@@ -4,9 +4,6 @@ date: 2016-07-31 15:04:00
 categories:
 - Developer Tools
 tags:
-- MacBook
-- Hardware
-- RAM
 - DIY
 ---
 

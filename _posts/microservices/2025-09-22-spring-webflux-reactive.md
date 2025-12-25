@@ -5,8 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Reactive
-- Non-Blocking
 ---
 
 {% include toc title="Index" %}

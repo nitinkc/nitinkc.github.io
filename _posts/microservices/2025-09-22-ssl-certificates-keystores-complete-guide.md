@@ -5,9 +5,6 @@ categories:
 - Microservices
 tags:
 - Security
-- SSL
-- TLS
-- Certificates
 - Guide
 ---
 

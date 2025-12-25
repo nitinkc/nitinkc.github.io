@@ -4,7 +4,6 @@ date: 2021-02-16 23:00:00
 categories:
 - GCP
 tags:
-- Google Cloud
 - Setup
 ---
 

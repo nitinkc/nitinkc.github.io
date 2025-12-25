@@ -5,9 +5,7 @@ categories:
 - Multithreading
 tags:
 - Java
-- Virtual Threads
 - Java 21
-- Project Loom
 - Concurrency
 ---
 

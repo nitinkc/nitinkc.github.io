@@ -4,7 +4,7 @@ date: 2025-06-05 14:02:00
 categories:
 - Architecture
 tags:
-- CQRS
+- Architecture
 ---
 
 {% include toc title="Index" %}

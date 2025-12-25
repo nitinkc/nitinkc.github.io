@@ -4,7 +4,6 @@ date: 2025-04-08 02:17:00
 categories:
 - Java
 tags:
-- Collectors
 - Streams
 - Java 8
 - Functional Programming

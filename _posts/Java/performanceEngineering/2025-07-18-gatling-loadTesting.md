@@ -5,10 +5,8 @@ categories:
 - Performance Engineering
 tags:
 - Performance
-- Load Testing
 - Microservices
 - Testing
-- Benchmarking
 ---
 
 {% include toc title="Index" %}

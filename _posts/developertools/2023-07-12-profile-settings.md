@@ -5,9 +5,7 @@ categories:
 - Developer Tools
 tags:
 - MacOS
-- Shell
 - Configuration
-- Zsh
 ---
 
 On Mac with iTerm2 and ZSH

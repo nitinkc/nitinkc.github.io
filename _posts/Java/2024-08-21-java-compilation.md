@@ -6,7 +6,6 @@ categories:
 tags:
 - JVM
 - Architecture
-- Garbage Collection
 ---
 
 {% include toc title="Index" %}

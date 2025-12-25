@@ -5,7 +5,6 @@ categories:
 - Multithreading
 tags:
 - Java
-- Locks
 - Concurrency
 ---
 

@@ -4,7 +4,6 @@ date: 2021-03-24 18:07:00
 categories:
 - Developer Tools
 tags:
-- Text Editor
 - Configuration
 - Settings
 - Tools

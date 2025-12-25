@@ -6,8 +6,6 @@ categories:
 tags:
 - Security
 - Authentication
-- OAuth
-- SSO
 ---
 
 {% include toc title="Index" %}

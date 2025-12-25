@@ -4,9 +4,7 @@ date: 2023-07-16 23:20:00
 categories:
 - SQL
 tags:
-- Window Functions
 - Analytics
-- Advanced
 ---
 
 # WHAT IS A FUNCTION?

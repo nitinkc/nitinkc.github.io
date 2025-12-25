@@ -4,9 +4,7 @@ date: 2025-05-28 05:00:00
 categories:
 - Management
 tags:
-- Books
 - Reference
-- Learning
 ---
 
 [Fundamentals of Software Architecture - An Engineering Approach](https://www.amazon.com/Fundamentals-Software-Architecture-Comprehensive-Characteristics/dp/1492043451)

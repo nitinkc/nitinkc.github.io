@@ -5,7 +5,6 @@ categories:
 - Algorithms
 tags:
 - Trees
-- B-Tree
 - Data Structures
 ---
 

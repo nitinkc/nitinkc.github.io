@@ -4,7 +4,6 @@ date: 2021-04-08 02:15:00
 categories:
 - GCP
 tags:
-- Spanner
 - Database
 - Distributed
 ---

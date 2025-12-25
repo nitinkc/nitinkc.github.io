@@ -5,7 +5,6 @@ categories:
 - Performance Engineering
 tags:
 - Java
-- Garbage Collection
 - Memory
 - Performance
 - JVM

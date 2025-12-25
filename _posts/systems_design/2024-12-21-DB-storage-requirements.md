@@ -5,9 +5,7 @@ categories:
 - System Design
 tags:
 - Database
-- Storage
 - Estimation
-- Capacity Planning
 ---
 
 # 1. **Data Size per User**

@@ -4,10 +4,7 @@ date: 2025-05-28 05:00:00
 categories:
 - Management
 tags:
-- Psychology
-- Behavioral Science
 - Theory
-- Leadership
 ---
 
 ### 🧠 **Cognitive & Behavioral Theories**

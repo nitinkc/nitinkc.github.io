@@ -4,8 +4,7 @@ date: 2024-09-06 20:14:00
 categories:
 - Finance
 tags:
-- Charts
-- Stocks
+- Finance
 ---
 
 {% include toc title="Index" %}

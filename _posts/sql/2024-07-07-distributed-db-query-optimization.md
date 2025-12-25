@@ -4,9 +4,7 @@ date: 2024-07-07 14:25:00
 categories:
 - SQL
 tags:
-- Query Optimization
 - Performance
-- Sharding
 ---
 
 {% include toc title="Index" %}

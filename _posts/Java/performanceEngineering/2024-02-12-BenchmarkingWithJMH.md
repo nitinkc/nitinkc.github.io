@@ -5,7 +5,6 @@ categories:
 - Performance Engineering
 tags:
 - Java
-- Profiling
 - Performance
 - Monitoring
 - Tools

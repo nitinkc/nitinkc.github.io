@@ -5,7 +5,6 @@ categories:
 - Design Patterns
 tags:
 - OOP
-- UML
 - Architecture
 ---
 

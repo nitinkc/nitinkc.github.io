@@ -6,7 +6,6 @@ categories:
 tags:
 - Architecture
 - Lambda
-- Cloud
 ---
 
 {% include toc title="Index" %}

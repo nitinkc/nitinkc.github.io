@@ -4,9 +4,7 @@ date: 2019-12-04 21:15:00
 categories:
 - Architecture
 tags:
-- Code Quality
 - Best Practices
-- Clean Code
 ---
 
 * Readability

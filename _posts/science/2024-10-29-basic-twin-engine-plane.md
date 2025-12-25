@@ -4,10 +4,7 @@ date: 2024-10-29 12:00:00
 categories:
 - Electronics
 tags:
-- Project
 - DIY
-- Drone
-- Motors
 ---
 
 {% include toc title="Index" %}

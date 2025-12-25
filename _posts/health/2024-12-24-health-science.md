@@ -5,7 +5,6 @@ categories:
 - Health
 tags:
 - Nutrition
-- Diet
 - Guide
 - Wellness
 ---

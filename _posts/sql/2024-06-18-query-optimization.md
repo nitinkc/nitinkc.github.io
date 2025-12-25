@@ -4,9 +4,7 @@ date: 2024-06-18 14:25:00
 categories:
 - SQL
 tags:
-- Query Optimization
 - Performance
-- Indexing
 - Best Practices
 ---
 

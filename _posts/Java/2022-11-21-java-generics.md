@@ -4,10 +4,7 @@ date: 2022-11-21 08:30:00
 categories:
 - Java
 tags:
-- Generics
-- Type Safety
 - Collections
-- Templates
 ---
 
 # Generics as compile-time type safety

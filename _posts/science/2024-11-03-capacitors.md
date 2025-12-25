@@ -5,7 +5,6 @@ categories:
 - Electronics
 tags:
 - Components
-- Circuit
 - Theory
 ---
 

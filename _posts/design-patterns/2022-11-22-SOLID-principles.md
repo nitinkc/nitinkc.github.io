@@ -4,9 +4,7 @@ date: 2022-11-22 08:30:00
 categories:
 - Design Patterns
 tags:
-- SOLID
 - OOP
-- Principles
 - Best Practices
 ---
 

@@ -5,9 +5,6 @@ categories:
 - Testing
 tags:
 - Spring Boot
-- JUnit
-- Mockito
-- Unit Testing
 - Guide
 ---
 

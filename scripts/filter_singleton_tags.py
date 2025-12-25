@@ -23,11 +23,11 @@ with CSV_IN.open('r', encoding='utf-8', newline='') as f:
         for tag in tags:
             tag_counts[tag] += 1
 
-# Find singleton tags
-singletons = {tag for tag, count in tag_counts.items() if count == 1}
-print(f'Found {len(singletons)} singleton tags (used only once)')
+# Find low-frequency tags (used 3 or fewer times)
+singletons = {tag for tag, count in tag_counts.items() if count <= 3}
+print(f'Found {len(singletons)} low-frequency tags (used 3 or fewer times)')
 print(f'Total unique tags: {len(tag_counts)}')
-print(f'Tags to keep (2+ uses): {len(tag_counts) - len(singletons)}')
+print(f'Tags to keep (4+ uses): {len(tag_counts) - len(singletons)}')
 
 # Second pass: filter out singletons
 posts_modified = 0
@@ -60,7 +60,7 @@ print(f'Tags removed: {tags_removed}')
 print(f'Output written to: {CSV_OUT}')
 
 # Show some examples of removed tags
-print('\nExample singleton tags removed (first 30):')
+print('\nExample low-frequency tags removed (first 30):')
 for i, tag in enumerate(sorted(list(singletons))[:30], 1):
     print(f'  {i}. {tag}')
 if len(singletons) > 30:

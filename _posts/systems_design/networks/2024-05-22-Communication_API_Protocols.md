@@ -8,7 +8,6 @@ tags:
 - API
 - Protocols
 - REST
-- gRPC
 ---
 
 {% include toc title="Index" %}

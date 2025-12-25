@@ -5,7 +5,6 @@ categories:
 - System Design
 tags:
 - Data Structures
-- Probabilistic
 ---
 
 {% include toc title="Index" %}

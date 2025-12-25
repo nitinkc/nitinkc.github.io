@@ -4,8 +4,6 @@ date: 2025-01-16 22:00:00
 categories:
 - Health
 tags:
-- Yoga
-- Meditation
 - Wellness
 ---
 

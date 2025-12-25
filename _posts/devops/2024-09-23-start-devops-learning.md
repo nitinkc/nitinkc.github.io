@@ -4,9 +4,7 @@ date: 2024-09-23 20:14:00
 categories:
 - DevOps
 tags:
-- Learning
 - Tutorial
-- Getting Started
 ---
 
 {% include toc title="Index" %}

@@ -5,10 +5,8 @@ categories:
 - Performance Engineering
 tags:
 - Java
-- Benchmarking
 - Performance
 - Testing
-- Profiling
 ---
 
 {% include toc title="Index" %}

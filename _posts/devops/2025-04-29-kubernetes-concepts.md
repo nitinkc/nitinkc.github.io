@@ -5,9 +5,7 @@ categories:
 - DevOps
 tags:
 - Kubernetes
-- K8s
 - Containers
-- Cloud Native
 ---
 
 {% include toc title="Index" %}

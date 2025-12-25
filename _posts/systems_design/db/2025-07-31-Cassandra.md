@@ -5,7 +5,6 @@ categories:
 - System Design
 tags:
 - Database
-- Cassandra
 - NoSQL
 - Distributed
 ---

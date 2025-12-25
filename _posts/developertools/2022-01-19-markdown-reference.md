@@ -4,10 +4,8 @@ date: 2022-01-19 21:55:00
 categories:
 - Developer Tools
 tags:
-- Markdown
 - Reference
 - Documentation
-- Syntax
 sidebar:
   nav: algo
 ---

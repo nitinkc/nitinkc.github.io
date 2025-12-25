@@ -7,7 +7,6 @@ tags:
 - Security
 - API
 - Authentication
-- Rate Limiting
 - Best Practices
 ---
 

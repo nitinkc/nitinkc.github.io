@@ -4,11 +4,8 @@ date: 2022-02-12 23:23:00
 categories:
 - Developer Tools
 tags:
-- Terminal
 - Commands
 - CLI
-- Shell
-- Unix
 - Reference
 ---
 

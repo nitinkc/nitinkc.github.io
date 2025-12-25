@@ -5,7 +5,6 @@ categories:
 - Developer Tools
 tags:
 - MacOS
-- Package Manager
 - Migration
 - Setup
 ---

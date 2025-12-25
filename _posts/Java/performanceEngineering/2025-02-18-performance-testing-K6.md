@@ -5,9 +5,7 @@ categories:
 - Performance Engineering
 tags:
 - Performance
-- Load Testing
 - Testing
-- Benchmarking
 ---
 
 {% include toc title="Index" %}

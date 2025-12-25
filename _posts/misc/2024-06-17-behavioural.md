@@ -5,8 +5,6 @@ categories:
 - Career
 tags:
 - Interview
-- Behavioral
-- Communication
 ---
 
 Interest Areas

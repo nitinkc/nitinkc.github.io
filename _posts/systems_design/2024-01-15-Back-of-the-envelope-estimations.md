@@ -5,7 +5,6 @@ categories:
 - System Design
 tags:
 - Estimation
-- Capacity Planning
 - Scalability
 - Interview
 ---

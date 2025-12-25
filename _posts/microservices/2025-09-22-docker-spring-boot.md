@@ -5,9 +5,7 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Docker
 - Containers
-- Deployment
 ---
 
 {% include toc title="Index" %}

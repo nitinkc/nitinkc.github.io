@@ -5,8 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Hibernate
-- JPA
 - Database
 ---
 

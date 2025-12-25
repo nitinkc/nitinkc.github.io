@@ -4,7 +4,6 @@ date: 2025-03-07 05:00:00
 categories:
 - Travel
 tags:
-- Denver
 - USA
 ---
 

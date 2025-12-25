@@ -2,7 +2,7 @@
 categories:
 - Books
 tags:
-- DevOps
+- Books
 ---
 
 # 📘 The Goal and the Theory of Constraints: 

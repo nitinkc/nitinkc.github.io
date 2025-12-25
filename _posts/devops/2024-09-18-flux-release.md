@@ -4,7 +4,6 @@ date: 2024-09-18 18:02:00
 categories:
 - DevOps
 tags:
-- GitOps
 - Kubernetes
 ---
 

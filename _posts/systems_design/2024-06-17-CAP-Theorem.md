@@ -4,8 +4,6 @@ date: 2024-06-17 11:45:00
 categories:
 - System Design
 tags:
-- CAP Theorem
-- Consistency
 - Distributed Systems
 ---
 

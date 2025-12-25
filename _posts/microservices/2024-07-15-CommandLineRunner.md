@@ -5,7 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Initialization
 ---
 
 {% include toc title="Index" %}

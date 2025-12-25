@@ -5,9 +5,7 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- SSL
 - Security
-- Certificates
 - Troubleshooting
 ---
 

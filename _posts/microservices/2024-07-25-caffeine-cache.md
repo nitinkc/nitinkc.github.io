@@ -7,7 +7,6 @@ tags:
 - Spring Boot
 - Caching
 - Performance
-- In-Memory
 ---
 
 {% include toc title="Index" %}

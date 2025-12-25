@@ -6,8 +6,6 @@ categories:
 tags:
 - Database
 - Data Structures
-- B-Tree
-- LSM Tree
 ---
 
 {% include toc title="Index" %}

@@ -5,9 +5,6 @@ categories:
 - DevOps
 tags:
 - Kubernetes
-- GCP
-- Google Cloud
-- K8s
 ---
 
 {% include toc title="Index" %}

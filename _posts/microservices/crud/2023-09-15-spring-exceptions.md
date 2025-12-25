@@ -5,7 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Error Handling
 - REST
 ---
 

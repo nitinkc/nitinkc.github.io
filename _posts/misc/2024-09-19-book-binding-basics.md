@@ -5,7 +5,6 @@ categories:
 - Crafts
 tags:
 - DIY
-- Books
 ---
 
 {% include toc title="Index" %}

@@ -5,9 +5,6 @@ categories:
 - Health
 tags:
 - Nutrition
-- Food
-- Grains
-- Millets
 - Guide
 ---
 

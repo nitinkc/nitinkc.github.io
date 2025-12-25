@@ -6,7 +6,6 @@ categories:
 tags:
 - Data Structures
 - Algorithms
-- Indexing
 ---
 
 {% include toc title="Index" %}

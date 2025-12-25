@@ -5,7 +5,6 @@ categories:
 - System Design
 tags:
 - Monitoring
-- Logging
 - Observability
 - Metrics
 ---

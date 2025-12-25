@@ -5,7 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Serialization
 ---
 
 {% include toc title="Index" %}

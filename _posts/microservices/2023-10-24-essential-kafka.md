@@ -4,7 +4,6 @@ date: 2023-10-24 23:41:00
 categories:
 - Microservices
 tags:
-- Kafka
 - Real-time
 ---
 

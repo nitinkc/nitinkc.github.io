@@ -5,7 +5,6 @@ categories:
 - Git
 tags:
 - Configuration
-- Workflow
 ---
 
 {% include toc title="Index" %}

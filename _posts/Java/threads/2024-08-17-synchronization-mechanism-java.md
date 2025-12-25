@@ -6,7 +6,6 @@ categories:
 tags:
 - Java
 - Synchronization
-- Locks
 - Concurrency
 ---
 

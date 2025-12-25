@@ -4,11 +4,9 @@ date: 2023-10-04 20:01:00
 categories:
 - DevOps
 tags:
-- Docker
 - Containers
 - Commands
 - CLI
-- Containerization
 ---
 
 {% include toc title="Index" %}

@@ -4,10 +4,7 @@ date: 2024-06-14 11:02:00
 categories:
 - System Design
 tags:
-- API Gateway
-- Load Balancing
 - Authentication
-- Rate Limiting
 ---
 
 {% include toc title="Index" %}

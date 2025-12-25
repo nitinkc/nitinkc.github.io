@@ -5,8 +5,6 @@ categories:
 - GCP
 tags:
 - Configuration
-- gcloud
-- Cloud
 ---
 
 {% include toc title="Index" %}

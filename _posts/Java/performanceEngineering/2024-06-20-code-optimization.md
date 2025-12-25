@@ -7,9 +7,7 @@ tags:
 - Java
 - Performance
 - Optimization
-- Code
 - Best Practices
-- Multithreading
 ---
 
 {% include toc title="Index" %}

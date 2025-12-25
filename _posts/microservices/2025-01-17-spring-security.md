@@ -7,8 +7,6 @@ tags:
 - Spring Boot
 - Security
 - Authentication
-- Authorization
-- OAuth
 ---
 
 {% include toc title="Index" %}

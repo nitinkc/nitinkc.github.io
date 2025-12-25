@@ -6,7 +6,6 @@ categories:
 tags:
 - Java
 - Java 21
-- Project Loom
 ---
 
 {% include toc title="Index" %}

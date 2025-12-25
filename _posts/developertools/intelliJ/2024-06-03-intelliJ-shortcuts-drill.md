@@ -6,8 +6,6 @@ categories:
 tags:
 - IntelliJ
 - IDE
-- Shortcuts
-- Productivity
 - Practice
 ---
 

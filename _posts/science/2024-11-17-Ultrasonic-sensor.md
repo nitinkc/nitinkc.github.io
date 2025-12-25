@@ -4,7 +4,6 @@ date: 2024-11-17 08:00:00
 categories:
 - Electronics
 tags:
-- Sensors
 - Arduino
 - Projects
 ---

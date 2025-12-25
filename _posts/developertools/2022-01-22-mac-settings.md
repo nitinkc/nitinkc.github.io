@@ -7,8 +7,6 @@ tags:
 - MacOS
 - Settings
 - Configuration
-- Productivity
-- Tips
 ---
 
 # Necessary UI Settings

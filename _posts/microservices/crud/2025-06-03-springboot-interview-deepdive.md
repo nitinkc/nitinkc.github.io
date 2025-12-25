@@ -6,8 +6,6 @@ categories:
 tags:
 - Spring Boot
 - Interview
-- Questions
-- Preparation
 ---
 
 {% include toc title="Index" %}

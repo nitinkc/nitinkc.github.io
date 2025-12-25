@@ -4,10 +4,8 @@ date: 2024-11-30 14:02:00
 categories:
 - Architecture
 tags:
-- Cloud Native
 - Microservices
 - Kubernetes
-- Containerization
 ---
 
 {% include toc title="Index" %}

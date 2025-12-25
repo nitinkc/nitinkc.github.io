@@ -6,7 +6,6 @@ categories:
 tags:
 - Arrays
 - Collections
-- List
 - Java
 - Utility
 ---

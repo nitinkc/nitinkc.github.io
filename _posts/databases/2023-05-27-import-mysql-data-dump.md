@@ -4,7 +4,6 @@ date: 2023-05-27 19:25:00
 categories:
 - Database
 tags:
-- MySQL
 - SQL
 ---
 

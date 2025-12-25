@@ -4,7 +4,7 @@ date: 2022-01-26 21:55:00
 categories:
 - Culture
 tags:
-- Hindu
+- Culture
 ---
 
 {% include toc title="Index" %}

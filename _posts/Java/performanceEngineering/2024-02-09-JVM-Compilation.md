@@ -6,7 +6,6 @@ categories:
 tags:
 - Java
 - JVM
-- Compiler
 - Performance
 - Optimization
 ---

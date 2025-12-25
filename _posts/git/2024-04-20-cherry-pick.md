@@ -5,7 +5,6 @@ categories:
 - Git
 tags:
 - Commands
-- Branching
 - Version Control
 ---
 

@@ -7,7 +7,6 @@ tags:
 - Arrays
 - Practice
 - Interview
-- Coding
 ---
 
 {% include toc title="Index" %}

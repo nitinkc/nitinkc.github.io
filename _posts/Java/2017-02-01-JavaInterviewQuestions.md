@@ -5,9 +5,6 @@ categories:
 - Java
 tags:
 - Interview
-- Questions
-- Preparation
-- Coding
 ---
 
 # Java Interview Questions

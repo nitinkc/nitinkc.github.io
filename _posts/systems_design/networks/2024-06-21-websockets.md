@@ -5,7 +5,6 @@ categories:
 - System Design
 tags:
 - Networking
-- WebSockets
 - Real-time
 ---
 

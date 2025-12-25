@@ -5,7 +5,6 @@ categories:
 - Developer Tools
 tags:
 - Debugging
-- Web Development
 ---
 
 Hide the Overview tab to reclaim some space

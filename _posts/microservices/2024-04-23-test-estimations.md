@@ -6,7 +6,6 @@ categories:
 tags:
 - Testing
 - Estimation
-- Planning
 ---
 
 {% include toc title="Index" %}

@@ -4,8 +4,7 @@ date: 2023-11-24 12:17:00
 categories:
 - Java
 tags:
-- Code Quality
-- DevOps
+- Java
 ---
 
 {% include toc title="Index" %}

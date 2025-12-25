@@ -2,7 +2,6 @@
 categories:
 - SQL
 tags:
-- Partitioning
 - Database
 - Performance
 - Optimization

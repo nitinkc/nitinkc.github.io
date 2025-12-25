@@ -5,7 +5,6 @@ categories:
 - Java
 tags:
 - Best Practices
-- Clean Code
 ---
 
 {% include toc title="Index" %}

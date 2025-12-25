@@ -4,10 +4,7 @@ date: 2025-05-03 22:30:00
 categories:
 - System Design
 tags:
-- Planning
-- Strategy
 - Interview
-- Methodology
 ---
 
 | Difficulty  | Status  | Task                                                                   |

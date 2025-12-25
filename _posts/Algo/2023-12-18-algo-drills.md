@@ -5,8 +5,6 @@ categories:
 - Algorithms
 tags:
 - Practice
-- Problem Solving
-- Interview Preparation
 ---
 
 {% include toc title="Index" %}

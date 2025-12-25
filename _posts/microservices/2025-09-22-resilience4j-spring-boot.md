@@ -5,7 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Fault Tolerance
 ---
 
 {% include toc title="Index" %}

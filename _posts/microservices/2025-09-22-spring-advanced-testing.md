@@ -6,8 +6,6 @@ categories:
 tags:
 - Spring Boot
 - Testing
-- JUnit
-- Mockito
 ---
 
 {% include toc title="Index" %}

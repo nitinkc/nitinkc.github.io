@@ -5,10 +5,8 @@ categories:
 - Electronics
 tags:
 - Arduino
-- Microcontroller
 - Programming
 - Projects
-- IoT
 ---
 
 {% include toc title="Index" %}

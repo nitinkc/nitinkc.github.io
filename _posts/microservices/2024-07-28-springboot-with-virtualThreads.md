@@ -5,7 +5,6 @@ categories:
 - Microservices
 tags:
 - Spring Boot
-- Virtual Threads
 - Concurrency
 - Java 21
 ---
