@@ -1,13 +1,13 @@
 ---
+title: Strategy Pattern
+date: 2023-11-06 08:30:00
 categories:
 - Design Patterns
-date: 2023-11-06 08:30:00
 tags:
 - Strategy
 - Behavioral
 - Java
 - OOP
-title: Strategy Pattern
 ---
 
 {% include toc title="Index" %}

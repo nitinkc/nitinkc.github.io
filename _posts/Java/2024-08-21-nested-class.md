@@ -1,10 +1,10 @@
 ---
+title: Nested Classes in Java
+date: 2024-08-21 00:17:00
 categories:
 - Java
-date: 2024-08-21 00:17:00
 tags:
 - OOP
-title: Nested Classes in Java
 ---
 
 {% include toc title="Index" %}

@@ -1,13 +1,13 @@
 ---
+title: Http Status Codes & Java Exceptions
+date: 2024-07-20 21:02:00
 categories:
 - System Design
-date: 2024-07-20 21:02:00
 tags:
 - HTTP
 - REST
 - API
 - Java
-title: Http Status Codes & Java Exceptions
 ---
 
 {% include toc title="Index" %}

@@ -1,10 +1,10 @@
 ---
+title: Trip to Roanoke Islands and Kitty Hawk
+date: 2025-05-27 05:00:00
 categories:
 - Travel
-date: 2025-05-27 05:00:00
 tags:
 - USA
-title: Trip to Roanoke Islands and Kitty Hawk
 ---
 
 # Trip to Roanoke Island

@@ -1,11 +1,11 @@
 ---
+title: Large Files on Github
+date: 2022-01-22 21:55:00
 categories:
 - Developer Tools
-date: 2022-01-22 21:55:00
 tags:
 - Git
 - Version Control
-title: Large Files on Github
 ---
 
 Github allows max file size of 25 MB so

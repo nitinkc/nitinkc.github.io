@@ -1,12 +1,12 @@
 ---
+title: Git Cherry Pick
+date: 2024-04-20 13:30:00
 categories:
 - Git
-date: 2024-04-20 13:30:00
 tags:
 - Commands
 - Branching
 - Version Control
-title: Git Cherry Pick
 ---
 
 Git cherry-pick is a command used to apply a specific commit from one branch to

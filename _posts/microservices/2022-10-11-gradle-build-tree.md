@@ -1,12 +1,12 @@
 ---
+title: Gradle - build & tool
+date: 2022-10-11 20:35:00
 categories:
 - Microservices
-date: 2022-10-11 20:35:00
 tags:
 - Build Tools
 - Gradle
 - Dependencies
-title: Gradle - build & tool
 ---
 
 # Gradle build tree

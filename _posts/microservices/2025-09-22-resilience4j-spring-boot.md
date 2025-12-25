@@ -1,11 +1,11 @@
 ---
+title: Resilience and Fault Tolerance with Resilience4J
+date: 2025-09-22 12:02:00
 categories:
 - Microservices
-date: 2025-09-22 12:02:00
 tags:
 - Spring Boot
 - Fault Tolerance
-title: Resilience and Fault Tolerance with Resilience4J
 ---
 
 {% include toc title="Index" %}

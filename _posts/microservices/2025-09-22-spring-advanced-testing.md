@@ -1,13 +1,13 @@
 ---
+title: Advanced Testing in Spring Boot
+date: 2025-09-22 12:01:00
 categories:
 - Microservices
-date: 2025-09-22 12:01:00
 tags:
 - Spring Boot
 - Testing
 - JUnit
 - Mockito
-title: Advanced Testing in Spring Boot
 ---
 
 {% include toc title="Index" %}

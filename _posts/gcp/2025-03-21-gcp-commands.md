@@ -1,13 +1,13 @@
 ---
+title: GCP Commands
+date: 2025-03-21 05:00:00
 categories:
 - GCP
-date: 2025-03-21 05:00:00
 tags:
 - Google Cloud
 - Commands
 - gcloud
 - CLI
-title: GCP Commands
 ---
 
 {% include toc title="Index" %}

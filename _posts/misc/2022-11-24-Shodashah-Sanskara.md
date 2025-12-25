@@ -1,10 +1,10 @@
 ---
+title: षोडशः संस्कार (The 16 Sanskars)
+date: 2022-01-26 21:55:00
 categories:
 - Culture
-date: 2022-01-26 21:55:00
 tags:
 - Hindu
-title: षोडशः संस्कार (The 16 Sanskars)
 ---
 
 {% include toc title="Index" %}

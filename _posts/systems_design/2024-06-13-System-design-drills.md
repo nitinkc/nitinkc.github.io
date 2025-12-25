@@ -1,12 +1,12 @@
 ---
+title: System Design Drills
+date: 2024-06-13 11:02:00
 categories:
 - System Design
-date: 2024-06-13 11:02:00
 tags:
 - Interview Preparation
 - Practice
 - Design Patterns
-title: System Design Drills
 ---
 
 {% include toc title="Index" %}

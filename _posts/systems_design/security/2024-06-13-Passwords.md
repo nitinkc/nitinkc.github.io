@@ -1,12 +1,12 @@
 ---
+title: Passwords in DB
+date: 2024-06-13 11:02:00
 categories:
 - System Design
-date: 2024-06-13 11:02:00
 tags:
 - Security
 - Encryption
 - Database
-title: Passwords in DB
 ---
 
 {% include toc title="Index" %}

@@ -1,13 +1,13 @@
 ---
+title: MySql to Spanner Migration using HarbourBridge
+date: 2021-04-16 01:25:00
 categories:
 - Database
-date: 2021-04-16 01:25:00
 tags:
 - MySQL
 - Spanner
 - GCP
 - Migration
-title: MySql to Spanner Migration using HarbourBridge
 ---
 
 # Import MySql data dump into Spanner using HarbourBridge

@@ -1,13 +1,13 @@
 ---
+title: Kubernetes Concepts
+date: 2025-04-29 05:00:00
 categories:
 - DevOps
-date: 2025-04-29 05:00:00
 tags:
 - Kubernetes
 - K8s
 - Containers
 - Cloud Native
-title: Kubernetes Concepts
 ---
 
 {% include toc title="Index" %}

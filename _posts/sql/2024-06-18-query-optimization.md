@@ -1,13 +1,13 @@
 ---
+title: SQL/Query Optimization
+date: 2024-06-18 14:25:00
 categories:
 - SQL
-date: 2024-06-18 14:25:00
 tags:
 - Query Optimization
 - Performance
 - Indexing
 - Best Practices
-title: SQL/Query Optimization
 ---
 
 {% include toc title="Index" %}

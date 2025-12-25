@@ -1,13 +1,13 @@
 ---
+title: API Gateway
+date: 2024-06-14 11:02:00
 categories:
 - System Design
-date: 2024-06-14 11:02:00
 tags:
 - API Gateway
 - Load Balancing
 - Authentication
 - Rate Limiting
-title: API Gateway
 ---
 
 {% include toc title="Index" %}

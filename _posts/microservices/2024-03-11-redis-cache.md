@@ -1,13 +1,13 @@
 ---
+title: Caching with Redis
+date: 2024-03-06 00:45:00
 categories:
 - Microservices
-date: 2024-03-06 00:45:00
 tags:
 - Spring Boot
 - Redis
 - Caching
 - Performance
-title: Caching with Redis
 ---
 
 {% include toc title="Index" %}

@@ -1,13 +1,13 @@
 ---
+title: Data Structures - Java Classes
+date: 2025-01-01 15:27:00
 categories:
 - Algorithms
-date: 2025-01-01 15:27:00
 tags:
 - Data Structures
 - Java
 - Collections
 - Implementation
-title: Data Structures - Java Classes
 ---
 
 {% include toc title="Index" %}

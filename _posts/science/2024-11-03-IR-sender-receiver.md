@@ -1,11 +1,11 @@
 ---
+title: Transmitters & Receivers
+date: 2024-11-03 01:00:00
 categories:
 - Electronics
-date: 2024-11-03 01:00:00
 tags:
 - Communication
 - Sensors
-title: Transmitters & Receivers
 ---
 
 {% include toc title="Index" %}

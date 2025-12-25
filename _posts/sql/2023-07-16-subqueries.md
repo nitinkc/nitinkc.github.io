@@ -1,11 +1,11 @@
 ---
+title: SQL Subqueries
+date: 2023-07-16 23:20:00
 categories:
 - SQL
-date: 2023-07-16 23:20:00
 tags:
 - Query
 - Database
-title: SQL Subqueries
 ---
 
 # Types of subqueries:

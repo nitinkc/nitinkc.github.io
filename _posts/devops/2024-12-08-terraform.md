@@ -1,14 +1,14 @@
 ---
+title: Terraform
+date: 2024-12-08 10:14:00
 categories:
 - DevOps
-date: 2024-12-08 10:14:00
 tags:
 - Terraform
 - IaC
 - Infrastructure as Code
 - Automation
 - Provisioning
-title: Terraform
 ---
 
 {% include toc title="Index" %}

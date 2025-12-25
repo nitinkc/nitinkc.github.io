@@ -1,10 +1,10 @@
 ---
+title: Polymorphism
+date: 2022-08-06 15:45:00
 categories:
 - Java
-date: 2022-08-06 15:45:00
 tags:
 - OOP
-title: Polymorphism
 ---
 
 {% include toc title="Index" %}

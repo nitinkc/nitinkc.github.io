@@ -1,13 +1,13 @@
 ---
+title: Simple Twin engine plane
+date: 2024-10-29 12:00:00
 categories:
 - Electronics
-date: 2024-10-29 12:00:00
 tags:
 - Project
 - DIY
 - Drone
 - Motors
-title: Simple Twin engine plane
 ---
 
 {% include toc title="Index" %}

@@ -1,11 +1,11 @@
 ---
+title: Git config- Multi Repo projects
+date: 2023-11-13 14:30:00
 categories:
 - Git
-date: 2023-11-13 14:30:00
 tags:
 - Configuration
 - Workflow
-title: Git config- Multi Repo projects
 ---
 
 {% include toc title="Index" %}

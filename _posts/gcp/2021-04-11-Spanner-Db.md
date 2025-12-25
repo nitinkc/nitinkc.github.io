@@ -1,12 +1,12 @@
 ---
+title: Spanner Database
+date: 2021-04-08 02:15:00
 categories:
 - GCP
-date: 2021-04-08 02:15:00
 tags:
 - Spanner
 - Database
 - Distributed
-title: Spanner Database
 ---
 
 {% include toc title="Index" %}

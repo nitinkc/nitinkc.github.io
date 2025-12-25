@@ -1,12 +1,12 @@
 ---
+title: Materialized views
+date: 2023-08-02 14:25:00
 categories:
 - SQL
-date: 2023-08-02 14:25:00
 tags:
 - Database
 - Performance
 - Optimization
-title: Materialized views
 ---
 
 {% include toc title="Index" %}

@@ -1,14 +1,14 @@
 ---
+title: Comprehensive Guide to JUnit and Mockito Testing
+date: 2023-11-16 18:55:00
 categories:
 - Testing
-date: 2023-11-16 18:55:00
 tags:
 - Spring Boot
 - JUnit
 - Mockito
 - Unit Testing
 - Guide
-title: Comprehensive Guide to JUnit and Mockito Testing
 ---
 
 {% include toc title="Index" %}

@@ -1,14 +1,14 @@
 ---
+title: Compiler Flags
+date: 2024-02-09 20:27:00
 categories:
 - Performance Engineering
-date: 2024-02-09 20:27:00
 tags:
 - Java
 - JVM
 - Compiler
 - Performance
 - Optimization
-title: Compiler Flags
 ---
 
 {% include toc title="Index" %}

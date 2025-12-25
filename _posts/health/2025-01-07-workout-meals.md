@@ -1,13 +1,13 @@
 ---
+title: Pre/Post Workout Meals
+date: 2025-01-07 22:00:00
 categories:
 - Health
-date: 2025-01-07 22:00:00
 tags:
 - Fitness
 - Nutrition
 - Workout
 - Meal Planning
-title: Pre/Post Workout Meals
 ---
 
 {% include toc title="Index" %}

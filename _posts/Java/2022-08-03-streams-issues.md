@@ -1,12 +1,12 @@
 ---
+title: Java Stream Issues
+date: 2022-08-03 18:16:00
 categories:
 - Java
-date: 2022-08-03 18:16:00
 tags:
 - Streams
 - Troubleshooting
 - Java 8
-title: Java Stream Issues
 ---
 
 ## Object Creation & Assignment In Streams

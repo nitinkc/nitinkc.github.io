@@ -1,12 +1,12 @@
 ---
+title: Spring Actuator
+date: 2024-04-04 02:00:00
 categories:
 - Microservices
-date: 2024-04-04 02:00:00
 tags:
 - Spring Boot
 - Monitoring
 - Metrics
-title: Spring Actuator
 ---
 
 {% include toc title="Index" %}

@@ -1,12 +1,12 @@
 ---
+title: Structured Concurrency
+date: 2024-07-20 20:17:00
 categories:
 - Multithreading
-date: 2024-07-20 20:17:00
 tags:
 - Java
 - Java 21
 - Project Loom
-title: Structured Concurrency
 ---
 
 {% include toc title="Index" %}

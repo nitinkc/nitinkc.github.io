@@ -1,12 +1,12 @@
 ---
+title: Reentrant Lock
+date: 2024-08-18 05:17:00
 categories:
 - Multithreading
-date: 2024-08-18 05:17:00
 tags:
 - Java
 - Locks
 - Concurrency
-title: Reentrant Lock
 ---
 
 {% include toc title="Index" %}

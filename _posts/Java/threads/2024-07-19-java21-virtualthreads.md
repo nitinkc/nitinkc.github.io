@@ -1,14 +1,14 @@
 ---
+title: Virtual Threads
+date: 2024-07-19 12:17:00
 categories:
 - Multithreading
-date: 2024-07-19 12:17:00
 tags:
 - Java
 - Virtual Threads
 - Java 21
 - Project Loom
 - Concurrency
-title: Virtual Threads
 ---
 
 {% include toc title="Index" %}

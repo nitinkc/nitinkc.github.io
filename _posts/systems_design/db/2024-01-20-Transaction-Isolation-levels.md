@@ -1,13 +1,13 @@
 ---
+title: Transaction Isolation Levels
+date: 2024-01-20 12:15:00
 categories:
 - System Design
-date: 2024-01-20 12:15:00
 tags:
 - Database
 - Transactions
 - ACID
 - Concurrency
-title: Transaction Isolation Levels
 ---
 
 {% include toc title="Index" %}

@@ -1,13 +1,13 @@
 ---
+title: GET REST Calls
+date: 2023-09-15 21:30:00
 categories:
 - Microservices
-date: 2023-09-15 21:30:00
 tags:
 - Spring Boot
 - REST
 - HTTP
 - API
-title: GET REST Calls
 ---
 
 {% include toc title="Index" %}

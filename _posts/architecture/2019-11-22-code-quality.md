@@ -1,12 +1,12 @@
 ---
+title: Code Quality
+date: 2019-12-04 21:15:00
 categories:
 - Architecture
-date: 2019-12-04 21:15:00
 tags:
 - Code Quality
 - Best Practices
 - Clean Code
-title: Code Quality
 ---
 
 * Readability

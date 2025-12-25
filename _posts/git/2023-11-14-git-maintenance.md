@@ -1,11 +1,11 @@
 ---
+title: Git Maintenance & Clean-up
+date: 2023-11-14 20:30:00
 categories:
 - Git
-date: 2023-11-14 20:30:00
 tags:
 - Optimization
 - Commands
-title: Git Maintenance & Clean-up
 ---
 
 {% include toc title="Index" %}

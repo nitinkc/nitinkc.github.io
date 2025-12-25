@@ -1,13 +1,13 @@
 ---
+title: Databases
+date: 2024-01-20 11:00:00
 categories:
 - System Design
-date: 2024-01-20 11:00:00
 tags:
 - Database
 - SQL
 - NoSQL
 - RDBMS
-title: Databases
 ---
 
 {% include toc title="Index" %}

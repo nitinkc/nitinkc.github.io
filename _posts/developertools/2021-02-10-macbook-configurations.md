@@ -1,13 +1,13 @@
 ---
+title: Configuring a new MacBook
+date: 2021-02-10 02:15:00
 categories:
 - Developer Tools
-date: 2021-02-10 02:15:00
 tags:
 - MacOS
 - Configuration
 - Setup
 - MacBook
-title: Configuring a new MacBook
 ---
 
 ## Contents

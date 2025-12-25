@@ -1,12 +1,12 @@
 ---
+title: Distributed DB Query Optimization
+date: 2024-07-07 14:25:00
 categories:
 - SQL
-date: 2024-07-07 14:25:00
 tags:
 - Query Optimization
 - Performance
 - Sharding
-title: Distributed DB Query Optimization
 ---
 
 {% include toc title="Index" %}

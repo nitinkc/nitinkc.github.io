@@ -1,12 +1,12 @@
 ---
+title: Consistent Hashing
+date: 2024-06-14 08:02:00
 categories:
 - System Design
-date: 2024-06-14 08:02:00
 tags:
 - Load Balancing
 - Distributed Systems
 - Partitioning
-title: Consistent Hashing
 ---
 
 {% include toc title="Index" %}

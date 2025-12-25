@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-SAFE taxonomy CSV application - updates ONLY front matter, preserves all post content.
+SAFE taxonomy CSV application with custom YAML ordering.
+Enforces field order: title, date, categories, tags, then other fields.
 """
 from pathlib import Path
 import csv
 import frontmatter
+from collections import OrderedDict
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 CSV_IN = ROOT / 'taxonomy-proposals.csv'
@@ -13,9 +16,20 @@ if not CSV_IN.exists():
     print('Error: taxonomy-proposals.csv not found')
     raise SystemExit(1)
 
+def ordered_dump(data, stream=None, Dumper=yaml.SafeDumper, **kwds):
+    """Custom YAML dumper that preserves OrderedDict order"""
+    class OrderedDumper(Dumper):
+        pass
+    def _dict_representer(dumper, data):
+        return dumper.represent_mapping(
+            yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
+            data.items())
+    OrderedDumper.add_representer(OrderedDict, _dict_representer)
+    return yaml.dump(data, stream, OrderedDumper, **kwds)
+
 changed = []
-with CSV_IN.open('r', encoding='utf-8', newline='') as fh:
-    reader = csv.DictReader(fh)
+with CSV_IN.open('r', encoding='utf-8', newline='') as f:
+    reader = csv.DictReader(f)
     for row in reader:
         path = ROOT / row['path']
         if not path.exists():
@@ -36,7 +50,7 @@ with CSV_IN.open('r', encoding='utf-8', newline='') as fh:
         old_meta = post.metadata.copy()
 
         # Create new ordered metadata: title, date, categories, tags, then others
-        new_meta = {}
+        new_meta = OrderedDict()
 
         # 1. Title (if exists)
         if 'title' in old_meta:
@@ -59,13 +73,12 @@ with CSV_IN.open('r', encoding='utf-8', newline='') as fh:
             if key not in ['title', 'date', 'categories', 'tags']:
                 new_meta[key] = value
 
-        # Replace metadata with ordered version
-        post.metadata = new_meta
-        post.content = original_content
-
-        # Write back
+        # Write back manually with custom YAML
         with path.open('w', encoding='utf-8') as f:
-            f.write(frontmatter.dumps(post))
+            f.write('---\n')
+            f.write(ordered_dump(new_meta, default_flow_style=False, allow_unicode=True))
+            f.write('---\n\n')
+            f.write(original_content)
 
         changed.append(str(path))
 

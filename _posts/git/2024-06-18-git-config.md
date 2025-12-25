@@ -1,13 +1,13 @@
 ---
+title: Git Config
+date: 2024-06-18 13:30:00
 categories:
 - Git
-date: 2024-06-18 13:30:00
 tags:
 - Configuration
 - Settings
 - Setup
 - Commands
-title: Git Config
 ---
 
 {% include toc title="Index" %}

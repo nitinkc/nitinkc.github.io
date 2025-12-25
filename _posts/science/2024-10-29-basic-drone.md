@@ -1,13 +1,13 @@
 ---
+title: Simple Drone
+date: 2024-10-29 12:00:00
 categories:
 - Electronics
-date: 2024-10-29 12:00:00
 tags:
 - Drone
 - Project
 - DIY
 - Motors
-title: Simple Drone
 ---
 
 {% include toc title="Index" %}

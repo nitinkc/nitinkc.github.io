@@ -1,12 +1,12 @@
 ---
+title: Coding Hints
+date: 2021-10-30 21:55:00
 categories:
 - Algorithms
-date: 2021-10-30 21:55:00
 tags:
 - Problem Solving
 - Tips
 - Programming
-title: Coding Hints
 ---
 
 {% include toc title="Index" %}

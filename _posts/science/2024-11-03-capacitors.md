@@ -1,12 +1,12 @@
 ---
+title: Capacitors
+date: 2024-11-03 01:00:00
 categories:
 - Electronics
-date: 2024-11-03 01:00:00
 tags:
 - Components
 - Circuit
 - Theory
-title: Capacitors
 ---
 
 {% include toc title="Index" %}

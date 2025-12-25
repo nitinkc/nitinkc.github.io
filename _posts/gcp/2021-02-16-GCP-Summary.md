@@ -1,11 +1,11 @@
 ---
+title: GCP - Free Tier Setup
+date: 2021-02-16 23:00:00
 categories:
 - GCP
-date: 2021-02-16 23:00:00
 tags:
 - Google Cloud
 - Setup
-title: GCP - Free Tier Setup
 ---
 
 {% include toc title="Index" %}

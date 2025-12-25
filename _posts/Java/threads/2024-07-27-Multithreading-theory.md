@@ -1,13 +1,13 @@
 ---
+title: Multithreading Theory
+date: 2024-07-27 20:17:00
 categories:
 - Multithreading
-date: 2024-07-27 20:17:00
 tags:
 - Java
 - Theory
 - Concurrency
 - Fundamentals
-title: Multithreading Theory
 ---
 
 {% include toc title="Index" %}

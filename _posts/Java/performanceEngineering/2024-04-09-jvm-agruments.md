@@ -1,13 +1,13 @@
 ---
+title: JVM Arguments
+date: 2024-04-09 12:30:00
 categories:
 - Performance Engineering
-date: 2024-04-09 12:30:00
 tags:
 - Java
 - JVM
 - Configuration
 - Performance
-title: JVM Arguments
 ---
 
 {% include toc title="Index" %}

@@ -1,10 +1,10 @@
 ---
+title: Legal Vocabulary
+date: 2025-01-15 10:15:00
 categories:
 - Legal
-date: 2025-01-15 10:15:00
 tags:
 - Reference
-title: Legal Vocabulary
 ---
 
 {% include toc title="Index" %}

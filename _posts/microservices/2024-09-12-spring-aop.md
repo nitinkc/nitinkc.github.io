@@ -1,10 +1,10 @@
 ---
+title: Aspect Oriented Programming (AOP)
+date: 2024-09-12 16:00:00
 categories:
 - Microservices
-date: 2024-09-12 16:00:00
 tags:
 - Spring Boot
-title: Aspect Oriented Programming (AOP)
 ---
 
 {% include toc title="Index" %}

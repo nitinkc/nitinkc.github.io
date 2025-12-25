@@ -1,13 +1,13 @@
 ---
+title: Synchronization Mechanisms in Java
+date: 2024-08-17 20:17:00
 categories:
 - Multithreading
-date: 2024-08-17 20:17:00
 tags:
 - Java
 - Synchronization
 - Locks
 - Concurrency
-title: Synchronization Mechanisms in Java
 ---
 
 {% include toc title="Index" %}

@@ -1,13 +1,13 @@
 ---
+title: Array Problems
+date: 2016-11-25 20:20:00
 categories:
 - Algorithms
-date: 2016-11-25 20:20:00
 tags:
 - Arrays
 - Practice
 - Interview
 - Coding
-title: Array Problems
 ---
 
 {% include toc title="Index" %}

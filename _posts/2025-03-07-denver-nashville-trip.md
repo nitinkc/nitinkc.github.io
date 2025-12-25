@@ -1,11 +1,11 @@
 ---
+title: Trip from Denver to Nashville
+date: 2025-03-07 05:00:00
 categories:
 - Travel
-date: 2025-03-07 05:00:00
 tags:
 - Denver
 - USA
-title: Trip from Denver to Nashville
 ---
 
 # Trip to Nashville

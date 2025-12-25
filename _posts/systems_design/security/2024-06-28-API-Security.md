@@ -1,14 +1,14 @@
 ---
+title: API Security
+date: 2024-06-28 11:02:00
 categories:
 - System Design
-date: 2024-06-28 11:02:00
 tags:
 - Security
 - API
 - Authentication
 - Rate Limiting
 - Best Practices
-title: API Security
 ---
 
 {% include toc title="Index" %}

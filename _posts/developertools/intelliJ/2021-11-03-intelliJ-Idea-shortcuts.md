@@ -1,14 +1,14 @@
 ---
+title: IntelliJ Idea Shortcuts
+date: 2021-11-03 21:55:00
 categories:
 - Developer Tools
-date: 2021-11-03 21:55:00
 tags:
 - IntelliJ
 - IDE
 - Shortcuts
 - Productivity
 - Reference
-title: IntelliJ Idea Shortcuts
 ---
 
 {% include toc title="Index" %}

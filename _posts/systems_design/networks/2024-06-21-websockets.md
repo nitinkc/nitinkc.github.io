@@ -1,12 +1,12 @@
 ---
+title: 'Web Sockets '
+date: 2024-06-21 20:00:00
 categories:
 - System Design
-date: 2024-06-21 20:00:00
 tags:
 - Networking
 - WebSockets
 - Real-time
-title: 'Web Sockets '
 ---
 
 {% include toc title="Index" %}

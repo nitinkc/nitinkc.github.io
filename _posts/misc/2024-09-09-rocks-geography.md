@@ -1,10 +1,10 @@
 ---
+title: Rocks
+date: 2024-09-09 06:00:00
 categories:
 - Science
-date: 2024-09-09 06:00:00
 tags:
 - Science
-title: Rocks
 ---
 
 ![](https://149361288.v2.pressablecdn.com/wp-content/uploads/store-img/P/agesofrock.jpg)

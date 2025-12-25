@@ -1,14 +1,14 @@
 ---
+title: ssl Security Certificate Issue
+date: 2024-04-19 21:00:00
 categories:
 - Microservices
-date: 2024-04-19 21:00:00
 tags:
 - Spring Boot
 - SSL
 - Security
 - Certificates
 - Troubleshooting
-title: ssl Security Certificate Issue
 ---
 
 {% include toc title="Index" %}

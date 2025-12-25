@@ -1,11 +1,11 @@
 ---
+title: Book Binding
+date: 2024-09-19 20:14:00
 categories:
 - Crafts
-date: 2024-09-19 20:14:00
 tags:
 - DIY
 - Books
-title: Book Binding
 ---
 
 {% include toc title="Index" %}

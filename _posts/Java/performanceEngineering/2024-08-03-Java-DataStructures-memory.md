@@ -1,14 +1,14 @@
 ---
+title: String Intern pool, Hashmaps and Collections
+date: 2024-07-03 00:10:00
 categories:
 - Performance Engineering
-date: 2024-07-03 00:10:00
 tags:
 - Java
 - Memory
 - Performance
 - HashMap
 - Collections
-title: String Intern pool, Hashmaps and Collections
 ---
 
 {% include toc title="Index" %}

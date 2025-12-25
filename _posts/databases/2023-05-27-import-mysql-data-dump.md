@@ -1,11 +1,11 @@
 ---
+title: Importing MySql data dump from a sql file
+date: 2023-05-27 19:25:00
 categories:
 - Database
-date: 2023-05-27 19:25:00
 tags:
 - MySQL
 - SQL
-title: Importing MySql data dump from a sql file
 ---
 
 # Import MySql data dump from dump file

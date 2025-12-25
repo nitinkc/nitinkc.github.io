@@ -1,11 +1,11 @@
 ---
+title: Dependency Injection
+date: 2022-02-10 20:55:00
 categories:
 - Microservices
-date: 2022-02-10 20:55:00
 tags:
 - Spring Boot
 - Design Patterns
-title: Dependency Injection
 ---
 
 {% include toc title="Index" %}

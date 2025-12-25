@@ -1,11 +1,11 @@
 ---
+title: Default method in Interface
+date: 2022-07-27 13:06:00
 categories:
 - Microservices
-date: 2022-07-27 13:06:00
 tags:
 - Java
 - Java 8
-title: Default method in Interface
 ---
 
 {% include toc title="Index" %}

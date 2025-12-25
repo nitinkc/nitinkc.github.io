@@ -1,13 +1,13 @@
 ---
+title: DB Data Structures
+date: 2024-06-28 11:02:00
 categories:
 - System Design
-date: 2024-06-28 11:02:00
 tags:
 - Database
 - Data Structures
 - B-Tree
 - LSM Tree
-title: DB Data Structures
 ---
 
 {% include toc title="Index" %}

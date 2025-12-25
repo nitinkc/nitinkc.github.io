@@ -1,12 +1,12 @@
 ---
+title: Strength Training - Gym - Muscle Building Plan
+date: 2025-01-07 22:00:00
 categories:
 - Health
-date: 2025-01-07 22:00:00
 tags:
 - Fitness
 - Workout
 - Exercise
-title: Strength Training - Gym - Muscle Building Plan
 ---
 
 {% include toc title="Index" %}

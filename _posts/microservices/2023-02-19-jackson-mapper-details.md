@@ -1,11 +1,11 @@
 ---
+title: Jackson Mapper
+date: 2023-02-19 09:16:00
 categories:
 - Microservices
-date: 2023-02-19 09:16:00
 tags:
 - Spring Boot
 - Serialization
-title: Jackson Mapper
 ---
 
 {% include toc title="Index" %}

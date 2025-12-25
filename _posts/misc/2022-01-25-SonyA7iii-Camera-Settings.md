@@ -1,14 +1,14 @@
 ---
+title: Sony A7iii Camera Settings
+date: 2022-01-26 21:55:00
 categories:
 - Photography
-date: 2022-01-26 21:55:00
 tags:
 - Sony
 - A7iii
 - Camera
 - Settings
 - Configuration
-title: Sony A7iii Camera Settings
 ---
 
 ## F-Stops

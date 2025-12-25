@@ -1,12 +1,12 @@
 ---
+title: Dynamic Programming - DP
+date: 2024-07-14 18:27:00
 categories:
 - Algorithms
-date: 2024-07-14 18:27:00
 tags:
 - Dynamic Programming
 - DP
 - Optimization
-title: Dynamic Programming - DP
 ---
 
 {% include toc title="Index" %}---

@@ -1,12 +1,12 @@
 ---
+title: Deployment process - From Dev to Release
+date: 2025-04-29 05:00:00
 categories:
 - DevOps
-date: 2025-04-29 05:00:00
 tags:
 - Deployment
 - CI/CD
 - Pipeline
-title: Deployment process - From Dev to Release
 ---
 
 {% include toc title="Index" %}

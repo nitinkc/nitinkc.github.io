@@ -1,11 +1,11 @@
 ---
+title: Higher Order Functions
+date: 2022-11-21 13:43:00
 categories:
 - Java
-date: 2022-11-21 13:43:00
 tags:
 - Functional Programming
 - Lambda
-title: Higher Order Functions
 ---
 
 {% include toc title="Index" %}

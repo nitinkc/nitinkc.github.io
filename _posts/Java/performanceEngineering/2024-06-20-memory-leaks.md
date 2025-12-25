@@ -1,13 +1,13 @@
 ---
+title: Memory Leaks
+date: 2024-06-20 00:10:00
 categories:
 - Performance Engineering
-date: 2024-06-20 00:10:00
 tags:
 - Java
 - Debugging
 - Performance
 - Troubleshooting
-title: Memory Leaks
 ---
 
 {% include toc title="Index" %}

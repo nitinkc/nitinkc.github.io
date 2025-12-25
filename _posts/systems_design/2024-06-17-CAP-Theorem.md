@@ -1,12 +1,12 @@
 ---
+title: CAP Theorem
+date: 2024-06-17 11:45:00
 categories:
 - System Design
-date: 2024-06-17 11:45:00
 tags:
 - CAP Theorem
 - Consistency
 - Distributed Systems
-title: CAP Theorem
 ---
 
 {% include toc title="Index" %}

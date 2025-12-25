@@ -1,12 +1,12 @@
 ---
+title: Ultrasonic Sensor
+date: 2024-11-17 08:00:00
 categories:
 - Electronics
-date: 2024-11-17 08:00:00
 tags:
 - Sensors
 - Arduino
 - Projects
-title: Ultrasonic Sensor
 ---
 
 {% include toc title="Index" %}

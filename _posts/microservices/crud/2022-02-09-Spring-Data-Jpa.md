@@ -1,14 +1,14 @@
 ---
+title: Spring Data JPA & CRUD - GET PUT POST DELETE
+date: 2022-02-09 20:55:00
 categories:
 - Microservices
-date: 2022-02-09 20:55:00
 tags:
 - Spring Boot
 - JPA
 - REST
 - Database
 - Hibernate
-title: Spring Data JPA & CRUD - GET PUT POST DELETE
 ---
 
 {% include toc title="Index" %}

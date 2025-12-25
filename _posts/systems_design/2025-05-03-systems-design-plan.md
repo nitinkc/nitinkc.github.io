@@ -1,13 +1,13 @@
 ---
+title: System Design Plan
+date: 2025-05-03 22:30:00
 categories:
 - System Design
-date: 2025-05-03 22:30:00
 tags:
 - Planning
 - Strategy
 - Interview
 - Methodology
-title: System Design Plan
 ---
 
 | Difficulty  | Status  | Task                                                                   |

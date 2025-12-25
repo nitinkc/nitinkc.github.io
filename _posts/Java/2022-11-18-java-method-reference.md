@@ -1,12 +1,12 @@
 ---
+title: Method Reference
+date: 2022-11-18 08:30:00
 categories:
 - Java
-date: 2022-11-18 08:30:00
 tags:
 - Lambda
 - Java 8
 - Functional Programming
-title: Method Reference
 ---
 
 {% include toc title="Index" %}

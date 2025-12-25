@@ -1,12 +1,12 @@
 ---
+title: Condition Variables
+date: 2024-08-18 05:17:00
 categories:
 - Multithreading
-date: 2024-08-18 05:17:00
 tags:
 - Java
 - Synchronization
 - Concurrency
-title: Condition Variables
 ---
 
 {% include toc title="Index" %}

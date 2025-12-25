@@ -1,14 +1,14 @@
 ---
+title: Food Options - Understanding Seeds, Grains, Millets, Legumes & Pulses
+date: 2024-12-24 09:45:00
 categories:
 - Health
-date: 2024-12-24 09:45:00
 tags:
 - Nutrition
 - Food
 - Grains
 - Millets
 - Guide
-title: Food Options - Understanding Seeds, Grains, Millets, Legumes & Pulses
 ---
 
 {% include toc title="Index" %}

@@ -1,11 +1,11 @@
 ---
+title: Spring Boot Startup Process
+date: 2024-12-05 15:00:00
 categories:
 - Microservices
-date: 2024-12-05 15:00:00
 tags:
 - Spring Boot
 - Initialization
-title: Spring Boot Startup Process
 ---
 
 {% include toc title="Index" %}

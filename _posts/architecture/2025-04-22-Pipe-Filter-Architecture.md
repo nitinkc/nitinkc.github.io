@@ -1,11 +1,11 @@
 ---
+title: The Pipeline (or Pipe-Filter) architectural style
+date: 2025-04-22 14:02:00
 categories:
 - Architecture
-date: 2025-04-22 14:02:00
 tags:
 - Pipeline
 - Design Patterns
-title: The Pipeline (or Pipe-Filter) architectural style
 ---
 
 {% include toc title="Index" %}

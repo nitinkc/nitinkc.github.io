@@ -1,12 +1,12 @@
 ---
+title: Java Compiler Code Optimization
+date: 2024-08-17 00:17:00
 categories:
 - Java
-date: 2024-08-17 00:17:00
 tags:
 - Compiler
 - Optimization
 - Performance
-title: Java Compiler Code Optimization
 ---
 
 {% include toc title="Index" %}

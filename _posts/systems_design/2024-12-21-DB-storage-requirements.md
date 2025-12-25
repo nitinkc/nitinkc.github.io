@@ -1,13 +1,13 @@
 ---
+title: Database Requirements Estimation
+date: 2024-12-21 02:30:00
 categories:
 - System Design
-date: 2024-12-21 02:30:00
 tags:
 - Database
 - Storage
 - Estimation
 - Capacity Planning
-title: Database Requirements Estimation
 ---
 
 # 1. **Data Size per User**

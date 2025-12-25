@@ -1,14 +1,14 @@
 ---
+title: Raspberry Pi
+date: 2024-10-29 12:00:00
 categories:
 - Electronics
-date: 2024-10-29 12:00:00
 tags:
 - Raspberry Pi
 - Microcontroller
 - IoT
 - Projects
 - Programming
-title: Raspberry Pi
 ---
 
 {% include toc title="Index" %}

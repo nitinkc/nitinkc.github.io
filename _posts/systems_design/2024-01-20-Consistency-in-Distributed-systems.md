@@ -1,13 +1,13 @@
 ---
+title: Data Consistency Levels
+date: 2024-01-20 11:20:00
 categories:
 - System Design
-date: 2024-01-20 11:20:00
 tags:
 - Consistency
 - Distributed Systems
 - CAP Theorem
 - ACID
-title: Data Consistency Levels
 ---
 
 {% include toc title="Index" %}

@@ -1,11 +1,11 @@
 ---
+title: Java Concurrent Collections
+date: 2024-08-20 00:17:00
 categories:
 - Multithreading
-date: 2024-08-20 00:17:00
 tags:
 - Java
 - Concurrency
-title: Java Concurrent Collections
 ---
 
 {% include toc title="Index" %}

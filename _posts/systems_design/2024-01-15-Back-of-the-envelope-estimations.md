@@ -1,13 +1,13 @@
 ---
+title: Back of the envelop estimations
+date: 2024-01-15 17:30:00
 categories:
 - System Design
-date: 2024-01-15 17:30:00
 tags:
 - Estimation
 - Capacity Planning
 - Scalability
 - Interview
-title: Back of the envelop estimations
 ---
 
 {% include toc title="Index" %}

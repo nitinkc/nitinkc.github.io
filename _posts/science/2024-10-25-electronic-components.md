@@ -1,12 +1,12 @@
 ---
+title: Electronic Components
+date: 2024-10-25 12:00:00
 categories:
 - Electronics
-date: 2024-10-25 12:00:00
 tags:
 - Components
 - Reference
 - Guide
-title: Electronic Components
 ---
 
 {% include toc title="Index" %}

@@ -1,11 +1,11 @@
 ---
+title: Architectural Patterns
+date: 2024-09-12 14:02:00
 categories:
 - Architecture
-date: 2024-09-12 14:02:00
 tags:
 - Design Patterns
 - Microservices
-title: Architectural Patterns
 ---
 
 {% include toc title="Index" %}

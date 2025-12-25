@@ -1,12 +1,12 @@
 ---
+title: Predicate Functional Interface
+date: 2022-11-21 08:30:00
 categories:
 - Java
-date: 2022-11-21 08:30:00
 tags:
 - Functional Interface
 - Lambda
 - Java 8
-title: Predicate Functional Interface
 ---
 
 `java.util.function.Predicate` represents a simple function that takes a single

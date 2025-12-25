@@ -1,13 +1,13 @@
 ---
+title: Distributed Systems
+date: 2024-06-17 11:45:00
 categories:
 - System Design
-date: 2024-06-17 11:45:00
 tags:
 - Distributed Systems
 - Architecture
 - Scalability
 - Fault Tolerance
-title: Distributed Systems
 ---
 
 {% include toc title="Index" %}

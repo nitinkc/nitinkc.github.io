@@ -1,13 +1,13 @@
 ---
+title: Containerizing Spring Boot with Docker
+date: 2025-09-22 12:04:00
 categories:
 - Microservices
-date: 2025-09-22 12:04:00
 tags:
 - Spring Boot
 - Docker
 - Containers
 - Deployment
-title: Containerizing Spring Boot with Docker
 ---
 
 {% include toc title="Index" %}

@@ -1,13 +1,13 @@
 ---
+title: Sublime Settings
+date: 2021-03-24 18:07:00
 categories:
 - Developer Tools
-date: 2021-03-24 18:07:00
 tags:
 - Text Editor
 - Configuration
 - Settings
 - Tools
-title: Sublime Settings
 ---
 
 {% include toc title="Index" %}

@@ -1,11 +1,11 @@
 ---
+title: Thread-local storage (TLS) in multithreading
+date: 2024-07-26 20:17:00
 categories:
 - Multithreading
-date: 2024-07-26 20:17:00
 tags:
 - Java
 - Concurrency
-title: Thread-local storage (TLS) in multithreading
 ---
 
 {% include toc title="Index" %}

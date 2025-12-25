@@ -1,14 +1,14 @@
 ---
+title: Data Structures - Implementations
+date: 2025-04-30 15:06:00
 categories:
 - Algorithms
-date: 2025-04-30 15:06:00
 tags:
 - Data Structures
 - Implementation
 - Java
 - Code
 - Tutorial
-title: Data Structures - Implementations
 ---
 
 {% include toc title="Index" %}

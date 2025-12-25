@@ -1,10 +1,10 @@
 ---
+title: Mahabharat Family tree
+date: 2021-02-13 02:15:00
 categories:
 - Culture
-date: 2021-02-13 02:15:00
 tags:
 - History
-title: Mahabharat Family tree
 ---
 
 # The Family tree

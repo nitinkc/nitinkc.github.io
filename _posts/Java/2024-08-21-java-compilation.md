@@ -1,12 +1,12 @@
 ---
+title: Java Compilation Process & JVM Architecture
+date: 2024-08-21 00:17:00
 categories:
 - Java
-date: 2024-08-21 00:17:00
 tags:
 - JVM
 - Architecture
 - Garbage Collection
-title: Java Compilation Process & JVM Architecture
 ---
 
 {% include toc title="Index" %}

@@ -1,16 +1,16 @@
 ---
+title: IntelliJ Idea settings
+date: 2021-02-07 02:15:00
 categories:
 - Developer Tools
-date: 2021-02-07 02:15:00
-sidebar:
-  nav: algo
 tags:
 - IntelliJ
 - IDE
 - Settings
 - Configuration
 - Setup
-title: IntelliJ Idea settings
+sidebar:
+  nav: algo
 ---
 
 {% include toc title="Index" %}

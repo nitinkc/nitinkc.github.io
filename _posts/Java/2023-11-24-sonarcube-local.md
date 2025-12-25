@@ -1,11 +1,11 @@
 ---
+title: Sonarcube on local
+date: 2023-11-24 12:17:00
 categories:
 - Java
-date: 2023-11-24 12:17:00
 tags:
 - Code Quality
 - DevOps
-title: Sonarcube on local
 ---
 
 {% include toc title="Index" %}

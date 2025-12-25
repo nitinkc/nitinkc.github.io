@@ -1,7 +1,8 @@
 ---
+title: Terminal Setup
+date: 2021-02-01 14:00:00
 categories:
 - Developer Tools
-date: 2021-02-01 14:00:00
 tags:
 - Terminal
 - Configuration
@@ -9,7 +10,6 @@ tags:
 - Shell
 - Zsh
 - Setup
-title: Terminal Setup
 ---
 
 {% include toc title="Index" %}

@@ -1,14 +1,14 @@
 ---
+title: Linux Files & Commands
+date: 2016-04-14 20:11:00
 categories:
 - Developer Tools
-date: 2016-04-14 20:11:00
 tags:
 - Linux
 - Commands
 - CLI
 - Terminal
 - Unix
-title: Linux Files & Commands
 ---
 
 {% include toc title="Index" %}

@@ -1,12 +1,12 @@
 ---
+title: CompletableFutures & Asynchronous Programming
+date: 2023-10-10 15:16:00
 categories:
 - Multithreading
-date: 2023-10-10 15:16:00
 tags:
 - Java
 - Asynchronous
 - Concurrency
-title: CompletableFutures & Asynchronous Programming
 ---
 
 {% include toc title="Index" %}

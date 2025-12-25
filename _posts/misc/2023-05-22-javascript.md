@@ -1,12 +1,12 @@
 ---
+title: javascript
+date: 2023-05-22 23:14:00
 categories:
 - Programming
-date: 2023-05-22 23:14:00
 tags:
 - JavaScript
 - Web Development
 - Frontend
-title: javascript
 ---
 
 ### Variable

@@ -1,13 +1,13 @@
 ---
+title: Cloud Native
+date: 2024-11-30 14:02:00
 categories:
 - Architecture
-date: 2024-11-30 14:02:00
 tags:
 - Cloud Native
 - Microservices
 - Kubernetes
 - Containerization
-title: Cloud Native
 ---
 
 {% include toc title="Index" %}

@@ -1,13 +1,13 @@
 ---
+title: Generics
+date: 2022-11-21 08:30:00
 categories:
 - Java
-date: 2022-11-21 08:30:00
 tags:
 - Generics
 - Type Safety
 - Collections
 - Templates
-title: Generics
 ---
 
 # Generics as compile-time type safety

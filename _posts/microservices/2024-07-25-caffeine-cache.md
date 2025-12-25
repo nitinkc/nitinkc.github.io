@@ -1,13 +1,13 @@
 ---
+title: Caffeine Cache
+date: 2024-07-25 17:00:00
 categories:
 - Microservices
-date: 2024-07-25 17:00:00
 tags:
 - Spring Boot
 - Caching
 - Performance
 - In-Memory
-title: Caffeine Cache
 ---
 
 {% include toc title="Index" %}

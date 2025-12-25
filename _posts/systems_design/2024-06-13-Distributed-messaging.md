@@ -1,11 +1,11 @@
 ---
+title: Distributed Messaging
+date: 2024-06-13 11:02:00
 categories:
 - System Design
-date: 2024-06-13 11:02:00
 tags:
 - Kafka
 - Distributed Systems
-title: Distributed Messaging
 ---
 
 {% include toc title="Index" %}

@@ -1,13 +1,13 @@
 ---
+title: 'Dry Fruit: Meal Plan'
+date: 2024-12-28 09:45:00
 categories:
 - Health
-date: 2024-12-28 09:45:00
 tags:
 - Nutrition
 - Snacks
 - Meal Planning
 - Healthy
-title: 'Dry Fruit: Meal Plan'
 ---
 
 {% include toc title="Index" %}

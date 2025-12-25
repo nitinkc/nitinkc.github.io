@@ -1,11 +1,11 @@
 ---
+title: US History timeline and Government
+date: 2025-04-13 16:50:00
 categories:
 - History
-date: 2025-04-13 16:50:00
 tags:
 - USA
 - Government
-title: US History timeline and Government
 ---
 
 {% include toc title="Index" %}

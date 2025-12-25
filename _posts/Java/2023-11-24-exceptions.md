@@ -1,11 +1,11 @@
 ---
+title: Exceptions in Java
+date: 2023-11-24 23:23:00
 categories:
 - Java
-date: 2023-11-24 23:23:00
 tags:
 - Error Handling
 - Best Practices
-title: Exceptions in Java
 ---
 
 {% include toc title="Index" %}

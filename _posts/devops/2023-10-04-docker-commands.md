@@ -1,14 +1,14 @@
 ---
+title: Docker commands
+date: 2023-10-04 20:01:00
 categories:
 - DevOps
-date: 2023-10-04 20:01:00
 tags:
 - Docker
 - Containers
 - Commands
 - CLI
 - Containerization
-title: Docker commands
 ---
 
 {% include toc title="Index" %}

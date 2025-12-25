@@ -1,13 +1,13 @@
 ---
+title: SpringBoot Interview - Deep Dive
+date: 2025-06-03 11:50:00
 categories:
 - Microservices
-date: 2025-06-03 11:50:00
 tags:
 - Spring Boot
 - Interview
 - Questions
 - Preparation
-title: SpringBoot Interview - Deep Dive
 ---
 
 {% include toc title="Index" %}

@@ -1,14 +1,14 @@
 ---
+title: Spring Security
+date: 2024-12-05 15:00:00
 categories:
 - Microservices
-date: 2024-12-05 15:00:00
 tags:
 - Spring Boot
 - Security
 - Authentication
 - Authorization
 - OAuth
-title: Spring Security
 ---
 
 {% include toc title="Index" %}

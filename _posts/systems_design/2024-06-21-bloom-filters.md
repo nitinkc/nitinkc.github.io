@@ -1,11 +1,11 @@
 ---
+title: Bloom Filters
+date: 2024-06-18 11:45:00
 categories:
 - System Design
-date: 2024-06-18 11:45:00
 tags:
 - Data Structures
 - Probabilistic
-title: Bloom Filters
 ---
 
 {% include toc title="Index" %}

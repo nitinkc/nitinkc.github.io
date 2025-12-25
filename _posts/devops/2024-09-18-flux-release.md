@@ -1,11 +1,11 @@
 ---
+title: Flux Release
+date: 2024-09-18 18:02:00
 categories:
 - DevOps
-date: 2024-09-18 18:02:00
 tags:
 - GitOps
 - Kubernetes
-title: Flux Release
 ---
 
 {% include toc title="Index" %}

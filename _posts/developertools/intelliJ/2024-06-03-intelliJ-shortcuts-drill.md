@@ -1,14 +1,14 @@
 ---
+title: IntelliJ Shortcuts - Daily Drills
+date: 2024-06-03 20:50:00
 categories:
 - Developer Tools
-date: 2024-06-03 20:50:00
 tags:
 - IntelliJ
 - IDE
 - Shortcuts
 - Productivity
 - Practice
-title: IntelliJ Shortcuts - Daily Drills
 ---
 
 **LEGEND :**

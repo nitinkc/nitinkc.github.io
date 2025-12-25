@@ -1,11 +1,11 @@
 ---
+title: CommandLineRunner - Spring Boot
+date: 2024-07-15 20:00:00
 categories:
 - Microservices
-date: 2024-07-15 20:00:00
 tags:
 - Spring Boot
 - Initialization
-title: CommandLineRunner - Spring Boot
 ---
 
 {% include toc title="Index" %}

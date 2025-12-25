@@ -1,11 +1,11 @@
 ---
+title: JIRA Filters
+date: 2024-09-13 13:45:00
 categories:
 - Developer Tools
-date: 2024-09-13 13:45:00
 tags:
 - Project Management
 - Agile
-title: JIRA Filters
 ---
 
 ### With createdtime in last 60 days

@@ -1,12 +1,12 @@
 ---
+title: Serverless Architecture
+date: 2024-06-29 21:02:00
 categories:
 - System Design
-date: 2024-06-29 21:02:00
 tags:
 - Architecture
 - Lambda
 - Cloud
-title: Serverless Architecture
 ---
 
 {% include toc title="Index" %}

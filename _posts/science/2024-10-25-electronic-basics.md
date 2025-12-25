@@ -1,13 +1,13 @@
 ---
+title: Electronics
+date: 2024-10-25 22:00:00
 categories:
 - Electronics
-date: 2024-10-25 22:00:00
 tags:
 - Basics
 - Fundamentals
 - Tutorial
 - Getting Started
-title: Electronics
 ---
 
 {% include toc title="Index" %}

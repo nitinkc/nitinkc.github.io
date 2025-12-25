@@ -1,10 +1,10 @@
 ---
+title: Event Sourcing
+date: 2025-06-05 14:02:00
 categories:
 - Architecture
-date: 2025-06-05 14:02:00
 tags:
 - CQRS
-title: Event Sourcing
 ---
 
 {% include toc title="Index" %}

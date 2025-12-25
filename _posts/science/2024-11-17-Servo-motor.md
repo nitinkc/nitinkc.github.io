@@ -1,11 +1,11 @@
 ---
+title: Servo Motor
+date: 2024-11-17 08:00:00
 categories:
 - Electronics
-date: 2024-11-17 08:00:00
 tags:
 - Motors
 - Arduino
-title: Servo Motor
 ---
 
 {% include toc title="Index" %}

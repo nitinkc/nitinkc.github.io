@@ -1,13 +1,13 @@
 ---
+title: Java Systems Stats
+date: 2023-10-17 08:30:00
 categories:
 - Performance Engineering
-date: 2023-10-17 08:30:00
 tags:
 - Java
 - Performance
 - Monitoring
 - Metrics
-title: Java Systems Stats
 ---
 
 {% include toc title="Index" %}

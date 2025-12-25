@@ -1,13 +1,13 @@
 ---
+title: Distributed Databases
+date: 2024-06-17 11:45:00
 categories:
 - System Design
-date: 2024-06-17 11:45:00
 tags:
 - Database
 - Distributed
 - Sharding
 - Replication
-title: Distributed Databases
 ---
 
 {% include toc title="Index" %}

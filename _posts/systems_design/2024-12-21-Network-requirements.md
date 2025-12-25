@@ -1,11 +1,11 @@
 ---
+title: Network Requirements Estimation
+date: 2024-12-21 02:30:00
 categories:
 - System Design
-date: 2024-12-21 02:30:00
 tags:
 - Estimation
 - Capacity Planning
-title: Network Requirements Estimation
 ---
 
 # 1. **Request Size**

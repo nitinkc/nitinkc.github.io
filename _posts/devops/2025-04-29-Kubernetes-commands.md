@@ -1,13 +1,13 @@
 ---
+title: Kubernetes Commands
+date: 2025-04-29 05:00:00
 categories:
 - DevOps
-date: 2025-04-29 05:00:00
 tags:
 - Kubernetes
 - K8s
 - Commands
 - CLI
-title: Kubernetes Commands
 ---
 
 {% include toc title="Index" %}

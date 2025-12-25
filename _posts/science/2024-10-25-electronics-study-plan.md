@@ -1,12 +1,12 @@
 ---
+title: Teaching Electronics
+date: 2024-10-25 12:00:00
 categories:
 - Electronics
-date: 2024-10-25 12:00:00
 tags:
 - Education
 - Learning
 - Tutorial
-title: Teaching Electronics
 ---
 
 {% include toc title="Index" %}

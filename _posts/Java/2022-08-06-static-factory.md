@@ -1,11 +1,11 @@
 ---
+title: Static Factory Methods
+date: 2022-08-06 08:30:00
 categories:
 - Java
-date: 2022-08-06 08:30:00
 tags:
 - Design Patterns
 - Best Practices
-title: Static Factory Methods
 ---
 
 # What is Static Factory Method?

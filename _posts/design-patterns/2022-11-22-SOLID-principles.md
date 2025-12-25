@@ -1,13 +1,13 @@
 ---
+title: SOLID Principles
+date: 2022-11-22 08:30:00
 categories:
 - Design Patterns
-date: 2022-11-22 08:30:00
 tags:
 - SOLID
 - OOP
 - Principles
 - Best Practices
-title: SOLID Principles
 ---
 
 {% include toc title="Index" %}

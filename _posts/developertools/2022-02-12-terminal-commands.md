@@ -1,7 +1,8 @@
 ---
+title: Terminal Commands
+date: 2022-02-12 23:23:00
 categories:
 - Developer Tools
-date: 2022-02-12 23:23:00
 tags:
 - Terminal
 - Commands
@@ -9,7 +10,6 @@ tags:
 - Shell
 - Unix
 - Reference
-title: Terminal Commands
 ---
 
 {% include toc title="Index" %}

@@ -1,13 +1,13 @@
 ---
+title: Upgrading the Macbook Pro - Model A1278
+date: 2016-07-31 15:04:00
 categories:
 - Developer Tools
-date: 2016-07-31 15:04:00
 tags:
 - MacBook
 - Hardware
 - RAM
 - DIY
-title: Upgrading the Macbook Pro - Model A1278
 ---
 
 {% include toc title="Index" %}

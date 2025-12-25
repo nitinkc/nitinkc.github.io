@@ -1,13 +1,13 @@
 ---
+title: 'PowerMock Testing Guide: When Standard Mocking Isn''t Enough'
+date: 2023-11-24 03:53:00
 categories:
 - Testing
-date: 2023-11-24 03:53:00
 tags:
 - Spring Boot
 - Mockito
 - Unit Testing
 - Guide
-title: 'PowerMock Testing Guide: When Standard Mocking Isn''t Enough'
 ---
 
 {% include toc title="Index" %}

@@ -1,12 +1,12 @@
 ---
+title: DevOps Learning - Starting point
+date: 2024-09-23 20:14:00
 categories:
 - DevOps
-date: 2024-09-23 20:14:00
 tags:
 - Learning
 - Tutorial
 - Getting Started
-title: DevOps Learning - Starting point
 ---
 
 {% include toc title="Index" %}

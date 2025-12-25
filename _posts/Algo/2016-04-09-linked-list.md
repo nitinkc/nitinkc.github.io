@@ -1,11 +1,11 @@
 ---
+title: Linked List
+date: 2016-04-06 05:14:00
 categories:
 - Algorithms
-date: 2016-04-06 05:14:00
 tags:
 - Data Structures
 - Implementation
-title: Linked List
 ---
 
 {% include toc title="Index" %}

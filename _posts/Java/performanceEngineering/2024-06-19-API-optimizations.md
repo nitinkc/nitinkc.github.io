@@ -1,14 +1,14 @@
 ---
+title: API Optimizations
+date: 2024-06-19 00:10:00
 categories:
 - Performance Engineering
-date: 2024-06-19 00:10:00
 tags:
 - Java
 - API
 - Performance
 - Optimization
 - Best Practices
-title: API Optimizations
 ---
 
 {% include toc title="Index" %}

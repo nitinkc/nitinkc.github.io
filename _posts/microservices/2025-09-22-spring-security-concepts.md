@@ -1,13 +1,13 @@
 ---
+title: Spring Security Concepts
+date: 2025-09-22 12:00:00
 categories:
 - Microservices
-date: 2025-09-22 12:00:00
 tags:
 - Spring Boot
 - Security
 - Authentication
 - Authorization
-title: Spring Security Concepts
 ---
 
 {% include toc title="Index" %}

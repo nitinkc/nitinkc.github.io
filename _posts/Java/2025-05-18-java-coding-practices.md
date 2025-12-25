@@ -1,11 +1,11 @@
 ---
+title: Java Coding Practices
+date: 2025-05-18 23:17:00
 categories:
 - Java
-date: 2025-05-18 23:17:00
 tags:
 - Best Practices
 - Clean Code
-title: Java Coding Practices
 ---
 
 {% include toc title="Index" %}

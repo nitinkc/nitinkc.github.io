@@ -1,14 +1,14 @@
 ---
+title: Array Syntax
+date: 2022-02-03 01:30:00
 categories:
 - Algorithms
-date: 2022-02-03 01:30:00
 tags:
 - Arrays
 - Data Structures
 - Syntax
 - Java
 - Programming
-title: Array Syntax
 ---
 
 {% include toc title="Index" %}

@@ -1,11 +1,11 @@
 ---
+title: 'Google BigQuery '
+date: 2022-08-15 20:04:00
 categories:
 - GCP
-date: 2022-08-15 20:04:00
 tags:
 - SQL
 - Analytics
-title: 'Google BigQuery '
 ---
 
 {% include toc title="Index" %}

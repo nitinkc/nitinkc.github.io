@@ -1,14 +1,14 @@
 ---
+title: Arduino UNO
+date: 2024-11-17 08:00:00
 categories:
 - Electronics
-date: 2024-11-17 08:00:00
 tags:
 - Arduino
 - Microcontroller
 - Programming
 - Projects
 - IoT
-title: Arduino UNO
 ---
 
 {% include toc title="Index" %}

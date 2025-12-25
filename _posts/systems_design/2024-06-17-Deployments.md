@@ -1,12 +1,12 @@
 ---
+title: Deployments
+date: 2024-06-17 11:02:00
 categories:
 - System Design
-date: 2024-06-17 11:02:00
 tags:
 - Deployment
 - CI/CD
 - DevOps
-title: Deployments
 ---
 
 {% include toc title="Index" %}

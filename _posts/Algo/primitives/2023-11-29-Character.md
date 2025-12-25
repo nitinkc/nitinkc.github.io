@@ -1,12 +1,12 @@
 ---
+title: Character Utility Class
+date: 2023-11-19 23:30:00
 categories:
 - Algorithms
-date: 2023-11-19 23:30:00
 tags:
 - Utility
 - Java
 - Primitives
-title: Character Utility Class
 ---
 
 {% include toc title="Index" %}
