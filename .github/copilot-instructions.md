@@ -44,5 +44,3 @@ This repository is a personal Jekyll site built on the "Minimal Mistakes" theme.
 ## Safety and style
 - Keep Liquid logic simple in templates; heavy logic should go into small Ruby/Jekyll plugins or the `scripts/` helpers.
 - Preserve existing HTML structure and CSS class names to avoid breaking layout inherited from Minimal Mistakes.
-
-If any section is unclear or you want examples added (e.g., a short checklist for PR reviewers), tell me what to expand and I'll iterate.

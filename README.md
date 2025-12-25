@@ -1,85 +1,125 @@
 # nitinkc.github.io
 
-Clone the code, goto root directory.
+Personal Jekyll site built on Minimal Mistakes theme.
 
-Build site using default _config.yml file:
+## Quick Start
 
-```sh
-bundle install  # requires sudo
-bundle install --path vendor/bundle # non-sudo users
+### Prerequisites
+- Ruby (3.0+)
+- Bundler
+- macOS with Homebrew (for local setup without sudo)
 
-#Serve site at http://localhost:4000
-bundle exec jekyll serve
+### Minimal Setup (macOS)
 
-# if package.json not found exception
-rm -r _site | bundle exec jekyll serve 
-```
+1. **Install rbenv and Ruby** (one-time setup)
+   ```bash
+   brew install rbenv ruby-build
+   echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
+   source ~/.zshrc
+   rbenv install 3.2.2
+   rbenv local 3.2.2
+   ```
 
-```sh
-#Deletes Jekyll generated old ./_site cache folder
-bundle exec jekyll clean or 
-rm -rf _site 
+2. **Install dependencies**
+   ```bash
+   gem install bundler
+   bundle config set path 'vendor/bundle'
+   bundle install
+   ```
 
-#Build site into ./_site
-bundle exec jekyll build --trace --verbose
+3. **Serve the site**
+   ```bash
+   bundle exec jekyll serve --livereload
+   ```
+   
+   Open http://localhost:4000
+
+### Common Commands
+
+```bash
+# Clean generated files
+bundle exec jekyll clean
+rm -rf _site
+
+# Build site
 bundle exec jekyll build
 
-#Build site as production, default is development
+# Build for production
 JEKYLL_ENV=production bundle exec jekyll build
 
-#Build site into ./_site and for watch changes
-bundle exec jekyll build --watch
-```
- 
-[Text using Symbols](https://fsymbols.com/generators/encool/)
-
-Liquid Templating Language. Add Font matter to the top of the page
-
----
-# front matter tells Jekyll to process Liquid
----
-
-To expand the main content to the right, filling the space of what is normally occupied by the table of contents. Add the following to a post or page’s YAML Front Matter:
-
-classes: wide
-
-sudo bundle install --path vendor/bundle 
-
-
-added in default.html in navigation and in head.html in include
-<!-- Added to allow font awesome icons -->
-<script src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>   
-
-kill running process occupying 
-```shell
+# Kill process on port 4000
 lsof -P | grep ':4000' | awk '{print $2}' | xargs kill -9
 ```
 
-SiteMap : https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap
+### Troubleshooting
 
+**Bundle install fails with native extension errors:**
+```bash
+xcode-select --install
+brew install libxml2 libxslt
+export LDFLAGS="-L$(brew --prefix libxml2)/lib -L$(brew --prefix libxslt)/lib"
+export CPPFLAGS="-I$(brew --prefix libxml2)/include -I$(brew --prefix libxslt)/include"
+bundle install
+```
 
-pandoc -f docx -t markdown Buying\ a\ bigger\ machine.docx -o x.md  
+**Package.json not found:**
+```bash
+rm -rf _site
+bundle exec jekyll clean
+bundle install
+```
 
-## Taxonomy and scripts
+## Advanced Setup
 
-We added a small Python helper to audit and normalize categories/tags across all posts.
+### Alternative: User Gem Installation (without rbenv)
 
-- Location: `scripts/taxonomy_audit.py`
-- Requirements: see `requirements.txt`
+If you prefer not to use rbenv:
 
-Quick usage (PowerShell on Windows):
+```bash
+# Ensure user gem bin is on PATH
+export PATH="$(ruby -r rubygems -e 'print Gem.user_dir')/bin:$PATH"
+echo 'export PATH="$(ruby -r rubygems -e "print Gem.user_dir")/bin:$PATH"' >> ~/.zshrc
 
-1. Create/activate a virtual environment in the repo root
-	- `python -m venv .venv`
-	- `./.venv/Scripts/Activate.ps1`
-2. Install deps
-	- `pip install -r requirements.txt`
-3. Dry run audit (prints counts and proposed changes)
-	- `python scripts/taxonomy_audit.py audit-tags`
-4. Apply changes
-	- `python scripts/taxonomy_audit.py audit-tags --apply`
+# Install Jekyll
+gem install --user-install jekyll bundler
 
-Notes
-- Categories are inferred primarily from the top-level folder under `_posts/` and normalized for casing.
-- Tags are normalized, low-frequency singletons are dropped, and tags duplicating the primary category are removed.
-- Minimal Mistakes supports both string and list formats for `categories`; this script prefers a single canonical category when possible.
+# Run
+jekyll serve --livereload
+```
+
+### Automated Setup Script
+
+Run the provided setup script for automated installation:
+```bash
+./scripts/setup-local-mac.sh
+```
+
+## Site Customization
+
+### Front Matter Options
+
+Expand content width (removes TOC sidebar):
+```yaml
+---
+classes: wide
+---
+```
+
+### Vendor Font Awesome Locally (Optional)
+
+To use a local copy instead of CDN:
+```bash
+mkdir -p assets/vendor/fontawesome/js
+curl -L -o assets/vendor/fontawesome/js/all.js https://use.fontawesome.com/releases/v5.0.2/js/all.js
+```
+
+## Resources
+
+- [Markdown Reference](_posts/developertools/2022-01-19-markdown-reference.md)
+- [Text Symbols Generator](https://fsymbols.com/generators/encool/)
+- [Google Sitemap Documentation](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
+
+## Scripts
+
+Helper scripts are available in `scripts/`:
+- `setup-local-mac.sh` - Automated setup for macOS
