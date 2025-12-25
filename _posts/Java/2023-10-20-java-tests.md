@@ -11,17 +11,14 @@ tags:
 
 ## Reference Videos
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
-  <div>
-    <div class="responsive-video-container">
-      ![](https://www.youtube.com/watch?v=q2T9NlROLqw)
-    </div>
-  </div>
-  <div>
-    <div class="responsive-video-container">
-      ![](https://www.youtube.com/watch?v=DHwNR7h3k5Y)
-    </div>
-  </div>
+<div style="display: grid; grid-template-columns: 2fr 2fr; gap: 1rem; margin-bottom: 2rem;">
+<div markdown="1">
+![](https://www.youtube.com/watch?v=q2T9NlROLqw)
+</div>
+
+<div markdown="1">
+![](https://www.youtube.com/watch?v=DHwNR7h3k5Y)
+</div>
 </div>
 
 # Type inference
