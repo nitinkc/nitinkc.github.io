@@ -1,68 +1,51 @@
-Vocabulary sections
+---
+layout: single
+title: "GRE Vocabulary Reference"
+excerpt: "Comprehensive GRE vocabulary list organized by thematic groups and similar meanings"
+date: 2011-06-01
+last_modified_at: 2025-12-25
+categories:
+  - reference
+tags:
+  - GRE
+  - vocabulary
+  - word-list
+  - study-guide
+toc: true
+toc_label: "Vocabulary Topics"
+toc_icon: "book"
+toc_sticky: true
+classes: wide
+---
 
-1. Sports
-2. Politics - history, civics, geography
-2. Medicine
-4. Crime/ Police
-5. Army, airforce, Navy
-6. construction, engineering, wood working, arts and craft
-7. Groceries - vegetables, fruits, spices,
-8. Restaurant, Hotel,
-8. Spirituality
-   Constitution
-   Agriculture
-Travel adventures/Journey
-Fantasy world - Harry Potter
-management
+## About This Vocabulary List
 
-Vocab test and exercises
+This is a comprehensive GRE vocabulary reference organized by **similar meanings** and **thematic groups** for easier memorization and quick reference. Each entry includes the word, part of speech, definition, and usage examples.
 
+---
 
+## Improve / Lessen
 
-Verb, adverb
-noun, promoun
+### abate
+**[Verb]** subside or moderate  
+*Example:* Rather than leaving immediately, they waited for the storm to abate.
 
-adjectives
+### alleviate
+**[Verb]** relieve  
+*Example:* This should alleviate the pain; if it does not, we shall have to use stronger drugs.
 
+### assuage
+**[Verb]** ease or lessen (pain); satisfy (hunger); soothe (anger)  
+*Example:* Jilted by Jane, Dick tried to assuage his heartache by indulging in ice cream. One gallon later, he had assuaged his appetite but not his grief.  
+*Related:* assuagement [N.]
 
-phoenotics
+### attenuate
+**[Verb]** make thinner; weaken or lessen (in density, force, degree)  
+*Example:* The long, dry spell attenuated the creek to the merest trickle. When a meteor strikes the ground, the initially intense shock attenuates or lessens as it diverges outward.
 
-
-
-
-
-MY WORD LIST
-
-ARRANGED BY SIMILAR MEANINGS
-
-Wednesday, June 01, 2011
-
-NITIN
-
-
-IMPROVE/LESSEN
-
-abate [V.] subside or moderate. Rather than leaving
-immediately, they waited for the storm to abate.
-
-alleviate [V.] relieve. This should alleviate the pain; if it
-does not, we shall have to use stronger drugs.
-
-assuage [V.] ease or lessen (pain); satisfy (hunger); soothe
-(anger). Jilted by Jane. Dick tried to assuage his heartache
-by indulging in ice cream. One gallon later, he had
-assuaged his appetite but not his grief. assuagement, [N.]
-
-attenuate [V.] make thinner; weaken or lessen (in density,
-force, degree). The long, dry spell attenuated the
-creek to the merest trickle. When a meteor strikes the
-ground, the initially intense shock attenuates or lessens
-as it diverges outward.
-
-
-ameliorate [V.] improve. Many social workers have
-attempted to ameliorate the conditions of people living in
-the slums.
+### ameliorate
+**[Verb]** improve  
+*Example:* Many social workers have attempted to ameliorate the conditions of people living in the slums.
 
 appease [V.] pacify or soothe; relieve. Tom and Jody
 tried to appease the crying baby by offering him one toy

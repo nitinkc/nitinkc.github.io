@@ -85,13 +85,16 @@ generate internal links.
 in a post from specific folder
 `![Image Text]({{ site.url }}/assets/images/image.png)`
 
+prefer this : 
+`![Image Text](/assets/images/image.png)`
+
 ### Resize an image
 
 - `<img src="assets/images/image.png" width="300" height="200">`
 - `![platformThreads.png](/assets/images/platformThreads.png){:width="70%" height="50%"}`
 
 # Video
-
+### using iframe
 ```
 <iframe
 src="https://www.youtube.com/embed/1yaUn_PhlM8"
@@ -101,18 +104,22 @@ allowfullscreen>
 </iframe>
 ```
 
-using Spaceship jekyll plugin
-
+### using Spaceship jekyll plugin
 ```
 ![](https://www.youtube.com/watch?v=I6jB0nM9SKU)
 ```
 
-## videos in a table
+### multi column videos
 ```markdown
-| Videos                                           | 
-|:-------------------------------------------------|
-| ![](https://www.youtube.com/watch?v=q2T9NlROLqw) |
-| ![](https://www.youtube.com/watch?v=DHwNR7h3k5Y) |
+<div style="display: grid; grid-template-columns: 2fr 2fr; gap: 1rem; margin-bottom: 2rem;">
+<div markdown="1">
+![](https://www.youtube.com/watch?v=q2T9NlROLqw)
+</div>
+
+<div markdown="1">
+![](https://www.youtube.com/watch?v=DHwNR7h3k5Y)
+</div>
+</div>
 ```
 
 # Insert Table

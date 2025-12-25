@@ -97,5 +97,4 @@ Functional pipeline offers internal iterators
 
 # What is a pure function:
 
-[functional-programming/#pure-function]({% post_url
-/Java/2022-08-06-functional-programming %})
+[functional-programming/#pure-function]({% post_url /java/2022-08-06-functional-programming %})

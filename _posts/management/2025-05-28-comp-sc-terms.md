@@ -1,5 +1,5 @@
 ---
-title: Major psychological theories and behavioral science principles
+title: Principles in software engineering
 date: 2025-05-28 05:00:00
 categories:
 - Management

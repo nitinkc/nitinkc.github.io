@@ -10,7 +10,7 @@ tags:
 
 {% include toc title="Index" %}
 
-[See Also : Algo Drills]({{ site.baseurl }}{% post_url /Algo/2023-12-18-algo-drills %})
+[See Also : Algo Drills]({{ site.baseurl }}{% post_url /algorithms/2023-12-18-algo-drills %})
 # Boolean Logic (multiple if statements into switch)
 
 {% gist nitinkc/96387a9700c9c58185a969ae48bfdc45 %}
