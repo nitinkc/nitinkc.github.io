@@ -5,7 +5,6 @@ tags:
 - Kubernetes
 - K8s
 - Containers
-- Orchestration
 - Cloud Native
 title: Kubernetes Concepts
 ---

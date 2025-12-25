@@ -2,7 +2,6 @@
 categories: Design Patterns
 date: 2024-06-17 17:45:00
 tags:
-- Object Modeling
 - OOP
 - UML
 - Architecture

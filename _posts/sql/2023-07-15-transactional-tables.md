@@ -5,7 +5,6 @@ tags:
 - Transactions
 - ACID
 - Database
-- Data Integrity
 title: Transactional Tables
 ---
 

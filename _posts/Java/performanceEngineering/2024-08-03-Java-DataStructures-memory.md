@@ -5,7 +5,6 @@ tags:
 - Java
 - Memory
 - Performance
-- String Pool
 - HashMap
 - Collections
 title: String Intern pool, Hashmaps and Collections

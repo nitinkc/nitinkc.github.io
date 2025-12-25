@@ -4,10 +4,8 @@ date: 2023-07-12 22:10:00
 tags:
 - MacOS
 - Shell
-- Profile
 - Configuration
 - Zsh
-- Bash
 title: 'MacBook : Configuring shell profile'
 ---
 

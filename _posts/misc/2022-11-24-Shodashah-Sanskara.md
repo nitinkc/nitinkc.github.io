@@ -3,10 +3,6 @@ categories: Culture
 date: 2022-01-26 21:55:00
 tags:
 - Hindu
-- Sanskar
-- Rituals
-- Indian Culture
-- Traditions
 title: षोडशः संस्कार (The 16 Sanskars)
 ---
 

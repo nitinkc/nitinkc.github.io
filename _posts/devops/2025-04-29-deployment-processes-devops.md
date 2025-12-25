@@ -4,9 +4,7 @@ date: 2025-04-29 05:00:00
 tags:
 - Deployment
 - CI/CD
-- Release Management
 - Pipeline
-- SDLC
 title: Deployment process - From Dev to Release
 ---
 

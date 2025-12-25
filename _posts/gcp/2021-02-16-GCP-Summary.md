@@ -3,9 +3,7 @@ categories: GCP
 date: 2021-02-16 23:00:00
 tags:
 - Google Cloud
-- Free Tier
 - Setup
-- Cloud Computing
 title: GCP - Free Tier Setup
 ---
 

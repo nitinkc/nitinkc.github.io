@@ -4,7 +4,6 @@ date: 2024-02-11 00:12:00
 tags:
 - Java
 - Garbage Collection
-- GC
 - Memory
 - Performance
 - JVM

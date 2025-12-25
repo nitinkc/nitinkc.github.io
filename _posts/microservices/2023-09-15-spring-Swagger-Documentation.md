@@ -3,9 +3,6 @@ categories: Microservices
 date: 2023-09-15 21:30:00
 tags:
 - Spring Boot
-- Swagger
-- OpenAPI
-- API Documentation
 title: Swagger Documentations
 ---
 

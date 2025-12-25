@@ -4,8 +4,6 @@ date: 2024-03-06 00:45:00
 tags:
 - Spring Boot
 - REST
-- HTTP Client
-- RestTemplate
 title: Rest Template
 ---
 

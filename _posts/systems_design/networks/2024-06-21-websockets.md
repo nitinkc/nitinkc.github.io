@@ -5,7 +5,6 @@ tags:
 - Networking
 - WebSockets
 - Real-time
-- Bidirectional
 title: 'Web Sockets '
 ---
 

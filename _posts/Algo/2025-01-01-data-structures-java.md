@@ -5,7 +5,6 @@ tags:
 - Data Structures
 - Java
 - Collections
-- Classes
 - Implementation
 title: Data Structures - Java Classes
 ---

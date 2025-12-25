@@ -6,7 +6,6 @@ tags:
 - Configuration
 - Setup
 - MacBook
-- Development Environment
 title: Configuring a new MacBook
 ---
 

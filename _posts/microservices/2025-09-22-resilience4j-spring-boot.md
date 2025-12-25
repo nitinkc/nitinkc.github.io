@@ -3,10 +3,7 @@ categories: Microservices
 date: 2025-09-22 12:02:00
 tags:
 - Spring Boot
-- Resilience4j
-- Circuit Breaker
 - Fault Tolerance
-- Retry
 title: Resilience and Fault Tolerance with Resilience4J
 ---
 

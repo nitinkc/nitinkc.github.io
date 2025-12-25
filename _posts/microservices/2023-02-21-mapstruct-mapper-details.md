@@ -3,9 +3,6 @@ categories: Microservices
 date: 2023-02-21 09:16:00
 tags:
 - Spring Boot
-- MapStruct
-- Object Mapping
-- DTOs
 title: MapStruct Mapper
 ---
 

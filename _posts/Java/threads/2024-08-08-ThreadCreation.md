@@ -3,8 +3,6 @@ categories: Multithreading
 date: 2024-08-08 20:17:00
 tags:
 - Java
-- Thread
-- Creation
 - Concurrency
 title: Thread Creation
 ---

@@ -6,7 +6,6 @@ tags:
 - Spanner
 - GCP
 - Migration
-- HarbourBridge
 title: MySql to Spanner Migration using HarbourBridge
 ---
 

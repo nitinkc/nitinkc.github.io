@@ -2,10 +2,7 @@
 categories: Developer Tools
 date: 2022-01-22 21:55:00
 tags:
-- GitHub
 - Git
-- Large Files
-- Git LFS
 - Version Control
 title: Large Files on Github
 ---

@@ -4,8 +4,6 @@ date: 2023-09-15 20:04:00
 tags:
 - Spring Boot
 - REST
-- Path Variable
-- Request Parameter
 - API
 title: Spring Path variable & Request Parameter
 ---

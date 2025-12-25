@@ -4,11 +4,8 @@ date: 2024-12-24 09:45:00
 tags:
 - Nutrition
 - Food
-- Seeds
 - Grains
 - Millets
-- Legumes
-- Pulses
 - Guide
 title: Food Options - Understanding Seeds, Grains, Millets, Legumes & Pulses
 ---

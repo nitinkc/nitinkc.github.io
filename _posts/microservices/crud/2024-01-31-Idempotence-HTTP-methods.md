@@ -4,9 +4,6 @@ date: 2023-01-31 03:53:00
 tags:
 - Spring Boot
 - REST
-- Idempotence
-- HTTP Methods
-- API Design
 title: Idempotence & HTTP Methods - Designing RESTful URI's
 ---
 

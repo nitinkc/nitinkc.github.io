@@ -4,7 +4,6 @@ date: 2023-09-15 21:30:00
 tags:
 - Spring Boot
 - REST
-- DELETE
 - HTTP
 - API
 title: DELETE REST Calls

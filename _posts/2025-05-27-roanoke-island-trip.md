@@ -2,10 +2,7 @@
 categories: Travel
 date: 2025-05-27 05:00:00
 tags:
-- Roanoke
-- Kitty Hawk
 - USA
-- North Carolina
 title: Trip to Roanoke Islands and Kitty Hawk
 ---
 

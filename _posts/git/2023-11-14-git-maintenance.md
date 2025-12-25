@@ -2,8 +2,6 @@
 categories: Git
 date: 2023-11-14 20:30:00
 tags:
-- Maintenance
-- Cleanup
 - Optimization
 - Commands
 title: Git Maintenance & Clean-up

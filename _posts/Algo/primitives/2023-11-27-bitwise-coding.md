@@ -2,10 +2,7 @@
 categories: Algorithms
 date: 2023-11-27 08:30:00
 tags:
-- Bitwise
-- Operators
-- Bit Manipulation
-- Binary
+- Algorithms
 title: Bitwise Operators
 ---
 

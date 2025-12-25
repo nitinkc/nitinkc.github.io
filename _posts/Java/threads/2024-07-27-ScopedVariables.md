@@ -3,9 +3,7 @@ categories: Multithreading
 date: 2024-07-27 20:17:00
 tags:
 - Java
-- Scoped Value
 - Java 21
-- Thread-Local
 title: Scoped Value
 ---
 

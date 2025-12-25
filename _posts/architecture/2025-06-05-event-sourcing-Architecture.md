@@ -2,10 +2,7 @@
 categories: Architecture
 date: 2025-06-05 14:02:00
 tags:
-- Event Sourcing
 - CQRS
-- Events
-- Domain Driven Design
 title: Event Sourcing
 ---
 

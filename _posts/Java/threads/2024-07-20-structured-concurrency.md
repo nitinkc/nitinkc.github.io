@@ -3,7 +3,6 @@ categories: Multithreading
 date: 2024-07-20 20:17:00
 tags:
 - Java
-- Structured Concurrency
 - Java 21
 - Project Loom
 title: Structured Concurrency

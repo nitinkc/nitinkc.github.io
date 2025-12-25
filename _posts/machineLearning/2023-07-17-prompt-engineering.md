@@ -2,11 +2,7 @@
 categories: Machine Learning
 date: 2023-03-11 19:40:28
 tags:
-- AI
-- OpenAI
-- Prompt Engineering
-- ChatGPT
-- LLM
+- Machine Learning
 title: OpenAi and Prompt Engineering
 ---
 

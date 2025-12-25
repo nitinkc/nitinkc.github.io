@@ -6,7 +6,6 @@ tags:
 - Performance
 - Monitoring
 - Metrics
-- System Stats
 title: Java Systems Stats
 ---
 

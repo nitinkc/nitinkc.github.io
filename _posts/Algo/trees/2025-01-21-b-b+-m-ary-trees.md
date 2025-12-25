@@ -4,8 +4,6 @@ date: 2025-01-21 09:26:00
 tags:
 - Trees
 - B-Tree
-- B+ Tree
-- M-ary Tree
 - Data Structures
 title: B Trees, B+ Trees, m-ary/m-way Trees
 ---

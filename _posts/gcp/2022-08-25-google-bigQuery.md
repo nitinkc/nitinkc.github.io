@@ -2,8 +2,6 @@
 categories: GCP
 date: 2022-08-15 20:04:00
 tags:
-- BigQuery
-- Data Warehouse
 - SQL
 - Analytics
 title: 'Google BigQuery '

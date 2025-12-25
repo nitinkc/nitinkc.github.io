@@ -2,9 +2,7 @@
 categories: Java
 date: 2023-11-24 12:17:00
 tags:
-- SonarQube
 - Code Quality
-- Static Analysis
 - DevOps
 title: Sonarcube on local
 ---

@@ -2,8 +2,6 @@
 categories: Git
 date: 2020-05-19 19:14:00
 tags:
-- Submodules
-- Detached Head
 - Troubleshooting
 - Version Control
 title: Submodules & Detached Head Problem

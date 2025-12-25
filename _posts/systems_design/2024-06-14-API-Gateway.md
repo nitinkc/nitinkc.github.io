@@ -4,7 +4,6 @@ date: 2024-06-14 11:02:00
 tags:
 - API Gateway
 - Load Balancing
-- Routing
 - Authentication
 - Rate Limiting
 title: API Gateway

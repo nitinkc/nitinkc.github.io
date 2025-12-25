@@ -5,7 +5,6 @@ tags:
 - Database
 - Cassandra
 - NoSQL
-- Column Store
 - Distributed
 title: Cassandra - Column-Oriented Database
 ---

@@ -4,7 +4,6 @@ date: 2023-05-22 23:14:00
 tags:
 - Interview
 - Behavioral
-- Soft Skills
 - Communication
 title: Behavioural
 ---

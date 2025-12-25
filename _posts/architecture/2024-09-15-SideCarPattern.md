@@ -2,7 +2,6 @@
 categories: Architecture
 date: 2024-09-15 20:02:00
 tags:
-- Sidecar
 - Microservices
 - Design Patterns
 - Kubernetes

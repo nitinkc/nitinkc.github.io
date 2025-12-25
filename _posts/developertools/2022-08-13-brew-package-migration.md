@@ -3,7 +3,6 @@ categories: Developer Tools
 date: 2022-08-13 10:41:00
 tags:
 - MacOS
-- Homebrew
 - Package Manager
 - Migration
 - Setup

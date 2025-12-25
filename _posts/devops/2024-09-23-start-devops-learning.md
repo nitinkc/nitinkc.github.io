@@ -5,7 +5,6 @@ tags:
 - Learning
 - Tutorial
 - Getting Started
-- Beginner
 title: DevOps Learning - Starting point
 ---
 

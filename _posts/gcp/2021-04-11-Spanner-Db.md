@@ -5,7 +5,6 @@ tags:
 - Spanner
 - Database
 - Distributed
-- Cloud SQL
 title: Spanner Database
 ---
 

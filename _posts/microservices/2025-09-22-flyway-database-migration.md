@@ -3,10 +3,8 @@ categories: Microservices
 date: 2025-09-22 12:03:00
 tags:
 - Spring Boot
-- Flyway
 - Database
 - Migration
-- Versioning
 title: Database Migration with Flyway
 ---
 

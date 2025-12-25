@@ -2,8 +2,6 @@
 categories: Java
 date: 2021-10-13 21:55:00
 tags:
-- Optional
-- Null Safety
 - Java 8
 - Best Practices
 title: Optional Use cases

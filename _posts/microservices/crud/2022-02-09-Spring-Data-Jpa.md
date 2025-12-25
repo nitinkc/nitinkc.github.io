@@ -4,7 +4,6 @@ date: 2022-02-09 20:55:00
 tags:
 - Spring Boot
 - JPA
-- CRUD
 - REST
 - Database
 - Hibernate

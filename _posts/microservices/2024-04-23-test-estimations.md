@@ -4,7 +4,6 @@ date: 2024-04-23 21:00:00
 tags:
 - Testing
 - Estimation
-- QA
 - Planning
 title: Testing Estimations
 ---

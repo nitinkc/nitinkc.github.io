@@ -5,8 +5,6 @@ tags:
 - Sony
 - A7iii
 - Camera
-- Panning
-- Techniques
 title: Sony A7iii Camera Panning
 ---
 

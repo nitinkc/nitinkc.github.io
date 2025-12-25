@@ -1,10 +1,7 @@
 ---
 categories: Books
 tags:
-- Book
-- Phoenix Project
 - DevOps
-- IT Management
 ---
 
 # 📘 The Goal and the Theory of Constraints: 

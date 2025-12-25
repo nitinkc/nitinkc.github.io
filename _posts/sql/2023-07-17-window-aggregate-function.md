@@ -3,7 +3,6 @@ categories: SQL
 date: 2023-07-16 23:20:00
 tags:
 - Window Functions
-- Aggregate
 - Analytics
 - Advanced
 title: SQL Window Aggregate Functions

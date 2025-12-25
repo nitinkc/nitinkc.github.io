@@ -6,7 +6,6 @@ tags:
 - Lambda
 - Streams
 - Java 8
-- Immutability
 title: Functional Programming Concepts
 ---
 

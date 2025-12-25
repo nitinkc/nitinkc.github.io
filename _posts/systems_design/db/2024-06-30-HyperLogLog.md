@@ -3,8 +3,6 @@ categories: System Design
 date: 2024-06-30 11:02:00
 tags:
 - Algorithms
-- HyperLogLog
-- Cardinality
 - Probabilistic
 title: HyperLogLog
 ---

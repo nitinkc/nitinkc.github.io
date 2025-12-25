@@ -8,7 +8,6 @@ tags:
 - Reference
 - Documentation
 - Syntax
-- Writing
 title: Markdown Reference
 ---
 

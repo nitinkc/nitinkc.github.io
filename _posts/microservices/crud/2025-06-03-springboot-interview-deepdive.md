@@ -5,7 +5,6 @@ tags:
 - Spring Boot
 - Interview
 - Questions
-- Deep Dive
 - Preparation
 title: SpringBoot Interview - Deep Dive
 ---

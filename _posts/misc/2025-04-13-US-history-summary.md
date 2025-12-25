@@ -4,8 +4,6 @@ date: 2025-04-13 16:50:00
 tags:
 - USA
 - Government
-- Politics
-- Timeline
 title: US History timeline and Government
 ---
 

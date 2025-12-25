@@ -2,9 +2,7 @@
 categories: Java
 date: 2023-11-24 23:23:00
 tags:
-- Exceptions
 - Error Handling
-- Try-Catch
 - Best Practices
 title: Exceptions in Java
 ---

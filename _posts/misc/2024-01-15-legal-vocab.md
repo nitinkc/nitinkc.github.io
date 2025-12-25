@@ -2,9 +2,6 @@
 categories: Legal
 date: 2025-01-15 10:15:00
 tags:
-- Law
-- Vocabulary
-- Terms
 - Reference
 title: Legal Vocabulary
 ---

@@ -2,11 +2,7 @@
 categories: Electronics
 date: 2024-11-03 01:00:00
 tags:
-- Soft Starter
-- Motor Control
-- Power
 - Circuit
-- Inrush Current
 title: Soft Starter
 ---
 

@@ -5,8 +5,6 @@ tags:
 - Deployment
 - CI/CD
 - DevOps
-- Blue-Green
-- Canary
 title: Deployments
 ---
 

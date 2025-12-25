@@ -4,7 +4,6 @@ date: 2023-09-15 02:15:00
 tags:
 - Spring Boot
 - REST
-- POST
 - HTTP
 - API
 title: POST API

@@ -3,8 +3,6 @@ categories: Multithreading
 date: 2024-08-20 00:17:00
 tags:
 - Java
-- Concurrent Collections
-- Thread-Safe
 - Concurrency
 title: Java Concurrent Collections
 ---

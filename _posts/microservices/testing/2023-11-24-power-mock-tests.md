@@ -3,7 +3,6 @@ categories: Testing
 date: 2023-11-24 03:53:00
 tags:
 - Spring Boot
-- PowerMock
 - Mockito
 - Unit Testing
 - Guide

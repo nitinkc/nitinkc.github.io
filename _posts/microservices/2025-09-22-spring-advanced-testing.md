@@ -6,7 +6,6 @@ tags:
 - Testing
 - JUnit
 - Mockito
-- Integration Testing
 title: Advanced Testing in Spring Boot
 ---
 

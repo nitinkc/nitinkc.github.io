@@ -1,382 +1,382 @@
-path,title,current_categories,proposed_categories,current_tags,proposed_tags
-_posts/2025-03-07-denver-nashville-trip.md,Trip from Denver to Nashville,Miscellaneous,Travel,Miscellaneous,Denver;Nashville;USA
-_posts/2025-05-27-roanoke-island-trip.md,Trip to Roanoke Islands and Kitty Hawk,Miscellaneous,Travel,Miscellaneous,Roanoke;Kitty Hawk;USA;North Carolina
-_posts/2024-09-23-gcc-cross-compiler.md,GCC Cross Compiler - Mac installation,Miscellaneous,Developer Tools,Miscellaneous,GCC;Compiler;MacOS;Installation
-_posts/2024-09-14-os-kernal.md,OS Kernal,Miscellaneous,Operating Systems,Miscellaneous,OS;Kernel;Computer Science
-_posts/2025-02-01-solo-trip.md,Solo trip - Denver to San Fransisco,Miscellaneous,Travel,Miscellaneous,Solo;Denver;San Francisco;USA
-_posts/microservices/2024-11-27-webhooks.md,"Complete Guide to SpringBoot Webhooks: Implementation, Security & Best Practices",Microservices,Microservices,Spring Boot,Spring Boot;Webhooks;Security;API;Guide
-_posts/microservices/2024-09-12-spring-profile.md,SpringBoot Profile,Microservices,Microservices,Spring Boot,Spring Boot;Configuration;Profiles
-_posts/microservices/2023-02-21-mapstruct-mapper-details.md,MapStruct Mapper,Microservices,Microservices,Spring Boot,Spring Boot;MapStruct;Object Mapping;DTOs
-_posts/microservices/2025-09-22-spring-advanced-testing.md,Advanced Testing in Spring Boot,Spring;Microservices,Microservices,Testing;JUnit,Spring Boot;Testing;JUnit;Mockito;Integration Testing
-_posts/microservices/2025-09-22-ssl-certificates-keystores-complete-guide.md,"Complete Guide to SSL/TLS Certificates, Keystores & Trust Management",Microservices,Microservices,Microservices,Security;SSL;TLS;Certificates;Keystore;Guide
-_posts/microservices/2019-11-20-zipkin-distributed-tracing.md,Zipkin Distributed Tracing Server,Microservices,Microservices,Microservices,Spring Boot;Zipkin;Distributed Tracing;Observability
-_posts/microservices/2024-09-12-spring-aop.md,Aspect Oriented Programming (AOP),Microservices,Microservices,Spring Boot,Spring Boot;AOP;Cross-Cutting Concerns
-_posts/microservices/2024-07-15-CommandLineRunner.md,CommandLineRunner - Spring Boot,Microservices,Microservices,Spring Boot,Spring Boot;CommandLineRunner;Initialization
-_posts/microservices/2022-10-11-gradle-build-tree.md,Gradle - build & tool,Microservices,Microservices,Spring Boot,Build Tools;Gradle;Dependencies
-_posts/microservices/2024-11-27-websocket-springboot.md,Complete Guide to SpringBoot WebSockets: Real-time Communication Patterns,Microservices,Microservices,Spring Boot;Real-time,Spring Boot;WebSockets;Real-time;Bidirectional Communication;Guide
-_posts/microservices/2023-02-19-jackson-mapper-details.md,Jackson Mapper,Microservices,Microservices,Spring Boot,Spring Boot;Jackson;JSON;Serialization
-_posts/microservices/2025-09-22-docker-spring-boot.md,Containerizing Spring Boot with Docker,Spring;Microservices,Microservices,Spring,Spring Boot;Docker;Containers;Deployment
-_posts/microservices/2019-11-22-designing-microservice.md,Designing a microservice,Microservices,Microservices,Spring Boot,Spring Boot;Architecture;Design Patterns
-_posts/microservices/2025-09-22-spring-webflux-reactive.md,Reactive Programming with Spring WebFlux,Spring;Microservices,Microservices,Spring,Spring Boot;WebFlux;Reactive;Non-Blocking
-_posts/microservices/2025-09-22-spring-security-concepts.md,Spring Security Concepts,Spring;Microservices,Microservices,Spring,Spring Boot;Security;Authentication;Authorization
-_posts/microservices/2022-02-10-dependency-injection-concepts.md,Dependency Injection,Microservices,Microservices,Spring Boot,Spring Boot;Dependency Injection;IoC;Design Patterns
-_posts/microservices/2024-04-23-test-estimations.md,Testing Estimations,Microservices,Microservices,Spring Boot,Testing;Estimation;QA;Planning
-_posts/microservices/2023-09-15-spring-Swagger-Documentation.md,Swagger Documentations,Microservices,Microservices,CRUD,Spring Boot;Swagger;OpenAPI;API Documentation
-_posts/microservices/2019-11-22-spring-cloud-config-server.md,Spring Config Client,Microservices,Microservices,Spring Boot,Spring Boot;Spring Cloud;Configuration;Config Server
-_posts/microservices/2025-09-22-flyway-database-migration.md,Database Migration with Flyway,Spring;Microservices,Microservices,Database,Spring Boot;Flyway;Database;Migration;Versioning
-_posts/microservices/2024-02-23-spring-beans.md,Spring Bean Scope,Microservices,Microservices,Microservices,Spring Boot;Beans;Scope;IoC Container
-_posts/microservices/2024-03-11-redis-cache.md,Caching with Redis,Microservices,Microservices,CRUD,Spring Boot;Redis;Caching;Performance
-_posts/microservices/2024-07-28-springboot-with-virtualThreads.md,SpringBoot with Virtual Threads,Microservices,Microservices,Spring Boot,Spring Boot;Virtual Threads;Concurrency;Java 21
-_posts/microservices/2024-04-19-ssl-certificate-issue.md,ssl Security Certificate Issue,Microservices,Microservices,Spring Boot,Spring Boot;SSL;Security;Certificates;Troubleshooting
-_posts/microservices/2022-07-27-interface-default-method.md,Default method in Interface,Microservices,Microservices,Java,Java;Interfaces;Default Methods;Java 8
-_posts/microservices/2024-03-06-rest-template.md,Rest Template,Microservices,Microservices,CRUD,Spring Boot;REST;HTTP Client;RestTemplate
-_posts/microservices/2019-11-20-spring-cloud-sleuth.md,Spring Cloud Sleuth,Microservices,Microservices,Spring Boot,Spring Boot;Spring Cloud;Sleuth;Distributed Tracing
-_posts/microservices/2024-07-18-Prometheus-micrometer.md,"Complete Guide to Prometheus & Micrometer: Metrics, Monitoring & Observability",Microservices,Microservices,Spring Boot,Spring Boot;Prometheus;Micrometer;Metrics;Monitoring;Observability;Guide
-_posts/microservices/2024-12-05-springboot-startup.md,Spring Boot Startup Process,Microservices,Microservices,Spring Boot,Spring Boot;Startup;Lifecycle;Initialization
-_posts/microservices/2024-11-27-sse-springboot.md,Complete Guide to SpringBoot Server-Sent Events (SSE): Real-time Server Push,Microservices,Microservices,Spring Boot;Real-time,Spring Boot;SSE;Server-Sent Events;Real-time;Streaming;Guide
-_posts/microservices/2022-02-10-spring-transactions.md,Spring Transactions,Microservices,Microservices,Spring Boot,Spring Boot;Transactions;Database;ACID
-_posts/microservices/2023-10-24-essential-kafka.md,Kafka Essentials,Microservices,Microservices,Microservices,Kafka;Message Broker;Event Streaming;Real-time
-_posts/microservices/2025-01-17-spring-security.md,Spring Security,Microservices,Microservices,Spring Boot,Spring Boot;Security;Authentication;Authorization;OAuth
-_posts/microservices/2024-04-25-GCP-logs.md,Gcp Logs,Microservices,Microservices,Spring Boot,Spring Boot;GCP;Logging;Cloud Logging;Observability
-_posts/microservices/2024-04-04-spring-actuator.md,Spring Actuator,Microservices,Microservices,Spring Boot,Spring Boot;Actuator;Monitoring;Health Checks;Metrics
-_posts/microservices/2024-07-25-caffeine-cache.md,Caffeine Cache,Microservices,Microservices,Spring Boot,Spring Boot;Caffeine;Caching;Performance;In-Memory
-_posts/microservices/2024-03-13-spring-scheduler.md,Spring Scheduler,Microservices,Microservices,Spring Boot,Spring Boot;Scheduler;Cron;Task Scheduling
-_posts/microservices/2025-09-22-resilience4j-spring-boot.md,Resilience and Fault Tolerance with Resilience4J,Spring;Microservices,Microservices,Spring,Spring Boot;Resilience4j;Circuit Breaker;Fault Tolerance;Retry
-_posts/microservices/2022-02-10-hibernate.md,Hibernate,Microservices,Microservices,Spring Boot,Spring Boot;Hibernate;ORM;JPA;Database
-_posts/systems_design/2024-06-13-ContainersVsVirtualMc.md,Containers vs Virtual Machine,System Design,System Design,System Design,Containers;Virtualization;Docker;Infrastructure
+path,title,current_categories,current_tags,proposed_categories,proposed_tags
+_posts/2025-03-07-denver-nashville-trip.md,Trip from Denver to Nashville,Miscellaneous,Miscellaneous,Travel,Denver;USA
+_posts/2025-05-27-roanoke-island-trip.md,Trip to Roanoke Islands and Kitty Hawk,Miscellaneous,Miscellaneous,Travel,USA
+_posts/2024-09-23-gcc-cross-compiler.md,GCC Cross Compiler - Mac installation,Miscellaneous,Miscellaneous,Developer Tools,Compiler;MacOS;Installation
+_posts/2024-09-14-os-kernal.md,OS Kernal,Miscellaneous,Miscellaneous,Operating Systems,Operating Systems
+_posts/2025-02-01-solo-trip.md,Solo trip - Denver to San Fransisco,Miscellaneous,Miscellaneous,Travel,Denver;USA
+_posts/microservices/2024-11-27-webhooks.md,"Complete Guide to SpringBoot Webhooks: Implementation, Security & Best Practices",Microservices,Spring Boot,Microservices,Spring Boot;Webhooks;Security;API;Guide
+_posts/microservices/2024-09-12-spring-profile.md,SpringBoot Profile,Microservices,Spring Boot,Microservices,Spring Boot;Configuration
+_posts/microservices/2023-02-21-mapstruct-mapper-details.md,MapStruct Mapper,Microservices,Spring Boot,Microservices,Spring Boot
+_posts/microservices/2025-09-22-spring-advanced-testing.md,Advanced Testing in Spring Boot,Spring;Microservices,Testing;JUnit,Microservices,Spring Boot;Testing;JUnit;Mockito
+_posts/microservices/2025-09-22-ssl-certificates-keystores-complete-guide.md,"Complete Guide to SSL/TLS Certificates, Keystores & Trust Management",Microservices,Microservices,Microservices,Security;SSL;TLS;Certificates;Guide
+_posts/microservices/2019-11-20-zipkin-distributed-tracing.md,Zipkin Distributed Tracing Server,Microservices,Microservices,Microservices,Spring Boot;Distributed Tracing;Observability
+_posts/microservices/2024-09-12-spring-aop.md,Aspect Oriented Programming (AOP),Microservices,Spring Boot,Microservices,Spring Boot
+_posts/microservices/2024-07-15-CommandLineRunner.md,CommandLineRunner - Spring Boot,Microservices,Spring Boot,Microservices,Spring Boot;Initialization
+_posts/microservices/2022-10-11-gradle-build-tree.md,Gradle - build & tool,Microservices,Spring Boot,Microservices,Build Tools;Gradle;Dependencies
+_posts/microservices/2024-11-27-websocket-springboot.md,Complete Guide to SpringBoot WebSockets: Real-time Communication Patterns,Microservices,Spring Boot;Real-time,Microservices,Spring Boot;WebSockets;Real-time;Guide
+_posts/microservices/2023-02-19-jackson-mapper-details.md,Jackson Mapper,Microservices,Spring Boot,Microservices,Spring Boot;Serialization
+_posts/microservices/2025-09-22-docker-spring-boot.md,Containerizing Spring Boot with Docker,Spring;Microservices,Spring,Microservices,Spring Boot;Docker;Containers;Deployment
+_posts/microservices/2019-11-22-designing-microservice.md,Designing a microservice,Microservices,Spring Boot,Microservices,Spring Boot;Architecture;Design Patterns
+_posts/microservices/2025-09-22-spring-webflux-reactive.md,Reactive Programming with Spring WebFlux,Spring;Microservices,Spring,Microservices,Spring Boot;Reactive;Non-Blocking
+_posts/microservices/2025-09-22-spring-security-concepts.md,Spring Security Concepts,Spring;Microservices,Spring,Microservices,Spring Boot;Security;Authentication;Authorization
+_posts/microservices/2022-02-10-dependency-injection-concepts.md,Dependency Injection,Microservices,Spring Boot,Microservices,Spring Boot;Design Patterns
+_posts/microservices/2024-04-23-test-estimations.md,Testing Estimations,Microservices,Spring Boot,Microservices,Testing;Estimation;Planning
+_posts/microservices/2023-09-15-spring-Swagger-Documentation.md,Swagger Documentations,Microservices,CRUD,Microservices,Spring Boot
+_posts/microservices/2019-11-22-spring-cloud-config-server.md,Spring Config Client,Microservices,Spring Boot,Microservices,Spring Boot;Spring Cloud;Configuration
+_posts/microservices/2025-09-22-flyway-database-migration.md,Database Migration with Flyway,Spring;Microservices,Database,Microservices,Spring Boot;Database;Migration
+_posts/microservices/2024-02-23-spring-beans.md,Spring Bean Scope,Microservices,Microservices,Microservices,Spring Boot
+_posts/microservices/2024-03-11-redis-cache.md,Caching with Redis,Microservices,CRUD,Microservices,Spring Boot;Redis;Caching;Performance
+_posts/microservices/2024-07-28-springboot-with-virtualThreads.md,SpringBoot with Virtual Threads,Microservices,Spring Boot,Microservices,Spring Boot;Virtual Threads;Concurrency;Java 21
+_posts/microservices/2024-04-19-ssl-certificate-issue.md,ssl Security Certificate Issue,Microservices,Spring Boot,Microservices,Spring Boot;SSL;Security;Certificates;Troubleshooting
+_posts/microservices/2022-07-27-interface-default-method.md,Default method in Interface,Microservices,Java,Microservices,Java;Java 8
+_posts/microservices/2024-03-06-rest-template.md,Rest Template,Microservices,CRUD,Microservices,Spring Boot;REST
+_posts/microservices/2019-11-20-spring-cloud-sleuth.md,Spring Cloud Sleuth,Microservices,Spring Boot,Microservices,Spring Boot;Spring Cloud;Distributed Tracing
+_posts/microservices/2024-07-18-Prometheus-micrometer.md,"Complete Guide to Prometheus & Micrometer: Metrics, Monitoring & Observability",Microservices,Spring Boot,Microservices,Spring Boot;Metrics;Monitoring;Observability;Guide
+_posts/microservices/2024-12-05-springboot-startup.md,Spring Boot Startup Process,Microservices,Spring Boot,Microservices,Spring Boot;Initialization
+_posts/microservices/2024-11-27-sse-springboot.md,Complete Guide to SpringBoot Server-Sent Events (SSE): Real-time Server Push,Microservices,Spring Boot;Real-time,Microservices,Spring Boot;Real-time;Guide
+_posts/microservices/2022-02-10-spring-transactions.md,Spring Transactions,Microservices,Spring Boot,Microservices,Spring Boot;Transactions;Database;ACID
+_posts/microservices/2023-10-24-essential-kafka.md,Kafka Essentials,Microservices,Microservices,Microservices,Kafka;Real-time
+_posts/microservices/2025-01-17-spring-security.md,Spring Security,Microservices,Spring Boot,Microservices,Spring Boot;Security;Authentication;Authorization;OAuth
+_posts/microservices/2024-04-25-GCP-logs.md,Gcp Logs,Microservices,Spring Boot,Microservices,Spring Boot;GCP;Logging;Observability
+_posts/microservices/2024-04-04-spring-actuator.md,Spring Actuator,Microservices,Spring Boot,Microservices,Spring Boot;Monitoring;Metrics
+_posts/microservices/2024-07-25-caffeine-cache.md,Caffeine Cache,Microservices,Spring Boot,Microservices,Spring Boot;Caching;Performance;In-Memory
+_posts/microservices/2024-03-13-spring-scheduler.md,Spring Scheduler,Microservices,Spring Boot,Microservices,Spring Boot
+_posts/microservices/2025-09-22-resilience4j-spring-boot.md,Resilience and Fault Tolerance with Resilience4J,Spring;Microservices,Spring,Microservices,Spring Boot;Fault Tolerance
+_posts/microservices/2022-02-10-hibernate.md,Hibernate,Microservices,Spring Boot,Microservices,Spring Boot;Hibernate;JPA;Database
+_posts/systems_design/2024-06-13-ContainersVsVirtualMc.md,Containers vs Virtual Machine,System Design,System Design,System Design,Containers;Docker;Infrastructure
 _posts/systems_design/2024-01-20-Consistency-in-Distributed-systems.md,Data Consistency Levels,System Design,System Design,System Design,Consistency;Distributed Systems;CAP Theorem;ACID
-_posts/systems_design/2024-07-06-zookeeper.md,Zookeeper,System Design,System Design,System Design,Zookeeper;Coordination;Distributed Systems;Apache
+_posts/systems_design/2024-07-06-zookeeper.md,Zookeeper,System Design,System Design,System Design,Distributed Systems
 _posts/systems_design/2024-06-13-System-design-drills.md,System Design Drills,System Design,System Design,System Design,Interview Preparation;Practice;Design Patterns
 _posts/systems_design/2024-09-16-monitoringLogging.md,Monitoring & Logging,System Design,System Design,System Design,Monitoring;Logging;Observability;Metrics
-_posts/systems_design/2024-12-21-DAU.md,Daily Active Users - Approximation,System Design,System Design,System Design,Metrics;DAU;Analytics;Estimation
-_posts/systems_design/2024-06-13-Distributed-messaging.md,Distributed Messaging,System Design,System Design,System Design,Messaging;Message Queue;Kafka;RabbitMQ;Distributed Systems
-_posts/systems_design/2024-06-17-Deployments.md,Deployments,System Design,System Design,System Design,Deployment;CI/CD;DevOps;Blue-Green;Canary
+_posts/systems_design/2024-12-21-DAU.md,Daily Active Users - Approximation,System Design,System Design,System Design,Metrics;Analytics;Estimation
+_posts/systems_design/2024-06-13-Distributed-messaging.md,Distributed Messaging,System Design,System Design,System Design,Kafka;Distributed Systems
+_posts/systems_design/2024-06-17-Deployments.md,Deployments,System Design,System Design,System Design,Deployment;CI/CD;DevOps
 _posts/systems_design/2024-06-17-Distributed-Systems.md,Distributed Systems,System Design,System Design,System Design,Distributed Systems;Architecture;Scalability;Fault Tolerance
 _posts/systems_design/2024-12-21-DB-storage-requirements.md,Database Requirements Estimation,System Design,System Design,System Design,Database;Storage;Estimation;Capacity Planning
 _posts/systems_design/2024-01-15-Back-of-the-envelope-estimations.md,Back of the envelop estimations,System Design,System Design,System Design,Estimation;Capacity Planning;Scalability;Interview
-_posts/systems_design/2024-06-17-Distributed-Computations.md,Distributed Computations,System Design,System Design,System Design,Distributed Computing;MapReduce;Hadoop;Spark;Processing
-_posts/systems_design/2021-01-31-scaling.md,Scaling Vertical vs Horizontal,System Design,System Design,System Design,Scalability;Horizontal Scaling;Vertical Scaling;Performance
+_posts/systems_design/2024-06-17-Distributed-Computations.md,Distributed Computations,System Design,System Design,System Design,System Design
+_posts/systems_design/2021-01-31-scaling.md,Scaling Vertical vs Horizontal,System Design,System Design,System Design,Scalability;Performance
 _posts/systems_design/2025-05-03-systems-design-plan.md,System Design Plan,System Design,System Design,System Design,Planning;Strategy;Interview;Methodology
-_posts/systems_design/2024-06-14-API-Gateway.md,API Gateway,System Design,System Design,System Design,API Gateway;Load Balancing;Routing;Authentication;Rate Limiting
-_posts/systems_design/2024-06-14-LiveStreaming.md,Live Streaming,System Design,System Design,System Design,Live Streaming;Video;CDN;Real-time;Media
-_posts/systems_design/2024-07-08-paxos.md,Paxos,System Design,System Design,System Design,Paxos;Consensus;Distributed Systems;Algorithms
-_posts/systems_design/2024-06-14-ScanToPay.md,Scan to Pay,System Design,System Design,System Design,Payment;QR Code;FinTech;Mobile Payments
-_posts/systems_design/2024-06-29-TechStack.md,Tech Stack,System Design,System Design,System Design,Technology Stack;Architecture;Frameworks;Tools
-_posts/systems_design/2024-06-21-bloom-filters.md,Bloom Filters,System Design,System Design,System Design,Bloom Filter;Data Structures;Probabilistic;Space-Efficient
-_posts/systems_design/2024-06-14-ConsistentHashing.md,Consistent Hashing,System Design,System Design,System Design,Consistent Hashing;Load Balancing;Distributed Systems;Partitioning
-_posts/systems_design/2024-06-17-CAP-Theorem.md,CAP Theorem,System Design,System Design,System Design,CAP Theorem;Consistency;Availability;Partition Tolerance;Distributed Systems
-_posts/systems_design/2024-12-21-Network-requirements.md,Network Requirements Estimation,System Design,System Design,System Design,Network;Bandwidth;Estimation;Capacity Planning
-_posts/systems_design/2024-01-21-Rate-limiting.md,Rate Limiting,System Design,System Design,System Design,Rate Limiting;Throttling;API Gateway;Security;DDoS Protection
-_posts/misc/2025-04-09-dressing-clothing.md,Dressing Clothing,Miscellaneous,Lifestyle,Miscellaneous,Fashion;Clothing;Style;Personal
-_posts/misc/2025-04-13-US-history-summary.md,US History timeline and Government,Miscellaneous,History,Miscellaneous,USA;Government;Politics;Timeline
-_posts/misc/2022-01-17-useful-excel-formule.md,Useful MS Excel Tools,Miscellaneous,Productivity,Miscellaneous,Excel;Office;Tools;Formulas
-_posts/misc/2016-04-14-linux-files.md,Linux Files & Commands,Miscellaneous,Developer Tools,Developer tools,Linux;Commands;CLI;Terminal;Unix
-_posts/misc/2021-02-14-Mahabharatha-family-tree.md,Mahabharat Family tree,Miscellaneous,Culture,Miscellaneous,Mahabharat;Indian Mythology;Family Tree;History
-_posts/misc/2022-01-25-SonyA7iii-Camera-Panning.md,Sony A7iii Camera Panning,Miscellaneous,Photography,Photography,Sony;A7iii;Camera;Panning;Techniques
-_posts/misc/2022-11-24-Shodashah-Sanskara.md,षोडशः संस्कार (The 16 Sanskars),Miscellaneous,Culture,Miscellaneous,Hindu;Sanskar;Rituals;Indian Culture;Traditions
-_posts/misc/2023-03-05-Trading.md,Trading,Miscellaneous,Finance,Miscellaneous,Trading;Stocks;Investment;Markets
-_posts/misc/2024-06-30-Shlokas.md,Shloka - ॐ ॐ ॐ,Miscellaneous,Culture,Miscellaneous,Shlokas;Sanskrit;Hindu;Prayer;Mantras
+_posts/systems_design/2024-06-14-API-Gateway.md,API Gateway,System Design,System Design,System Design,API Gateway;Load Balancing;Authentication;Rate Limiting
+_posts/systems_design/2024-06-14-LiveStreaming.md,Live Streaming,System Design,System Design,System Design,Real-time
+_posts/systems_design/2024-07-08-paxos.md,Paxos,System Design,System Design,System Design,Distributed Systems;Algorithms
+_posts/systems_design/2024-06-14-ScanToPay.md,Scan to Pay,System Design,System Design,System Design,System Design
+_posts/systems_design/2024-06-29-TechStack.md,Tech Stack,System Design,System Design,System Design,Architecture;Tools
+_posts/systems_design/2024-06-21-bloom-filters.md,Bloom Filters,System Design,System Design,System Design,Data Structures;Probabilistic
+_posts/systems_design/2024-06-14-ConsistentHashing.md,Consistent Hashing,System Design,System Design,System Design,Load Balancing;Distributed Systems;Partitioning
+_posts/systems_design/2024-06-17-CAP-Theorem.md,CAP Theorem,System Design,System Design,System Design,CAP Theorem;Consistency;Distributed Systems
+_posts/systems_design/2024-12-21-Network-requirements.md,Network Requirements Estimation,System Design,System Design,System Design,Estimation;Capacity Planning
+_posts/systems_design/2024-01-21-Rate-limiting.md,Rate Limiting,System Design,System Design,System Design,Rate Limiting;API Gateway;Security
+_posts/misc/2025-04-09-dressing-clothing.md,Dressing Clothing,Miscellaneous,Miscellaneous,Lifestyle,Lifestyle
+_posts/misc/2025-04-13-US-history-summary.md,US History timeline and Government,Miscellaneous,Miscellaneous,History,USA;Government
+_posts/misc/2022-01-17-useful-excel-formule.md,Useful MS Excel Tools,Miscellaneous,Miscellaneous,Productivity,Tools
+_posts/misc/2016-04-14-linux-files.md,Linux Files & Commands,Miscellaneous,Developer tools,Developer Tools,Linux;Commands;CLI;Terminal;Unix
+_posts/misc/2021-02-14-Mahabharatha-family-tree.md,Mahabharat Family tree,Miscellaneous,Miscellaneous,Culture,History
+_posts/misc/2022-01-25-SonyA7iii-Camera-Panning.md,Sony A7iii Camera Panning,Miscellaneous,Photography,Photography,Sony;A7iii;Camera
+_posts/misc/2022-11-24-Shodashah-Sanskara.md,षोडशः संस्कार (The 16 Sanskars),Miscellaneous,Miscellaneous,Culture,Hindu
+_posts/misc/2023-03-05-Trading.md,Trading,Miscellaneous,Miscellaneous,Finance,Stocks;Investment
+_posts/misc/2024-06-30-Shlokas.md,Shloka - ॐ ॐ ॐ,Miscellaneous,Miscellaneous,Culture,Hindu
 _posts/misc/2022-01-25-SonyA7iii-Camera-Settings.md,Sony A7iii Camera Settings,Miscellaneous,Photography,Photography,Sony;A7iii;Camera;Settings;Configuration
-_posts/misc/2024-09-19-book-binding-basics.md,Book Binding,Miscellaneous,Crafts,Miscellaneous,Bookbinding;DIY;Books;Manual Arts
-_posts/misc/2023-05-22-javascript.md,javascript,Miscellaneous,Programming,Miscellaneous,JavaScript;Web Development;Frontend
-_posts/misc/2024-09-09-rocks-geography.md,Rocks,Miscellaneous,Science,Miscellaneous,Geology;Rocks;Earth Science;Geography
-_posts/misc/2025-05-15-the-project-phoenix.md,,Miscellaneous,Books,Miscellaneous,Book;Phoenix Project;DevOps;IT Management
-_posts/misc/2022-03-27-Gardening.md,Gardening,Miscellaneous,Hobbies,Miscellaneous,Gardening;Plants;Outdoor;Hobby;Landscaping
-_posts/misc/2024-01-15-legal-vocab.md,Legal Vocabulary,Miscellaneous,Legal,Miscellaneous,Law;Vocabulary;Terms;Reference
-_posts/misc/2025-05-13-interview-intro.md,Intro,Miscellaneous,Career,Miscellaneous,Interview;Introduction;Professional
-_posts/misc/2024-06-17-behavioural.md,Behavioural,Miscellaneous,Career,Miscellaneous,Interview;Behavioral;Soft Skills;Communication
-_posts/databases/2021-04-16-MySql-to-Spanner-migration.md,MySql to Spanner Migration using HarbourBridge,Database,Database,Google Cloud Platform,MySQL;Spanner;GCP;Migration;HarbourBridge
-_posts/databases/2023-05-27-import-mysql-data-dump.md,Importing MySql data dump from a sql file,Database,Database,Database,MySQL;SQL;Import;Data Migration
-_posts/databases/2025-07-09-databricks.md,Azure Databricks & Apache Spark,Database,Database,Database,Databricks;Azure;Apache Spark;Big Data;Analytics
-_posts/devops/2025-04-29-kubernetes-concepts.md,Kubernetes Concepts,DevOps,DevOps,DevOps,Kubernetes;K8s;Containers;Orchestration;Cloud Native
-_posts/devops/2025-04-29-Kubernetes-commands.md,Kubernetes Commands,DevOps;GitOps,DevOps,GitOps,Kubernetes;K8s;Commands;kubectl;CLI
-_posts/devops/2023-10-04-docker-commands.md,Docker commands,DevOps;GitOps,DevOps,GitOps,Docker;Containers;Commands;CLI;Containerization
-_posts/devops/2025-04-29-kubernetes-on-GKE.md,Kubernetes on Google Kubernetes Engine (GKE),DevOps,DevOps,GCP,Kubernetes;GKE;GCP;Google Cloud;K8s;Managed Service
-_posts/devops/2024-12-08-terraform.md,Terraform,DevOps;GitOps,DevOps,GitOps,Terraform;IaC;Infrastructure as Code;Automation;Provisioning
-_posts/devops/2024-09-24-jenkins.md,Jenkins,DevOps;GitOps,DevOps,GitOps,Jenkins;CI/CD;Automation;Build;Pipeline
-_posts/devops/2024-09-23-start-devops-learning.md,DevOps Learning - Starting point,DevOps;GitOps,DevOps,GitOps,Learning;Tutorial;Getting Started;Beginner
-_posts/devops/2025-04-29-deployment-processes-devops.md,Deployment process - From Dev to Release,DevOps,DevOps,DevOps,Deployment;CI/CD;Release Management;Pipeline;SDLC
-_posts/devops/2024-09-18-gitlab-cd.md,Gitlab,DevOps;GitOps,DevOps,GitOps,GitLab;CI/CD;Git;Pipeline
-_posts/devops/2024-09-18-flux-release.md,Flux Release,DevOps;GitOps,DevOps,GitOps,Flux;GitOps;CD;Kubernetes;Continuous Delivery
-_posts/devops/2024-09-17-git-ops.md,Git Ops,DevOps;GitOps,DevOps,GitOps,GitOps;Infrastructure;Git;Automation;Kubernetes
-_posts/devops/2024-09-17-helm-charts.md,Helm Charts with minikube,DevOps;GitOps,DevOps,GitOps,Helm;Kubernetes;Charts;Package Manager;Minikube
-_posts/devops/2024-09-17-terraform.md,Terraform,DevOps;GitOps,DevOps,GitOps,Terraform;IaC;Infrastructure as Code;Automation;Provisioning
-_posts/python/2023-03-13-python.md,Python Concepts,Machine Learning;Python,Python,Machine Learning,Programming;Concepts;Fundamentals
-_posts/health/2024-12-24-veg-healthy-snacks.md,Veggie snacks,Health,Health,Health,Snacks;Vegetarian;Healthy Eating;Recipes
-_posts/health/2024-12-24-veg-stock.md,Vegetable Stock: Best Preparation Methods,Health,Health,Health,Cooking;Vegetable Stock;Recipes;Preparation;Kitchen Basics
-_posts/health/2025-01-07-healthy-breakfast.md,Breakfast Healthy,Health,Health,Health,Breakfast;Nutrition;Healthy Eating;Meal Planning
-_posts/health/2025-01-07-strength-training.md,Strength Training - Gym - Muscle Building Plan,Health,Health,Health,Fitness;Strength Training;Gym;Muscle Building;Workout;Exercise
-_posts/health/2024-12-20-health-drinks.md,Health Drinks,Health,Health,Health,Drinks;Beverages;Nutrition;Healthy;Recipes
-_posts/health/2025-01-16-Yog&Pranayam.md,Pranayama - प्राणायाम,Health,Health,Health,Yoga;Pranayama;Breathing;Meditation;Wellness
-_posts/health/2024-12-24-food-options.md,"Food Options - Understanding Seeds, Grains, Millets, Legumes & Pulses",Health,Health,Health,Nutrition;Food;Seeds;Grains;Millets;Legumes;Pulses;Guide
-_posts/health/2024-12-24-salad-dressings.md,Salad-dressings & Pairings - Sugar free,Health,Health,Health,Salad;Dressing;Sugar-Free;Healthy;Recipes;Cooking
-_posts/health/2025-01-07-workout-meals.md,Pre/Post Workout Meals,Health,Health,Health,Fitness;Nutrition;Workout;Meal Planning;Pre-Workout;Post-Workout
-_posts/health/2024-12-24-health-science.md,Nutrient Guide for a Healthier Diet,Health,Health,Health,Nutrition;Nutrients;Diet;Health Science;Guide;Wellness
-_posts/health/2024-12-24-soups.md,Soups from Veggie Stock,Health,Health,Health,Soups;Vegetable Stock;Recipes;Cooking;Healthy
-_posts/health/2025-01-07-rotis.md,Roti,Health,Health,Health,Roti;Indian Food;Flatbread;Recipes;Cooking
-_posts/health/2025-01-26-Yog.md,"Yoga - योग, योगासन, योगाभ्यास",Health,Health,Health,Yoga;Asanas;Exercise;Wellness;Meditation
+_posts/misc/2024-09-19-book-binding-basics.md,Book Binding,Miscellaneous,Miscellaneous,Crafts,DIY;Books
+_posts/misc/2023-05-22-javascript.md,javascript,Miscellaneous,Miscellaneous,Programming,JavaScript;Web Development;Frontend
+_posts/misc/2024-09-09-rocks-geography.md,Rocks,Miscellaneous,Miscellaneous,Science,Science
+_posts/misc/2025-05-15-the-project-phoenix.md,,Miscellaneous,Miscellaneous,Books,DevOps
+_posts/misc/2022-03-27-Gardening.md,Gardening,Miscellaneous,Miscellaneous,Hobbies,Hobbies
+_posts/misc/2024-01-15-legal-vocab.md,Legal Vocabulary,Miscellaneous,Miscellaneous,Legal,Reference
+_posts/misc/2025-05-13-interview-intro.md,Intro,Miscellaneous,Miscellaneous,Career,Interview
+_posts/misc/2024-06-17-behavioural.md,Behavioural,Miscellaneous,Miscellaneous,Career,Interview;Behavioral;Communication
+_posts/databases/2021-04-16-MySql-to-Spanner-migration.md,MySql to Spanner Migration using HarbourBridge,Database,Google Cloud Platform,Database,MySQL;Spanner;GCP;Migration
+_posts/databases/2023-05-27-import-mysql-data-dump.md,Importing MySql data dump from a sql file,Database,Database,Database,MySQL;SQL
+_posts/databases/2025-07-09-databricks.md,Azure Databricks & Apache Spark,Database,Database,Database,Analytics
+_posts/devops/2025-04-29-kubernetes-concepts.md,Kubernetes Concepts,DevOps,DevOps,DevOps,Kubernetes;K8s;Containers;Cloud Native
+_posts/devops/2025-04-29-Kubernetes-commands.md,Kubernetes Commands,DevOps;GitOps,GitOps,DevOps,Kubernetes;K8s;Commands;CLI
+_posts/devops/2023-10-04-docker-commands.md,Docker commands,DevOps;GitOps,GitOps,DevOps,Docker;Containers;Commands;CLI;Containerization
+_posts/devops/2025-04-29-kubernetes-on-GKE.md,Kubernetes on Google Kubernetes Engine (GKE),DevOps,GCP,DevOps,Kubernetes;GCP;Google Cloud;K8s
+_posts/devops/2024-12-08-terraform.md,Terraform,DevOps;GitOps,GitOps,DevOps,Terraform;IaC;Infrastructure as Code;Automation;Provisioning
+_posts/devops/2024-09-24-jenkins.md,Jenkins,DevOps;GitOps,GitOps,DevOps,CI/CD;Automation;Build;Pipeline
+_posts/devops/2024-09-23-start-devops-learning.md,DevOps Learning - Starting point,DevOps;GitOps,GitOps,DevOps,Learning;Tutorial;Getting Started
+_posts/devops/2025-04-29-deployment-processes-devops.md,Deployment process - From Dev to Release,DevOps,DevOps,DevOps,Deployment;CI/CD;Pipeline
+_posts/devops/2024-09-18-gitlab-cd.md,Gitlab,DevOps;GitOps,GitOps,DevOps,CI/CD;Git;Pipeline
+_posts/devops/2024-09-18-flux-release.md,Flux Release,DevOps;GitOps,GitOps,DevOps,GitOps;Kubernetes
+_posts/devops/2024-09-17-git-ops.md,Git Ops,DevOps;GitOps,GitOps,DevOps,GitOps;Infrastructure;Git;Automation;Kubernetes
+_posts/devops/2024-09-17-helm-charts.md,Helm Charts with minikube,DevOps;GitOps,GitOps,DevOps,Kubernetes;Charts;Package Manager
+_posts/devops/2024-09-17-terraform.md,Terraform,DevOps;GitOps,GitOps,DevOps,Terraform;IaC;Infrastructure as Code;Automation;Provisioning
+_posts/python/2023-03-13-python.md,Python Concepts,Machine Learning;Python,Machine Learning,Python,Programming;Fundamentals
+_posts/health/2024-12-24-veg-healthy-snacks.md,Veggie snacks,Health,Health,Health,Snacks;Healthy Eating;Recipes
+_posts/health/2024-12-24-veg-stock.md,Vegetable Stock: Best Preparation Methods,Health,Health,Health,Cooking;Vegetable Stock;Recipes;Preparation
+_posts/health/2025-01-07-healthy-breakfast.md,Breakfast Healthy,Health,Health,Health,Nutrition;Healthy Eating;Meal Planning
+_posts/health/2025-01-07-strength-training.md,Strength Training - Gym - Muscle Building Plan,Health,Health,Health,Fitness;Workout;Exercise
+_posts/health/2024-12-20-health-drinks.md,Health Drinks,Health,Health,Health,Nutrition;Healthy;Recipes
+_posts/health/2025-01-16-Yog&Pranayam.md,Pranayama - प्राणायाम,Health,Health,Health,Yoga;Meditation;Wellness
+_posts/health/2024-12-24-food-options.md,"Food Options - Understanding Seeds, Grains, Millets, Legumes & Pulses",Health,Health,Health,Nutrition;Food;Grains;Millets;Guide
+_posts/health/2024-12-24-salad-dressings.md,Salad-dressings & Pairings - Sugar free,Health,Health,Health,Salad;Healthy;Recipes;Cooking
+_posts/health/2025-01-07-workout-meals.md,Pre/Post Workout Meals,Health,Health,Health,Fitness;Nutrition;Workout;Meal Planning
+_posts/health/2024-12-24-health-science.md,Nutrient Guide for a Healthier Diet,Health,Health,Health,Nutrition;Diet;Guide;Wellness
+_posts/health/2024-12-24-soups.md,Soups from Veggie Stock,Health,Health,Health,Vegetable Stock;Recipes;Cooking;Healthy
+_posts/health/2025-01-07-rotis.md,Roti,Health,Health,Health,Recipes;Cooking
+_posts/health/2025-01-26-Yog.md,"Yoga - योग, योगासन, योगाभ्यास",Health,Health,Health,Yoga;Exercise;Wellness;Meditation
 _posts/health/2025-01-25-Diet.md,Diet,Health,Health,Health,Diet;Nutrition;Meal Planning;Healthy Eating;Wellness
 _posts/health/2023-06-17-millets.md,Types of Millets,Health,Health,Health,Millets;Grains;Nutrition;Healthy;Food
-_posts/health/2025-01-07-rice-substitutes.md,Rice Substitutes & Combinations,Health,Health,Health,Rice;Substitutes;Healthy Alternatives;Grains;Meal Planning
-_posts/health/2025-01-07-breads.md,Breads,Health,Health,Health,Bread;Baking;Recipes;Cooking;Healthy
-_posts/health/2024-12-24-dry-fruits.md,Dry Fruit: Meal Plan,Health,Health,Health,Dry Fruits;Nutrition;Snacks;Meal Planning;Healthy
-_posts/health/2024-12-24-salad-diet-plan.md,Salad Plan for Lunch,Health,Health,Health,Salad;Lunch;Meal Planning;Nutrition;Healthy Eating
-_posts/science/2024-11-03-capacitors.md,Capacitors,Electronics,Electronics,Electronics,Capacitors;Components;Circuit;Theory
+_posts/health/2025-01-07-rice-substitutes.md,Rice Substitutes & Combinations,Health,Health,Health,Grains;Meal Planning
+_posts/health/2025-01-07-breads.md,Breads,Health,Health,Health,Recipes;Cooking;Healthy
+_posts/health/2024-12-24-dry-fruits.md,Dry Fruit: Meal Plan,Health,Health,Health,Nutrition;Snacks;Meal Planning;Healthy
+_posts/health/2024-12-24-salad-diet-plan.md,Salad Plan for Lunch,Health,Health,Health,Salad;Meal Planning;Nutrition;Healthy Eating
+_posts/science/2024-11-03-capacitors.md,Capacitors,Electronics,Electronics,Electronics,Components;Circuit;Theory
 _posts/science/2024-10-25-electronic-basics.md,Electronics,Electronics,Electronics,Electronics,Basics;Fundamentals;Tutorial;Getting Started
-_posts/science/2024-11-12-diodes.md,Diodes,Electronics,Electronics,Electronics,Diodes;Semiconductors;Components;Circuit
-_posts/science/2024-11-03-not-gate.md,Gates - Not Gate with Diodes,Electronics,Electronics,Electronics,Logic Gates;NOT Gate;Diodes;Digital Electronics;Boolean Logic
+_posts/science/2024-11-12-diodes.md,Diodes,Electronics,Electronics,Electronics,Diodes;Components;Circuit
+_posts/science/2024-11-03-not-gate.md,Gates - Not Gate with Diodes,Electronics,Electronics,Electronics,Diodes
 _posts/science/2024-10-29-raspberryPi.md,Raspberry Pi,Electronics,Electronics,Electronics,Raspberry Pi;Microcontroller;IoT;Projects;Programming
-_posts/science/2024-11-17-RGB-LED.md,RGB LED,Electronics,Electronics,Electronics,LED;RGB;Lighting;Components;Projects
-_posts/science/2024-10-29-boards.md,Boards,Electronics,Electronics,Electronics,Boards;Microcontroller;Arduino;Raspberry Pi;Hardware
-_posts/science/2024-11-03-IR-sender-receiver.md,Transmitters & Receivers,Electronics,Electronics,Electronics,IR;Transmitter;Receiver;Communication;Sensors;Wireless
+_posts/science/2024-11-17-RGB-LED.md,RGB LED,Electronics,Electronics,Electronics,Components;Projects
+_posts/science/2024-10-29-boards.md,Boards,Electronics,Electronics,Electronics,Microcontroller;Arduino;Raspberry Pi;Hardware
+_posts/science/2024-11-03-IR-sender-receiver.md,Transmitters & Receivers,Electronics,Electronics,Electronics,Communication;Sensors
 _posts/science/2024-11-17-arduino-uno.md,Arduino UNO,Electronics,Electronics,Electronics,Arduino;Microcontroller;Programming;Projects;IoT
-_posts/science/2024-11-17-Ultrasonic-sensor.md,Ultrasonic Sensor,Electronics,Electronics,Electronics,Sensors;Ultrasonic;Distance;Arduino;Projects
-_posts/science/2024-10-25-electronic-components.md,Electronic Components,Electronics,Electronics,Electronics,Components;Parts;Reference;Guide
-_posts/science/2024-11-17-Servo-motor.md,Servo Motor,Electronics,Electronics,Electronics,Servo;Motors;Actuators;Arduino;Robotics;Movement
-_posts/science/2024-10-25-electronics-study-plan.md,Teaching Electronics,Electronics,Electronics,Electronics,Education;Teaching;Curriculum;Learning;Tutorial
-_posts/science/2024-10-29-basic-twin-engine-plane.md,Simple Twin engine plane,Electronics,Electronics,Electronics,Project;DIY;Drone;RC;Motors;Aviation
-_posts/science/2024-11-03-soft_start.md,Soft Starter,Electronics,Electronics,Electronics,Soft Starter;Motor Control;Power;Circuit;Inrush Current
-_posts/science/2024-10-29-basic-drone.md,Simple Drone,Electronics,Electronics,Electronics,Drone;Project;DIY;Motors;Flight;Quadcopter
-_posts/science/2025-02-02-Kids-Science-experiments.md,Kids Science Experiments ,Electronics,Electronics,Electronics,Science;Experiments;Kids;Education;STEM;Fun
-_posts/science/2024-11-03-ldr.md,LDR - Light Dependent Resistor/Photoresistor,Electronics,Electronics,Electronics,Sensors;LDR;Light;Photoresistor;Arduino;Projects
-_posts/Algo/2021-10-30-coding-hints.md,Coding Hints,Algorithms,Algorithms,Algorithms,Problem Solving;Tips;Coding Interview;Programming
+_posts/science/2024-11-17-Ultrasonic-sensor.md,Ultrasonic Sensor,Electronics,Electronics,Electronics,Sensors;Arduino;Projects
+_posts/science/2024-10-25-electronic-components.md,Electronic Components,Electronics,Electronics,Electronics,Components;Reference;Guide
+_posts/science/2024-11-17-Servo-motor.md,Servo Motor,Electronics,Electronics,Electronics,Motors;Arduino
+_posts/science/2024-10-25-electronics-study-plan.md,Teaching Electronics,Electronics,Electronics,Electronics,Education;Learning;Tutorial
+_posts/science/2024-10-29-basic-twin-engine-plane.md,Simple Twin engine plane,Electronics,Electronics,Electronics,Project;DIY;Drone;Motors
+_posts/science/2024-11-03-soft_start.md,Soft Starter,Electronics,Electronics,Electronics,Circuit
+_posts/science/2024-10-29-basic-drone.md,Simple Drone,Electronics,Electronics,Electronics,Drone;Project;DIY;Motors
+_posts/science/2025-02-02-Kids-Science-experiments.md,Kids Science Experiments ,Electronics,Electronics,Electronics,Education
+_posts/science/2024-11-03-ldr.md,LDR - Light Dependent Resistor/Photoresistor,Electronics,Electronics,Electronics,Sensors;Arduino;Projects
+_posts/Algo/2021-10-30-coding-hints.md,Coding Hints,Algorithms,Algorithms,Algorithms,Problem Solving;Tips;Programming
 _posts/Algo/2022-02-03-array-syntax.md,Array Syntax,Algorithms,Algorithms,Algorithms,Arrays;Data Structures;Syntax;Java;Programming
-_posts/Algo/2023-12-18-algo-drills.md,Algo Drills,Algorithms,Algorithms,Algorithms,Practice;Drills;Problem Solving;Interview Preparation
-_posts/Algo/2016-04-09-stacks.md,Stacks,Algorithms,Algorithms,Algorithms,Stacks;Data Structures;LIFO;Implementation
-_posts/Algo/2025-01-01-data-structures-java.md,Data Structures - Java Classes,Algorithms,Algorithms,Algorithms,Data Structures;Java;Collections;Classes;Implementation
-_posts/Algo/2021-10-30-syntax-reference.md,Coding Interview - Syntax Reference,Algorithms,Algorithms,Algorithms,Syntax;Reference;Interview;Coding;Cheatsheet
-_posts/Algo/2022-02-02-sets.md,Sets,Algorithms,Algorithms,Algorithms,Sets;Data Structures;Collections;Java;Unique
-_posts/Algo/2021-04-16-Searching.md,Searching,Algorithms,Algorithms,Algorithms,Searching;Binary Search;Linear Search;Problem Solving
-_posts/Algo/2016-04-11-queues.md,Queue,Algorithms,Algorithms,Algorithms,Queues;Data Structures;FIFO;Implementation
+_posts/Algo/2023-12-18-algo-drills.md,Algo Drills,Algorithms,Algorithms,Algorithms,Practice;Problem Solving;Interview Preparation
+_posts/Algo/2016-04-09-stacks.md,Stacks,Algorithms,Algorithms,Algorithms,Data Structures;Implementation
+_posts/Algo/2025-01-01-data-structures-java.md,Data Structures - Java Classes,Algorithms,Algorithms,Algorithms,Data Structures;Java;Collections;Implementation
+_posts/Algo/2021-10-30-syntax-reference.md,Coding Interview - Syntax Reference,Algorithms,Algorithms,Algorithms,Syntax;Reference;Interview;Coding
+_posts/Algo/2022-02-02-sets.md,Sets,Algorithms,Algorithms,Algorithms,Data Structures;Collections;Java
+_posts/Algo/2021-04-16-Searching.md,Searching,Algorithms,Algorithms,Algorithms,Problem Solving
+_posts/Algo/2016-04-11-queues.md,Queue,Algorithms,Algorithms,Algorithms,Data Structures;Implementation
 _posts/Algo/2025-04-30-data-structures-java.md,Data Structures - Implementations,Algorithms,Algorithms,Algorithms,Data Structures;Implementation;Java;Code;Tutorial
-_posts/Algo/2016-04-09-linked-list.md,Linked List,Algorithms,Algorithms,Algorithms,Linked List;Data Structures;Pointers;Implementation
-_posts/Algo/2024-07-14-dynamic-programming-2.md,Dynamic Programming - Iteration,Algorithms,Algorithms,Algorithms,Dynamic Programming;DP;Iteration;Optimization
-_posts/Algo/2024-07-14-dynamic-programming.md,Dynamic Programming - DP,Algorithms,Algorithms,Algorithms,Dynamic Programming;DP;Memoization;Optimization
-_posts/Algo/2022-02-02-iterator.md,Iterator,Algorithms,Algorithms,Algorithms,Iterator;Design Pattern;Collections;Java;Traversal
-_posts/Algo/2016-11-25-array-problems.md,Array Problems,Algorithms,Algorithms,Algorithms,Arrays;Problems;Practice;Interview;Coding
-_posts/Algo/2024-07-14-dynamic-programming-3.md,Dynamic Programming - Grids,Algorithms,Algorithms,Algorithms,Dynamic Programming;DP;Grid;Matrix
-_posts/management/2025-05-28-tech-books.md,Software Engineering Books,Management,Management,Miscellaneous,Books;Software Engineering;Reading List;Reference;Learning
-_posts/management/2024-09-19-agile.md,Agile Concepts,Management,Management,Management,Agile;Scrum;Project Management;Methodology;Software Development
-_posts/management/2025-05-28-comp-sc-terms.md,Major psychological theories and behavioral science principles,Management,Management,Miscellaneous,Psychology;Behavioral Science;Theory;Leadership
-_posts/management/2025-05-21-management-aphorisms.md,Management Aphorisms,Management,Management,Miscellaneous,Aphorisms;Leadership;Wisdom;Quotes
-_posts/management/2025-07-18-scrum.md,Scrum,Management,Management,Miscellaneous,Scrum;Agile;Framework;Project Management;Sprint
-_posts/management/2025-05-28-psyco-concepts.md,Major psychological theories and behavioral science principles,Management,Management,Miscellaneous,Psychology;Behavioral Science;Theory;Leadership
-_posts/Java/2022-11-21-function.md,Function Functional Interface,Java,Java,Java,Functional Interface;Function;Lambda;Java 8
-_posts/Java/2023-11-24-exceptions.md,Exceptions in Java,Java,Java,Java,Exceptions;Error Handling;Try-Catch;Best Practices
+_posts/Algo/2016-04-09-linked-list.md,Linked List,Algorithms,Algorithms,Algorithms,Data Structures;Implementation
+_posts/Algo/2024-07-14-dynamic-programming-2.md,Dynamic Programming - Iteration,Algorithms,Algorithms,Algorithms,Dynamic Programming;DP;Optimization
+_posts/Algo/2024-07-14-dynamic-programming.md,Dynamic Programming - DP,Algorithms,Algorithms,Algorithms,Dynamic Programming;DP;Optimization
+_posts/Algo/2022-02-02-iterator.md,Iterator,Algorithms,Algorithms,Algorithms,Iterator;Collections;Java;Traversal
+_posts/Algo/2016-11-25-array-problems.md,Array Problems,Algorithms,Algorithms,Algorithms,Arrays;Practice;Interview;Coding
+_posts/Algo/2024-07-14-dynamic-programming-3.md,Dynamic Programming - Grids,Algorithms,Algorithms,Algorithms,Dynamic Programming;DP
+_posts/management/2025-05-28-tech-books.md,Software Engineering Books,Management,Miscellaneous,Management,Books;Reference;Learning
+_posts/management/2024-09-19-agile.md,Agile Concepts,Management,Management,Management,Agile;Scrum;Project Management;Methodology
+_posts/management/2025-05-28-comp-sc-terms.md,Major psychological theories and behavioral science principles,Management,Miscellaneous,Management,Psychology;Behavioral Science;Theory;Leadership
+_posts/management/2025-05-21-management-aphorisms.md,Management Aphorisms,Management,Miscellaneous,Management,Leadership
+_posts/management/2025-07-18-scrum.md,Scrum,Management,Miscellaneous,Management,Scrum;Agile;Project Management
+_posts/management/2025-05-28-psyco-concepts.md,Major psychological theories and behavioral science principles,Management,Miscellaneous,Management,Psychology;Behavioral Science;Theory;Leadership
+_posts/Java/2022-11-21-function.md,Function Functional Interface,Java,Java,Java,Functional Interface;Lambda;Java 8
+_posts/Java/2023-11-24-exceptions.md,Exceptions in Java,Java,Java,Java,Error Handling;Best Practices
 _posts/Java/2022-08-07-lambda-expressions.md,Lambda Expressions & Functional Interface,Java,Java,Java,Lambda;Functional Interface;Java 8;Functional Programming
-_posts/Java/2024-08-17-compiler-code-optimization.md,Java Compiler Code Optimization,Java,Java,Java,Compiler;Optimization;JIT;Performance
-_posts/Java/2024-08-21-nested-class.md,Nested Classes in Java,Java,Java,Java,Nested Classes;Inner Classes;Static Classes;OOP
-_posts/Java/2022-11-21-higher-order-function.md,Higher Order Functions,Java,Java,Java,Higher Order Functions;Functional Programming;Lambda;Functions
-_posts/Java/2022-11-21-supplier.md,Supplier Functional Interface,Java,Java,Java,Functional Interface;Supplier;Lambda;Java 8
-_posts/Java/2022-08-06-static-factory.md,Static Factory Methods,Java,Java,Java,Design Patterns;Static Factory;Object Creation;Best Practices
-_posts/Java/2022-08-03-streams-issues.md,Java Stream Issues,Java,Java,Java,Streams;Troubleshooting;Common Mistakes;Java 8
+_posts/Java/2024-08-17-compiler-code-optimization.md,Java Compiler Code Optimization,Java,Java,Java,Compiler;Optimization;Performance
+_posts/Java/2024-08-21-nested-class.md,Nested Classes in Java,Java,Java,Java,OOP
+_posts/Java/2022-11-21-higher-order-function.md,Higher Order Functions,Java,Java,Java,Functional Programming;Lambda
+_posts/Java/2022-11-21-supplier.md,Supplier Functional Interface,Java,Java,Java,Functional Interface;Lambda;Java 8
+_posts/Java/2022-08-06-static-factory.md,Static Factory Methods,Java,Java,Java,Design Patterns;Best Practices
+_posts/Java/2022-08-03-streams-issues.md,Java Stream Issues,Java,Java,Java,Streams;Troubleshooting;Java 8
 _posts/Java/2022-11-21-java-generics.md,Generics,Java,Java,Java,Generics;Type Safety;Collections;Templates
 _posts/Java/2022-08-06-generics.md,Generics,Java,Java,Java,Generics;Type Safety;Collections;Templates
-_posts/Java/2022-11-21-predicate.md,Predicate Functional Interface,Java,Java,Java,Functional Interface;Predicate;Lambda;Java 8
-_posts/Java/2022-11-21-consumer.md,Consumer Functional Interface,Java,Java,Java,Functional Interface;Consumer;Lambda;Java 8
-_posts/Java/2022-08-23-javax-mail-api.md,Java Mailing API,Java,Java,Java,Email;JavaMail;API;SMTP
-_posts/Java/2024-07-28-cloning.md,Java Cloning,Java,Java,Java,Cloning;Clone;Object Copying;Shallow;Deep Copy
-_posts/Java/2023-08-26-wrapper-class.md,Wrapper Classes - Parse & ValueOf,Java,Java,Java,Wrapper Classes;Primitives;Autoboxing;Type Conversion
+_posts/Java/2022-11-21-predicate.md,Predicate Functional Interface,Java,Java,Java,Functional Interface;Lambda;Java 8
+_posts/Java/2022-11-21-consumer.md,Consumer Functional Interface,Java,Java,Java,Functional Interface;Lambda;Java 8
+_posts/Java/2022-08-23-javax-mail-api.md,Java Mailing API,Java,Java,Java,API
+_posts/Java/2024-07-28-cloning.md,Java Cloning,Java,Java,Java,Java
+_posts/Java/2023-08-26-wrapper-class.md,Wrapper Classes - Parse & ValueOf,Java,Java,Java,Primitives
 _posts/Java/2022-12-31-collectors-deep-dive.md,Collectors - Deep Dive,Java,Java,Java,Collectors;Streams;Java 8;Functional Programming
 _posts/Java/2017-02-01-JavaInterviewQuestions.md,Java Interview Questions,Java,Java,Java,Interview;Questions;Preparation;Coding
-_posts/Java/2023-01-01-parallel-streams.md,Parallel Streams,Java,Java,Java,Streams;Parallel Processing;Concurrency;Java 8
-_posts/Java/2025-05-18-java-coding-practices.md,Java Coding Practices,Java,Java,Java,Best Practices;Coding Standards;Clean Code;Guidelines
-_posts/Java/2022-11-18-java-method-reference.md,Method Reference,Java,Java,Java,Method Reference;Lambda;Java 8;Functional Programming
-_posts/Java/2021-10-13-Optionals.md,Optional Use cases,Java,Java,Java,Optional;Null Safety;Java 8;Best Practices
+_posts/Java/2023-01-01-parallel-streams.md,Parallel Streams,Java,Java,Java,Streams;Concurrency;Java 8
+_posts/Java/2025-05-18-java-coding-practices.md,Java Coding Practices,Java,Java,Java,Best Practices;Clean Code
+_posts/Java/2022-11-18-java-method-reference.md,Method Reference,Java,Java,Java,Lambda;Java 8;Functional Programming
+_posts/Java/2021-10-13-Optionals.md,Optional Use cases,Java,Java,Java,Java 8;Best Practices
 _posts/Java/2022-08-06-reactive-programming.md,Reactive Programming,Java,Java,Java,Reactive;Asynchronous;Non-Blocking;Streams
-_posts/Java/2022-10-20-serialization.md,Serialization & Externalization,Java,Java,Java,Serialization;Externalization;Object Persistence;IO
-_posts/Java/2024-08-21-java-compilation.md,Java Compilation Process & JVM Architecture,Java,Java,Java,JVM;Compilation;Bytecode;Architecture;Garbage Collection
-_posts/Java/2022-03-07-zoned-date-time.md,Java ZonedDate Time,Java,Java,Java,Date Time;ZonedDateTime;Java 8;Time Zones
+_posts/Java/2022-10-20-serialization.md,Serialization & Externalization,Java,Java,Java,Serialization;IO
+_posts/Java/2024-08-21-java-compilation.md,Java Compilation Process & JVM Architecture,Java,Java,Java,JVM;Architecture;Garbage Collection
+_posts/Java/2022-03-07-zoned-date-time.md,Java ZonedDate Time,Java,Java,Java,Java 8
 _posts/Java/2022-09-06-streams.md,Java Streams - Revisions,Java,Java,Java,Streams;Java 8;Functional Programming;Collections
-_posts/Java/2024-07-26-scopes.md,Variable Scopes in Java,Java;Multithreading,Java,Multithreading,Scopes;Variables;Memory;Multithreading;Visibility
-_posts/Java/2022-08-06-java-io.md,Java IO,Java,Java,Java,IO;Input Output;Streams;Files;NIO
-_posts/Java/2018-01-24-CollectionClass.md,Java Collection Class,Java,Java,Java,Collections;Data Structures;List;Set;Map
-_posts/Java/2023-10-22-switch.md,Switch,Java,Java,Java,Switch;Control Flow;Pattern Matching;Java 17
-_posts/Java/2022-10-28-sorting.md,Sorting,Java,Java,Java,Sorting;Comparator;Comparable;Collections;Arrays
-_posts/Java/2023-10-20-java-tests.md,Java Puzzles,Java,Java,Java,Puzzles;Tricky Questions;Interview;Edge Cases
-_posts/Java/2024-08-21-java-annotations.md,Java annotations,Java,Java,Java,Annotations;Metadata;Custom Annotations;Reflection
+_posts/Java/2024-07-26-scopes.md,Variable Scopes in Java,Java;Multithreading,Multithreading,Java,Memory;Multithreading
+_posts/Java/2022-08-06-java-io.md,Java IO,Java,Java,Java,IO;Streams
+_posts/Java/2018-01-24-CollectionClass.md,Java Collection Class,Java,Java,Java,Collections;Data Structures;List
+_posts/Java/2023-10-22-switch.md,Switch,Java,Java,Java,Java
+_posts/Java/2022-10-28-sorting.md,Sorting,Java,Java,Java,Collections;Arrays
+_posts/Java/2023-10-20-java-tests.md,Java Puzzles,Java,Java,Java,Interview
+_posts/Java/2024-08-21-java-annotations.md,Java annotations,Java,Java,Java,Java
 _posts/Java/2025-04-08-Collectors-in-Java-Stream.md,Collectors in Java Streams,Java,Java,Java,Collectors;Streams;Java 8;Functional Programming
-_posts/Java/2022-08-06-functional-programming.md,Functional Programming Concepts,Java,Java,Java,Functional Programming;Lambda;Streams;Java 8;Immutability
-_posts/Java/2023-11-24-sonarcube-local.md,Sonarcube on local,Java,Java,Java,SonarQube;Code Quality;Static Analysis;DevOps
-_posts/Java/2022-08-06-polymorphism.md,Polymorphism,Java,Java,Java,Polymorphism;OOP;Inheritance;Method Overriding
-_posts/Java/2022-08-06-static.md,Static,Java,Java,Java,Static;Keywords;Class Variables;Static Methods
-_posts/gcp/2021-02-16-GCP-Summary.md,GCP - Free Tier Setup,GCP,GCP,Google Cloud Platform,Google Cloud;Free Tier;Setup;Cloud Computing
-_posts/gcp/2022-08-12-google-geocpdingApi.md,Google GeoCoding API,GCP,GCP,Microservices;Spring Boot,Google Maps;Geocoding;API;Location
+_posts/Java/2022-08-06-functional-programming.md,Functional Programming Concepts,Java,Java,Java,Functional Programming;Lambda;Streams;Java 8
+_posts/Java/2023-11-24-sonarcube-local.md,Sonarcube on local,Java,Java,Java,Code Quality;DevOps
+_posts/Java/2022-08-06-polymorphism.md,Polymorphism,Java,Java,Java,OOP
+_posts/Java/2022-08-06-static.md,Static,Java,Java,Java,Java
+_posts/gcp/2021-02-16-GCP-Summary.md,GCP - Free Tier Setup,GCP,Google Cloud Platform,GCP,Google Cloud;Setup
+_posts/gcp/2022-08-12-google-geocpdingApi.md,Google GeoCoding API,GCP,Microservices;Spring Boot,GCP,Google Maps;API
 _posts/gcp/2025-03-21-gcp-commands.md,GCP Commands,GCP,GCP,GCP,Google Cloud;Commands;gcloud;CLI
-_posts/gcp/2022-08-12-google-timeZoneApi.md,Google TimeZone API,GCP,GCP,Microservices;Spring Boot,Google Maps;Timezone;API;Time
-_posts/gcp/2022-08-25-google-bigQuery.md,Google BigQuery ,GCP,GCP,Microservices;Spring Boot,BigQuery;Data Warehouse;SQL;Analytics
-_posts/gcp/2021-04-11-Spanner-Db.md,Spanner Database,GCP,GCP,Google Cloud Platform,Spanner;Database;Distributed;Cloud SQL
-_posts/gcp/2021-04-08-multiple-gcp-config.md,Handling Multiple GCP Configs,GCP,GCP,Google Cloud Platform,Configuration;Multiple Projects;gcloud;Cloud
-_posts/machineLearning/2023-07-17-prompt-engineering.md,OpenAi and Prompt Engineering,Machine Learning,Machine Learning,Machine Learning,AI;OpenAI;Prompt Engineering;ChatGPT;LLM
-_posts/design-patterns/2023-11-06-builder-pattern.md,Builder Design Pattern,Java;Design Patterns,Design Patterns,Java,Builder;Creational;Java;OOP
-_posts/design-patterns/2022-11-22-design-principles.md,Design Principles,Design Patterns,Design Patterns,Java,SOLID;Principles;Software Design;Best Practices
-_posts/design-patterns/2024-06-17-Object-modelling.md,Object modelling,Java;Design Patterns,Design Patterns,Java,Object Modeling;OOP;UML;Architecture
-_posts/design-patterns/2023-11-06-factory-pattern.md,Factory Design Pattern,Java;Design Patterns,Design Patterns,Java,Factory;Creational;Java;OOP
-_posts/design-patterns/2022-12-20-iterator-patterns.md,Iterator As a Design Pattern,Java;Design Patterns,Design Patterns,Java,Iterator;Behavioral;Java;Collections
-_posts/design-patterns/2023-11-27-lazy.md,Laziness and Functional Programming,Java;Design Patterns,Design Patterns,Java,Lazy Evaluation;Functional Programming;Java;Performance
-_posts/design-patterns/2024-06-17-Decorator.md,Decorator Pattern,Java;Design Patterns,Design Patterns,Java,Decorator;Structural;Java;OOP
-_posts/design-patterns/2022-11-22-SOLID-principles.md,SOLID Principles,Design Patterns,Design Patterns,Java,SOLID;OOP;Principles;Best Practices
-_posts/design-patterns/2022-12-20-strategy-pattern.md,Strategy Pattern,Java;Design Patterns,Design Patterns,Java,Strategy;Behavioral;Java;OOP
-_posts/design-patterns/2024-06-17-OOPS.md,Class v/s Type,Java;Design Patterns,Design Patterns,Java,OOP;Class;Type;Theory
-_posts/design-patterns/2024-06-08-UML.md,UML,Java;Design Patterns,Design Patterns,Java,UML;Diagrams;Modeling;Documentation
-_posts/design-patterns/2023-11-08-singleton.md,Singleton Design Pattern,Java;Design Patterns,Design Patterns,Java,Singleton;Creational;Java;OOP
-_posts/architecture/2024-09-15-SideCarPattern.md,Sidecar Pattern,Architecture,Architecture,System Design,Sidecar;Microservices;Design Patterns;Kubernetes
-_posts/architecture/2025-04-22-SAGA-Architecture.md,SAGA Architecture Style & 2-Phase Commit,Architecture,Architecture,Architectural Styles,SAGA;Distributed Transactions;2PC;Microservices
-_posts/architecture/2024-11-30-Cloud-Native.md,Cloud Native,Architecture,Architecture,System Design,Cloud Native;Microservices;Kubernetes;Containerization
-_posts/architecture/2024-09-15-CQRS.md,Command Query Responsibility Segregation,Architecture,Architecture,System Design,CQRS;Design Patterns;Microservices;Scalability
-_posts/architecture/2025-04-22-Pipe-Filter-Architecture.md,The Pipeline (or Pipe-Filter) architectural style,Architecture,Architecture,Architectural Styles,Pipeline;Pipe-Filter;Data Processing;Design Patterns
-_posts/architecture/2019-11-22-code-quality.md,Code Quality,Architecture,Architecture,Architecture,Code Quality;Best Practices;Clean Code;Refactoring
-_posts/architecture/2025-06-05-event-sourcing-Architecture.md,Event Sourcing,Architecture,Architecture,Architectural Styles,Event Sourcing;CQRS;Events;Domain Driven Design
-_posts/architecture/2025-04-22-Onion_Clean-Architecture.md,Onion/Clean Architecture Style,Architecture,Architecture,Architectural Styles,Clean Architecture;Onion;Layered;Dependency Inversion
-_posts/architecture/2024-09-12-Architecture.md,Architectural Patterns,Architecture,Architecture,System Design,Design Patterns;Software Architecture;Microservices
-_posts/finances/2025-08-28-us-debt.md,Understanding US Debt and Its Major Lenders,Finance,Finance,Finances,US Debt;Economics;Government;Investment
-_posts/finances/2024-10-05-finances.md,Finances,Finance,Finance,Finances,Personal Finance;Money Management;Investment
-_posts/finances/2025-01-27-retirement-401k.md,Understanding Your 401(k) Contributions,Finance,Finance,Finances,401k;Retirement;Investment;Savings
-_posts/finances/2024-09-06-finance-charts.md,Financial Charts,Finance,Finance,Finances,Charts;Data Visualization;Analysis;Stocks
-_posts/developertools/2022-01-22-atom.md,Atom,Developer tools,Developer Tools,Developer tools,Atom;Text Editor;IDE;Development;Tools
-_posts/developertools/2021-03-24-sublime-settings.md,Sublime Settings,Developer tools,Developer Tools,Developer tools,Sublime Text;Text Editor;Configuration;Settings;Tools
-_posts/developertools/2023-05-27-dBeaver-settings.md,dBeaver for SQL Development,Developer tools,Developer Tools,Database,DBeaver;SQL;Database;IDE;Tools
-_posts/developertools/2021-02-01-terminal-config.md,Terminal Setup,Developer tools;MacBook,Developer Tools,MacBook,Terminal;Configuration;MacOS;Shell;Zsh;Setup
-_posts/developertools/2024-04-18-browser-devtools.md,Brave/Chrome Devtools,Developer tools,Developer Tools,Developer tools,Browser;DevTools;Chrome;Debugging;Web Development
-_posts/developertools/2022-01-19-markdown-reference.md,Markdown Reference,Developer tools,Developer Tools,Developer tools,Markdown;Reference;Documentation;Syntax;Writing
-_posts/developertools/2021-02-10-macbook-configurations.md,Configuring a new MacBook,Developer tools;MacBook,Developer Tools,MacBook,MacOS;Configuration;Setup;MacBook;Development Environment
-_posts/developertools/2024-12-10-my-accounting.md,"Kuber Accounting App - React, Firebase, Firestore",Developer tools,Developer Tools,Developer tools,React;Firebase;Firestore;Web App;Project
-_posts/developertools/2023-12-20-LaTex.md,LaTeX in Markdown,Developer tools,Developer Tools,Developer tools,LaTeX;Markdown;Math;Documentation;Typesetting
-_posts/developertools/2022-01-22-host-personal-site-home.md,Hosting personal website on home router,Developer tools,Developer Tools,Developer tools,Hosting;Web Server;Home Network;Router;DIY
-_posts/developertools/2024-09-13-jira-filters.md,JIRA Filters,Developer tools,Developer Tools,Developer tools,JIRA;Filters;Project Management;Agile;Atlassian
-_posts/developertools/2016-04-04-jekyll-blog-GitHub-hosting.md,Jekyll Blog and Hosting on GitHub,Developer tools,Developer Tools,Developer tools,Jekyll;GitHub Pages;Blogging;Static Site;Hosting
-_posts/developertools/2022-01-22-mac-settings.md,MacBook : Useful Settings,Developer tools;MacBook,Developer Tools,MacBook,MacOS;Settings;Configuration;Productivity;Tips
-_posts/developertools/2022-02-12-terminal-commands.md,Terminal Commands,Developer tools,Developer Tools,Developer tools,Terminal;Commands;CLI;Shell;Unix;Reference
-_posts/developertools/2022-08-13-brew-package-migration.md,MacBook : Brew Package Migration,Developer tools,Developer Tools,Developer tools,MacOS;Homebrew;Package Manager;Migration;Setup
-_posts/developertools/2024-01-16-check-ram.md,Hardware Overview,Developer tools,Developer Tools,Developer tools,Hardware;System Info;RAM;Performance;MacOS
-_posts/developertools/2024-12-14-react-ui.md,React Functions and Concepts: A Comprehensive Summary,Developer tools,Developer Tools,Developer tools,React;JavaScript;Frontend;Web Development;Hooks
-_posts/developertools/2016-07-31-Mac-Upgrade.md,Upgrading the Macbook Pro - Model A1278,Developer tools,Developer Tools,Developer tools,MacBook;Hardware;Upgrade;SSD;RAM;DIY
-_posts/developertools/2023-07-12-profile-settings.md,MacBook : Configuring shell profile,Developer tools;MacBook,Developer Tools,MacBook,MacOS;Shell;Profile;Configuration;Zsh;Bash
-_posts/developertools/2022-01-22-ununtu.md,Ubuntu Server Installation,Developer tools,Developer Tools,Developer tools,Ubuntu;Linux;Server;Installation;Setup
-_posts/developertools/2023-05-28-largefile-on-github.md,Large Files on Github,Developer tools,Developer Tools,Developer tools,GitHub;Git;Large Files;Git LFS;Version Control
-_posts/git/2022-08-28-git-log.md,Git Log,Git,Git,Git,Log;History;Commands;Version Control
-_posts/git/2023-11-07-git-reset-revert.md,Git Reset - Revert,Git,Git,Git,Reset;Revert;Undo;Commands;Version Control
-_posts/git/2020-05-19-detached-head.md,Submodules & Detached Head Problem,Git,Git,Git,Submodules;Detached Head;Troubleshooting;Version Control
-_posts/git/2023-11-14-git-maintenance.md,Git Maintenance & Clean-up,Git,Git,Git,Maintenance;Cleanup;Optimization;Commands
-_posts/git/2024-04-20-cherry-pick.md,Git Cherry Pick,Git,Git,Git,Cherry Pick;Commands;Branching;Version Control
-_posts/git/2023-11-09-multi-repo-push.md,Git config- Multi Repo projects,Git,Git,Git,Configuration;Multi-Repo;Remote;Workflow
+_posts/gcp/2022-08-12-google-timeZoneApi.md,Google TimeZone API,GCP,Microservices;Spring Boot,GCP,Google Maps;API
+_posts/gcp/2022-08-25-google-bigQuery.md,Google BigQuery ,GCP,Microservices;Spring Boot,GCP,SQL;Analytics
+_posts/gcp/2021-04-11-Spanner-Db.md,Spanner Database,GCP,Google Cloud Platform,GCP,Spanner;Database;Distributed
+_posts/gcp/2021-04-08-multiple-gcp-config.md,Handling Multiple GCP Configs,GCP,Google Cloud Platform,GCP,Configuration;gcloud;Cloud
+_posts/machineLearning/2023-07-17-prompt-engineering.md,OpenAi and Prompt Engineering,Machine Learning,Machine Learning,Machine Learning,Machine Learning
+_posts/design-patterns/2023-11-06-builder-pattern.md,Builder Design Pattern,Java;Design Patterns,Java,Design Patterns,Creational;Java;OOP
+_posts/design-patterns/2022-11-22-design-principles.md,Design Principles,Design Patterns,Java,Design Patterns,SOLID;Principles;Best Practices
+_posts/design-patterns/2024-06-17-Object-modelling.md,Object modelling,Java;Design Patterns,Java,Design Patterns,OOP;UML;Architecture
+_posts/design-patterns/2023-11-06-factory-pattern.md,Factory Design Pattern,Java;Design Patterns,Java,Design Patterns,Creational;Java;OOP
+_posts/design-patterns/2022-12-20-iterator-patterns.md,Iterator As a Design Pattern,Java;Design Patterns,Java,Design Patterns,Iterator;Behavioral;Java;Collections
+_posts/design-patterns/2023-11-27-lazy.md,Laziness and Functional Programming,Java;Design Patterns,Java,Design Patterns,Functional Programming;Java;Performance
+_posts/design-patterns/2024-06-17-Decorator.md,Decorator Pattern,Java;Design Patterns,Java,Design Patterns,Java;OOP
+_posts/design-patterns/2022-11-22-SOLID-principles.md,SOLID Principles,Design Patterns,Java,Design Patterns,SOLID;OOP;Principles;Best Practices
+_posts/design-patterns/2022-12-20-strategy-pattern.md,Strategy Pattern,Java;Design Patterns,Java,Design Patterns,Strategy;Behavioral;Java;OOP
+_posts/design-patterns/2024-06-17-OOPS.md,Class v/s Type,Java;Design Patterns,Java,Design Patterns,OOP;Theory
+_posts/design-patterns/2024-06-08-UML.md,UML,Java;Design Patterns,Java,Design Patterns,UML;Documentation
+_posts/design-patterns/2023-11-08-singleton.md,Singleton Design Pattern,Java;Design Patterns,Java,Design Patterns,Creational;Java;OOP
+_posts/architecture/2024-09-15-SideCarPattern.md,Sidecar Pattern,Architecture,System Design,Architecture,Microservices;Design Patterns;Kubernetes
+_posts/architecture/2025-04-22-SAGA-Architecture.md,SAGA Architecture Style & 2-Phase Commit,Architecture,Architectural Styles,Architecture,Microservices
+_posts/architecture/2024-11-30-Cloud-Native.md,Cloud Native,Architecture,System Design,Architecture,Cloud Native;Microservices;Kubernetes;Containerization
+_posts/architecture/2024-09-15-CQRS.md,Command Query Responsibility Segregation,Architecture,System Design,Architecture,CQRS;Design Patterns;Microservices;Scalability
+_posts/architecture/2025-04-22-Pipe-Filter-Architecture.md,The Pipeline (or Pipe-Filter) architectural style,Architecture,Architectural Styles,Architecture,Pipeline;Design Patterns
+_posts/architecture/2019-11-22-code-quality.md,Code Quality,Architecture,Architecture,Architecture,Code Quality;Best Practices;Clean Code
+_posts/architecture/2025-06-05-event-sourcing-Architecture.md,Event Sourcing,Architecture,Architectural Styles,Architecture,CQRS
+_posts/architecture/2025-04-22-Onion_Clean-Architecture.md,Onion/Clean Architecture Style,Architecture,Architectural Styles,Architecture,Architecture
+_posts/architecture/2024-09-12-Architecture.md,Architectural Patterns,Architecture,System Design,Architecture,Design Patterns;Microservices
+_posts/finances/2025-08-28-us-debt.md,Understanding US Debt and Its Major Lenders,Finance,Finances,Finance,Government;Investment
+_posts/finances/2024-10-05-finances.md,Finances,Finance,Finances,Finance,Investment
+_posts/finances/2025-01-27-retirement-401k.md,Understanding Your 401(k) Contributions,Finance,Finances,Finance,Investment
+_posts/finances/2024-09-06-finance-charts.md,Financial Charts,Finance,Finances,Finance,Charts;Stocks
+_posts/developertools/2022-01-22-atom.md,Atom,Developer tools,Developer tools,Developer Tools,Text Editor;IDE;Tools
+_posts/developertools/2021-03-24-sublime-settings.md,Sublime Settings,Developer tools,Developer tools,Developer Tools,Text Editor;Configuration;Settings;Tools
+_posts/developertools/2023-05-27-dBeaver-settings.md,dBeaver for SQL Development,Developer tools,Database,Developer Tools,SQL;Database;IDE;Tools
+_posts/developertools/2021-02-01-terminal-config.md,Terminal Setup,Developer tools;MacBook,MacBook,Developer Tools,Terminal;Configuration;MacOS;Shell;Zsh;Setup
+_posts/developertools/2024-04-18-browser-devtools.md,Brave/Chrome Devtools,Developer tools,Developer tools,Developer Tools,Debugging;Web Development
+_posts/developertools/2022-01-19-markdown-reference.md,Markdown Reference,Developer tools,Developer tools,Developer Tools,Markdown;Reference;Documentation;Syntax
+_posts/developertools/2021-02-10-macbook-configurations.md,Configuring a new MacBook,Developer tools;MacBook,MacBook,Developer Tools,MacOS;Configuration;Setup;MacBook
+_posts/developertools/2024-12-10-my-accounting.md,"Kuber Accounting App - React, Firebase, Firestore",Developer tools,Developer tools,Developer Tools,React;Project
+_posts/developertools/2023-12-20-LaTex.md,LaTeX in Markdown,Developer tools,Developer tools,Developer Tools,Markdown;Math;Documentation
+_posts/developertools/2022-01-22-host-personal-site-home.md,Hosting personal website on home router,Developer tools,Developer tools,Developer Tools,Hosting;DIY
+_posts/developertools/2024-09-13-jira-filters.md,JIRA Filters,Developer tools,Developer tools,Developer Tools,Project Management;Agile
+_posts/developertools/2016-04-04-jekyll-blog-GitHub-hosting.md,Jekyll Blog and Hosting on GitHub,Developer tools,Developer tools,Developer Tools,Hosting
+_posts/developertools/2022-01-22-mac-settings.md,MacBook : Useful Settings,Developer tools;MacBook,MacBook,Developer Tools,MacOS;Settings;Configuration;Productivity;Tips
+_posts/developertools/2022-02-12-terminal-commands.md,Terminal Commands,Developer tools,Developer tools,Developer Tools,Terminal;Commands;CLI;Shell;Unix;Reference
+_posts/developertools/2022-08-13-brew-package-migration.md,MacBook : Brew Package Migration,Developer tools,Developer tools,Developer Tools,MacOS;Package Manager;Migration;Setup
+_posts/developertools/2024-01-16-check-ram.md,Hardware Overview,Developer tools,Developer tools,Developer Tools,Hardware;RAM;Performance;MacOS
+_posts/developertools/2024-12-14-react-ui.md,React Functions and Concepts: A Comprehensive Summary,Developer tools,Developer tools,Developer Tools,React;JavaScript;Frontend;Web Development;Hooks
+_posts/developertools/2016-07-31-Mac-Upgrade.md,Upgrading the Macbook Pro - Model A1278,Developer tools,Developer tools,Developer Tools,MacBook;Hardware;RAM;DIY
+_posts/developertools/2023-07-12-profile-settings.md,MacBook : Configuring shell profile,Developer tools;MacBook,MacBook,Developer Tools,MacOS;Shell;Configuration;Zsh
+_posts/developertools/2022-01-22-ununtu.md,Ubuntu Server Installation,Developer tools,Developer tools,Developer Tools,Linux;Installation;Setup
+_posts/developertools/2023-05-28-largefile-on-github.md,Large Files on Github,Developer tools,Developer tools,Developer Tools,Git;Version Control
+_posts/git/2022-08-28-git-log.md,Git Log,Git,Git,Git,History;Commands;Version Control
+_posts/git/2023-11-07-git-reset-revert.md,Git Reset - Revert,Git,Git,Git,Commands;Version Control
+_posts/git/2020-05-19-detached-head.md,Submodules & Detached Head Problem,Git,Git,Git,Troubleshooting;Version Control
+_posts/git/2023-11-14-git-maintenance.md,Git Maintenance & Clean-up,Git,Git,Git,Optimization;Commands
+_posts/git/2024-04-20-cherry-pick.md,Git Cherry Pick,Git,Git,Git,Commands;Branching;Version Control
+_posts/git/2023-11-09-multi-repo-push.md,Git config- Multi Repo projects,Git,Git,Git,Configuration;Workflow
 _posts/git/2023-12-23-Git-hooks.md,Git Hooks,Git,Git,Git,Hooks;Automation;CI/CD;Workflow
-_posts/git/2023-11-07-git-rebase.md,"Git Merge, Rebase, Squash and Fast forward",Git,Git,Git,Merge;Rebase;Squash;Fast Forward;Branching
+_posts/git/2023-11-07-git-rebase.md,"Git Merge, Rebase, Squash and Fast forward",Git,Git,Git,Branching
 _posts/git/2021-02-01-git-commands.md,Useful git commands,Git,Git,Git,Commands;Reference;CLI;Version Control
 _posts/git/2024-06-18-git-config.md,Git Config,Git,Git,Git,Configuration;Settings;Setup;Commands
-_posts/sql/2023-08-02-materialized-views.md,Materialized views,SQL,SQL,SQL,Materialized Views;Database;Performance;Optimization
-_posts/sql/2023-07-17-window-aggregate-function.md,SQL Window Aggregate Functions,SQL,SQL,SQL,Window Functions;Aggregate;Analytics;Advanced
-_posts/sql/2023-08-02-Triggers.md,Triggers,SQL,SQL,SQL,Triggers;Database;Automation;Stored Procedures
+_posts/sql/2023-08-02-materialized-views.md,Materialized views,SQL,SQL,SQL,Database;Performance;Optimization
+_posts/sql/2023-07-17-window-aggregate-function.md,SQL Window Aggregate Functions,SQL,SQL,SQL,Window Functions;Analytics;Advanced
+_posts/sql/2023-08-02-Triggers.md,Triggers,SQL,SQL,SQL,Database;Automation;Stored Procedures
 _posts/sql/2023-07-15-sql-basics.md,SQL Basics,SQL,SQL,SQL,Basics;Fundamentals;Tutorial;Database
-_posts/sql/2023-07-15-transactional-tables.md,Transactional Tables,SQL,SQL,SQL,Transactions;ACID;Database;Data Integrity
-_posts/sql/2024-09-27-clustering-vs-partitioning.md,,SQL,SQL,SQL,Clustering;Partitioning;Database;Performance;Optimization
-_posts/sql/2023-08-01-PL-SQL.md,Oracle PL/SQL,SQL,SQL,SQL,PL/SQL;Oracle;Database;Stored Procedures
-_posts/sql/2023-07-16-sql-joins.md,SQL Joins,SQL,SQL,SQL,Joins;Inner Join;Outer Join;Query;Database
-_posts/sql/2023-07-15-normalization.md,SQL Nornmalization,SQL,SQL,SQL,Normalization;Database Design;1NF;2NF;3NF
-_posts/sql/2023-08-03-oracle-db.md,Oracle DB,SQL,SQL,SQL,Oracle;Database;RDBMS;Enterprise
-_posts/sql/2023-08-02-savepoint.md,Savepoint,SQL,SQL,SQL,Savepoint;Transactions;Rollback;Database
+_posts/sql/2023-07-15-transactional-tables.md,Transactional Tables,SQL,SQL,SQL,Transactions;ACID;Database
+_posts/sql/2024-09-27-clustering-vs-partitioning.md,,SQL,SQL,SQL,Partitioning;Database;Performance;Optimization
+_posts/sql/2023-08-01-PL-SQL.md,Oracle PL/SQL,SQL,SQL,SQL,Oracle;Database;Stored Procedures
+_posts/sql/2023-07-16-sql-joins.md,SQL Joins,SQL,SQL,SQL,Query;Database
+_posts/sql/2023-07-15-normalization.md,SQL Nornmalization,SQL,SQL,SQL,SQL
+_posts/sql/2023-08-03-oracle-db.md,Oracle DB,SQL,SQL,SQL,Oracle;Database;RDBMS
+_posts/sql/2023-08-02-savepoint.md,Savepoint,SQL,SQL,SQL,Transactions;Database
 _posts/sql/2024-06-18-query-optimization.md,SQL/Query Optimization,SQL,SQL,SQL,Query Optimization;Performance;Indexing;Best Practices
-_posts/sql/2023-07-16-window-functions.md,SQL Window Functions,SQL,SQL,SQL,Window Functions;Analytics;ROW_NUMBER;RANK;Advanced
-_posts/sql/2024-07-07-distributed-db-query-optimization.md,Distributed DB Query Optimization,SQL,SQL,SQL,Distributed Database;Query Optimization;Performance;Sharding
-_posts/sql/2023-07-16-subqueries.md,SQL Subqueries,SQL,SQL,SQL,Subqueries;Nested Queries;Query;Database
-_posts/developertools/intelliJ/2023-11-10-intelliJ-Debug-tricks.md,IntelliJ Idea Debug,Developer tools,Developer Tools,Shortcuts,IntelliJ;IDE;Debugging;Tips;Shortcuts
-_posts/developertools/intelliJ/2024-06-03-intelliJ-shortcuts-drill.md,IntelliJ Shortcuts - Daily Drills,Developer tools,Developer Tools,Shortcuts,IntelliJ;IDE;Shortcuts;Productivity;Practice
-_posts/developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings.md,IntelliJ Idea settings,Developer tools,Developer Tools,Developer tools,IntelliJ;IDE;Settings;Configuration;Setup
-_posts/developertools/intelliJ/2021-11-03-intelliJ-Idea-shortcuts.md,IntelliJ Idea Shortcuts,Developer tools,Developer Tools,Shortcuts,IntelliJ;IDE;Shortcuts;Productivity;Reference
-_posts/Java/performanceEngineering/2024-02-10-JavaMemory.md,Java Memory,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Memory;Heap;Stack;Performance;JVM
-_posts/Java/performanceEngineering/2024-06-20-memory-leaks.md,Memory Leaks,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Memory Leaks;Debugging;Performance;Troubleshooting
-_posts/Java/performanceEngineering/2024-02-10-GarbageCollections.md,Garbage Collections,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Garbage Collection;GC;Memory;Performance;JVM
-_posts/Java/performanceEngineering/2024-04-09-jvm-agruments.md,JVM Arguments,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;JVM;Arguments;Configuration;Performance;Tuning
-_posts/Java/performanceEngineering/2024-02-09-JVM-Compilation.md,Compiler Flags,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;JVM;Compiler;Flags;Performance;Optimization
-_posts/Java/performanceEngineering/2024-02-10-escaping-references.md,Escaping references,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Memory;References;Performance;Best Practices
-_posts/Java/performanceEngineering/2025-02-18-performance-testing-K6.md,Load Testing with Grafana K6,Java;Performance Engineering,Performance Engineering,Performance Engineering,Performance;Load Testing;K6;Grafana;Testing;Benchmarking
-_posts/Java/performanceEngineering/2025-07-18-gatling-loadTesting.md,Gatling - Microservices Load Testing,Java;Performance Engineering,Performance Engineering,Performance Engineering,Performance;Load Testing;Gatling;Microservices;Testing;Benchmarking
-_posts/Java/performanceEngineering/2024-02-17-JavaMissionControl.md,Java Microbenchmark Harness - JMH,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;JMH;Benchmarking;Performance;Testing;Profiling
-_posts/Java/performanceEngineering/2024-03-14-EclipseMemoryAnalyzerTool.md,Eclipse Memory Analyzer Tool (MAT),Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;MAT;Memory Analysis;Heap Dump;Performance;Debugging
-_posts/Java/performanceEngineering/2024-08-03-Java-DataStructures-memory.md,"String Intern pool, Hashmaps and Collections",Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Memory;Performance;String Pool;HashMap;Collections
-_posts/Java/performanceEngineering/2023-10-17-Java-stats.md,Java Systems Stats,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Performance;Monitoring;Metrics;System Stats
+_posts/sql/2023-07-16-window-functions.md,SQL Window Functions,SQL,SQL,SQL,Window Functions;Analytics;Advanced
+_posts/sql/2024-07-07-distributed-db-query-optimization.md,Distributed DB Query Optimization,SQL,SQL,SQL,Query Optimization;Performance;Sharding
+_posts/sql/2023-07-16-subqueries.md,SQL Subqueries,SQL,SQL,SQL,Query;Database
+_posts/developertools/intelliJ/2023-11-10-intelliJ-Debug-tricks.md,IntelliJ Idea Debug,Developer tools,Shortcuts,Developer Tools,IntelliJ;IDE;Debugging;Tips;Shortcuts
+_posts/developertools/intelliJ/2024-06-03-intelliJ-shortcuts-drill.md,IntelliJ Shortcuts - Daily Drills,Developer tools,Shortcuts,Developer Tools,IntelliJ;IDE;Shortcuts;Productivity;Practice
+_posts/developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings.md,IntelliJ Idea settings,Developer tools,Developer tools,Developer Tools,IntelliJ;IDE;Settings;Configuration;Setup
+_posts/developertools/intelliJ/2021-11-03-intelliJ-Idea-shortcuts.md,IntelliJ Idea Shortcuts,Developer tools,Shortcuts,Developer Tools,IntelliJ;IDE;Shortcuts;Productivity;Reference
+_posts/Java/performanceEngineering/2024-02-10-JavaMemory.md,Java Memory,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Memory;Performance;JVM
+_posts/Java/performanceEngineering/2024-06-20-memory-leaks.md,Memory Leaks,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Debugging;Performance;Troubleshooting
+_posts/Java/performanceEngineering/2024-02-10-GarbageCollections.md,Garbage Collections,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Garbage Collection;Memory;Performance;JVM
+_posts/Java/performanceEngineering/2024-04-09-jvm-agruments.md,JVM Arguments,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;JVM;Configuration;Performance
+_posts/Java/performanceEngineering/2024-02-09-JVM-Compilation.md,Compiler Flags,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;JVM;Compiler;Performance;Optimization
+_posts/Java/performanceEngineering/2024-02-10-escaping-references.md,Escaping references,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Memory;Performance;Best Practices
+_posts/Java/performanceEngineering/2025-02-18-performance-testing-K6.md,Load Testing with Grafana K6,Java;Performance Engineering,Performance Engineering,Performance Engineering,Performance;Load Testing;Testing;Benchmarking
+_posts/Java/performanceEngineering/2025-07-18-gatling-loadTesting.md,Gatling - Microservices Load Testing,Java;Performance Engineering,Performance Engineering,Performance Engineering,Performance;Load Testing;Microservices;Testing;Benchmarking
+_posts/Java/performanceEngineering/2024-02-17-JavaMissionControl.md,Java Microbenchmark Harness - JMH,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Benchmarking;Performance;Testing;Profiling
+_posts/Java/performanceEngineering/2024-03-14-EclipseMemoryAnalyzerTool.md,Eclipse Memory Analyzer Tool (MAT),Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Performance;Debugging
+_posts/Java/performanceEngineering/2024-08-03-Java-DataStructures-memory.md,"String Intern pool, Hashmaps and Collections",Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Memory;Performance;HashMap;Collections
+_posts/Java/performanceEngineering/2023-10-17-Java-stats.md,Java Systems Stats,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Performance;Monitoring;Metrics
 _posts/Java/performanceEngineering/2024-06-19-API-optimizations.md,API Optimizations,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;API;Performance;Optimization;Best Practices
-_posts/Java/performanceEngineering/2024-02-12-BenchmarkingWithJMH.md,Java Mission Control - JMC,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;JMC;Profiling;Performance;Monitoring;Tools
-_posts/Java/performanceEngineering/2024-06-20-code-optimization.md,Java Code Optimization,Java;Performance Engineering,Performance Engineering,Multithreading,Java;Performance;Optimization;Code;Best Practices;Multithreading
-_posts/Java/threads/2023-10-10-asynchronous-programming.md,CompletableFutures & Asynchronous Programming,Java;Multithreading,Multithreading,Multithreading,Java;CompletableFuture;Asynchronous;Concurrency
-_posts/Java/threads/2024-08-18-condition-variables.md,Condition Variables,Java;Multithreading,Multithreading,Multithreading,Java;Condition Variables;Synchronization;Concurrency
-_posts/Java/threads/2024-07-27-ScopedVariables.md,Scoped Value,Java;Multithreading,Multithreading,Multithreading,Java;Scoped Value;Java 21;Thread-Local
-_posts/Java/threads/2024-08-08-ThreadCreation.md,Thread Creation,Java;Multithreading,Multithreading,Multithreading,Java;Thread;Creation;Concurrency
-_posts/Java/threads/2022-08-06-race-condition.md,Synchronization - Race Condition & Critical Section,Java;Multithreading,Multithreading,Multithreading,Java;Synchronization;Race Condition;Critical Section
-_posts/Java/threads/2024-07-26-ThreadLocal.md,Thread-local storage (TLS) in multithreading,Java;Multithreading,Multithreading,Multithreading,Java;ThreadLocal;Thread-Local Storage;Concurrency
+_posts/Java/performanceEngineering/2024-02-12-BenchmarkingWithJMH.md,Java Mission Control - JMC,Java;Performance Engineering,Performance Engineering,Performance Engineering,Java;Profiling;Performance;Monitoring;Tools
+_posts/Java/performanceEngineering/2024-06-20-code-optimization.md,Java Code Optimization,Java;Performance Engineering,Multithreading,Performance Engineering,Java;Performance;Optimization;Code;Best Practices;Multithreading
+_posts/Java/threads/2023-10-10-asynchronous-programming.md,CompletableFutures & Asynchronous Programming,Java;Multithreading,Multithreading,Multithreading,Java;Asynchronous;Concurrency
+_posts/Java/threads/2024-08-18-condition-variables.md,Condition Variables,Java;Multithreading,Multithreading,Multithreading,Java;Synchronization;Concurrency
+_posts/Java/threads/2024-07-27-ScopedVariables.md,Scoped Value,Java;Multithreading,Multithreading,Multithreading,Java;Java 21
+_posts/Java/threads/2024-08-08-ThreadCreation.md,Thread Creation,Java;Multithreading,Multithreading,Multithreading,Java;Concurrency
+_posts/Java/threads/2022-08-06-race-condition.md,Synchronization - Race Condition & Critical Section,Java;Multithreading,Multithreading,Multithreading,Java;Synchronization
+_posts/Java/threads/2024-07-26-ThreadLocal.md,Thread-local storage (TLS) in multithreading,Java;Multithreading,Multithreading,Multithreading,Java;Concurrency
 _posts/Java/threads/2024-08-17-synchronization-mechanism-java.md,Synchronization Mechanisms in Java,Java;Multithreading,Multithreading,Multithreading,Java;Synchronization;Locks;Concurrency
 _posts/Java/threads/2024-07-27-Multithreading-theory.md,Multithreading Theory,Java;Multithreading,Multithreading,Multithreading,Java;Theory;Concurrency;Fundamentals
-_posts/Java/threads/2024-08-18-reentrant-lock.md,Reentrant Lock,Java;Multithreading,Multithreading,Multithreading,Java;ReentrantLock;Locks;Concurrency
-_posts/Java/threads/2024-08-20-concurrent-collections.md,Java Concurrent Collections,Java;Multithreading,Multithreading,Multithreading,Java;Concurrent Collections;Thread-Safe;Concurrency
-_posts/Java/threads/2024-08-18-semaphores.md,Semaphores,Java;Multithreading,Multithreading,Multithreading,Java;Semaphores;Synchronization;Concurrency
-_posts/Java/threads/2024-08-12-Volatile.md,Volatile Variable,Java;Multithreading,Multithreading,Multithreading,Java;Volatile;Memory Visibility;Concurrency
-_posts/Java/threads/2024-07-20-structured-concurrency.md,Structured Concurrency,Java;Multithreading,Multithreading,Multithreading,Java;Structured Concurrency;Java 21;Project Loom
+_posts/Java/threads/2024-08-18-reentrant-lock.md,Reentrant Lock,Java;Multithreading,Multithreading,Multithreading,Java;Locks;Concurrency
+_posts/Java/threads/2024-08-20-concurrent-collections.md,Java Concurrent Collections,Java;Multithreading,Multithreading,Multithreading,Java;Concurrency
+_posts/Java/threads/2024-08-18-semaphores.md,Semaphores,Java;Multithreading,Multithreading,Multithreading,Java;Synchronization;Concurrency
+_posts/Java/threads/2024-08-12-Volatile.md,Volatile Variable,Java;Multithreading,Multithreading,Multithreading,Java;Concurrency
+_posts/Java/threads/2024-07-20-structured-concurrency.md,Structured Concurrency,Java;Multithreading,Multithreading,Multithreading,Java;Java 21;Project Loom
 _posts/Java/threads/2024-07-19-java21-virtualthreads.md,Virtual Threads,Java;Multithreading,Multithreading,Multithreading,Java;Virtual Threads;Java 21;Project Loom;Concurrency
-_posts/Java/threads/2022-07-15-Multithreading.md,Multithreading,Java;Multithreading,Multithreading,Multithreading,Java;Threads;Concurrency;Parallelism
-_posts/Algo/trees/2025-01-21-b-b+-m-ary-trees.md,"B Trees, B+ Trees, m-ary/m-way Trees",Algorithms,Algorithms,Algorithms,Trees;B-Tree;B+ Tree;M-ary Tree;Data Structures
-_posts/Algo/trees/2025-01-20-avl-tree.md,AVL Tree,Algorithms,Algorithms,Algorithms,Trees;AVL;Self-Balancing;BST;Data Structures
-_posts/Algo/trees/2021-11-05-Heaps.md,Heaps,Algorithms,Algorithms,Algorithms,Trees;Heaps;Priority Queue;Data Structures
-_posts/Algo/trees/2024-07-18-BFS.md,DFS an BFS for Tree,Algorithms,Algorithms,Algorithms,Trees;DFS;BFS;Traversal;Graph
-_posts/Algo/trees/2016-04-09-trees.md,Trees,Algorithms,Algorithms,Algorithms,Trees;Binary Tree;BST;Data Structures
-_posts/Algo/utils/2022-02-02-strings.md,Strings,Algorithms,Algorithms,Algorithms,Strings;Data Structures;Java;Manipulation
+_posts/Java/threads/2022-07-15-Multithreading.md,Multithreading,Java;Multithreading,Multithreading,Multithreading,Java;Concurrency
+_posts/Algo/trees/2025-01-21-b-b+-m-ary-trees.md,"B Trees, B+ Trees, m-ary/m-way Trees",Algorithms,Algorithms,Algorithms,Trees;B-Tree;Data Structures
+_posts/Algo/trees/2025-01-20-avl-tree.md,AVL Tree,Algorithms,Algorithms,Algorithms,Trees;BST;Data Structures
+_posts/Algo/trees/2021-11-05-Heaps.md,Heaps,Algorithms,Algorithms,Algorithms,Trees;Data Structures
+_posts/Algo/trees/2024-07-18-BFS.md,DFS an BFS for Tree,Algorithms,Algorithms,Algorithms,Trees;DFS;BFS;Traversal
+_posts/Algo/trees/2016-04-09-trees.md,Trees,Algorithms,Algorithms,Algorithms,Trees;BST;Data Structures
+_posts/Algo/utils/2022-02-02-strings.md,Strings,Algorithms,Algorithms,Algorithms,Data Structures;Java
 _posts/Algo/utils/2023-12-04-Arrays_Collections.md,"Arrays, List and Collections Class",Algorithms,Algorithms,Algorithms,Arrays;Collections;List;Java;Utility
-_posts/Algo/utils/2023-12-04-Math.md,Math,Algorithms,Algorithms,Algorithms,Math;Utility;Java;Calculations
-_posts/Algo/primitives/2023-11-29-Character.md,Character Utility Class,Algorithms,Algorithms,Algorithms,Character;Utility;Java;Primitives
-_posts/Algo/primitives/2017-02-01-maps.md,Maps,Algorithms,Algorithms,Algorithms,Maps;HashMap;Data Structures;Java
-_posts/Algo/primitives/2023-12-03-Double.md,Double Utility Class,Algorithms,Algorithms,Algorithms,Double;Utility;Java;Primitives
-_posts/Algo/primitives/2022-02-26-boolean.md,Boolean,Algorithms,Algorithms,Algorithms,Boolean;Utility;Java;Primitives
-_posts/Algo/primitives/2023-11-27-integer.md,Integer & Long,Algorithms,Algorithms,Algorithms,Integer;Long;Utility;Java;Primitives
-_posts/Algo/primitives/2023-11-27-bitwise-coding.md,Bitwise Operators,Algorithms,Algorithms,Algorithms,Bitwise;Operators;Bit Manipulation;Binary
-_posts/Algo/graphs/2024-06-15-union-find.md,Union Find  - Disjoint Set Data structure,Algorithms,Algorithms,Algorithms,Graphs;Union Find;Disjoint Set;Data Structures
-_posts/Algo/graphs/2024-07-17-DFS.md,Graph DFS & BFS Traversal,Algorithms,Algorithms,Algorithms,Graphs;DFS;BFS;Traversal;Graph Algorithms
-_posts/Algo/graphs/2024-07-16-Graphs.md,Graphs,Algorithms,Algorithms,Algorithms,Graphs;Graph Theory;Data Structures;Adjacency
-_posts/systems_design/cache/2024-01-20-Cache.md,Caches,System Design,System Design,System Design,Caching;Performance;Redis;Memcached
+_posts/Algo/utils/2023-12-04-Math.md,Math,Algorithms,Algorithms,Algorithms,Math;Utility;Java
+_posts/Algo/primitives/2023-11-29-Character.md,Character Utility Class,Algorithms,Algorithms,Algorithms,Utility;Java;Primitives
+_posts/Algo/primitives/2017-02-01-maps.md,Maps,Algorithms,Algorithms,Algorithms,HashMap;Data Structures;Java
+_posts/Algo/primitives/2023-12-03-Double.md,Double Utility Class,Algorithms,Algorithms,Algorithms,Utility;Java;Primitives
+_posts/Algo/primitives/2022-02-26-boolean.md,Boolean,Algorithms,Algorithms,Algorithms,Utility;Java;Primitives
+_posts/Algo/primitives/2023-11-27-integer.md,Integer & Long,Algorithms,Algorithms,Algorithms,Utility;Java;Primitives
+_posts/Algo/primitives/2023-11-27-bitwise-coding.md,Bitwise Operators,Algorithms,Algorithms,Algorithms,Algorithms
+_posts/Algo/graphs/2024-06-15-union-find.md,Union Find  - Disjoint Set Data structure,Algorithms,Algorithms,Algorithms,Graphs;Data Structures
+_posts/Algo/graphs/2024-07-17-DFS.md,Graph DFS & BFS Traversal,Algorithms,Algorithms,Algorithms,Graphs;DFS;BFS;Traversal
+_posts/Algo/graphs/2024-07-16-Graphs.md,Graphs,Algorithms,Algorithms,Algorithms,Graphs;Data Structures
+_posts/systems_design/cache/2024-01-20-Cache.md,Caches,System Design,System Design,System Design,Caching;Performance;Redis
 _posts/systems_design/cache/2024-06-14-Redis.md,Redis,System Design,System Design,System Design,Redis;Caching;In-Memory;NoSQL
-_posts/systems_design/security/2024-06-28-Authentication-mechanisms.md,Authentication Mechanisms,System Design,System Design,System Design,Security;Authentication;OAuth;JWT;SSO
-_posts/systems_design/security/2024-06-28-OAuth2.md,OAuth 2.0 Authentication,System Design,System Design,System Design,Security;OAuth;OAuth2;Authentication;Authorization
+_posts/systems_design/security/2024-06-28-Authentication-mechanisms.md,Authentication Mechanisms,System Design,System Design,System Design,Security;Authentication;OAuth;SSO
+_posts/systems_design/security/2024-06-28-OAuth2.md,OAuth 2.0 Authentication,System Design,System Design,System Design,Security;OAuth;Authentication;Authorization
 _posts/systems_design/security/2024-01-21-Security.md,Security,System Design,System Design,System Design,Security;Encryption;Authentication;Best Practices
-_posts/systems_design/security/2024-06-28-HTTPS.md,HTTPS,System Design,System Design,System Design,Security;HTTPS;SSL;TLS;Encryption
-_posts/systems_design/security/2024-06-13-Passwords.md,Passwords in DB,System Design,System Design,System Design,Security;Passwords;Hashing;Encryption;Database
-_posts/systems_design/security/2024-06-28-SSO.md,SSO,System Design,System Design,System Design,Security;SSO;Single Sign-On;Authentication
+_posts/systems_design/security/2024-06-28-HTTPS.md,HTTPS,System Design,System Design,System Design,Security;SSL;TLS;Encryption
+_posts/systems_design/security/2024-06-13-Passwords.md,Passwords in DB,System Design,System Design,System Design,Security;Encryption;Database
+_posts/systems_design/security/2024-06-28-SSO.md,SSO,System Design,System Design,System Design,Security;SSO;Authentication
 _posts/systems_design/security/2024-06-28-API-Security.md,API Security,System Design,System Design,System Design,Security;API;Authentication;Rate Limiting;Best Practices
-_posts/systems_design/networks/2024-06-14-Proxy.md,Forward Proxy  vs Reverse Proxy,System Design,System Design,System Design,Networking;Proxy;Load Balancing;Infrastructure
-_posts/systems_design/networks/2024-06-14-TCP.md,TCP,System Design,System Design,System Design,Networking;TCP;IP;Protocols;Transport Layer
-_posts/systems_design/networks/2024-06-29-Serverless-architecture.md,Serverless Architecture,System Design,System Design,System Design,Architecture;Serverless;Lambda;Cloud;FaaS
-_posts/systems_design/networks/2024-06-28-WebHooks.md,WebHooks,System Design,System Design,System Design,Networking;Webhooks;API;Event-Driven
-_posts/systems_design/networks/2024-07-20-http-status-code.md,Http Status Codes & Java Exceptions,System Design,System Design,System Design,HTTP;Status Codes;REST;API;Java
-_posts/systems_design/networks/2024-06-17-gRPC-RPC.md,RPC & gRPC,System Design,System Design,System Design,Networking;RPC;gRPC;Protobuf;API
-_posts/systems_design/networks/2024-06-13-HTTP.md,HTTP (1/2/3),System Design,System Design,System Design,Networking;HTTP;Protocols;HTTP2;HTTP3
-_posts/systems_design/networks/2024-06-29-DNS.md,DNS - Domain Name System,System Design,System Design,System Design,Networking;DNS;Domain;Infrastructure
-_posts/systems_design/networks/2024-06-29-P2P.md,P2P - Peer-to-peer,System Design,System Design,System Design,Networking;P2P;Peer-to-Peer;Distributed
-_posts/systems_design/networks/2024-01-07-Networking.md,Computer Networks - The OSI Model,System Design,System Design,System Design,Networking;OSI Model;TCP/IP;Protocols
-_posts/systems_design/networks/2024-05-22-Communication_API_Protocols.md,API Communication Protocols,System Design,System Design,System Design,Networking;API;Protocols;REST;GraphQL;gRPC
-_posts/systems_design/networks/2025-02-21-IP.md,IP Addressing,System Design,System Design,System Design,Networking;IP;Addressing;IPv4;IPv6
-_posts/systems_design/networks/2024-06-21-websockets.md,Web Sockets ,System Design,System Design,System Design,Networking;WebSockets;Real-time;Bidirectional
-_posts/systems_design/db/2025-05-08-MongoDb.md,MongoDb - Document-Oriented Database,System Design,System Design,System Design,Database;MongoDB;NoSQL;Document Store
-_posts/systems_design/db/2024-06-30-HyperLogLog.md,HyperLogLog,System Design,System Design,System Design,Algorithms;HyperLogLog;Cardinality;Probabilistic
-_posts/systems_design/db/2024-06-29-SkipLists.md,Skip Lists,System Design,System Design,System Design,Data Structures;Skip Lists;Algorithms;Indexing
+_posts/systems_design/networks/2024-06-14-Proxy.md,Forward Proxy  vs Reverse Proxy,System Design,System Design,System Design,Networking;Load Balancing;Infrastructure
+_posts/systems_design/networks/2024-06-14-TCP.md,TCP,System Design,System Design,System Design,Networking;IP;Protocols
+_posts/systems_design/networks/2024-06-29-Serverless-architecture.md,Serverless Architecture,System Design,System Design,System Design,Architecture;Lambda;Cloud
+_posts/systems_design/networks/2024-06-28-WebHooks.md,WebHooks,System Design,System Design,System Design,Networking;Webhooks;API
+_posts/systems_design/networks/2024-07-20-http-status-code.md,Http Status Codes & Java Exceptions,System Design,System Design,System Design,HTTP;REST;API;Java
+_posts/systems_design/networks/2024-06-17-gRPC-RPC.md,RPC & gRPC,System Design,System Design,System Design,Networking;gRPC;API
+_posts/systems_design/networks/2024-06-13-HTTP.md,HTTP (1/2/3),System Design,System Design,System Design,Networking;HTTP;Protocols
+_posts/systems_design/networks/2024-06-29-DNS.md,DNS - Domain Name System,System Design,System Design,System Design,Networking;Infrastructure
+_posts/systems_design/networks/2024-06-29-P2P.md,P2P - Peer-to-peer,System Design,System Design,System Design,Networking;Distributed
+_posts/systems_design/networks/2024-01-07-Networking.md,Computer Networks - The OSI Model,System Design,System Design,System Design,Networking;Protocols
+_posts/systems_design/networks/2024-05-22-Communication_API_Protocols.md,API Communication Protocols,System Design,System Design,System Design,Networking;API;Protocols;REST;gRPC
+_posts/systems_design/networks/2025-02-21-IP.md,IP Addressing,System Design,System Design,System Design,Networking;IP
+_posts/systems_design/networks/2024-06-21-websockets.md,Web Sockets ,System Design,System Design,System Design,Networking;WebSockets;Real-time
+_posts/systems_design/db/2025-05-08-MongoDb.md,MongoDb - Document-Oriented Database,System Design,System Design,System Design,Database;MongoDB;NoSQL
+_posts/systems_design/db/2024-06-30-HyperLogLog.md,HyperLogLog,System Design,System Design,System Design,Algorithms;Probabilistic
+_posts/systems_design/db/2024-06-29-SkipLists.md,Skip Lists,System Design,System Design,System Design,Data Structures;Algorithms;Indexing
 _posts/systems_design/db/2024-06-29-DB-Datastructures.md,DB Data Structures,System Design,System Design,System Design,Database;Data Structures;B-Tree;LSM Tree
 _posts/systems_design/db/2024-06-14-NoSqlDb.md,No SQL DB,System Design,System Design,System Design,Database;NoSQL;MongoDB;Cassandra;Redis
-_posts/systems_design/db/2024-06-30-LockingMechanism.md,DB Locking mechanism,System Design,System Design,System Design,Database;Locking;Concurrency;Transactions
-_posts/systems_design/db/2025-07-31-Cassandra.md,Cassandra - Column-Oriented Database,System Design,System Design,System Design,Database;Cassandra;NoSQL;Column Store;Distributed
+_posts/systems_design/db/2024-06-30-LockingMechanism.md,DB Locking mechanism,System Design,System Design,System Design,Database;Concurrency;Transactions
+_posts/systems_design/db/2025-07-31-Cassandra.md,Cassandra - Column-Oriented Database,System Design,System Design,System Design,Database;Cassandra;NoSQL;Distributed
 _posts/systems_design/db/2024-06-17-Distributed-DB.md,Distributed Databases,System Design,System Design,System Design,Database;Distributed;Sharding;Replication
-_posts/systems_design/db/2024-06-29-SSTables.md,SSTables - Sorted String Tables,System Design,System Design,System Design,Database;SSTables;LSM Tree;Storage
+_posts/systems_design/db/2024-06-29-SSTables.md,SSTables - Sorted String Tables,System Design,System Design,System Design,Database;LSM Tree;Storage
 _posts/systems_design/db/2024-01-20-Databases.md,Databases,System Design,System Design,System Design,Database;SQL;NoSQL;RDBMS
 _posts/systems_design/db/2024-06-29-LSM-Tree.md,LSM Tree - Log-Structured Merge Tree,System Design,System Design,System Design,Database;LSM Tree;Data Structures;Storage
-_posts/systems_design/db/2024-01-21-Database-Replication.md,Database Replication & Migrations,System Design,System Design,System Design,Database;Replication;Migration;High Availability
-_posts/systems_design/db/2024-01-20-Transaction-Isolation-levels.md,Transaction Isolation Levels,System Design,System Design,System Design,Database;Transactions;Isolation;ACID;Concurrency
-_posts/microservices/testing/2023-11-16-junit-mockito-tests.md,Comprehensive Guide to JUnit and Mockito Testing,Microservices;Testing,Testing,Testing;JUnit,Spring Boot;JUnit;Mockito;Unit Testing;Guide
-_posts/microservices/testing/2023-11-24-power-mock-tests.md,PowerMock Testing Guide: When Standard Mocking Isn't Enough,Microservices;Testing,Testing,Testing;JUnit,Spring Boot;PowerMock;Mockito;Unit Testing;Guide
-_posts/microservices/testing/2025-06-23-bdd-jbehave.md,A Guide to Behavior-Driven Development (BDD) with JBehave,Microservices,Testing,Java;Testing,Spring Boot;BDD;JBehave;Behavior Driven;Guide
-_posts/microservices/crud/2022-02-09-Spring-Data-Jpa.md,Spring Data JPA & CRUD - GET PUT POST DELETE,Microservices,Microservices,CRUD,Spring Boot;JPA;CRUD;REST;Database;Hibernate
-_posts/microservices/crud/2023-09-15-GET-rest-calls.md,GET REST Calls,Microservices,Microservices,CRUD,Spring Boot;REST;GET;HTTP;API
-_posts/microservices/crud/2024-01-31-Idempotence-HTTP-methods.md,Idempotence & HTTP Methods - Designing RESTful URI's,Microservices,Microservices,Microservices,Spring Boot;REST;Idempotence;HTTP Methods;API Design
-_posts/microservices/crud/2023-09-15-spring-validations.md,Spring Validations,Microservices,Microservices,Spring Boot,Spring Boot;Validation;Bean Validation;JSR-303;Input Validation
-_posts/microservices/crud/2025-06-03-springboot-interview-deepdive.md,SpringBoot Interview - Deep Dive,Microservices,Microservices,CRUD,Spring Boot;Interview;Questions;Deep Dive;Preparation
-_posts/microservices/crud/2023-09-15-POST-Requests.md,POST API,Microservices,Microservices,CRUD,Spring Boot;REST;POST;HTTP;API
-_posts/microservices/crud/2023-09-15-spring-exceptions.md,Exception Handling in Spring,Microservices,Microservices,Microservices,Spring Boot;Exception Handling;Error Handling;REST;ControllerAdvice
-_posts/microservices/crud/2023-09-15-spring-request-parameter.md,Spring Path variable & Request Parameter,Microservices,Microservices,Spring Boot,Spring Boot;REST;Path Variable;Request Parameter;API
-_posts/microservices/crud/2023-09-15-DELETE-rest-calls.md,DELETE REST Calls,Microservices,Microservices,CRUD,Spring Boot;REST;DELETE;HTTP;API
-_posts/microservices/crud/2023-09-15-springboot-reference.md,SpringBoot Reference,Microservices,Microservices,CRUD,Spring Boot;Reference;Documentation;Guide
-_posts/microservices/dependencyManagement/2023-11-24-gradle.md,Gradle,Microservices,Microservices,Java,Build Tools;Gradle;Dependencies;Build;Automation
-_posts/microservices/dependencyManagement/2025-09-07-bom-pom.md,BOM vs Parent POM,Microservices,Microservices,Java,Build Tools;Maven;BOM;POM;Dependencies;Dependency Management
+_posts/systems_design/db/2024-01-21-Database-Replication.md,Database Replication & Migrations,System Design,System Design,System Design,Database;Replication;Migration
+_posts/systems_design/db/2024-01-20-Transaction-Isolation-levels.md,Transaction Isolation Levels,System Design,System Design,System Design,Database;Transactions;ACID;Concurrency
+_posts/microservices/testing/2023-11-16-junit-mockito-tests.md,Comprehensive Guide to JUnit and Mockito Testing,Microservices;Testing,Testing;JUnit,Testing,Spring Boot;JUnit;Mockito;Unit Testing;Guide
+_posts/microservices/testing/2023-11-24-power-mock-tests.md,PowerMock Testing Guide: When Standard Mocking Isn't Enough,Microservices;Testing,Testing;JUnit,Testing,Spring Boot;Mockito;Unit Testing;Guide
+_posts/microservices/testing/2025-06-23-bdd-jbehave.md,A Guide to Behavior-Driven Development (BDD) with JBehave,Microservices,Java;Testing,Testing,Spring Boot;Guide
+_posts/microservices/crud/2022-02-09-Spring-Data-Jpa.md,Spring Data JPA & CRUD - GET PUT POST DELETE,Microservices,CRUD,Microservices,Spring Boot;JPA;REST;Database;Hibernate
+_posts/microservices/crud/2023-09-15-GET-rest-calls.md,GET REST Calls,Microservices,CRUD,Microservices,Spring Boot;REST;HTTP;API
+_posts/microservices/crud/2024-01-31-Idempotence-HTTP-methods.md,Idempotence & HTTP Methods - Designing RESTful URI's,Microservices,Microservices,Microservices,Spring Boot;REST
+_posts/microservices/crud/2023-09-15-spring-validations.md,Spring Validations,Microservices,Spring Boot,Microservices,Spring Boot
+_posts/microservices/crud/2025-06-03-springboot-interview-deepdive.md,SpringBoot Interview - Deep Dive,Microservices,CRUD,Microservices,Spring Boot;Interview;Questions;Preparation
+_posts/microservices/crud/2023-09-15-POST-Requests.md,POST API,Microservices,CRUD,Microservices,Spring Boot;REST;HTTP;API
+_posts/microservices/crud/2023-09-15-spring-exceptions.md,Exception Handling in Spring,Microservices,Microservices,Microservices,Spring Boot;Error Handling;REST
+_posts/microservices/crud/2023-09-15-spring-request-parameter.md,Spring Path variable & Request Parameter,Microservices,Spring Boot,Microservices,Spring Boot;REST;API
+_posts/microservices/crud/2023-09-15-DELETE-rest-calls.md,DELETE REST Calls,Microservices,CRUD,Microservices,Spring Boot;REST;HTTP;API
+_posts/microservices/crud/2023-09-15-springboot-reference.md,SpringBoot Reference,Microservices,CRUD,Microservices,Spring Boot;Reference;Documentation;Guide
+_posts/microservices/dependencyManagement/2023-11-24-gradle.md,Gradle,Microservices,Java,Microservices,Build Tools;Gradle;Dependencies;Build;Automation
+_posts/microservices/dependencyManagement/2025-09-07-bom-pom.md,BOM vs Parent POM,Microservices,Java,Microservices,Build Tools;Dependencies

@@ -4,8 +4,6 @@ date: 2024-02-10 01:23:00
 tags:
 - Java
 - Memory
-- Heap
-- Stack
 - Performance
 - JVM
 title: Java Memory

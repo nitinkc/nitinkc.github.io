@@ -2,7 +2,6 @@
 categories: SQL
 date: 2023-08-02 14:25:00
 tags:
-- Materialized Views
 - Database
 - Performance
 - Optimization

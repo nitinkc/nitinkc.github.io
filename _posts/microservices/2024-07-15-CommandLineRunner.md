@@ -3,7 +3,6 @@ categories: Microservices
 date: 2024-07-15 20:00:00
 tags:
 - Spring Boot
-- CommandLineRunner
 - Initialization
 title: CommandLineRunner - Spring Boot
 ---

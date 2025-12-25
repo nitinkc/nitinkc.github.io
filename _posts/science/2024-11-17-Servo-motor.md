@@ -2,12 +2,8 @@
 categories: Electronics
 date: 2024-11-17 08:00:00
 tags:
-- Servo
 - Motors
-- Actuators
 - Arduino
-- Robotics
-- Movement
 title: Servo Motor
 ---
 

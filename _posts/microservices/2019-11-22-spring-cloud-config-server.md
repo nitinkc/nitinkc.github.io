@@ -5,7 +5,6 @@ tags:
 - Spring Boot
 - Spring Cloud
 - Configuration
-- Config Server
 title: Spring Config Client
 ---
 

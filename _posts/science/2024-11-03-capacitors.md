@@ -2,7 +2,6 @@
 categories: Electronics
 date: 2024-11-03 01:00:00
 tags:
-- Capacitors
 - Components
 - Circuit
 - Theory

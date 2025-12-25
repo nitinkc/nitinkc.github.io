@@ -5,7 +5,6 @@ tags:
 - Spring Boot
 - WebSockets
 - Real-time
-- Bidirectional Communication
 - Guide
 title: 'Complete Guide to SpringBoot WebSockets: Real-time Communication Patterns'
 ---

@@ -2,11 +2,9 @@
 categories: DevOps
 date: 2024-09-17 23:02:00
 tags:
-- Helm
 - Kubernetes
 - Charts
 - Package Manager
-- Minikube
 title: Helm Charts with minikube
 ---
 

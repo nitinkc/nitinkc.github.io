@@ -3,7 +3,6 @@ categories: System Design
 date: 2024-06-29 11:02:00
 tags:
 - Data Structures
-- Skip Lists
 - Algorithms
 - Indexing
 title: Skip Lists

@@ -3,8 +3,6 @@ categories: Java
 date: 2022-08-03 18:16:00
 tags:
 - Serialization
-- Externalization
-- Object Persistence
 - IO
 title: Serialization & Externalization
 ---

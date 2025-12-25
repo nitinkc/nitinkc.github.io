@@ -5,9 +5,7 @@ tags:
 - Project
 - DIY
 - Drone
-- RC
 - Motors
-- Aviation
 title: Simple Twin engine plane
 ---
 

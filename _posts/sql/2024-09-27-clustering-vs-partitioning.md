@@ -1,7 +1,6 @@
 ---
 categories: SQL
 tags:
-- Clustering
 - Partitioning
 - Database
 - Performance

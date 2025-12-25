@@ -3,8 +3,6 @@ categories: System Design
 date: 2024-06-13 11:02:00
 tags:
 - Security
-- Passwords
-- Hashing
 - Encryption
 - Database
 title: Passwords in DB

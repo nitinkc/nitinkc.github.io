@@ -2,9 +2,6 @@
 categories: Git
 date: 2023-11-07 11:30:00
 tags:
-- Reset
-- Revert
-- Undo
 - Commands
 - Version Control
 title: Git Reset - Revert

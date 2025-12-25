@@ -6,7 +6,6 @@ tags:
 - Reference
 - Interview
 - Coding
-- Cheatsheet
 title: Coding Interview - Syntax Reference
 ---
 

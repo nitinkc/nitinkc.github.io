@@ -2,7 +2,6 @@
 categories: Developer Tools
 date: 2023-05-27 22:25:00
 tags:
-- DBeaver
 - SQL
 - Database
 - IDE

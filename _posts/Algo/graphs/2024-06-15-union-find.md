@@ -3,8 +3,6 @@ categories: Algorithms
 date: 2024-06-16 18:27:00
 tags:
 - Graphs
-- Union Find
-- Disjoint Set
 - Data Structures
 title: Union Find  - Disjoint Set Data structure
 ---

@@ -6,7 +6,6 @@ tags:
 - API
 - Protocols
 - REST
-- GraphQL
 - gRPC
 title: API Communication Protocols
 ---

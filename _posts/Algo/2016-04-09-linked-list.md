@@ -2,9 +2,7 @@
 categories: Algorithms
 date: 2016-04-06 05:14:00
 tags:
-- Linked List
 - Data Structures
-- Pointers
 - Implementation
 title: Linked List
 ---

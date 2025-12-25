@@ -3,7 +3,6 @@ categories: Multithreading
 date: 2024-08-18 05:17:00
 tags:
 - Java
-- Condition Variables
 - Synchronization
 - Concurrency
 title: Condition Variables

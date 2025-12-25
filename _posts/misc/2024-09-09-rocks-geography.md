@@ -2,10 +2,7 @@
 categories: Science
 date: 2024-09-09 06:00:00
 tags:
-- Geology
-- Rocks
-- Earth Science
-- Geography
+- Science
 title: Rocks
 ---
 

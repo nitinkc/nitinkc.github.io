@@ -5,7 +5,6 @@ tags:
 - Kubernetes
 - K8s
 - Commands
-- kubectl
 - CLI
 title: Kubernetes Commands
 ---

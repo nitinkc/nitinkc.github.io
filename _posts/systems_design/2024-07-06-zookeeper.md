@@ -2,10 +2,7 @@
 categories: System Design
 date: 2024-07-06 16:02:00
 tags:
-- Zookeeper
-- Coordination
 - Distributed Systems
-- Apache
 title: Zookeeper
 ---
 

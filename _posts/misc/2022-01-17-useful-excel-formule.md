@@ -2,10 +2,7 @@
 categories: Productivity
 date: 2022-01-17 21:55:00
 tags:
-- Excel
-- Office
 - Tools
-- Formulas
 title: Useful MS Excel Tools
 ---
 

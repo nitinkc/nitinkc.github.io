@@ -2,7 +2,6 @@
 categories: Developer Tools
 date: 2021-03-24 18:07:00
 tags:
-- Sublime Text
 - Text Editor
 - Configuration
 - Settings

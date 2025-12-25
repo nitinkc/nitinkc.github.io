@@ -3,9 +3,6 @@ categories: Testing
 date: 2025-06-23 05:00:00
 tags:
 - Spring Boot
-- BDD
-- JBehave
-- Behavior Driven
 - Guide
 title: A Guide to Behavior-Driven Development (BDD) with JBehave
 ---

@@ -5,8 +5,6 @@ tags:
 - Collections
 - Data Structures
 - List
-- Set
-- Map
 title: Java Collection Class
 ---
 

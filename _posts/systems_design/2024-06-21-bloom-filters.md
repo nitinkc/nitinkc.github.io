@@ -2,10 +2,8 @@
 categories: System Design
 date: 2024-06-18 11:45:00
 tags:
-- Bloom Filter
 - Data Structures
 - Probabilistic
-- Space-Efficient
 title: Bloom Filters
 ---
 

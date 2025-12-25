@@ -3,8 +3,6 @@ categories: Management
 date: 2025-05-28 05:00:00
 tags:
 - Books
-- Software Engineering
-- Reading List
 - Reference
 - Learning
 title: Software Engineering Books

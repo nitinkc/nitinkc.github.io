@@ -4,8 +4,6 @@ date: 2023-05-27 19:25:00
 tags:
 - MySQL
 - SQL
-- Import
-- Data Migration
 title: Importing MySql data dump from a sql file
 ---
 

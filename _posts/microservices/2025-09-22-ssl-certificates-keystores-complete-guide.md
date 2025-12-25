@@ -6,7 +6,6 @@ tags:
 - SSL
 - TLS
 - Certificates
-- Keystore
 - Guide
 title: Complete Guide to SSL/TLS Certificates, Keystores & Trust Management
 ---

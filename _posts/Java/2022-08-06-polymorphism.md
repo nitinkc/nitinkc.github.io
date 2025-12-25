@@ -2,10 +2,7 @@
 categories: Java
 date: 2022-08-06 15:45:00
 tags:
-- Polymorphism
 - OOP
-- Inheritance
-- Method Overriding
 title: Polymorphism
 ---
 

@@ -3,8 +3,6 @@ categories: Finance
 date: 2024-09-06 20:14:00
 tags:
 - Charts
-- Data Visualization
-- Analysis
 - Stocks
 title: Financial Charts
 ---

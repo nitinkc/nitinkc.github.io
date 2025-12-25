@@ -5,7 +5,6 @@ tags:
 - Code Quality
 - Best Practices
 - Clean Code
-- Refactoring
 title: Code Quality
 ---
 

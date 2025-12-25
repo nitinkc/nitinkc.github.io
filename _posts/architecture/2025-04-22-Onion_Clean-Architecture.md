@@ -2,10 +2,7 @@
 categories: Architecture
 date: 2025-04-22 14:02:00
 tags:
-- Clean Architecture
-- Onion
-- Layered
-- Dependency Inversion
+- Architecture
 title: Onion/Clean Architecture Style
 ---
 

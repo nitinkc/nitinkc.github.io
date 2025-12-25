@@ -5,7 +5,6 @@ tags:
 - Java
 - JVM
 - Compiler
-- Flags
 - Performance
 - Optimization
 title: Compiler Flags

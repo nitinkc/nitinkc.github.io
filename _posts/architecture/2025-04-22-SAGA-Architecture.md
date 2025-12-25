@@ -2,9 +2,6 @@
 categories: Architecture
 date: 2025-04-22 14:02:00
 tags:
-- SAGA
-- Distributed Transactions
-- 2PC
 - Microservices
 title: SAGA Architecture Style & 2-Phase Commit
 ---

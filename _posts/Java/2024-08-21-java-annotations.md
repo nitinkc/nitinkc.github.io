@@ -2,10 +2,7 @@
 categories: Java
 date: 2024-08-21 00:17:00
 tags:
-- Annotations
-- Metadata
-- Custom Annotations
-- Reflection
+- Java
 title: Java annotations
 ---
 

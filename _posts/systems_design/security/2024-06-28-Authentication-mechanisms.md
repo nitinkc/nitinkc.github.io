@@ -5,7 +5,6 @@ tags:
 - Security
 - Authentication
 - OAuth
-- JWT
 - SSO
 title: Authentication Mechanisms
 ---

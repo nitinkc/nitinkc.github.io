@@ -4,8 +4,6 @@ date: 2024-06-17 11:45:00
 tags:
 - CAP Theorem
 - Consistency
-- Availability
-- Partition Tolerance
 - Distributed Systems
 title: CAP Theorem
 ---

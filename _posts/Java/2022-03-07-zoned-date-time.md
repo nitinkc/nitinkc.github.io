@@ -2,10 +2,7 @@
 categories: Java
 date: 2022-03-08 00:27:00
 tags:
-- Date Time
-- ZonedDateTime
 - Java 8
-- Time Zones
 title: Java ZonedDate Time
 ---
 

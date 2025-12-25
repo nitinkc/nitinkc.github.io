@@ -6,8 +6,6 @@ tags:
 - Project
 - DIY
 - Motors
-- Flight
-- Quadcopter
 title: Simple Drone
 ---
 

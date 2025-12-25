@@ -3,8 +3,6 @@ categories: System Design
 date: 2024-01-07 08:44:00
 tags:
 - Networking
-- OSI Model
-- TCP/IP
 - Protocols
 title: Computer Networks - The OSI Model
 ---
