@@ -1,5 +1,9 @@
 ---
+categories: Algorithms
 tags:
 - Trees
-- Algorithms
+- B-Tree
+- B+ Tree
+- M-ary Tree
+- Data Structures
 ---

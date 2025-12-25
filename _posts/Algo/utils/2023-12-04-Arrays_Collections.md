@@ -1,5 +1,9 @@
 ---
+categories: Algorithms
 tags:
 - Arrays
-- Algorithms
+- Collections
+- List
+- Java
+- Utility
 ---

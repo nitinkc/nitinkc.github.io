@@ -2,7 +2,11 @@
 categories: Git
 date: 2023-11-07 11:30:00
 tags:
-- Git
+- Merge
+- Rebase
+- Squash
+- Fast Forward
+- Branching
 title: Git Merge, Rebase, Squash and Fast forward
 ---
 

@@ -3,8 +3,11 @@ categories: Microservices
 date: 2025-09-22 10:00:00
 tags:
 - Security
+- SSL
+- TLS
+- Certificates
+- Keystore
 - Guide
-- Microservices
 title: Complete Guide to SSL/TLS Certificates, Keystores & Trust Management
 ---
 

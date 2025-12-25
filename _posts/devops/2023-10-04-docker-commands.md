@@ -1,12 +1,12 @@
 ---
-categories:
-- DevOps
-- GitOps
+categories: DevOps
 date: 2023-10-04 20:01:00
 tags:
-- GitOps
 - Docker
-- DevOps
+- Containers
+- Commands
+- CLI
+- Containerization
 title: Docker commands
 ---
 

@@ -2,8 +2,11 @@
 categories: Java
 date: 2022-08-06 08:30:00
 tags:
-- Functional
-- Java
+- Functional Programming
+- Lambda
+- Streams
+- Java 8
+- Immutability
 title: Functional Programming Concepts
 ---
 

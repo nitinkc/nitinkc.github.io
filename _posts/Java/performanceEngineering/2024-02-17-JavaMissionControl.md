@@ -1,11 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
+categories: Performance Engineering
 date: 2024-02-12 21:30:00
 tags:
-- Benchmarking
 - Java
+- JMH
+- Benchmarking
+- Performance
+- Testing
+- Profiling
 title: Java Microbenchmark Harness - JMH
 ---
 

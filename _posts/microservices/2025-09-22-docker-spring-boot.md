@@ -1,10 +1,11 @@
 ---
-categories:
-- Spring
-- Microservices
+categories: Microservices
 date: 2025-09-22 12:04:00
 tags:
-- Spring
+- Spring Boot
+- Docker
+- Containers
+- Deployment
 title: Containerizing Spring Boot with Docker
 ---
 

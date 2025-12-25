@@ -2,7 +2,10 @@
 categories: System Design
 date: 2024-12-21 02:30:00
 tags:
-- System Design
+- Database
+- Storage
+- Estimation
+- Capacity Planning
 title: Database Requirements Estimation
 ---
 

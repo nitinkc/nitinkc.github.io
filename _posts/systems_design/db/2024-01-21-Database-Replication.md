@@ -2,7 +2,10 @@
 categories: System Design
 date: 2024-01-21 02:00:00
 tags:
-- System Design
+- Database
+- Replication
+- Migration
+- High Availability
 title: Database Replication & Migrations
 ---
 

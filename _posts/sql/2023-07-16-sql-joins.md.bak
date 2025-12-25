@@ -1,0 +1,113 @@
+---
+categories: SQL
+date: 2023-07-16 10:45:00
+tags:
+- SQL
+title: SQL Joins
+---
+
+![SQL Join Summary Wikipedia](https://upload.wikimedia.org/wikipedia/commons/9/9d/SQL_Joins.svg)
+
+# INNER JOIN
+
+RETURNS Matching records of both the tables
+
+### LEFT JOIN / LEFT OUTER JOIN
+
+Inner Join + all the leftover records from LEFT table
+
+### RIGHT JOIN / RIGHT OUTER JOIN
+
+Inner Join + all the leftover records in RIGHT table
+
+### FULL OUTER JOIN / FULL JOIN
+
++ All records from LEFT table which were not returned from Inner join.
++ All records from RIGHT table which were not returned from Inner join. */
+
+### SELF JOIN
+
+table join with itself.
+
+### NATURAL JOIN
+
+Not recomended
+
+### CROSS JOIN
+
+* returns cartisian product.
+* Usually used whrn there is a single row in either of the table
+
+To demonstrate the results of the join, the following one column table can be
+used
+
+```sql
+DROP TABLE IF EXISTS table3;
+create table table3 (id1 int);
+
+DROP TABLE IF EXISTS table4;
+create table table4 (id2 int);
+
+insert into table3 values (null),(0),(null),(0),(0),(1),(1);
+insert into table4 values (1),(0),(0),(0),(null),(null);
+
+select * from table3;
+select * from table4;
+```
+
+## Inner Join
+
+Inner join or simply join returns the results for the common id's between the
+two tables.
+
+![Inner Join]({{ site.url }}/assets/images/innerJoin.png)
+
+# Outer Join
+
+there are 3 types of Outer joins
+
+* Left Outer join or Left join
+* Right join
+* Full join
+*
+
+## Right and Left Join
+
+![Full Join]({{ site.url }}/assets/images/right_left_join.png)
+
+## Full Join
+
+![Full Join]({{ site.url }}/assets/images/full_join.png)
+
+#### Full join SQL and Result
+
+![Full Join]({{ site.url }}/assets/images/fullJoin_sql.png)
+
+# Another Example
+
+Inspired from
+the [Stackoverflow link](https://stackoverflow.com/questions/13997365/sql-joins-as-venn-diagram)
+
+![Color Join]({{ site.url }}/assets/images/color_join.png)
+
+### Inner join
+
+[Inner join](http://sqlfiddle.com/#!17/f55b6d/1)
+
+[Inner join without equality condition](http://sqlfiddle.com/#!17/f55b6d/5)
+
+### Outer Join
+
+##### Left Outer Join
+
+[Left Outer Join](http://sqlfiddle.com/#!17/f55b6d/6)
+
+[Left Outer join with null check](http://sqlfiddle.com/#!17/f55b6d/7)
+
+##### Right Outer join
+
+[Right outer Join](http://sqlfiddle.com/#!17/f55b6d/8)
+
+##### Full outer join
+
+[Full outer join](http://sqlfiddle.com/#!17/f55b6d/9)

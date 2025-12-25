@@ -1,4 +1,8 @@
 ---
+categories: Algorithms
 tags:
-- Algorithms
+- Problem Solving
+- Tips
+- Coding Interview
+- Programming
 ---

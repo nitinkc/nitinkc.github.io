@@ -1,5 +1,9 @@
 ---
+categories: Algorithms
 tags:
 - Arrays
-- Algorithms
+- Data Structures
+- Syntax
+- Java
+- Programming
 ---

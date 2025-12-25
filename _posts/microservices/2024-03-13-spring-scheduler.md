@@ -3,7 +3,9 @@ categories: Microservices
 date: 2024-03-13 22:50:00
 tags:
 - Spring Boot
-- Microservices
+- Scheduler
+- Cron
+- Task Scheduling
 title: Spring Scheduler
 ---
 

@@ -1,0 +1,137 @@
+---
+categories: System Design
+date: 2024-06-29 21:02:00
+tags:
+- System Design
+title: P2P - Peer-to-peer
+---
+
+{% include toc title="Index" %}
+
+@startuml
+actor PeerA
+actor PeerB
+
+PeerA -> DirectoryServer : Request for peers
+DirectoryServer --> PeerA : Respond with PeerB info
+
+PeerA -> PeerB : Initiate Handshake
+PeerB -> PeerA : Acknowledge Handshake
+
+PeerA -> PeerB : Establish Session (Agree on protocol, ports, etc.)
+
+PeerA -> PeerB : Data Exchange
+PeerB -> PeerA : Data Exchange
+@enduml
+
+Peer-to-Peer (P2P) Networking
+Peer-to-peer (P2P) networking is a decentralized network architecture where each
+participant (peer) can act as both a client and a server. Here are the key
+points:
+
+# Key Characteristics
+
+**Decentralization**: There is no central server. Each peer is equally
+privileged and can initiate or complete any task.
+
+**Scalability**: P2P networks can easily scale as more peers join the network.
+
+**Fault Tolerance**: Since there is no single point of failure, the network is
+more resilient. If one peer fails, others can continue to operate.
+
+# How P2P Works
+
+Discovery: Peers find each other through various methods, such as a central
+directory or using distributed hash tables (DHTs).
+
+Handshake: Peers establish a connection by exchanging information about the
+protocols and data formats they support.
+
+Data Exchange: Peers can directly share files or data with each other.
+
+# Protocols
+
+BitTorrent: Used for efficient file sharing. Files are broken into small pieces,
+and peers download pieces from each other.
+
+Gnutella: A decentralized file-sharing protocol where peers query each other to
+find files.
+
+Kademlia (DHT): A protocol for storing and retrieving key-value pairs in a
+decentralized manner.
+
+Bitcoin/Ethereum (Blockchain): Cryptocurrencies use P2P networks to maintain a
+distributed ledger of transactions.
+
+# Use Cases
+
+File Sharing: Sharing large files (e.g., movies, software). Examples:
+BitTorrent.
+
+Content Distribution: Distributing content efficiently by leveraging multiple
+peers. Examples: Some streaming services.
+
+Cryptocurrencies: Bitcoin and Ethereum use P2P networks for secure and
+decentralized transaction processing.
+
+VoIP: Voice and video calls over P2P networks. Examples: Skype.
+
+Decentralized Applications (dApps): Applications that run on blockchain
+networks, providing greater security and resilience.
+
+Imagine a 5 GB file to be distributed to 1K nodes. with 40Gbps (5GBps -
+GigaBytes per second) network (throughput for a good data center)
+
+- it will take a second to transfer the file from one one node to the other.
+  Thus 1000 seconds for the transfer.
+
+With peer-to-peer networks,
+
+- divide the 5GB files into a 1000 pieces of 1MB Each and let the peers transfer
+  simultaneously
+
+[20K 100MB-1G blobs in under 30 sec](https://github.com/uber/kraken?tab=readme-ov-file#table-of-contents)
+
+## Tracker:
+
+A **tracker** is a centralized server that acts as a directory for peers
+participating in a P2P network, typically associated with BitTorrent and similar
+file-sharing protocols.
+
+**Functionality**:
+
+- **Peer Registration**: Peers connect to the tracker to register themselves and
+  announce the files they have available for sharing.
+- **Peer Discovery**: Other peers looking for specific files query the tracker
+  to get a list of peers currently sharing those files.
+- **Coordination**: The tracker helps coordinate connections between peers,
+  facilitating the establishment of direct peer-to-peer connections for file
+  sharing.
+
+Trackers are centralized points of control in the network, meaning that their
+availability and
+performance can impact the overall usability of the P2P system.
+
+## Distributed Hash Table (DHT):
+
+A **DHT (Distributed Hash Table)** is a decentralized method for storing and
+retrieving
+key-value pairs across a distributed network of nodes (peers).
+
+**Functionality**:
+
+- **Decentralization**: Each peer in the network maintains a portion of the DHT,
+  contributing to the storage and retrieval of data.
+- **Key-Value Storage**: Data (e.g., information about files, peer locations) is
+  stored in the DHT using a distributed hash function, which determines where in
+  the network each piece of data is stored.
+- **Lookup**: Peers can query the DHT to find the location of specific data (
+  e.g., which peers have a particular file).
+
+DHTs are resilient to node failures and can scale effectively with the size of
+the network.
+They do not rely on a single point of failure or control.
+
+BitTorrent also supports DHTs (using a protocol known as Mainline DHT) as an
+alternative to trackers for peer discovery and swarm management, enhancing
+robustness and decentralization.

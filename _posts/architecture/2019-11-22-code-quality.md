@@ -2,7 +2,10 @@
 categories: Architecture
 date: 2019-12-04 21:15:00
 tags:
-- Architecture
+- Code Quality
+- Best Practices
+- Clean Code
+- Refactoring
 title: Code Quality
 ---
 

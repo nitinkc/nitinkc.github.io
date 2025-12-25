@@ -2,7 +2,10 @@
 categories: SQL
 date: 2024-07-07 14:25:00
 tags:
-- SQL
+- Distributed Database
+- Query Optimization
+- Performance
+- Sharding
 title: Distributed DB Query Optimization
 ---
 

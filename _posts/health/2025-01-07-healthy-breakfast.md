@@ -2,7 +2,10 @@
 categories: Health
 date: 2025-01-07 22:00:00
 tags:
-- Health
+- Breakfast
+- Nutrition
+- Healthy Eating
+- Meal Planning
 title: Breakfast Healthy
 ---
 

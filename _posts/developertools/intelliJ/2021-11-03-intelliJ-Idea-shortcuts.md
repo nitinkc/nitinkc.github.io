@@ -1,9 +1,12 @@
 ---
-categories: Developer tools
+categories: Developer Tools
 date: 2021-11-03 21:55:00
 tags:
 - IntelliJ
-- Developer tools
+- IDE
+- Shortcuts
+- Productivity
+- Reference
 title: IntelliJ Idea Shortcuts
 ---
 

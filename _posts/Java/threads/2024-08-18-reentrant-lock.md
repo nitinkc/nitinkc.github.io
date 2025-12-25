@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
+categories: Multithreading
 date: 2024-08-18 05:17:00
 tags:
-- Multithreading
 - Java
+- ReentrantLock
+- Locks
+- Concurrency
 title: Reentrant Lock
 ---
 

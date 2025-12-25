@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
+categories: Multithreading
 date: 2024-07-26 20:17:00
 tags:
-- Multithreading
 - Java
+- ThreadLocal
+- Thread-Local Storage
+- Concurrency
 title: Thread-local storage (TLS) in multithreading
 ---
 

@@ -1,8 +1,10 @@
 ---
-categories: Miscellaneous
+categories: Programming
 date: 2023-05-22 23:14:00
 tags:
-- Miscellaneous
+- JavaScript
+- Web Development
+- Frontend
 title: javascript
 ---
 

@@ -3,7 +3,10 @@ categories: Microservices
 date: 2025-06-03 11:50:00
 tags:
 - Spring Boot
-- Microservices
+- Interview
+- Questions
+- Deep Dive
+- Preparation
 title: SpringBoot Interview - Deep Dive
 ---
 

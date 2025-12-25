@@ -1,12 +1,12 @@
 ---
-categories:
-- DevOps
-- GitOps
+categories: DevOps
 date: 2025-04-29 05:00:00
 tags:
 - Kubernetes
-- GitOps
-- DevOps
+- K8s
+- Commands
+- kubectl
+- CLI
 title: Kubernetes Commands
 ---
 

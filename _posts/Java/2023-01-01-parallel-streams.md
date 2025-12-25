@@ -3,7 +3,9 @@ categories: Java
 date: 2023-01-01 18:10:00
 tags:
 - Streams
-- Java
+- Parallel Processing
+- Concurrency
+- Java 8
 title: Parallel Streams
 ---
 

@@ -2,7 +2,10 @@
 categories: Health
 date: 2024-12-28 09:45:00
 tags:
-- Health
+- Snacks
+- Vegetarian
+- Healthy Eating
+- Recipes
 title: Veggie snacks
 ---
 

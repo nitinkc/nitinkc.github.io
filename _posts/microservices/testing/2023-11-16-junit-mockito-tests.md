@@ -1,11 +1,12 @@
 ---
-categories:
-- Microservices
-- Testing
+categories: Testing
 date: 2023-11-16 18:55:00
 tags:
+- Spring Boot
+- JUnit
+- Mockito
+- Unit Testing
 - Guide
-- Microservices
 title: Comprehensive Guide to JUnit and Mockito Testing
 ---
 

@@ -3,7 +3,9 @@ categories: Microservices
 date: 2023-09-15 11:50:00
 tags:
 - Spring Boot
-- Microservices
+- Reference
+- Documentation
+- Guide
 title: SpringBoot Reference
 ---
 

@@ -1,10 +1,12 @@
 ---
-categories:
-- Java
-- Performance Engineering
+categories: Performance Engineering
 date: 2024-02-10 20:11:00
 tags:
 - Java
+- Memory
+- References
+- Performance
+- Best Practices
 title: Escaping references
 ---
 

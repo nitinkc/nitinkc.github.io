@@ -1,8 +1,11 @@
 ---
-categories: Miscellaneous
+categories: Science
 date: 2024-09-09 06:00:00
 tags:
-- Miscellaneous
+- Geology
+- Rocks
+- Earth Science
+- Geography
 title: Rocks
 ---
 

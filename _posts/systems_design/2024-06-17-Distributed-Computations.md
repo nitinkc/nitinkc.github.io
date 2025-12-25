@@ -2,7 +2,11 @@
 categories: System Design
 date: 2024-06-17 11:45:00
 tags:
-- System Design
+- Distributed Computing
+- MapReduce
+- Hadoop
+- Spark
+- Processing
 title: Distributed Computations
 ---
 

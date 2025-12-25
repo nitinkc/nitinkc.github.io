@@ -1,10 +1,14 @@
 ---
-categories: Developer tools
+categories: Developer Tools
 date: 2022-01-19 21:55:00
 sidebar:
   nav: algo
 tags:
-- Developer tools
+- Markdown
+- Reference
+- Documentation
+- Syntax
+- Writing
 title: Markdown Reference
 ---
 

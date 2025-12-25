@@ -2,7 +2,10 @@
 categories: Architecture
 date: 2025-04-22 14:02:00
 tags:
-- Architecture
+- Pipeline
+- Pipe-Filter
+- Data Processing
+- Design Patterns
 title: The Pipeline (or Pipe-Filter) architectural style
 ---
 

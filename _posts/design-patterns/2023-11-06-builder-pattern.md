@@ -1,10 +1,11 @@
 ---
-categories:
-- Java
-- Design Patterns
+categories: Design Patterns
 date: 2023-11-06 08:30:00
 tags:
+- Builder
+- Creational
 - Java
+- OOP
 title: Builder Design Pattern
 ---
 

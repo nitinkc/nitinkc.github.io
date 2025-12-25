@@ -1,8 +1,12 @@
 ---
-categories: Developer tools
+categories: Developer Tools
 date: 2024-12-14 13:45:00
 tags:
-- Developer tools
+- React
+- Firebase
+- Firestore
+- Web App
+- Project
 title: Kuber Accounting App - React, Firebase, Firestore
 ---
 

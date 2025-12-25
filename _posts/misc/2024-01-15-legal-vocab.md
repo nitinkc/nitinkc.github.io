@@ -1,8 +1,11 @@
 ---
-categories: Miscellaneous
+categories: Legal
 date: 2025-01-15 10:15:00
 tags:
-- Miscellaneous
+- Law
+- Vocabulary
+- Terms
+- Reference
 title: Legal Vocabulary
 ---
 

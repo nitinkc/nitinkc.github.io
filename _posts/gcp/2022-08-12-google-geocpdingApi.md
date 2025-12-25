@@ -2,7 +2,10 @@
 categories: GCP
 date: 2022-08-12 20:04:00
 tags:
-- GCP
+- Google Maps
+- Geocoding
+- API
+- Location
 title: Google GeoCoding API
 ---
 

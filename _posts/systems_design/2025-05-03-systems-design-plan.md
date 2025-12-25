@@ -2,7 +2,10 @@
 categories: System Design
 date: 2025-05-03 22:30:00
 tags:
-- System Design
+- Planning
+- Strategy
+- Interview
+- Methodology
 title: System Design Plan
 ---
 

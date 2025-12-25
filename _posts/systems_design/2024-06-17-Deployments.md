@@ -2,7 +2,11 @@
 categories: System Design
 date: 2024-06-17 11:02:00
 tags:
-- System Design
+- Deployment
+- CI/CD
+- DevOps
+- Blue-Green
+- Canary
 title: Deployments
 ---
 

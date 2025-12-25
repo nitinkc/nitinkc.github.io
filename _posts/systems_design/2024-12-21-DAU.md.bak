@@ -1,0 +1,82 @@
+---
+categories: System Design
+date: 2024-12-21 02:30:00
+tags:
+- System Design
+title: Daily Active Users - Approximation
+---
+
+# 1. **Social Media (e.g., Facebook, Instagram, Twitter)**
+- **DAU**: 200M - 2B
+- Example:
+    - Facebook: 500M - 1.5B DAUs
+    - Instagram, Twitter: 10M - 100M DAUs
+- New Social Apps: 50K - 500K DAUs
+
+# 2. **E-commerce Platforms (e.g., Amazon, eBay)**
+- **DAU**: 1M - 200M
+- Example:
+    - Amazon: 10M - 50M DAUs
+    - eBay: 1M - 20M DAUs
+- Smaller Platforms: 500K - 10M DAUs
+
+# 3. **Streaming Services (e.g., YouTube, Netflix, Spotify)**
+- **DAU**: 20M - 500M
+- Example:
+    - YouTube: 200M - 500M DAUs
+    - Netflix: 10M - 50M DAUs
+    - Spotify: 100M - 200M DAUs
+- Smaller Platforms: 1M - 10M DAUs
+
+# 4. **Online Food Delivery (e.g., UberEats, DoorDash)**
+- **DAU**: 1M - 20M
+- Example:
+    - UberEats, DoorDash: 10M - 50M DAUs
+- Smaller Platforms: 100K - 5M DAUs
+
+# 5. **Ride-Sharing (e.g., Uber, Lyft)**
+- **DAU**: 1M - 100M
+- Example:
+    - Uber: 5M - 20M DAUs
+    - Lyft: 10M - 20M DAUs
+- Smaller Platforms: 100K - 5M DAUs
+
+# 6. **Online News/Content (e.g., New York Times, Medium)**
+- **DAU**: 500K - 50M
+- Example:
+    - New York Times: 5M - 50M DAUs
+    - Medium: 500K - 10M DAUs
+- Smaller Platforms: 100K - 1M DAUs
+
+# 7. **Dating Apps (e.g., Tinder, Bumble)**
+- **DAU**: 1M - 50M
+- Example:
+    - Tinder: 50M DAUs
+    - Bumble: 5M - 15M DAUs
+- Smaller Platforms: 100K - 5M DAUs
+
+# 8. **Online Gaming (e.g., Fortnite, PUBG, Clash Royale)**
+- **DAU**: 1M - 50M
+- Example:
+    - Fortnite: 10M - 50M DAUs
+    - Clash Royale: 10M - 50M DAUs
+- Smaller Games: 100K - 10M DAUs
+
+# 9. **Cloud Storage & Collaboration (e.g., Dropbox, Google Drive, Slack)**
+- **DAU**: 1M - 100M
+- Example:
+    - Slack: 10M - 20M DAUs
+    - Dropbox: 10M - 30M DAUs
+    - Google Drive: 50M - 200M DAUs
+- Smaller Platforms: 100K - 5M DAUs
+
+# 10. **Food/Recipe Apps (e.g., Yummly, Allrecipes)**
+- **DAU**: 100K - 5M
+- Example:
+    - Popular Recipe Platforms: 1M - 10M DAUs
+- Smaller Platforms: 100K - 500K DAUs
+
+# General Guidance for Estimating DAUs
+- **Small Startups**: 1K - 100K DAUs.
+- **Established Large Companies**: 10M - 1B DAUs (e.g., Facebook, Instagram, Amazon).
+- **Make Reasonable Assumptions**: Always ask for clarification if unsure about user behavior or scale.

@@ -2,7 +2,10 @@
 categories: Java
 date: 2022-11-18 08:30:00
 tags:
-- Java
+- Method Reference
+- Lambda
+- Java 8
+- Functional Programming
 title: Method Reference
 ---
 

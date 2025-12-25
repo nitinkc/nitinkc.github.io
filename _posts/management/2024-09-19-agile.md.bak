@@ -1,0 +1,42 @@
+---
+categories: Management
+date: 2024-09-19 11:02:00
+tags:
+- Management
+title: Agile Concepts
+---
+
+{% include toc title="Index" %}
+
+# Jira Board
+
+JIRA Agile for Scrum s/w dev. teams
+
+- Everything in JIRA Agile is called an issue
+    - eg: User story, bug, improvement, new feature.
+- Each issue can be assigned to someone or to yourself.
+- JIRA Agile keeps track of Burndown Chart, Velocity Chart etc.
+
+**Two modes**
+
+- Scrum
+- Kanban
+
+# Scrum (software development) Teams
+
+- Scrum Agile Software development methodology/framework
+- Iterative (In Scrum, its Sprint)
+- For teams with **Fixed Target Deadlines**
+
+# Scrum Board
+
+- A board with user stories having one of the three status “To Do”, “In
+  Progress”, “Done”
+- Scrum boards are for keeping track of work “Visually”.
+- A Scrum board is visible in both Plan mode (Backlog in Atlassian Jira) and
+  Work mode(Active Sprint).
+
+Epics : Like buckets having similar type of tasks
+
+Versions : The software releases with new
+features added

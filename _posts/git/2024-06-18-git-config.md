@@ -2,7 +2,10 @@
 categories: Git
 date: 2024-06-18 13:30:00
 tags:
-- Git
+- Configuration
+- Settings
+- Setup
+- Commands
 title: Git Config
 ---
 

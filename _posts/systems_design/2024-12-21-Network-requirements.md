@@ -2,7 +2,10 @@
 categories: System Design
 date: 2024-12-21 02:30:00
 tags:
-- System Design
+- Network
+- Bandwidth
+- Estimation
+- Capacity Planning
 title: Network Requirements Estimation
 ---
 

@@ -3,7 +3,9 @@ categories: Java
 date: 2022-08-03 18:16:00
 tags:
 - Streams
-- Java
+- Troubleshooting
+- Common Mistakes
+- Java 8
 title: Java Stream Issues
 ---
 

@@ -1,8 +1,11 @@
 ---
-categories: Miscellaneous
+categories: History
 date: 2025-04-13 16:50:00
 tags:
-- Miscellaneous
+- USA
+- Government
+- Politics
+- Timeline
 title: US History timeline and Government
 ---
 

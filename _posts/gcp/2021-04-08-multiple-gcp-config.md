@@ -2,7 +2,10 @@
 categories: GCP
 date: 2021-04-08 02:15:00
 tags:
-- GCP
+- Configuration
+- Multiple Projects
+- gcloud
+- Cloud
 title: Handling Multiple GCP Configs
 ---
 

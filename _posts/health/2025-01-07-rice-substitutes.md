@@ -2,7 +2,11 @@
 categories: Health
 date: 2025-01-07 22:00:00
 tags:
-- Health
+- Rice
+- Substitutes
+- Healthy Alternatives
+- Grains
+- Meal Planning
 title: Rice Substitutes & Combinations
 ---
 

@@ -2,7 +2,10 @@
 categories: Java
 date: 2023-01-03 02:30:00
 tags:
-- Java
+- Wrapper Classes
+- Primitives
+- Autoboxing
+- Type Conversion
 title: Wrapper Classes - Parse & ValueOf
 ---
 

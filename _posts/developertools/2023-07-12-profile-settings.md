@@ -1,12 +1,13 @@
 ---
-categories:
-- Developer tools
-- MacBook
+categories: Developer Tools
 date: 2023-07-12 22:10:00
 tags:
-- MacBook
-- Terminal
-- Developer tools
+- MacOS
+- Shell
+- Profile
+- Configuration
+- Zsh
+- Bash
 title: 'MacBook : Configuring shell profile'
 ---
 

@@ -2,7 +2,10 @@
 categories: Git
 date: 2023-11-13 14:30:00
 tags:
-- Git
+- Configuration
+- Multi-Repo
+- Remote
+- Workflow
 title: Git config- Multi Repo projects
 ---
 

@@ -1,10 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
+categories: Performance Engineering
 date: 2024-03-14 21:30:00
 tags:
 - Java
+- MAT
+- Memory Analysis
+- Heap Dump
+- Performance
+- Debugging
 title: Eclipse Memory Analyzer Tool (MAT)
 ---
 

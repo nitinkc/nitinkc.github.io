@@ -1,4 +1,9 @@
 ---
+categories: Algorithms
 tags:
-- Algorithms
+- Data Structures
+- Java
+- Collections
+- Classes
+- Implementation
 ---

@@ -1,11 +1,12 @@
 ---
-categories:
-- DevOps
-- GitOps
+categories: DevOps
 date: 2024-09-18 18:02:00
 tags:
+- Flux
 - GitOps
-- DevOps
+- CD
+- Kubernetes
+- Continuous Delivery
 title: Flux Release
 ---
 

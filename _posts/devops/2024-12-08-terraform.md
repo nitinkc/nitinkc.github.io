@@ -1,12 +1,12 @@
 ---
-categories:
-- DevOps
-- GitOps
+categories: DevOps
 date: 2024-12-08 10:14:00
 tags:
 - Terraform
-- GitOps
-- DevOps
+- IaC
+- Infrastructure as Code
+- Automation
+- Provisioning
 title: Terraform
 ---
 

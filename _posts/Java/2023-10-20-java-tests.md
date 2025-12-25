@@ -2,7 +2,10 @@
 categories: Java
 date: 2023-10-20 15:16:00
 tags:
-- Java
+- Puzzles
+- Tricky Questions
+- Interview
+- Edge Cases
 title: Java Puzzles
 ---
 

@@ -3,7 +3,11 @@ categories: Health
 date: 2025-01-07 22:00:00
 tags:
 - Fitness
-- Health
+- Strength Training
+- Gym
+- Muscle Building
+- Workout
+- Exercise
 title: Strength Training - Gym - Muscle Building Plan
 ---
 

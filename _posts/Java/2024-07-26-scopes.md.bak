@@ -1,0 +1,126 @@
+---
+categories:
+- Java
+- Multithreading
+date: 2024-07-26 20:17:00
+tags:
+- Multithreading
+- Java
+title: Variable Scopes in Java
+---
+
+{% include toc title="Index" %}
+
+# 1. Global Scope
+
+Variables that are accessible from anywhere in the program.
+
+  ```java
+public static final HttpClient client = HttpClient.newHttpClient();
+```
+
+`client` is accessible from any class or method in the program using
+`ClassName.client`
+
+# 2. Class Scope
+
+Variables that are accessible from any method within the class.
+
+# 3. Method Scope
+
+Variables that are accessible only within the method they are declared.
+
+# 4. Block Scope
+
+Variables that are accessible only within the block they are declared.
+
+```java
+try {
+    URI uri = new URI("http://httpbin.org/delay/" + secs);
+    HttpRequest request = HttpRequest.newBuilder().GET().uri(uri).build();
+} catch (IOException | URISyntaxException exp) {
+    throw new RuntimeException(exp);
+}
+```
+
+# 5. Local Scope
+
+Variables declared within a method (including method parameters) and are only
+accessible within that method.
+
+```java
+public void exampleMethod() {
+    int localVar = 10; // local variable
+}
+```
+
+# 6. Instance Scope
+
+Variables that are associated with an instance of a class (non-static fields).
+
+```java
+private String instanceVar;
+```
+
+`instanceVar` is accessible by all methods within the instance of the class.
+
+# 7. ThreadLocal Scope
+
+Variables that are **local to the thread**, providing a separate variable for
+each thread that accesses it.
+
+```java
+private static final ThreadLocal<SimpleDateFormat> dateFormat = ThreadLocal.withInitial(() -> new SimpleDateFormat("dd-MM-yyyy"));
+```
+
+`dateFormat` provides a separate SimpleDateFormat instance for each thread that
+accesses it.
+
+# 8. Static Scope
+
+Variables that are associated with the class rather than any instance, and are *
+*shared** among all instances of the class.
+
+```java
+public static int staticVar;
+```
+
+# Final Example
+
+```java
+public class ExampleClass {
+    // Global scope (static)
+    public static final HttpClient client = HttpClient.newHttpClient();
+
+    // Class scope (instance)
+    private final String instanceVar;
+
+    // Static scope
+    public static int staticVar = 42;
+    
+    // ThreadLocal scope, usually static so that it is visible to all threads
+    private static final ThreadLocal<SimpleDateFormat> dateFormat 
+            = ThreadLocal.withInitial(() -> new SimpleDateFormat("dd-MM-yyyy"));//with Supplier
+    //Getter and Setter will be applicable to the thread accessing it.
+
+    private static final ThreadLocal<SimpleDateFormat> dateFormat = new ThreadLocal<>();
+    
+    // Constructor
+    public ExampleClass(String instanceVar) {
+        this.instanceVar = instanceVar;
+    }
+
+    // Method demonstrating different scopes
+    public void exampleMethod(int parameter) { // Method scope
+        // Local scope
+        int localVar = 10;
+
+        try { // Block scope
+            URI uri = new URI("http://example.com/" + localVar + "/" + parameter);
+            HttpRequest request = HttpRequest.newBuilder().GET().uri(uri).build();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```

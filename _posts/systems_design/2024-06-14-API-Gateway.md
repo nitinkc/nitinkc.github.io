@@ -3,7 +3,10 @@ categories: System Design
 date: 2024-06-14 11:02:00
 tags:
 - API Gateway
-- System Design
+- Load Balancing
+- Routing
+- Authentication
+- Rate Limiting
 title: API Gateway
 ---
 

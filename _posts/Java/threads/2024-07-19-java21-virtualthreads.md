@@ -1,11 +1,12 @@
 ---
-categories:
-- Java
-- Multithreading
+categories: Multithreading
 date: 2024-07-19 12:17:00
 tags:
-- Multithreading
 - Java
+- Virtual Threads
+- Java 21
+- Project Loom
+- Concurrency
 title: Virtual Threads
 ---
 

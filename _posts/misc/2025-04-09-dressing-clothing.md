@@ -1,8 +1,11 @@
 ---
-categories: Miscellaneous
+categories: Lifestyle
 date: 2025-04-09 10:50:00
 tags:
-- Miscellaneous
+- Fashion
+- Clothing
+- Style
+- Personal
 title: Dressing Clothing
 ---
 

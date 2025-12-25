@@ -64,6 +64,17 @@ TAG_NORMALIZATION = {
     "macbook": "MacBook",
     "performance engineering": "Performance Engineering",
     "multithreading": "Multithreading",
+    # Additional mappings proposed by user
+    "finances": "Finance",
+    "finance": "Finance",
+    "google cloud platform": "GCP",
+    "google cloud": "GCP",
+    "gcp": "GCP",
+    "gitops": "GitOps",
+    "git ops": "GitOps",
+    "crud": "CRUD",
+    # Treat miscellaneous as drop when it appears as a tag (map to empty string)
+    "miscellaneous": "",
 }
 
 MERGE_SINGLETONS_INTO = {

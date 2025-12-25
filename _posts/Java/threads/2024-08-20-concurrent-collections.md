@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
+categories: Multithreading
 date: 2024-08-20 00:17:00
 tags:
-- Multithreading
 - Java
+- Concurrent Collections
+- Thread-Safe
+- Concurrency
 title: Java Concurrent Collections
 ---
 

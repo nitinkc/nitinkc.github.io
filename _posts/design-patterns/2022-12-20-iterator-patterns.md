@@ -1,10 +1,11 @@
 ---
-categories:
-- Java
-- Design Patterns
+categories: Design Patterns
 date: 2023-11-06 08:30:00
 tags:
+- Iterator
+- Behavioral
 - Java
+- Collections
 title: Iterator As a Design Pattern
 ---
 

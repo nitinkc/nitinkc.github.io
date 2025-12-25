@@ -1,11 +1,12 @@
 ---
-categories:
-- Developer tools
-- MacBook
+categories: Developer Tools
 date: 2022-01-22 21:55:00
 tags:
-- MacBook
-- Developer tools
+- MacOS
+- Settings
+- Configuration
+- Productivity
+- Tips
 title: 'MacBook : Useful Settings'
 ---
 

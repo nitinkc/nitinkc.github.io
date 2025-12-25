@@ -2,7 +2,10 @@
 categories: Electronics
 date: 2024-10-25 22:00:00
 tags:
-- Electronics
+- Basics
+- Fundamentals
+- Tutorial
+- Getting Started
 title: Electronics
 ---
 

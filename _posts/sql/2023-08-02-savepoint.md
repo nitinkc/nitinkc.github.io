@@ -2,7 +2,10 @@
 categories: SQL
 date: 2023-08-02 14:03:00
 tags:
-- SQL
+- Savepoint
+- Transactions
+- Rollback
+- Database
 title: Savepoint
 ---
 

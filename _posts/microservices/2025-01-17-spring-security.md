@@ -4,7 +4,9 @@ date: 2024-12-05 15:00:00
 tags:
 - Spring Boot
 - Security
-- Microservices
+- Authentication
+- Authorization
+- OAuth
 title: Spring Security
 ---
 

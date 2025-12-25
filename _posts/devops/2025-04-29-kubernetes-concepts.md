@@ -3,7 +3,10 @@ categories: DevOps
 date: 2025-04-29 05:00:00
 tags:
 - Kubernetes
-- DevOps
+- K8s
+- Containers
+- Orchestration
+- Cloud Native
 title: Kubernetes Concepts
 ---
 

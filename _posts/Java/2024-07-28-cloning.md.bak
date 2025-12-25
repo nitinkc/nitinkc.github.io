@@ -1,0 +1,68 @@
+---
+categories: Java
+date: 2024-07-28 12:17:00
+tags:
+- Java
+title: Java Cloning
+---
+
+{% include toc title="Index" %}
+
+A clone in java, essentially means the ability to create an object with similar
+state as the original object.
+
+How to do (Ways)deep cloning in java?
+• Using copy constructors
+Cloning with serialization
+
+Cloneable Interface is a marker interface
+
+Deep Cloning -> for mutable Objects
+
+If the Cloneable Interface is not implemented it throws
+CloneNotSupportedException
+
+Keeps a separate copy, and not a reference
+
+Clone is protected class in Object Class, Thus override
+In your class and increase visibility. In OVERRIDE you can increase the
+visibility
+
+Cloned classes implements Cloneable Interface "Marker"
+
+If class not marked Cloneable --> CloneNotSupportedException
+
+Shallow copy is a bit-wise copy of an object.
+
+* A new object is created that has an exact copy of the values in the original
+  object.
+* If any of the fields of the object are references to other objects,
+* just the reference addresses are copied i.e., only the memory address is
+  copied.
+*
+* FOR MUTABLE OBJECTS
+* any changes made to object in main will reflect in clone.
+*
+* FOR IMMUTABLE OBJECTS like String Integer
+* Since the state cannot be changed, it doesn't need be deeply cloned
+
+# Shallow Cloning
+
+Copy all fields
+If field is a reference to an Object --> just copy the reference/mem address
+Thus if referenced Object is changed, the clone will have the reference to the
+changed object and the previous state of that object is lost
+
+# Deep Cloning
+
+Copy all fields and REFERENCE OBJECTS
+If field is a reference to an Object --> just copy the reference/mem address
+
+Immutable --> need not be changed, as they never change state
+
+# Steps
+
+	1. Implement Cloneable Interface 
+	2. Override clone method making it public
+	3. Class super.clone
+	4. Handle ClassNotSupportedException

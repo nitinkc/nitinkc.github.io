@@ -1,8 +1,12 @@
 ---
-categories: Developer tools
+categories: Developer Tools
 date: 2024-09-13 13:45:00
 tags:
-- Developer tools
+- JIRA
+- Filters
+- Project Management
+- Agile
+- Atlassian
 title: JIRA Filters
 ---
 

@@ -1,10 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
+categories: Performance Engineering
 date: 2024-07-03 00:10:00
 tags:
 - Java
+- Memory
+- Performance
+- String Pool
+- HashMap
+- Collections
 title: String Intern pool, Hashmaps and Collections
 ---
 

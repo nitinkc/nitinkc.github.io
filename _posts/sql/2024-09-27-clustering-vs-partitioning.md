@@ -1,7 +1,11 @@
 ---
 categories: SQL
 tags:
-- SQL
+- Clustering
+- Partitioning
+- Database
+- Performance
+- Optimization
 ---
 
 1---

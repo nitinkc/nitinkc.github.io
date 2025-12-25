@@ -1,8 +1,12 @@
 ---
-categories: Developer tools
+categories: Developer Tools
 date: 2022-01-22 21:55:00
 tags:
-- Developer tools
+- Hosting
+- Web Server
+- Home Network
+- Router
+- DIY
 title: Hosting personal website on home router
 ---
 

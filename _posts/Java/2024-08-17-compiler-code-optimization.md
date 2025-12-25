@@ -2,7 +2,10 @@
 categories: Java
 date: 2024-08-17 00:17:00
 tags:
-- Java
+- Compiler
+- Optimization
+- JIT
+- Performance
 title: Java Compiler Code Optimization
 ---
 

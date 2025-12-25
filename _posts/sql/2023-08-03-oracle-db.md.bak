@@ -1,0 +1,144 @@
+---
+categories: SQL
+date: 2023-08-03 14:25:00
+tags:
+- SQL
+title: Oracle DB
+---
+
+{% include toc title="Index" %}
+
+# DCL (Data Control Language)
+
+- Grant SELECT permission on the "employees" table to the user "john":
+
+```sql
+CREATE ROLE john;
+
+GRANT SELECT ON employees TO john;
+```
+
+- Revoke INSERT permission on the "products" table from the role "managers":
+
+```sql
+REVOKE INSERT ON products FROM managers;
+```
+
+# DDL (Data Definition Language):
+
+- Create a new table named "customers":
+
+```sql
+CREATE TABLE customers (
+   customer_id NUMBER PRIMARY KEY,
+   customer_name VARCHAR2(100),
+   email VARCHAR2(50)
+);
+```
+
+- Add a new column "phone" to the "employees" table:
+
+```sql
+ALTER TABLE employees ADD phone VARCHAR2(20);
+```
+
+- Drop the "orders" table:
+
+```sql
+DROP TABLE orders;
+  ```
+
+# Operators:
+
+- Comparison Operator Example:
+
+```sql
+SELECT * FROM products WHERE price > 100;
+```
+
+- Arithmetic Operator Example:
+
+```sql
+SELECT quantity * price AS total_amount FROM orders;
+```
+
+- Logical Operator Example:
+
+```sql
+SELECT * FROM customers WHERE city = 'New York' AND status = 'Active';
+```
+
+# OFFSET - LIMIT
+
+- Return 10 rows starting from the 6th row (pagination):
+
+```sql
+SELECT * FROM employees ORDER BY emp_id OFFSET 5 ROWS FETCH NEXT 10 ROWS ONLY;
+```
+
+# Aggregate Functions:
+
+- Calculate the total number of employees:
+
+```sql
+ SELECT COUNT(*) AS total_employees FROM employees;
+```
+
+- Calculate the average salary of employees in the "Finance" department:
+
+```sql
+SELECT AVG(salary) AS avg_salary FROM employees WHERE department = 'Finance';
+```
+
+# GROUP BY:
+
+- Get the total sales amount for each product:
+
+```sql
+SELECT product_name, SUM(sales_amount) AS total_sales FROM sales GROUP BY product_name;
+```
+
+# Joins:
+
+- INNER JOIN example:
+
+```sql
+SELECT customers.customer_name, orders.order_id
+FROM customers
+INNER JOIN orders ON customers.customer_id = orders.customer_id;
+```
+
+- LEFT JOIN example:
+
+```sql
+SELECT employees.emp_name, departments.department_name
+FROM employees
+LEFT JOIN departments ON employees.department_id = departments.department_id;
+```
+
+# Subquery:
+
+- Get all employees whose salary is higher than the average salary in the "
+  Finance" department:
+
+```sql
+SELECT emp_name, salary
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees WHERE department = 'Finance');
+```
+
+# Window Functions (Analytic Functions):
+
+- Assign a rank to employees based on their salaries in descending order:
+
+```sql
+SELECT emp_name, salary, RANK() OVER (ORDER BY salary DESC) AS salary_rank
+FROM employees;
+```
+
+- Calculate the running total of sales for each product:
+
+```sql
+SELECT product_name, sales_amount, SUM(sales_amount) OVER (PARTITION BY product_name ORDER BY sales_date) AS running_total
+FROM sales;
+```

@@ -2,7 +2,11 @@
 categories: System Design
 date: 2024-06-14 11:02:00
 tags:
-- System Design
+- Live Streaming
+- Video
+- CDN
+- Real-time
+- Media
 title: Live Streaming
 ---
 

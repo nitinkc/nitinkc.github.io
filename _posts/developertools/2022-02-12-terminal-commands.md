@@ -1,9 +1,13 @@
 ---
-categories: Developer tools
+categories: Developer Tools
 date: 2022-02-12 23:23:00
 tags:
 - Terminal
-- Developer tools
+- Commands
+- CLI
+- Shell
+- Unix
+- Reference
 title: Terminal Commands
 ---
 

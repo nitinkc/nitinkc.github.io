@@ -1,0 +1,30 @@
+---
+categories: Java
+date: 2022-08-06 13:52:00
+tags:
+- Java
+title: Static
+---
+
+Static belong to class NOT to the instance (object)
+
+**Static Variable**: gets memory only once in the class area at the **Time of
+Loading**
+
+Static Methods : Invoked without creating instance (eg. `Math.pow()`)
+
+* useful for memory management
+* Static can be blocks, variables, methods & nested class (inner class)
+
+can access static data member
+
+**Inheritance** : Static methods of only parent is visible
+
+## Static method Restrictions
+
+* Cannot use non static data field or method directly
+* Cannot use this and super on the static context
+
+## Static Initialization Blocks
+
+{% gist nitinkc/f12199bd346d32f62a2c6d5d9c647e55 %}

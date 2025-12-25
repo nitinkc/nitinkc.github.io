@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
+categories: Multithreading
 date: 2024-08-17 20:17:00
 tags:
-- Multithreading
 - Java
+- Synchronization
+- Locks
+- Concurrency
 title: Synchronization Mechanisms in Java
 ---
 

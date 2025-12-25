@@ -3,7 +3,10 @@ categories: Electronics
 date: 2024-11-17 08:00:00
 tags:
 - Arduino
-- Electronics
+- Microcontroller
+- Programming
+- Projects
+- IoT
 title: Arduino UNO
 ---
 

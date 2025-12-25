@@ -1,8 +1,11 @@
 ---
-categories: Miscellaneous
+categories: Career
 date: 2023-05-22 23:14:00
 tags:
-- Miscellaneous
+- Interview
+- Behavioral
+- Soft Skills
+- Communication
 title: Behavioural
 ---
 

@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
+categories: Multithreading
 date: 2024-07-27 20:17:00
 tags:
-- Multithreading
 - Java
+- Theory
+- Concurrency
+- Fundamentals
 title: Multithreading Theory
 ---
 

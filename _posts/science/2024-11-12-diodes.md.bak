@@ -1,0 +1,25 @@
+---
+categories: Electronics
+date: 2024-11-12 08:00:00
+tags:
+- Electronics
+title: Diodes
+---
+
+{% include toc title="Index" %}
+
+# Types
+![](https://www.youtube.com/shorts/lM4OTlGoGqc)
+
+
+- The silver Stripped side is **Cathode**
+- Current can only flow from Anode to Cathode
+- Zeiner Diode is reverse Biased and allows current to flow only after a certain voltage
+
+Preventing other direction current
+
+
+# Mono directional control unit - H Bridge
+using 4 rectifier diodes
+
+prevents reverse motor run

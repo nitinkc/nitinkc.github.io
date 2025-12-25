@@ -2,7 +2,11 @@
 categories: System Design
 date: 2024-07-20 21:02:00
 tags:
-- System Design
+- HTTP
+- Status Codes
+- REST
+- API
+- Java
 title: Http Status Codes & Java Exceptions
 ---
 

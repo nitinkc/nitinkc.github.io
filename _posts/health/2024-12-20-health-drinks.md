@@ -2,7 +2,11 @@
 categories: Health
 date: 2024-12-20 09:45:00
 tags:
-- Health
+- Drinks
+- Beverages
+- Nutrition
+- Healthy
+- Recipes
 title: Health Drinks
 ---
 

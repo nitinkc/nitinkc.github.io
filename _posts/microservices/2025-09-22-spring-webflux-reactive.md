@@ -1,10 +1,11 @@
 ---
-categories:
-- Spring
-- Microservices
+categories: Microservices
 date: 2025-09-22 12:00:00
 tags:
-- Spring
+- Spring Boot
+- WebFlux
+- Reactive
+- Non-Blocking
 title: Reactive Programming with Spring WebFlux
 ---
 

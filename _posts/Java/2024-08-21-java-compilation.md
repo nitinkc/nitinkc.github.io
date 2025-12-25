@@ -2,8 +2,11 @@
 categories: Java
 date: 2024-08-21 00:17:00
 tags:
+- JVM
+- Compilation
+- Bytecode
+- Architecture
 - Garbage Collection
-- Java
 title: Java Compilation Process & JVM Architecture
 ---
 

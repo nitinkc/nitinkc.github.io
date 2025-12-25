@@ -1,12 +1,13 @@
 ---
-categories:
-- Developer tools
-- MacBook
+categories: Developer Tools
 date: 2021-02-01 14:00:00
 tags:
-- MacBook
 - Terminal
-- Developer tools
+- Configuration
+- MacOS
+- Shell
+- Zsh
+- Setup
 title: Terminal Setup
 ---
 

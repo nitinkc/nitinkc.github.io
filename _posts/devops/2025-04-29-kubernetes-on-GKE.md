@@ -3,7 +3,11 @@ categories: DevOps
 date: 2025-04-29 05:00:00
 tags:
 - Kubernetes
-- DevOps
+- GKE
+- GCP
+- Google Cloud
+- K8s
+- Managed Service
 title: Kubernetes on Google Kubernetes Engine (GKE)
 ---
 

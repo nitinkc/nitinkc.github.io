@@ -1,5 +1,8 @@
 ---
+categories: Algorithms
 tags:
 - Bitwise
-- Algorithms
+- Operators
+- Bit Manipulation
+- Binary
 ---

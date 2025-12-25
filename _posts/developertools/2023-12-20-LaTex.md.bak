@@ -1,0 +1,148 @@
+---
+categories: Developer tools
+date: 2023-12-20 01:19:00
+tags:
+- Developer tools
+title: LaTeX in Markdown
+---
+
+{% include toc title="Index" %}
+
+# Config
+
+copy the script in `_includes/head/custom.html`
+
+```html
+<!--LaTex Math for Markdown-->
+<!--https://yihui.org/en/2018/07/latex-math-markdown/-->
+<script src="//yihui.org/js/math-code.js" defer></script>
+<!-- Just one possible MathJax CDN below. You may use others. -->
+<script defer
+        src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+```
+
+# $$ \LaTeX $$  formulae
+
+- $$ -> begins new line and center aligned
+- $ -> line continuation
+
+```
+$$ x^{n+1} $$
+```
+
+appears new line, center : $$ x^{n+1} $$
+
+```
+$ log{_a}{n} $
+```
+
+appears inline : $ log{_a}{n} $
+
+```java
+while this $ a > 0 $ is inline math mode.
+```
+
+while this $ a > 0 $ is inline math mode.
+
+```
+$ y = ax^2 + bx + c $
+```
+
+$ y = ax^2 + bx + c $
+
+```java
+$$ \frac{a+b}{2} $$
+```
+
+$$ \frac{a+b}{2} $$
+
+```java
+$$ \sqrt[n]{a^2+b^2} $$
+```
+
+$$ \sqrt[n]{a^2+b^2} $$
+
+```java
+$$  x_1, \ldots, x_n $$
+```
+
+$$  x_1, \ldots, x_n $$
+
+```
+$$  x_1 + \cdots + x_n $$
+```
+
+$$  x_1 + \cdots + x_n $$
+
+```java
+$$ \left( a + \frac{1}{2} \right)^2 $$
+```
+
+$$ \left( a + \frac{1}{2} \right)^2 $$
+
+```java
+$$
+\vec{u} \otimes \vec{v} = \mathbf{M}
+$$
+```
+
+$$
+\vec{u} \otimes \vec{v} = \mathbf{M}
+$$
+
+```java
+$$
+\log \left[1 + \left( \frac{x + \sin y}{z} -
+\sqrt{a} \right)^b \right]
+$$
+```
+
+$$
+\log \left[1 + \left( \frac{x + \sin y}{z} -
+\sqrt{a} \right)^b \right]
+$$
+
+```java
+$$
+\frac{\frac12 - 2}{5 + \frac43} -
+\frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43}
+= 0
+$$
+```
+
+$$
+\frac{\frac12 - 2}{5 + \frac43} -
+\frac{\displaystyle \frac12 - 2}{\displaystyle 5 + \frac43}
+= 0
+$$
+
+```java
+$$ \text{1 Day has 86400 seconds} = 24\times 60\times 60 \approx 90K secs $$
+```
+
+$$ \text{1 Day has 86400 seconds} = 24\times 60\times 60 \approx 90K secs $$
+
+```java
+$$ \frac{1\times 8 * 10^6}{10^9} \approx 10\times 10^{-3} $$
+```
+
+$$ \frac{1\times 8 * 10^6}{10^9} \approx 10\times 10^{-3} $$
+
+```java
+$$ \text{text}$$
+$$ \textup{textup} $$
+$$ \textnormal{textnormal} $$
+$$ \textrm{textrm} $$
+$$ \mathrm{mathrm-\sqrt{f}} $$
+```
+
+$ \text{text}$
+
+$ \textup{textup} $
+
+$ \textnormal{textnormal} $
+
+$ \textrm{textrm} $
+
+$ \mathrm{mathrm-\sqrt{f}} $

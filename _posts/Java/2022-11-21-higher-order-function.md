@@ -2,7 +2,10 @@
 categories: Java
 date: 2022-11-21 13:43:00
 tags:
-- Java
+- Higher Order Functions
+- Functional Programming
+- Lambda
+- Functions
 title: Higher Order Functions
 ---
 

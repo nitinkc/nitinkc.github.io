@@ -1,0 +1,131 @@
+---
+categories:
+- DevOps
+- GitOps
+date: 2024-09-14 20:14:00
+tags:
+- GitOps
+- DevOps
+title: Git Ops
+---
+
+{% include toc title="Index" %}
+
+**Scenario**: After the docker image is created (via build pipeline), a deploy
+pipeline that deploys the image into GCP Kubernetes.
+
+How does a Terraform script, the Helm Charts come into play in this scenario
+
+```jenkins
+stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    // Deploy using Helm
+                    sh 'helm upgrade --install my-application ./charts/my-application --values ./charts/my-application/values.yaml'
+                }
+            }
+```
+
+# Terraform
+
+**Role: Infrastructure Provisioning**
+
+**Infrastructure as Code**: Terraform is used to define and manage your cloud
+infrastructure as code.
+
+- This includes provisioning and managing resources like Google Kubernetes
+  Engine (GKE) clusters,
+    - networking components, storage, and other GCP resources.
+
+**Setup GKE Cluster**: Terraform can create and configure the GKE cluster where
+your Spring Boot microservice will be deployed.
+
+**Manage Dependencies**: Terraform can also handle dependencies between
+different infrastructure components,
+ensuring that resources are created in the correct order and with the proper
+configurations.
+
+Example Use Cases:
+
+**Create/Update GKE Clusters**: Define the cluster size, node pools, and other
+settings.
+
+**Network Configuration**: Set up VPCs, subnets, and firewall rules.
+
+**IAM Roles**: Manage IAM roles and permissions needed for accessing and
+managing GCP resources.
+
+Uses Hashicorp Programming language
+
+```hcl
+provider "google" {
+  credentials = file("<path-to-credentials>.json")
+  project     = "<your-project-id>"
+  region      = "us-central1"
+}
+
+resource "google_container_cluster" "primary" {
+  name     = "my-cluster"
+  location = "us-central1-a"
+  initial_node_count = 3
+  node_config {
+    machine_type = "e2-medium"
+  }
+}
+```
+
+# Helm Charts
+
+**Role: Application Deployment**
+
+**Package Management**: Helm is a package manager for Kubernetes applications.
+Helm Charts are used to define, install, and upgrade Kubernetes applications.
+
+**Configuration Management**: Helm Charts can package your Spring Boot
+microservice,
+including its Kubernetes deployment manifests, service definitions, and any
+other necessary Kubernetes resources.
+
+**Version Control**: Helm Charts support versioning, making it easier to manage
+and roll out updates to your microservices.
+
+**Example Use Cases:**
+
+**Deploy Microservices**: Use Helm Charts to deploy your Spring Boot
+microservice to the GKE cluster.
+
+**Manage Configurations**: Define and manage environment-specific configurations
+such as database URLs, API keys, and other parameters.
+
+**Upgrade and Rollback**: Helm allows you to easily upgrade or roll back
+deployments if needed.
+
+Helm Chart Example: The Helm Chart typically includes:
+
+`Chart.yaml`: Metadata about the chart.
+
+`values.yam`l: Default values for the chart configuration.
+
+templates/: Kubernetes manifests for deployment, services, ingress, etc.
+values.yaml
+
+```shell
+├── charts
+│   └── my-application
+│       ├── Chart.yaml
+│       ├── requirements.yaml
+│       ├── templates
+│       │   ├── config.yaml
+│       │   └── workload.yaml
+│       └── values.yaml
+├── Dockerfile
+├── Jenkinsfile
+
+```
+
+# Workflow Integration
+
+Terraform: First, use Terraform to set up the GKE cluster and any other
+necessary GCP resources.
+Helm: Next, use Helm Charts to deploy and manage your Spring Boot microservice
+on the GKE cluster.

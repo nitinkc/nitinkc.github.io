@@ -1,4 +1,9 @@
 ---
+categories: Algorithms
 tags:
-- Algorithms
+- Syntax
+- Reference
+- Interview
+- Coding
+- Cheatsheet
 ---

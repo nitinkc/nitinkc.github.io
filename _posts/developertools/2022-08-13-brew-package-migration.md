@@ -1,9 +1,12 @@
 ---
-categories: Developer tools
+categories: Developer Tools
 date: 2022-08-13 10:41:00
 tags:
-- MacBook
-- Developer tools
+- MacOS
+- Homebrew
+- Package Manager
+- Migration
+- Setup
 title: 'MacBook : Brew Package Migration'
 ---
 

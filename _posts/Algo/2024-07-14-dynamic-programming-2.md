@@ -1,5 +1,8 @@
 ---
+categories: Algorithms
 tags:
 - Dynamic Programming
-- Algorithms
+- DP
+- Iteration
+- Optimization
 ---

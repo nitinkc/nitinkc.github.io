@@ -1,0 +1,56 @@
+---
+categories: Finance
+date: 2024-10-05 09:00:00
+tags:
+- Finance
+title: Finances
+---
+
+{% include toc title="Index" %}
+
+# EMI Formula
+[Reducing-Balance Method](https://corporatefinanceinstitute.com/resources/commercial-lending/equated-monthly-installment-emi)
+
+$$ EMI = \frac{P \times r \times (1 + r)^n}{(1 + r)^n - 1} $$
+
+## EMI for 7.5% interest rate for a principal amount of $500,000 Over 30 Years
+[calculator - mortgage-loan](https://www.oakstarbank.com/calculator/mortgage-loan)
+
+$$ r = \frac{7.5}{100 \times 12} = 0.00625 $$
+
+$$ EMI = \frac{500000 \times 0.00625 \times (1 + 0.00625)^{360}}{(1 + 0.00625)^{360} - 1} \approx 3,507.24 $ $$
+
+## Comparison table
+
+| Principal | Rate | EMI       | Total Amount  | Total Interest Paid | Principal % Paid as Interest |
+|:----------|:-----|:----------|:--------------|:--------------------|:-----------------------------|
+| $500,000  | 7.5% | $3,507.24 | $1,262,606.40 | $762,606.40         | 152.52%                      |
+| ^^        | 7%   | $3,320.98 | $1,195,552.80 | $695,552.80         | 139.11%                      |
+| ^^        | 6%   | $3,219.64 | $1,079,190.00 | $579,190.00         | 115.84%                      |
+| ^^        | 5%   | $2,684.11 | $966,279.60   | $466,279.60         | 93.26%                       |
+| ^^        | 4%   | $2,387.08 | $859,348.80   | $359,348.80         | 71.87%                       |
+| ^^        | 3%   | $2,108.02 | $758,887.20   | $258,887.20         | 51.78%                       |
+| ^^        | 2%   | $1,849.14 | $665,690.40   | $165,690.40         | 33.14%                       |
+
+# Affording a house (75/15/10)
+- **75%** - should be able to cover mortgage, property taxes, insurance(health, car, home), groceries, vacations, clothes, food
+- **15%** -  Investing : Power of Compound Interest
+- **10%** -  Saving
+
+For a 30 years loan, the first **14 years and 8 months** of the mortgage is the interest. that means the equity is not made
+
+**Federal Income Tax**: The U.S. federal income tax is progressive, 
+with rates ranging from 10% to 37% in 2024. 
+- Average effective federal tax rate is 22% for mid-to-high earners.
+
+**Colorado State Income Tax**: Colorado has a flat income tax rate. 
+For the 2024 tax year, this rate is temporarily reduced to 4.25%
+
+| Gross Salary     | Estimated Taxes (26.25%)  | Take-Home Pay (73.75%)   | 75% Essentials | 15% Investing  | 10% Savings   | Max EMI Affordability (50% of Essentials) | Monthly EMI Affordability  |
+|:-----------------|:--------------------------|:-------------------------|:---------------|:---------------|:--------------|:------------------------------------------|:---------------------------|
+| $100,000         | $26,250                   | $73,750                  | $55,313        | $11,063        | $7,375        | $27,656.25                                | $2,304.69                  |
+| $125,000         | $32,813                   | $92,188                  | $69,141        | $13,828        | $9,219        | $34,570.31                                | $2,880.86                  |
+| **$150,000**     | $39,375                   | $110,625                 | $82,969        | $16,594        | $11,063       | $41,484.38                                | $3,457.03                  |
+| $200,000         | $52,500                   | $147,500                 | $110,625       | $22,125        | $14,750       | $55,312.50                                | $4,609.38                  |
+| $250,000         | $65,625                   | $184,375                 | $138,281       | $27,656        | $18,438       | $69,140.62                                | $5,761.72                  |
+| $300,000         | $78,750                   | $221,250                 | $165,938       | $33,188        | $22,125       | $82,968.75                                | $6,914.06                  |

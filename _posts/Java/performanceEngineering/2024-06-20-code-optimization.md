@@ -1,10 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
+categories: Performance Engineering
 date: 2024-06-20 00:10:00
 tags:
 - Java
+- Performance
+- Optimization
+- Code
+- Best Practices
+- Multithreading
 title: Java Code Optimization
 ---
 

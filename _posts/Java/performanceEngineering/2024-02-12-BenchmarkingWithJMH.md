@@ -1,11 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
+categories: Performance Engineering
 date: 2024-02-17 12:40:00
 tags:
-- Benchmarking
 - Java
+- JMC
+- Profiling
+- Performance
+- Monitoring
+- Tools
 title: Java Mission Control - JMC
 ---
 

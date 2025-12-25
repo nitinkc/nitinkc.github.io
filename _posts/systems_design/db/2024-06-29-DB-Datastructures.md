@@ -2,7 +2,10 @@
 categories: System Design
 date: 2024-06-28 11:02:00
 tags:
-- System Design
+- Database
+- Data Structures
+- B-Tree
+- LSM Tree
 title: DB Data Structures
 ---
 

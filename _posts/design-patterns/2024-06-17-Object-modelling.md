@@ -1,10 +1,11 @@
 ---
-categories:
-- Java
-- Design Patterns
+categories: Design Patterns
 date: 2024-06-17 17:45:00
 tags:
-- Java
+- Object Modeling
+- OOP
+- UML
+- Architecture
 title: Object modelling
 ---
 

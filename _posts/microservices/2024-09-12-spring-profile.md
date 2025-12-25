@@ -3,7 +3,8 @@ categories: Microservices
 date: 2024-09-12 15:00:00
 tags:
 - Spring Boot
-- Microservices
+- Configuration
+- Profiles
 title: SpringBoot Profile
 ---
 

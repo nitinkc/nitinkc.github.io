@@ -3,7 +3,10 @@ categories: Microservices
 date: 2023-09-15 21:30:00
 tags:
 - Spring Boot
-- Microservices
+- Exception Handling
+- Error Handling
+- REST
+- ControllerAdvice
 title: Exception Handling in Spring
 ---
 

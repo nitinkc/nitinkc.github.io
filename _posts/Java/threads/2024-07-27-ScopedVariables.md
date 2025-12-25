@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
+categories: Multithreading
 date: 2024-07-27 20:17:00
 tags:
-- Multithreading
 - Java
+- Scoped Value
+- Java 21
+- Thread-Local
 title: Scoped Value
 ---
 

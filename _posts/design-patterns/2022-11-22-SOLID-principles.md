@@ -2,7 +2,10 @@
 categories: Design Patterns
 date: 2022-11-22 08:30:00
 tags:
-- Design Patterns
+- SOLID
+- OOP
+- Principles
+- Best Practices
 title: SOLID Principles
 ---
 

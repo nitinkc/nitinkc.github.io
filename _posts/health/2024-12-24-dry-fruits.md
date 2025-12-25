@@ -2,7 +2,11 @@
 categories: Health
 date: 2024-12-28 09:45:00
 tags:
-- Health
+- Dry Fruits
+- Nutrition
+- Snacks
+- Meal Planning
+- Healthy
 title: 'Dry Fruit: Meal Plan'
 ---
 

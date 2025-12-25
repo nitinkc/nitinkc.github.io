@@ -1,0 +1,47 @@
+---
+categories: Java
+date: 2022-11-21 08:30:00
+tags:
+- Functional
+- Java
+title: Function Functional Interface
+---
+
+### Function
+
+The Function interface represents a function that **takes a single parameter T
+and returns a single value R**.
+
+Commonly used with streams.map(). A map applies a given function to each element
+of a list stream
+returning a list of results in the same order.
+
+```java
+public interface Function<T, R> {
+    R apply(T t);
+}
+```
+
+Write Lambda in such a way that it **accepts an argument and performs an action
+** on it to return an Object
+
+{% gist nitinkc/bed9ceea341088f49355f8422958d04a %}
+
+### BiFunction
+
+Takes in Two parameters T & U and return a single value R
+
+```java
+public interface BiFunction<T, U, R> {
+     R apply(T t, U u);
+}
+```
+
+BiFunction can be defined as
+
+```java
+BiFunction<Integer, Double, String> biFunction = (x, y) -> String.valueOf(Math.hypot(x, y));
+System.out.println(biFunction.apply(3,4.0));//Returns answer in string format
+```
+
+{% gist nitinkc/703880df6de82c7222be11ef922b7a2c %}

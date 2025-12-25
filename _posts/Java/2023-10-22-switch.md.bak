@@ -1,0 +1,105 @@
+---
+categories: Java
+date: 2023-10-22 00:29:00
+tags:
+- Java
+title: Switch
+---
+
+{% include toc title="Index" %}
+
+# Statements vs. Expressions
+
+In Java, expressions and statements are distinct. Expressions return values, and
+statements perform actions
+
+* **An expression** can be variables, operators, and function calls that can be
+  **evaluated** to produce **a single value**.
+* Example: x + y, Math.sqrt(16), str.length(), 3 * (a + b).
+
+* **A statement** Statements perform action but do not return anything
+* Statement cause side-effects (except one statement no-op)
+* Statements are used to control the flow of a program, define variables,
+  execute loops, conditionals, and function
+  declarations, and manage side effects.
+* Example : if, for, while, switch, return, and variable declarations like int
+  x = 5;
+*
+
+In JavaScript, expressions can be used as statements, and statements can often
+be used as expressions.
+
+* For example, console.log(x + y);, where the expression x + y is used as a
+  statement.
+
+## Switch Statement (Traditional):
+
+switch statement
+
+* verbose
+* error proneside-effects and force mutability
+
+```java
+int grade = 8;
+String gradeValue;
+
+switch (grade) {
+    case 9:
+    case 10:
+        gradeValue = "A";
+        break;
+    case 8:
+        gradeValue = "B";
+        break;
+    case 7:
+        gradeValue = "C";
+        break;
+    case 6:
+        gradeValue = "D";
+        break;
+    default:
+        gradeValue = "F";
+}
+
+System.out.println("Grade: " + gradeValue);
+```
+
+## Switch Expression with Yield (Java 13 onwards):
+
+No need to write break in this case
+
+* concise
+* less error prone
+* no side effect
+
+```java
+int score = Math.min(score/10, 10);
+String grade = switch (score) {
+    case 9,10 -> "A";
+    case 8 -> "B";
+    case 7 -> "C";
+    case 6 -> "D";
+    default -> "F";
+};
+```
+
+Switch taking an Enum
+
+```java
+enum When{DAY, NIGHT}//, DAWN}
+
+public static String lights(When when){//When is an Enum
+    return switch (when){
+        case DAY -> "No Light";
+        case NIGHT -> "Lights needed";
+    };
+}
+```
+
+If you don't write the default, they write it for you.
+
+the compiler fails if a new element gets added and recompiled, which is good
+
+default -> never happens so how to cover the test case for it?
+
+Should NOT write Default.

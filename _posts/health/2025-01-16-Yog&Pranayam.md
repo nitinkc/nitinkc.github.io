@@ -3,7 +3,10 @@ categories: Health
 date: 2025-01-16 22:00:00
 tags:
 - Yoga
-- Health
+- Pranayama
+- Breathing
+- Meditation
+- Wellness
 title: Pranayama - प्राणायाम
 ---
 

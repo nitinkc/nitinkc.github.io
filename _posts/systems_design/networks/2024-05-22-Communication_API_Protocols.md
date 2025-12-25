@@ -2,7 +2,12 @@
 categories: System Design
 date: 2024-05-22 11:02:00
 tags:
-- System Design
+- Networking
+- API
+- Protocols
+- REST
+- GraphQL
+- gRPC
 title: API Communication Protocols
 ---
 

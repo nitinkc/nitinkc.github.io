@@ -4,9 +4,9 @@ date: 2021-04-16 01:25:00
 tags:
 - MySQL
 - Spanner
+- GCP
 - Migration
-- SQL
-- Database
+- HarbourBridge
 title: MySql to Spanner Migration using HarbourBridge
 ---
 

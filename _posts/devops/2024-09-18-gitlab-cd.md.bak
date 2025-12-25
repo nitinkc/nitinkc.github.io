@@ -1,0 +1,14 @@
+---
+categories:
+- DevOps
+- GitOps
+date: 2024-09-18 18:02:00
+tags:
+- GitOps
+- DevOps
+title: Gitlab
+---
+
+{% include toc title="Index" %}
+
+[https://gitlab.com/nitinkc/my-spring-app](https://gitlab.com/nitinkc/my-spring-app)

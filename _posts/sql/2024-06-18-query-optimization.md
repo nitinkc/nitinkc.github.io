@@ -2,7 +2,10 @@
 categories: SQL
 date: 2024-06-18 14:25:00
 tags:
-- SQL
+- Query Optimization
+- Performance
+- Indexing
+- Best Practices
 title: SQL/Query Optimization
 ---
 

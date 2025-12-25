@@ -2,7 +2,10 @@
 categories: System Design
 date: 2024-06-29 21:02:00
 tags:
-- System Design
+- Technology Stack
+- Architecture
+- Frameworks
+- Tools
 title: Tech Stack
 ---
 

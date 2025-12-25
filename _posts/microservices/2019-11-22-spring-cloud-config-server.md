@@ -3,7 +3,9 @@ categories: Microservices
 date: 2019-11-22 21:15:00
 tags:
 - Spring Boot
-- Microservices
+- Spring Cloud
+- Configuration
+- Config Server
 title: Spring Config Client
 ---
 

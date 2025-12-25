@@ -1,0 +1,178 @@
+---
+categories: System Design
+date: 2024-06-18 11:45:00
+tags:
+- System Design
+title: RPC & gRPC
+---
+
+{% include toc title="Index" %}
+
+gRPC : good for **interprocess communication** not good for client server
+
+WebHook
+# RPC - Remote Procedure Call
+
+A protocol that one program can use to request a service from a program located
+on another computer
+in a network without needing to understand network details.
+
+It allows **a local function call** to execute on a **remote server** as if it
+were a local call, **simplifying** the process of building distributed systems
+
+# Key Concepts
+
+**Client**: The component that initiates the call to a remote service.
+
+**Server**: The component that provides the service and handles the remote
+calls.
+
+**Stub**: An intermediary that represents the remote service on the client side.
+It handles the communication with the actual remote service.
+
+**Skeleton**: An intermediary on the server side that handles the incoming
+request, processes it, and sends back the response.
+
+## Steps in RPC Communication
+
+**Client Call**: The client makes a local call to the stub.
+
+**Marshalling**: The stub packages (marshals) the request data and sends it over
+the network to the server.
+
+**Server Handling**: The skeleton on the server side unpacks (unmarshals) the
+request and calls the actual service.
+
+**Execution**: The service performs the requested operation.
+
+**Response**: The result is sent back to the skeleton.
+
+**Unmarshalling**: The skeleton packages (marshals) the response and sends it
+back to the client stub.
+
+**Client Receives**: The stub on the client side unpacks (unmarshals) the
+response and presents it as the result of the local call.
+
+# Explanation
+
+```markdown
+Client Machine          Network         Server Machine
+   (Client)                                (Service)
+      |                                      |
+      |   Local Function Call                |
+      |-------------> (Stub)                 |
+      |                    |                 |
+      |                    | Packaged Request|
+      |                    |---------------->|
+      |                    |                 | (Skeleton)
+      |                    |                 |   |
+      |                    |                 | Unpack Request
+      |                    |                 |   |
+      |                    |                 |   |
+      |                    |                 | Execute Service
+      |                    |                 |   |
+      |                    |                 | Packaged Response
+      |<-------------------|                 |<--|
+      |   Function Result  |                 |   |
+      |<-(Stub)            |                 |   |
+      |                    |                 |
+```
+
+# gRPC - gRPC Remote Procedure Call
+
+[https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#how-does-grpc-work](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#how-does-grpc-work)
+
+![](https://www.youtube.com/watch?v=gnchfOojMk4)
+
+gRPC, which stands for gRPC Remote Procedure Call, high-performance framework
+developed by Google.
+
+- designed for efficient communication between microservices, allowing functions
+  to be called remotely just as they would locally.
+- gRPC uses HTTP/2 for transport, Protocol Buffers (protobufs) as the interface
+  description language.
+- The client perceives the interaction as a simple local function call, even
+  though it involves complex network operations.
+
+## Key Concepts of gRPC
+
+**Service Definition**: Defined using Protocol Buffers, a language-neutral,
+platform-neutral extensible mechanism for serializing structured data.
+
+**Client**: The component that makes the call to the remote service.
+
+**Server**: The component that implements the service and handles the remote
+calls.
+
+**Stub**: The client-side proxy generated from the service definition that
+handles the communication with the server.
+
+**Skeleton**: The server-side proxy generated from the service definition that
+receives the request and forwards it to the actual implementation.
+
+### Steps in gRPC Communication
+
+**Service Definition**: Define the service and message types using Protocol
+Buffers (.proto file).
+
+```protobuf
+syntax = "proto3";
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
+```
+
+**Code Generation**: Generate client and server code using the Protocol Buffers
+compiler (protoc).
+
+```sh
+protoc --go_out=plugins=grpc:. helloworld.proto
+```
+
+**Local gRPC Call/Client Call**: The client calls a method on the stub. e.g.,
+`stub.SayHello(request)`
+
+**Marshalling**: The stub marshals the request data using Protocol Buffers and
+sends it over HTTP/2.
+
+**Server Handling**: The server skeleton unmarshals the request and invokes the
+actual service method.
+
+**Execution**: The service method executes and returns a response.
+
+**Response**: The response is marshaled by the server skeleton, sent back over
+HTTP/2, unmarshaled by the client stub, and returned to the client.
+
+## Diagram
+
+```markdown
+Client Machine          Network         Server Machine
+   (Client)                                (Service)
+      |                                      |
+      |  Local gRPC Call (Stub)              |
+      |------------->                        |
+      |                  |                   |
+      |                  |  HTTP/2 Request   |
+      |                  |------------------>|
+      |                  |                   | (Skeleton)
+      |                  |                   |   |
+      |                  |                   | Unmarshal Request
+      |                  |                   |   |
+      |                  |                   |   |
+      |                  |                   | Execute Service
+      |                  |                   |   |
+      |                  |                   | Marshal Response
+      |<-----------------|                   |<--|
+      |  gRPC Response   |                   |   |
+      |<-(Stub)          |                   |   |
+      |                  |                   |
+```

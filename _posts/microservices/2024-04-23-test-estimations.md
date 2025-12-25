@@ -2,8 +2,10 @@
 categories: Microservices
 date: 2024-04-23 21:00:00
 tags:
-- Spring Boot
-- Microservices
+- Testing
+- Estimation
+- QA
+- Planning
 title: Testing Estimations
 ---
 

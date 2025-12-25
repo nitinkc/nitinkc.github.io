@@ -1,8 +1,10 @@
 ---
-categories: Miscellaneous
+categories: Travel
 date: 2025-03-07 05:00:00
 tags:
-- Miscellaneous
+- Denver
+- Nashville
+- USA
 title: Trip from Denver to Nashville
 ---
 

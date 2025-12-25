@@ -2,7 +2,11 @@
 categories: System Design
 date: 2025-05-08 11:02:00
 tags:
-- System Design
+- Database
+- Cassandra
+- NoSQL
+- Column Store
+- Distributed
 title: Cassandra - Column-Oriented Database
 ---
 

@@ -2,7 +2,11 @@
 categories: Java
 date: 2018-01-24 00:32:00
 tags:
-- Java
+- Collections
+- Data Structures
+- List
+- Set
+- Map
 title: Java Collection Class
 ---
 

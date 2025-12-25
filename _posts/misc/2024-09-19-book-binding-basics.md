@@ -1,8 +1,11 @@
 ---
-categories: Miscellaneous
+categories: Crafts
 date: 2024-09-19 20:14:00
 tags:
-- Miscellaneous
+- Bookbinding
+- DIY
+- Books
+- Manual Arts
 title: Book Binding
 ---
 

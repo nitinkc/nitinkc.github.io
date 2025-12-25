@@ -1,4 +1,9 @@
 ---
+categories: Algorithms
 tags:
-- Algorithms
+- Data Structures
+- Implementation
+- Java
+- Code
+- Tutorial
 ---

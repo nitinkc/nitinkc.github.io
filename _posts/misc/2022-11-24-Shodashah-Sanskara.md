@@ -1,8 +1,12 @@
 ---
-categories: Miscellaneous
+categories: Culture
 date: 2022-01-26 21:55:00
 tags:
-- Miscellaneous
+- Hindu
+- Sanskar
+- Rituals
+- Indian Culture
+- Traditions
 title: षोडशः संस्कार (The 16 Sanskars)
 ---
 

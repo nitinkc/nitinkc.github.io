@@ -1,8 +1,12 @@
 ---
-categories: Spring Microservices
+categories: Microservices
 date: 2023-09-15 02:15:00
 tags:
-- Microservices
+- Spring Boot
+- REST
+- POST
+- HTTP
+- API
 title: POST API
 ---
 

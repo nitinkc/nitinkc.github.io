@@ -3,7 +3,9 @@ categories: Microservices
 date: 2024-07-28 17:00:00
 tags:
 - Spring Boot
-- Microservices
+- Virtual Threads
+- Concurrency
+- Java 21
 title: SpringBoot with Virtual Threads
 ---
 

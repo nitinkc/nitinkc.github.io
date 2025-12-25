@@ -1,4 +1,8 @@
 ---
+categories: Algorithms
 tags:
-- Algorithms
+- Practice
+- Drills
+- Problem Solving
+- Interview Preparation
 ---

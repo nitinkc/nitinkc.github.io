@@ -1,10 +1,12 @@
 ---
-categories:
-- Spring
-- Microservices
+categories: Microservices
 date: 2025-09-22 12:01:00
 tags:
-- Spring
+- Spring Boot
+- Testing
+- JUnit
+- Mockito
+- Integration Testing
 title: Advanced Testing in Spring Boot
 ---
 

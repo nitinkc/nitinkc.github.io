@@ -2,7 +2,12 @@
 categories: Electronics
 date: 2024-10-29 12:00:00
 tags:
-- Electronics
+- Project
+- DIY
+- Drone
+- RC
+- Motors
+- Aviation
 title: Simple Twin engine plane
 ---
 

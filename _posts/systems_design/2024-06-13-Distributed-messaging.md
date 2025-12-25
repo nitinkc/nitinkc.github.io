@@ -3,7 +3,10 @@ categories: System Design
 date: 2024-06-13 11:02:00
 tags:
 - Messaging
-- System Design
+- Message Queue
+- Kafka
+- RabbitMQ
+- Distributed Systems
 title: Distributed Messaging
 ---
 

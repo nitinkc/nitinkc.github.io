@@ -3,7 +3,10 @@ categories: Microservices
 date: 2023-09-15 20:30:00
 tags:
 - Spring Boot
-- Microservices
+- Validation
+- Bean Validation
+- JSR-303
+- Input Validation
 title: Spring Validations
 ---
 

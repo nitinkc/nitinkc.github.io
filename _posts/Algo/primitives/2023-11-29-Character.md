@@ -1,4 +1,8 @@
 ---
+categories: Algorithms
 tags:
-- Algorithms
+- Character
+- Utility
+- Java
+- Primitives
 ---

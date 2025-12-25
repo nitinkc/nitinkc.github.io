@@ -1,11 +1,11 @@
 ---
-categories:
-- DevOps
-- GitOps
+categories: DevOps
 date: 2024-09-23 20:14:00
 tags:
-- GitOps
-- DevOps
+- Learning
+- Tutorial
+- Getting Started
+- Beginner
 title: DevOps Learning - Starting point
 ---
 

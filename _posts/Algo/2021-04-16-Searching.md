@@ -1,5 +1,8 @@
 ---
+categories: Algorithms
 tags:
 - Searching
-- Algorithms
+- Binary Search
+- Linear Search
+- Problem Solving
 ---

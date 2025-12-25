@@ -1,7 +1,10 @@
 ---
-categories: Miscellaneous
+categories: Books
 tags:
-- Miscellaneous
+- Book
+- Phoenix Project
+- DevOps
+- IT Management
 ---
 
 # 📘 The Goal and the Theory of Constraints: 

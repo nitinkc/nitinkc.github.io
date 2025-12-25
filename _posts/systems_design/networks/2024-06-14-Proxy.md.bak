@@ -1,0 +1,48 @@
+---
+categories: System Design
+date: 2024-06-14 11:02:00
+tags:
+- System Design
+title: Forward Proxy  vs Reverse Proxy
+---
+
+{% include toc title="Index" %}
+
+# Forward Proxy
+
+A forward proxy is **a server** that sits between grouo of client
+machines/devices and the internet.
+
+Protect clients by hiding the IP address of the client. Only the IP address of
+the proxy is visible.
+
+Avoid browsing restrictions (by connecting to a forward proxy outside the
+firewall). does not always work as the firewall itseld prevents the connection
+to the proxy
+
+Block access to certain content - by applying the filter rules on the forward
+proxy
+
+Forward proxy requires a client to configure its application to point to it.
+
+Transparant proxy to streamline the process
+
+# Reverse Proxy
+
+A reverse proxy is a server that accepts a request from the client, forwards the
+request to web servers,
+and returns the results to the client as if the proxy server had processed the
+request.
+
+Websites IP address is hidden behind the reverse proxy server
+
+Protect servers
+
+Load balancing (Cloud flare)
+
+Cache static contents
+
+Encrypt and decrypt SSL communications : SSL handshake is expensive can can done
+at the reverse proxy server
+
+![](https://www.youtube.com/watch?v=4NB0NDtOwIQ)

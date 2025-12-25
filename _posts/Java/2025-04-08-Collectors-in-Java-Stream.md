@@ -2,8 +2,10 @@
 categories: Java
 date: 2025-04-08 02:17:00
 tags:
+- Collectors
 - Streams
-- Java
+- Java 8
+- Functional Programming
 title: Collectors in Java Streams
 ---
 

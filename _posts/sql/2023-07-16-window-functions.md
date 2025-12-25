@@ -2,7 +2,11 @@
 categories: SQL
 date: 2023-07-16 23:20:00
 tags:
-- SQL
+- Window Functions
+- Analytics
+- ROW_NUMBER
+- RANK
+- Advanced
 title: SQL Window Functions
 ---
 

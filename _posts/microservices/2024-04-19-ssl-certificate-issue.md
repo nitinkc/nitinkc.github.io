@@ -3,8 +3,10 @@ categories: Microservices
 date: 2024-04-19 21:00:00
 tags:
 - Spring Boot
+- SSL
 - Security
-- Microservices
+- Certificates
+- Troubleshooting
 title: ssl Security Certificate Issue
 ---
 

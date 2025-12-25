@@ -2,7 +2,12 @@
 categories: Electronics
 date: 2024-10-29 12:00:00
 tags:
-- Electronics
+- Drone
+- Project
+- DIY
+- Motors
+- Flight
+- Quadcopter
 title: Simple Drone
 ---
 

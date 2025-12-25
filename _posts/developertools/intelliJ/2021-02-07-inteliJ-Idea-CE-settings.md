@@ -1,11 +1,14 @@
 ---
-categories: Developer tools
+categories: Developer Tools
 date: 2021-02-07 02:15:00
 sidebar:
   nav: algo
 tags:
 - IntelliJ
-- Developer tools
+- IDE
+- Settings
+- Configuration
+- Setup
 title: IntelliJ Idea settings
 ---
 

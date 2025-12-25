@@ -1,0 +1,23 @@
+---
+categories: Java
+date: 2022-11-21 08:30:00
+tags:
+- Functional
+- Java
+title: Supplier Functional Interface
+---
+
+### Supplier
+
+```java
+public interface Supplier<T> {
+    T get();
+}
+```
+
+```java
+//Static method Reference
+Supplier<LocalDate> s1 = LocalDate::now;
+//Lambda Expression
+Supplier<LocalDate> s2 = () -> LocalDate.now();
+```

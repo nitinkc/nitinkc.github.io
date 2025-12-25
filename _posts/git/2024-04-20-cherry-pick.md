@@ -2,7 +2,10 @@
 categories: Git
 date: 2024-04-20 13:30:00
 tags:
-- Git
+- Cherry Pick
+- Commands
+- Branching
+- Version Control
 title: Git Cherry Pick
 ---
 

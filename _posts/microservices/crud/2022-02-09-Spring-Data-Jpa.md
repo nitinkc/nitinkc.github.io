@@ -1,9 +1,13 @@
 ---
-categories: Spring Microservices
+categories: Microservices
 date: 2022-02-09 20:55:00
 tags:
 - Spring Boot
-- Microservices
+- JPA
+- CRUD
+- REST
+- Database
+- Hibernate
 title: Spring Data JPA & CRUD - GET PUT POST DELETE
 ---
 

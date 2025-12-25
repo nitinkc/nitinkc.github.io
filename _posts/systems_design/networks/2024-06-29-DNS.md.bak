@@ -1,0 +1,73 @@
+---
+categories: System Design
+date: 2024-06-29 21:02:00
+tags:
+- System Design
+title: DNS - Domain Name System
+---
+
+{% include toc title="Index" %}
+
+Translates human-readable domain names to machine-readable IP Addresses.
+
+![](https://www.youtube.com/watch?v=27r4Bzuj5NQ)
+
+Browser asks DNS resolver for the IP address. It could be
+
+- ISP
+- Service like CloudFlare 1.1.1.
+- Google 8.8.8.8
+
+If DNS resolver does not have the IP address in its cache, it asks the
+respective Authoritative nameservers
+
+How does DNS resolver finds the authoritative name server?
+
+3 levels of Authoritative name servers
+
+- Root nameservers
+- Top Level Domain (TLD) NameServer
+- Authoritative nameservers
+
+```markdown
+User's Computer
+      |
+      v
++-------------------+
+| DNS Resolver      |
+| (1) Cache         |
++-------------------+
+      |
+      v
++-------------------+
+| Root Name Server  |
+| (2) Refers to .com|
++-------------------+
+      |
+      v
++-------------------+
+| TLD Name Server   |
+| (3) Refers to     |
+|     example.com   |
++-------------------+
+      |
+      v
++-------------------+
+| Authoritative     |
+| Name Server       |
+| (4) Provides IP   |
+|     address       |
++-------------------+
+      |
+      v
+User's Computer
+(5) Receives IP Address
+      |
+      v
++-------------------+
+| Establishes       |
+| Connection to     |
+| www.example.com   |
++-------------------+
+
+```

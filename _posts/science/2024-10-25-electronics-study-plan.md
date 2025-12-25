@@ -2,7 +2,11 @@
 categories: Electronics
 date: 2024-10-25 12:00:00
 tags:
-- Electronics
+- Education
+- Teaching
+- Curriculum
+- Learning
+- Tutorial
 title: Teaching Electronics
 ---
 

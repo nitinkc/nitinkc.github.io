@@ -1,5 +1,9 @@
 ---
+categories: Algorithms
 tags:
 - Arrays
-- Algorithms
+- Problems
+- Practice
+- Interview
+- Coding
 ---

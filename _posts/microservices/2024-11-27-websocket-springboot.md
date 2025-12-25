@@ -3,9 +3,10 @@ categories: Microservices
 date: 2024-11-27 15:00:00
 tags:
 - Spring Boot
+- WebSockets
 - Real-time
+- Bidirectional Communication
 - Guide
-- Microservices
 title: 'Complete Guide to SpringBoot WebSockets: Real-time Communication Patterns'
 ---
 

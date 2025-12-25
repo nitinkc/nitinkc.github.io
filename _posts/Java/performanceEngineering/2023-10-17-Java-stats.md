@@ -1,10 +1,12 @@
 ---
-categories:
-- Java
-- Performance Engineering
+categories: Performance Engineering
 date: 2023-10-17 08:30:00
 tags:
 - Java
+- Performance
+- Monitoring
+- Metrics
+- System Stats
 title: Java Systems Stats
 ---
 

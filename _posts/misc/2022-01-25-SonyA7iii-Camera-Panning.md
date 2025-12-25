@@ -1,8 +1,12 @@
 ---
-categories: Miscellaneous
+categories: Photography
 date: 2022-01-26 21:55:00
 tags:
-- Miscellaneous
+- Sony
+- A7iii
+- Camera
+- Panning
+- Techniques
 title: Sony A7iii Camera Panning
 ---
 

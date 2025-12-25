@@ -1,11 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
+categories: Performance Engineering
 date: 2024-02-09 20:27:00
 tags:
-- Garbage Collection
 - Java
+- JVM
+- Compiler
+- Flags
+- Performance
+- Optimization
 title: Compiler Flags
 ---
 

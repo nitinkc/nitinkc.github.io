@@ -2,7 +2,10 @@
 categories: System Design
 date: 2024-09-16 14:02:00
 tags:
-- System Design
+- Monitoring
+- Logging
+- Observability
+- Metrics
 title: Monitoring & Logging
 ---
 

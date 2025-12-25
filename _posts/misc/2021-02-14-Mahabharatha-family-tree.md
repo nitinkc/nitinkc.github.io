@@ -1,8 +1,11 @@
 ---
-categories: Miscellaneous
+categories: Culture
 date: 2021-02-13 02:15:00
 tags:
-- Miscellaneous
+- Mahabharat
+- Indian Mythology
+- Family Tree
+- History
 title: Mahabharat Family tree
 ---
 

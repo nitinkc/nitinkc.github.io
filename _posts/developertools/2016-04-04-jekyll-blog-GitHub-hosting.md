@@ -1,8 +1,12 @@
 ---
-categories: Developer tools
+categories: Developer Tools
 date: 2016-04-04 18:31:00
 tags:
-- Developer tools
+- Jekyll
+- GitHub Pages
+- Blogging
+- Static Site
+- Hosting
 title: Jekyll Blog and Hosting on GitHub
 ---
 

@@ -2,7 +2,10 @@
 categories: Management
 date: 2025-05-28 05:00:00
 tags:
-- Management
+- Psychology
+- Behavioral Science
+- Theory
+- Leadership
 title: Major psychological theories and behavioral science principles
 ---
 

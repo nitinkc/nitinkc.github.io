@@ -3,7 +3,9 @@ categories: Microservices
 date: 2019-11-17 23:21:00
 tags:
 - Spring Boot
-- Microservices
+- Spring Cloud
+- Sleuth
+- Distributed Tracing
 title: Spring Cloud Sleuth
 ---
 

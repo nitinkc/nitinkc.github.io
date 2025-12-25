@@ -1,4 +1,8 @@
 ---
+categories: Algorithms
 tags:
-- Algorithms
+- Linked List
+- Data Structures
+- Pointers
+- Implementation
 ---

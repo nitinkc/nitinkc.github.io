@@ -3,7 +3,9 @@ categories: Microservices
 date: 2023-01-31 03:53:00
 tags:
 - Spring Boot
-- Microservices
+- Beans
+- Scope
+- IoC Container
 title: Spring Bean Scope
 ---
 

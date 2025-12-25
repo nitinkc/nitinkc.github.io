@@ -1,5 +1,8 @@
 ---
+categories: Algorithms
 tags:
 - Graphs
-- Algorithms
+- Union Find
+- Disjoint Set
+- Data Structures
 ---

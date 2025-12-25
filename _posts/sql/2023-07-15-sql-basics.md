@@ -2,7 +2,10 @@
 categories: SQL
 date: 2023-07-15 17:45:00
 tags:
-- SQL
+- Basics
+- Fundamentals
+- Tutorial
+- Database
 title: SQL Basics
 ---
 

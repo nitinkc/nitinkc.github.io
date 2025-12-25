@@ -1,8 +1,12 @@
 ---
-categories: Miscellaneous
+categories: Hobbies
 date: 2022-01-26 21:55:00
 tags:
-- Miscellaneous
+- Gardening
+- Plants
+- Outdoor
+- Hobby
+- Landscaping
 title: Gardening
 ---
 

@@ -1,8 +1,12 @@
 ---
-categories: Miscellaneous
+categories: Developer Tools
 date: 2016-04-14 20:11:00
 tags:
-- Miscellaneous
+- Linux
+- Commands
+- CLI
+- Terminal
+- Unix
 title: Linux Files & Commands
 ---
 

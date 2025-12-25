@@ -2,7 +2,10 @@
 categories: Java
 date: 2022-08-06 08:30:00
 tags:
-- Java
+- Reactive
+- Asynchronous
+- Non-Blocking
+- Streams
 title: Reactive Programming
 ---
 

@@ -2,7 +2,10 @@
 categories: Git
 date: 2021-02-01 11:30:00
 tags:
-- Git
+- Commands
+- Reference
+- CLI
+- Version Control
 title: Useful git commands
 ---
 

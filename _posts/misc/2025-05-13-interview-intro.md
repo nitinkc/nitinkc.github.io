@@ -1,8 +1,10 @@
 ---
-categories: Miscellaneous
+categories: Career
 date: 2025-05-13 16:50:00
 tags:
-- Miscellaneous
+- Interview
+- Introduction
+- Professional
 title: Intro
 ---
 

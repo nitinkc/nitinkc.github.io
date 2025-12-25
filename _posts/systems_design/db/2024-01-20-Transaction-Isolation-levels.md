@@ -2,7 +2,11 @@
 categories: System Design
 date: 2024-01-20 12:15:00
 tags:
-- System Design
+- Database
+- Transactions
+- Isolation
+- ACID
+- Concurrency
 title: Transaction Isolation Levels
 ---
 
