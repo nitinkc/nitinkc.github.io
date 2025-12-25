@@ -4,6 +4,7 @@ This repository is a personal Jekyll site built on the "Minimal Mistakes" theme.
 ## What an AI assistant should know
 - Site generator: Jekyll (run via `bundle exec jekyll serve` / `bundle exec jekyll build`). See `Gemfile` and `README.md` for recommended commands.
 - Theme: Minimal Mistakes (local theme files live in the repo). `package.json` version is used in `Rakefile` tasks.
+  - custom css is in `assets/css/main.scss` and built via `rake css`.
 - Config: `_config.yml` contains site-wide settings (permalinks, plugins, processors like mermaid/plantuml). Modify this for global changes.
 - Templates: HTML/Liquid templates are under `_includes/` and `_layouts/`. Small helper partials are used widely (e.g., `head.html`, `scripts.html`).
 
@@ -40,9 +41,25 @@ This repository is a personal Jekyll site built on the "Minimal Mistakes" theme.
 
 ## Helpful in-repo reference
 - Markdown reference: `_posts/developertools/2022-01-19-markdown-reference.md` — useful for examples of front-matter, classes (e.g., `wide`), and common Markdown/Liquid patterns used across posts.
+- image related post: `_posts/developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings.md`
+- table related:
+  - All tables should be left aligned by default.
+- code related :
+  - All code blocks should have syntax highlighting where possible.
+  - Use backticks for inline code snippets.
+  - For including gists, use the `{% gist username/gist_id %}` Liquid tag.
+- latex best usage : `_posts/Algo/2024-07-14-dynamic-programming-2.md`
+- video embedding:
+  - Single video: Use `![](youtube_url)` - Jekyll Spaceship plugin handles it
+  - Multiple videos side-by-side: See `_posts/Java/2023-10-20-java-tests.md` for grid layout example
+  - Videos in tables are not recommended (display too small)
 
 ## Safety and style
 - Keep Liquid logic simple in templates; heavy logic should go into small Ruby/Jekyll plugins or the `scripts/` helpers.
 - Preserve existing HTML structure and CSS class names to avoid breaking layout inherited from Minimal Mistakes.
 
-If any section is unclear or you want examples added (e.g., a short checklist for PR reviewers), tell me what to expand and I'll iterate.
+## Category and Tags - Taxonomy usages
+- Categories are primarily used for URL structure and organization; each post should ideally have one canonical category.
+- Tags are for finer-grained topics; multiple tags per post are common.
+- Use `scripts/*.py` to audit and maintain consistent taxonomy usage across
+- taxonomy-proposals.csv was used to propose new categories/tags but is not actively maintained.

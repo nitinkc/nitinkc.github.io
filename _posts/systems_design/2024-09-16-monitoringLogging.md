@@ -1,9 +1,12 @@
 ---
-categories: System Design
-date: 2024-09-16 14:02:00
-tags:
-- System Design
 title: Monitoring & Logging
+date: 2024-09-16 14:02:00
+categories:
+- System Design
+tags:
+- Monitoring
+- Observability
+- Metrics
 ---
 
 {% include toc title="Index" %}

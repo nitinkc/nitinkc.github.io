@@ -1,9 +1,10 @@
 ---
-categories: System Design
-date: 2024-07-06 16:02:00
-tags:
-- System Design
 title: Zookeeper
+date: 2024-07-06 16:02:00
+categories:
+- System Design
+tags:
+- Distributed Systems
 ---
 
 {% include toc title="Index" %}

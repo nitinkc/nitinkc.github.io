@@ -1,11 +1,10 @@
 ---
-categories:
-- Spring
-- Microservices
-date: 2025-09-22 12:00:00
-tags:
-- Spring
 title: Reactive Programming with Spring WebFlux
+date: 2025-09-22 12:00:00
+categories:
+- Microservices
+tags:
+- Spring Boot
 ---
 
 {% include toc title="Index" %}

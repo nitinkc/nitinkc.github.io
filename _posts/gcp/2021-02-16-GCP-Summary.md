@@ -1,9 +1,10 @@
 ---
-# layout: static
-title:  "GCP - Free Tier Setup"
-date:   2021-02-16 23:00:00
-categories: GCP
-tags: [Google Cloud Platform]
+title: GCP - Free Tier Setup
+date: 2021-02-16 23:00:00
+categories:
+- GCP
+tags:
+- Setup
 ---
 
 {% include toc title="Index" %}
@@ -26,5 +27,3 @@ tags: [Google Cloud Platform]
       prompted on the browser
     - switch to the config created above
       `gcloud config configurations activate gitops`
-
-

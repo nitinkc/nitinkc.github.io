@@ -1,9 +1,10 @@
 ---
-categories: Architecture
-date: 2025-04-22 14:02:00
-tags:
-- Architectural Styles
 title: SAGA Architecture Style & 2-Phase Commit
+date: 2025-04-22 14:02:00
+categories:
+- Architecture
+tags:
+- Microservices
 ---
 
 {% include toc title="Index" %}

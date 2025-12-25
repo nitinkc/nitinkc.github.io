@@ -1,9 +1,12 @@
 ---
-categories: Developer tools
-date: 2023-11-10 21:55:00
-tags:
-- Shortcuts
 title: IntelliJ Idea Debug
+date: 2023-11-10 21:55:00
+categories:
+- Developer Tools
+tags:
+- IntelliJ
+- IDE
+- Debugging
 ---
 
 {% include toc title="Index" %}

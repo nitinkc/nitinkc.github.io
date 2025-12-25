@@ -1,7 +1,10 @@
 ---
-categories: SQL
-tags:
+categories:
 - SQL
+tags:
+- Database
+- Performance
+- Optimization
 ---
 
 1---

@@ -1,9 +1,10 @@
 ---
-categories: Electronics
+title: Soft Starter
 date: 2024-11-03 01:00:00
+categories:
+- Electronics
 tags:
 - Electronics
-title: Soft Starter
 ---
 
 {% include toc title="Index" %}

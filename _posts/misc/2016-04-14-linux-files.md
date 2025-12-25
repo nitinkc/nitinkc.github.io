@@ -1,9 +1,11 @@
 ---
-categories: Miscellaneous
-date: 2016-04-14 20:11:00
-tags:
-- Developer tools
 title: Linux Files & Commands
+date: 2016-04-14 20:11:00
+categories:
+- Developer Tools
+tags:
+- Commands
+- CLI
 ---
 
 {% include toc title="Index" %}

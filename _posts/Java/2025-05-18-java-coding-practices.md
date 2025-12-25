@@ -1,9 +1,10 @@
 ---
-categories: Java
-date: 2025-05-18 23:17:00
-tags:
-- Java
 title: Java Coding Practices
+date: 2025-05-18 23:17:00
+categories:
+- Java
+tags:
+- Best Practices
 ---
 
 {% include toc title="Index" %}

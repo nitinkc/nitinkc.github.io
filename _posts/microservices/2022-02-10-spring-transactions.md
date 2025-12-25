@@ -1,9 +1,13 @@
 ---
-categories: Microservices
+title: Spring Transactions
 date: 2022-02-09 20:55:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: Spring Transactions
+- Transactions
+- Database
+- ACID
 ---
 
 {% include toc title="Index" %}

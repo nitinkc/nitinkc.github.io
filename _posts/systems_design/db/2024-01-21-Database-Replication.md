@@ -1,9 +1,11 @@
 ---
-categories: System Design
-date: 2024-01-21 02:00:00
-tags:
-- System Design
 title: Database Replication & Migrations
+date: 2024-01-21 02:00:00
+categories:
+- System Design
+tags:
+- Database
+- Migration
 ---
 
 {% include toc title="Index" %}

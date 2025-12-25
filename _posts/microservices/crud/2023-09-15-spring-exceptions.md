@@ -1,9 +1,11 @@
 ---
-categories: Microservices
-date: 2023-09-15 21:30:00
-tags:
-- Microservices
 title: Exception Handling in Spring
+date: 2023-09-15 21:30:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- REST
 ---
 
 {% include toc title="Index" %}

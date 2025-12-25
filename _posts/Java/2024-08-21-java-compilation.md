@@ -1,9 +1,11 @@
 ---
-categories: Java
-date: 2024-08-21 00:17:00
-tags:
-- Java
 title: Java Compilation Process & JVM Architecture
+date: 2024-08-21 00:17:00
+categories:
+- Java
+tags:
+- JVM
+- Architecture
 ---
 
 {% include toc title="Index" %}

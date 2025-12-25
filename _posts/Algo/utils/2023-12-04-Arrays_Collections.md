@@ -1,9 +1,13 @@
 ---
-categories: Algorithms
-date: 2023-12-04 18:30:00
-tags:
-- Algorithms
 title: Arrays, List and Collections Class
+date: 2023-12-04 18:30:00
+categories:
+- Algorithms
+tags:
+- Arrays
+- Collections
+- Java
+- Utility
 ---
 
 {% include toc title="Index" %}

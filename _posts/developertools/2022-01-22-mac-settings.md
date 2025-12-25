@@ -1,11 +1,12 @@
 ---
-categories:
-- Developer tools
-- MacBook
-date: 2022-01-22 21:55:00
-tags:
-- MacBook
 title: 'MacBook : Useful Settings'
+date: 2022-01-22 21:55:00
+categories:
+- Developer Tools
+tags:
+- MacOS
+- Settings
+- Configuration
 ---
 
 # Necessary UI Settings

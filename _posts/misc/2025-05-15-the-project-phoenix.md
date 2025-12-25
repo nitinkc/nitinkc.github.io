@@ -1,7 +1,8 @@
 ---
-categories: Miscellaneous
+categories:
+- Books
 tags:
-- Miscellaneous
+- Books
 ---
 
 # 📘 The Goal and the Theory of Constraints: 

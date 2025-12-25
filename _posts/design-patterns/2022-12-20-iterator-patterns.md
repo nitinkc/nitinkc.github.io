@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Design Patterns
+title: Iterator As a Design Pattern
 date: 2023-11-06 08:30:00
+categories:
+- Design Patterns
 tags:
 - Java
-title: Iterator As a Design Pattern
+- Collections
 ---
 
 {% include toc title="Index" %}

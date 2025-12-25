@@ -1,9 +1,13 @@
 ---
-categories: Java
-date: 2022-08-06 08:30:00
-tags:
-- Java
 title: Functional Programming Concepts
+date: 2022-08-06 08:30:00
+categories:
+- Java
+tags:
+- Functional Programming
+- Lambda
+- Streams
+- Java 8
 ---
 
 {% include toc title="Index" %}

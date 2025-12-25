@@ -1,9 +1,10 @@
 ---
-categories: Developer tools
-date: 2016-07-31 15:04:00
-tags:
-- Developer tools
 title: Upgrading the Macbook Pro - Model A1278
+date: 2016-07-31 15:04:00
+categories:
+- Developer Tools
+tags:
+- DIY
 ---
 
 {% include toc title="Index" %}

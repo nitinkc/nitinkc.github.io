@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Design Patterns
+title: Decorator Pattern
 date: 2024-06-17 17:45:00
+categories:
+- Design Patterns
 tags:
 - Java
-title: Decorator Pattern
+- OOP
 ---
 
 {% include toc title="Index" %}

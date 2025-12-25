@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Design Patterns
-date: 2024-06-17 17:45:00
-tags:
-- Java
 title: Object modelling
+date: 2024-06-17 17:45:00
+categories:
+- Design Patterns
+tags:
+- OOP
+- Architecture
 ---
 
 {% include toc title="Index" %}

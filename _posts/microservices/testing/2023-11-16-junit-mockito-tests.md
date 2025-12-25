@@ -1,12 +1,11 @@
 ---
-categories:
-- Microservices
-- Testing
-date: 2023-11-16 18:55:00
-tags:
-- Testing
-- JUnit
 title: Comprehensive Guide to JUnit and Mockito Testing
+date: 2023-11-16 18:55:00
+categories:
+- Testing
+tags:
+- Spring Boot
+- Guide
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,10 @@
 ---
-categories: Electronics
-date: 2024-10-29 12:00:00
-tags:
-- Electronics
 title: Simple Twin engine plane
+date: 2024-10-29 12:00:00
+categories:
+- Electronics
+tags:
+- DIY
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,10 @@
 ---
-categories: Java
+title: Serialization & Externalization
 date: 2022-08-03 18:16:00
+categories:
+- Java
 tags:
 - Java
-title: Serialization & Externalization
 ---
 
 {% include toc title="Index" %}

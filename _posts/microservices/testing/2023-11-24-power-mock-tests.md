@@ -1,12 +1,11 @@
 ---
-categories:
-- Microservices
-- Testing
-date: 2023-11-24 03:53:00
-tags:
-- Testing
-- JUnit
 title: 'PowerMock Testing Guide: When Standard Mocking Isn''t Enough'
+date: 2023-11-24 03:53:00
+categories:
+- Testing
+tags:
+- Spring Boot
+- Guide
 ---
 
 {% include toc title="Index" %}

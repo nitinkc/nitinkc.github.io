@@ -1,9 +1,12 @@
 ---
-categories: Microservices
+title: Spring Path variable & Request Parameter
 date: 2023-09-15 20:04:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: Spring Path variable & Request Parameter
+- REST
+- API
 ---
 
 {% include toc title="Index" %}

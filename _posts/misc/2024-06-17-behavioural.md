@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2023-05-22 23:14:00
-tags:
-- Miscellaneous
 title: Behavioural
+date: 2023-05-22 23:14:00
+categories:
+- Career
+tags:
+- Interview
 ---
 
 Interest Areas

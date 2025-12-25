@@ -1,9 +1,11 @@
 ---
-categories: Microservices
-date: 2023-01-31 03:53:00
-tags:
-- Microservices
 title: Idempotence & HTTP Methods - Designing RESTful URI's
+date: 2023-01-31 03:53:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- REST
 ---
 
 {% include toc title="Index" %}

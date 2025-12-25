@@ -1,9 +1,11 @@
 ---
-categories: System Design
-date: 2024-06-13 11:02:00
-tags:
-- System Design
 title: Passwords in DB
+date: 2024-06-13 11:02:00
+categories:
+- System Design
+tags:
+- Security
+- Database
 ---
 
 {% include toc title="Index" %}

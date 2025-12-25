@@ -1,10 +1,12 @@
 ---
-categories: Microservices
+title: 'Complete Guide to SpringBoot Server-Sent Events (SSE): Real-time Server Push'
 date: 2024-11-27 16:00:00
+categories:
+- Microservices
 tags:
 - Spring Boot
 - Real-time
-title: 'Complete Guide to SpringBoot Server-Sent Events (SSE): Real-time Server Push'
+- Guide
 ---
 
 {% include toc title="Index" %}

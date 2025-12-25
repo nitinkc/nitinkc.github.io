@@ -1,9 +1,12 @@
 ---
-categories: Developer tools
-date: 2021-11-03 21:55:00
-tags:
-- Shortcuts
 title: IntelliJ Idea Shortcuts
+date: 2021-11-03 21:55:00
+categories:
+- Developer Tools
+tags:
+- IntelliJ
+- IDE
+- Reference
 ---
 
 {% include toc title="Index" %}
@@ -11,14 +14,7 @@ title: IntelliJ Idea Shortcuts
 # Shortcut Keys
 
 **LEGEND :**
-**⌘** Cmd &emsp;
-**⇧** Shift &emsp;
-**^** Ctrl &emsp;
-**⌥** Opt &emsp;
-**⎋** Esc &emsp;
-**↵** Return &emsp;  
-**⌫** Delete
-**↑ ↓ → ←** &emsp;
+**⌘** Cmd &emsp;**⇧** Shift &emsp;**^** Ctrl &emsp;**⌥** Opt &emsp;**⎋** Esc &emsp;**↵** Return &emsp;  **⌫** Delete**↑ ↓ → ←** &emsp;
 
 {: .notice--success}
 

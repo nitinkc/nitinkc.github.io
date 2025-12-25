@@ -1,11 +1,10 @@
 ---
+title: Terraform
+date: 2024-12-08 10:14:00
 categories:
 - DevOps
-- GitOps
-date: 2024-12-08 10:14:00
 tags:
-- GitOps
-title: Terraform
+- Automation
 ---
 
 {% include toc title="Index" %}

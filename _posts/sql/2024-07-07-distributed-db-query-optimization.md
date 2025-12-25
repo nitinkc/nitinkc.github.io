@@ -1,9 +1,10 @@
 ---
-categories: SQL
-date: 2024-07-07 14:25:00
-tags:
-- SQL
 title: Distributed DB Query Optimization
+date: 2024-07-07 14:25:00
+categories:
+- SQL
+tags:
+- Performance
 ---
 
 {% include toc title="Index" %}
@@ -269,8 +270,7 @@ Inefficient Data Retrieval: Full table scans on both tables, especially if they
 are large ,
 can lead to slow performance and high resource usage.
 
-**Solution:** Filter data earlier using **a common column present in all tables
-**, such as `ENTITY_ID`.
+**Solution:** Filter data earlier using **a common column present in all tables**, such as `ENTITY_ID`.
 
 ```sql
 SELECT e.MASTER_IDENTIFIER,

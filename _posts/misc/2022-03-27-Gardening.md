@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2022-01-26 21:55:00
-tags:
-- Miscellaneous
 title: Gardening
+date: 2022-01-26 21:55:00
+categories:
+- Hobbies
+tags:
+- Hobbies
 ---
 
 {% include toc title="Index" %}

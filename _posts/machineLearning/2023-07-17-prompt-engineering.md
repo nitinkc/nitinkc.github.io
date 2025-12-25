@@ -1,9 +1,10 @@
 ---
-categories: Machine Learning
+title: OpenAi and Prompt Engineering
 date: 2023-03-11 19:40:28
+categories:
+- Machine Learning
 tags:
 - Machine Learning
-title: OpenAi and Prompt Engineering
 ---
 
 {% include toc title="Index" %}

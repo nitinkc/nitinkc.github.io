@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2025-04-13 16:50:00
-tags:
-- Miscellaneous
 title: US History timeline and Government
+date: 2025-04-13 16:50:00
+categories:
+- History
+tags:
+- USA
 ---
 
 {% include toc title="Index" %}

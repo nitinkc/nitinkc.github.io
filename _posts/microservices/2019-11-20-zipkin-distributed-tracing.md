@@ -1,9 +1,11 @@
 ---
-categories: Microservices
-date: 2019-11-17 23:21:00
-tags:
-- Microservices
 title: Zipkin Distributed Tracing Server
+date: 2019-11-17 23:21:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- Observability
 ---
 
 # Zipkin Distributed Tracing Server

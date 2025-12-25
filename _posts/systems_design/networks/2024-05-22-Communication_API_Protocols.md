@@ -1,9 +1,13 @@
 ---
-categories: System Design
-date: 2024-05-22 11:02:00
-tags:
-- System Design
 title: API Communication Protocols
+date: 2024-05-22 11:02:00
+categories:
+- System Design
+tags:
+- Networking
+- API
+- Protocols
+- REST
 ---
 
 {% include toc title="Index" %}

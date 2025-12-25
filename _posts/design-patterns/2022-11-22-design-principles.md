@@ -1,9 +1,10 @@
 ---
-categories: Design Patterns
-date: 2022-11-22 08:30:00
-tags:
-- Java
 title: Design Principles
+date: 2022-11-22 08:30:00
+categories:
+- Design Patterns
+tags:
+- Best Practices
 ---
 
 {% include toc title="Index" %}

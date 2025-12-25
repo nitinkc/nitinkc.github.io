@@ -1,9 +1,11 @@
 ---
-categories: Microservices
-date: 2025-06-03 11:50:00
-tags:
-- CRUD
 title: SpringBoot Interview - Deep Dive
+date: 2025-06-03 11:50:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- Interview
 ---
 
 {% include toc title="Index" %}

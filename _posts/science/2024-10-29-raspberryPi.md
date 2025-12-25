@@ -1,9 +1,11 @@
 ---
-categories: Electronics
-date: 2024-10-29 12:00:00
-tags:
-- Electronics
 title: Raspberry Pi
+date: 2024-10-29 12:00:00
+categories:
+- Electronics
+tags:
+- Projects
+- Programming
 ---
 
 {% include toc title="Index" %}

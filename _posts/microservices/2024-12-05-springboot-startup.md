@@ -1,9 +1,10 @@
 ---
-categories: Microservices
+title: Spring Boot Startup Process
 date: 2024-12-05 15:00:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: Spring Boot Startup Process
 ---
 
 {% include toc title="Index" %}

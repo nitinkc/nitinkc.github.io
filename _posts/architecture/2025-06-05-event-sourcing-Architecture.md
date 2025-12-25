@@ -1,9 +1,10 @@
 ---
-categories: Architecture
-date: 2025-06-05 14:02:00
-tags:
-- Architectural Styles
 title: Event Sourcing
+date: 2025-06-05 14:02:00
+categories:
+- Architecture
+tags:
+- Architecture
 ---
 
 {% include toc title="Index" %}

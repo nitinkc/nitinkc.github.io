@@ -1,9 +1,11 @@
 ---
-categories: Microservices
+title: SpringBoot Profile
 date: 2024-09-12 15:00:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: SpringBoot Profile
+- Configuration
 ---
 
 {% include toc title="Index" %}

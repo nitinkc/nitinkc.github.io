@@ -1,17 +1,25 @@
 ---
-categories: Java
-date: 2023-10-20 15:16:00
-tags:
-- Java
 title: Java Puzzles
+date: 2023-10-20 15:16:00
+categories:
+- Java
+tags:
+- Interview
 ---
 
 {% include toc title="Index" %}
 
-| Videos                                           | 
-|:-------------------------------------------------|
-| ![](https://www.youtube.com/watch?v=q2T9NlROLqw) |
-| ![](https://www.youtube.com/watch?v=DHwNR7h3k5Y) |
+## Reference Videos
+
+<div style="display: grid; grid-template-columns: 2fr 2fr; gap: 1rem; margin-bottom: 2rem;">
+<div markdown="1">
+![](https://www.youtube.com/watch?v=q2T9NlROLqw)
+</div>
+
+<div markdown="1">
+![](https://www.youtube.com/watch?v=DHwNR7h3k5Y)
+</div>
+</div>
 
 # Type inference
 
@@ -84,8 +92,7 @@ try {
 
 ### Static of()
 
-Quit using `Arrays.asList` and start using `List.of()`, **the immutable variant
-**. Similarly, use Static Factories `Set.of()` and `Map.of()`.
+Quit using `Arrays.asList` and start using `List.of()`, **the immutable variant**. Similarly, use Static Factories `Set.of()` and `Map.of()`.
 
 * The Set's `of()` does not permit duplicate
 * the `of` methods does not permit nulls.

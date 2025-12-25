@@ -1,9 +1,10 @@
 ---
-categories: Java
-date: 2022-08-23 23:35:00
-tags:
-- Java
 title: Java Mailing API
+date: 2022-08-23 23:35:00
+categories:
+- Java
+tags:
+- API
 ---
 
 {% include toc title="Index" %}

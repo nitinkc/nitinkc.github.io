@@ -1,11 +1,11 @@
 ---
-categories:
-- Spring
-- Microservices
-date: 2025-09-22 12:04:00
-tags:
-- Spring
 title: Containerizing Spring Boot with Docker
+date: 2025-09-22 12:04:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- Containers
 ---
 
 {% include toc title="Index" %}

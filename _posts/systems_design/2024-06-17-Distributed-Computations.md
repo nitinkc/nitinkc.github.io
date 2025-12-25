@@ -1,9 +1,10 @@
 ---
-categories: System Design
+title: Distributed Computations
 date: 2024-06-17 11:45:00
+categories:
+- System Design
 tags:
 - System Design
-title: Distributed Computations
 ---
 
 {% include toc title="Index" %}

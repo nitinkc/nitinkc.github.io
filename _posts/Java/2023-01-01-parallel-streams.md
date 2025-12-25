@@ -1,9 +1,12 @@
 ---
-categories: Java
-date: 2023-01-01 18:10:00
-tags:
-- Java
 title: Parallel Streams
+date: 2023-01-01 18:10:00
+categories:
+- Java
+tags:
+- Streams
+- Concurrency
+- Java 8
 ---
 
 {% include toc title="Index" %}

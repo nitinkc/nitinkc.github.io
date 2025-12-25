@@ -1,9 +1,11 @@
 ---
-categories: Git
-date: 2020-05-19 19:14:00
-tags:
-- Git
 title: Submodules & Detached Head Problem
+date: 2020-05-19 19:14:00
+categories:
+- Git
+tags:
+- Troubleshooting
+- Version Control
 ---
 
 {% include toc title="Index" %}

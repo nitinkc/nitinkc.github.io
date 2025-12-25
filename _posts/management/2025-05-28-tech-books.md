@@ -1,9 +1,10 @@
 ---
-categories: Management
-date: 2025-05-28 05:00:00
-tags:
-- Miscellaneous
 title: Software Engineering Books
+date: 2025-05-28 05:00:00
+categories:
+- Management
+tags:
+- Reference
 ---
 
 [Fundamentals of Software Architecture - An Engineering Approach](https://www.amazon.com/Fundamentals-Software-Architecture-Comprehensive-Characteristics/dp/1492043451)

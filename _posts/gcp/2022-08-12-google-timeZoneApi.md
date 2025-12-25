@@ -1,10 +1,10 @@
 ---
-categories: GCP
-date: 2022-08-15 20:04:00
-tags:
-- Microservices
-- Spring Boot
 title: Google TimeZone API
+date: 2022-08-15 20:04:00
+categories:
+- GCP
+tags:
+- API
 ---
 
 {% include toc title="Index" %}

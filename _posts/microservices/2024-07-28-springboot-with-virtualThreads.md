@@ -1,9 +1,12 @@
 ---
-categories: Microservices
+title: SpringBoot with Virtual Threads
 date: 2024-07-28 17:00:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: SpringBoot with Virtual Threads
+- Concurrency
+- Java 21
 ---
 
 {% include toc title="Index" %}

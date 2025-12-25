@@ -1,9 +1,11 @@
 ---
-categories: GCP
-date: 2025-03-21 05:00:00
-tags:
-- GCP
 title: GCP Commands
+date: 2025-03-21 05:00:00
+categories:
+- GCP
+tags:
+- Commands
+- CLI
 ---
 
 {% include toc title="Index" %}

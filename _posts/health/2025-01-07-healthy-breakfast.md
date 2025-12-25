@@ -1,9 +1,12 @@
 ---
-categories: Health
-date: 2025-01-07 22:00:00
-tags:
-- Health
 title: Breakfast Healthy
+date: 2025-01-07 22:00:00
+categories:
+- Health
+tags:
+- Nutrition
+- Healthy Eating
+- Meal Planning
 ---
 
 {% include toc title="Index" %}

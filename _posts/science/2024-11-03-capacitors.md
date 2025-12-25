@@ -1,9 +1,11 @@
 ---
-categories: Electronics
-date: 2024-11-03 01:00:00
-tags:
-- Electronics
 title: Capacitors
+date: 2024-11-03 01:00:00
+categories:
+- Electronics
+tags:
+- Components
+- Theory
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,10 @@
 ---
-categories: Algorithms
+title: Dynamic Programming - Grids
 date: 2024-07-14 18:27:00
+categories:
+- Algorithms
 tags:
 - Algorithms
-title: Dynamic Programming - Grids
 ---
 
 {% include toc title="Index" %}---

@@ -1,9 +1,10 @@
 ---
-categories: Architecture
-date: 2025-04-22 14:02:00
-tags:
-- Architectural Styles
 title: Onion/Clean Architecture Style
+date: 2025-04-22 14:02:00
+categories:
+- Architecture
+tags:
+- Architecture
 ---
 
 {% include toc title="Index" %}

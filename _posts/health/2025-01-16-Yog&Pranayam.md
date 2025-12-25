@@ -1,9 +1,10 @@
 ---
-categories: Health
-date: 2025-01-16 22:00:00
-tags:
-- Health
 title: Pranayama - प्राणायाम
+date: 2025-01-16 22:00:00
+categories:
+- Health
+tags:
+- Wellness
 ---
 
 {% include toc title="Index" %}

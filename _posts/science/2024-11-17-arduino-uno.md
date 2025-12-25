@@ -1,9 +1,12 @@
 ---
-categories: Electronics
-date: 2024-11-17 08:00:00
-tags:
-- Electronics
 title: Arduino UNO
+date: 2024-11-17 08:00:00
+categories:
+- Electronics
+tags:
+- Arduino
+- Programming
+- Projects
 ---
 
 {% include toc title="Index" %}

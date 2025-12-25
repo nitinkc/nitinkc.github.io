@@ -1,9 +1,11 @@
 ---
-categories: SQL
-date: 2024-06-18 14:25:00
-tags:
-- SQL
 title: SQL/Query Optimization
+date: 2024-06-18 14:25:00
+categories:
+- SQL
+tags:
+- Performance
+- Best Practices
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,10 @@
 ---
-categories: Database
-date: 2025-07-09 15:25:00
-tags:
-- Database
 title: Azure Databricks & Apache Spark
+date: 2025-07-09 15:25:00
+categories:
+- Database
+tags:
+- Analytics
 ---
 
 ![DataEngineer_RefArchtecture.png]({{ site.url }}/assets/images/DataEngineer_RefArchtecture.png){:width="70%" height="50%"}

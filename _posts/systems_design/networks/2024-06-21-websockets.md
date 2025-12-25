@@ -1,9 +1,11 @@
 ---
-categories: System Design
-date: 2024-06-21 20:00:00
-tags:
-- System Design
 title: 'Web Sockets '
+date: 2024-06-21 20:00:00
+categories:
+- System Design
+tags:
+- Networking
+- Real-time
 ---
 
 {% include toc title="Index" %}

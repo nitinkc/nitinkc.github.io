@@ -1,11 +1,10 @@
 ---
+title: Helm Charts with minikube
+date: 2024-09-17 23:02:00
 categories:
 - DevOps
-- GitOps
-date: 2024-09-17 23:02:00
 tags:
-- GitOps
-title: Helm Charts with minikube
+- Kubernetes
 ---
 
 {% include toc title="Index" %}

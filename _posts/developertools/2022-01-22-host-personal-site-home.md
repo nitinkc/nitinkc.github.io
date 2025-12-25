@@ -1,9 +1,10 @@
 ---
-categories: Developer tools
-date: 2022-01-22 21:55:00
-tags:
-- Developer tools
 title: Hosting personal website on home router
+date: 2022-01-22 21:55:00
+categories:
+- Developer Tools
+tags:
+- DIY
 ---
 
 # Port Forwarding on Home Router

@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2022-01-17 21:55:00
-tags:
-- Miscellaneous
 title: Useful MS Excel Tools
+date: 2022-01-17 21:55:00
+categories:
+- Productivity
+tags:
+- Tools
 ---
 
 ## Contents

@@ -1,9 +1,13 @@
 ---
-# layout: static
-title:  "POST API"
-date:   2023-09-15 02:15:00
-categories: Spring Microservices
-tags: [CRUD]
+title: POST API
+date: 2023-09-15 02:15:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- REST
+- HTTP
+- API
 ---
 
 {% include toc title="Index" %}
@@ -172,4 +176,4 @@ public ResponseEntity<Object> addNewUser(@RequestBody User user){
 ```
 
 Returns 201 Created
-{: .notice--info} 
+{: .notice--info}

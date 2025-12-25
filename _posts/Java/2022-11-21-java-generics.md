@@ -1,9 +1,10 @@
 ---
-categories: Java
-date: 2022-11-21 08:30:00
-tags:
-- Java
 title: Generics
+date: 2022-11-21 08:30:00
+categories:
+- Java
+tags:
+- Collections
 ---
 
 # Generics as compile-time type safety
@@ -100,8 +101,7 @@ of T**.
 - This is useful when you have a class hierarchy and want to compare elements
   based on properties defined in supertypes of T.
 
-**Restricts Comparator Flexibility**: `Comparator<? extends T>` would **restrict
-** the comparator to only accept types that extend T. This limits the comparator
+**Restricts Comparator Flexibility**: `Comparator<? extends T>` would **restrict** the comparator to only accept types that extend T. This limits the comparator
 to handle **only subclasses of T**,
 
 - excluding comparators for T itself or its superclasses, which might be needed

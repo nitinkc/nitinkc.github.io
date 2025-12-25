@@ -1,9 +1,10 @@
 ---
-categories: Electronics
+title: 'Kids Science Experiments '
 date: 2025-02-02 08:00:00
+categories:
+- Electronics
 tags:
 - Electronics
-title: 'Kids Science Experiments '
 ---
 
 {% include toc title="Index" %}

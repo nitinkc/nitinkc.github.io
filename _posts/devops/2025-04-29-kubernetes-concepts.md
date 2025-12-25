@@ -1,9 +1,11 @@
 ---
-categories: DevOps
-date: 2025-04-29 05:00:00
-tags:
-- DevOps
 title: Kubernetes Concepts
+date: 2025-04-29 05:00:00
+categories:
+- DevOps
+tags:
+- Kubernetes
+- Containers
 ---
 
 {% include toc title="Index" %}

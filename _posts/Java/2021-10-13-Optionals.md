@@ -1,9 +1,11 @@
 ---
-categories: Java
-date: 2021-10-13 21:55:00
-tags:
-- Java
 title: Optional Use cases
+date: 2021-10-13 21:55:00
+categories:
+- Java
+tags:
+- Java 8
+- Best Practices
 ---
 
 {% include toc title="Index" %}

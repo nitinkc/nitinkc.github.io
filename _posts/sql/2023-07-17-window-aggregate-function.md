@@ -1,9 +1,10 @@
 ---
-categories: SQL
-date: 2023-07-16 23:20:00
-tags:
-- SQL
 title: SQL Window Aggregate Functions
+date: 2023-07-16 23:20:00
+categories:
+- SQL
+tags:
+- Analytics
 ---
 
 Window or Aggregate function

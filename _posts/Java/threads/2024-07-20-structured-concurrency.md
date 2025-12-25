@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
-date: 2024-07-20 20:17:00
-tags:
-- Multithreading
 title: Structured Concurrency
+date: 2024-07-20 20:17:00
+categories:
+- Multithreading
+tags:
+- Java
+- Java 21
 ---
 
 {% include toc title="Index" %}

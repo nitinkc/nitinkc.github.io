@@ -1,10 +1,11 @@
 ---
-categories: Microservices
-date: 2025-06-23 05:00:00
-tags:
-- Java
-- Testing
 title: A Guide to Behavior-Driven Development (BDD) with JBehave
+date: 2025-06-23 05:00:00
+categories:
+- Testing
+tags:
+- Spring Boot
+- Guide
 ---
 
 {% include toc title="Index" %}

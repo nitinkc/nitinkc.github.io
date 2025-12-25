@@ -1,9 +1,10 @@
 ---
-categories: Microservices
+title: Spring Validations
 date: 2023-09-15 20:30:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: Spring Validations
 ---
 
 {% include toc title="Index" %}
@@ -95,8 +96,7 @@ public class User {
 }
 ```
 
-**`MethodArgumentNotValidException` for Failed Validations and exception handler
-**
+**`MethodArgumentNotValidException` for Failed Validations and exception handler**
 
 ```java
 @ExceptionHandler(MethodArgumentNotValidException.class)

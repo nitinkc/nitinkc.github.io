@@ -1,9 +1,10 @@
 ---
-categories: System Design
-date: 2024-06-18 11:45:00
-tags:
-- System Design
 title: Bloom Filters
+date: 2024-06-18 11:45:00
+categories:
+- System Design
+tags:
+- Data Structures
 ---
 
 {% include toc title="Index" %}

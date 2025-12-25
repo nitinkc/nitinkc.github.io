@@ -1,9 +1,10 @@
 ---
-categories: Electronics
+title: Transmitters & Receivers
 date: 2024-11-03 01:00:00
+categories:
+- Electronics
 tags:
 - Electronics
-title: Transmitters & Receivers
 ---
 
 {% include toc title="Index" %}

@@ -1,11 +1,12 @@
 ---
-categories:
-- Java
-- Multithreading
-date: 2024-08-17 20:17:00
-tags:
-- Multithreading
 title: Synchronization Mechanisms in Java
+date: 2024-08-17 20:17:00
+categories:
+- Multithreading
+tags:
+- Java
+- Synchronization
+- Concurrency
 ---
 
 {% include toc title="Index" %}

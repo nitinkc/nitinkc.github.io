@@ -1,11 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
-date: 2024-02-11 00:12:00
-tags:
-- Performance Engineering
 title: Garbage Collections
+date: 2024-02-11 00:12:00
+categories:
+- Performance Engineering
+tags:
+- Java
+- Memory
+- Performance
+- JVM
 ---
 
 {% include toc title="Index" %}

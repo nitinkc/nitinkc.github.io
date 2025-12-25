@@ -1,11 +1,12 @@
 ---
-categories:
-- Java
-- Performance Engineering
-date: 2024-03-14 21:30:00
-tags:
-- Performance Engineering
 title: Eclipse Memory Analyzer Tool (MAT)
+date: 2024-03-14 21:30:00
+categories:
+- Performance Engineering
+tags:
+- Java
+- Performance
+- Debugging
 ---
 
 {% include toc title="Index" %}

@@ -1,8 +1,10 @@
 ---
-title:  "Swagger Documentations"
-date:   2023-09-15 21:30:00
-categories: Spring Microservices
-tags: [CRUD]
+title: Swagger Documentations
+date: 2023-09-15 21:30:00
+categories:
+- Microservices
+tags:
+- Spring Boot
 ---
 
 {% include toc title="Index" %}
@@ -50,5 +52,3 @@ Swagger UI
 # TODO
 
 * Configure further docs via swagger Annotations
-
-

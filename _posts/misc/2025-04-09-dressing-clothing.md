@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2025-04-09 10:50:00
-tags:
-- Miscellaneous
 title: Dressing Clothing
+date: 2025-04-09 10:50:00
+categories:
+- Lifestyle
+tags:
+- Lifestyle
 ---
 
 {% include toc title="Index" %}

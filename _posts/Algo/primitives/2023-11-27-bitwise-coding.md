@@ -1,9 +1,10 @@
 ---
-categories: Algorithms
+title: Bitwise Operators
 date: 2023-11-27 08:30:00
+categories:
+- Algorithms
 tags:
 - Algorithms
-title: Bitwise Operators
 ---
 
 {% include toc title="Index" %}

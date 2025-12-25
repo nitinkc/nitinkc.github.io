@@ -1,9 +1,10 @@
 ---
-categories: System Design
-date: 2025-05-03 22:30:00
-tags:
-- System Design
 title: System Design Plan
+date: 2025-05-03 22:30:00
+categories:
+- System Design
+tags:
+- Interview
 ---
 
 | Difficulty  | Status  | Task                                                                   |

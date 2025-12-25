@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Design Patterns
+title: Builder Design Pattern
 date: 2023-11-06 08:30:00
+categories:
+- Design Patterns
 tags:
 - Java
-title: Builder Design Pattern
+- OOP
 ---
 
 {% include toc title="Index" %}

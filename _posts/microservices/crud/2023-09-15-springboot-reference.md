@@ -1,9 +1,13 @@
 ---
-categories: Microservices
-date: 2023-09-15 11:50:00
-tags:
-- CRUD
 title: SpringBoot Reference
+date: 2023-09-15 11:50:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- Reference
+- Documentation
+- Guide
 ---
 
 {% include toc title="Index" %}
@@ -52,8 +56,7 @@ swap out `UserRepository` implementations.
 Instead of the Class taking responsibility of creating the object, the framework
 manages it for you
 
-- the control of **object creation** and **dependency management** is 
-**_inverted_** from the application code to a framework.
+- the control of **object creation** and **dependency management** is **_inverted_** from the application code to a framework.
 - The framework manages the lifecycle and interactions of objects.
 
 ## Dependency Injection

@@ -1,9 +1,12 @@
 ---
-categories: Algorithms
-date: 2016-11-25 20:20:00
-tags:
-- Algorithms
 title: Array Problems
+date: 2016-11-25 20:20:00
+categories:
+- Algorithms
+tags:
+- Arrays
+- Practice
+- Interview
 ---
 
 {% include toc title="Index" %}

@@ -1,20 +1,16 @@
 ---
-categories: Developer tools
-date: 2024-06-03 20:50:00
-tags:
-- Shortcuts
 title: IntelliJ Shortcuts - Daily Drills
+date: 2024-06-03 20:50:00
+categories:
+- Developer Tools
+tags:
+- IntelliJ
+- IDE
+- Practice
 ---
 
 **LEGEND :**
-**⌘** Cmd &emsp;
-**⇧** Shift &emsp;
-**^** Ctrl &emsp;
-**⌥** Opt &emsp;
-**⎋** Esc &emsp;
-**↵** Return &emsp;  
-**⌫** Delete
-**↑ ↓ → ←** &emsp;
+**⌘** Cmd &emsp;**⇧** Shift &emsp;**^** Ctrl &emsp;**⌥** Opt &emsp;**⎋** Esc &emsp;**↵** Return &emsp;  **⌫** Delete**↑ ↓ → ←** &emsp;
 
 Most important
 **⌥** Opt **↵** Return

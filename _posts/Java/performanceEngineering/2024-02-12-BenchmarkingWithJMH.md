@@ -1,11 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
-date: 2024-02-17 12:40:00
-tags:
-- Performance Engineering
 title: Java Mission Control - JMC
+date: 2024-02-17 12:40:00
+categories:
+- Performance Engineering
+tags:
+- Java
+- Performance
+- Monitoring
+- Tools
 ---
 
 {% include toc title="Index" %}

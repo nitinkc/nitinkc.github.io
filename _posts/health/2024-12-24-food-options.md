@@ -1,9 +1,11 @@
 ---
-categories: Health
-date: 2024-12-24 09:45:00
-tags:
-- Health
 title: Food Options - Understanding Seeds, Grains, Millets, Legumes & Pulses
+date: 2024-12-24 09:45:00
+categories:
+- Health
+tags:
+- Nutrition
+- Guide
 ---
 
 {% include toc title="Index" %}

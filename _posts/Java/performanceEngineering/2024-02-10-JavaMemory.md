@@ -1,11 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
-date: 2024-02-10 01:23:00
-tags:
-- Performance Engineering
 title: Java Memory
+date: 2024-02-10 01:23:00
+categories:
+- Performance Engineering
+tags:
+- Java
+- Memory
+- Performance
+- JVM
 ---
 
 {% include toc title="Index" %}

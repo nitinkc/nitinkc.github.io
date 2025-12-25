@@ -1,9 +1,10 @@
 ---
-categories: Microservices
-date: 2023-10-24 23:41:00
-tags:
-- Microservices
 title: Kafka Essentials
+date: 2023-10-24 23:41:00
+categories:
+- Microservices
+tags:
+- Real-time
 ---
 
 Kafka can be used in both messaging and event-driven architectures, but the
@@ -84,8 +85,7 @@ appends these messages to the end of the topic's log.
 period**, even after consumers have read them. This retention period is typically
 set by the Kafka configuration.
 
-**Consumers Read Messages**: Consumers(multiple) subscribe to topics and read messages from
-**Kafka logs**. They maintain an offset to keep track of which messages they have
+**Consumers Read Messages**: Consumers(multiple) subscribe to topics and read messages from**Kafka logs**. They maintain an offset to keep track of which messages they have
 consumed.
 
 **Parallel Processing**: Multiple consumers can read messages from the same topic in

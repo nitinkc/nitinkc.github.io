@@ -1,9 +1,13 @@
 ---
-categories: Git
-date: 2021-02-01 11:30:00
-tags:
-- Git
 title: Useful git commands
+date: 2021-02-01 11:30:00
+categories:
+- Git
+tags:
+- Commands
+- Reference
+- CLI
+- Version Control
 ---
 
 {% include toc title="Index" %}

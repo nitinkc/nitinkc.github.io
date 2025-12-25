@@ -1,9 +1,10 @@
 ---
-categories: Java
+title: Java annotations
 date: 2024-08-21 00:17:00
+categories:
+- Java
 tags:
 - Java
-title: Java annotations
 ---
 
 {% include toc title="Index" %}

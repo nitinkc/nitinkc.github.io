@@ -1,9 +1,13 @@
 ---
-categories: System Design
-date: 2024-06-28 11:02:00
-tags:
-- System Design
 title: API Security
+date: 2024-06-28 11:02:00
+categories:
+- System Design
+tags:
+- Security
+- API
+- Authentication
+- Best Practices
 ---
 
 {% include toc title="Index" %}

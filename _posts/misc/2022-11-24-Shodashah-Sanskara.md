@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2022-01-26 21:55:00
-tags:
-- Miscellaneous
 title: षोडशः संस्कार (The 16 Sanskars)
+date: 2022-01-26 21:55:00
+categories:
+- Culture
+tags:
+- Culture
 ---
 
 {% include toc title="Index" %}

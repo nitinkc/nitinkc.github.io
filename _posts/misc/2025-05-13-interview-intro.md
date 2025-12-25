@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2025-05-13 16:50:00
-tags:
-- Miscellaneous
 title: Intro
+date: 2025-05-13 16:50:00
+categories:
+- Career
+tags:
+- Interview
 ---
 
 {% include toc title="Index" %}

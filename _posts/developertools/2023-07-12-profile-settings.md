@@ -1,11 +1,11 @@
 ---
-categories:
-- Developer tools
-- MacBook
-date: 2023-07-12 22:10:00
-tags:
-- MacBook
 title: 'MacBook : Configuring shell profile'
+date: 2023-07-12 22:10:00
+categories:
+- Developer Tools
+tags:
+- MacOS
+- Configuration
 ---
 
 On Mac with iTerm2 and ZSH

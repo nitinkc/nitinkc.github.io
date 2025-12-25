@@ -1,9 +1,11 @@
 ---
-categories: Microservices
+title: Spring Config Client
 date: 2019-11-22 21:15:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: Spring Config Client
+- Configuration
 ---
 
 Test Microservice for Spring Cloud Config. This is a client Application

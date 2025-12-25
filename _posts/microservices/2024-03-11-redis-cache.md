@@ -1,9 +1,13 @@
 ---
-categories: Microservices
-date: 2024-03-06 00:45:00
-tags:
-- CRUD
 title: Caching with Redis
+date: 2024-03-06 00:45:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- Redis
+- Caching
+- Performance
 ---
 
 {% include toc title="Index" %}

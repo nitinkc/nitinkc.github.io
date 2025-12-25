@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
-date: 2022-08-06 08:30:00
-tags:
-- Multithreading
 title: Synchronization - Race Condition & Critical Section
+date: 2022-08-06 08:30:00
+categories:
+- Multithreading
+tags:
+- Java
+- Synchronization
 ---
 
 {% include toc title="Index" %}

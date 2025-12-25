@@ -1,9 +1,10 @@
 ---
-categories: Java
-date: 2023-11-24 23:23:00
-tags:
-- Java
 title: Exceptions in Java
+date: 2023-11-24 23:23:00
+categories:
+- Java
+tags:
+- Best Practices
 ---
 
 {% include toc title="Index" %}
@@ -128,8 +129,7 @@ Only try-with-resources statement is permitted to omit both the catch and
 finally blocks
 {: .notice--info}
 
-The resources created in the try clause are **only in scope within the try block
-**.
+The resources created in the try clause are **only in scope within the try block**.
 
 ### AutoCloseable
 

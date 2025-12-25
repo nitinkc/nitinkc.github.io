@@ -1,9 +1,12 @@
 ---
-categories: System Design
-date: 2024-01-15 17:30:00
-tags:
-- System Design
 title: Back of the envelop estimations
+date: 2024-01-15 17:30:00
+categories:
+- System Design
+tags:
+- Estimation
+- Scalability
+- Interview
 ---
 
 {% include toc title="Index" %}

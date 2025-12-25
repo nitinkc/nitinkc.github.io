@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2024-09-19 20:14:00
-tags:
-- Miscellaneous
 title: Book Binding
+date: 2024-09-19 20:14:00
+categories:
+- Crafts
+tags:
+- DIY
 ---
 
 {% include toc title="Index" %}

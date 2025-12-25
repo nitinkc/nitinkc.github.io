@@ -1,9 +1,11 @@
 ---
-categories: Microservices
+title: Hibernate
 date: 2022-02-10 20:55:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: Hibernate
+- Database
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,12 @@
 ---
-categories: Health
-date: 2024-12-20 09:45:00
-tags:
-- Health
 title: Health Drinks
+date: 2024-12-20 09:45:00
+categories:
+- Health
+tags:
+- Nutrition
+- Healthy
+- Recipes
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,10 @@
 ---
-categories: Microservices
+title: Jackson Mapper
 date: 2023-02-19 09:16:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: Jackson Mapper
 ---
 
 {% include toc title="Index" %}

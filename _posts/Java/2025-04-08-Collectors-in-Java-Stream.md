@@ -1,9 +1,12 @@
 ---
-categories: Java
-date: 2025-04-08 02:17:00
-tags:
-- Java
 title: Collectors in Java Streams
+date: 2025-04-08 02:17:00
+categories:
+- Java
+tags:
+- Streams
+- Java 8
+- Functional Programming
 ---
 
 {% include toc title="Index" %}

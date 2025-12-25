@@ -1,10 +1,11 @@
 ---
-categories: GCP
-date: 2022-08-15 20:04:00
-tags:
-- Microservices
-- Spring Boot
 title: 'Google BigQuery '
+date: 2022-08-15 20:04:00
+categories:
+- GCP
+tags:
+- SQL
+- Analytics
 ---
 
 {% include toc title="Index" %}

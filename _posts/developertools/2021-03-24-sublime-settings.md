@@ -1,9 +1,12 @@
 ---
-categories: Developer tools
-date: 2021-03-24 18:07:00
-tags:
-- Developer tools
 title: Sublime Settings
+date: 2021-03-24 18:07:00
+categories:
+- Developer Tools
+tags:
+- Configuration
+- Settings
+- Tools
 ---
 
 {% include toc title="Index" %}

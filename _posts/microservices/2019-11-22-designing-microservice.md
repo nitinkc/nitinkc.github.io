@@ -1,9 +1,12 @@
 ---
-categories: Microservices
+title: Designing a microservice
 date: 2019-11-22 21:35:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: Designing a microservice
+- Architecture
+- Design Patterns
 ---
 
 All Microservices Projects are hosted in

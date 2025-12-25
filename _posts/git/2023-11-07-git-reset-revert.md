@@ -1,9 +1,11 @@
 ---
-categories: Git
-date: 2023-11-07 11:30:00
-tags:
-- Git
 title: Git Reset - Revert
+date: 2023-11-07 11:30:00
+categories:
+- Git
+tags:
+- Commands
+- Version Control
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,13 @@
 ---
-categories: Java
-date: 2022-08-06 08:30:00
-tags:
-- Java
 title: Lambda Expressions & Functional Interface
+date: 2022-08-06 08:30:00
+categories:
+- Java
+tags:
+- Lambda
+- Functional Interface
+- Java 8
+- Functional Programming
 ---
 
 {% include toc title="Index" %}

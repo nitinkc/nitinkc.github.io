@@ -1,9 +1,10 @@
 ---
-categories: Electronics
-date: 2024-10-25 12:00:00
-tags:
-- Electronics
 title: Teaching Electronics
+date: 2024-10-25 12:00:00
+categories:
+- Electronics
+tags:
+- Tutorial
 ---
 
 {% include toc title="Index" %}

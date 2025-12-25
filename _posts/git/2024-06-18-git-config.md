@@ -1,9 +1,13 @@
 ---
-categories: Git
-date: 2024-06-18 13:30:00
-tags:
-- Git
 title: Git Config
+date: 2024-06-18 13:30:00
+categories:
+- Git
+tags:
+- Configuration
+- Settings
+- Setup
+- Commands
 ---
 
 {% include toc title="Index" %}
@@ -102,8 +106,7 @@ repository (eg: bitbucket enterprise server)
 # templatedir
 
 **Template Directory**: When you initialize a new Git repository with git init,
-Git **copies** files from the directory specified by `init.templatedir` into the
-**.git directory of the new repository**.
+Git **copies** files from the directory specified by `init.templatedir` into the**.git directory of the new repository**.
 
 The `git config --global init.templatedir` command is used to set a global
 configuration option in Git

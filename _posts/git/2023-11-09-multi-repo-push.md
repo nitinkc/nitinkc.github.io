@@ -1,9 +1,10 @@
 ---
-categories: Git
-date: 2023-11-13 14:30:00
-tags:
-- Git
 title: Git config- Multi Repo projects
+date: 2023-11-13 14:30:00
+categories:
+- Git
+tags:
+- Configuration
 ---
 
 {% include toc title="Index" %}

@@ -1,11 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
-date: 2024-06-20 00:10:00
-tags:
-- Performance Engineering
 title: Memory Leaks
+date: 2024-06-20 00:10:00
+categories:
+- Performance Engineering
+tags:
+- Java
+- Debugging
+- Performance
+- Troubleshooting
 ---
 
 {% include toc title="Index" %}
@@ -22,8 +24,7 @@ Adopts the GC Strategy (invented with LISP in 1959 )
 
 # Java Memory Leaks
 
-A memory leak happens **only if the allocated objects can't be garbage-collected
-** because they are referenced from somewhere in the running application.
+A memory leak happens **only if the allocated objects can't be garbage-collected** because they are referenced from somewhere in the running application.
 While allocation profiling doesn't tell us anything about the garbage
 collection, it can still give us hints for further investigation.
 

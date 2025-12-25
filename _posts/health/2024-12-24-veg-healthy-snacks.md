@@ -1,9 +1,11 @@
 ---
-categories: Health
-date: 2024-12-28 09:45:00
-tags:
-- Health
 title: Veggie snacks
+date: 2024-12-28 09:45:00
+categories:
+- Health
+tags:
+- Healthy Eating
+- Recipes
 ---
 
 {% include toc title="Index" %}

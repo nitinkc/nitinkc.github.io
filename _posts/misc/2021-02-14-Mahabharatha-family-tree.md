@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2021-02-13 02:15:00
-tags:
-- Miscellaneous
 title: Mahabharat Family tree
+date: 2021-02-13 02:15:00
+categories:
+- Culture
+tags:
+- Culture
 ---
 
 # The Family tree

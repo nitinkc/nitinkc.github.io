@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
-date: 2024-08-08 20:17:00
-tags:
-- Multithreading
 title: Thread Creation
+date: 2024-08-08 20:17:00
+categories:
+- Multithreading
+tags:
+- Java
+- Concurrency
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,10 @@
 ---
-categories: Java
-date: 2018-01-31 00:20:00
-tags:
-- Java
 title: Java Interview Questions
+date: 2018-01-31 00:20:00
+categories:
+- Java
+tags:
+- Interview
 ---
 
 # Java Interview Questions
@@ -241,8 +242,7 @@ method hiding.
 
 ### Overloading VS Overriding
 
-***Overloading (Compile time polymorphism, static polymorphism, early binding.)
-***
+***Overloading (Compile time polymorphism, static polymorphism, early binding.)***
 
 - methods same name but different argument.
 - Method resolution is done by compiler based on reference type

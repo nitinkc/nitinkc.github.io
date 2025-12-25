@@ -1,11 +1,13 @@
 ---
-categories:
-- Java
-- Performance Engineering
-date: 2024-06-20 00:10:00
-tags:
-- Performance Engineering
 title: Java Code Optimization
+date: 2024-06-20 00:10:00
+categories:
+- Performance Engineering
+tags:
+- Java
+- Performance
+- Optimization
+- Best Practices
 ---
 
 {% include toc title="Index" %}

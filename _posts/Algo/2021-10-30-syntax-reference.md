@@ -1,9 +1,11 @@
 ---
-categories: Algorithms
-date: 2021-10-30 21:55:00
-tags:
-- Algorithms
 title: Coding Interview - Syntax Reference
+date: 2021-10-30 21:55:00
+categories:
+- Algorithms
+tags:
+- Reference
+- Interview
 ---
 
 {% include toc title="Index" %}

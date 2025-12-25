@@ -1,9 +1,12 @@
 ---
-categories: System Design
-date: 2025-05-08 11:02:00
-tags:
-- System Design
 title: Cassandra - Column-Oriented Database
+date: 2025-05-08 11:02:00
+categories:
+- System Design
+tags:
+- Database
+- NoSQL
+- Distributed
 ---
 
 {% include toc title="Index" %}

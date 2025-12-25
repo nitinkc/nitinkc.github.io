@@ -1,9 +1,10 @@
 ---
-categories: System Design
-date: 2024-01-21 09:30:00
-tags:
-- System Design
 title: Rate Limiting
+date: 2024-01-21 09:30:00
+categories:
+- System Design
+tags:
+- Security
 ---
 
 {% include toc title="Index" %}

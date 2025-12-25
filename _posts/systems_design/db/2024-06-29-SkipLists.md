@@ -1,9 +1,11 @@
 ---
-categories: System Design
-date: 2024-06-29 11:02:00
-tags:
-- System Design
 title: Skip Lists
+date: 2024-06-29 11:02:00
+categories:
+- System Design
+tags:
+- Data Structures
+- Algorithms
 ---
 
 {% include toc title="Index" %}

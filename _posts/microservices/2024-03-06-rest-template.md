@@ -1,9 +1,11 @@
 ---
-categories: Microservices
-date: 2024-03-06 00:45:00
-tags:
-- CRUD
 title: Rest Template
+date: 2024-03-06 00:45:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- REST
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,10 @@
 ---
-categories: Algorithms
-date: 2021-10-30 21:55:00
-tags:
-- Algorithms
 title: Coding Hints
+date: 2021-10-30 21:55:00
+categories:
+- Algorithms
+tags:
+- Programming
 ---
 
 {% include toc title="Index" %}

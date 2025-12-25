@@ -1,11 +1,12 @@
 ---
-categories:
-- Java
-- Multithreading
-date: 2024-07-19 12:17:00
-tags:
-- Multithreading
 title: Virtual Threads
+date: 2024-07-19 12:17:00
+categories:
+- Multithreading
+tags:
+- Java
+- Java 21
+- Concurrency
 ---
 
 {% include toc title="Index" %}

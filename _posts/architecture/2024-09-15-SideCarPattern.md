@@ -1,9 +1,12 @@
 ---
-categories: Architecture
-date: 2024-09-15 20:02:00
-tags:
-- System Design
 title: Sidecar Pattern
+date: 2024-09-15 20:02:00
+categories:
+- Architecture
+tags:
+- Microservices
+- Design Patterns
+- Kubernetes
 ---
 
 {% include toc title="Index" %}

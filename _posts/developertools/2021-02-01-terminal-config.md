@@ -1,11 +1,12 @@
 ---
-categories:
-- Developer tools
-- MacBook
-date: 2021-02-01 14:00:00
-tags:
-- MacBook
 title: Terminal Setup
+date: 2021-02-01 14:00:00
+categories:
+- Developer Tools
+tags:
+- Configuration
+- MacOS
+- Setup
 ---
 
 {% include toc title="Index" %}

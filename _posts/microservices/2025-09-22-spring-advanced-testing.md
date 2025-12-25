@@ -1,12 +1,11 @@
 ---
-categories:
-- Spring
-- Microservices
-date: 2025-09-22 12:01:00
-tags:
-- Testing
-- JUnit
 title: Advanced Testing in Spring Boot
+date: 2025-09-22 12:01:00
+categories:
+- Microservices
+tags:
+- Spring Boot
+- Testing
 ---
 
 {% include toc title="Index" %}

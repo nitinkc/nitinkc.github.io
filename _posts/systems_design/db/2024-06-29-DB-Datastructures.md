@@ -1,9 +1,11 @@
 ---
-categories: System Design
-date: 2024-06-28 11:02:00
-tags:
-- System Design
 title: DB Data Structures
+date: 2024-06-28 11:02:00
+categories:
+- System Design
+tags:
+- Database
+- Data Structures
 ---
 
 {% include toc title="Index" %}

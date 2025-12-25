@@ -1,9 +1,11 @@
 ---
-categories: Java
-date: 2018-01-24 00:32:00
-tags:
-- Java
 title: Java Collection Class
+date: 2018-01-24 00:32:00
+categories:
+- Java
+tags:
+- Collections
+- Data Structures
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,12 @@
 ---
-categories: Developer tools
-date: 2022-02-12 23:23:00
-tags:
-- Developer tools
 title: Terminal Commands
+date: 2022-02-12 23:23:00
+categories:
+- Developer Tools
+tags:
+- Commands
+- CLI
+- Reference
 ---
 
 {% include toc title="Index" %}

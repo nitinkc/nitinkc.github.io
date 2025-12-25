@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Design Patterns
+title: Factory Design Pattern
 date: 2023-11-06 08:30:00
+categories:
+- Design Patterns
 tags:
 - Java
-title: Factory Design Pattern
+- OOP
 ---
 
 {% include toc title="Index" %}

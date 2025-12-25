@@ -1,9 +1,10 @@
 ---
-categories: Miscellaneous
-date: 2024-09-23 21:14:00
-tags:
-- Miscellaneous
 title: GCC Cross Compiler - Mac installation
+date: 2024-09-23 21:14:00
+categories:
+- Developer Tools
+tags:
+- MacOS
 ---
 
 # Creating a Cross compiler on Mac

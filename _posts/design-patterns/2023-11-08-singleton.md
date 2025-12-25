@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Design Patterns
+title: Singleton Design Pattern
 date: 2023-11-06 08:30:00
+categories:
+- Design Patterns
 tags:
 - Java
-title: Singleton Design Pattern
+- OOP
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,13 @@
 ---
-categories: Algorithms
-date: 2025-01-01 15:27:00
-tags:
-- Algorithms
 title: Data Structures - Java Classes
+date: 2025-01-01 15:27:00
+categories:
+- Algorithms
+tags:
+- Data Structures
+- Java
+- Collections
+- Implementation
 ---
 
 {% include toc title="Index" %}

@@ -1,9 +1,11 @@
 ---
-categories: System Design
-date: 2024-06-13 11:02:00
-tags:
-- System Design
 title: System Design Drills
+date: 2024-06-13 11:02:00
+categories:
+- System Design
+tags:
+- Practice
+- Design Patterns
 ---
 
 {% include toc title="Index" %}
@@ -199,8 +201,7 @@ Problems with Distributed Databases Running in Multiple Nodes
 - **Solution**: Implement mechanisms like read-repair, anti-entropy protocols,
   and tune replication factors to reduce staleness.
 
-**Load Balancing**:
-**Solution**: Use advanced load balancing techniques such as consistent hashing,
+**Load Balancing**:**Solution**: Use advanced load balancing techniques such as consistent hashing,
 random sampling, and dynamic load adjustment.
 
 **Partition Tolerance**:

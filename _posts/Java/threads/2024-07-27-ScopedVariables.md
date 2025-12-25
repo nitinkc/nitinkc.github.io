@@ -1,11 +1,11 @@
 ---
-categories:
-- Java
-- Multithreading
-date: 2024-07-27 20:17:00
-tags:
-- Multithreading
 title: Scoped Value
+date: 2024-07-27 20:17:00
+categories:
+- Multithreading
+tags:
+- Java
+- Java 21
 ---
 
 {% include toc title="Index" %}

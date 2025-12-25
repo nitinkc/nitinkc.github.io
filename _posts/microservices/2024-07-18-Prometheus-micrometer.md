@@ -1,9 +1,14 @@
 ---
-categories: Microservices
+title: 'Complete Guide to Prometheus & Micrometer: Metrics, Monitoring & Observability'
 date: 2024-07-18 17:00:00
+categories:
+- Microservices
 tags:
 - Spring Boot
-title: 'Complete Guide to Prometheus & Micrometer: Metrics, Monitoring & Observability'
+- Metrics
+- Monitoring
+- Observability
+- Guide
 ---
 
 {% include toc title="Index" %}

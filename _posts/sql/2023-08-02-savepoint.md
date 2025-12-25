@@ -1,9 +1,11 @@
 ---
-categories: SQL
-date: 2023-08-02 14:03:00
-tags:
-- SQL
 title: Savepoint
+date: 2023-08-02 14:03:00
+categories:
+- SQL
+tags:
+- Transactions
+- Database
 ---
 
 {% include toc title="Index" %}

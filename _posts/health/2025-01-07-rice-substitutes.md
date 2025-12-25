@@ -1,9 +1,10 @@
 ---
-categories: Health
-date: 2025-01-07 22:00:00
-tags:
-- Health
 title: Rice Substitutes & Combinations
+date: 2025-01-07 22:00:00
+categories:
+- Health
+tags:
+- Meal Planning
 ---
 
 {% include toc title="Index" %}

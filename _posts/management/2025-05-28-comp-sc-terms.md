@@ -1,9 +1,10 @@
 ---
-categories: Management
-date: 2025-05-28 05:00:00
-tags:
-- Miscellaneous
 title: Major psychological theories and behavioral science principles
+date: 2025-05-28 05:00:00
+categories:
+- Management
+tags:
+- Theory
 ---
 
 Hyrum's Law is a principle in software engineering that states:
