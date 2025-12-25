@@ -2,7 +2,8 @@
 categories: Developer tools
 date: 2024-06-03 20:50:00
 tags:
-- Shortcuts
+- IntelliJ
+- Developer tools
 title: IntelliJ Shortcuts - Daily Drills
 ---
 

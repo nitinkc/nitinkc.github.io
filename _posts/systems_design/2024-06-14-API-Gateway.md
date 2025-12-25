@@ -2,6 +2,7 @@
 categories: System Design
 date: 2024-06-14 11:02:00
 tags:
+- API Gateway
 - System Design
 title: API Gateway
 ---

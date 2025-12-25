@@ -1,9 +1,10 @@
 ---
-# layout: static
-title:  "Spring Data JPA & CRUD - GET PUT POST DELETE"
-date:   2022-02-09 20:55:00
 categories: Spring Microservices
-tags: [CRUD]
+date: 2022-02-09 20:55:00
+tags:
+- Spring Boot
+- Microservices
+title: Spring Data JPA & CRUD - GET PUT POST DELETE
 ---
 
 {% include toc title="Index" %}

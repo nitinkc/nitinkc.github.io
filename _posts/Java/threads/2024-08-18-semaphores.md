@@ -5,6 +5,7 @@ categories:
 date: 2024-08-18 05:17:00
 tags:
 - Multithreading
+- Java
 title: Semaphores
 ---
 

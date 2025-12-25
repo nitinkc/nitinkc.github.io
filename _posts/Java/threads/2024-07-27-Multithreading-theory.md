@@ -5,6 +5,7 @@ categories:
 date: 2024-07-27 20:17:00
 tags:
 - Multithreading
+- Java
 title: Multithreading Theory
 ---
 

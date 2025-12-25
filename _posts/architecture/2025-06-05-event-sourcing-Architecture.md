@@ -2,7 +2,7 @@
 categories: Architecture
 date: 2025-06-05 14:02:00
 tags:
-- Architectural Styles
+- Architecture
 title: Event Sourcing
 ---
 

@@ -2,7 +2,7 @@
 categories: Architecture
 date: 2024-09-12 14:02:00
 tags:
-- System Design
+- Architecture
 title: Architectural Patterns
 ---
 

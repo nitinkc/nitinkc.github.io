@@ -5,6 +5,8 @@ categories:
 date: 2023-10-04 20:01:00
 tags:
 - GitOps
+- Docker
+- DevOps
 title: Docker commands
 ---
 

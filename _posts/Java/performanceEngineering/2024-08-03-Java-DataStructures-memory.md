@@ -4,7 +4,7 @@ categories:
 - Performance Engineering
 date: 2024-07-03 00:10:00
 tags:
-- Performance Engineering
+- Java
 title: String Intern pool, Hashmaps and Collections
 ---
 

@@ -5,6 +5,7 @@ categories:
 date: 2024-08-17 20:17:00
 tags:
 - Multithreading
+- Java
 title: Synchronization Mechanisms in Java
 ---
 

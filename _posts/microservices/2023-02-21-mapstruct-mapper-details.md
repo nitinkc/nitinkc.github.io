@@ -3,6 +3,7 @@ categories: Microservices
 date: 2023-02-21 09:16:00
 tags:
 - Spring Boot
+- Microservices
 title: MapStruct Mapper
 ---
 

@@ -4,7 +4,8 @@ categories:
 - Performance Engineering
 date: 2024-02-17 12:40:00
 tags:
-- Performance Engineering
+- Benchmarking
+- Java
 title: Java Mission Control - JMC
 ---
 

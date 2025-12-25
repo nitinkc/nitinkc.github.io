@@ -2,6 +2,7 @@
 categories: DevOps
 date: 2025-04-29 05:00:00
 tags:
+- Kubernetes
 - DevOps
 title: Kubernetes Concepts
 ---

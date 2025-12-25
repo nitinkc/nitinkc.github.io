@@ -5,6 +5,8 @@ categories:
 date: 2021-02-01 14:00:00
 tags:
 - MacBook
+- Terminal
+- Developer tools
 title: Terminal Setup
 ---
 

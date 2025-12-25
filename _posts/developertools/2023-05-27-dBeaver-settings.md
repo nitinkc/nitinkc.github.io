@@ -2,7 +2,8 @@
 categories: Developer tools
 date: 2023-05-27 22:25:00
 tags:
-- Database
+- Tools
+- Developer tools
 title: dBeaver for SQL Development
 ---
 

@@ -4,7 +4,7 @@ categories:
 - Performance Engineering
 date: 2025-07-18 08:30:00
 tags:
-- Performance Engineering
+- Java
 title: Gatling - Microservices Load Testing
 ---
 

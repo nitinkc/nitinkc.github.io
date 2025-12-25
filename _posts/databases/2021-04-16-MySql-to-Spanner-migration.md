@@ -2,7 +2,11 @@
 categories: Database
 date: 2021-04-16 01:25:00
 tags:
-- Google Cloud Platform
+- MySQL
+- Spanner
+- Migration
+- SQL
+- Database
 title: MySql to Spanner Migration using HarbourBridge
 ---
 

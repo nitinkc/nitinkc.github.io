@@ -4,7 +4,8 @@ categories:
 - Performance Engineering
 date: 2024-02-09 20:27:00
 tags:
-- Performance Engineering
+- Garbage Collection
+- Java
 title: Compiler Flags
 ---
 

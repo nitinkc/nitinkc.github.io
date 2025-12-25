@@ -5,6 +5,7 @@ categories:
 date: 2024-07-19 12:17:00
 tags:
 - Multithreading
+- Java
 title: Virtual Threads
 ---
 

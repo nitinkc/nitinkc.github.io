@@ -4,7 +4,7 @@ categories:
 - Performance Engineering
 date: 2024-03-14 21:30:00
 tags:
-- Performance Engineering
+- Java
 title: Eclipse Memory Analyzer Tool (MAT)
 ---
 

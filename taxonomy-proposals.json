@@ -94,7 +94,11 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Security",
+        "Guide",
+        "Best Practices",
+        "Microservices"
       ]
     },
     {
@@ -110,7 +114,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -126,7 +131,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -145,8 +151,7 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Testing",
-        "JUnit"
+        "Spring"
       ]
     },
     {
@@ -162,6 +167,8 @@
         "Microservices"
       ],
       "proposed_tags": [
+        "Security",
+        "Guide",
         "Microservices"
       ]
     },
@@ -194,7 +201,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -210,7 +218,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -226,7 +235,9 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Build Tools",
+        "Microservices"
       ]
     },
     {
@@ -244,7 +255,9 @@
       ],
       "proposed_tags": [
         "Spring Boot",
-        "Real-time"
+        "Real-time",
+        "Guide",
+        "Microservices"
       ]
     },
     {
@@ -260,7 +273,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -294,7 +308,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -346,7 +361,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -362,7 +378,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -378,7 +395,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "CRUD"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -394,7 +412,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -412,7 +431,7 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Database"
+        "Spring"
       ]
     },
     {
@@ -428,6 +447,7 @@
         "Microservices"
       ],
       "proposed_tags": [
+        "Spring Boot",
         "Microservices"
       ]
     },
@@ -444,7 +464,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "CRUD"
+        "Redis",
+        "Microservices"
       ]
     },
     {
@@ -460,7 +481,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -476,7 +498,9 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Security",
+        "Microservices"
       ]
     },
     {
@@ -492,7 +516,7 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Java"
+        "Microservices"
       ]
     },
     {
@@ -508,7 +532,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "CRUD"
+        "REST",
+        "Microservices"
       ]
     },
     {
@@ -524,7 +549,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -540,7 +566,9 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Guide",
+        "Microservices"
       ]
     },
     {
@@ -556,7 +584,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -574,7 +603,9 @@
       ],
       "proposed_tags": [
         "Spring Boot",
-        "Real-time"
+        "Real-time",
+        "Guide",
+        "Microservices"
       ]
     },
     {
@@ -590,7 +621,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -606,6 +638,8 @@
         "Microservices"
       ],
       "proposed_tags": [
+        "Kafka",
+        "Real-time",
         "Microservices"
       ]
     },
@@ -622,7 +656,9 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Security",
+        "Microservices"
       ]
     },
     {
@@ -638,7 +674,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -654,7 +691,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -670,7 +708,9 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Redis",
+        "Microservices"
       ]
     },
     {
@@ -686,7 +726,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -720,7 +761,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -752,6 +794,7 @@
         "System Design"
       ],
       "proposed_tags": [
+        "Consistency",
         "System Design"
       ]
     },
@@ -832,6 +875,7 @@
         "System Design"
       ],
       "proposed_tags": [
+        "Messaging",
         "System Design"
       ]
     },
@@ -928,6 +972,7 @@
         "System Design"
       ],
       "proposed_tags": [
+        "Scalability",
         "System Design"
       ]
     },
@@ -960,6 +1005,7 @@
         "System Design"
       ],
       "proposed_tags": [
+        "API Gateway",
         "System Design"
       ]
     },
@@ -1072,6 +1118,7 @@
         "System Design"
       ],
       "proposed_tags": [
+        "CAP Theorem",
         "System Design"
       ]
     },
@@ -1104,6 +1151,7 @@
         "System Design"
       ],
       "proposed_tags": [
+        "Rate Limiting",
         "System Design"
       ]
     },
@@ -1168,7 +1216,7 @@
         "Miscellaneous"
       ],
       "proposed_tags": [
-        "Developer tools"
+        "Miscellaneous"
       ]
     },
     {
@@ -1200,7 +1248,7 @@
         "Miscellaneous"
       ],
       "proposed_tags": [
-        "Photography"
+        "Miscellaneous"
       ]
     },
     {
@@ -1264,7 +1312,7 @@
         "Miscellaneous"
       ],
       "proposed_tags": [
-        "Photography"
+        "Miscellaneous"
       ]
     },
     {
@@ -1408,7 +1456,11 @@
         "Database"
       ],
       "proposed_tags": [
-        "Google Cloud Platform"
+        "MySQL",
+        "Spanner",
+        "Migration",
+        "SQL",
+        "Database"
       ]
     },
     {
@@ -1424,6 +1476,8 @@
         "Database"
       ],
       "proposed_tags": [
+        "MySQL",
+        "SQL",
         "Database"
       ]
     },
@@ -1456,6 +1510,7 @@
         "DevOps"
       ],
       "proposed_tags": [
+        "Kubernetes",
         "DevOps"
       ]
     },
@@ -1474,7 +1529,9 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "Kubernetes",
+        "GitOps",
+        "DevOps"
       ]
     },
     {
@@ -1492,7 +1549,9 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "GitOps",
+        "Docker",
+        "DevOps"
       ]
     },
     {
@@ -1508,7 +1567,8 @@
         "DevOps"
       ],
       "proposed_tags": [
-        "GCP"
+        "Kubernetes",
+        "DevOps"
       ]
     },
     {
@@ -1526,7 +1586,9 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "Terraform",
+        "GitOps",
+        "DevOps"
       ]
     },
     {
@@ -1544,7 +1606,9 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "Jenkins",
+        "GitOps",
+        "DevOps"
       ]
     },
     {
@@ -1562,7 +1626,8 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "GitOps",
+        "DevOps"
       ]
     },
     {
@@ -1596,7 +1661,8 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "GitOps",
+        "DevOps"
       ]
     },
     {
@@ -1614,7 +1680,8 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "GitOps",
+        "DevOps"
       ]
     },
     {
@@ -1632,7 +1699,8 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "GitOps",
+        "DevOps"
       ]
     },
     {
@@ -1650,7 +1718,8 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "GitOps",
+        "DevOps"
       ]
     },
     {
@@ -1668,7 +1737,9 @@
         "GitOps"
       ],
       "proposed_tags": [
-        "GitOps"
+        "Terraform",
+        "GitOps",
+        "DevOps"
       ]
     },
     {
@@ -1750,6 +1821,7 @@
         "Health"
       ],
       "proposed_tags": [
+        "Fitness",
         "Health"
       ]
     },
@@ -1782,6 +1854,7 @@
         "Health"
       ],
       "proposed_tags": [
+        "Yoga",
         "Health"
       ]
     },
@@ -1830,6 +1903,7 @@
         "Health"
       ],
       "proposed_tags": [
+        "Fitness",
         "Health"
       ]
     },
@@ -1846,6 +1920,8 @@
         "Health"
       ],
       "proposed_tags": [
+        "Nutrition",
+        "Guide",
         "Health"
       ]
     },
@@ -1894,6 +1970,7 @@
         "Health"
       ],
       "proposed_tags": [
+        "Yoga",
         "Health"
       ]
     },
@@ -1910,6 +1987,7 @@
         "Health"
       ],
       "proposed_tags": [
+        "Nutrition",
         "Health"
       ]
     },
@@ -1990,6 +2068,7 @@
         "Health"
       ],
       "proposed_tags": [
+        "Nutrition",
         "Health"
       ]
     },
@@ -2070,6 +2149,7 @@
         "Electronics"
       ],
       "proposed_tags": [
+        "Raspberry Pi",
         "Electronics"
       ]
     },
@@ -2086,6 +2166,7 @@
         "Electronics"
       ],
       "proposed_tags": [
+        "LED",
         "Electronics"
       ]
     },
@@ -2134,6 +2215,7 @@
         "Electronics"
       ],
       "proposed_tags": [
+        "Arduino",
         "Electronics"
       ]
     },
@@ -2150,6 +2232,7 @@
         "Electronics"
       ],
       "proposed_tags": [
+        "Sensors",
         "Electronics"
       ]
     },
@@ -2278,6 +2361,7 @@
         "Electronics"
       ],
       "proposed_tags": [
+        "Sensors",
         "Electronics"
       ]
     },
@@ -2310,6 +2394,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Arrays",
         "Algorithms"
       ]
     },
@@ -2342,6 +2427,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Stacks",
         "Algorithms"
       ]
     },
@@ -2406,6 +2492,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Searching",
         "Algorithms"
       ]
     },
@@ -2422,6 +2509,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Queues",
         "Algorithms"
       ]
     },
@@ -2470,6 +2558,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Dynamic Programming",
         "Algorithms"
       ]
     },
@@ -2486,6 +2575,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Dynamic Programming",
         "Algorithms"
       ]
     },
@@ -2518,6 +2608,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Arrays",
         "Algorithms"
       ]
     },
@@ -2534,6 +2625,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Dynamic Programming",
         "Algorithms"
       ]
     },
@@ -2550,7 +2642,7 @@
         "Management"
       ],
       "proposed_tags": [
-        "Miscellaneous"
+        "Management"
       ]
     },
     {
@@ -2582,7 +2674,7 @@
         "Management"
       ],
       "proposed_tags": [
-        "Miscellaneous"
+        "Management"
       ]
     },
     {
@@ -2598,7 +2690,7 @@
         "Management"
       ],
       "proposed_tags": [
-        "Miscellaneous"
+        "Management"
       ]
     },
     {
@@ -2614,7 +2706,7 @@
         "Management"
       ],
       "proposed_tags": [
-        "Miscellaneous"
+        "Management"
       ]
     },
     {
@@ -2630,7 +2722,7 @@
         "Management"
       ],
       "proposed_tags": [
-        "Miscellaneous"
+        "Management"
       ]
     },
     {
@@ -2646,6 +2738,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Functional",
         "Java"
       ]
     },
@@ -2678,6 +2771,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Functional",
         "Java"
       ]
     },
@@ -2742,6 +2836,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Functional",
         "Java"
       ]
     },
@@ -2774,6 +2869,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Streams",
         "Java"
       ]
     },
@@ -2790,6 +2886,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Generics",
         "Java"
       ]
     },
@@ -2806,6 +2903,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Generics",
         "Java"
       ]
     },
@@ -2822,6 +2920,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Functional",
         "Java"
       ]
     },
@@ -2838,6 +2937,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Functional",
         "Java"
       ]
     },
@@ -2934,6 +3034,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Streams",
         "Java"
       ]
     },
@@ -3014,6 +3115,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Serialization",
         "Java"
       ]
     },
@@ -3030,6 +3132,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Garbage Collection",
         "Java"
       ]
     },
@@ -3062,6 +3165,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Streams",
         "Java"
       ]
     },
@@ -3080,7 +3184,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -3192,6 +3297,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Streams",
         "Java"
       ]
     },
@@ -3208,6 +3314,7 @@
         "Java"
       ],
       "proposed_tags": [
+        "Functional",
         "Java"
       ]
     },
@@ -3272,7 +3379,7 @@
         "GCP"
       ],
       "proposed_tags": [
-        "Google Cloud Platform"
+        "GCP"
       ]
     },
     {
@@ -3289,8 +3396,7 @@
         "GCP"
       ],
       "proposed_tags": [
-        "Microservices",
-        "Spring Boot"
+        "GCP"
       ]
     },
     {
@@ -3323,8 +3429,7 @@
         "GCP"
       ],
       "proposed_tags": [
-        "Microservices",
-        "Spring Boot"
+        "GCP"
       ]
     },
     {
@@ -3341,8 +3446,8 @@
         "GCP"
       ],
       "proposed_tags": [
-        "Microservices",
-        "Spring Boot"
+        "BigQuery",
+        "GCP"
       ]
     },
     {
@@ -3358,7 +3463,8 @@
         "GCP"
       ],
       "proposed_tags": [
-        "Google Cloud Platform"
+        "Spanner",
+        "GCP"
       ]
     },
     {
@@ -3374,7 +3480,7 @@
         "GCP"
       ],
       "proposed_tags": [
-        "Google Cloud Platform"
+        "GCP"
       ]
     },
     {
@@ -3424,7 +3530,7 @@
         "Design Patterns"
       ],
       "proposed_tags": [
-        "Java"
+        "Design Patterns"
       ]
     },
     {
@@ -3496,6 +3602,7 @@
         "Design Patterns"
       ],
       "proposed_tags": [
+        "Functional",
         "Java"
       ]
     },
@@ -3530,7 +3637,7 @@
         "Design Patterns"
       ],
       "proposed_tags": [
-        "Java"
+        "Design Patterns"
       ]
     },
     {
@@ -3618,7 +3725,7 @@
         "Architecture"
       ],
       "proposed_tags": [
-        "System Design"
+        "Architecture"
       ]
     },
     {
@@ -3634,7 +3741,7 @@
         "Architecture"
       ],
       "proposed_tags": [
-        "Architectural Styles"
+        "Architecture"
       ]
     },
     {
@@ -3650,7 +3757,7 @@
         "Architecture"
       ],
       "proposed_tags": [
-        "System Design"
+        "Architecture"
       ]
     },
     {
@@ -3666,7 +3773,7 @@
         "Architecture"
       ],
       "proposed_tags": [
-        "System Design"
+        "Architecture"
       ]
     },
     {
@@ -3682,7 +3789,7 @@
         "Architecture"
       ],
       "proposed_tags": [
-        "Architectural Styles"
+        "Architecture"
       ]
     },
     {
@@ -3714,7 +3821,7 @@
         "Architecture"
       ],
       "proposed_tags": [
-        "Architectural Styles"
+        "Architecture"
       ]
     },
     {
@@ -3730,7 +3837,7 @@
         "Architecture"
       ],
       "proposed_tags": [
-        "Architectural Styles"
+        "Architecture"
       ]
     },
     {
@@ -3746,7 +3853,7 @@
         "Architecture"
       ],
       "proposed_tags": [
-        "System Design"
+        "Architecture"
       ]
     },
     {
@@ -3762,7 +3869,7 @@
         "Finance"
       ],
       "proposed_tags": [
-        "Finances"
+        "Finance"
       ]
     },
     {
@@ -3778,7 +3885,7 @@
         "Finance"
       ],
       "proposed_tags": [
-        "Finances"
+        "Finance"
       ]
     },
     {
@@ -3794,7 +3901,7 @@
         "Finance"
       ],
       "proposed_tags": [
-        "Finances"
+        "Finance"
       ]
     },
     {
@@ -3810,7 +3917,7 @@
         "Finance"
       ],
       "proposed_tags": [
-        "Finances"
+        "Finance"
       ]
     },
     {
@@ -3858,7 +3965,8 @@
         "Developer tools"
       ],
       "proposed_tags": [
-        "Database"
+        "Tools",
+        "Developer tools"
       ]
     },
     {
@@ -3876,7 +3984,9 @@
         "MacBook"
       ],
       "proposed_tags": [
-        "MacBook"
+        "MacBook",
+        "Terminal",
+        "Developer tools"
       ]
     },
     {
@@ -3926,7 +4036,8 @@
         "MacBook"
       ],
       "proposed_tags": [
-        "MacBook"
+        "MacBook",
+        "Developer tools"
       ]
     },
     {
@@ -4024,7 +4135,8 @@
         "MacBook"
       ],
       "proposed_tags": [
-        "MacBook"
+        "MacBook",
+        "Developer tools"
       ]
     },
     {
@@ -4040,6 +4152,7 @@
         "Developer tools"
       ],
       "proposed_tags": [
+        "Terminal",
         "Developer tools"
       ]
     },
@@ -4056,6 +4169,7 @@
         "Developer tools"
       ],
       "proposed_tags": [
+        "MacBook",
         "Developer tools"
       ]
     },
@@ -4104,6 +4218,7 @@
         "Developer tools"
       ],
       "proposed_tags": [
+        "MacBook",
         "Developer tools"
       ]
     },
@@ -4122,7 +4237,9 @@
         "MacBook"
       ],
       "proposed_tags": [
-        "MacBook"
+        "MacBook",
+        "Terminal",
+        "Developer tools"
       ]
     },
     {
@@ -4570,7 +4687,8 @@
         "Developer tools"
       ],
       "proposed_tags": [
-        "Shortcuts"
+        "IntelliJ",
+        "Developer tools"
       ]
     },
     {
@@ -4586,7 +4704,8 @@
         "Developer tools"
       ],
       "proposed_tags": [
-        "Shortcuts"
+        "IntelliJ",
+        "Developer tools"
       ]
     },
     {
@@ -4602,6 +4721,7 @@
         "Developer tools"
       ],
       "proposed_tags": [
+        "IntelliJ",
         "Developer tools"
       ]
     },
@@ -4618,7 +4738,8 @@
         "Developer tools"
       ],
       "proposed_tags": [
-        "Shortcuts"
+        "IntelliJ",
+        "Developer tools"
       ]
     },
     {
@@ -4636,7 +4757,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4654,7 +4775,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4672,7 +4793,8 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Garbage Collection",
+        "Java"
       ]
     },
     {
@@ -4690,7 +4812,8 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Garbage Collection",
+        "Java"
       ]
     },
     {
@@ -4708,7 +4831,8 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Garbage Collection",
+        "Java"
       ]
     },
     {
@@ -4726,7 +4850,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4744,7 +4868,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4762,7 +4886,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4780,7 +4904,8 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Benchmarking",
+        "Java"
       ]
     },
     {
@@ -4798,7 +4923,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4816,7 +4941,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4834,7 +4959,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4852,7 +4977,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4870,7 +4995,8 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Benchmarking",
+        "Java"
       ]
     },
     {
@@ -4888,7 +5014,7 @@
         "Performance Engineering"
       ],
       "proposed_tags": [
-        "Performance Engineering"
+        "Java"
       ]
     },
     {
@@ -4906,7 +5032,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -4924,7 +5051,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -4942,7 +5070,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -4960,7 +5089,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -4978,7 +5108,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -4996,7 +5127,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5014,7 +5146,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5032,7 +5165,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5050,7 +5184,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5068,7 +5203,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5086,7 +5222,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5104,7 +5241,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5122,7 +5260,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5140,7 +5279,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5158,7 +5298,8 @@
         "Multithreading"
       ],
       "proposed_tags": [
-        "Multithreading"
+        "Multithreading",
+        "Java"
       ]
     },
     {
@@ -5174,6 +5315,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Trees",
         "Algorithms"
       ]
     },
@@ -5190,6 +5332,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Trees",
         "Algorithms"
       ]
     },
@@ -5206,6 +5349,8 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Trees",
+        "Heaps",
         "Algorithms"
       ]
     },
@@ -5222,6 +5367,8 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Trees",
+        "Graphs",
         "Algorithms"
       ]
     },
@@ -5238,6 +5385,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Trees",
         "Algorithms"
       ]
     },
@@ -5254,6 +5402,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Strings",
         "Algorithms"
       ]
     },
@@ -5270,6 +5419,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Arrays",
         "Algorithms"
       ]
     },
@@ -5318,6 +5468,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Hashmaps",
         "Algorithms"
       ]
     },
@@ -5382,6 +5533,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Bitwise",
         "Algorithms"
       ]
     },
@@ -5398,6 +5550,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Graphs",
         "Algorithms"
       ]
     },
@@ -5414,6 +5567,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Graphs",
         "Algorithms"
       ]
     },
@@ -5430,6 +5584,7 @@
         "Algorithms"
       ],
       "proposed_tags": [
+        "Graphs",
         "Algorithms"
       ]
     },
@@ -5446,6 +5601,7 @@
         "System Design"
       ],
       "proposed_tags": [
+        "Caching",
         "System Design"
       ]
     },
@@ -5462,6 +5618,7 @@
         "System Design"
       ],
       "proposed_tags": [
+        "Caching",
         "System Design"
       ]
     },
@@ -6009,8 +6166,8 @@
         "Testing"
       ],
       "proposed_tags": [
-        "Testing",
-        "JUnit"
+        "Guide",
+        "Microservices"
       ]
     },
     {
@@ -6029,8 +6186,8 @@
         "Testing"
       ],
       "proposed_tags": [
-        "Testing",
-        "JUnit"
+        "Guide",
+        "Microservices"
       ]
     },
     {
@@ -6047,8 +6204,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Java",
-        "Testing"
+        "Guide",
+        "Microservices"
       ]
     },
     {
@@ -6064,7 +6221,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "CRUD"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -6080,7 +6238,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "CRUD"
+        "REST",
+        "Microservices"
       ]
     },
     {
@@ -6096,6 +6255,7 @@
         "Microservices"
       ],
       "proposed_tags": [
+        "REST",
         "Microservices"
       ]
     },
@@ -6112,7 +6272,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -6128,7 +6289,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "CRUD"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -6144,7 +6306,7 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "CRUD"
+        "Microservices"
       ]
     },
     {
@@ -6160,6 +6322,7 @@
         "Microservices"
       ],
       "proposed_tags": [
+        "Spring Boot",
         "Microservices"
       ]
     },
@@ -6176,7 +6339,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Spring Boot"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -6192,7 +6356,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "CRUD"
+        "REST",
+        "Microservices"
       ]
     },
     {
@@ -6208,7 +6373,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "CRUD"
+        "Spring Boot",
+        "Microservices"
       ]
     },
     {
@@ -6224,7 +6390,8 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Java"
+        "Build Tools",
+        "Microservices"
       ]
     },
     {
@@ -6240,7 +6407,7 @@
         "Microservices"
       ],
       "proposed_tags": [
-        "Java"
+        "Microservices"
       ]
     }
   ],
@@ -6387,7 +6554,7 @@
           "Miscellaneous"
         ],
         "proposed_tags": [
-          "Developer tools"
+          "Miscellaneous"
         ]
       },
       {
@@ -6419,7 +6586,7 @@
           "Miscellaneous"
         ],
         "proposed_tags": [
-          "Photography"
+          "Miscellaneous"
         ]
       },
       {
@@ -6483,7 +6650,7 @@
           "Miscellaneous"
         ],
         "proposed_tags": [
-          "Photography"
+          "Miscellaneous"
         ]
       },
       {
@@ -6629,7 +6796,11 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Security",
+          "Guide",
+          "Best Practices",
+          "Microservices"
         ]
       },
       {
@@ -6645,7 +6816,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6661,7 +6833,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6677,6 +6850,8 @@
           "Microservices"
         ],
         "proposed_tags": [
+          "Security",
+          "Guide",
           "Microservices"
         ]
       },
@@ -6709,7 +6884,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6725,7 +6901,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6741,7 +6918,9 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Build Tools",
+          "Microservices"
         ]
       },
       {
@@ -6759,7 +6938,9 @@
         ],
         "proposed_tags": [
           "Spring Boot",
-          "Real-time"
+          "Real-time",
+          "Guide",
+          "Microservices"
         ]
       },
       {
@@ -6775,7 +6956,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6791,7 +6973,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6807,7 +6990,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6823,7 +7007,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6839,7 +7024,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "CRUD"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6855,7 +7041,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6871,6 +7058,7 @@
           "Microservices"
         ],
         "proposed_tags": [
+          "Spring Boot",
           "Microservices"
         ]
       },
@@ -6887,7 +7075,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "CRUD"
+          "Redis",
+          "Microservices"
         ]
       },
       {
@@ -6903,7 +7092,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6919,7 +7109,9 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Security",
+          "Microservices"
         ]
       },
       {
@@ -6935,7 +7127,7 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Java"
+          "Microservices"
         ]
       },
       {
@@ -6951,7 +7143,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "CRUD"
+          "REST",
+          "Microservices"
         ]
       },
       {
@@ -6967,7 +7160,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -6983,7 +7177,9 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Guide",
+          "Microservices"
         ]
       },
       {
@@ -6999,7 +7195,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7017,7 +7214,9 @@
         ],
         "proposed_tags": [
           "Spring Boot",
-          "Real-time"
+          "Real-time",
+          "Guide",
+          "Microservices"
         ]
       },
       {
@@ -7033,7 +7232,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7049,6 +7249,8 @@
           "Microservices"
         ],
         "proposed_tags": [
+          "Kafka",
+          "Real-time",
           "Microservices"
         ]
       },
@@ -7065,7 +7267,9 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Security",
+          "Microservices"
         ]
       },
       {
@@ -7081,7 +7285,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7097,7 +7302,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7113,7 +7319,9 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Redis",
+          "Microservices"
         ]
       },
       {
@@ -7129,7 +7337,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7145,7 +7354,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7164,8 +7374,8 @@
           "Testing"
         ],
         "proposed_tags": [
-          "Testing",
-          "JUnit"
+          "Guide",
+          "Microservices"
         ]
       },
       {
@@ -7184,8 +7394,8 @@
           "Testing"
         ],
         "proposed_tags": [
-          "Testing",
-          "JUnit"
+          "Guide",
+          "Microservices"
         ]
       },
       {
@@ -7202,8 +7412,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Java",
-          "Testing"
+          "Guide",
+          "Microservices"
         ]
       },
       {
@@ -7219,7 +7429,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "CRUD"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7235,7 +7446,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "CRUD"
+          "REST",
+          "Microservices"
         ]
       },
       {
@@ -7251,6 +7463,7 @@
           "Microservices"
         ],
         "proposed_tags": [
+          "REST",
           "Microservices"
         ]
       },
@@ -7267,7 +7480,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7283,7 +7497,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "CRUD"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7299,7 +7514,7 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "CRUD"
+          "Microservices"
         ]
       },
       {
@@ -7315,6 +7530,7 @@
           "Microservices"
         ],
         "proposed_tags": [
+          "Spring Boot",
           "Microservices"
         ]
       },
@@ -7331,7 +7547,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Spring Boot"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7347,7 +7564,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "CRUD"
+          "REST",
+          "Microservices"
         ]
       },
       {
@@ -7363,7 +7581,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "CRUD"
+          "Spring Boot",
+          "Microservices"
         ]
       },
       {
@@ -7379,7 +7598,8 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Java"
+          "Build Tools",
+          "Microservices"
         ]
       },
       {
@@ -7395,7 +7615,7 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Java"
+          "Microservices"
         ]
       }
     ],
@@ -7416,8 +7636,7 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Testing",
-          "JUnit"
+          "Spring"
         ]
       },
       {
@@ -7489,7 +7708,7 @@
           "Microservices"
         ],
         "proposed_tags": [
-          "Database"
+          "Spring"
         ]
       },
       {
@@ -7541,6 +7760,7 @@
           "System Design"
         ],
         "proposed_tags": [
+          "Consistency",
           "System Design"
         ]
       },
@@ -7621,6 +7841,7 @@
           "System Design"
         ],
         "proposed_tags": [
+          "Messaging",
           "System Design"
         ]
       },
@@ -7717,6 +7938,7 @@
           "System Design"
         ],
         "proposed_tags": [
+          "Scalability",
           "System Design"
         ]
       },
@@ -7749,6 +7971,7 @@
           "System Design"
         ],
         "proposed_tags": [
+          "API Gateway",
           "System Design"
         ]
       },
@@ -7861,6 +8084,7 @@
           "System Design"
         ],
         "proposed_tags": [
+          "CAP Theorem",
           "System Design"
         ]
       },
@@ -7893,6 +8117,7 @@
           "System Design"
         ],
         "proposed_tags": [
+          "Rate Limiting",
           "System Design"
         ]
       },
@@ -7909,6 +8134,7 @@
           "System Design"
         ],
         "proposed_tags": [
+          "Caching",
           "System Design"
         ]
       },
@@ -7925,6 +8151,7 @@
           "System Design"
         ],
         "proposed_tags": [
+          "Caching",
           "System Design"
         ]
       },
@@ -8471,7 +8698,11 @@
           "Database"
         ],
         "proposed_tags": [
-          "Google Cloud Platform"
+          "MySQL",
+          "Spanner",
+          "Migration",
+          "SQL",
+          "Database"
         ]
       },
       {
@@ -8487,6 +8718,8 @@
           "Database"
         ],
         "proposed_tags": [
+          "MySQL",
+          "SQL",
           "Database"
         ]
       },
@@ -8521,6 +8754,7 @@
           "DevOps"
         ],
         "proposed_tags": [
+          "Kubernetes",
           "DevOps"
         ]
       },
@@ -8539,7 +8773,9 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "Kubernetes",
+          "GitOps",
+          "DevOps"
         ]
       },
       {
@@ -8557,7 +8793,9 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "GitOps",
+          "Docker",
+          "DevOps"
         ]
       },
       {
@@ -8573,7 +8811,8 @@
           "DevOps"
         ],
         "proposed_tags": [
-          "GCP"
+          "Kubernetes",
+          "DevOps"
         ]
       },
       {
@@ -8591,7 +8830,9 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "Terraform",
+          "GitOps",
+          "DevOps"
         ]
       },
       {
@@ -8609,7 +8850,9 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "Jenkins",
+          "GitOps",
+          "DevOps"
         ]
       },
       {
@@ -8627,7 +8870,8 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "GitOps",
+          "DevOps"
         ]
       },
       {
@@ -8661,7 +8905,8 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "GitOps",
+          "DevOps"
         ]
       },
       {
@@ -8679,7 +8924,8 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "GitOps",
+          "DevOps"
         ]
       },
       {
@@ -8697,7 +8943,8 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "GitOps",
+          "DevOps"
         ]
       },
       {
@@ -8715,7 +8962,8 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "GitOps",
+          "DevOps"
         ]
       },
       {
@@ -8733,7 +8981,9 @@
           "GitOps"
         ],
         "proposed_tags": [
-          "GitOps"
+          "Terraform",
+          "GitOps",
+          "DevOps"
         ]
       }
     ],
@@ -8835,6 +9085,7 @@
           "Health"
         ],
         "proposed_tags": [
+          "Fitness",
           "Health"
         ]
       },
@@ -8867,6 +9118,7 @@
           "Health"
         ],
         "proposed_tags": [
+          "Yoga",
           "Health"
         ]
       },
@@ -8915,6 +9167,7 @@
           "Health"
         ],
         "proposed_tags": [
+          "Fitness",
           "Health"
         ]
       },
@@ -8931,6 +9184,8 @@
           "Health"
         ],
         "proposed_tags": [
+          "Nutrition",
+          "Guide",
           "Health"
         ]
       },
@@ -8979,6 +9234,7 @@
           "Health"
         ],
         "proposed_tags": [
+          "Yoga",
           "Health"
         ]
       },
@@ -8995,6 +9251,7 @@
           "Health"
         ],
         "proposed_tags": [
+          "Nutrition",
           "Health"
         ]
       },
@@ -9075,6 +9332,7 @@
           "Health"
         ],
         "proposed_tags": [
+          "Nutrition",
           "Health"
         ]
       }
@@ -9157,6 +9415,7 @@
           "Electronics"
         ],
         "proposed_tags": [
+          "Raspberry Pi",
           "Electronics"
         ]
       },
@@ -9173,6 +9432,7 @@
           "Electronics"
         ],
         "proposed_tags": [
+          "LED",
           "Electronics"
         ]
       },
@@ -9221,6 +9481,7 @@
           "Electronics"
         ],
         "proposed_tags": [
+          "Arduino",
           "Electronics"
         ]
       },
@@ -9237,6 +9498,7 @@
           "Electronics"
         ],
         "proposed_tags": [
+          "Sensors",
           "Electronics"
         ]
       },
@@ -9365,6 +9627,7 @@
           "Electronics"
         ],
         "proposed_tags": [
+          "Sensors",
           "Electronics"
         ]
       }
@@ -9399,6 +9662,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Arrays",
           "Algorithms"
         ]
       },
@@ -9431,6 +9695,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Stacks",
           "Algorithms"
         ]
       },
@@ -9495,6 +9760,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Searching",
           "Algorithms"
         ]
       },
@@ -9511,6 +9777,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Queues",
           "Algorithms"
         ]
       },
@@ -9559,6 +9826,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Dynamic Programming",
           "Algorithms"
         ]
       },
@@ -9575,6 +9843,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Dynamic Programming",
           "Algorithms"
         ]
       },
@@ -9607,6 +9876,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Arrays",
           "Algorithms"
         ]
       },
@@ -9623,6 +9893,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Dynamic Programming",
           "Algorithms"
         ]
       },
@@ -9639,6 +9910,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Trees",
           "Algorithms"
         ]
       },
@@ -9655,6 +9927,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Trees",
           "Algorithms"
         ]
       },
@@ -9671,6 +9944,8 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Trees",
+          "Heaps",
           "Algorithms"
         ]
       },
@@ -9687,6 +9962,8 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Trees",
+          "Graphs",
           "Algorithms"
         ]
       },
@@ -9703,6 +9980,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Trees",
           "Algorithms"
         ]
       },
@@ -9719,6 +9997,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Strings",
           "Algorithms"
         ]
       },
@@ -9735,6 +10014,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Arrays",
           "Algorithms"
         ]
       },
@@ -9783,6 +10063,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Hashmaps",
           "Algorithms"
         ]
       },
@@ -9847,6 +10128,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Bitwise",
           "Algorithms"
         ]
       },
@@ -9863,6 +10145,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Graphs",
           "Algorithms"
         ]
       },
@@ -9879,6 +10162,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Graphs",
           "Algorithms"
         ]
       },
@@ -9895,6 +10179,7 @@
           "Algorithms"
         ],
         "proposed_tags": [
+          "Graphs",
           "Algorithms"
         ]
       }
@@ -9913,7 +10198,7 @@
           "Management"
         ],
         "proposed_tags": [
-          "Miscellaneous"
+          "Management"
         ]
       },
       {
@@ -9945,7 +10230,7 @@
           "Management"
         ],
         "proposed_tags": [
-          "Miscellaneous"
+          "Management"
         ]
       },
       {
@@ -9961,7 +10246,7 @@
           "Management"
         ],
         "proposed_tags": [
-          "Miscellaneous"
+          "Management"
         ]
       },
       {
@@ -9977,7 +10262,7 @@
           "Management"
         ],
         "proposed_tags": [
-          "Miscellaneous"
+          "Management"
         ]
       },
       {
@@ -9993,7 +10278,7 @@
           "Management"
         ],
         "proposed_tags": [
-          "Miscellaneous"
+          "Management"
         ]
       }
     ],
@@ -10011,6 +10296,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Functional",
           "Java"
         ]
       },
@@ -10043,6 +10329,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Functional",
           "Java"
         ]
       },
@@ -10107,6 +10394,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Functional",
           "Java"
         ]
       },
@@ -10139,6 +10427,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Streams",
           "Java"
         ]
       },
@@ -10155,6 +10444,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Generics",
           "Java"
         ]
       },
@@ -10171,6 +10461,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Generics",
           "Java"
         ]
       },
@@ -10187,6 +10478,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Functional",
           "Java"
         ]
       },
@@ -10203,6 +10495,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Functional",
           "Java"
         ]
       },
@@ -10299,6 +10592,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Streams",
           "Java"
         ]
       },
@@ -10379,6 +10673,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Serialization",
           "Java"
         ]
       },
@@ -10395,6 +10690,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Garbage Collection",
           "Java"
         ]
       },
@@ -10427,6 +10723,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Streams",
           "Java"
         ]
       },
@@ -10445,7 +10742,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -10557,6 +10855,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Streams",
           "Java"
         ]
       },
@@ -10573,6 +10872,7 @@
           "Java"
         ],
         "proposed_tags": [
+          "Functional",
           "Java"
         ]
       },
@@ -10711,6 +11011,7 @@
           "Design Patterns"
         ],
         "proposed_tags": [
+          "Functional",
           "Java"
         ]
       },
@@ -10819,7 +11120,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -10837,7 +11138,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -10855,7 +11156,8 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Garbage Collection",
+          "Java"
         ]
       },
       {
@@ -10873,7 +11175,8 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Garbage Collection",
+          "Java"
         ]
       },
       {
@@ -10891,7 +11194,8 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Garbage Collection",
+          "Java"
         ]
       },
       {
@@ -10909,7 +11213,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -10927,7 +11231,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -10945,7 +11249,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -10963,7 +11267,8 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Benchmarking",
+          "Java"
         ]
       },
       {
@@ -10981,7 +11286,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -10999,7 +11304,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -11017,7 +11322,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -11035,7 +11340,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -11053,7 +11358,8 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Benchmarking",
+          "Java"
         ]
       },
       {
@@ -11071,7 +11377,7 @@
           "Performance Engineering"
         ],
         "proposed_tags": [
-          "Performance Engineering"
+          "Java"
         ]
       },
       {
@@ -11089,7 +11395,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11107,7 +11414,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11125,7 +11433,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11143,7 +11452,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11161,7 +11471,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11179,7 +11490,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11197,7 +11509,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11215,7 +11528,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11233,7 +11547,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11251,7 +11566,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11269,7 +11585,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11287,7 +11604,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11305,7 +11623,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11323,7 +11642,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       },
       {
@@ -11341,7 +11661,8 @@
           "Multithreading"
         ],
         "proposed_tags": [
-          "Multithreading"
+          "Multithreading",
+          "Java"
         ]
       }
     ],
@@ -11359,7 +11680,7 @@
           "GCP"
         ],
         "proposed_tags": [
-          "Google Cloud Platform"
+          "GCP"
         ]
       },
       {
@@ -11376,8 +11697,7 @@
           "GCP"
         ],
         "proposed_tags": [
-          "Microservices",
-          "Spring Boot"
+          "GCP"
         ]
       },
       {
@@ -11410,8 +11730,7 @@
           "GCP"
         ],
         "proposed_tags": [
-          "Microservices",
-          "Spring Boot"
+          "GCP"
         ]
       },
       {
@@ -11428,8 +11747,8 @@
           "GCP"
         ],
         "proposed_tags": [
-          "Microservices",
-          "Spring Boot"
+          "BigQuery",
+          "GCP"
         ]
       },
       {
@@ -11445,7 +11764,8 @@
           "GCP"
         ],
         "proposed_tags": [
-          "Google Cloud Platform"
+          "Spanner",
+          "GCP"
         ]
       },
       {
@@ -11461,7 +11781,7 @@
           "GCP"
         ],
         "proposed_tags": [
-          "Google Cloud Platform"
+          "GCP"
         ]
       }
     ],
@@ -11479,7 +11799,7 @@
           "Design Patterns"
         ],
         "proposed_tags": [
-          "Java"
+          "Design Patterns"
         ]
       },
       {
@@ -11495,7 +11815,7 @@
           "Design Patterns"
         ],
         "proposed_tags": [
-          "Java"
+          "Design Patterns"
         ]
       }
     ],
@@ -11513,7 +11833,7 @@
           "Architecture"
         ],
         "proposed_tags": [
-          "System Design"
+          "Architecture"
         ]
       },
       {
@@ -11529,7 +11849,7 @@
           "Architecture"
         ],
         "proposed_tags": [
-          "Architectural Styles"
+          "Architecture"
         ]
       },
       {
@@ -11545,7 +11865,7 @@
           "Architecture"
         ],
         "proposed_tags": [
-          "System Design"
+          "Architecture"
         ]
       },
       {
@@ -11561,7 +11881,7 @@
           "Architecture"
         ],
         "proposed_tags": [
-          "System Design"
+          "Architecture"
         ]
       },
       {
@@ -11577,7 +11897,7 @@
           "Architecture"
         ],
         "proposed_tags": [
-          "Architectural Styles"
+          "Architecture"
         ]
       },
       {
@@ -11609,7 +11929,7 @@
           "Architecture"
         ],
         "proposed_tags": [
-          "Architectural Styles"
+          "Architecture"
         ]
       },
       {
@@ -11625,7 +11945,7 @@
           "Architecture"
         ],
         "proposed_tags": [
-          "Architectural Styles"
+          "Architecture"
         ]
       },
       {
@@ -11641,7 +11961,7 @@
           "Architecture"
         ],
         "proposed_tags": [
-          "System Design"
+          "Architecture"
         ]
       }
     ],
@@ -11659,7 +11979,7 @@
           "Finance"
         ],
         "proposed_tags": [
-          "Finances"
+          "Finance"
         ]
       },
       {
@@ -11675,7 +11995,7 @@
           "Finance"
         ],
         "proposed_tags": [
-          "Finances"
+          "Finance"
         ]
       },
       {
@@ -11691,7 +12011,7 @@
           "Finance"
         ],
         "proposed_tags": [
-          "Finances"
+          "Finance"
         ]
       },
       {
@@ -11707,7 +12027,7 @@
           "Finance"
         ],
         "proposed_tags": [
-          "Finances"
+          "Finance"
         ]
       }
     ],
@@ -11757,7 +12077,8 @@
           "Developer tools"
         ],
         "proposed_tags": [
-          "Database"
+          "Tools",
+          "Developer tools"
         ]
       },
       {
@@ -11775,7 +12096,9 @@
           "MacBook"
         ],
         "proposed_tags": [
-          "MacBook"
+          "MacBook",
+          "Terminal",
+          "Developer tools"
         ]
       },
       {
@@ -11825,7 +12148,8 @@
           "MacBook"
         ],
         "proposed_tags": [
-          "MacBook"
+          "MacBook",
+          "Developer tools"
         ]
       },
       {
@@ -11923,7 +12247,8 @@
           "MacBook"
         ],
         "proposed_tags": [
-          "MacBook"
+          "MacBook",
+          "Developer tools"
         ]
       },
       {
@@ -11939,6 +12264,7 @@
           "Developer tools"
         ],
         "proposed_tags": [
+          "Terminal",
           "Developer tools"
         ]
       },
@@ -11955,6 +12281,7 @@
           "Developer tools"
         ],
         "proposed_tags": [
+          "MacBook",
           "Developer tools"
         ]
       },
@@ -12003,6 +12330,7 @@
           "Developer tools"
         ],
         "proposed_tags": [
+          "MacBook",
           "Developer tools"
         ]
       },
@@ -12021,7 +12349,9 @@
           "MacBook"
         ],
         "proposed_tags": [
-          "MacBook"
+          "MacBook",
+          "Terminal",
+          "Developer tools"
         ]
       },
       {
@@ -12069,7 +12399,8 @@
           "Developer tools"
         ],
         "proposed_tags": [
-          "Shortcuts"
+          "IntelliJ",
+          "Developer tools"
         ]
       },
       {
@@ -12085,7 +12416,8 @@
           "Developer tools"
         ],
         "proposed_tags": [
-          "Shortcuts"
+          "IntelliJ",
+          "Developer tools"
         ]
       },
       {
@@ -12101,6 +12433,7 @@
           "Developer tools"
         ],
         "proposed_tags": [
+          "IntelliJ",
           "Developer tools"
         ]
       },
@@ -12117,7 +12450,8 @@
           "Developer tools"
         ],
         "proposed_tags": [
-          "Shortcuts"
+          "IntelliJ",
+          "Developer tools"
         ]
       }
     ],

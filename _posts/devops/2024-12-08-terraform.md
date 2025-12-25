@@ -4,7 +4,9 @@ categories:
 - GitOps
 date: 2024-12-08 10:14:00
 tags:
+- Terraform
 - GitOps
+- DevOps
 title: Terraform
 ---
 

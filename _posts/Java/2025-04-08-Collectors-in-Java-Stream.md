@@ -2,6 +2,7 @@
 categories: Java
 date: 2025-04-08 02:17:00
 tags:
+- Streams
 - Java
 title: Collectors in Java Streams
 ---

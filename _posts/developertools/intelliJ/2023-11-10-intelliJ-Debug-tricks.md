@@ -2,7 +2,8 @@
 categories: Developer tools
 date: 2023-11-10 21:55:00
 tags:
-- Shortcuts
+- IntelliJ
+- Developer tools
 title: IntelliJ Idea Debug
 ---
 

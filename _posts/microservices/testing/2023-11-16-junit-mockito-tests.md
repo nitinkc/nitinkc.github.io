@@ -4,8 +4,8 @@ categories:
 - Testing
 date: 2023-11-16 18:55:00
 tags:
-- Testing
-- JUnit
+- Guide
+- Microservices
 title: Comprehensive Guide to JUnit and Mockito Testing
 ---
 

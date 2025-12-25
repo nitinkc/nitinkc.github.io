@@ -5,6 +5,7 @@ categories:
 date: 2023-10-10 15:16:00
 tags:
 - Multithreading
+- Java
 title: CompletableFutures & Asynchronous Programming
 ---
 

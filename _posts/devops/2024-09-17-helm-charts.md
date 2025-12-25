@@ -5,6 +5,7 @@ categories:
 date: 2024-09-17 23:02:00
 tags:
 - GitOps
+- DevOps
 title: Helm Charts with minikube
 ---
 

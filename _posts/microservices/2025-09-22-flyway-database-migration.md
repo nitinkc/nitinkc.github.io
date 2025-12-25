@@ -4,7 +4,7 @@ categories:
 - Microservices
 date: 2025-09-22 12:03:00
 tags:
-- Database
+- Spring
 title: Database Migration with Flyway
 ---
 

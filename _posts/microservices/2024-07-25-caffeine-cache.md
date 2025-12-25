@@ -3,6 +3,8 @@ categories: Microservices
 date: 2024-07-25 17:00:00
 tags:
 - Spring Boot
+- Redis
+- Microservices
 title: Caffeine Cache
 ---
 

@@ -1,9 +1,9 @@
 ---
-# layout: static
-title:  "Handling Multiple GCP Configs"
-date:   2021-04-08 02:15:00
 categories: GCP
-tags: [Google Cloud Platform]
+date: 2021-04-08 02:15:00
+tags:
+- GCP
+title: Handling Multiple GCP Configs
 ---
 
 {% include toc title="Index" %}

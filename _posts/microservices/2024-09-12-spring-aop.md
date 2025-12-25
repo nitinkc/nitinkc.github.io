@@ -3,6 +3,7 @@ categories: Microservices
 date: 2024-09-12 16:00:00
 tags:
 - Spring Boot
+- Microservices
 title: Aspect Oriented Programming (AOP)
 ---
 

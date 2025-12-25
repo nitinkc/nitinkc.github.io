@@ -4,7 +4,8 @@ categories:
 - Performance Engineering
 date: 2024-02-11 00:12:00
 tags:
-- Performance Engineering
+- Garbage Collection
+- Java
 title: Garbage Collections
 ---
 

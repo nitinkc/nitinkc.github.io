@@ -5,6 +5,7 @@ categories:
 date: 2022-01-22 21:55:00
 tags:
 - MacBook
+- Developer tools
 title: 'MacBook : Useful Settings'
 ---
 

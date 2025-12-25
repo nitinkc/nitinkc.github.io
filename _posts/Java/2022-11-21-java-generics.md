@@ -2,6 +2,7 @@
 categories: Java
 date: 2022-11-21 08:30:00
 tags:
+- Generics
 - Java
 title: Generics
 ---

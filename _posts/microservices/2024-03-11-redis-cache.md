@@ -2,7 +2,8 @@
 categories: Microservices
 date: 2024-03-06 00:45:00
 tags:
-- CRUD
+- Redis
+- Microservices
 title: Caching with Redis
 ---
 

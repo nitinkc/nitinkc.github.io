@@ -2,7 +2,8 @@
 categories: Microservices
 date: 2025-06-03 11:50:00
 tags:
-- CRUD
+- Spring Boot
+- Microservices
 title: SpringBoot Interview - Deep Dive
 ---
 

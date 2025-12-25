@@ -4,8 +4,8 @@ categories:
 - Testing
 date: 2023-11-24 03:53:00
 tags:
-- Testing
-- JUnit
+- Guide
+- Microservices
 title: 'PowerMock Testing Guide: When Standard Mocking Isn''t Enough'
 ---
 

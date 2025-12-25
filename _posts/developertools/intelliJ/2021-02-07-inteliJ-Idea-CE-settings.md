@@ -4,6 +4,7 @@ date: 2021-02-07 02:15:00
 sidebar:
   nav: algo
 tags:
+- IntelliJ
 - Developer tools
 title: IntelliJ Idea settings
 ---

@@ -2,6 +2,7 @@
 categories: Microservices
 date: 2023-09-15 21:30:00
 tags:
+- Spring Boot
 - Microservices
 title: Exception Handling in Spring
 ---

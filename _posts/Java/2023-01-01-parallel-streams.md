@@ -2,6 +2,7 @@
 categories: Java
 date: 2023-01-01 18:10:00
 tags:
+- Streams
 - Java
 title: Parallel Streams
 ---

@@ -5,6 +5,7 @@ categories:
 date: 2021-02-10 02:15:00
 tags:
 - MacBook
+- Developer tools
 title: Configuring a new MacBook
 ---
 

@@ -4,8 +4,7 @@ categories:
 - Microservices
 date: 2025-09-22 12:01:00
 tags:
-- Testing
-- JUnit
+- Spring
 title: Advanced Testing in Spring Boot
 ---
 

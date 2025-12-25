@@ -2,7 +2,7 @@
 categories: Design Patterns
 date: 2022-11-22 08:30:00
 tags:
-- Java
+- Design Patterns
 title: Design Principles
 ---
 

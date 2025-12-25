@@ -2,6 +2,7 @@
 categories: Developer tools
 date: 2016-07-31 15:04:00
 tags:
+- MacBook
 - Developer tools
 title: Upgrading the Macbook Pro - Model A1278
 ---

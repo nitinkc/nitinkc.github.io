@@ -3,6 +3,8 @@ categories: Microservices
 date: 2022-10-11 20:35:00
 tags:
 - Spring Boot
+- Build Tools
+- Microservices
 title: Gradle - build & tool
 ---
 

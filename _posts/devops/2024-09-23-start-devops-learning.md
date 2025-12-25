@@ -5,6 +5,7 @@ categories:
 date: 2024-09-23 20:14:00
 tags:
 - GitOps
+- DevOps
 title: DevOps Learning - Starting point
 ---
 

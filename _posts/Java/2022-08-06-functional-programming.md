@@ -2,6 +2,7 @@
 categories: Java
 date: 2022-08-06 08:30:00
 tags:
+- Functional
 - Java
 title: Functional Programming Concepts
 ---

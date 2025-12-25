@@ -2,7 +2,7 @@
 categories: Architecture
 date: 2024-09-15 20:02:00
 tags:
-- System Design
+- Architecture
 title: Sidecar Pattern
 ---
 

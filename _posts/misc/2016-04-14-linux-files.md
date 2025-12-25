@@ -2,7 +2,7 @@
 categories: Miscellaneous
 date: 2016-04-14 20:11:00
 tags:
-- Developer tools
+- Miscellaneous
 title: Linux Files & Commands
 ---
 

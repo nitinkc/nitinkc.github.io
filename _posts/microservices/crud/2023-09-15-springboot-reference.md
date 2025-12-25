@@ -2,7 +2,8 @@
 categories: Microservices
 date: 2023-09-15 11:50:00
 tags:
-- CRUD
+- Spring Boot
+- Microservices
 title: SpringBoot Reference
 ---
 

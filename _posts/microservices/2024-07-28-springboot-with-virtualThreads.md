@@ -3,6 +3,7 @@ categories: Microservices
 date: 2024-07-28 17:00:00
 tags:
 - Spring Boot
+- Microservices
 title: SpringBoot with Virtual Threads
 ---
 

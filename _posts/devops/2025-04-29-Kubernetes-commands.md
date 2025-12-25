@@ -4,7 +4,9 @@ categories:
 - GitOps
 date: 2025-04-29 05:00:00
 tags:
+- Kubernetes
 - GitOps
+- DevOps
 title: Kubernetes Commands
 ---
 

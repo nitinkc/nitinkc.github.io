@@ -5,6 +5,7 @@ categories:
 date: 2024-08-08 20:17:00
 tags:
 - Multithreading
+- Java
 title: Thread Creation
 ---
 

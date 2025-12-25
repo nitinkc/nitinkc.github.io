@@ -3,6 +3,7 @@ categories: Microservices
 date: 2022-02-10 20:55:00
 tags:
 - Spring Boot
+- Microservices
 title: Dependency Injection
 ---
 

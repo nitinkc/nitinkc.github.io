@@ -2,8 +2,8 @@
 categories: GCP
 date: 2022-08-15 20:04:00
 tags:
-- Microservices
-- Spring Boot
+- BigQuery
+- GCP
 title: 'Google BigQuery '
 ---
 

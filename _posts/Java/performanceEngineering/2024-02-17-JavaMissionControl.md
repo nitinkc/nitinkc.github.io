@@ -4,7 +4,8 @@ categories:
 - Performance Engineering
 date: 2024-02-12 21:30:00
 tags:
-- Performance Engineering
+- Benchmarking
+- Java
 title: Java Microbenchmark Harness - JMH
 ---
 

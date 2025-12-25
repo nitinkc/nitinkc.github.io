@@ -1,8 +1,10 @@
 ---
-title:  "DELETE REST Calls"
-date:   2023-09-15 21:30:00
 categories: Spring Microservices
-tags: [CRUD]
+date: 2023-09-15 21:30:00
+tags:
+- REST
+- Microservices
+title: DELETE REST Calls
 ---
 
 {% include toc title="Index" %}

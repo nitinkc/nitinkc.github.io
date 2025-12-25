@@ -1,10 +1,12 @@
 ---
-# layout: static
-title:  "Spanner Database"
-date:   2021-04-08 02:15:00
 categories: GCP
-tags: [Google Cloud Platform]
+date: 2021-04-08 02:15:00
+tags:
+- Spanner
+- GCP
+title: Spanner Database
 ---
+
 {% include toc title="Index" %}
 
 For making full use of the free tier, The Database and it's corrosponding

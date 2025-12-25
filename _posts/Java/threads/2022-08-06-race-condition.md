@@ -5,6 +5,7 @@ categories:
 date: 2022-08-06 08:30:00
 tags:
 - Multithreading
+- Java
 title: Synchronization - Race Condition & Critical Section
 ---
 

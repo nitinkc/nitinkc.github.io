@@ -2,6 +2,7 @@
 categories: Developer tools
 date: 2022-08-13 10:41:00
 tags:
+- MacBook
 - Developer tools
 title: 'MacBook : Brew Package Migration'
 ---

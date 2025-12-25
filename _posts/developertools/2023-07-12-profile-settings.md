@@ -5,6 +5,8 @@ categories:
 date: 2023-07-12 22:10:00
 tags:
 - MacBook
+- Terminal
+- Developer tools
 title: 'MacBook : Configuring shell profile'
 ---
 

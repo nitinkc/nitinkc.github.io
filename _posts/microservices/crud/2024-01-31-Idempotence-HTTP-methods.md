@@ -2,6 +2,7 @@
 categories: Microservices
 date: 2023-01-31 03:53:00
 tags:
+- REST
 - Microservices
 title: Idempotence & HTTP Methods - Designing RESTful URI's
 ---
