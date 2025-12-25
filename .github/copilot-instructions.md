@@ -40,6 +40,14 @@ This repository is a personal Jekyll site built on the "Minimal Mistakes" theme.
 
 ## Helpful in-repo reference
 - Markdown reference: `_posts/developertools/2022-01-19-markdown-reference.md` — useful for examples of front-matter, classes (e.g., `wide`), and common Markdown/Liquid patterns used across posts.
+- image related post: `_posts/developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings.md`
+- table related:
+  - All tables should be left aligned by default.
+- code related :
+  - All code blocks should have syntax highlighting where possible.
+  - Use backticks for inline code snippets.
+  - For including gists, use the `{% gist username/gist_id %}` Liquid tag.
+- latex best usage : `_posts/Algo/2024-07-14-dynamic-programming-2.md`
 
 ## Safety and style
 - Keep Liquid logic simple in templates; heavy logic should go into small Ruby/Jekyll plugins or the `scripts/` helpers.

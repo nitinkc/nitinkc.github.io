@@ -107,6 +107,14 @@ using Spaceship jekyll plugin
 ![](https://www.youtube.com/watch?v=I6jB0nM9SKU)
 ```
 
+## videos in a table
+```markdown
+| Videos                                           | 
+|:-------------------------------------------------|
+| ![](https://www.youtube.com/watch?v=q2T9NlROLqw) |
+| ![](https://www.youtube.com/watch?v=DHwNR7h3k5Y) |
+```
+
 # Insert Table
 
 **Jekyll Spaceship plugin Table** [https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#1-table-usage](https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#1-table-usage)
