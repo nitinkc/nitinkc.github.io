@@ -44,3 +44,9 @@ This repository is a personal Jekyll site built on the "Minimal Mistakes" theme.
 ## Safety and style
 - Keep Liquid logic simple in templates; heavy logic should go into small Ruby/Jekyll plugins or the `scripts/` helpers.
 - Preserve existing HTML structure and CSS class names to avoid breaking layout inherited from Minimal Mistakes.
+
+## Category and Tags - Taxonomy usages
+- Categories are primarily used for URL structure and organization; each post should ideally have one canonical category.
+- Tags are for finer-grained topics; multiple tags per post are common.
+- Use `scripts/*.py` to audit and maintain consistent taxonomy usage across
+- taxonomy-proposals.csv was used to propose new categories/tags but is not actively maintained.
