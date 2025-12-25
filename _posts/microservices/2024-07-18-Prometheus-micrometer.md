@@ -1056,6 +1056,7 @@ volumes:
 ## Alert Rules Configuration
 
 ### alert_rules.yml
+{% raw %}
 ```yaml
 groups:
   - name: spring-boot-alerts
@@ -1100,6 +1101,7 @@ groups:
           summary: "Application is down"
           description: "{{ $labels.instance }} has been down for more than 1 minute"
 ```
+{% endraw %}
 
 # Prometheus Metrics Output
 
