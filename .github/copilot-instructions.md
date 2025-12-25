@@ -4,6 +4,7 @@ This repository is a personal Jekyll site built on the "Minimal Mistakes" theme.
 ## What an AI assistant should know
 - Site generator: Jekyll (run via `bundle exec jekyll serve` / `bundle exec jekyll build`). See `Gemfile` and `README.md` for recommended commands.
 - Theme: Minimal Mistakes (local theme files live in the repo). `package.json` version is used in `Rakefile` tasks.
+  - custom css is in `assets/css/main.scss` and built via `rake css`.
 - Config: `_config.yml` contains site-wide settings (permalinks, plugins, processors like mermaid/plantuml). Modify this for global changes.
 - Templates: HTML/Liquid templates are under `_includes/` and `_layouts/`. Small helper partials are used widely (e.g., `head.html`, `scripts.html`).
 
@@ -48,6 +49,10 @@ This repository is a personal Jekyll site built on the "Minimal Mistakes" theme.
   - Use backticks for inline code snippets.
   - For including gists, use the `{% gist username/gist_id %}` Liquid tag.
 - latex best usage : `_posts/Algo/2024-07-14-dynamic-programming-2.md`
+- video embedding:
+  - Single video: Use `![](youtube_url)` - Jekyll Spaceship plugin handles it
+  - Multiple videos side-by-side: See `_posts/Java/2023-10-20-java-tests.md` for grid layout example
+  - Videos in tables are not recommended (display too small)
 
 ## Safety and style
 - Keep Liquid logic simple in templates; heavy logic should go into small Ruby/Jekyll plugins or the `scripts/` helpers.
