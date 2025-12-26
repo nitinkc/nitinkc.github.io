@@ -5,9 +5,7 @@ categories:
 - Algorithms
 tags:
 - Data Structures
-- Implementation
-- Java
-- Tutorial
+- Graphs
 ---
 
 {% include toc title="Index" %}

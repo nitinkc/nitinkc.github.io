@@ -762,3 +762,169 @@ x & ~(x - 1); // Isolates the rightmost 1-bit of y and sets all other bits to 0
 x = (x & (x - 1));
 parity = (parity ^ 1);
 ```
+
+---
+
+# Boolean Logic
+
+Using switch statements instead of multiple if statements:
+
+{% gist nitinkc/96387a9700c9c58185a969ae48bfdc45 %}
+
+---
+
+# For Loop Traps
+
+```java
+// If length = 9, loop will run 0, 2, 4, 6... 8 is never included
+for (int i = 0; i < arr.length; i = i + 2) { ... }
+
+// Compare current with previous
+for (int i = 1; i < num.length; i++) {
+    if (num[i - 1] == num[i]) return true;
+}
+
+// Compare current with next
+for (int i = 0; i < num.length - 1; i++) {
+    if (num[i] == num[i + 1]) return true;
+}
+
+// Print alphabets from 'a' to 'z'
+for (char i = 'a'; i <= 'z'; i++) {
+    System.out.println(i);
+}
+```
+
+{% gist nitinkc/382798a984e00a732d86a12a6637e0a2 %}
+
+---
+
+# Command Line Arguments
+
+Reading, parsing, and type checking command line inputs:
+
+```java
+// Assuming 2 command line arguments: <Name> <Age>
+if (args.length == 0 || args.length > 2) {
+    System.err.println("Incorrect Number of arguments passed");
+    System.exit(-1);
+}
+
+String name = args[0];
+int age = Integer.parseInt(args[1]);
+```
+
+---
+
+# Running Time Measurement
+
+```java
+// Get current time in milliseconds (from Jan 1, 1970)
+long startTime = System.currentTimeMillis();
+// ... code to measure ...
+long endTime = System.currentTimeMillis();
+System.out.println("Time taken: " + (endTime - startTime) + " ms");
+
+// For more precise measurements, use nanoTime
+long startNano = System.nanoTime();
+// ... code to measure ...
+long endNano = System.nanoTime();
+System.out.println("Time taken: " + (endNano - startNano) + " ns");
+```
+
+---
+
+# Random Numbers
+
+```java
+import java.util.Random;
+
+// Math.random() - returns a double [0.0, 1.0)
+double randomValue = Math.random();
+System.out.println("Random value: " + randomValue);
+
+// Using Random class
+Random generator = new Random(); // or new Random(123) with seed
+int diceThrow = generator.nextInt(6) + 1; // Range 1 to 6 (dice)
+
+generator.nextInt(); // Range: -2^31 to 2^31 - 1
+generator.nextDouble(); // Range: 0.0 to 1.0
+```
+
+---
+
+# Java Input and Output
+
+## Keyboard Input
+
+```java
+import java.util.Scanner;
+
+Scanner in = new Scanner(System.in);
+
+/* Input Problem: Mix of int and strings
+   Extra invocation to get rid of previous \n */
+int n = in.nextInt();
+in.nextLine(); // To avoid INPUT Problem - consume the newline
+String str = in.nextLine();
+
+in.nextLine(); // Reads entire line
+in.next(); // Reads next character up to (but not including) space
+
+/* NO METHOD TO READ A SINGLE CHARACTER */
+char a = in.nextLine().charAt(0);
+```
+
+## File Input
+
+```java
+import java.io.File;
+import java.util.Scanner;
+
+// Open the File
+File myFile = new File("/path/to/file.txt");
+Scanner in = new Scanner(myFile);
+
+// Read from the File
+String str = in.nextLine();
+
+// OR read all lines
+while (in.hasNext()) {
+    System.out.println(in.nextLine());
+}
+
+// Close the File
+in.close();
+```
+
+## File Output
+
+### Writing Text to File
+```java
+import java.io.PrintWriter;
+import java.io.FileWriter;
+
+final String FILENAME = "output.txt";
+
+// Overwrite mode (surrounding with try-catch recommended)
+PrintWriter output = new PrintWriter(FILENAME);
+output.println("Line 1");
+output.println("Line 2");
+output.close();
+
+// Append mode (to avoid erasing existing files)
+PrintWriter pw = new PrintWriter(new FileWriter("output.txt", true));
+pw.println("Appended line");
+pw.close();
+```
+
+### Appending Text to File
+```java
+FileWriter fw = new FileWriter("Names.txt", true);
+PrintWriter pw = new PrintWriter(fw);
+pw.println("Appended content");
+pw.close();
+
+// OR in one line
+PrintWriter pw = new PrintWriter(new FileWriter("Names.txt", true));
+```
