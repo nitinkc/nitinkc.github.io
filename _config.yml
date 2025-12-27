@@ -87,10 +87,10 @@ search                   : true # true, false (default)
 search_full_content      : true # true, false (default)
 search_provider          : google # lunr (default), algolia, google
 algolia:
-  application_id         : # YOUR_APPLICATION_ID
-  index_name             : # YOUR_INDEX_NAME
-  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : # true (default), false
+  application_id         : PH0MFL12HG
+  index_name             : nitinkc_github_io
+  search_only_api_key    : cf51e4ad975e397ff87ed2258ba6a667
+  powered_by             : true # true (default), false
 google:
   search_engine_id       : fa68a460423affeb0
   instant_search         : true # false (default), true
@@ -213,6 +213,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-remote-theme
   - jekyll-spaceship
+  - jekyll-algolia
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -224,7 +225,7 @@ whitelist:
   - jekyll-seo-tag
   - jekyll-remote-theme
   - jekyll-spaceship
-
+  - jekyll-algolia
 
 # Archives
 #  Type

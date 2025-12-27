@@ -7,6 +7,13 @@ require "shellwords"
 require "time"
 require "yaml"
 
+# Load jekyll-algolia if available
+begin
+  require "jekyll/algolia"
+rescue LoadError
+   jekyll-algolia not installed
+end
+
 task :default => %i[copyright changelog js version]
 
 package_json = JSON.parse(File.read("package.json"))
@@ -201,4 +208,17 @@ file "docs/_pages/home.md" => "package.json" do |t|
   content = File.read(t.name)
   content = content.gsub(/(\breleases\/tag\/|Latest release v)[\d.]+/, '\1' + package_json["version"])
   File.write(t.name, content)
+end
+
+# Algolia indexing task
+desc "Index site content to Algolia"
+task :algolia do
+  if ENV['ALGOLIA_API_KEY'].nil? || ENV['ALGOLIA_API_KEY'].empty?
+    puts "Error: ALGOLIA_API_KEY environment variable is not set"
+    puts "Usage: ALGOLIA_API_KEY='your_admin_key' rake algolia"
+    exit 1
+  end
+  
+  puts "Indexing site to Algolia..."
+  sh "bundle exec jekyll algolia"
 end

@@ -31,6 +31,7 @@ group :jekyll_plugins do
   gem "octopress-debugger"
   gem "kramdown-syntax-coderay"
   gem 'jekyll-spaceship'
+  gem 'jekyll-algolia', '~> 1.0'
 
 end
 
