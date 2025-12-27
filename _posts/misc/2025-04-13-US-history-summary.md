@@ -33,6 +33,8 @@ tags:
   - Charter colonies
 - **1684**: Massachusetts changed from charter colony to royal colony
 
+![13 Colonies Map](/assets/images/the13colonies.png){: .align-center} 
+
 ## Colonial Operations and Conflicts
 
 - Smooth operations until mid-1750s until the French and Indian War
@@ -73,3 +75,9 @@ tags:
 ## End of the Revolutionary War
 
 - **October 19, 1781**: George Washington defeated British General Charles Cornwallis at Yorktown, VA after six long years of war
+
+## US Territorial Evolution
+
+<iframe src="https://en.wikipedia.org/wiki/Territorial_evolution_of_the_United_States#/media/File:United_States_evolution_fast.gif" width="800" height="600" frameborder="0"></iframe>
+
+[Source: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:United_States_evolution_fast.gif)

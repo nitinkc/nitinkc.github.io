@@ -38,8 +38,8 @@ Personal Jekyll site built on Minimal Mistakes theme.
 
 ```bash
 # Clean generated files
-bundle exec jekyll clean
 rm -rf _site
+bundle exec jekyll clean
 
 # Build site
 bundle exec jekyll build
