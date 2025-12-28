@@ -96,6 +96,49 @@ Run the provided setup script for automated installation:
 
 ## Site Customization
 
+### Search Features
+
+Three search providers available (configured in `_config.yml`):
+
+| Provider | Setup | Quality | Notes |
+|----------|-------|---------|-------|
+| **Lunr** (default) | None | Basic | Client-side, works offline |
+| **Google** | Requires CSE | Excellent | Auto-indexed by Google |
+| **Algolia** | Requires account + indexing | Excellent | Advanced features, may need SSL fixes |
+
+**Quick switch:** Edit `_config.yml` and change `search_provider` to `lunr`, `google`, or `algolia`
+
+<details>
+<summary>Configuration examples</summary>
+
+**Lunr (default):**
+```yaml
+search_provider: lunr
+```
+
+**Google Custom Search:**
+```yaml
+search_provider: google
+google:
+  search_engine_id: YOUR_SEARCH_ENGINE_ID
+```
+Setup: https://programmablesearchengine.google.com/
+
+**Algolia:**
+```yaml
+search_provider: algolia
+algolia:
+  application_id: YOUR_APPLICATION_ID
+  index_name: YOUR_INDEX_NAME
+  search_only_api_key: YOUR_SEARCH_ONLY_API_KEY
+```
+
+Index content:
+```bash
+ALGOLIA_API_KEY='admin_key' bundle exec jekyll algolia
+```
+</details>
+
 ### Front Matter Options
 
 Expand content width (removes TOC sidebar):

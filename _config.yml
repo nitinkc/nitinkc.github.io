@@ -349,6 +349,7 @@ jekyll-spaceship:
       theme: default
     src: https://mermaid.ink/img/
   media-processor:
+    mode: default  # Prevents pre-fetching that causes SSL warnings
     default:
       id: 'media-{id}'
       class: 'media'

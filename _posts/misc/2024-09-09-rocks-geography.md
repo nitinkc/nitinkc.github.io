@@ -11,6 +11,10 @@ tags:
 
 ![](https://static.vecteezy.com/system/resources/previews/000/097/773/original/vector-geologic-time-of-grand-canyon.jpg)
 
+
+
+![](https://www.vagabondgeology.com/uploads/3/4/1/2/3412046/__0_to_650_w_animals.jpg)
+
 # Arches National Park
 
 ![](https://www.nps.gov/arch/learn/nature/images/Arches-Geographic-Strata-with-Color-Draft.png)

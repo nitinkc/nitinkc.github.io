@@ -228,6 +228,84 @@ Traditional using subscript and super-script
 ### Spaceship - LaTex, Table, Media, Math, Plant UML
 [Jeykll Spaceship](https://github.com/jeffreytse/jekyll-spaceship?tab=readme-ov-file#table-of-contents)
 
+# Site Search Configuration
+
+The site supports three search providers configured in `_config.yml`:
+
+## Search Providers
+
+### 1. Lunr (Default)
+Client-side search with no external dependencies.
+
+```yaml
+search_provider: lunr
+```
+
+**Pros:**
+- No setup required
+- Fast and privacy-friendly
+- Works offline
+
+**Cons:**
+- Basic relevance ranking
+- Limited to client-side indexing
+
+### 2. Google Custom Search
+Powered by Google's search engine.
+
+```yaml
+search_provider: google
+google:
+  search_engine_id: YOUR_SEARCH_ENGINE_ID
+```
+
+**Pros:**
+- Excellent search quality
+- Automatic indexing (Google crawls your site)
+- Familiar interface
+
+**Cons:**
+- Requires Google Custom Search Engine setup
+- External dependency
+
+**Setup:** Create a Custom Search Engine at https://programmablesearchengine.google.com/
+
+### 3. Algolia
+Advanced search platform with customizable ranking.
+
+```yaml
+search_provider: algolia
+algolia:
+  application_id: YOUR_APPLICATION_ID
+  index_name: YOUR_INDEX_NAME
+  search_only_api_key: YOUR_SEARCH_ONLY_API_KEY
+  powered_by: true
+```
+
+**Pros:**
+- Excellent search quality
+- Fast and highly customizable
+- Advanced features (facets, filters)
+
+**Cons:**
+- Requires manual indexing
+- More complex setup
+
+**Indexing:**
+```bash
+# Index your content to Algolia
+ALGOLIA_API_KEY='your_admin_api_key' bundle exec jekyll algolia
+```
+
+**Setup:** Create an account at https://www.algolia.com/
+
+## Switching Between Providers
+
+1. Edit `_config.yml`
+2. Change `search_provider` to `lunr`, `google`, or `algolia`
+3. Add provider-specific configuration if needed
+4. Rebuild your site: `bundle exec jekyll serve`
+
 # Diagrams
 [Plant UML Sequence Diagram](https://plantuml.com/sequence-diagram)
 

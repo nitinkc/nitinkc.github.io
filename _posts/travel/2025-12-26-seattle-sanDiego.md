@@ -20,3 +20,13 @@ tags:
 
 ##### Oregon
 - Tillamook Creamery, 4165 N Hwy 101, Tillamook, OR 97141
+
+
+# Tentative - visit north of SFO towards Crater Lake
+- From Acorn Campground to Buckhorn Campground - 2 hr 49 min (172 miles)
+- From Fremont to Buckhorn Campground - North of Fremont - 2 hr 56 mins, 189 miles
+- From Buckhorn to Crator Lake - 5 hr 5 min (278 miles)
+    - North Entrance Road and Rim Drive are CLOSED for the season.
+    - Alert 2, Severity closure, North Entrance Road and Rim Drive are CLOSED for the season.
+      - The North Entrance Road and East & West Rim Drives are now closed for the season a few The roads will not open again until mid to late June or July 2025. All other roads are open.
+
