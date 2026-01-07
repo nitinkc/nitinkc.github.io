@@ -3,6 +3,9 @@
 Personal Jekyll site built on Minimal Mistakes theme.
 
 ## Quick Start
+```shell
+rm -rf ./_site && bundle exec jekyll serve
+```
 
 ### Prerequisites
 - Ruby (3.0+)

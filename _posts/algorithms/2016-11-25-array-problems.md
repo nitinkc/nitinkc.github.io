@@ -15,46 +15,51 @@ For Arrays, Strings and Lists
 * For Array, **length** is a field - `array.length`
 * For String, **length** is a method - `str.length()`
 * List has a **size** method = `list.size()`
+* `List<int[]> list= new ArrayList<>()` List of pairs.
+  * `list.sort((a,b) -> a[0] - b[0])` Sort ascending. sorting by descending , use `b[0] - a[0]`
 
 ```java
 int[] a = new int[3]; // use [] for array instead of ()
 int[] a = new int[] {1, 2, 3};
 int[] b = {1, 2, 3}; // Same as above
 ```
+
 # Single Pointer Technique
 - Iterate through LEFT
   - `int idx = 0`
 - Iterate through RIGHT
     - `int idx = arr.length-1`
     - `int idx = list.size()-1`
-- Use an ADDITIONAL ARRAY of same size (Space complexity O(N), where N = size of
-  the array
+- Use an ADDITIONAL ARRAY of same size (Space complexity O(N), where N = size of the array
 - Optimize the additional Array to use a single variable
 
 # Two Pointer Technique
-- One begins from left/start, other from the right end.
-- The while loop with `left < right`
-  ```java
-  int left = 0, right = str.length() - 1;
-  while(left < right){
-      left++;
-      right--;
-    }
-  ```
-- The for loop
-  ```java
-  for(int low = 0, high = s.length-1; low < high; low++,high--){
-  ```
+**Summary:**
+  - problems that deals with "pairs of elements" that runs in linear time
+  - One begins from left/start, other from the right end.
+  - The while loop with `left < right`
+    ```java
+    int left = 0, right = str.length() - 1;
+    while(left < right){
+        left++;
+        right--;
+      }
+    ```
+  - The for loop : DO NOT PREFER
+    ```java
+    for(int low = 0, high = s.length-1; low < high; low++,high--){
+    ```
   
 #### 2 pointer movements with/without if condition.
 {% gist nitinkc/8a3eb81f7ccf93b013a2fe8455a04703 %}
 
+##### Container with most water
+length is the diff in indices and height is the min of the 2 values
+`area = (rt-lt) * Math.min(heights[lt], heights[rt]);`
 [Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/){:target="_blank"}
 {% gist nitinkc/00b4970b6d3d13d6b52c7c57cc06af41 %}
 
-#### 2-Sum Problem  
-
-##### **count** of given Sum in all pairs in the Array
+##### 2-Sum Problem - **count** of given Sum in all pairs in the Array
 
 **Checks**
 ```java
@@ -69,7 +74,8 @@ if (array size < 2)
 makes sense
 {% gist nitinkc/a084561f90c18fba94ae9aab66b2d72a %}
 
-##### 2-Sum with indices to be returned
+**2-Sum with indices to be returned**
+
 **Approach 3** : Hash map and variant approach
 - 2-Sum problem with index to be returned
 - [Two Sum](https://leetcode.com/problems/two-sum/description/){:target="_blank"}
@@ -78,11 +84,10 @@ makes sense
 {% gist nitinkc/e68ab190b3ae9babcb140cb02b0525b2 %}
 - {% gist nitinkc/216dfdbb277577d5285334cf82c6f626 %}
 
-
-### Search in Rotated Sorted Array
+##### Search in Rotated Sorted Array
 {% gist nitinkc/f0ac783652a74a2fdcdf91b0285da6f7 %}
 
-### Left & Right Array approach
+# Left & Right Array approach
 Create two temporary arrays, 
 - one left that takes computation of elements to the left, upto the current element. 
 - Same for Right array.
@@ -98,7 +103,6 @@ Create two temporary arrays,
 {% gist nitinkc/2f07a7eab2eaffc1609fbc7211eadb1a %}
 
 ##### Trapping Rain Water
-
 [Trapping Rain Water Problem](https://leetcode.com/problems/trapping-rain-water/){:target="_blank"}
 
 ```java

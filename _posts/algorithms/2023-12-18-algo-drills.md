@@ -79,7 +79,7 @@ deque.size();         // Returns size
 deque.clear();        // Clears deque
 ```
 
-## PriorityQueue Declaration
+## PriorityQueue (Heap) Declaration
 ```java
 Queue<Integer> pq = new PriorityQueue<>();
 pq.add(10);              // Add 10
@@ -100,10 +100,13 @@ Set<String> treeSet = new TreeSet<>(Comparator.reverseOrder());
 ## Map Declaration
 ```java
 Map<String, Integer> map = new HashMap<>();
-Map<Integer, String> map = new TreeMap<>(Comparator.reverseOrder());
+Map<String, Integer> map = new TreeMap<>(Comparator.reverseOrder());
 
 boolean containsValue = map.containsValue(3);
 boolean containsKey = map.containsKey("Harry"); // returns true if the key is in the map, false otherwise
+
+List<Integer> allValues = map.values(); // Returns a Collection view of the values contained in this map.
+Set<String> allKeys = map.keySet(); // Returns a Set view of the keys contained in this map.
 
 // Iterate over the map using entrySet()
 for (Map.Entry<String, Integer> entry : map.entrySet()) {
@@ -585,31 +588,7 @@ while (itr.hasNext()) {
 }
 ```
 
-# Heap
-
-### Declaring Min and Max Heaps
-```java
-// Primitive Types
-Queue<Integer> pq = new PriorityQueue<>(); // Default Natural Sorting Order
-Queue<Integer> pq = new PriorityQueue<>(Comparator.naturalOrder()); // Min Heap
-Queue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder()); // Max Heap
-```
-
-### Heap Methods
-```java
-// Heap methods
-pq.offer(100);
-pq.poll(); // Pops the root of the heap
-```
-
-### Heap/Priority Queue of Type T
-```java
-// For Type T
-Queue<Employee> heapMax = new PriorityQueue<>(Comparator.comparing(Employee::getAge) // If the employee age is same
-                                                .thenComparing(Employee::getSalary)); // Natural Sort Order
-```
-
-## Queue
+# Queue
 
 ### Queue Methods
 * `offer()`: Enqueue (add) elements to the queue
@@ -626,6 +605,30 @@ Queue<String> queue = new LinkedList<>();
 queue.offer("Apple");
 queue.offer("Banana");
 queue.offer("Orange");
+```
+
+## Heap
+
+### Declaring Min and Max Heaps
+```java
+// Primitive Types
+Queue<Integer> pq = new PriorityQueue<>(); // Default Natural Sorting Order
+Queue<Integer> pq = new PriorityQueue<>(Comparator.naturalOrder()); // Min Heap
+Queue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder()); // Max Heap
+
+Queue<int[]> heap = new PriorityQueue<>((a, b) -> a[0] - b[0]);//Min heap, increasing order
+Queue<int[]> heap = new PriorityQueue<>((int[] a, int[] b) -> b[0] - a[0]);//Max heap, decreasing order
+
+//Heap/Priority Queue of Type T
+Queue<Employee> heapMax = new PriorityQueue<>(Comparator.comparing(Employee::getAge) // If the employee age is same
+                                                .thenComparing(Employee::getSalary)); // Natural Sort Order
+```
+
+### Heap Methods
+```java
+// Heap methods
+pq.offer(100);
+pq.poll(); // Pops the root of the heap
 ```
 
 # Stack

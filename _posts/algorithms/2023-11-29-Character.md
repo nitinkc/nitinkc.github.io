@@ -51,6 +51,12 @@ Identify if a character is alphanumeric or **Skipping punctuation marks**
 
 ```java
 Character.isLetterOrDigit(str.charAt(i))
+
+public boolean alphaNum(char c) {
+  return (c >= 'A' && c <= 'Z' ||
+      c >= 'a' && c <= 'z' ||
+      c >= '0' && c <= '9');
+}
 ```
 
 {% gist nitinkc/eb96b7d58398b277e97e8df6b6f22e0a %}
