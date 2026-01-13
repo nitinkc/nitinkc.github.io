@@ -7,7 +7,7 @@ tags:
 - Optimization
 ---
 
-{% include toc title="Index" %}---
+{% include toc title="Index" %}
 
 The common characteristic :
 

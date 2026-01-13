@@ -9,7 +9,13 @@ tags:
 
 {% include toc title="Index" %}
 
-# Summary - Object Declarations in Java
+# Summary 
+- mod (%) by 10 yields the rightmost digit (126 % 10 is 6).
+- while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
+- `parse` converts a String to a primitive type, while `valueOf` converts a String or primitive type to a Wrapper object.
+- 
+
+# Object Declarations in Java
 
 ## Array Declaration
 ```java

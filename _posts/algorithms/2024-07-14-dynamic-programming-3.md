@@ -7,7 +7,7 @@ tags:
 - Algorithms
 ---
 
-{% include toc title="Index" %}---
+{% include toc title="Index" %}
 
 # Grids
 
