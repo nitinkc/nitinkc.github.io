@@ -88,7 +88,7 @@ public int bunnyEars(int bunnies) {
 ```
 
 #### Odd bunnies have 2 ears, even bunnies have 3 ears
-(https://codingbat.com/prob/p107330)[https://codingbat.com/prob/p107330]
+[https://codingbat.com/prob/p107330](https://codingbat.com/prob/p107330)
 ```java
 public int bunnyEars2(int bunnies) {
   if(bunnies == 0)
@@ -171,6 +171,17 @@ public int countHi(String str) {
   return countHi(str.substring(1));
 }
 ```
+- count 11
+```java
+public int count11(String str) {
+  if(str.length() < 2)
+    return 0;
+  
+  if(str.substring(0,2).equals("11"))
+    return 1+count11(str.substring(2));
+  return count11(str.substring(1));  
+}
+```
 
 ###
 [https://codingbat.com/prob/p186177](https://codingbat.com/prob/p186177)
@@ -182,5 +193,25 @@ public int strCount(String str, String sub) {
   if(str.substring(0,sub.length()).equals(sub))
     return 1+strCount(str.substring(sub.length()),sub);//ensuring no overlapping
   return strCount(str.substring(1),sub);//ensuring all possible scenarios
+}
+```
+
+# Array
+
+```java
+public boolean array6(int[] nums, int index) {
+  if(nums.length == 0)
+    return false;
+    
+  if(nums.length == index+1){
+    if(nums[index] == 6)
+      return true;
+    return false;
+  }
+
+  if(nums[index] == 6)
+    return true || array6(nums, index+1);;
+    
+  return array6(nums, index+1);
 }
 ```

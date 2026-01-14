@@ -11,14 +11,25 @@ tags:
 {% include toc title="Index" %}
 
 # Three types of Linked List
-
 1. Singly Linked List
 2. Doubly Linked list
 3. Circular Linked List
 
-# Summary
+## Summary
+* copy head into a runner and work with the runner. **Never** modify head
 
-### Traversal across all elements
+### Solving using Dummy List
+If input list is not required to be maintained, just move it head instead of creating a runner
+[https://leetcode.com/problems/merge-two-sorted-lists/](https://leetcode.com/problems/merge-two-sorted-lists/)
+
+```java
+ListNode dummy=new ListNode(0);// Create a dummy node and return the next node as head
+ListNode finalList = dummy;
+
+return finalList.next;//Avoiding the forst dummy node created
+```
+
+### Linked List Iteration
 ```java
  Node runner = head;//head
  while (runner != null){
@@ -26,6 +37,7 @@ tags:
      runner = runner.next;
 }
 ```
+{% gist nitinkc/4e97df8926c80696a67ba8ae8ca87b08 %}
 
 ### Array vs Linked List
 ```java
@@ -38,7 +50,6 @@ tags:
  }
 ```
 
-
 ### Reaching the second last element and staying there
 
 ```java
@@ -48,61 +59,27 @@ while(runner.next.next != null){
 }
 ```
 
-# Java Implementation of LinkedList
-
-```java
-import java.util.LinkedList;
-
-// Creating a LinkedList
-LinkedList<String> linkedList = new LinkedList<>();
-
-// Adding elements to the LinkedList
-linkedList.add("Apple");
-linkedList.add("Banana");
-
-// Adding elements at specific positions
-linkedList.add(2, "Grape");//Index 2
-linkedList.addFirst("Apricot");// Start of tje LinkedList
-linkedList.addLast("Fig");// End of the linked List
-
-// Getting elements by index
-String secondElement = linkedList.get(1);
-
-// Removing elements
-linkedList.remove("Banana");
-linkedList.remove(3);
-```
-
 ## Singly Linked List
-
 * Head is the starting point
 * Can traverse only in one direction
-* copy head into a runner and work with the runner. **Never** modify head
-
-```java
-class Node<V> {
-    public V dataObject;
-    Node next;
-}
-```
-
-## Singly LinkedList Challenges
 
 ##### Add at the front of the List
 ```java
 head = new Node(value, head);
 ```
 ##### Reversing LinkedList
+[https://leetcode.com/problems/reverse-linked-list/description/](https://leetcode.com/problems/reverse-linked-list/description/)
+
 ```java
 Node reverse(Node head) {
     Node prev = null;
     Node current = head;
     Node next = null;
     while (current != null) {
-        next = current.next;
-        current.next = prev;
-        prev = current;
-        current = next;
+        next = current.next;//Set the next first so the current can be referenced to the previous node
+        current.next = prev;// Chaging -> to <- direction
+        prev = current;//Move prev one step forward
+        current = next;//Move current one step forward
     }
     head = prev;
     return head;
@@ -110,14 +87,22 @@ Node reverse(Node head) {
 ```
 
 ##### Cycle Detection:
+Relative Speed Concept: If there is a cycle, the fast runner will **eventually** catch up to the slow runner. 
+- think of a RACE between two runners on a circular track. The faster runner will eventually lap the slower runner, meaning they will be at the same point on the track at some time.
+  - But maintain relative speed of the fast runner to be 2X the slow runner, so that they will meet at the same point in the cycle.
+- If there is no cycle, the fast runner will reach the end of the list.
+[https://leetcode.com/problems/linked-list-cycle/description/](https://leetcode.com/problems/linked-list-cycle/description/)
+
 ```java
 boolean hasCycle(Node head) {
-    if (head == null || head.next == null) return false;
+    if (head == null || head.next == null) 
+      return false;
     Node slow = head, fast = head.next;
     while (fast != null && fast.next != null) {
-        if (slow == fast) return true;
+        if (slow == fast) 
+          return true;//cycle exists
         slow = slow.next;
-        fast = fast.next.next;
+        fast = fast.next.next;//2X speed of the slow runner
     }
     return false;
 }
@@ -128,9 +113,6 @@ boolean hasCycle(Node head) {
 
 ##### Add a node at the end of a Linked List
 {% gist nitinkc/1a7981081dbdeacfda37bfaeca1caaae %}
-
-##### Linked List Iteration
-{% gist nitinkc/4e97df8926c80696a67ba8ae8ca87b08 %}
 
 ##### Set all nodes to 42
 {% gist nitinkc/9aef8598074b343be5e85c4946c9c2b7 %}
@@ -152,8 +134,6 @@ boolean hasCycle(Node head) {
 
 ##### Delete from the end
 {% gist nitinkc/b0021888f69349f08614edc484f7d050 %}
-
-
 
 ## Doubly Linked List
 
@@ -291,4 +271,29 @@ void traverse() {
         temp = temp.next;
     } while (temp != head);
 }
+```
+
+## Java Implementation of LinkedList
+
+```java
+import java.util.LinkedList;
+
+// Creating a LinkedList
+LinkedList<String> linkedList = new LinkedList<>();
+
+// Adding elements to the LinkedList
+linkedList.add("Apple");
+linkedList.add("Banana");
+
+// Adding elements at specific positions
+linkedList.add(2, "Grape");//Index 2
+linkedList.addFirst("Apricot");// Start of tje LinkedList
+linkedList.addLast("Fig");// End of the linked List
+
+// Getting elements by index
+String secondElement = linkedList.get(1);
+
+// Removing elements
+linkedList.remove("Banana");
+linkedList.remove(3);
 ```
