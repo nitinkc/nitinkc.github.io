@@ -1,5 +1,5 @@
 ---
-title: Trees
+title: Binary Trees
 date: 2016-04-06 05:14:00
 categories:
 - Algorithms
@@ -58,7 +58,7 @@ recursion stack takes care
   inOrder(root.right,list);
   list.add(root.data);
   ```
-- Level Order Traversal (Lise BFS using a Queue)
+- Level Order Traversal (Like BFS using a Queue)
 
 ## In order Traversal in BST
 

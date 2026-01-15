@@ -209,6 +209,28 @@ public int strCount(String str, String sub) {
 }
 ```
 
+## Where Sequence matters
+
+```java
+List<Integer> list = new ArrayList<>();
+
+public List<Integer> inorderTraversal(TreeNode root) {
+    //Inorder = Left-Root-Right
+    inorder(root);
+    return list;
+}
+
+private void inorder(TreeNode root){
+    if(root==null){
+        return;
+    }
+
+    inorder(root.left);//inorderTraversal(root.left);
+    list.add(root.val);
+    inorderTraversal(root.right);
+
+}
+```
 # Array
 
 ```java
