@@ -72,6 +72,25 @@ BSTs store their elements in sorted order, which is helpful for searching/sortin
 Storing each element in an array while traversing
 {% gist nitinkc/ad0b3109163915d89db6f4b9e5e7cbbf %}
 
+##### Binary Search
+
+```java
+int binarySearchRecursive(int[] arr, int start, int end, int value)
+/* Base Case when start > end */
+
+if (start > end)
+   return -1;// value not found. Index = -1
+
+int mid = (start + end) / 2;
+
+if (arr[mid] < value)
+    binarySearchRecursive(arr, mid + 1, end, value);
+else if  (arr[mid] > value)
+    binarySearchRecursive(arr, 0, mid - 1, value);   
+else
+    return mid;           
+```
+
 
 # Good Problems 
 ### Height of a Tree

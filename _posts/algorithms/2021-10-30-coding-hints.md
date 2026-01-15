@@ -9,19 +9,7 @@ tags:
 
 {% include toc title="Index" %}
 
-# Conding Hints
-
-### 7 Step Process
-
-Before jumping into the Coding
-
-1. Method Signature (Understand the problem statement)
-2. Some examples (test cases) to understand the edge cases
-3. Brainstorming
-4. (Talking the problem and bring some approach)
-5. Find the Data structure and Algorithm to be used
-6. Write Code (use paper or whiteboard)
-7. Test for more test cases to avoid edge cases and
+# Coding Hints
 
 ##### Queue using two Stacks
 
@@ -76,38 +64,6 @@ public void reverseList(Node head){
 }
 ```
 
-##### Find a cycle in a Linked List (Recursively)
-
-##### Find a cycle in a Linked List (Iteratively)
-
-##### UnCoupled Integer in an Array.
-
-O(n) Space and O(n) time Complexity in a set
-
-```java
-Set<Integer> unique = new HashSet<Integer>();
-
-for (int i : arr){ // iterating the array
-    if (unique.add(i)){
-        //do nothing
-    } else {
-        unique.remove(i);
-    }
-}
-```
-
-O(1) Space and O(n) time complexity in XOR Approach
-
-```java
-int xor = 0;
-
-for (int i = 0; i < arr.length; arr++){
-    xor = xor^arr[i]; // Keeps only unique numbers
-}
-
-return xor;
-```
-
 ##### Balanced Parenthesis
 
 Push on opener and pop on closers.
@@ -146,37 +102,6 @@ Maintain 2 Stacks, One internally for keeping track of the Max/Min Stack
 ## Recursion based
 
 
-##### Find BST Height
-
-```java
-int getHeight(BSTNode root){
-    if root( == null )
-        return 1;
-
-    // Recursive calls
-    return 1 + getHeight(root.left) + getHeight(root.right);
-}
-```
-
-##### Binary Search
-
-```java
-int binarySearchRecursive(int[] arr, int start, int end, int value)
-/* Base Case when start > end */
-
-if (start > end)
-   return -1;// value not found. Index = -1
-
-int mid = (start + end) / 2;
-
-if (arr[mid] < value)
-    binarySearchRecursive(arr, mid + 1, end, value);
-else if  (arr[mid] > value)
-    binarySearchRecursive(arr, 0, mid - 1, value);   
-else
-    return mid;           
-```
-
 ##### FizzBuzz Problem
 
 Importance of placing if statements are tested here!!
@@ -195,19 +120,3 @@ public String fizzString2(int n) {
         return "Buzz!";  
 }
 ```
-
-### Test Cases
-
-##### String
-
-1. if null
-2. if odd/even length
-3. throw new IllegalArgumentException
-4. String with all same character
-5. String with special characters
-
-##### Arrays
-
-1. if Null
-2. if arr.length == 0
-3. if arr.length > required size

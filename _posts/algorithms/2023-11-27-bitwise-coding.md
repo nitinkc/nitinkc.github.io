@@ -9,7 +9,7 @@ tags:
 
 {% include toc title="Index" %}
 
-# Summary
+### Summary
 
 | **Concept**                           | **Code Snippet**                                                              | **Mnemonic**                                                                                                                                |
 |:--------------------------------------|:------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -94,8 +94,8 @@ number 10.
 - the bitwise OR operation combines this mask with the original number, setting
   the specified n<sup>th</sup> bit.
 
-### **XOR Trick(Cancels each other Or Adding Without Carrying)**
-
+### **The XOR Trick**
+Cancels each other Or Adding Without Carrying
 - XOR is essentially an addition operation without carrying over to the next bit
 - Same variables cancels the effect.
 - If 2 similar objects are XOR'd, it returns `0|False`.
@@ -124,10 +124,30 @@ if ((root.left == null) ^ (root.right == null))
     return false;
 ```
 
-The logic is used for finding a unique element among duplicates (Stolen Drone
-problem (21) in Interview cake)
+##### unique element among duplicates or duplicates among unique elements
+- [https://leetcode.com/problems/find-the-duplicate-number/description/](https://leetcode.com/problems/find-the-duplicate-number/description/)
 
+- [Stolen Drone problem](https://www.interviewcake.com/question/java/find-unique-int-among-duplicates)
+
+O(1) Space and O(n) time complexity in XOR Approach
 {% gist nitinkc/c2b08480ddf73b06f2ad1df65be5483d %}
+
+
+O(n) Space and O(n) time Complexity in a set
+```java
+public int findDuplicate(int[] nums) {
+  Set<Integer> unique = new HashSet<Integer>();
+  //Using a set
+  int ret = -1;
+  for(int num : nums){
+    if(!set.add(num)){
+      ret= num;
+    }
+  }
+  return ret;
+}
+```
+
 
 # Bitwise Operators
 
