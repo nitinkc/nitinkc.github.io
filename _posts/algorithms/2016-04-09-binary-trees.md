@@ -10,35 +10,33 @@ tags:
 
 {% include toc title="Index" %}
 
+### Summary
+- ensures that the root is a branch (only one child)
 ```java
-//This if Condition ensures that the root is a branch (only one child)
 if(root.left != null || root.right != null){
     if(root.data %2 == 0){
         count++;
     }
 }
 ```
+- For BFS (level order traversal), a Queue is used as intermediate data structure.
+  ```java
+  Queue<TreeNode> queue = new LinkedList<>();
+  queue.add(root);//Begin with root
+  while(!queue.isEmpty()){
+  temp = queue.poll();//Take the top of queue
+  .....
+  if(temp.left != null)//Add the LEFT first to the queue, so that it is processed before the right child
+    queue.add(temp.left);
+  if(temp.right != null)
+    queue.add(temp.right);
+  }
+  ```
 
-### Binary Search Tree
-
-"BST": a binary tree that is either:
-
-* empty (null), or
-* a root node R such that:
-    1. every element of R's left subtree contains data "less than" R's data,
-    2. every element of R's right subtree contains data "greater than" R's,
-    3. R's left and right subtrees are also binary search trees.
-
-BSTs store their elements in sorted order, which is helpful for
-searching/sorting tasks.
-
-{% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
-
-# Tree Traversal
-
-Three types of Depth First Search (DFS) Traversal. For Iterative traversal,
-a Stack is used as intermediate data structure. With Recursive Approach,
-recursion stack takes care
+#### Tree Traversal
+Three types of Depth First Search (DFS) Traversal.
+- For Iterative traversal, a Stack is used as intermediate data structure.
+- With Recursive Approach, recursion stack takes care
 
 - InOrder (L,Root,R)
   ```java
@@ -58,7 +56,20 @@ recursion stack takes care
   inOrder(root.right,list);
   list.add(root.data);
   ```
-- Level Order Traversal (Like BFS using a Queue)
+- Level Order Traversal (Like BFS using a Queue - Iterative)
+  {% gist nitinkc/042e93c55afab4bc7bafa9699a16073b %}
+
+####  Binary Search Tree
+"BST": a binary tree that is either:
+* empty (null), or
+* a root node R such that:
+    1. every element of R's left subtree contains data "less than" R's data,
+    2. every element of R's right subtree contains data "greater than" R's,
+    3. R's left and right subtrees are also binary search trees.
+
+BSTs store their elements in sorted order, which is helpful for searching/sorting tasks.
+
+{% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
 
 ## In order Traversal in BST
 
@@ -66,7 +77,6 @@ Storing each element in an array while traversing
 {% gist nitinkc/ad0b3109163915d89db6f4b9e5e7cbbf %}
 
 ## Level Order Traversal
-{% gist nitinkc/042e93c55afab4bc7bafa9699a16073b %}
 
 # Height of a Tree
 {% gist nitinkc/5837831baee94bd7a6bbe0b58f050197 %}
@@ -112,9 +122,8 @@ for(int i = 0; i < nodesAtLevel; i++){
 
 {% gist nitinkc/7515bd091884772b9bccb9b50d684d37 %}
 
-# Complete to Level
-
-[Problem Statement](https://practiceit.cs.washington.edu/problem/view/bjp5/chapter17/e14-completeToLevel)
+## Complete to Level
+[Problem Statement](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/completeToLevel)
 
 ### Top-Down Approach
 
