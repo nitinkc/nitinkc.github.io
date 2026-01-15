@@ -32,6 +32,7 @@ if(root.left != null || root.right != null){
     queue.add(temp.right);
   }
   ```
+- {% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
 
 #### Tree Traversal
 Three types of Depth First Search (DFS) Traversal.
@@ -68,50 +69,44 @@ Three types of Depth First Search (DFS) Traversal.
     3. R's left and right subtrees are also binary search trees.
 
 BSTs store their elements in sorted order, which is helpful for searching/sorting tasks.
-
-{% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
-
-## In order Traversal in BST
-
 Storing each element in an array while traversing
 {% gist nitinkc/ad0b3109163915d89db6f4b9e5e7cbbf %}
 
-## Level Order Traversal
 
-# Height of a Tree
+# Good Problems 
+### Height of a Tree
 {% gist nitinkc/5837831baee94bd7a6bbe0b58f050197 %}
 
-# Find Level of a Given Node in a Binary Tree
+### Find Level of a Given Node in a Binary Tree
 {% gist nitinkc/00c46d469167c099679682c41e6b24e8 %}
 
-# Print nodes at a level
+### Print nodes at a level
 Given a Tree and the depth/level, print all the nodes from left to right.
 {% gist nitinkc/f34b9a1134477b0f1cbc22e777fab7e2 %}
 
-# Print Leaves Nodes from Right to Left
+### Print Leaves Nodes from Right to Left
 {% gist nitinkc/5934eb3d94794c23106f38e17aaa61f1 %}
 
-# Count all Leaf Nodes
+### Count all Leaf Nodes
 {% gist nitinkc/e180867eb09c229d72ef3df06333401e %}
 
-## Count Left Nodes
+### Count Left Nodes
 {% gist nitinkc/8ac5f8599a620d6e860228c15798f023 %}
 
-# Number the nodes from top to bottom in Pre Order way.
-
+### Number the nodes from top to bottom in Pre Order way.
 [Problem Statement](https://practiceit.cs.washington.edu/problem/view/bjp5/chapter17/e11-numberNodes)
 {% gist nitinkc/87f93c0ac63b4b5e8eaa51d9166b6585 %}
 
-# Remove leaf node
+### Remove leaf node
 {% gist nitinkc/cb357a5e77be6236be35afef0c398953 %}
 
-# Count Empty Spots
+### Count Empty Spots
 {% gist nitinkc/619d22e2ae458a3f174b0297019e6fd5 %}
 
-# Depth Sum
+### Depth Sum
 {% gist nitinkc/ffa2a55bdf2cd8eed9a041ff7a01c917 %}
 
-## Iterative
+#### Iterative
 If you calculate the size of the queue, the current size has all elements at the same level
 ```java
 int nodesAtLevel = q.size();
@@ -122,20 +117,17 @@ for(int i = 0; i < nodesAtLevel; i++){
 
 {% gist nitinkc/7515bd091884772b9bccb9b50d684d37 %}
 
-## Complete to Level
+### Complete to Level
 [Problem Statement](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/completeToLevel)
 
-### Top-Down Approach
-
+- Top-Down Approach
 {% gist nitinkc/02752c3e1acf84cc9b1545a1054b2ff9 %}
-
+- Recursive Approach
+{% gist nitinkc/98430ec49742f659f36da37f765f9e62 %}
+- Bottom-Up Approach
 {% gist nitinkc/98430ec49742f659f36da37f765f9e62 %}
 
-### Bottom-Up Approach
-
-{% gist nitinkc/98430ec49742f659f36da37f765f9e62 %}
-
-# Isomorphic Trees
+### Isomorphic Trees
 
 ```java
 return (root1.val == root2.val) &&
