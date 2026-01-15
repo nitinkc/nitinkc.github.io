@@ -9,6 +9,19 @@ tags:
 
 {% include toc title="Index" %}
 
+
+> If a problem is asked to be solved without using loops (for or while), then recursion is the way to go.
+
+```java
+void printReverseLinkedList(ListNode head){
+  if(head == null)
+    return;
+    
+    printReverseLinkedList(head.next);
+    System.out.println(head.data);
+}
+```
+
 **Step 1** : Base condition
 - Be mindful of the if-else conditions in the base case
 ```java
