@@ -7,6 +7,14 @@ tags:
 - Algorithms 
 ---
 
+# Common Interview Patterns
+
+### Boolean Logic with Switch
+{% gist nitinkc/96387a9700c9c58185a969ae48bfdc45 %}
+
+### For Loop Edge Cases
+{% gist nitinkc/382798a984e00a732d86a12a6637e0a2 %}
+
 ## Two pointers: one input, opposite ends
 
 ```java

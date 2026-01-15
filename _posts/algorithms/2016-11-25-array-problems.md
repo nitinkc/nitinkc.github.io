@@ -11,6 +11,229 @@ tags:
 
 {% include toc title="Index" %}
 
+
+### Points to keep in Mind
+
+{% gist nitinkc/7bed7e03f3e21790c98353df6a921137 %}
+
+<!-- ### ArrayList
+{% gist nitinkc/98b5adaf0ed85980472ec423237e9edd %} -->
+
+### Array List API
+
+```java
+list.add (10) // Appends the specified element to the end of this list. Returns boolean
+list.add(3, 10) //Inserts at index 3 Shifts current and subsequent elements to the right (adds one to their indices)int indx =  list.indexOf(10) //index of the first occurrence of the element in the list, or -1 if this list does not contain the element.
+int data = list.get(3) //Returns the element at the specified position in this list.
+ListIterator listIterator() //Bi directional iterator
+
+list.set(3, 10) //Replaces the element at the specified position .Returns the previous element 
+        list.remove(3) //Removes the element at the specified position in this list.
+list.remove(10) //Removes the first occurrence of the specified element from this list, if it is present.
+```
+
+### 1D Arrays
+
+{% gist nitinkc/c2abeb754d1a64641b0149bc6d8f21ae %}
+
+### 2D Array using primitive arrays
+
+A Rectangular 2D array has different no. of Rows and Columns (eg: 6X7)
+
+In both cases, the row and column count is
+
+```java
+int row = arr.length;
+int col = arr[0].length;
+```
+
+{% gist nitinkc/d9ca95267cae73a9145d5e96ca7d8f22 %}
+
+The Skewed 2D array need not have the same number of Columns each Row.
+{% gist nitinkc/f828994bdaabbc55505c51096c3b7d0d %}
+
+### 2D ArrayList
+
+Square Matrix using Arraylist with a focus on Iteration
+
+Row count is equal to the size of the entire List
+
+```java
+row = list.size();
+```
+
+Column count is individual sublist size
+
+```java
+col = list.get(i).size();
+```
+
+{% gist nitinkc/79da313a1da762bfc0c791a1f3843305 %}
+
+
+# Array Syntax
+
+### The Arrays Class - for Arrays
+
+#### Arrays fill
+
+{% gist nitinkc/8a955a843d2b383d88b7ca92997c627f %}
+
+##### Arrays.asList & List.of
+
+Arrays.asList accepts Wrapper Class array.
+
+```java
+//Accepts arrays of Integer, Character, String etc.
+List<Integer> list = Arrays.asList(arr);
+```
+
+The `Arrays.asList()` method works with objects, **not primitive** types.
+
+```java
+// Create an array
+String[] array = {"apple", "banana", "orange"};
+
+// Convert array to ArrayList using Arrays.asList()
+List<String> arrayList = new ArrayList<>(Arrays.asList(array));
+
+int[] intArray = {1,2,3};
+List<Integer> a = Arrays.asList(intArray);// FOR PRIMITIVES, DOES NOT WORK, change to INTEGER
+        
+List<Integer> b = List.of(1,2,3);//Immutable List
+
+//Printing an ArrayList as ann Integer
+Arrays.toString(a);//op: [1,2,3]
+```
+
+To convert primitive array into a list of Wrapper class (list of primitive class
+is not possible)
+
+```java
+int[] arr = {1, 2, 1, 3, 4, 5, 2, 1, 3, 4, 5, 6, 7, 8, 97, 1, 2};
+
+ List<Integer> list = Arrays.stream(arr)// IntStream
+                .boxed()// Stream<Integer>
+                .collect(Collectors.toList());
+
+list = IntStream.of(arr)//IntStream, Static Factory method
+                .boxed()
+                .collect(Collectors.toList());
+
+Integer[] intAr = Arrays.stream(arr)// IntStream
+                .boxed()// Stream<Integer>
+                .toArray(Integer[]::new);
+
+intAr = IntStream.of(arr)//IntStream, Static Factory method
+                .boxed()
+                .toArray(Integer[]::new);
+```
+
+```java
+ char[] c = {'T','e','s','t'};
+
+Character[] charArrBoxed = new String(c).chars()
+                            .mapToObj(ch -> (char) ch)
+                             .toArray(Character[]::new);
+        
+List<Character> characterList = new String(c).chars()
+                .mapToObj(ch -> (char) ch)
+                .collect(Collectors.toList());
+```
+
+### ArrayList to Array
+
+```java
+//Converting an ArrayList into Array
+int[] result = a.toArray();
+```
+
+### Array sorting
+
+[Sorting in Detail](https://nitinkc.github.io/java/sorting/)
+
+Traditional Array can be sorted with sort method Arrays Utility Class.
+
+##### Sorting an Array of primitives
+
+```java
+int[] arr = {4,5,3,8,2};
+Arrays.sort(arr);
+```
+
+```java
+//Sort takes array
+int[] intArray = {4,5,3,8,2,71};
+
+Arrays.sort(intArray);// Default Natural Sorting Order
+Arrays.sort(integerArray, Comparator.reverseOrder());//Comparator can be used with a CLASS - Reverse sorting
+        
+String[] stringArray = {"one", "two", "three", "four"};
+Arrays.sort(stringArray);
+Arrays.sort(stringArray, Comparator.reverseOrder());
+```
+
+#### Sorting via list object
+
+For list of type T, a comparator has to be defined.
+
+```java
+list.sort(Comparator
+        .comparing(Data::getPopulation).reversed()
+        .thenComparing(Data::getState)
+        .thenComparing(Data::getCity));
+```
+
+```java
+String[] array = {"apple", "banana", "orange"};
+// Convert array to ArrayList using Arrays.asList()
+List<String> arrayListString = new ArrayList<>(Arrays.asList(array));
+arrayListString.sort(Comparator.naturalOrder());
+
+List<Integer> arrayListInteger = Arrays.asList(4,5,3,8,2,71);
+arrayListInteger.sort(Comparator.reverseOrder());
+```
+
+##### Sorting via Collections Class
+
+```java
+// Sort the List of Objects based on the Population
+list.sort(Comparator
+        .comparing(Data::getPopulation).reversed()
+        .thenComparing(Data::getState)
+        .thenComparing(Data::getCity));
+        
+
+//Comparator.nullsLast is null safe and takes care in case there is a null.
+List<String> empList = list.stream()
+        .sorted(Comparator.comparing(Employee::getSalary,Comparator.nullsLast(Comparator.naturalOrder())))
+        .map(employee -> ...)
+        .collect(Collectors.toList());
+```
+
+# The List Class
+
+```java
+list.sort(Comparator.naturalOrder());
+list.sort(Comparator.naturalOrder());
+list.stream().sorted(Comparator.comparing(s -> s.length()));
+
+```
+
+# Collection Class for List
+
+```java
+List<String> stringList = Arrays.asList("apple", null, null, "banana", "orange");
+Collections.sort(stringList, Comparator.nullsFirst(Comparator.naturalOrder()));
+
+List<String> stringList = Arrays.asList("apple","banana", "orange");
+Collections.sort(stringList, Comparator
+    .comparing(String::length)
+    .thenComparing(Comparator.reverseOrder()));
+```
+
+---- 
+
 For Arrays, Strings and Lists
 * For Array, **length** is a field - `array.length`
 * For String, **length** is a method - `str.length()`
