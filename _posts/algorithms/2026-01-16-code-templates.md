@@ -1,6 +1,6 @@
 ---
 title: Code templates
-date: 2026-01-16 1:06:00
+date: 2026-01-15 1:06:00
 categories:
 - Algorithms
 tags:

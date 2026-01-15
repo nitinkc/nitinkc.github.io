@@ -9,6 +9,16 @@ tags:
 
 {% include toc title="Index" %}
 
+## Memory Complexity
+
+For a tree like structure, for the purpose of understanding
+
+For a balanced tree with n nodes, there will n/2 leaf nodes due to which the
+memory complexity of BFS will on O(n)
+
+For DFS, the max memory will the height of the tree which in logN, and that is
+why the memory complexity is O(logN)
+
 # Create Graph from List of Edges List
 if edges array `edges = [[0,1],[1,2],[2,0]]` is given, first create a graph before applying DFS or BFS
 {% gist nitinkc/132dd893ba5f15047e4719a597ed712e  %}
