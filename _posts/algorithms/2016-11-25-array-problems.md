@@ -15,8 +15,8 @@ tags:
 
 {% gist nitinkc/7bed7e03f3e21790c98353df6a921137 %}
 
-<!-- ### ArrayList
-{% gist nitinkc/98b5adaf0ed85980472ec423237e9edd %} -->
+### ArrayList
+{% gist nitinkc/98b5adaf0ed85980472ec423237e9edd %}
 
 ### Array List API
 

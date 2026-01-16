@@ -1,5 +1,5 @@
 ---
-title: Binary Trees
+title: Binary Trees (DFS & BFS)
 date: 2016-04-06 05:14:00
 categories:
 - Algorithms
@@ -19,20 +19,26 @@ if(root.left != null || root.right != null){
     }
 }
 ```
-- For BFS (level order traversal), a Queue is used as intermediate data structure.
+- {% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
+
+- For BFS (level order traversal) of a Tree, a Queue is used as intermediate data structure.
   ```java
   Queue<TreeNode> queue = new LinkedList<>();
   queue.add(root);//Begin with root
   while(!queue.isEmpty()){
-  temp = queue.poll();//Take the top of queue
-  .....
-  if(temp.left != null)//Add the LEFT first to the queue, so that it is processed before the right child
-    queue.add(temp.left);
-  if(temp.right != null)
-    queue.add(temp.right);
+    int size = queue.size();
+    for(int i = 0; i < size; i++){
+      TreeNode current = queue.poll();
+      if(current.left != null){//For BFS, first left, then right
+          queue.add(current.left);
+      }
+      if(current.right != null){
+          queue.add(current.right);
+      }
+    }
+  ....
   }
   ```
-- {% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
 
 #### Tree Traversal
 Three types of Depth First Search (DFS) Traversal.
@@ -84,9 +90,9 @@ if (start > end)
 int mid = (start + end) / 2;
 
 if (arr[mid] < value)
-    binarySearchRecursive(arr, mid + 1, end, value);
+    return binarySearchRecursive(arr, mid + 1, end, value);
 else if  (arr[mid] > value)
-    binarySearchRecursive(arr, 0, mid - 1, value);   
+return binarySearchRecursive(arr, 0, mid - 1, value);   
 else
     return mid;           
 ```
@@ -107,6 +113,7 @@ Given a Tree and the depth/level, print all the nodes from left to right.
 {% gist nitinkc/5934eb3d94794c23106f38e17aaa61f1 %}
 
 ### Count all Leaf Nodes
+[ Count all Leaf Nodes](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/countLeaves)
 {% gist nitinkc/e180867eb09c229d72ef3df06333401e %}
 
 ### Count Left Nodes

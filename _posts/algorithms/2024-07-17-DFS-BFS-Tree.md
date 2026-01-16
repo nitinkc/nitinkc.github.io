@@ -1,5 +1,5 @@
 ---
-title: Graph DFS & BFS Traversal
+title: Graph Traversal (DFS & BFS)
 date: 2024-07-17 19:42:00
 categories:
 - Algorithms
