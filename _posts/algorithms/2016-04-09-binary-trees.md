@@ -22,23 +22,34 @@ if(root.left != null || root.right != null){
 - {% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
 
 - For BFS (level order traversal) of a Tree, a Queue is used as intermediate data structure.
-  ```java
-  Queue<TreeNode> queue = new LinkedList<>();
-  queue.add(root);//Begin with root
-  while(!queue.isEmpty()){
-    int size = queue.size();
-    for(int i = 0; i < size; i++){
-      TreeNode current = queue.poll();
-      if(current.left != null){//For BFS, first left, then right
-          queue.add(current.left);
-      }
-      if(current.right != null){
-          queue.add(current.right);
-      }
+  - regular
+    ```java
+    Queue<TreeNode> q = new LinkedList<>();
+    q.add(root);
+    while(!q.isEmpty()){
+    TreeNode temp = q.poll();
+    if(temp.left == null && temp.right == null)
+      count++;
+  
+    if(temp.left != null) q.add(temp.left);
+    if(temp.right != null) q.add(temp.right);
     }
-  ....
-  }
-  ```
+    ```
+    
+  - when somethings to be done at the same level (Level Order)
+    ```java
+    Queue<TreeNode> queue = new LinkedList<>();
+    queue.add(root);//Begin with root
+    while(!queue.isEmpty()){
+      int size = queue.size();// number of nodes at current level
+      for(int i = 0; i < size; i++){ // Only when all calculation is to be done in the same level. 
+        TreeNode current = queue.poll();
+        if(current.left != null) queue.add(current.left); //For BFS, first left, then right
+        if(current.right != null) queue.add(current.right);
+      }
+    ....
+    }
+    ```
 
 #### Tree Traversal
 Three types of Depth First Search (DFS) Traversal.
