@@ -13,10 +13,8 @@ tags:
 ### Summary
 - ensures that the root is a branch (only one child)
 ```java
-if(root.left != null || root.right != null){
-    if(root.data %2 == 0){
-        count++;
-    }
+if(root.left != null || root.right != null){//Condition for non leaf node
+  count++;
 }
 ```
 - {% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
@@ -100,12 +98,12 @@ if (start > end)
 
 int mid = (start + end) / 2;
 
-if (arr[mid] < value)
-    return binarySearchRecursive(arr, mid + 1, end, value);
-else if  (arr[mid] > value)
-return binarySearchRecursive(arr, 0, mid - 1, value);   
-else
-    return mid;           
+if (arr[mid] < value) 
+  return binarySearchRecursive(arr, mid + 1, end, value);
+else if (arr[mid] > value) 
+  return binarySearchRecursive(arr, 0, mid - 1, value);   
+else 
+  return mid;           
 ```
 
 
@@ -167,6 +165,13 @@ for(int i = 0; i < nodesAtLevel; i++){
 ### Isomorphic Trees
 
 ```java
+//base case,
+if(root1 == null && root2 == null) return true;
+//Cases like [1,null,2]
+if(root1 == null || root2 == null) return false;
+
+if(p.val != q.val) return false;
+
 return (root1.val == root2.val) &&
         isIsomprphic(root1.left, root2.right) &&
         isIsomprphic(root1.right, root2.left)
