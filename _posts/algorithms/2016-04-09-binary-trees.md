@@ -11,16 +11,16 @@ tags:
 {% include toc title="Index" %}
 
 ### Summary
-- ensures that the root is a branch (only one child)
+- ensures that the root is a branch (has atleast one child)
 ```java
 if(root.left != null || root.right != null){//Condition for non leaf node
-  count++;
+  count++;//Counting non leaf nodes
 }
 ```
 - {% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
 - Whenever a path from root to leaf is required, DFS is the way to go.
 - For BFS of a Tree, a Queue is used as intermediate data structure.
-  - regular (without level order)
+  - regular (without level order) O(n), where n is the number of nodes in the tree. Each node is visited once.
     ```java
     Queue<TreeNode> q = new LinkedList<>();
     q.add(root);
@@ -34,7 +34,8 @@ if(root.left != null || root.right != null){//Condition for non leaf node
     }
     ```
     
-  - when calculation to be done at the same level (Level Order)
+  - when calculation to be done at the same level (Level Order, additional for loop)
+  - O(n), where n is the number of nodes. Each node is still visited exactly once; the extra for loop just processes all nodes at the current level before moving to the next.
     ```java
     Queue<TreeNode> queue = new LinkedList<>();
     queue.add(root);//Begin with root
@@ -88,7 +89,8 @@ Storing each element in an array while traversing
 {% gist nitinkc/ad0b3109163915d89db6f4b9e5e7cbbf %}
 
 ##### Binary Search
-
+- `int mid = (start + end) / 2;` works for most cases, but it can cause integer overflow if start and end are large.
+- `int mid = start + (end - start) / 2;` avoids overflow by calculating the midpoint without directly adding start and end together.
 ```java
 int binarySearchRecursive(int[] arr, int start, int end, int value)
 /* Base Case when start > end */
@@ -156,7 +158,7 @@ Given a Tree and the depth/level, print all the nodes from left to right.
   {% gist nitinkc/98430ec49742f659f36da37f765f9e62 %}
 
 ### Isomorphic Trees
-
+- notice the AND and then OR conditon in the first 2 if conditions
 ```java
 //base case,
 if(root1 == null && root2 == null) return true;
@@ -164,8 +166,8 @@ if(root1 == null && root2 == null) return true;
 if(root1 == null || root2 == null) return false;
 
 if(p.val != q.val) return false;
+if(root1.val == root2.val) return true;
 
-return (root1.val == root2.val) &&
-        isIsomprphic(root1.left, root2.right) &&
+return isIsomprphic(root1.left, root2.right) &&
         isIsomprphic(root1.right, root2.left)
 ```
