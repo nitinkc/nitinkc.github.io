@@ -9,13 +9,10 @@ tags:
 
 {% include toc title="Index" %}
 
-# Summary 
+## Summary 
 - mod (%) by 10 yields the rightmost digit (126 % 10 is 6).
 - while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
 - `parse` converts a String to a primitive type, while `valueOf` converts a String or primitive type to a Wrapper object.
-- 
-
-# Object Declarations in Java
 
 ## Array Declaration
 ```java
@@ -33,12 +30,16 @@ for (int i = 0; i < arr.length; i++) { // Loop through rows
 }
 ```
 
-## ArrayList Declaration
+* `List<int[]> list= new ArrayList<>()` List of pairs.
+  * `list.sort((a,b) -> a[0] - b[0])` Sort ascending. sorting by descending , use `b[0] - a[0]`
+
+### ArrayList Declaration
 ```java
 List<Integer> list = new ArrayList<>();
 list.add(10);
 list.get(0);
 ```
+
 
 ## LinkedList Declaration
 ```java
@@ -55,8 +56,7 @@ list.removeLast();
 ```java
 Stack<Integer> stack = new Stack<>();
 stack.push(10);           // Add 10
-stack.push(20);           // Add 20
-System.out.println(stack.peek());  // 20 (top element)
+if(stack.peek() %2 == 0);  // 20 (top element)
 stack.pop();              // Removes 20
 System.out.println(stack.isEmpty()); // false
 System.out.println(stack.size());   // 1
@@ -64,6 +64,16 @@ stack.clear();            // Clear the stack
 ```
 
 ## Queue Declaration
+Most used methods for BFS
+```java
+Queue<TreeNode> q = new LinkedList<>();
+a.add(root);
+while(!q.isEmpty()){
+  TreeNode temp = q.poll();
+  ...
+}
+```
+Other Queue methods
 ```java
 Queue<Integer> queue = new LinkedList<>();
 Deque<Integer> deque = new ArrayDeque<>(); // Doubly ended Queue
@@ -858,82 +868,4 @@ int diceThrow = generator.nextInt(6) + 1; // Range 1 to 6 (dice)
 
 generator.nextInt(); // Range: -2^31 to 2^31 - 1
 generator.nextDouble(); // Range: 0.0 to 1.0
-```
-
----
-
-# Java Input and Output
-
-## Keyboard Input
-
-```java
-import java.util.Scanner;
-
-Scanner in = new Scanner(System.in);
-
-/* Input Problem: Mix of int and strings
-   Extra invocation to get rid of previous \n */
-int n = in.nextInt();
-in.nextLine(); // To avoid INPUT Problem - consume the newline
-String str = in.nextLine();
-
-in.nextLine(); // Reads entire line
-in.next(); // Reads next character up to (but not including) space
-
-/* NO METHOD TO READ A SINGLE CHARACTER */
-char a = in.nextLine().charAt(0);
-```
-
-## File Input
-
-```java
-import java.io.File;
-import java.util.Scanner;
-
-// Open the File
-File myFile = new File("/path/to/file.txt");
-Scanner in = new Scanner(myFile);
-
-// Read from the File
-String str = in.nextLine();
-
-// OR read all lines
-while (in.hasNext()) {
-    System.out.println(in.nextLine());
-}
-
-// Close the File
-in.close();
-```
-
-## File Output
-
-### Writing Text to File
-```java
-import java.io.PrintWriter;
-import java.io.FileWriter;
-
-final String FILENAME = "output.txt";
-
-// Overwrite mode (surrounding with try-catch recommended)
-PrintWriter output = new PrintWriter(FILENAME);
-output.println("Line 1");
-output.println("Line 2");
-output.close();
-
-// Append mode (to avoid erasing existing files)
-PrintWriter pw = new PrintWriter(new FileWriter("output.txt", true));
-pw.println("Appended line");
-pw.close();
-```
-
-### Appending Text to File
-```java
-FileWriter fw = new FileWriter("Names.txt", true);
-PrintWriter pw = new PrintWriter(fw);
-pw.println("Appended content");
-pw.close();
-
-// OR in one line
-PrintWriter pw = new PrintWriter(new FileWriter("Names.txt", true));
 ```
