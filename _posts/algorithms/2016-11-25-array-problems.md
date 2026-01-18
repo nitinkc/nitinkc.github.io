@@ -469,3 +469,6 @@ Summary / quick checklist:
 - Compute all window sums of size k (implement both naive and optimized).
 - Find minimum-length subarray with sum >= S.
 - Sliding window maximum using deque.
+
+
+

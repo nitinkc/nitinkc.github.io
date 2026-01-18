@@ -18,23 +18,23 @@ if(root.left != null || root.right != null){//Condition for non leaf node
 }
 ```
 - {% gist /nitinkc/dbc98632abc89fb83119af50b2448300 %}
-
-- For BFS (level order traversal) of a Tree, a Queue is used as intermediate data structure.
-  - regular
+- Whenever a path from root to leaf is required, DFS is the way to go.
+- For BFS of a Tree, a Queue is used as intermediate data structure.
+  - regular (without level order)
     ```java
     Queue<TreeNode> q = new LinkedList<>();
     q.add(root);
     while(!q.isEmpty()){
     TreeNode temp = q.poll();
     if(temp.left == null && temp.right == null)
-      count++;
+      count++;//Counting number of leaf nodes
   
     if(temp.left != null) q.add(temp.left);
     if(temp.right != null) q.add(temp.right);
     }
     ```
     
-  - when somethings to be done at the same level (Level Order)
+  - when calculation to be done at the same level (Level Order)
     ```java
     Queue<TreeNode> queue = new LinkedList<>();
     queue.add(root);//Begin with root
@@ -106,10 +106,12 @@ else
   return mid;           
 ```
 
-
 # Good Problems 
-### Height of a Tree
+### [Height of a Tree](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/height)
 {% gist nitinkc/5837831baee94bd7a6bbe0b58f050197 %}
+
+### Remove leaf node
+{% gist nitinkc/cb357a5e77be6236be35afef0c398953 %}
 
 ### Find Level of a Given Node in a Binary Tree
 {% gist nitinkc/00c46d469167c099679682c41e6b24e8 %}
@@ -121,46 +123,37 @@ Given a Tree and the depth/level, print all the nodes from left to right.
 ### Print Leaves Nodes from Right to Left
 {% gist nitinkc/5934eb3d94794c23106f38e17aaa61f1 %}
 
-### Count all Leaf Nodes
-[ Count all Leaf Nodes](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/countLeaves)
+### [Count all Leaf Nodes](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/countLeaves)
 {% gist nitinkc/e180867eb09c229d72ef3df06333401e %}
 
-### Count Left Nodes
+### [Count Left Nodes](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/countLeftNodes)
 {% gist nitinkc/8ac5f8599a620d6e860228c15798f023 %}
 
-### Number the nodes from top to bottom in Pre Order way.
-[Problem Statement](https://practiceit.cs.washington.edu/problem/view/bjp5/chapter17/e11-numberNodes)
+### [Number the nodes in Pre Order way](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/numberNodes)
 {% gist nitinkc/87f93c0ac63b4b5e8eaa51d9166b6585 %}
-
-### Remove leaf node
-{% gist nitinkc/cb357a5e77be6236be35afef0c398953 %}
 
 ### Count Empty Spots
 {% gist nitinkc/619d22e2ae458a3f174b0297019e6fd5 %}
 
 ### Depth Sum
+- For Iterative, BFS approach, the size of the queue has all elements at the same level
+  ```java
+  int nodesAtLevel = q.size();
+  for(int i = 0; i < nodesAtLevel; i++){
+      //Do something with the nodes at the same level
+  }
+  ```
 {% gist nitinkc/ffa2a55bdf2cd8eed9a041ff7a01c917 %}
 
-#### Iterative
-If you calculate the size of the queue, the current size has all elements at the same level
-```java
-int nodesAtLevel = q.size();
-for(int i = 0; i < nodesAtLevel; i++){
-    //Do something with the nodes at the same level
-}
-```
+### [Complete to Level](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/completeToLevel)
 
-{% gist nitinkc/7515bd091884772b9bccb9b50d684d37 %}
+- **Top-Down** Approach
+  - keeps current depth and stops at n; creates missing children before recursing.
+  {% gist nitinkc/02752c3e1acf84cc9b1545a1054b2ff9 %}
 
-### Complete to Level
-[Problem Statement](https://www.codestepbystep.com/r/problem/view/java/collectionimpl/binarytrees/completeToLevel)
-
-- Top-Down Approach
-{% gist nitinkc/02752c3e1acf84cc9b1545a1054b2ff9 %}
-- Recursive Approach
-{% gist nitinkc/98430ec49742f659f36da37f765f9e62 %}
-- Bottom-Up Approach
-{% gist nitinkc/98430ec49742f659f36da37f765f9e62 %}
+- **Bottom-Up** Approach
+  - Bottom-up (remaining-level style): decrements level until it reaches 1; creates missing nodes along the way.
+  {% gist nitinkc/98430ec49742f659f36da37f765f9e62 %}
 
 ### Isomorphic Trees
 
