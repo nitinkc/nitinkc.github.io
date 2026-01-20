@@ -24,7 +24,7 @@ The common characteristics of problems that can be solved with dynamic programmi
 
 > Top-down (Memoization)= “start from the goal” / think `recursion + cache`.
 
-# Bottom-up (Tabulation)
+## Bottom-up (Tabulation)
 - Build answers from the smallest subproblems upward into a table/array until you reach the target.
 - bottom-up implementations usually use an array
 
@@ -43,9 +43,10 @@ The Climbing Stairs problem — a Fibonacci-like DP
           dp[i] = dp[i - 1] + dp[i - 2]; // Recurrence relation
       }
       return dp[n];
+  }
   ```
 
-# Top-down (Memoization)
+## Top-down (Memoization)
 - Start at the final goal, recursively break it into subgoals, and cache results to avoid recomputation.
 - Visualize an exploration tree that gets pruned by a memo cache.
 - Natural for complex recurrences or when many states are never needed.
@@ -65,7 +66,8 @@ private int dp(int i) {
 }
 ```
 
-### With Recursion, the time complexity is high.
+## With Recursion
+- the time complexity is high.
 Without memoization The code above has a time complexity of `𝑂(2^𝑛)` because
 every call to `dp()` creates 2 more calls to `dp()`
 
@@ -76,7 +78,7 @@ private int dp(int i) {
 }
 ```
 
-# Min Cost Climbing Stairs
+## Min Cost Climbing Stairs
 [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/description/){:target="_blank"}
 
 - Go reversed
@@ -114,7 +116,7 @@ private int dp(int i) {
   }
   ```
 
-# House Robber
+## House Robber
 
 [House Robber](https://leetcode.com/problems/house-robber/description/){:target="_blank"}
 
@@ -140,4 +142,48 @@ public int rob(int[] money) {
 
     return dp[money.length - 1];
 }
+```
+
+### (Longest Common Subsequence)(https://leetcode.com/problems/longest-common-subsequence/description/)
+
+```java
+public int longestCommonSubsequence(String str1, String str2){
+    int m = str1.length();
+    int n = str2.length();
+
+    //dp bottom up uses an array
+    int[][] dp = new int[m+1][n+1];
+
+    for(int i = 1; i<=m; i++){
+        for(int j = 1; j<=n; j++){
+            if(str1.charAt(i-1) == str2.charAt(j-1)){
+                dp[i][j]= 1 + dp[i-1][j-1];//add 1 to diagonal
+            }else{
+                dp[i][j] = Math.max(dp[i-1][j],dp[i][j-1]);//take the maxt from previous row and col
+            }
+        }
+    }
+
+    return dp[m][n];
+   }
+```
+
+- str1 (rows) = `"AGGTAB"` (length m = 6)
+- str2 (columns) = `"GXTXAYB"` (length n = 7)
+
+Final LCS length: `dp[6][7] = 4` (one LCS is `"GTAB"`).
+
+```text
+```text
+    j:    0  1  2  3  4  5  6  7
+         ''  G  X  T  X  A  Y  B
+i
+0  ''     0  0  0  0  0  0  0  0
+1  A      0  0  0  0  0  1  1  1
+2  G      0  1  1  1  1  1  1  1
+3  G      0  *1  1  1  1  1  1  1   <- chosen (3,1) = G
+4  T      0  1  1  *2  2  2  2  2   <- chosen (4,3) = T
+5  A      0  1  1  2  2  *3  3  3   <- chosen (5,5) = A
+6  B      0  1  1  2  2  3  3  *4   <- chosen (6,7) = B
+```
 ```

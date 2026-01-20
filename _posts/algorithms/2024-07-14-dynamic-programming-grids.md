@@ -9,10 +9,7 @@ tags:
 
 {% include toc title="Index" %}
 
-# Grids
-
-**Bottom-up Approach**
-
+## **Bottom-up Approach**
 1. An array that answers the problem for a given state
 2. Base cases
 2. A recurrence relation to transition between states
@@ -21,12 +18,11 @@ tags:
 
 $ dp[\text{row}][\text{col}] = dp[\text{row} - 1][\text{col}] + dp[\text{row}][\text{col} - 1] $
 
-- dp arry is used top keep the intermediate calculations
-- return the rightmost bottom array `return dp[r-1][c-1];`
+- dp array is used top keep the intermediate calculations
 - the `row > 0` and `col > 0` takes care of filling the 1's on the edges.
+- return the rightmost bottom index `return dp[r-1][c-1];`
 
-##### Bottom-up  approach
-
+##### Bottom-up approach
 ```java
 int[][] dp = new int[m][n];
 dp[0][0] = 1; // Base case
@@ -46,8 +42,9 @@ return dp[r-1][c-1];
 
 The dp grid has the total number of paths at each i,j
 
-|---|---|---|
-| 1 | 1 | 1 |
+| | |
+|:---|:---|:---|
+| 1  |  1 |  1 |
 | 1 | 2 |**3**|
 | 1 |**3** | **6**|
 
