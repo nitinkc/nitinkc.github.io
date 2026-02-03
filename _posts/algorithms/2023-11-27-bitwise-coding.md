@@ -95,16 +95,24 @@ number 10.
   the specified n<sup>th</sup> bit.
 
 ### **The XOR Trick**
-Cancels each other Or Adding Without Carrying
+
+#### Cancelling properties:
+- If 2 similar objects are XOR'd, it returns `0|False`.
+  - XORing **two identical numbers results in 0**. `8^8 = 0`
+- XORing any number with 0 results in the same number.`a^0 = a`
+- XOR is commutative and associative, so order does not matter
+
+#### Adding Without Carrying
 - XOR is essentially an addition operation without carrying over to the next bit
 - Same variables cancels the effect.
-- If 2 similar objects are XOR'd, it returns `0|False`.
-    - XORing **two identical numbers results in 0**. `8^8 = 0`
-- XORing any number with 0 results in the same number.`a^0 = a`
+
 - XORing two integers gives **the sum without carry**.
     - trick used in bitwise addition
-- **Mnemonic** : **Ex**clude **OR** -> OR is Addition, thus XOR is
+
+> **Mnemonic** : **Ex**clude **OR** -> OR is Addition, thus XOR is
   `Adding Without Carrying`
+
+#### nullability test
 
 ```java
 // Use of XOR (both flags are boolean) and Exactly one is True
@@ -112,7 +120,6 @@ if (flag1 ^ flag2)
 //is equivalent to
 (flag1 && !flag2) || (!flag1 && flag2);
 ```
-nullability test
 ```java
 if(root.left == null && root.right !=null)
     return false;
@@ -125,7 +132,7 @@ if ((root.left == null) ^ (root.right == null))
 ```
 
 ##### unique element among duplicates or duplicates among unique elements
-- [https://leetcode.com/problems/find-the-duplicate-number/description/](https://leetcode.com/problems/find-the-duplicate-number/description/)
+- [https://leetcode.com/problems/find-the-duplicate-nummmber/description/](https://leetcode.com/problems/find-the-duplicate-number/description/)
 
 - [Stolen Drone problem](https://www.interviewcake.com/question/java/find-unique-int-among-duplicates)
 
