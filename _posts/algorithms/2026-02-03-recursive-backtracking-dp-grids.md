@@ -1,6 +1,6 @@
 ---
-title: Dynamic Programming - Grids
-date: 2024-07-14 18:27:00
+title: Recursive Backtracking - Dynamic Programming - Grids
+date: 2026-02-03 18:27:00
 categories:
 - Algorithms
 tags:

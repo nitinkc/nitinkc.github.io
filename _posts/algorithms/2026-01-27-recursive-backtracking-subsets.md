@@ -1,6 +1,6 @@
 ---
 title: Recursive Backtracking - Step by Step Guide
-date: 2026-01-25 13:05:00
+date: 2026-01-27 13:05:00
 categories:
 - Algorithms
 tags:
@@ -9,59 +9,6 @@ tags:
 ---
 
 {% include toc title="Index" %}
-
-Recursive backtracking is a powerful algorithmic technique used to solve problems incrementally by 
-trying partial solutions and **abandoning them if they are not valid**. 
-
-It is commonly used in constraint satisfaction problems, combinatorial optimization, and puzzles.
-
-## What is Backtracking?
-
-**Backtracking** is like solving a maze:
-- You try a path
-- If it leads to a dead end, you **go back** (backtrack) and try a different path
-- You continue until you find the solution or exhaust all possibilities
-
-### The Basic Pattern
-
-Every backtracking problem follows this template:
-
-Backtracking solutions generally involve two different base cases. 
-- You tend to stop the backtracking when you find a solution, so that becomes one of our base cases. 
-- be on the lookout for what is called a dead-end
-
- ```java
- boolean solve(parameters) {
-    // Base case: Check if we found a solution
-    if (goalReached()) {
-        return true;
-    }
-    
-    // Base case: Check if this path is invalid
-    if (invalidPath()) {
-        return false;
-    }
-    
-    // Recursive case: Try all possible choices
-    for (each choice) {
-        // 1. Make a choice
-        makeChoice();
-        
-        // 2. Recursively explore with this choice
-        if (solve(newParameters)) {
-            return true;  // Found solution!
-        }
-        
-        // 3. Undo the choice (backtrack)
-        unmakeChoice();
-    }
-    
-    // No solution found
-    return false;
-}
-```
-
----
 
 ## Level 1: The Simplest Backtracking - Binary Choices
 [https://codingbat.com/java/Recursion-2](https://codingbat.com/java/Recursion-2)
@@ -193,7 +140,74 @@ canSum(index=0, sum=0)
 
 ---
 
-## Level 2: Balance Scale Problems ⚖️
+### Example: Generate All Subsets
+
+```java
+void listSubsets(string input, string soFar)
+{
+    if (input.empty()) {
+        cout << "{" << soFar << "}" < endl;
+    } else {
+        char consider = input[0];
+        string rest = input.substr(1);
+        listSubsets(rest, soFar + consider);  // explore with
+        listSubsets(rest, soFar);             // explore without
+    }
+}
+```
+
+
+
+```java
+public class SubsetGenerator {
+    // Main method to generate all subsets
+    public static List<List<String>> generateSubsets(Set<String> movies) {
+        List<List<String>> result = new ArrayList<>();
+        Set<String> chosen = new HashSet<>();
+        listSubsetsRec(new ArrayList<>(movies), 0, chosen, result);
+        return result;
+    }
+    
+    // Recursive helper method
+    private static void listSubsetsRec(List<String> movies, int index, 
+                                       Set<String> chosen, List<List<String>> result) {
+        // Base case: no more elements to consider
+        if (index == movies.size()) {
+            result.add(new ArrayList<>(chosen)); // Add current subset to result
+            return;
+        }
+        
+        String element = movies.get(index);
+        
+        // Choice 1: Exclude the current element
+        listSubsetsRec(movies, index + 1, chosen, result);
+        
+        // Choice 2: Include the current element
+        chosen.add(element);
+        listSubsetsRec(movies, index + 1, chosen, result);
+        chosen.remove(element); // Backtrack: undo the choice
+    }
+}
+```
+
+**Example Usage**:
+```java
+Set<String> masterSet = new HashSet<>(Arrays.asList("A", "B", "C"));
+List<List<String>> allSubsets = SubsetGenerator.generateSubsets(masterSet);
+
+// Output:
+// []
+// [A]
+// [B]
+// [A, B]
+// [C]
+// [A, C]
+// [B, C]
+// [A, B, C]
+```
+
+---------------------------
+ ## Level 2: Balance Scale Problems ⚖️
 
 Now let's tackle the classic **canBalance** problem from [CodeStepByStep](https://www.codestepbystep.com/r/problem/view/java/backtracking/canBalance).
 
@@ -215,13 +229,6 @@ Now let's tackle the classic **canBalance** problem from [CodeStepByStep](https:
    Total: 3      Total: 3  ✓ BALANCED!
 ```
 Answer: `true`
-
-**Example 2**: `[1, 2]`
-- Try: left=[1], right=[2] → 1 ≠ 2 ✗
-- Try: left=[2], right=[1] → 2 ≠ 1 ✗
-- Try: left=[1,2], right=[] → 3 ≠ 0 ✗
-- Try: left=[], right=[1,2] → 0 ≠ 3 ✗
-Answer: `false`
 
 **Think**: For each weight, we have **2 choices**: put on LEFT or put on RIGHT.
 
@@ -261,18 +268,6 @@ canBalance(index=0, left=0, right=0)
 │  │  ├─ Put 3 on LEFT → (left=6, right=0) → FALSE
 │  │  └─ Put 3 on RIGHT → (left=3, right=3) → TRUE ✓ FOUND!
 ```
-
-**Test Cases**:
-```java
-canBalance([1, 2, 3])          → true  (left: 1,2  right: 3)
-canBalance([1, 2])             → false (no way to balance)
-canBalance([1, 1])             → true  (left: 1  right: 1)
-canBalance([1, 2, 1, 2])       → true  (left: 1,2  right: 1,2)
-canBalance([7])                → false (can't split single item)
-canBalance([7, 7])             → true  (left: 7  right: 7)
-canBalance([6, 3, 2, 1])       → true  (left: 6  right: 3,2,1)
-```
-
 ---
 
 ### Problem 2.2: Balance Scale with Target Weight
@@ -543,100 +538,7 @@ canInterleave("abc", "dde", "addce")           → false (missing 'b')
 
 ---
 
-## Level 3: Permutations and Arrangements
 
-Now let's move to problems where **order matters** and we need to track what's been used.
-
-### Problem 3.1: Generate All Permutations
-
-**Problem**: Given `[1, 2, 3]`, generate all possible arrangements.
-
-**Output**: `[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]`
-
-**Key Difference from Subsets**:
-- Subsets: Each element included or excluded (2 choices)
-- Permutations: Each position can be ANY unused element (n choices for 1st, n-1 for 2nd, etc.)
-
-**Think**: We need to track which elements we've already used.
-
-```java
-public List<List<Integer>> permute(int[] nums) {
-    List<List<Integer>> result = new ArrayList<>();
-    backtrack(nums, new ArrayList<>(), new boolean[nums.length], result);
-    return result;
-}
-
-private void backtrack(int[] nums, List<Integer> current, 
-                       boolean[] used, List<List<Integer>> result) {
-    // Base case: permutation is complete
-    if (current.size() == nums.length) {
-        result.add(new ArrayList<>(current));
-        return;
-    }
-    
-    // Try each number that hasn't been used yet
-    for (int i = 0; i < nums.length; i++) {
-        if (used[i]) continue;  // Skip if already used
-        
-        // Make choice
-        current.add(nums[i]);
-        used[i] = true;
-        
-        // Recurse
-        backtrack(nums, current, used, result);
-        
-        // Undo choice (backtrack)
-        current.remove(current.size() - 1);
-        used[i] = false;
-    }
-}
-```
-
-**Visual Decision Tree** for `[1, 2]`:
-```
-                      []
-        ┌──────────────┴──────────────┐
-     pick 1                         pick 2
-       [1]                            [2]
-        │                              │
-     pick 2                         pick 1
-      [1,2]                          [2,1]
-```
-
----
-
-### Problem 3.2: Generate All Subsets (Return List Version)
-
-Going back to subsets, but now returning the result:
-
-```java
-public List<List<Integer>> subsets(int[] nums) {
-    List<List<Integer>> result = new ArrayList<>();
-    backtrack(nums, 0, new ArrayList<>(), result);
-    return result;
-}
-
-private void backtrack(int[] nums, int index, List<Integer> current, 
-                       List<List<Integer>> result) {
-    // Base case: processed all elements
-    if (index == nums.length) {
-        result.add(new ArrayList<>(current));  // Make a COPY!
-        return;
-    }
-    
-    // Choice 1: Don't include nums[index]
-    backtrack(nums, index + 1, current, result);
-    
-    // Choice 2: Include nums[index]
-    current.add(nums[index]);
-    backtrack(nums, index + 1, current, result);
-    current.remove(current.size() - 1);  // Backtrack!
-}
-```
-
-**⚠️ Common Bug**: Forgetting `new ArrayList<>(current)` - if you just add `current`, all results will be empty because `current` gets emptied by backtracking!
-
----
 
 ## Level 4: Grid and Board Problems
 

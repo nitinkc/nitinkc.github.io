@@ -9,7 +9,6 @@ tags:
 
 {% include toc title="Index" %}
 
-
 > If a problem is asked to be solved without using loops (for or while), then recursion is the way to go.
 
 ```java
@@ -21,6 +20,22 @@ void printReverseLinkedList(ListNode head){
     System.out.println(head.data);
 }
 ```
+## Two types of recursion
+
+### Basic recursion
+- One repeated task that builds up a solution as you come back up the call stack
+- The final base case defines the initial seed of the solution and each call contributes a little bit to the solution
+- Initial call to recursive function produces final solution
+
+### Backtracking recursion
+- Build up many possible solutions through multiple recursive calls at each step
+- Seed the initial recursive call with an “empty” solution (Helper method parameters)
+- At each base case, you have a potential solution
+
+There are 3 main categories of problems that we be solved by using backtracking recursion:
+- generate all possible solutions to a problem or count the total number of possible solutions to a problem
+- find one specific solution to a problem or prove that one exists
+- We can find the best possible solution to a given problem
 
 ## Steps to thinking Recursively
 - A thought on base cases :

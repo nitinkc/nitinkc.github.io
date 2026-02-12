@@ -183,3 +183,15 @@ gridDFS(grid,r-1,c,visited);
 
 
 {% gist nitinkc/9cc5828b85872dbfeab24ca9a86852e8  %}
+
+
+## DFS vs BFS
+● BFS is typically iterative while DFS is naturally expressed recursively.
+
+
+BFS looks at all paths of a particular length before moving on to longer paths,
+so it’s guaranteed to find the shortest path (e.g. word ladder)
+
+DFS doesn’t need to store all partial paths along the way, so it has a smaller
+memory footprint than BFS does.
+
