@@ -1,5 +1,5 @@
 ---
-title: Recursive Backtracking - Permutations
+title: Recursive Backtracking - Theory
 date: 2026-01-25 13:05:00
 categories:
 - Algorithms
@@ -15,6 +15,8 @@ trying partial solutions and **abandoning them if they are not valid**.
 
 It is commonly used in constraint satisfaction problems, combinatorial optimization, and puzzles.
 
+> Choose-explore-unchoose pattern
+
 ## What is Backtracking?
 
 **Backtracking** is like solving a maze:
@@ -22,7 +24,6 @@ It is commonly used in constraint satisfaction problems, combinatorial optimizat
 - If it leads to a dead end, you **go back** (backtrack) and try a different path
 - You continue until you find the solution or exhaust all possibilities
 
-> Choose-explore-unchoose pattern
 
 ```java
 void explore(options, soFar)

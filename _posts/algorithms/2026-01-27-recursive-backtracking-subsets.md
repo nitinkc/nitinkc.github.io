@@ -140,7 +140,7 @@ canSum(index=0, sum=0)
 
 ---
 
-### Example: Generate All Subsets
+### Example: Generate All String Subsets
 
 ```java
 void listSubsets(string input, string soFar)
@@ -157,7 +157,7 @@ void listSubsets(string input, string soFar)
 ```
 
 
-
+-- TODO: CHECK
 ```java
 public class SubsetGenerator {
     // Main method to generate all subsets

@@ -11,6 +11,16 @@ tags:
 
 {% include toc title="Index" icon="cog" %}
 
+
+## Latest Java Questions?
+- what is compact constructor?
+- Can records have a constructor?
+- Where can final fields be changed?
+- What does list.copyOf() do with an immutabel list
+- Can record have static fields and methods?
+- Difference between Switch Statement vs Switch Expression
+
+
 - OOPS ()
     + **Encapsulation** (Accessors and Mutators)
     + **Abstraction** (crisply defined conceptual boundaries, relative to the

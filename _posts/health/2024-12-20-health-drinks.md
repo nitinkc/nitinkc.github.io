@@ -184,3 +184,16 @@ This is the **fasting window** for 12–18 hours.
 ### **Ajwain (Carom Seeds)**
 - Reduces acidity and indigestion.
 - Supports respiratory health.
+
+
+## Dry Fruits smoothie
+- 2 anjeer - Fig 
+- 4 dates
+- 2 Walnuts
+- 5 Almonds
+- 5 kaju 
+- 5 pistachio
+- 2 spoon kishmish
+- 1 spoon pumpkin seeds
+
+Soak it overnight, wash and blend with milk next morning and drink.

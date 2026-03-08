@@ -12,6 +12,9 @@ tags:
 
 Behavior-Driven Development (BDD) is a software development methodology that evolved from Test-Driven Development (TDD). Its primary goal is to bridge the communication gap between technical teams (developers, QA) and non-technical stakeholders (business analysts, product owners) by using a common, natural language to describe a system's behavior.
 
+
+CTFs (Customer Test Flows) - 
+
 # TDD vs. BDD
 
 While related, TDD and BDD have different focuses:
@@ -27,7 +30,7 @@ In short, BDD is an extension of TDD that emphasizes collaboration and business 
 Before diving deeper into BDD, it's helpful to understand where it fits within the broader landscape of software testing. Here are some fundamental testing types and their ideal use cases.
 
 ## Component Testing
-- **What it is**: Component testing involves testing individual components or modules of an application in isolation. It's a step up from unit testing (which tests a single class) but stops short of full end-to-end testing. A component could be a group of related classes, like a service and its mocked dependencies.
+- **What it is**: Component testing involves testing individual components or modules of an application **in isolation**. It's a step up from unit testing (which tests a single class) but stops short of full end-to-end testing. A component could be a group of related classes, like a service and its mocked dependencies.
 - **Ideal Candidates**:
     - A specific service and its interface (e.g., a `UserService` with its repositories mocked).
     - A UI component and its local state management (e.g., a React login form).
@@ -212,12 +215,12 @@ When you run `CalculatorStoryRunner` with JUnit, JBehave will:
 
 Cucumber is another very popular BDD framework. Both are excellent choices, but they have some differences:
 
-| Feature | JBehave | Cucumber |
-|---|---|---|
-| **Origin** | One of the original Java BDD frameworks. | Originated in the Ruby world, now has a strong Java implementation (Cucumber-JVM). |
-| **Configuration** | Configuration is often done in a Java runner class. | Tends to use a mix of annotations and a properties file. |
-| **Flexibility** | Considered very flexible and configurable, but can require more boilerplate code. | Often seen as slightly easier to get started with due to more conventions. |
-| **Community** | Solid, mature community. | Larger, more active community with extensive documentation and third-party support. |
+| Feature           | JBehave                                                                           | Cucumber                                                                            |
+|:------------------|:----------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
+| **Origin**        | One of the original Java BDD frameworks.                                          | Originated in the Ruby world, now has a strong Java implementation (Cucumber-JVM).  |
+| **Configuration** | Configuration is often done in a Java runner class.                               | Tends to use a mix of annotations and a properties file.                            |
+| **Flexibility**   | Considered very flexible and configurable, but can require more boilerplate code. | Often seen as slightly easier to get started with due to more conventions.          |
+| **Community**     | Solid, mature community.                                                          | Larger, more active community with extensive documentation and third-party support. |
 
 Ultimately, the choice between them often comes down to team preference.
 

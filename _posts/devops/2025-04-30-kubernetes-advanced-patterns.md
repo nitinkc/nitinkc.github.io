@@ -690,6 +690,7 @@ kubectl exec -it <frontend-pod> -n ecommerce -- \
 ## 2. Metrics with Prometheus and Grafana
 
 `monitoring/servicemonitor.yaml`
+
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -706,7 +707,7 @@ spec:
   - port: http
     path: /actuator/prometheus
     interval: 30s
----
+
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -725,7 +726,7 @@ spec:
         severity: critical
       annotations:
         summary: "High error rate on product service"
-        description: "Error rate is {{ $value }} requests/sec"
+        description: "Error rate is {% raw %}{{ $value }}{% endraw %} requests/sec"
     - alert: HighLatency
       expr: |
         histogram_quantile(0.95, rate(http_server_requests_seconds_bucket{job="product-service"}[5m])) > 1

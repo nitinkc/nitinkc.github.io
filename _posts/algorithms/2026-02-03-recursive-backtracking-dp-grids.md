@@ -9,7 +9,9 @@ tags:
 
 {% include toc title="Index" %}
 
-## **Bottom-up Approach**
+## Grid find one PAth 
+
+### **Bottom-up Approach**
 1. An array that answers the problem for a given state
 2. Base cases
 2. A recurrence relation to transition between states
@@ -61,7 +63,7 @@ The dp grid has the total number of paths at each i,j
 
 [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/description/)
 
-Using the same grid with ebverything under the same loop
+Using the same grid with everything under the same loop
 
 ```java
 public int minPathSum(int[][] grid) {
@@ -137,3 +139,6 @@ public int minPathSum(int[][] grid) {
    return dp[r-1][c-1];
 }
 ```
+
+## Count Number of unique paths
+
