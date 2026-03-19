@@ -61,15 +61,13 @@ public @interface MyCustomAnnotation {
 }
 ```
 
-**@Retention**
-
-- Runtime level : `RetentionPolicy.RUNTIME)`: Specifies that the annotation
+#### **@Retention**
+- Runtime level : `RetentionPolicy.RUNTIME`: Specifies that the annotation
   should be retained at runtime and be available for reflection.
 - Source level - `RetentionPolicy.SOURCE`
 - Classlevel - `RetentionPolicy.CLASS`
 
-**@Target**
-
+#### **@Target**
 - Method level - `ElementType.METHOD` Specifies that this annotation can only be
   applied to methods.
 - Class Level - `ElementType.TYPE`
