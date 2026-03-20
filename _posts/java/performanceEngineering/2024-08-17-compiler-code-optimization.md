@@ -78,7 +78,7 @@ process(3);
 
 ### Just-In-Time (JIT) Compilation
 
-[https://nitinkc.github.io/java/performance%20engineering/JVM-Compilation/#jit---just-in-time-compilation](https://nitinkc.github.io/java/performance%20engineering/JVM-Compilation/#jit---just-in-time-compilation)
+[JIT Compilation](https://nitinkc.github.io/performance%20engineering/JVM-Compilation/#jit---just-in-time-compilation)
 Converts bytecode to native machine code at runtime, allowing optimizations
 based on actual usage.
 
