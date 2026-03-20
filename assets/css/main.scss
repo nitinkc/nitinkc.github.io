@@ -30,10 +30,10 @@ $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
 // Custom Font for the
 $helvetica: Spectral, Helvetica, "Helvetica Neue", Arial, sans-serif !default;
 $my-custom-font-family: Times, serif, -apple-system, BlinkMacSystemFont, Roboto, "roboto slab", "droid serif", "segoe ui", system-ui, Arial, sans-serif;
-$custom-font-family: Spectral, serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$custom-font-family: "IBM Plex Serif", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $global-font-family: $custom-font-family !default;
 //$header-font-family: $helvetica !default;
-$header-font-family: $custom-font-family !default;
+$header-font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !default;
 
 
 //Keep the imports below the Variable names
@@ -110,38 +110,122 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 4px solid $primary-color;
 }
 
-.sidebar__right {
-  margin-bottom: 1em;
+.theme__toggle {
+  background: transparent;
+  border: 1px solid $border-color;
+  border-radius: 999px;
+  color: $text-color;
+  cursor: pointer;
+  font-size: 0.75em;
+  margin-left: 0.75em;
+  padding: 0.35em 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
 
-  @include breakpoint($large) {
-    position: sticky !important; /* added to make toc scroll with page */
-    float: right !important; /* added to make toc scroll with page */
-    top: 0;
-    right: 0;
-    width: $right-sidebar-width;//400px
-    //margin-right: -1 * $right-sidebar-width-narrow;
-    padding-left: 1em;
-    padding-top: 1em !important; /* added to make toc scroll with page */
-    z-index: 10;
-  }
+.theme__toggle:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
 
-  .toc {
-    //text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+:root[data-theme="light"] .toc__menu a {
+  color: $tocListColor;
+}
 
-  .toc__menu a {
-    color: $tocListColor;
-    //display: block;
-    //padding: 0.25rem 0.75rem;
-    //line-height: 1.5;
-  }
+:root[data-theme="light"] .toc__menu li ul > li a {
+  color: $primary-color;
+}
 
-  .toc__menu li ul > li a {
-    color: $primary-color;
-    font-weight: normal;
-    font-style: oblique;
-  }
+// Dark theme overrides
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root[data-theme="dark"] .search-content .search-input {
+  background-color: #2a2a2a;
+  border: 1px solid #5b5b5b;
+  color: #e6e6e6;
+}
+
+:root[data-theme="dark"] .search-content .search-input::placeholder {
+  color: #b8c2c8;
+}
+
+:root[data-theme="dark"] body {
+  background-color: #383838; //#1a1a1a;
+  color: #e6e6e6;
+}
+
+:root[data-theme="dark"] .masthead {
+  background-color: #1f1f1f;
+  border-bottom-color: #5b5b5b;
+}
+
+:root[data-theme="dark"] .masthead__inner-wrap {
+  background-color: #1f1f1f;
+}
+
+:root[data-theme="dark"] #site-nav.greedy-nav {
+  background-color: #1f1f1f;
+}
+
+:root[data-theme="dark"] .masthead__menu-item a,
+:root[data-theme="dark"] .site-title,
+:root[data-theme="dark"] .archive__item-title a {
+  color: #e6e6e6;
+}
+
+:root[data-theme="dark"] .masthead__menu-item a:hover,
+:root[data-theme="dark"] .site-title:hover {
+  color: #ffffff;
+}
+
+:root[data-theme="dark"] .page__content a {
+  color: #9bd0ff;
+}
+
+:root[data-theme="dark"] .page__content a:visited {
+  color: #c7a6ff;
+}
+
+:root[data-theme="dark"] .page__content code {
+  background-color: #2a2a2a;
+}
+
+:root[data-theme="dark"] .theme__toggle {
+  border-color: #8a8a8a;
+  color: #f0f0f0;
+  background-color: #2a2a2a;
+}
+
+:root[data-theme="dark"] .toc {
+  background-color: #1f1f1f;
+}
+
+:root[data-theme="dark"] .toc__menu {
+  background-color: #1f1f1f;
+}
+
+:root[data-theme="dark"] .toc__menu a {
+  color: #cfd8dc;
+}
+
+:root[data-theme="dark"] .toc__menu li ul > li a {
+  color: #9fb8c2;
+}
+
+:root[data-theme="dark"] .notice--primary {
+  background-color: #232323;
+  border-color: #5b5b5b;
+  color: #e6e6e6;
+}
+
+:root[data-theme="dark"] .notice--primary a {
+  color: #9bd0ff;
+}
+
+:root[data-theme="dark"] .notice--primary a:visited {
+  color: #c7a6ff;
 }
 
 //Taxonomy div is on the home page when Post_by_category or Post_by_Tag is clicked
