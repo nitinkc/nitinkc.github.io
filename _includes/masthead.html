@@ -21,7 +21,7 @@
                 display: none;}">
         </iframe>-->
 
-        <!-- <iframe scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width:450px;height:210px;"src="https://www.clocklink.com/html5embed.php?clock=049&timezone=MST&color=white&size=450&Title=&Message=&Target=&From=2023,1,1,0,0,0&Color=white"></iframe>-->
+        <!-- <iframe scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width=450px;height=210px;"src="https://www.clocklink.com/html5embed.php?clock=049&timezone=MST&color=white&size=450&Title=&Message=&Target=&From=2023,1,1,0,0,0&Color=white"></iframe>-->
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             <li class="masthead__menu-item">
@@ -37,6 +37,9 @@
           </svg>
         </button>
         {% endif %}
+        <button class="theme__toggle" type="button" aria-pressed="false" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme__toggle-label">Dark</span>
+        </button>
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
