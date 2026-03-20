@@ -11,6 +11,49 @@
   <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
 {% endif %}
 
+<script>
+  (function () {
+    var themeToggleButton = document.querySelector(".theme__toggle");
+    var themeToggleLabel = document.querySelector(".theme__toggle-label");
+    var themeStorageKey = "site-theme";
+
+    var applyTheme = function (themePreference) {
+      var resolved = themePreference === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", resolved);
+      if (themeToggleButton) {
+        var isDark = resolved === "dark";
+        themeToggleButton.setAttribute("aria-pressed", isDark ? "true" : "false");
+        if (themeToggleLabel) {
+          themeToggleLabel.textContent = isDark ? "Light" : "Dark";
+        }
+      }
+    };
+
+    var getPreferredTheme = function () {
+      var saved = localStorage.getItem(themeStorageKey);
+      if (saved === "light" || saved === "dark") {
+        return saved;
+      }
+      return "light";
+    };
+
+    var toggleTheme = function () {
+      var current = getPreferredTheme();
+      var next = current === "dark" ? "light" : "dark";
+      localStorage.setItem(themeStorageKey, next);
+      applyTheme(next);
+    };
+
+    applyTheme(getPreferredTheme());
+
+    if (themeToggleButton) {
+      themeToggleButton.addEventListener("click", function () {
+        toggleTheme();
+      });
+    }
+  })();
+</script>
+
 {% if site.search == true or page.layout == "search" %}
   {%- assign search_provider = site.search_provider | default: "lunr" -%}
   {%- case search_provider -%}
