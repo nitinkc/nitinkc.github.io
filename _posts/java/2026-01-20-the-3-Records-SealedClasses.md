@@ -9,7 +9,6 @@ tags:
 
 {% include toc title="Index" %}
 
-
 Data Oriented Programming with Records and Sealed Classes
 ## Records
 - Low signal to Noise Ratio (no explicit boilerplate code - constructor, getter-setters, toString(), hashCode(), equals())
@@ -73,12 +72,12 @@ We should prefer composition over inheritance. Records are great for data carrie
 
 Records are immutable data carriers that promote composition over inheritance, making them ideal for simple data structures without complex behavior.
 
-MAke sure to create record using Strings, primitives other immutable classes/instances and other well created records
+Make sure to create record using Strings, primitives other immutable classes/instances and other well created records
 
-Do NOT write constructurot unless you have a scenario for it
+Do NOT write constructor unless you have a scenario for it
 
 When do we need to write constructor in record?
-1) Data Clensing or data transformation
+1) Data Cleansing or data transformation
 2) Validation
 - To add validation logic for the fields.
 

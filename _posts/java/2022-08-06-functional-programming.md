@@ -41,17 +41,15 @@ Good Design Principle `keep together what belongs together`
 - be declarative (leave it to the API's)
 - not imperative.
 
-# Pure Function
+## Pure Function
 
-**Rules:**
-
-- **No Side Effects**: A pure function does not alter any state outside itself.
+### Rules:
+- **No Side Effects**: A pure function **does not alter any state** outside itself.
   It does not produce side effects.
 - **Dependence on External State**: A pure function **does not rely** on
   external variables or states that may change.
 
-**Characteristics of Pure Functions:**
-
+### Characteristics of Pure Functions:
 - **Idempotent**: A pure function is idempotent, meaning it will return the same
   result when executed multiple times with the same input.
 - **No Side Effects**: It does not affect or rely on any external state.
@@ -59,13 +57,11 @@ Good Design Principle `keep together what belongs together`
   issues, improving concurrency and performance.
 
 ### Why Are Pure Functions Important?
-
-Functional programming emphasizes **immutability** and **purity** for
-_efficiency_:
+Functional programming emphasizes **immutability** and **purity** for _**efficiency**_:
 
 - **Lazy Evaluation**: Functional programming relies on lazy evaluation, which
   defers computation until necessary.
-
+  
 Lazy evaluation requires purity of functions
 {: .notice--primary}
 
@@ -102,8 +98,7 @@ and thus code wouldn't behave as expected on applying parallelStream
 
 # The Idea of Using Arguments in a Factory Method
 
-In programming, particularly in Java, `factory methods` are often used to *
-*_create objects_**
+In programming, particularly in Java, `factory methods` are often used to **_create objects_**
 based on certain parameters or conditions.
 
 Here, we explore how arguments can be utilized in a factory method
@@ -135,7 +130,7 @@ Previously, we have seen two key concepts:
 - ```java
   // Factory method that returns a Predicate based on the color
   public static Predicate<Car> getColorPredicate(String color) {
-  return car -> color.equals(car.getColor());
+    return car -> color.equals(car.getColor());
   }
   ```
 
@@ -413,7 +408,3 @@ Functional pipeline offers internal iterators
 
 * Avoid **shared mutable** variables
 * Ensure that we make the functional pipeline pure
-
-# What is a pure function:
-
-[functional-programming/#pure-function]({% post_url /java/2022-08-06-functional-programming %})

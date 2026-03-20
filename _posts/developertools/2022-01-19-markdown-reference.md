@@ -184,6 +184,17 @@ to change the display format of dates.
 - {% raw %}`{{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}`{% endraw %}
     - {{ 'now' | date: "%a, %b %-d %Y - %r %Z" }}
 
+# Code Folding / Collapsing
+```markdown
+<details>
+  <summary> 
+  View Functional Interfaces
+  </summary>
+
+  {% gist nitinkc/1460522d8e96dc6bb2a7058ed190b9e2 %}
+</details>
+```
+
 # Notices with theme
 - Default `{: .notice}`
 - Primary {: .notice--primary}

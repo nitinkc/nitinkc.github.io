@@ -11,18 +11,19 @@ tags:
 
 ## Object Creation & Assignment In Streams
 
-Object Assignment using traditional for loop VS in Streams.Notice in Streams,
-instead of individually assigning object to each element of Arraylist, an entire
+Object Assignment using traditional for loop VS in Streams.
+
+Notice in Streams, instead of individually assigning object to each element of Arraylist, an entire
 collection is assigned
 
 {% gist nitinkc/3bc7cde3d5c123c3fdec9d96a56dbd9f %}
 
 ### Wrong Expectation for Streams to work
 
-In case of applying operations on Stream, it is necessasary to assign the result
+In case of applying operations on Stream, it is necessary to assign the result
 of the stream back to the collection.
 
-For example, if the class Person has persontFullName as the property
+For example, if the class Person has personFullName as the property
 
 ```java
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor @ToString
@@ -69,7 +70,7 @@ Collections.sort(listOfPersons, Comparator.comparing(Person::getPersontFullName,
 
 ### Parallel Stream issues
 
-The behavoiur of list.parallelStream() or list.stream().parallel() is
+The behavior of `list.parallelStream()` or `list.stream().parallel()` is
 unpredictable in certain scenarios.
 
 {% gist nitinkc/c34b3f61fff2fe68f9d00b2ae95f635e %}

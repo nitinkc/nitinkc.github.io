@@ -1,5 +1,5 @@
 ---
-title: Optional Use cases
+title: Optional - Use cases
 date: 2021-10-13 21:55:00
 categories:
 - Java
@@ -18,7 +18,7 @@ tags:
 * Optional is a box that **hold at most one value**, like Collections and
   Arrays, in it
 * Optional is of **16 bytes**, and is an `Object`.
-* creates a separate memory, excessive use should be avoided, as it can create
+* creates a separate memory, **excessive use should be avoided**, as it can create
   performance issues.
 * Optional is **immutable**. Once assigned, it cannot be reassigned.
 

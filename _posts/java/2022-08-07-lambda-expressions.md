@@ -12,13 +12,11 @@ tags:
 
 {% include toc title="Index" %}
 
-# Lambda
+Lambda Expression is just an anonymous (nameless) function. 
+- A function does not have a state. 
+- Object has a state.
 
-Lambda Expression is just an anonymous (nameless) function. A function does not
-have a state. Object has a state.
-
-Best Practices
-
+## Best Practices for Functional Programming
 1. Be declarative and less imperative
 2. Favor immutability
 3. Reduce side effects
@@ -26,7 +24,6 @@ Best Practices
 5. Design with Higher-Order functions
 
 ## Functional Interface
-
 * Interface with SAM : Single Abstract Method
 * Functional Interface : can automatically be elevated to lambda expression. In
   other words, you can only use lambdas for functional interfaces
@@ -40,22 +37,19 @@ View Functional Interfaces
 </details>
 
 ## Writing Lambda
+A function/method has 4 parts : name, return type, params/args list & method body
 
-A function/method has 4 parts : name, return type, params/args list & method
-body
 ![Parts of a Method/Function]({{ site.url }}/assets/images/methodParts.png)
 
 The most important parts are just the arguments and body. In Functional
 interface, there is only one method, so the name
-of the method is implied and the override has to be done by any class
-implementing the method.
+of the method is implied and the override has to be done by any class implementing the method.
 
 Lambda with parameter/argument data type
 ![Image Text]({{ site.url }}/assets/images/lambda1.png)
 
 even the argument/parameter data type can removed as
 ![Image Text]({{ site.url }}/assets/images/lambda2.png)
-
 
 ### Spotting Valid Lambdas
 Defining Lambda : Providing implementation to the abstract method
@@ -190,5 +184,63 @@ System.out.println(totalValues(values, e -> e % 2 == 0));
 System.out.println(totalValues(values, e -> e % 2 != 0));
 ```
 
-* Lambda expression can access static variables, instance variables,
-* effectively final variables and effectively Final local variables
+Lambda expression can access 
+- static variables, 
+- instance variables, 
+- effectively final variables and 
+- effectively Final local variables
+
+### Effectively Final Variables
+A local variable is **effectively final** if it is assigned once and never reassigned.
+Lambdas and anonymous classes can capture such variables because they are stable values.
+
+### Example
+```java
+import java.util.function.IntPredicate;
+
+public class EffectivelyFinalDemo {
+    public static void main(String[] args) {
+        int threshold = 10; // assigned once -> effectively final
+
+        IntPredicate isGreaterThan = n -> n > threshold;
+        System.out.println(isGreaterThan.test(12)); // true
+
+        // threshold = 15; // DOES NOT COMPILE: variable used in lambda must be final or effectively final
+    }
+}
+```
+
+**Why this rule exists**: captured locals are copied into the lambda at creation time.
+If the local could change later, the lambda would see a stale value, so Java enforces
+"final or effectively final" for safety and clarity
+
+
+### Examples for Captured Variables
+```java
+import java.util.function.IntSupplier;
+
+public class LambdaCaptureDemo {
+    private static int staticBase = 100; // static variable
+    private int instanceBase = 20;       // instance variable
+
+    public IntSupplier staticExample() {
+        return () -> staticBase + 1; // can access static variable
+    }
+
+    public IntSupplier instanceExample() {
+        return () -> instanceBase + 1; // can access instance variable
+    }
+
+    public IntSupplier effectivelyFinalExample() {
+        int bonus = 5; // effectively final local variable
+        return () -> instanceBase + bonus; // bonus is captured
+    }
+
+    public IntSupplier effectivelyFinalLocalExample() {
+        int offset = 3; // effectively final
+        IntSupplier supplier = () -> offset * 2;
+        // offset = 7; // DOES NOT COMPILE: variable used in lambda must be final or effectively final
+        return supplier;
+    }
+}
+```

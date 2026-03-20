@@ -9,22 +9,12 @@ tags:
 
 {% include toc title="Index" %}
 
-# Sending Email with an attachment via Java Mailing API
+Sending Email with an attachment via Java Mailing API
 
-Set up the properties either from the properties file or via final variables
+## Set up the properties 
+either from the properties file or via final variables
 
-```java
-private static final String EMAIL_HOST = "xxxx.xxxx.com";
-private static final int EMAIL_PORT = 25;
-private static final String EMAIL_FROM = "test.test@test.com";
-private static final String PERSONAL_NAME = "Automatic Report Sending Service";
-```
-
-We can create a method that can be used to send emails from service
-`sendJavaEmail(String to, String subject, String msg, String pathToAttachment)`
-
-Initially set up the properties
-
+**properties file**
 ```java
 Properties emailProps = new Properties();
 emailProps.put("mail.smtp.auth", false);
@@ -34,13 +24,25 @@ emailProps.put("mail.smtp.port", EMAIL_PORT);
 emailProps.put("mail.smtp.ssl.trust", EMAIL_HOST);
 ```
 
-Create a mail session
+**final variables**
+```java
+private static final String EMAIL_HOST = "xxxx.xxxx.com";
+private static final int EMAIL_PORT = 25;
+private static final String EMAIL_FROM = "test.test@test.com";
+private static final String PERSONAL_NAME = "Automatic Report Sending Service";
+```
 
+We can create a method that can be used to send emails from service
+```java
+sendJavaEmail(String to, String subject, String msg, String pathToAttachment)
+```
+
+## Create a mail session
 ```java
 Session session = Session.getInstance(emailProps);
 ```
 
-Set up message with email ids, subject line
+## Set up message with email ids, subject line
 
 ```java
 Message message = new MimeMessage(session);
@@ -49,14 +51,14 @@ message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
 message.setSubject(subject);
 ```
 
-Prepare the body part
+## Prepare the email body 
 
 ```java
 BodyPart messageBodyPart = new MimeBodyPart();
 messageBodyPart.setText(msg);
 ```
 
-Prepare the attachment
+### Prepare the attachment
 
 ```java
 MimeBodyPart mimeBodyPart = new MimeBodyPart();
@@ -64,7 +66,7 @@ mimeBodyPart.setContent(msg, "text/html");
 mimeBodyPart.attachFile(pathToAttachment);
 ```
 
-Set up the Multipart message by adding the attachment and the email body
+## Set up the Multipart message by adding the attachment and the email body
 
 ```java
 Multipart multipart = new MimeMultipart();

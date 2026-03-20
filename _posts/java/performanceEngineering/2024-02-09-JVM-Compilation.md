@@ -1,5 +1,5 @@
 ---
-title: Compiler Flags
+title: JVM Compiler Flags
 date: 2024-02-09 20:27:00
 categories:
 - Performance Engineering
