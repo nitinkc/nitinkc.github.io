@@ -31,7 +31,7 @@ JVM from exiting.
 
 # Defining Platform Threads
 
-##### [Ways to create Threads](https://nitinkc.github.io/java/multithreading/ThreadCreation/)
+##### [Ways to create Threads]({% link _posts/java/threads/2024-08-08-ThreadCreation.md %})
 
 In Java, by default, all threads are **non-daemon threads** (unless explicitly modified)
 - The Java Virtual Machine (JVM will not terminate until all non-daemon threads have finished executing.
