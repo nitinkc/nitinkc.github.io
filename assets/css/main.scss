@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main {//Decide the page width
-  max-width: 1280px; // align with Minimal Mistakes default container width
+  max-width: 100%; // align with Minimal Mistakes default container width
   margin-left: auto;
   margin-right: auto;
 }
