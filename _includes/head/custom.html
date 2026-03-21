@@ -20,7 +20,12 @@
 <!--</script>-->
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% if site.github.build_revision %}
+  {% assign cache_bust = site.github.build_revision %}
+{% else %}
+  {% assign cache_bust = site.time | date: '%s' %}
+{% endif %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ cache_bust }}">
 <!--<link rel="stylesheet" href="{{ '/_scss/my-custom.scss' | relative_url }}">-->
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"> -->
 
@@ -39,4 +44,3 @@
     }
 </style>
 <![endif]-->
-

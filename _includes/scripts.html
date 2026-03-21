@@ -8,7 +8,12 @@
     <script src="{{ script_path }}"></script>
   {% endfor %}
 {% else %}
-  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+  {% if site.github.build_revision %}
+    {% assign cache_bust = site.github.build_revision %}
+  {% else %}
+    {% assign cache_bust = site.time | date: '%s' %}
+  {% endif %}
+  <script src="{{ '/assets/js/main.min.js' | relative_url }}?v={{ cache_bust }}"></script>
 {% endif %}
 
 <script>
