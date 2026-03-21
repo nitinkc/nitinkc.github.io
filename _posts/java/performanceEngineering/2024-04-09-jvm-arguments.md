@@ -12,38 +12,41 @@ tags:
 
 {% include toc title="Index" %}
 
-* -XX means it's an advanced option
-* a plus or a minus indicates the option to be switched on or off
-* and then the option name in `SentenceCase`
 
-# Jshell
-
-Pass in the PID for the running Java progam along with the flag to know its
-current settings. To find the process id for the java program run `jps`
-
-```shell
-❯ jps
-❯ jinfo -flag NewRatio 46615
--XX:NewRatio=2
-
-❯ jinfo -flag SurvivorRatio 46615
--XX:SurvivorRatio=8
-```
-
-**Get all the possible flags/options**
-`-XX:+PrintFlagsFinal` :
-
+**Get all the possible flags/options** : `-XX:+PrintFlagsFinal`
 ```shell
 java -XX:+PrintFlagsFinal
 ```
 
-Check the following flags
-`CICompilerCount` - how many threads are available to run the compiling process
+* -XX ->  advanced option
+* a + or - indicates the option to be **switched on or off**
+* option name in `SentenceCase`
 
-`CompileThreshold` - the number of times a method/code needs to run before it is
-natively compiled
+Examples
+* `-XX:+PrintCodeCache`
+* `-XX:MaxHeapSize=1g` or `-Xmx1g`: Sets maximum heap size.
+* `-XX:CICompilerCount=n` - sets how many threads are available to run the compiling process
+* `-XX:CompileThreshold=n` - sets the number of times a method/code needs to run before it is **natively compiled**
 
-# Compilation
+
+## Get the PID of a running Java program and its current settings
+To find the process id for the java program run `jps`
+
+Pass in the PID for the running Java program along with the flag to know its
+current settings. 
+```shell
+❯ jps
+# PID   MainClass
+# 1234   MyApp
+
+❯ jinfo -flag NewRatio <pid>
+#-XX:NewRatio=2
+
+❯ jinfo -flag SurvivorRatio <pid>
+#-XX:SurvivorRatio=8
+```
+
+# Compilation Flags
 
 `-XX:+PrintCompilation` - provides insight into the compilation process of
 methods by the JVM, including information about their optimization levels and
@@ -81,7 +84,7 @@ other words, the code cache can grow over time
 gets full. How much extra space should be
 added each time the code cache is grown
 
-# Diagnostic and Troubleshooting
+# Diagnostic and Troubleshooting Flags
 
 `-XX:+UnlockDiagnosticVMOptions`: Unlocks diagnostic VM options for
 troubleshooting.
@@ -94,14 +97,14 @@ saved.
 `-XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation` : creates a log file like
 `hotspot_pid1234.log`
 
-# String Pool Management
+# String Pool Management Flags
 
 `XX:+PrintStringTableStatistics` : Prints statistics about the String pool.
 
 `XX:StringTableSize=120121`: Sets the size of the String table at the beginning
 of the JVM start
 
-# Heap Management
+# Heap Management Flags
 
 `-XX:MaxHeapSize=1g` or `-Xmx1g`: Sets maximum heap size.
 
@@ -113,7 +116,7 @@ of the JVM start
 
 `-XX:HeapDumpPath=<>`
 
-# Garbage Collections
+# Garbage Collections Flags
 
 `-Xmx10m -verbose:gc` : Spits out the garbage collection logs on console
 

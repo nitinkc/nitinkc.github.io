@@ -1,17 +1,17 @@
 # Main links on the top 
 main:
-  - title: "Posts By Tag"
-    url: /tags/
+#  - title: "Posts By Tag"
+#    url: /tags/
   - title: "Posts By Category"
     url: /categories/
   - title: "Posts By Year"
     url: /posts/
-  - title: About
-    url: /about/
-  - #title: "Collections"
-    url: /collection-archive/
-  - #title: "Sitemap"
-    url: /sitemap/
+#  - title: About
+#    url: /about/
+#  - title: "Collections"
+#    url: /collection-archive/
+#  - title: "Sitemap"
+#    url: /sitemap/
 
 # File extention is not required. Provide the path and filename without extention.
 # algo:
