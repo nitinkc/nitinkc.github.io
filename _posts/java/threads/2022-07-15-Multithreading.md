@@ -171,6 +171,7 @@ a task to a thread pool
 
 Thinking in this way allows us to separate the task from how the task will be
 executed.
+
 > Telling what to do not HOW to do
 
 We call this the execution policy of the task, which is the idea behind the Java
@@ -181,8 +182,8 @@ The thread pool contains a number of threads based on some policy
 
 - Several callers can submit their tasks.
 - These tasks get executed by the threads **inside the thread pool**.
-- But note that after submission, the caller gets what is called as the **future
-  **, which is a **logical reference to the executing task**.
+- But note that after submission, the caller gets what is called as the **future**, 
+which is a **logical reference to the executing task**.
 - The task submission itself does not wait, but simply queues the request to the
   thread pool and returns back immediately with the future.
 
@@ -190,14 +191,13 @@ Now, each one of these concepts require a representation in Java.
 
 In terms of interfaces for Tasks
 
-- [Runnable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html#run())
-  and
+- [Runnable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html#run()) &
 - [Callable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html#call())
-  Any Java class which implements one of these Java interfaces is considered a
+
+Any Java class which implements one of these Java interfaces is considered a
   task(could be a Lambda as both are functional interfaces)
 
 interface which represents the abstraction of a thread pool is
-
 - Executor Service
 
 The applications will use the executor service interface to submit runnable or
@@ -205,8 +205,7 @@ callable tasks.
 {: .notice--info}
 
 ### [Executor Service](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ExecutorService.html#method-summary)
-
-Returns a Future
+- Returns a Future
 
 ```java
 public interface ExecutorService extends Executor, AutoCloseable{
@@ -218,22 +217,19 @@ public interface ExecutorService extends Executor, AutoCloseable{
 }
 ```
 
-Note here that the executor service interface also implements AutoCloseable
+Note here that the executor service interface also **implements AutoCloseable**
 
-- if you wrap executor service in a try with resources block, then the close()
+- if you wrap executor service in a `try with resources` block, then the close()
   method will be automatically called.
 - good use in virtual threads.
 
-A thread executor creates a non-daemon thread on the first task taht is
-executed, so failing to call
-
-- shutdown() will result in your application never terminating
-- shutdownNow() attempts to stop all running thread
+A thread executor creates _a non-daemon thread_ on the first task that is executed, so failing to call
+- `shutdown()` will result in your application never terminating
+- `shutdownNow()` attempts to stop all running thread
 
 ![futures.png]({{ site.url }}/assets/images/futures.png)
 
 ### Create ExecutorServices
-
 Keep in mind to either use `try-with-resource` block or shout down the service
 in the finally block
 
@@ -262,6 +258,7 @@ ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(
 ```
 
 ### Submitting a Task
+Submit either via Runnable Service `execute()` method or Callable Service `submit()` method
 
 ##### Runnable Service
 
@@ -318,7 +315,7 @@ to handle the results of the tasks as they happen instead of get()
 
 # CompletableFutures
 
-Refer [CompletableFutures](https://nitinkc.github.io/java/asynchronous-programming/#creating-a-new-completablefuture)
+Refer [CompletableFutures](https://nitinkc.github.io/multithreading/asynchronous-programming/#creating-a-new-completablefuture)
 
 ```java
 // Create a Completable Future
@@ -412,7 +409,7 @@ No sense to pool virtual threads
 
 VirtualThreads are like qtips - use and throw
 
-```java
+```shell
 DONE in : Main thread Thread[#1,main,5,main]
 entering task1 Thread[#1,main,5,main]
 entering task2 Thread[#1,main,5,main] #when the task 1 goes to sleep, same thread picks up task2

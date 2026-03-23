@@ -19,15 +19,13 @@ during office hours.
 manager
 
 **Asynchronous** : While Brewing coffee, read emails and get back to coffee when
-it's done.
+it's done. 
 
-In Java **1MB of Stack** is allocated for each thread. The OS mandates that
-because,
+In Java **1MB of Stack** is allocated for each thread. The OS mandates that because,
 the Java thread is backed by the OS thread, which requires memory up front.
 
 Note: the Java threads are basically a thin layer on top of the OS Threads, so
-creating a Java thread creates an underlying OS
-thread under the hood.
+creating a Java thread creates an underlying OS thread under the hood.
 {: .notice--info}
 
 # Why we need Threads
@@ -52,8 +50,7 @@ Core2 | Task3 -> Task4 -> Task3 -> Task4 -> Task3
 Core1 | Task1 -> Task2 -> Task1 -> Task2 -> Task1
 ```
 
-Caveat: Multithreaded Programming is fundamentally different from
-single-threaded programming
+Caveat: Multithreaded Programming is fundamentally different from single-threaded programming
 {: .notice--primary}
 
 # Process & Threads
@@ -205,7 +202,7 @@ epics to prevent starvation.
 
 # Thread Lifecycle
 
-[https://docs.oracle.com/en%2Fjava%2Fjavase%2F22%2Fdocs%2Fapi%2F%2F/java.base/java/lang/Thread.State.html](https://docs.oracle.com/en%2Fjava%2Fjavase%2F22%2Fdocs%2Fapi%2F%2F/java.base/java/lang/Thread.State.html)
+[Java 22 Doc - Thread.State.html](https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Thread.State.html)
 
 ```mermaid!
 stateDiagram
@@ -257,11 +254,9 @@ During that time, the thread is not consuming any CPU.
 # History of multithreading in Java
 
 **Java 1:** Threads
-
 - one set of API for all machines. hardware independent
 
 **Java 5** : ExecutorServices API -> Pool of threads
-
 * Issue 1: Pool-induced deadlock
 * One thread breaks the problem and throws in the pool and waits foe the result
   to come back
@@ -269,44 +264,30 @@ During that time, the thread is not consuming any CPU.
   of the problem
 
 **Java 7** : Fork Join pool
-
 * Work-stealing: the thread that divides the problem also solves one of the
   divided part
 
 **Java 8** : ParallelStreams and CompletableFutures
-
 * uses Java 7 FJP
 * Common Fork join pool
 
 **Java 21** : Virtual Threads
-
-* Game
-  changer [Virtual Threads Docs](https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html)
-* [https://nitinkc.github.io/java/java21-virtualthreads/](https://nitinkc.github.io/java/java21-virtualthreads/)
+* Game changer [Virtual Threads Docs](https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html)
+* [java21-virtualthreads/](https://nitinkc.github.io/multithreading/java21-virtualthreads/)
 
 # Handling the user requests - Architecture
-
-A couple of different architectures are used by application servers for handling
-the user requests.
-
-- process-per-request model (old, CGI - Common Gateway
-  Interface)[https://en.wikipedia.org/wiki/Common_Gateway_Interface]
+A couple of different architectures are used by application servers for handling the user requests.
+- process-per-request model [old, CGI - Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface)
 - thread per request model
 
 ### Process-per-request model
+In the 1990s, a popular mechanism for handling user requests was the CGI(common gateway interface)
 
-In the 1990s, a popular mechanism for handling user requests was the CGI(common
-gateway interface)
-
-In this architecture, when a user sends a request to the web server, the web
-server will invoke the associated CGI script
-as a separate **process**.
-
-- Once the response is sent back, the process is destroyed and this is an
-  overhead.
-- This is an issue because a process in an operating system is considered
-  heavyweight, starting and terminating a process for every request is
-  inefficient.
+In this architecture, when a user sends a request to the web server, the web server will invoke the
+associated CGI script as a separate **process**.
+- Once the response is sent back, the process is destroyed and this is an overhead.
+- This is an issue because a process in an operating system is considered heavyweight, starting 
+  and terminating a process for every request is inefficient.
 
 To solve this, a variation of CGI was created and called **fast CGI**.
 

@@ -39,7 +39,7 @@ private static void sequentialWithStreams(List<Long> inputNumbers, Factorial fac
 
 # Traditional Platform Threads
 
-[https://nitinkc.github.io/java/multithreading/Multithreading/#defining-platform-threads](https://nitinkc.github.io/java/multithreading/Multithreading/#defining-platform-threads)
+[https://nitinkc.github.io/multithreading/Multithreading/#defining-platform-threads](https://nitinkc.github.io/multithreading/Multithreading/#defining-platform-threads)
 
 ```java
 private static void runWithTraditionalFactorial(List<Long> inputNumbers, Factorial factorial) throws InterruptedException {
@@ -79,7 +79,7 @@ private static void parallelStream(List<Long> inputNumbers, Factorial factorial)
 
 # Executor & Futures
 
-[https://nitinkc.github.io/java/multithreading/Multithreading/#create-executorservices](https://nitinkc.github.io/java/multithreading/Multithreading/#create-executorservices)
+[https://nitinkc.github.io/multithreading/Multithreading/#create-executorservices](https://nitinkc.github.io/multithreading/Multithreading/#create-executorservices)
 
 **Pros:**
 
@@ -118,7 +118,7 @@ private static void runParallelFactorialWithExecutor(List<Long> inputNumbers, Fa
 
 # Completable futures
 
-[https://nitinkc.github.io/java/multithreading/asynchronous-programming/#creating-a-new-completablefuture](https://nitinkc.github.io/java/multithreading/asynchronous-programming/#creating-a-new-completablefuture)
+[https://nitinkc.github.io/multithreading/asynchronous-programming/#creating-a-new-completablefuture](https://nitinkc.github.io/multithreading/asynchronous-programming/#creating-a-new-completablefuture)
 
 ```java
 private static void runWithCompletableFuture(List<Long> inputNumbers, Factorial factorial) {
@@ -136,7 +136,7 @@ private static void runWithCompletableFuture(List<Long> inputNumbers, Factorial 
 
 # Virtual threads
 
-[https://nitinkc.github.io/java/multithreading/java21-virtualthreads/#virtual-thread-creation](https://nitinkc.github.io/java/multithreading/java21-virtualthreads/#virtual-thread-creation)
+[https://nitinkc.github.io/multithreading/java21-virtualthreads/#virtual-thread-creation](https://nitinkc.github.io/multithreading/java21-virtualthreads/#virtual-thread-creation)
 
 **Pros:**
 

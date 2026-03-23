@@ -65,7 +65,7 @@ Dependency Injection (DI) is a design pattern used to **implement IoC** (
 Inversion of Control).
 
 - In DI, the framework (like Spring) handles the **creation and injection of
-  dependencies** or **bean instantiation beans and wiring dependencies**,
+  dependencies** or **bean instantiation and wiring dependencies**,
   rather than the classes managing their own dependencies.
 
 # Stereotype Annotations
@@ -141,14 +141,9 @@ public class MyConfiguration {
 ```
 
 # Banner
-
-[Spring Boot banner generator](https://springhow.com/spring-boot-banner-generator/)
-
-For Ascii banner, put the ASCII Art in banner.txt in and it will be taken
-[Sample file](https://github.com/nitinkc/spring-5-restful-web/blob/master/src/main/resources/banner.txt)
+For Ascii banner, put the ASCII Art in banner.txt and it will be taken
 
 to turn off the banner
-
 ```yaml
 spring:
   main:
@@ -165,7 +160,7 @@ spring:
 ```
 
 # Springboot Startup process
-[https://nitinkc.github.io/spring/microservices/springboot-startup/](https://nitinkc.github.io/spring/microservices/springboot-startup/)
+[springboot-startup](https://nitinkc.github.io/microservices/springboot-startup/)
 
 # Initial Data Setup
 
@@ -232,7 +227,7 @@ including `@ComponentScan`.
 
 # @Autowired & Dependency Injection
 
-[https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/](https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/)
+[dependency-injection-concepts](https://nitinkc.github.io/microservices/dependency-injection-concepts/)
 {: .notice--success}
 
 ### Autowiring
@@ -241,7 +236,7 @@ including `@ComponentScan`.
 - byName
 - constructor - similar to byType, but through constuctor
 
-[https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/#Autowiring](https://nitinkc.github.io/spring/microservices/dependency-injection-concepts/#Autowiring)
+[dependency-injection-concepts/#Autowiring](https://nitinkc.github.io/microservices/dependency-injection-concepts/#Autowiring)
 
 Eliminates the need to create a new object and hence the need of constructors
 from the components
@@ -280,7 +275,6 @@ public class UserService {
     private final UserRepository userRepository;
 ```
 
-
 # Sequence of execution
 
 ```
@@ -299,9 +293,9 @@ Postman/browser/client -> Controller -> Service -> Repository -> Service -> Cont
 
 ## Best Practices
 
-- Use Plurals
+- Use Plurals 
 
-[https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris](https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris)
+[Idempotence-HTTP-methods/#designing-restful-uris](https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris)
 {: .notice--success}
 
 # Controller Vs RestController
@@ -322,7 +316,7 @@ public class HealthCheckController {
 
 # GET Request
 
-[https://nitinkc.github.io/spring/microservices/GET-rest-calls/](https://nitinkc.github.io/spring/microservices/GET-rest-calls/)
+[GET-rest-calls](https://nitinkc.github.io/microservices/GET-rest-calls/)
 {: .notice--success}
 
 ```java
@@ -356,12 +350,12 @@ public HelloWorldReturnBean helloWorldReturnBean() {
 }
 ```
 
-[Path Variable vs Request Param](https://nitinkc.github.io/spring/microservices/spring-request-parameter/)
+[Path Variable vs Request Param](https://nitinkc.github.io/microservices/spring-request-parameter/)
 {: .notice--success}
 
 ### Validation
 
-[Validations in Detail](https://nitinkc.github.io/spring/microservices/spring-validations/)
+[Validations in Detail](https://nitinkc.github.io/microservices/spring-validations/)
 {: .notice--success}
 
 ##### Request Validation
@@ -406,7 +400,7 @@ public class StudentRequestBody {
 
 # POST Request
 
-[POST Request in Detail](https://nitinkc.github.io/spring/microservices/POST-Requests/)
+[POST Request in Detail](https://nitinkc.github.io/microservices/POST-Requests/)
 {: .notice--success}
 
 ```java
@@ -490,7 +484,7 @@ Optional<Student> studentById = studentRepository.findById(studentId);//Method f
 Student student = studentById.orElseGet(Student::new);//Return empty constructor if no data/Null
 ```
 
-The supplier in orElseGet can be written in whichever way feels intuitive.
+The supplier in `orElseGet()` can be written in whichever way feels intuitive.
 
 ```java
 Student student = studentById.orElseGet(Student::new);//Return empty constructor if no data/Null
@@ -525,7 +519,7 @@ public class StudentMapper {
 }
 ```
 
-Over all the service class with method to return a single student object
+Overall, the service class with method to return a single student object
 
 ```java
 @Service
@@ -594,12 +588,12 @@ public List<StudentDto> getStudentByIds(List<Integer> studentIdList) {
 
 ##### Jackson Mapper
 
-[Jackson Mapper in Detail](https://nitinkc.github.io/spring/microservices/jackson-mapper-details/)
+[Jackson Mapper in Detail](https://nitinkc.github.io/microservices/jackson-mapper-details/)
 {: .notice--success}
 
 ##### Map Struct
 
-[Map Struct in Detail](https://nitinkc.github.io/spring/microservices/mapstruct-mapper-details/)
+[Map Struct in Detail](https://nitinkc.github.io/microservices/mapstruct-mapper-details/)
 {: .notice--success}
 
 The simple one is Jackson mapper, with lot of control
@@ -631,7 +625,7 @@ Spring Data JPA is an implementation of Java Persistence API
 [Java Exceptions](https://nitinkc.github.io/java/exceptions/)
 {: .notice--success}
 
-[Spring Exceptions](https://nitinkc.github.io/spring/microservices/spring-exception-404/)
+[Spring Exceptions](https://nitinkc.github.io/microservices/spring-exceptions/)
 {: .notice--success}
 
 Use `@ControllerAdvice` or `@RestControllerAdvice` for Global exception
@@ -712,7 +706,7 @@ public class RutWhileBooting implements CommandLineRunner {
 
 # Scheduling a Job
 
-[https://nitinkc.github.io/spring/microservices/spring-scheduler/](https://nitinkc.github.io/spring/microservices/spring-scheduler/)
+[spring-scheduler](https://nitinkc.github.io/microservices/spring-scheduler/)
 use `@EnableScheduling` on the application main class
 
 ```java
@@ -737,7 +731,7 @@ public class DailyTaskScheduler {
 
 ## Metric logging - Prometheus and micrometer
 
-[Prometheus and micrometer](https://nitinkc.github.io/spring/microservices/Prometheus-micrometer/)
+[Prometheus and micrometer](https://nitinkc.github.io/microservices/Prometheus-micrometer/)
 
 # Design Patterns in Spring
 
@@ -749,15 +743,14 @@ public class DailyTaskScheduler {
 
 # Aspect Oriented Programming - AOP
 
-[https://nitinkc.github.io/spring/microservices/spring-aop/](https://nitinkc.github.io/spring/microservices/spring-aop/)
-
+[spring-aop/](https://nitinkc.github.io/microservices/spring-aop/)
 
 # Bean Scope
 [https://nitinkc.github.io/microservices/spring-beans/#bean-scope](https://nitinkc.github.io/microservices/spring-beans/#bean-scope)
 
 # Spring Security
 
-[Spring Security](https://nitinkc.github.io/spring/microservices/spring-security-concepts/)
+[Spring Security](https://nitinkc.github.io/microservices/spring-security-concepts/)
 {: .notice--success}
 
 Spring Security is a powerful and highly customizable authentication and access-control framework. It is the de-facto standard for securing Spring-based applications.
@@ -825,7 +818,7 @@ In this example:
 
 # Reactive Programming (Spring WebFlux)
 
-[Reactive Programming with Spring WebFlux](https://nitinkc.github.io/spring/microservices/spring-webflux-reactive/)
+[Reactive Programming with Spring WebFlux](https://nitinkc.github.io/microservices/spring-webflux-reactive/)
 {: .notice--success}
 
 Spring WebFlux is a fully non-blocking, reactive web framework for building modern, scalable applications. It is an alternative to Spring MVC and is built on top of Project Reactor.
@@ -849,7 +842,7 @@ Spring WebFlux is a fully non-blocking, reactive web framework for building mode
 
 # Advanced Testing
 
-[Advanced Testing in Spring Boot](https://nitinkc.github.io/spring/microservices/spring-advanced-testing/)
+[Advanced Testing in Spring Boot](https://nitinkc.github.io/microservices/spring-advanced-testing/)
 {: .notice--success}
 
 Spring Boot provides a rich set of testing utilities to write comprehensive unit, integration, and end-to-end tests.
@@ -933,7 +926,7 @@ Testcontainers is a Java library that provides lightweight, throwaway instances 
 
 # Resilience and Fault Tolerance
 
-[Resilience with Resilience4J](https://nitinkc.github.io/spring/microservices/resilience4j-spring-boot/)
+[Resilience with Resilience4J](https://nitinkc.github.io/microservices/resilience4j-spring-boot/)
 {: .notice--success}
 
 In distributed systems, services can fail. Resilience patterns help your application gracefully handle such failures. Resilience4J is a lightweight, easy-to-use fault tolerance library inspired by Netflix Hystrix.
@@ -984,7 +977,7 @@ In distributed systems, services can fail. Resilience patterns help your applica
 
 # Database Migration
 
-[Database Migration with Flyway](https://nitinkc.github.io/spring/microservices/flyway-database-migration/)
+[Database Migration with Flyway](https://nitinkc.github.io/microservices/flyway-database-migration/)
 {: .notice--success}
 
 Database migration tools like Flyway and Liquibase help you version-control your database schema, making it easy to evolve your database structure in a consistent and automated way.
@@ -1026,7 +1019,7 @@ Liquibase is another powerful migration tool that uses XML, YAML, or JSON change
 
 # Containerization & Cloud-Native
 
-[Containerizing Spring Boot with Docker](https://nitinkc.github.io/spring/microservices/docker-spring-boot/)
+[Containerizing Spring Boot with Docker](https://nitinkc.github.io/microservices/docker-spring-boot/)
 {: .notice--success}
 
 Containerization, particularly with Docker, is the standard for packaging and deploying modern applications. Cloud-native practices enable applications to be scalable, resilient, and manageable in dynamic environments like Kubernetes.

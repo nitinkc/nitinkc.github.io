@@ -17,7 +17,7 @@ tags:
 Giving control to the container to get instance of object is called Inversion of
 Control.
 
-* instead of you are creating object using new operator, let the container do
+* instead of you creating object using the "new" operator, let the container do
   that for you.
 
 **DI(Dependency Injection)**: Way of injecting properties to an object is called
