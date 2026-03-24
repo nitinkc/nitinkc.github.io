@@ -50,11 +50,10 @@ class Employee {
 
 Department -- Employee
 @enduml
-{: .align-right}
+
+
 
 ### Association (one-way) + multiplicity 
-
-**Code snippet (one-to-many link)**
 
 @startuml
 class Employee {
@@ -77,7 +76,8 @@ class Department {
 
 Department "1" -- "0..*" Employee
 @enduml
-{: .align-right}
+
+
 
 ```java
 public class Department {
@@ -96,6 +96,26 @@ public class Employee {
 ```
 
 ### Association (two-way)
+
+
+@startuml
+class User {
+- email: Email
+
+  + User(email: Email)
+  + sendEmail(content: String): void
+    }
+
+class Email {
+- recipient: User
+
+  + Email(recipient: User)
+  + send(content: String): void
+    }
+
+User -- Email : both call each other
+@enduml
+
 
 **Code snippet (bidirectional link)**
 ```java
@@ -116,28 +136,23 @@ public class Email {
 }
 ```
 
-@startuml
-class User {
-- email: Email
-
-  + User(email: Email)
-  + sendEmail(content: String): void
-    }
-
-class Email {
-- recipient: User
-
-  + Email(recipient: User)
-  + send(content: String): void
-    }
-
-User -- Email : both call each other
-@enduml
-{: .align-right}
 
 ### N-ary association
 
+@startuml
+class Person
+class Room
+class CalendarDay
+class Meeting
+
+Person "1" -- "0..*" Meeting
+Room "1" -- "0..*" Meeting
+CalendarDay "1" -- "0..*" Meeting
+@enduml
+
+
 **Code snippet (three participants)**
+
 ```java
 public class Meeting {
     private final Person host;
@@ -151,18 +166,6 @@ public class Meeting {
     }
 }
 ```
-
-@startuml
-class Person
-class Room
-class CalendarDay
-class Meeting
-
-Person "1" -- "0..*" Meeting
-Room "1" -- "0..*" Meeting
-CalendarDay "1" -- "0..*" Meeting
-@enduml
-{: .align-right}
 
 ---
 
@@ -182,7 +185,7 @@ class Wheel {
 
 Car o-- "4" Wheel
 @enduml
-{: .align-right}
+
 
 - Special form of **association**
 - "Whole-part" relationship
@@ -245,7 +248,7 @@ class Car {
 
 Car *-- Engine
 @enduml
-{: .align-right}
+
 
 A House class may have rooms, where rooms are parts of the house and
   cannot exist without the house. If the House is destroyed, Rooms cease to exist.
@@ -273,7 +276,7 @@ class House {
 
 House *-- "1..*" Room
 @enduml
-{: .align-right}
+
 
 #### Multiplicity
 - Denotes the number of instances of one class related to the number of
@@ -294,7 +297,7 @@ class Employee {
 
 Department "1" *-- "0..*" Employee
 @enduml
-{: .align-right}
+
 
 ```java
 // Example of multiplicity in a relationship
@@ -374,7 +377,7 @@ int length
 Vehicle <|-- Car
 Vehicle <|-- Boat
 @enduml
-{: .align-right}
+
 
 ### Generalization/realization (extends)
 - We use the _multi-inheritance_ property of **interfaces** to preserve the IS-A relationship.
@@ -418,7 +421,7 @@ implements Animal, Pet
 Animal <|-- Cat
 Pet <|-- Cat
 @enduml
-{: .align-right}
+
 
 
 ---
@@ -436,7 +439,7 @@ class Car {
 
 Car ..> Engine : drive(engine)
 @enduml
-{: .align-right}
+
 
 - Denoted by a dashed line with an arrow pointing from the dependent class to
   the independent class.
@@ -487,7 +490,7 @@ class Car {
 
 Car ..> Engine : engine
 @enduml
-{: .align-right}
+
 
 # Using << >> for Annotations:
 
@@ -502,7 +505,7 @@ class Car {
 
 Car ..> Drivable : <<implements>>
 @enduml
-{: .align-right}
+
 
 - Used to indicate properties or qualifiers of a relationship or dependency.
 - Often used with dependencies to specify the nature of the relationship, such
@@ -619,6 +622,7 @@ Boat o-- Rudder : Aggregation
 [https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
 
 ![](https://cdn-images.visual-paradigm.com/guide/uml/uml-aggregation-vs-composition/uml-association-aggregation-composition.png)
+
 ![uml.png](https://www.uml-diagrams.org/class-diagrams/class-diagram-domain-overview.png)
 
 ![Cheatsheet](https://khalilstemmler.com/img/blog/object-oriented/uml/uml-class-diagram-cheat-sheet.png)

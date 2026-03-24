@@ -13,6 +13,7 @@ tags:
 # Factory pattern
 
 Polymorphism
+
 extensibility
 
 What is the worst keyword in Java from polymorphism angle
@@ -23,18 +24,15 @@ What is the worst keyword in Java from polymorphism angle
 
 **new**
 
-new ClassNAme() //tight coupling
-So many patterns to fight with new, especially in Spring
+- new ClassName() //tight coupling
+- So many patterns to fight with new, especially in Spring
+- `new` introduces tight coupling. New is not polymorphic in Java, C++, .Net but it is in Ruby
+- Python or Kotlin doesn't even have new
 
-new introduces tight coupleing. New is not poluymorphic in Java, C++, .Net but
-its is Ruby
+> Golden Rule : interfaces are better than abstract classes
 
-Python or Kotlin doesn't even have new
+Interfaces can have implementations (default methods) however they cannot have non-final fields
 
-Golden Rule : interfaces are better than abstract classes
-
-Interfaces can have implementations (default methods) however they cannot have
-non final fields
 Interfaces cannot carry state but an abstract class carry a state.
 
 # Abstract Factory vs. Factory Method
@@ -42,10 +40,10 @@ Interfaces cannot carry state but an abstract class carry a state.
 Class vs method
 
 Factory Method : A class or an interface relies on a derived class to provide
-the implementation whereas
-the base provides the common behavior
+the implementation whereas the base provides the common behavior
 
 uses inheritance as design tool
+
 uses factory METHOD
 
-Abstract Factory uses delegation as design tool
+> Abstract Factory uses delegation as design tool

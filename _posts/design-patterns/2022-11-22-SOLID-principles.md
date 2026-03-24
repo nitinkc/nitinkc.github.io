@@ -11,55 +11,48 @@ tags:
 {% include toc title="Index" %}
 
 # **S -> single responsibility principle**
-
-* a class or an entity should have **only one reason** to change
+* a class or an entity should have _**only one reason**_ to change
 * loosely coupled or low-coupled design
 
-In Java, adhere to SRP by **creating classes** that are **focused on a single
-purpose**.
-For example, separate the business logic from the presentation logic, database
-access, and other concerns.
+In Java, adhere to SRP by **creating classes** that are **focused on a single purpose**.
 
+For example, separate the business logic from the presentation logic, database access, and other concerns.
 - Controllers
 - Service
 - Repository or DAO classes
 
 # **O -> Open closed principle**
-
 * Open **to Extension**
 * Closed **for modification**
 
-- you should be able to add new functionality to a class without changing its
-  existing code.
+You should be able to add new functionality to a class without changing its existing code.
 
 In Java, follow OCP by **using interfaces and abstract classes** (to define
 behavior that can be extended by subclasses).
 
-- This allows introducing new functionality through **implementing new classes**
+This allows introducing new functionality through **implementing new classes**
   without altering the existing ones.
 
 **Extend vs implement**
+- Eg : Strategy design pattern, Template design pattern
 
-* Eg : Strategy design pattern, Template design pattern
-
-# **L -> Liskov substitution principle**
+# **L -> Liskov substitution principle (polymorphism)e**
 
 Same as **POLYMORPHISM**.
 
 * subclasses should be able to be used interchangeably with their base class
-* in-short, objects of a superclass should be replaceable with objects of a
-  subclass (without affecting the correctness of the program)
+* in-short, objects of a **superclass** should be **replaceable** with objects of a
+  **subclass** (without affecting the correctness of the program)
 * Overriding methods should not violate the behavior expected from the
   superclass
 
-In Java, uphold LSP, by ensuring that **subclasses adhere to the contract
-defined by their superclass**.
+In Java, uphold LSP, by ensuring that **subclasses adhere to the contract defined by their superclass**.
 
-* Overriding methods should not violate the behavior expected from the
+Overriding methods should not violate the behavior expected from the
   superclass.
 
-We can substitute derived objects (Circle and Rectangle) for the base object (
-Shape) without affecting the correctness of the program.
+We can substitute derived objects (Circle and Rectangle) for the base object (Shape) without 
+affecting the correctness of the program.
 
 ```java
 class Shape {
@@ -87,10 +80,8 @@ Shape rectangle = new Rectangle(4.0, 3.0);
 ```
 
 # **I -> Interface Segregation principle**
-
-* clients **should not be forced to depend** on interfaces they do not use
-* it's better to have **many specific interfaces rather than a single** large,
-  monolithic interface.
+- clients **should not be forced to depend** on interfaces they do not use
+- it's better to have **many specific interfaces rather than a single** large, monolithic interface.
 
 In Java, follow ISP by creating **smaller, focused interfaces** that cater to
 specific sets of behaviors.
@@ -100,19 +91,16 @@ specific sets of behaviors.
 
 # **D -> Dependency Inversion Principle (Inversion of control)**
 
-* The DIP states that **high-level modules should not depend on low-level
-  modules**.
-    * Both should depend on abstractions.
-    * Furthermore, abstractions should not depend on details; details should
-      depend on abstractions.
+The DIP states that **high-level modules should not depend on low-level modules**.
+* Both should depend on abstractions.
+* Furthermore, abstractions should not depend on details; details should
+  depend on abstractions.
 
 In Java, practice DIP by using **dependency injection**.
 
-* This involves passing dependencies (e.g., other objects, services) to a class
-  through
-    * constructors (constructor injection) or
-    * setter methods, rather than having the class create its dependencies
-      directly.
+This involves passing dependencies (e.g., other objects, services) to a class through
+* constructors (constructor injection) or
+* setter methods, rather than having the class create its dependencies directly.
 
 By doing so, the class becomes more flexible and easier to test.
 
