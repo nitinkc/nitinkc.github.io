@@ -22,7 +22,7 @@ tags:
 
 **Stack**
 
-- JVM Argumenr - `Xss`
+- JVM Argument - `Xss`
 - stores method invocations and local variables.
 - **Each thread in a Java program has its own stack**.
 - When a method is called, a new frame is pushed onto the stack, which contains
@@ -35,7 +35,7 @@ tags:
 
 **Heap**
 
-- JVM Argumenr - `Xms Xmx`
+- JVM Argument - `Xms`,`-XX:MaxHeapSize=1g OR Xmx1g`
 - Stores objects and their instance variables
 - The heap is a region of memory used for dynamic memory allocation.
 - **shared among all threads** in a Java application.
@@ -82,6 +82,7 @@ virtual machine.
 
 Java knows exactly when data on the stack can be destroyed (
 via [Automatic Garbage Collection Process](https://nitinkc.github.io/java/performance%20engineering/GarbageCollections/)
+)
 
 ```java
 public static void main(String[] args) {
@@ -96,35 +97,32 @@ private static int modify(int data) {
 }
 ```
 
-The Corrosponding Stack prior to `return result`
+- The Corresponding Stack prior to `return result`
 
-```log
-|result = 24        | 
-|temp = 12          |
-|data = 10          | <-- Pass By Value Example in modify(int data)
-|a = 10             |
-|args = empty array |
-```
+  ```shell
+  |result = 24        | 
+  |temp = 12          |
+  |data = 10          | <-- Pass By Value Example in modify(int data)
+  |a = 10             |
+  |args = empty array |
+  ```
 
-Stacks can only be used to store simple data types like primitives
+- Stacks can only be used to store simple data types like primitives
+- For complex data types, Stack entry **keeps a pointer/reference** to the object
 
-For complex data types, Stack entry keeps a pointer to the object
+  ```java
+  private Map<Integer, String>  idToNameMap;
+  public List<String> getAllNames() {
+     int count = idToNameMap.size();
+     List<String> allNames = new ArrayList<>();
+     
+     allNames.addAll(idToNameMap.values());
+     return allNames;
+  }
+  ```
 
-```java
-private Map<Integer, String>  idToNameMap;
-public List<String> getAllNames() {
-   int count = idToNameMap.size();
-   List<String> allNames = new ArrayList<>();
-   
-   allNames.addAll(idToNameMap.values());
-   return allNames;
-}
-```
-
-The `count` variable is a primitive type allocated on the **stack**, and is
-therefore
-_only accessible by the thread that is currently executing_ the `getAllNames()`
-method.
+The `count` variable is a primitive type allocated on the **stack**, and is therefore
+_only accessible by the thread that is currently executing_ the `getAllNames()`method.
 
 If 2 threads are executing the `getAllNames()` simultaneously, they have
 **2 different versions of the `count`** variable on their stack.
