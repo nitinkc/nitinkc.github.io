@@ -74,10 +74,11 @@ generate internal links.
   `[Link title]({{ site.baseurl }}{% post_url /developertools/2016-04-04-jekyll-blog-GitHub-hosting %})`
   {% endraw %}
 
-- skipping `site.baseurl` [Link title without site.baseurl]({% post_url
-  /developertools/2021-02-01-terminal-config %})
+- skipping `site.baseurl` 
   {% raw %}
-  ``
+  ```
+  [Link title without site.baseurl]({% post_url /developertools/2021-02-01-terminal-config %})
+  ```
   {% endraw %}
 
 # Image
@@ -216,7 +217,7 @@ Traditional using subscript and super-script
 - Cheatsheet - html [https://quickref.me/latex.html](https://quickref.me/latex.html)
 - Cheatsheet - pdf [https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf](https://tug.ctan.org/info/latex-refsheet/LaTeX_RefSheet.pdf)
 
-[https://nitinkc.github.io/developer%20tools/LaTex/](https://nitinkc.github.io/developer%20tools/LaTex/)
+[LaTex Reference]({% post_url /developertools/2023-12-20-LaTex %})
 
 # $$ \LaTeX $$ Summary
 

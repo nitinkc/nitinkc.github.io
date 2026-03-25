@@ -92,7 +92,7 @@ select d.dname
 
 ## JOINS
 
-[https://nitinkc.github.io/sql/sql-joins/](https://nitinkc.github.io/sql/sql-joins/)
+[SQL Joins]({% post_url /databases/sql/2023-07-16-sql-joins %})
 
 ### INNER JOIN
 #### Explicit JOIN Syntax:

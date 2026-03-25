@@ -72,7 +72,7 @@ public void splitChild(int i) {
 }
 ```
 
-### [B-Tree Index](https://nitinkc.github.io/sql/query-optimization/#b-tree-index)
+### [B-Tree Index]({% post_url /databases/sql/2024-06-18-query-optimization %}#b-tree-index)
 
 # B+ Trees
 - No record pointers from inner nodes.

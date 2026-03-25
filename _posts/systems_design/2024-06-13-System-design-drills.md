@@ -103,7 +103,7 @@ Consistent hashing : distribute load among nodes
     - Fixed Window Counter
     - Sliding Window log (improvement on Fixed Window Counter)
     - Sliding Window Counter (mixed of above 2)
-    - [The Timer wheel](https://nitinkc.github.io/system%20design/Rate-limiting/#timer-wheel-algorithm)
+    - [The Timer wheel]({% post_url /systems_design/2024-01-21-Rate-limiting %}#timer-wheel-algorithm)
 
 # Fault Tolerance and Recovery
 

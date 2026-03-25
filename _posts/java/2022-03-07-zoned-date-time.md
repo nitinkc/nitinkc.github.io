@@ -24,7 +24,7 @@ String formattedCurrentTimeStamp = ZonedDateTime.now()
 - Convert the zonedDateTimeObject into the Output String using the required
   format
 
-[Difference between Parse and Format](https://nitinkc.github.io/algorithms/Drills/#difference-between-parse-and-format)
+[Difference between Parse and Format]({% post_url /systems_design/2024-06-13-System-design-drills %}#difference-between-parse-and-format)
 
 ```java
 //Convert the input time to city timeZone ()

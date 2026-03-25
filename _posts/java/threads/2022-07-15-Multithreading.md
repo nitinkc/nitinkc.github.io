@@ -315,7 +315,7 @@ to handle the results of the tasks as they happen instead of get()
 
 # CompletableFutures
 
-Refer [CompletableFutures](https://nitinkc.github.io/multithreading/asynchronous-programming/#creating-a-new-completablefuture)
+Refer [CompletableFutures]({% post_url /java/threads/2023-10-10-asynchronous-programming %}#creating-a-new-completablefuture)
 
 ```java
 // Create a Completable Future

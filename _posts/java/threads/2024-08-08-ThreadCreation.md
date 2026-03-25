@@ -136,7 +136,7 @@ private static void runWithCompletableFuture(List<Long> inputNumbers, Factorial 
 
 # Virtual threads
 
-[https://nitinkc.github.io/multithreading/java21-virtualthreads/#virtual-thread-creation](https://nitinkc.github.io/multithreading/java21-virtualthreads/#virtual-thread-creation)
+[Virtual Thread Creation]({% post_url /java/threads/2024-07-19-java21-virtualthreads %}#virtual-thread-creation)
 
 **Pros:**
 

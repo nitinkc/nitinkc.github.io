@@ -182,19 +182,19 @@ It safer to run `git stash apply` as it does not remove stashed changes instead
 of `git stash pop`. Conflicts might also occur.
 
 # Rebase
-[https://nitinkc.github.io/git/git-rebase/](https://nitinkc.github.io/git/git-rebase/)
+[Git Rebase]({% post_url /git/2023-11-07-git-rebase %})
 
 # Reset/Revert	
-[https://nitinkc.github.io/git/git-reset-revert/](https://nitinkc.github.io/git/git-reset-revert/)
+[Git Reset/Revert]({% post_url /git/2023-11-07-git-reset-revert %})
 
 # Logs
-[https://nitinkc.github.io/git/git-log/](https://nitinkc.github.io/git/git-log/)
+[Git Log]({% post_url /git/2022-08-28-git-log %})
 
 # Git Maintenance
-[https://nitinkc.github.io/git/git-maintenance/](https://nitinkc.github.io/git/git-maintenance/)
+[Git Maintenance]({% post_url /git/2023-11-14-git-maintenance %})
 
 # Cherry-pick
-[https://nitinkc.github.io/git/cherry-pick/](https://nitinkc.github.io/git/cherry-pick/)
+[Cherry Pick]({% post_url /git/2024-04-20-cherry-pick %})
 
 # Links
 

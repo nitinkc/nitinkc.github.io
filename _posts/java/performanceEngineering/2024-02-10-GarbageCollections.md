@@ -57,7 +57,7 @@ per the intention
 
 # Generational Garbage Collection
 
-[Check Java Memory](https://nitinkc.github.io/java/performance%20engineering/JavaMemory/)
+[Check Java Memory]({% post_url /java/performanceEngineering/2024-02-10-JavaMemory %})
 
 Heap is divided into 2 spaces
 

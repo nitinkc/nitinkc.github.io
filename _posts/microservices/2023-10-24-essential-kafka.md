@@ -10,7 +10,7 @@ tags:
 Kafka can be used in both messaging and event-driven architectures, but the
 terminology and concepts fit both scenarios
 
-[https://nitinkc.github.io/system%20design/Distributed-messaging/](https://nitinkc.github.io/system%20design/Distributed-messaging/)
+[Distributed Messaging]({% post_url /systems_design/2024-06-13-Distributed-messaging %})
 
 [course: Apache Kafka 101](https://developer.confluent.io/courses/apache-kafka/events/)
 # 4 actors of Messaging
@@ -24,7 +24,7 @@ terminology and concepts fit both scenarios
       producer might publish events (e.g., "OrderPlaced"), while in a messaging
       architecture, it might send messages with specific instructions (e.g., "
       ProcessOrder").
-    - [Diff between Event and Message](https://nitinkc.github.io/system%20design/Distributed-messaging/#messages-vs-events)
+    - [Diff between Event and Message]({% post_url /systems_design/2024-06-13-Distributed-messaging %}#messages-vs-events)
 - **Consumer**: Consumers are the recipients who receive messages from the Kafka
   server.
     - Receives messages from Kafka topics. Consumers process the data or events

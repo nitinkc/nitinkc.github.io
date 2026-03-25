@@ -273,7 +273,7 @@ During that time, the thread is not consuming any CPU.
 
 **Java 21** : Virtual Threads
 * Game changer [Virtual Threads Docs](https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html)
-* [java21-virtualthreads/](https://nitinkc.github.io/multithreading/java21-virtualthreads/)
+* [Virtual Threads]({% post_url /java/threads/2024-07-19-java21-virtualthreads %})
 
 # Handling the user requests - Architecture
 A couple of different architectures are used by application servers for handling the user requests.

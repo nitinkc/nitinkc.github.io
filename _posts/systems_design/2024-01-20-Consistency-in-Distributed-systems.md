@@ -87,7 +87,7 @@ R + W > N where,
 | Quorun                    | Configurable                         | Configurable                         |
 | Eventual Consistency      | Lowest                               | Highest                              |
 
-Check [Transaction Isolation Level](https://nitinkc.github.io/system%20design/Transaction-Isolation-levels/)
+Check [Transaction Isolation Level]({% post_url /systems_design/db/2024-01-20-Transaction-Isolation-levels %})
 
 [Two Generals' Paradox](https://en.wikipedia.org/wiki/Two_Generals%27_Problem)
 ![](https://www.youtube.com/watch?v=IP-rGJKSZ3s)

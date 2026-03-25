@@ -400,7 +400,7 @@ public class StudentRequestBody {
 
 # POST Request
 
-[POST Request in Detail](https://nitinkc.github.io/microservices/POST-Requests/)
+[POST Request in Detail]({% post_url /microservices/crud/2023-09-15-POST-Requests %})
 {: .notice--success}
 
 ```java
@@ -731,7 +731,7 @@ public class DailyTaskScheduler {
 
 ## Metric logging - Prometheus and micrometer
 
-[Prometheus and micrometer](https://nitinkc.github.io/microservices/Prometheus-micrometer/)
+[Prometheus and micrometer]({% post_url /microservices/2024-07-18-Prometheus-micrometer %})
 
 # Design Patterns in Spring
 
@@ -926,7 +926,7 @@ Testcontainers is a Java library that provides lightweight, throwaway instances 
 
 # Resilience and Fault Tolerance
 
-[Resilience with Resilience4J](https://nitinkc.github.io/microservices/resilience4j-spring-boot/)
+[Resilience with Resilience4J]({% post_url /microservices/2025-09-22-resilience4j-spring-boot %})
 {: .notice--success}
 
 In distributed systems, services can fail. Resilience patterns help your application gracefully handle such failures. Resilience4J is a lightweight, easy-to-use fault tolerance library inspired by Netflix Hystrix.
@@ -1019,7 +1019,7 @@ Liquibase is another powerful migration tool that uses XML, YAML, or JSON change
 
 # Containerization & Cloud-Native
 
-[Containerizing Spring Boot with Docker](https://nitinkc.github.io/microservices/docker-spring-boot/)
+[Containerizing Spring Boot with Docker]({% post_url /microservices/2025-09-22-docker-spring-boot %})
 {: .notice--success}
 
 Containerization, particularly with Docker, is the standard for packaging and deploying modern applications. Cloud-native practices enable applications to be scalable, resilient, and manageable in dynamic environments like Kubernetes.

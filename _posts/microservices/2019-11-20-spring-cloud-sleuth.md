@@ -32,4 +32,4 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 Messaging queue is utilized to keep all the logs from different servers into a
 central location.
 
-[https://nitinkc.github.io/spring/microservices/zipkin-distributed-tracing/](https://nitinkc.github.io/spring/microservices/zipkin-distributed-tracing/)
+[Zipkin Distributed Tracing]({% post_url /microservices/2019-11-20-zipkin-distributed-tracing %})

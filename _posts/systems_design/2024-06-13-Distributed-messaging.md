@@ -11,7 +11,7 @@ tags:
 
 > Means of loosely coupling sub-systems
 
-[Kafka Basics](https://nitinkc.github.io/microservices/essential-kafka/)
+[Kafka Basics]({% post_url /microservices/2023-10-24-essential-kafka %})
 
 Apache Kafka is primarily an event streaming platform
 - Kafka uses topics to manage the distribution of events

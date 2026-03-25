@@ -23,7 +23,7 @@ tags:
 - vermicelli rice noodles (Optional)
 - mangoes strips (Optional)
 
-**Dip Sauce :** [Peanut Sauce](https://nitinkc.github.io/health/salad-dressings/#vietnamese-peanut-sauce-dark)
+**Dip Sauce :** [Peanut Sauce]({% post_url /health/2024-12-24-salad-dressings %}#vietnamese-peanut-sauce-dark)
 
 # Tabbouleh Mediterranean Salad
 Traditional tabbouleh is heavy on parsley

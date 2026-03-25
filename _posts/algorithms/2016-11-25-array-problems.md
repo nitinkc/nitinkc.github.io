@@ -149,7 +149,7 @@ int[] result = a.toArray();
 
 ### Array sorting
 
-[Sorting in Detail](https://nitinkc.github.io/java/sorting/)
+[Sorting in Detail]({% post_url /java/2022-10-28-sorting %})
 
 Traditional Array can be sorted with sort method Arrays Utility Class.
 

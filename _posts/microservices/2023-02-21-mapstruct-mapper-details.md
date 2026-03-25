@@ -211,7 +211,3 @@ The mapper can be written in such a way, that the value of the Map is mapped
 with the POJO it is being mapped
 
 {% gist nitinkc/a2131a8cb4df37399d6cd58e006a1900 %}
-
-# Refer article
-
-[Refer Another Article](https://nitinkc.github.io/spring/microservices/map-struct/)

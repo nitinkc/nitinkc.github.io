@@ -13,7 +13,7 @@ tags:
 
 ### Volatile Variable
 
-[https://nitinkc.github.io/java/multithreading/Volatile/](https://nitinkc.github.io/java/multithreading/Volatile/)
+[Volatile]({% post_url /java/threads/2024-08-12-Volatile %})
 
 ### Mutex (Lock) - ReentrantLock
 

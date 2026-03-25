@@ -495,4 +495,4 @@ public MyObject getReference() {
 
 # Synchronization Mechanisms in Java
 
-[https://nitinkc.github.io/java/multithreading/synchronization-mechanism-java/](https://nitinkc.github.io/java/multithreading/synchronization-mechanism-java/)
+[Synchronization Mechanisms]({% post_url /java/threads/2024-08-17-synchronization-mechanism-java %})

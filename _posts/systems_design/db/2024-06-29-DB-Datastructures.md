@@ -16,19 +16,19 @@ tags:
 
 # Skip List
 
-[https://nitinkc.github.io/system%20design/SkipLists/](https://nitinkc.github.io/system%20design/SkipLists/)
+[Skip Lists]({% post_url /systems_design/db/2024-06-29-SkipLists %})
 
 # Hash index:
 
-a very common implementation of the “Map” data structure (or “Collection”)
+a very common implementation of the "Map" data structure (or "Collection")
 
 # SSTable - Sorted String Tables
 
-(https://nitinkc.github.io/system%20design/SSTables/)[https://nitinkc.github.io/system%20design/SSTables/]
+[SSTables]({% post_url /systems_design/db/2024-06-29-SSTables %})
 
 # LSM tree: Skiplist + SSTable
 
-[https://nitinkc.github.io/system%20design/LSM-Tree/](https://nitinkc.github.io/system%20design/LSM-Tree/)
+[LSM Tree]({% post_url /systems_design/db/2024-06-29-LSM-Tree %})
 
 # B-tree:
 

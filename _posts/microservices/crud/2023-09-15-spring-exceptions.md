@@ -191,7 +191,7 @@ Sample response from a properly handled exception
 
 # Handling Validation Errors
 
-[https://nitinkc.github.io/spring/microservices/spring-validations/](https://nitinkc.github.io/spring/microservices/spring-validations/)
+[Spring Validations]({% post_url /microservices/crud/2023-09-15-spring-validations %})
 
 if incorrect email is sent `/test/email?email=ab.cdef.gmail.com` for the API
 

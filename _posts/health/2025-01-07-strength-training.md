@@ -38,7 +38,7 @@ tags:
 ![Romanian Deadlift](https://www.youtube.com/watch?v=7j-2w4-P14I&t=6s)
 
 ### Day 3: Rest or Active Recovery
-- **Yoga** : [https://nitinkc.github.io/health/Yog/](https://nitinkc.github.io/health/Yog/)
+- **Yoga** : [Yog]({% post_url /health/2025-01-26-Yog %})
 - **Walking or Light Cardio** (20–30 minutes)
 
 ### Day 4: Shoulders & Abs

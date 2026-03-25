@@ -42,10 +42,10 @@ symbol:   method foo()
 location: variable test of type String
 ```
 
-[Show Bytecode](https://nitinkc.github.io/developer%20tools/inteliJ-Idea-CE-settings/#show-bytecode)
+[Show Bytecode]({% post_url /developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings %}#show-bytecode)
 
 notice in
-the [byte code](https://nitinkc.github.io/shortcuts/intelliJ-Debug-tricks/#show-bytecode)
+the [byte code]({% post_url /developertools/intelliJ/2023-11-10-intelliJ-Debug-tricks %}#show-bytecode)
 `LOCALVARIABLE test Ljava/lang/String; L1 L2 1`
 
 ```java

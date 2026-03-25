@@ -144,7 +144,7 @@ N in another and so on.
 - Failing shards
     - keep master slave architecture
 
-Read [Consistent Hashing](https://nitinkc.github.io/system%20design/ConsistentHashing/)
+Read [Consistent Hashing]({% post_url /systems_design/2024-06-14-ConsistentHashing %})
 
 # Responses to Failures
 

@@ -11,7 +11,7 @@ tags:
 
 {% include toc title="Index" %}
 
-[Also Check : Collectors - Deep Dive](https://nitinkc.github.io/java/collectors-deep-dive/)
+[Also Check : Collectors - Deep Dive]({% post_url /java/2022-12-31-collectors-deep-dive %})
 
 Collectors (from `java.util.stream.Collectors` package) are used to perform **mutable reduction operations** on the elements of a stream,
 transforming them into different data structures or aggregating their values.

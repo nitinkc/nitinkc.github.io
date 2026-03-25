@@ -54,7 +54,7 @@ UI can ask the precise data and it's sent in one go
 
 Suitable for microservices architectures
 
-[https://nitinkc.github.io//system%20design/gRPC-RPC/](https://nitinkc.github.io//system%20design/gRPC-RPC/)
+[gRPC/RPC]({% post_url /systems_design/networks/2024-06-17-gRPC-RPC %})
 
 Thrift
 
@@ -66,7 +66,7 @@ and client and server stubs for RPC, in different languages.
 
 # Web socket - persistent bidirectional full duplex connections
 
-[https://nitinkc.github.io/system%20design/websockets/](https://nitinkc.github.io/system%20design/websockets/)
+[WebSockets]({% post_url /systems_design/networks/2024-06-21-websockets %})
 
 
 # Head-of-Line Blocking in HTTP

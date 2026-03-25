@@ -12,68 +12,49 @@ tags:
 
 {% include toc title="Index" %}
 
-# The Stack, Heap and the Metaspace (Summary)
-
 ### Java Memory - The Rules
-
 - All Objects are stored in Heap.
 - Variables are a reference to the object
 - Local Variables are stored on the stack (thread level variables)
 
-**Stack**
+# The Stack, Heap and the Metaspace (Summary)
 
+**Stack**
 - JVM Argument - `Xss`
 - stores method invocations and local variables.
 - **Each thread in a Java program has its own stack**.
-- When a method is called, a new frame is pushed onto the stack, which contains
+- When a method is called, a **new frame** is pushed onto the stack, which contains
   the method's parameters, local variables, and return address.
 - last-in-first-out (LIFO)
-- Stack memory is relatively small and fixed in size, typically around a few
-  megabytes.
+- Stack memory is relatively small and fixed in size, typically around a few megabytes.
 - Stack memory is efficient for managing method calls and local variables, but
   it's limited in size and can lead to stack overflow errors if exceeded.
 
 **Heap**
-
 - JVM Argument - `Xms`,`-XX:MaxHeapSize=1g OR Xmx1g`
 - Stores objects and their instance variables
-- The heap is a region of memory used for dynamic memory allocation.
+- The heap is a region of memory used for **dynamic memory allocation**.
 - **shared among all threads** in a Java application.
-- The heap is divided into two main regions: the young generation and the old
-  generation.
-    - Young generation is further divided into Eden space, and two survivor
-      spaces (S0 and S1).
+- The heap is divided into two main regions: the **young** generation and the **old** generation.
+    - Young generation is further divided into **Eden space** and two survivor spaces (**S0 and S1**).
+- Objects are initially allocated in the Eden space. 
+  - When Eden space fills up, **a minor garbage collection occurs**, and the surviving objects are moved to one of the survivor spaces.
+- Objects that _survive several garbage collection_ cycles in the young generation are eventually **promoted to the old generation**.
 
-Objects are initially allocated in the Eden space. When Eden space fills up, **a
-minor garbage collection occurs**,
-and the surviving objects are moved to one of the survivor spaces.
-
-Objects that survive several garbage collection cycles in the young generation
-are eventually promoted to the old generation.
-
-The heap is larger and more flexible than the stack, but it's also more prone to
-fragmentation and garbage collection pauses.
+The heap is larger and more flexible than the stack, but it's also more prone to fragmentation and garbage collection pauses.
 
 **Metaspace**
-
-- Metaspace, introduced in Java 8, replaces the older "permanent generation" (
-  PermGen) for storing **metadata** related to classes and methods.
+- Metaspace, introduced in Java 8, replaces the older "permanent generation" (PermGen) for storing **metadata** related to classes and methods.
 - Static primitives are stored in the meta space
-- Static Objects are stored on the heap but object pointer/reference is held in
-  the meta space
-- Any object on the heap which is referenced from the meta space will never be
-  garbage collected.
+- Static Objects are stored on the heap but object pointer/reference is held in the meta space
+- Any object on the heap which is referenced from the meta space will never be garbage collected.
 - All threads in Java have access to the meta space.
-- It stores information such as class definitions, method information, and
-  constant pool data.
-- Unlike PermGen, metaspace is not part of the Java heap but is allocated from
-  the native memory of the operating system.
-- Metaspace automatically grows or shrinks based on the application's demand and
-  the available native memory.
-- The use of metaspace helps to avoid some of the limitations and issues
-  associated with PermGen, such as memory leaks caused by classloader leaks.
+- It stores information such as class definitions, method information, and constant pool data.
+- Unlike PermGen, metaspace is not part of the Java heap but is allocated from the native memory of the operating system.
+- Metaspace automatically grows or shrinks based on the application's demand and the available native memory.
+- The use of metaspace helps to avoid some of the limitations and issues associated with PermGen, such as memory leaks caused by classloader leaks.
 
-Check [generational-garbage-collection](https://nitinkc.github.io/java/performance%20engineering/GarbageCollections/#generational-garbage-collection)
+Check [generational-garbage-collection]({% post_url /java/performanceEngineering/2024-02-10-GarbageCollections %})
 
 # Stack
 
@@ -81,7 +62,7 @@ Every thread will have its own stack which is managed effectively by the Java
 virtual machine.
 
 Java knows exactly when data on the stack can be destroyed (
-via [Automatic Garbage Collection Process](https://nitinkc.github.io/java/performance%20engineering/GarbageCollections/)
+via [Automatic Garbage Collection Process]({% post_url /java/performanceEngineering/2024-02-10-GarbageCollections %})
 )
 
 ```java

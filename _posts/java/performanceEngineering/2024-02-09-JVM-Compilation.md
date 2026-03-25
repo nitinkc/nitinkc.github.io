@@ -359,4 +359,4 @@ mvn clean package && java -jar ui/target/jitwatch-ui-shaded.jar
 
 [JVM Architecture](https://www.linkedin.com/pulse/jvm-architecture-how-internally-work-ali-as-ad/)
 
-[https://nitinkc.github.io/java/java-compilation/](https://nitinkc.github.io/java/java-compilation/)
+[Java Compilation]({% post_url /java/performanceEngineering/2024-08-21-java-compilation %})
