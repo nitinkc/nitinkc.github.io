@@ -12,7 +12,7 @@ tags: [java, threads, theory, fundamentals, process, concurrency, parallelism]
 ### Concurrency
 > **Looking for a new job while working on the current job, during office hours.**
 
-**Concurrency** = Managing multiple tasks at the same time (not necessarily simultaneously)
+**Concurrency** -> Managing multiple tasks at the same time (not necessarily simultaneously)
 - Multiple tasks making progress
 - Can happen on a single core
 - Tasks may interleave, not run in parallel
@@ -32,8 +32,6 @@ thread1 - Talk   T   T    T   | T   T   T |  T  T
 thread2 - Drink      |        D           D
 time  t=0------------^--------^-----------^-------->t
 ```
-
-![io-calls.png](/assets/images/io-calls.png)
 
 ### Parallelism
 > **Maintaining 2 jobs, with 2 managers, without telling either manager.**
@@ -122,12 +120,12 @@ All threads **share** Files, Heap, and Code
 
 ```
 ┌─────────────────────────────────────────┐
-│              PROCESS                     │
-│  ┌─────────────────────────────────────┐ │
-│  │           Heap Memory               │ │
-│  │   (Shared among all threads)        │ │
-│  └─────────────────────────────────────┘ │
-│                                          │
+│              PROCESS                    │
+│  ┌─────────────────────────────────────┐│
+│  │           Heap Memory               ││
+│  │   (Shared among all threads)        ││
+│  └─────────────────────────────────────┘│
+│                                         │
 │  ┌──────────┐ ┌──────────┐ ┌──────────┐ │
 │  │ Thread 1 │ │ Thread 2 │ │ Thread 3 │ │
 │  │  Stack   │ │  Stack   │ │  Stack   │ │
@@ -153,13 +151,13 @@ All threads **share** Files, Heap, and Code
 
 ### Comparison
 
-| Feature | Process | Thread |
-|---------|---------|--------|
-| Memory | Separate memory space | Shared memory within process |
-| Communication | IPC (Inter-Process Communication) | Direct via shared memory |
-| Creation overhead | High | Low |
-| Context switch | Expensive | Relatively cheap |
-| Isolation | Completely isolated | Share process resources |
+| Feature           | Process                           | Thread                       |
+|:------------------|:----------------------------------|:-----------------------------|
+| Memory            | Separate memory space             | Shared memory within process |
+| Communication     | IPC (Inter-Process Communication) | Direct via shared memory     |
+| Creation overhead | High                              | Low                          |
+| Context switch    | Expensive                         | Relatively cheap             |
+| Isolation         | Completely isolated               | Share process resources      |
 
 > **Note**: In Java, **1MB of Stack** is allocated for each thread. The OS mandates this because the Java thread is backed by the OS thread, which requires memory up front.
 
@@ -464,6 +462,8 @@ In terms of Thread, blocking vs non-blocking tasks would look like:
 ![blockingVsNonBlocking.png](/assets/images/blockingVsNonBlocking.png)
 
 > **Reactive Programming**: To overcome scalability problems with I/O
+
+![io-calls.png](/assets/images/io-calls.png)
 
 ---
 

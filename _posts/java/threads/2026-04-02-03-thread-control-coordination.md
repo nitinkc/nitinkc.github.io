@@ -7,20 +7,7 @@ tags: [java, threads, sleep, yield, join, interrupt, priority]
 
 {% include toc title="Index" icon="cog" %}
 
-# Part 3: Thread Control & Coordination
-
 This part covers how to control thread execution, manage priorities, and coordinate between threads.
-
-## Table of Contents
-1. [Thread Priority](#thread-priority)
-2. [Sleep - Pausing Execution](#sleep---pausing-execution)
-3. [Yield - Giving Up CPU](#yield---giving-up-cpu)
-4. [Join - Waiting for Completion](#join---waiting-for-completion)
-5. [Interrupt - Stopping Threads](#interrupt---stopping-threads)
-6. [Thread Groups](#thread-groups)
-7. [Quick Reference](#quick-reference)
-
----
 
 ## Thread Priority
 

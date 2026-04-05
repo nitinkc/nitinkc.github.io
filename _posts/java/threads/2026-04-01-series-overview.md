@@ -5,14 +5,7 @@ categories: [java, multithreading, concurrency]
 tags: [java, threads, concurrency, tutorial, comprehensive]
 ---
 
-A comprehensive 12-part blog series covering **every aspect** of Java multithreading from fundamentals to advanced patterns. This series consolidates all knowledge into a systematic, revision-worthy guide.
-
-## Why This Series?
-
-- **Complete Coverage**: Every multithreading concept in one place
-- **Systematic Learning**: Knowledge builds incrementally
-- **Revision Ready**: Perfect for interview preparation and quick revision
-- **Practical Examples**: All code examples reference actual runnable code
+This series consolidates all knowledge into a systematic, revision-worthy guide.
 
 ## Blog Series Index
 

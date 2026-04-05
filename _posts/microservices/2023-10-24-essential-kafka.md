@@ -132,3 +132,32 @@ Run once the kafka server is running on local
 {consuming system}-{kafka topic name}-{consuming service}-group
 
 `register-reg.student.engineering-hostelservice-group`
+
+## Interview Questions
+
+### Explain the use case you are currently being used and explain how Kafka message failures or schema validations were being handled in your use case?
+**Example use case:** order events from a checkout service to downstream billing, fulfillment, and email services.
+
+**Handling schema validation and failures:**
+- Validate payloads against an Avro/JSON Schema in the producer **before publish** and in the consumer before process.
+- Use Schema Registry with compatibility checks to prevent breaking changes.
+- On validation failure, route to a Dead Letter Topic (DLT) with a reason header and the original payload.
+- Track DLT volume in monitoring; set alert thresholds.
+
+### Gave an use case where message or communication was being failed and asked about what happens then?
+If a consumer cannot process a message:
+- It **retries with backoff** for transient errors (timeouts, 5xx).
+- After max retries, it writes to DLT and commits the offset to avoid a stuck partition.
+- For non-retryable errors (validation, contract violation), it goes directly to DLT.
+- A replay process or support workflow handles DLT items.
+
+### Did you use Dead letter topic?
+Yes. DLT is essential for isolating poison messages and keeping the main topic flowing. Each DLT message includes:
+- Original topic/partition/offset.
+- Error type and error message.
+- Correlation or trace id.
+
+### How do you notify support or upstream teams when message processing fails?
+- Alerts from metrics dashboards (DLT count, consumer error rate, lag).
+- Ticket creation or Slack/Teams notifications from alert rules.
+- If the issue is upstream contract violation, send a message with sample payload and schema version.

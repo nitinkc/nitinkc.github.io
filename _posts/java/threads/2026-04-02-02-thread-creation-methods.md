@@ -9,10 +9,7 @@ tags: [java, threads, runnable, callable, daemon, creation]
 
 This part covers **all ways** to create threads in Java, from traditional approaches to modern Java 21+ methods.
 
----
-
 ## Runnable vs Callable
-
 Two fundamental interfaces for defining tasks:
 
 ### Runnable
@@ -35,7 +32,7 @@ public interface Runnable {
 ```java
 @FunctionalInterface
 public interface Callable<V> {
-    V call() throws Exception;  // Returns V, can throw
+    V call() throws Exception;  // Returns V, can throw Exception
 }
 ```
 
@@ -227,14 +224,14 @@ thread.setDaemon(true);  // Daemon: dies as soon as parent dies
 
 ### User vs Daemon Threads
 
-| Aspect | User Thread | Daemon Thread |
-|--------|-------------|---------------|
-| JVM Exit | JVM waits for all user threads | JVM doesn't wait |
-| Purpose | Main application work | Background services |
-| Example | Main thread, worker threads | GC, signal handlers |
-| Creation | Default | `setDaemon(true)` before start |
-| Termination | Completes normally | Abruptly when JVM exits |
-| Priority | High priority | Low priority |
+| Aspect      | User Thread                    | Daemon Thread                  |
+|:------------|:-------------------------------|:-------------------------------|
+| JVM Exit    | JVM waits for all user threads | JVM doesn't wait               |
+| Purpose     | Main application work          | Background services            |
+| Example     | Main thread, worker threads    | GC, signal handlers            |
+| Creation    | Default                        | `setDaemon(true)` before start |
+| Termination | Completes normally             | Abruptly when JVM exits        |
+| Priority    | High priority                  | Low priority                   |
 
 ### Virtual Threads are Always Daemon
 
@@ -254,12 +251,12 @@ vt.join();
 
 ### The Difference
 
-| `start()` | `run()` |
-|-----------|---------|
-| Creates a **new thread** | **No new thread** created |
-| Internally calls `run()` | Just a normal method call |
-| Executes **asynchronously** | Executes in **calling thread** |
-| Each thread runs independently | Blocks the calling thread |
+| `start()`                      | `run()`                        |
+|:-------------------------------|:-------------------------------|
+| Creates a **new thread**       | **No new thread** created      |
+| Internally calls `run()`       | Just a normal method call      |
+| Executes **asynchronously**    | Executes in **calling thread** |
+| Each thread runs independently | Blocks the calling thread      |
 
 ### Correct Usage
 
@@ -400,8 +397,6 @@ private static void sequentialWithStreams(List<Long> inputNumbers, Factorial fac
 
 ### Traditional Platform Threads
 
-[Platform Threads Reference](https://nitinkc.github.io/multithreading/Multithreading/#defining-platform-threads)
-
 ```java
 private static void runWithTraditionalThreads(List<Long> inputNumbers, Factorial factorial) 
         throws InterruptedException {
@@ -436,8 +431,6 @@ private static void parallelStream(List<Long> inputNumbers, Factorial factorial)
 ```
 
 ### Executor & Futures
-
-[Executor Services Reference](https://nitinkc.github.io/multithreading/Multithreading/#create-executorservices)
 
 **Pros:**
 - Provides better control over thread management

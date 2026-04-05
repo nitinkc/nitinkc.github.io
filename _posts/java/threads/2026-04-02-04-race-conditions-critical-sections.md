@@ -6,16 +6,11 @@ tags: [java, threads, race-condition, critical-section, atomic, data-race]
 ---
 {% include toc title="Index" icon="cog" %}
 
-# Part 4: Race Conditions & Critical Sections
-
 This part dives deep into the problems that arise when multiple threads access shared resources - race conditions and data races.
-
----
 
 ## Shared Resources
 
 ### What Can Be Shared?
-
 - **Variables** (Class level, static, etc.)
 - **Data structures** (Objects)
 - **File or Connection handles**
@@ -23,7 +18,6 @@ This part dives deep into the problems that arise when multiple threads access s
 - **Any Other Object**
 
 ### Memory Sharing
-
 - **Heap Memory** is shared among all threads
 - **Stack** is created for each thread, so variables on Stack aren't shared
 
@@ -33,11 +27,10 @@ This part dives deep into the problems that arise when multiple threads access s
 > Distributed Systems -> different processes **communicate**.
 
 ### Historical Note
-
 Reentrant Locks and Semaphores are introduced in Java 1.5
 
 * Reentrant Locks (Mutex) allows only one thread in a critical section.
-* Semaphore allows a fixed number of threads to access a critical section.
+* Semaphore allows a **fixed number of threads** to access a critical section.
 
 ### The Risk
 
@@ -403,12 +396,12 @@ Need thread safety?
 
 ### Comparison of Solutions
 
-| Solution | Race Condition | Data Race | Performance |
-|----------|---------------|-----------|-------------|
-| synchronized | ✅ Solved | ✅ Solved | Slower (blocking) |
-| volatile | ❌ Not for compound ops | ✅ Solved | Fast (no blocking) |
-| AtomicInteger | ✅ For single var | ✅ Solved | Fast (CAS) |
-| ReentrantLock | ✅ Solved | ✅ Solved | Flexible |
+| Solution      | Race Condition         | Data Race  | Performance        |
+|:--------------|:-----------------------|:-----------|:-------------------|
+| synchronized  | ✅ Solved               | ✅ Solved   | Slower (blocking)  |
+| volatile      | ❌ Not for compound ops | ✅ Solved   | Fast (no blocking) |
+| AtomicInteger | ✅ For single var       | ✅ Solved   | Fast (CAS)         |
+| ReentrantLock | ✅ Solved               | ✅ Solved   | Flexible           |
 
 ---
 
@@ -427,11 +420,11 @@ Need thread safety?
 
 ### Prevention
 
-| Problem | Solution |
-|---------|----------|
-| Race Condition | synchronized, Locks, Atomic variables |
-| Data Race | volatile, synchronized |
-| Both | synchronized (but with performance cost) |
+| Problem        | Solution                                 |
+|:---------------|:-----------------------------------------|
+| Race Condition | synchronized, Locks, Atomic variables    |
+| Data Race      | volatile, synchronized                   |
+| Both           | synchronized (but with performance cost) |
 
 ---
 

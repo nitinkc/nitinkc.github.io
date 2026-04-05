@@ -10,7 +10,8 @@ tags:
 # Generics as compile-time type safety
 
 Generics in Java help catch certain **type-related** errors at compile time
-rather than at runtime.
+rather than at runtime. With the help of Generics, the possible runtime 
+Exceptions can be converted to Compile time Exceptions.
 
 This can help in ensuring type safety and reducing the likelihood of
 `ClassCastException` or other type-related exceptions during program execution.
@@ -20,6 +21,12 @@ This can help in ensuring type safety and reducing the likelihood of
 ### Java does the auto boxing and unboxing
 
 Java is not fully object oriented -> due to primitive and Static classes
+
+```java
+List<Integer> intsList = new ArrayList<>();
+intsList.add(3);//Adding primitive
+intsList.add(Integer.valueOf(4));//Unnecessary Boxing
+```
 
 # Generic Class
 
@@ -57,23 +64,137 @@ public static <T> S genericMethod(T data) {
 - S is used as the return type of the method. This suggests that the method
   returns a value of type S
 
+X is a type variable in Java's terminology and when we have a variable, we need
+to declare it before we use it.
+
+The Type declaration of the Generic Variable is placed immediately before the
+Return Type.
+
+# Generics in List Interface and Collections
+
+```java
+// Generic Type is declared on Class/Interface
+public interface List<E> extends Collection<E>
+
+boolean add(E e)
+boolean addAll(Collection<? extends E> c)
+boolean containsAll(Collection<?> c)
+E get(int index)
+```
+
+```java
+// Collections Utility Class, Generic Type is not declared on the Class so each method
+// has to declare its own Generic return type
+public class Collections
+
+// Collections does not declare a type. So if you want to use a generic type, you have to 
+// declare it on the method. And in this case, the empty list method is declaring T after the word final, 
+// but before the return type. And the return type is list of T.
+public static <T> List<T> emptyList();//<T> between final and List<T>
+
+public static final <K,V> Map<K,V> emptyMap();
+
+public static <T> boolean addAll(Collection<? super T> c, T... elements);
+
+// Return type is simply T
+// we're saying that whatever the generic type is it must implement the comparable interface. 
+// Because the min method is going to cast all of the elements of the collection to comparable, 
+// in order to determine the minimum one.
+public static <T> T min(Collection<? extends T> coll, Comparator<? super T> comp)
+```
+
+### Complex Generic Examples from JDK
+
+```java
+// Example From java.util.Map.Entry<K,V>
+public static <K extends Comparable<? super K>, V> Comparator<Map.Entry<K,V>> comparingByKey();
+
+// Example from java.util.Comparator<T>
+public static <T, U extends Comparable<? super U>> Comparator<T> comparing(Function<? super T, ? extends U> keyExtractor)
+
+// From java.util.stream.Collectors
+public static <T, K, D, A, M extends Map<K, D>>
+    Collector<T, ?, M> groupingBy(Function<? super T, ? extends K> classifier,
+                                  Supplier<M> mapFactory,
+                                  Collector<? super T, A, D> downstream);
+
+// Collectors.toMap - Collectors is a utility Class just like Collections
+public static <T, K, U>
+    Collector<T, ?, Map<K,U>> toMap(Function<? super T, ? extends K> keyMapper,
+                                    Function<? super T, ? extends U> valueMapper)
+```
+
 # Wild cards (?)
 
 Understanding upper bounds (`<? extends T>`) and lower bounds (`<? super T>`) in
 Java generics is crucial for writing flexible and reusable code.
 
-## Upper Bounded Wildcard
+## Wildcards, Generics and Inheritance
 
-# Upper Bounded Wildcard `? extends T`
+String extends Object, and Array of Strings extends Array of Object.
+
+BUT
+
+```
+List<String> does **NOT** extend List<Object>
+```
+
+Number is Super class to other Wrapper Classes
+![](https://docs.oracle.com/javase/tutorial/figures/java/objects-numberHierarchy.gif)
+
+## Unbounded Wildcard (?)
+
+The idea behind the question mark operator is that when we declare a
+collection of that type, we're saying we don't know what the underlying type is.
+
+- Can **Read** from it, but cannot **write** to it.
+
+## Upper Bounded Wildcard `? extends T`
 
 - Specifies that the type parameter (?) must be a **subtype** of the specified
   type T.
-- restrict the types to T or its subclasses.
+- Restrict the types to T or its subclasses.
+- A wildcard allows you to tell the compiler what type you're expecting, and also
+  allows you to provide elements that are that type, or subclasses of that type.
+- Use the extends keyword and give a maximum class
+- Can be defined and be read from
+- **Cannot add to**, as the data type cannot be resolved
 
-# Lowerbound
+> **Covariance** - preserves the ordering of types from more specific to more general
+
+> Generic java collections are covariant when extends is used with a wild card.
+> This means - if you declare a collection with a bounded wildcard, you can
+> use methods from the Bound. E.g: `List<? extends Number>`, the methods of Number 
+> can also be used along with class of ?. Each element supports Number methods as well.
+
+## Lower Bounded Wildcard `? super T`
 
 Lower bounded wildcards (`? super T`) restrict the types to T or its
-superclasses.
+superclasses. It must be T or above.
+
+Example: forEach as the default method of Java 8 - Bound on the ? is AClass or above.
+
+> **Contravariant** - preserves the ordering of types from **more general** to **more specific**
+
+> Generic java collections are Contravariant when **super** is used with a wild card
+
+## PECS - Producer Extends, Consumer Super
+
+Acronym coined by Joshua Bloch in "Effective Java"
+
+Mnemonic for:
+
+- Use **extends** keyword when we **consume** the value
+    - when there's a value that's coming in that we're going to invoke methods on.
+
+- Use **super** when we **provide** a value,
+    - because then we can provide either the value itself or one of its superclass types.
+
+- Use explicit type when we have both an upper and a lower bound.
+
+> For example, in Java 8 streams, if we're pulling a value from the stream to
+> use, that's super. Whereas if we are using the value in the lambda that we're
+> providing, that's extends.
 
 ### Stream.max
 
