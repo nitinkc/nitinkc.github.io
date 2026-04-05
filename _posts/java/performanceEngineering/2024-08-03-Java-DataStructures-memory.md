@@ -14,10 +14,9 @@ tags:
 
 # The String Pool $ string deduplication.
 
-Since Java 8, Spring pools libe in Heap.
+Since Java 8, Spring pools live in Heap.
 
-The virtual machine can actually detect the duplicated strings and it will
-remove one of them
+The virtual machine can actually detect the duplicated strings and it will remove one of them
 and make the two variables point to the same underlying reference.
 
 Explicitly specifying a string to be placed in string pool
@@ -29,8 +28,7 @@ String y = "100";
 ```
 
 String Pool is internally saved in a HashMap. The String is hashed and kept in
-the respective HashMap. If 2 strings
-map to a same hashkey, then chaining happens.
+the respective HashMap. If 2 strings map to a same hashkey, then chaining happens.
 
 ```java
 -XX:+PrintStringTableStatistics: Prints statistics about the String pool.

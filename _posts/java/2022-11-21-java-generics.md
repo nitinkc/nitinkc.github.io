@@ -7,7 +7,7 @@ tags:
 - Collections
 ---
 
-# Generics as compile-time type safety
+## Generics as compile-time type safety
 
 Generics in Java help catch certain **type-related** errors at compile time
 rather than at runtime. With the help of Generics, the possible runtime 
@@ -16,11 +16,10 @@ Exceptions can be converted to Compile time Exceptions.
 This can help in ensuring type safety and reducing the likelihood of
 `ClassCastException` or other type-related exceptions during program execution.
 
-### Generics do not accept primitive types
+>  Generics do not accept primitive types
+> Java does the auto boxing and unboxing
 
-### Java does the auto boxing and unboxing
-
-Java is not fully object oriented -> due to primitive and Static classes
+Java is not fully object-oriented language -> due to primitive and Static classes
 
 ```java
 List<Integer> intsList = new ArrayList<>();
@@ -28,7 +27,7 @@ intsList.add(3);//Adding primitive
 intsList.add(Integer.valueOf(4));//Unnecessary Boxing
 ```
 
-# Generic Class
+## Generic Class
 
 ```java
 // A simple generic class
