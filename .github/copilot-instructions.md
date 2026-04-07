@@ -20,6 +20,7 @@ This repository is a personal Jekyll site built on the "Minimal Mistakes" theme.
 - Permalinks: set in `_config.yml` as `/:categories/:title/` — avoid changing post paths without updating redirects.
 - Includes/layouts: small modular partials are used. Follow existing classes and `site`/`page` Liquid variables rather than introducing new global variables.
 - JS building: `assets/js/main.min.js` is produced by `rake js` using `npx uglifyjs`. Edit source files under `assets/js/plugins/` or `_main.js`.
+- Markdown reference is at `_posts/developertools/2022-01-19-markdown-reference.md` for examples of common patterns and front-matter usage.
 
 ## Integration points and external dependencies
 - External scripts are referenced in `_config.yml` (`mermaid`, `mathjax`) — don't remove unless testing locally with the same network access.
