@@ -14,8 +14,12 @@ Both Uri Variables and Request Entities are maps
 
 # With UriVariables
 
+```shell
+curl "https://api.datamuse.com/words?ml=ringing+in+the+ears&max=4"
+``` 
+
 The Uri variables needed for call like
-`https://api.datamuse.com/words?ml={word}&max={max}`
+`https://api.datamuse.com/words?ml={word}&max={3}`
 
 ```java
 Map<String, String> uriVariables = new HashMap<>();
@@ -23,7 +27,7 @@ uriVariables.put("word", (String) requestBody.get("word"));
 uriVariables.put("max", (String) requestBody.get("max"));
 ```
 
-## GET .getForEntity
+## GET `.getForEntity`
 
 ```java
 ResponseEntity<WordResponse[]> response = 
@@ -33,7 +37,7 @@ ResponseEntity<WordResponse[]> response =
                 uriVariables);
 ```
 
-## .exchange with Uri variables
+## `.exchange` with Uri variables
 
 ```java
 HttpHeaders headers = new HttpHeaders();

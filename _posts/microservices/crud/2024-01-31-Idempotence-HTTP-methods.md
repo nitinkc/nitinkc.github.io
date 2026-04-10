@@ -10,168 +10,123 @@ tags:
 
 {% include toc title="Index" %}
 
-# HTTP Methods
+# Introduction
+This article explores HTTP methods, the concept of idempotence, and best practices for designing RESTful URIs in microservices.
 
-| HTTP Method                 | Description                                                                 | Format                 |
+# HTTP Methods Overview
+
+| HTTP Method                 | Description                                                                 | Idempotent?            |
 |:----------------------------|:----------------------------------------------------------------------------|:-----------------------| 
-| `GET` - fetch               | getting the information                                                     | Idempotent, Repeatable |
-| `PUT` - update the old data | Updating  information                                                       | Idempotent, Repeatable |
-| `POST` -  submit new data   | Creating new information using Collection based URI (UNIQUE id not present) | **Non-Idempotent**     |
-| `DELETE`                    | Deleting an information                                                     | Idempotent, Repeatable |
+| `GET` - fetch               | Retrieving information                                                       | Yes                    |
+| `PUT` - update              | Updating existing information                                               | Yes                    |
+| `POST` - create             | Creating new information using collection-based URIs (no unique ID present) | No                     |
+| `DELETE`                    | Deleting information                                                        | Yes                    |
 
-Both PUT & PATCH are for editing the item with the difference in the way request payload is passed
-- **PUT** method is to edit an item and **_a complete request payload is required_** whereas 
-- **PATCH** method is also for the edit but **_requires only change fields_**
+## PUT vs PATCH
+Both PUT and PATCH are used for editing resources, but they differ in payload requirements:
+- **PUT** requires the complete request payload for the resource.
+- **PATCH** requires only the fields being changed.
 
 # Idempotence
-**Concept** : Same output for the Same input
+**Concept**: Same output for the same input. Handling duplicate requests ensures that repeated calls
+do not alter the result beyond the initial call.
 
-If the request is sent twice(accidentally) by message broker, by API reties or by a user itself
-- Microservices must be programmed to handle duplicate requests
-- Handling Duplicate requests is called Idempotence
+In microservices, idempotence is crucial for handling accidental duplicates from message brokers, 
+API retries, or user actions. It prevents unintended side effects like data duplication.
 
-This is done by
-- having a unique identifier for every request (generated) and then
-- storing the if in the DB for future reference (to discard duplicates)
+> Idempotency is not enforced by the HTTP protocol; developers must implement it in their APIs.
 
-Call multiple times without changing the result beyond the initial call.
+## Implementing Idempotence
+To achieve idempotence:
+1. Generate a unique identifier for each request.
+2. Store the ID in the database to detect and discard duplicates.
 
-A refresh/resend button on an idempotent method will **reload without any effect**, but on non idempotence,
-code/client side code should warn about data duplication
+For example, a refresh or resend on an idempotent method reloads without effect,
+while non-idempotent methods should warn about potential duplication.
 
-> Idempotency is **NOT** directly enforced by the HTTP protocol
+## Idempotence in Practice
+- **POST**: Typically non-idempotent, as multiple calls create multiple resources.
+- **PUT**: Should be idempotent; multiple identical calls update the same resource without creating duplicates.
+- **GET/DELETE**: Naturally idempotent.
 
-- it's a critical principle in API design and implementation,
-- and **programmers are responsible** for ensuring that their APIs behave
-  idempotent where appropriate.
-
-## Note
-
-It is possible to INSERT a new row using both PUT and POST calls. The code would
-perform the same, but the idempotency
-is not maintained in case the PUT method is used to insert a new row in DB.
-Multiple executions of put will add a new row each time.
+### Example: Handling PUT for Creation (Non-Idempotent)
+Using PUT to insert a new row can violate idempotence if not handled properly, as multiple calls might add new rows.
 
 ```java
-//Add a new User
-//@PostMapping("/add")
+// Example: Using PUT to add a new user (not recommended for creation)
+// This would create a new user each time if not checked
 @PutMapping("/add")
 public ResponseEntity<Map<String,Object>> addNewUser(@Valid @RequestBody User user){
-    User savedUser = userService.save(user);//USer service creates a new Id for new request and save a new record
-    return ResponseEntity
-            .status(HttpStatus.CREATED)
-            .body(getStringObjectMap(savedUser));
+    User savedUser = userService.save(user); // Creates new ID each time
+    return ResponseEntity.status(HttpStatus.CREATED).body(getStringObjectMap(savedUser));
 }
 ```
 
-In RESTful APIs, `POST` is typically used to **create a new resource**, while
-PUT is used to **update an existing resource**
+### Best Practices for POST and PUT
+- **POST**: Use for creating new resources. To maintain non-idempotence, check for existing resources:
+  ```java
+  // Check if user exists before creating
+  if (userService.existsById(user.getId())){
+      return ResponseEntity.status(HttpStatus.CONFLICT)
+          .body(Collections.singletonMap("message", "User already exists"));
+  }
+  // Proceed to create
+  ```
+- **PUT**: Use only for updating existing resources. Return 404 if the resource doesn't exist:
+  ```java
+  // Check if user exists for update
+  if (userService.findByPhoneOrEmail(user).isEmpty()) {
+      return ResponseEntity.notFound().build();
+  }
+  // Proceed to update
+  ```
 
-* POST requests are not idempotent, meaning that multiple identical requests
-  might result in different outcomes (e.g., multiple resources created).
-* PUT requests are idempotent, meaning that multiple identical requests should
-  have the same outcome (e.g., updating the same resource).
+### Use Cases
+- **Case 1**: Creating a new user (one-time): Use POST.
+- **Case 2**: Creating orders (may repeat for same user): Use POST.
+- **Case 3**: Updating user/order data: Use PUT.
 
-**creating a new resource each time, the method would be NON IDEMPOTENT.**
+# Designing RESTful URIs
+RESTful URIs should be intuitive and resource-oriented. There are two main types: instance URIs and collection URIs.
 
-Decide whether you want the operation to be idempotent or not.
+## Instance Resource URIs
+Include a unique ID for the specific resource.
 
-If you intend to create a new resource each time, **then POST is appropriate**.
-
-If you want to ensure that the same resource is updated regardless of how many
-times the request is made, then PUT should be used.
-Use PUT method **only when updating an existing resource**.
-
-For PUT, If the resource doesn't exist, consider returning a 404 Not Found
-status code.
-
-**Implement Idempotent Operations:**
-For PUT requests, ensure that the operation is idempotent by making the same
-update regardless of how many times the request is made.
-
-CASE 1: Creating a new user into a system : POST - one time activity. should not
-repeat
-
-CASE 2: Creating a new order or a repeated order for the same User : POST
-
-CASE 3: Updating the created order or user data : PUT
-
-# Designing RESTful URI's
-
-2 types of Resource URI's
-
-* Instance Resource URI
-* Collection URI (Resource names in plural)
-
-**Instance Resource URI**
-• Unique id of the resource in the URI
-
-```shell
+Examples:
+```
 /profiles/{profileId}
 /messages/{messageId}
-/messages/{messageId}/comments/{commentId} #comment belongs to a message
+/messages/{messageId}/comments/{commentId}
 /messages/{messageId}/likes/{likeId}
 ```
 
-**Collection URI (Resource names in plural)**
-`/messages` for all messages
+## Collection URIs
+Use plural resource names for collections.
 
-```shell
-#Represents all the comments for a particular messageId 
-/messages/{messageId}/comments
+Examples:
+```
+/messages  # All messages
+/messages/{messageId}/comments  # Comments for a specific message
 ```
 
-**Query Parameter for Pagination and Filtering**
+## Pagination and Filtering
+Use query parameters for pagination and filtering to manage large datasets.
 
-`offset` is the starting point
+- **Parameters**:
+  - `offset`: Starting point (e.g., 0 for first page).
+  - `limit`: Number of items per page (e.g., 10).
 
-`limit` is the page size
+- **GET Example**:
+  ```
+  /messages?offset=30&limit=10
+  ```
 
-For get request, pass as a path parameter
-
-```shell
-#Represents all the comments for a particular messageId 
-/messages?offset=30&limit=10
-```
-
-or for the post request, can be sent in the request body as well
-
-```json
-{
-    "startDate":"2023-12-01",
-    "endDate":"2024-01-11",
-    "limit": 1,
-    "offset": 0
-}
-```
-
-for POST, to maintain non-idempotence, perform the following steps:
-
-- Check if the resource already exists before creating a new one.
-- If the resource exists, return an appropriate error response (e.g.,
-  `409 Conflict` or `422 Unprocessable Entity`).
-- If the resource doesn't exist, proceed with creating a new one and a
-  `201 Created`response is returned with the location of the newly created
-  resource.
-
-```java
-// Check if the user with the same identifier already exists
-if (userService.existsById(user.getId())) {
-    // Resource already exists, return 409 Conflict
-    return ResponseEntity
-        .status(HttpStatus.CONFLICT)
-        .body(Collections.singletonMap("message", "User with the same ID already exists"));
-}
-```
-
-To fulfill the requirement of using the PUT method only for updating an existing
-resource and
-returning a 404 Not Found status code if the resource doesn't exist,
-
-```java
-// Check if the user already exists
-if (userService.findByphoneOrEmail(user).size() > 0) {//find by Id or email or phone or any other pseudo primary key
-        // Resource does not exist, return 404 Not Found
-	return ResponseEntity.notFound().build();
-}
-```
+- **POST Example** (parameters in body):
+  ```json
+  {
+      "startDate": "2023-12-01",
+      "endDate": "2024-01-11",
+      "limit": 1,
+      "offset": 0
+  }
+  ```

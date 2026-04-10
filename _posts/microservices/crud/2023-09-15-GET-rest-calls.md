@@ -13,7 +13,6 @@ tags:
 {% include toc title="Index" %}
 
 # Basic GET Calls
-
 Creating a List of Objects for the Demo Purposes
 
 In the DAO Service
@@ -36,47 +35,41 @@ public List<User> findAll() {
 ````
 
 In the Controller
+- No need to create an object of the DAOService. 
+- Use `@Autowired` annotation to get the object of the DAOService
+    ```java
+    @Autowired
+    private UserDAOService userDAOService;
+    ```
+- Retrieve all users
+    ```java
+    @GetMapping(path = "/users")
+    public List<User> retrieveAllUsers(){
+        return userDAOService.findAll();
+    }
+    ```
 
-No need to create an object of the DAOService. Use @Autowired annotation to get
-the object of the DAOService
-
-```java
-@Autowired
-private UserDAOService userDAOService;
-```
-
-```java
-//Retrieve all users
-@GetMapping(path = "/users")
-public List<User> retrieveAllUsers(){
-    return userDAOService.findAll();
-}
-```
-
-http://localhost:8089/api/hardCodedData/users
+`http://localhost:8089/api/hardCodedData/users`
 
 ### Get a user based on id (from get request parameter)
-
-In Controller
-
-```java
-//Retrieve specific users
-@GetMapping(path = "/user/{id}")
-public User retrieveUserById(@PathVariable int id){
-    return userDAOService.findById(id);
-}
-```
-
-In User DAOService
-
-```java
-// Retrieve users by Id
-public User findById(int id) {
-    if(getUsers().get(id) == null) {
-        return null;
+- In Controller
+    ```java
+    //Retrieve specific users
+    @GetMapping(path = "/user/{id}")
+    public User retrieveUserById(@PathVariable int id){
+        return userDAOService.findById(id);
     }
-    return getUsers().get(id);
-	}
-```
+    ```
 
-http://localhost:8089/api/hardCodedData/user/1
+- In User DAOService
+    ```java
+    // Retrieve users by Id
+    public User findById(int id) {
+        if(getUsers().get(id) == null) {
+            return null;
+        }
+        return getUsers().get(id);
+        }
+    ```
+
+`http://localhost:8089/api/hardCodedData/user/1`

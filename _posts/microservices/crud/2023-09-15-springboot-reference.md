@@ -6,25 +6,23 @@ categories:
 tags:
 - Spring Boot
 - Reference
-- Documentation
-- Guide
 ---
 
 {% include toc title="Index" %}
 
+> Basic philosophy of Spring Boot : **Conventions over configurations**
+
 # Concepts
 
 ## Loose Coupling
-
 Loose coupling refers to designing a system where components are minimally
 dependent on each other.
 
 - This allows for easier modification, testing, and maintenance because changes
   in one component have little to no impact on others.
-- By Autowiring, we achieve loose coupling.
+- By **Autowiring**, we achieve loose coupling.
 
-> By using `new` keyword (instantiating an obejct), we **tightly couple** the
-> dependency which is not good
+> By using `new` keyword (instantiating an object), we **tightly couple** the dependency (which is not good)
 
 - **Tightly Coupled:**
   ```java
@@ -52,15 +50,13 @@ Instead, `UserRepository` is injected into `UserService`, making it easier to
 swap out `UserRepository` implementations.
 
 ## Inversion of Control
-
 Instead of the Class taking responsibility of creating the object, the framework
 manages it for you
 
-- the control of **object creation** and **dependency management** is **_inverted_** from the application code to a framework.
-- The framework manages the lifecycle and interactions of objects.
+- the control of **object creation** and **dependency management** is **_inverted_** from the application code to a **framework**.
+- The **framework manages the lifecycle** and interactions of objects.
 
 ## Dependency Injection
-
 Dependency Injection (DI) is a design pattern used to **implement IoC** (
 Inversion of Control).
 
@@ -68,105 +64,82 @@ Inversion of Control).
   dependencies** or **bean instantiation and wiring dependencies**,
   rather than the classes managing their own dependencies.
 
+# @Autowired & Dependency Injection
+
+[dependency-injection-concepts]({% post_url /microservices/2022-02-10-dependency-injection-concepts %})
+{: .notice--success}
+
+### Autowiring
+- byType
+- byName
+- constructor - similar to byType, but through constuctor
+
+[dependency-injection-concepts/#Autowiring]({% post_url /microservices/2022-02-10-dependency-injection-concepts %}#Autowiring)
+
+Eliminates the need to create a new object and hence the need of constructors from the components
+`StudentService studentService = new StudentService();`
+
+```java
+@Autowired
+StudentService studentService;//Free to use studentService object within the class anywhere
+```
+
+`@Autowired`  used for automatic dependency injection.
+- Spring should find the matching bean and wire the dependency
+
+**Dependency injection** is a design pattern in which objects are **provided**
+with their dependencies (i.e., the objects they need to collaborate with) rather than creating those dependencies
+themselves.
+
+**Automatic Injection**: When you annotate a field, setter method, or constructor with `@Autowired`,
+Spring will automatically inject the required dependency (another Spring bean) at runtime.
+
+### Constructor vs Setter Injection
+- Constructor Injection for Mandatory Dependencies
+- Setter Injection for Optional Dependencies
+
+### Lombok
+To use the `@RequiredArgsConstructor` annotation. Mark the fields you want to
+include in the constructor as `final` or annotate them with `@NonNull`.
+
+```java
+@RequiredArgsConstructor
+public class UserService {
+  private final UserRepository userRepository;
+  @NonNull ServiceConfig serviceConfig;
+}
+```
+
 # Stereotype Annotations
 
 [All Annotations](https://springframework.guru/spring-framework-annotations/)
 {: .notice--success}
 
-> Basic philosophy of Spring Boot : **Conventions over configurations**
-
 **@Component**
-
 * **Purpose**: Marks a class as a Spring component or bean.
-* **Commonly Used in**: Utility classes, business logic classes, and other
-  non-specialized components.
+* **Commonly Used in**: Utility classes, business logic classes, and other non-specialized components.
 
 **@Controller**
-
 * **Purpose**: Marks a class as a Spring MVC controller.
-* **Use Case**: Used for classes that handle HTTP requests in a Spring MVC web
-  application.
-* **Commonly Used in**: Classes that define request mappings, handle user input,
-  and return views or data to the client.
+* **Use Case**: Used for classes that handle HTTP requests in a Spring MVC web application.
+* **Commonly Used in**: Classes that define request mappings, handle user input, and return views or data to the client.
 
 **@Service**
-
 * **Purpose**: Marks a class as a service or business logic component.
-* **Use Case**: Typically used for classes that contain the business logic of
-  the application.
+* **Use Case**: Typically used for classes that contain the business logic of the application.
 * **Commonly Used in**: Service layer classes that encapsulate business rules,
-  data processing, and interactions with
-  repositories or other services.
+  data processing, and interactions with repositories or other services.
 
 **@Repository**
-
 * **Purpose**: Marks a class as a Spring Data repository.
-* **Use Case**: Used for classes that interact with a database or external data
-  source.
-* **Commonly Used in**: Data access objects (DAOs) that perform CRUD (Create,
-  Read, Update, Delete) operations on
-  entities.
+* **Use Case**: Used for classes that interact with a database or external data source.
+* **Commonly Used in**: Data access objects (DAOs) that perform CRUD (Create, Read, Update, Delete) operations on entities.
 
-# Config
-
-Set a desired Port
-
-```shell
-server.port=8089
-```
-
-### Application Yaml settings
-
-{% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
-
-> Good Practice : Design application configuration using
-`@ConfigurationProperties` to ensure Type Safety
-
-```yaml
-myConfig:
-  flag: true
-  message: "From YAML"
-  number: 100
-```
-
-Type Safety can be ensured with this
-
-```java
-@Component
-@ConfigurationProperties("myConfig")
-public class MyConfiguration {
-    private boolean flag;
-    private String message;
-    private int number;
-```
-
-# Banner
-For Ascii banner, put the ASCII Art in banner.txt and it will be taken
-
-to turn off the banner
-```yaml
-spring:
-  main:
-    banner-mode: "off"
-```
-
-For image banner, put the logo.png file and
-
-```yaml
-spring:
-  banner:
-    image:
-      location: logo.png
-```
+# Bean Scope
+[Spring Beans - bean scope & bean lifecycle]({% post_url /java/2026-03-19-java-beans %}#bean-scope)
 
 # Springboot Startup process
-[springboot-startup](https://nitinkc.github.io/microservices/springboot-startup/)
-
-# Initial Data Setup
-
-keep the sql script in the resources folder by the name `data.sql`
-
-[Sample Data file](https://github.com/nitinkc/spring-data-jpa/blob/master/src/main/resources/data.sql)
+[springboot-startup]({% post_url /microservices/2024-12-05-springboot-startup %})
 
 # Scans
 
@@ -180,7 +153,7 @@ By default, the package containing the main method is scanned.
 
 ```java
 @ComponentScan(basePackages = {"com.spring5.concepts",
-        "com.spring5.services"
+        "com.spring5.services",
         "com.test.animals",
         "com.flowers"
 })
@@ -199,90 +172,40 @@ By default, the package containing the main method is scanned.
 @EntityScan(basePackages = {"com.learningJPA.dSpringDataRepository"
         ,"com.learningJPA.eTest.model"
         //,"com.learningJPA.hibernate.*"
-}) 
+})
 ```
 
 ## SpringBootApplication ScanBasePackages
 
-`@SpringBootApplication` is a meta-annotation that combines several annotations,
-including `@ComponentScan`.
+`@SpringBootApplication` is a meta-annotation that combines a combination of:
+- `@EnableAutoConfiguration`: Enables Spring Boot's auto-configuration mechanism.
+- `@ComponentScan`: Scans for components in the current package and sub-packages.
+- `@Configuration`: Marks the class as a source of bean definitions.
 
-* `scanBasePackages` within `@SpringBootApplication` allows you to specify the
-  base packages to scan for Spring
-  components.
+* `scanBasePackages` within (as argument) `@SpringBootApplication` allows you to specify the base packages to scan for Spring components.
 * used in the main application class.
 * It also scans the default package where the main application class is located.
-* exclude argument is used to exclude specific auto-configurations, which means
-  that Spring Boot won't automatically
-  configure the classes mentioned.
+* exclude argument is used to exclude specific auto-configurations, which means that Spring Boot won't automatically configure the classes mentioned.
+  ```java
+  @SpringBootApplication(
+      scanBasePackages = {
+          "com.test.package1",
+          "com.test.service.security"
+      },
+      exclude = { JmxAutoConfiguration.class })
+  ```
 
-```java
-@SpringBootApplication(
-    scanBasePackages = {
-        "com.test.package1",
-        "com.test.service.security"
-    },
-    exclude = { JmxAutoConfiguration.class })
-```
+# Initial Data Setup
+keep the sql script in the resources folder by the name `data.sql`
 
-# @Autowired & Dependency Injection
+[Sample Data file](https://github.com/nitinkc/spring-data-jpa/blob/master/src/main/resources/data.sql)
 
-[dependency-injection-concepts](https://nitinkc.github.io/microservices/dependency-injection-concepts/)
-{: .notice--success}
-
-### Autowiring
-
-- byType
-- byName
-- constructor - similar to byType, but through constuctor
-
-[dependency-injection-concepts/#Autowiring](https://nitinkc.github.io/microservices/dependency-injection-concepts/#Autowiring)
-
-Eliminates the need to create a new object and hence the need of constructors
-from the components
-`StudentService studentService = new StudentService();`
-
-```java
-@Autowired
-StudentService studentService;//Free to use studentService object within the class anywhere
-```
-
-`@Autowired`  used for automatic dependency injection.
-
-- Spring should find the matching bean and wire the dependency
-
-**Dependency injection** is a design pattern in which objects are **provided**
-with their dependencies (i.e., the
-objects they need to collaborate with) rather than creating those dependencies
-themselves.
-
-**Automatic Injection**: When you annotate a field, setter method, or
-constructor with `@Autowired`, Spring will
-automatically inject the required dependency (another Spring bean) at runtime.
-
-### Constructor vs Setter Injection
-
-- Constructor Injection for Mandatory Dependencies
-- Setter Injection for Optional Dependencies
-
-### Lombok
-To use the `@RequiredArgsConstructor` annotation. Mark the fields you want to
-include in the constructor as `final` or annotate them with `@NonNull`.
-
-```java
-@RequiredArgsConstructor
-public class UserService {
-    private final UserRepository userRepository;
-```
-
-# Sequence of execution
-
+# Sequence of executio
 ```
 Postman/browser/client -> Controller -> Service -> Repository -> Service -> Controller
 ```
 
 # REST APIs
-
 - Retrieve all Users - GET `/users`
 - Create a User - POST `/users`
 - Retrieve one User - GET `/user/{id}` -> `/user/1`
@@ -291,11 +214,7 @@ Postman/browser/client -> Controller -> Service -> Repository -> Service -> Cont
 - Create a posts for a User - POST `/user/{id}/posts`
 - Retrieve details of a post - GET `/user/{id}/posts/{post_id}`
 
-## Best Practices
-
-- Use Plurals 
-
-[Idempotence-HTTP-methods/#designing-restful-uris](https://nitinkc.github.io/microservices/Idempotence-HTTP-methods/#designing-restful-uris)
+[Idempotence-HTTP-methods]({% post_url /microservices/crud/2024-01-31-Idempotence-HTTP-methods %}#designing-restful-uris)
 {: .notice--success}
 
 # Controller Vs RestController
@@ -316,7 +235,7 @@ public class HealthCheckController {
 
 # GET Request
 
-[GET-rest-calls](https://nitinkc.github.io/microservices/GET-rest-calls/)
+[GET-rest-calls]({% post_url /microservices/crud/2023-09-15-GET-rest-calls %})
 {: .notice--success}
 
 ```java
@@ -332,8 +251,7 @@ OR
         produces = { "application/json", MediaType.APPLICATION_XML_VALUE})
 ```
 
-Between `value` and `path` attribute, **value** is commonly used to describe the
-path
+Between `value` and `path` attribute, **value** is commonly used to describe the path
 
 **Shortened GetMapping**
 
@@ -350,19 +268,17 @@ public HelloWorldReturnBean helloWorldReturnBean() {
 }
 ```
 
-[Path Variable vs Request Param](https://nitinkc.github.io/microservices/spring-request-parameter/)
+[Path Variable vs Request Param]({% post_url /microservices/crud/2023-09-15-spring-request-parameter %})
 {: .notice--success}
 
 ### Validation
 
-[Validations in Detail](https://nitinkc.github.io/microservices/spring-validations/)
+[Validations in Detail]({% post_url /microservices/crud/2023-09-15-spring-validations %})
 {: .notice--success}
 
 ##### Request Validation
-
-- At Class level, add `@Validated` annotation and at the `@Valid` at the
-  parameter level
-- Check the `required` and `defaultValue` arguments of RequestParam Annotation
+- At Class level, add `@Validated` annotation and at the `@Valid` at the parameter level
+- Check the `required` and `defaultValue` arguments of `@RequestParam` Annotation
 
 ```java
 @RestController
@@ -372,8 +288,7 @@ public class ValidationController {
     @GetMapping("/email")
     public String testEmail(@Valid @Email(message = "Please provide a valid email address")
                             @RequestParam(value = "email") String email ,
-                            @RequestParam(value = "greet", required = false, defaultValue = "No Val from Request") 
-                            String greet,
+                            @RequestParam(value = "greet", required = false, defaultValue = "No Val from Request") String greet,
                             @RequestParam(value = "count", required = false, defaultValue = "-1") Integer count) {
 
         StringBuilder sb= new StringBuilder();
@@ -384,7 +299,6 @@ public class ValidationController {
 ```
 
 ##### Response Validation
-
 In the DTO Class (Using Lombok)
 
 ```java
@@ -393,12 +307,14 @@ public class StudentRequestBody {
     private int count;
     @JsonProperty("studentIds")//If the name in the request body differs from variable name
     private List<String> studentIdList;
-    @Email(message = "Incorrect EmailID received from DB")
+    @Email(message = "Incorrect Email-ID received from DB")
     private String emailId;
 }
 ```
 
 # POST Request
+Use `@RequestBody` to read the request body into a Java object. The request body is typically in
+JSON format, and Spring will automatically convert it to the specified Java class using a message converter (like Jackson).
 
 [POST Request in Detail]({% post_url /microservices/crud/2023-09-15-POST-Requests %})
 {: .notice--success}
@@ -423,8 +339,7 @@ curl --location 'localhost:8090/student/db/studentIdsByMap' \
 }'
 ```
 
-Read the Request Body using `@RequestBody` in the method parameter into either a
-Map, for simple structures or a class for complex
+Read the Request Body using `@RequestBody` in the method parameter into either a Map, for simple structures or a class for complex
 
 ```java
 @PostMapping(path = "/studentIdsByMap",
@@ -467,15 +382,13 @@ Controller with **`@RequestBody`**
             consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {"application/json"})
 public StudentDtoClass getStudentByIdsRequestBody(@RequestBody StudentRequestBody studentRequestBody){
-        ...
+// Business logic to process the request body and return the response
 }
 ```
 
 # Service
-
-For a single student Id, JPA's findById method can be utilized. It returns an
-Optional, so if in case the return is
-a null Optional Class findById can be utilized.
+For a single student Id, JPA's `findById()` method can be utilized. It returns an`Optional`,
+so if in case the return is a null Optional Class findById can be utilized.
 
 ### Return an Object
 
@@ -493,7 +406,6 @@ Student student = studentById.orElseGet(Student::new);//Return empty constructor
 ```
 
 ##### Simple Mapper
-
 If the class structure of DAO Class is different from the DTO Class, then
 separate mappers or convertors can be written.
 
@@ -561,7 +473,7 @@ for(Student s:studentDetailsList){
 }
 ```
 
-But a better way of achieving this is the use of functional style of programming
+But **a better way** of achieving this is the use of functional style of programming
 
 ```java
 //Java 8
@@ -588,62 +500,34 @@ public List<StudentDto> getStudentByIds(List<Integer> studentIdList) {
 
 ##### Jackson Mapper
 
-[Jackson Mapper in Detail](https://nitinkc.github.io/microservices/jackson-mapper-details/)
+[Jackson Mapper in Detail]({% post_url /microservices/2023-02-19-jackson-mapper-details %})
 {: .notice--success}
 
 ##### Map Struct
 
-[Map Struct in Detail](https://nitinkc.github.io/microservices/mapstruct-mapper-details/)
+[Map Struct in Detail]({% post_url /microservices/2023-02-21-mapstruct-mapper-details %})
 {: .notice--success}
-
-The simple one is Jackson mapper, with lot of control
-
-```java
-@JsonProperty("studentIds")//If the name in the request body differs from variable name
- private List<String> studentIdList;
-```
-
-Control other aspects of the DTO
-
-* if empty values in the array is not needed
-
-```java
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@Data
-public class Filters {
-    @JsonProperty("treatmentDay")
-    public String treatmentDay;
-}
-```
 
 # Repository
 
-Spring Data JPA is an implementation of Java Persistence API
+Spring Data JPA is an implementation of **Java Persistence API**
 
 # Custom Exceptions
 
-[Java Exceptions](https://nitinkc.github.io/java/exceptions/)
+[Java Exceptions]({% post_url /java/2023-11-24-exceptions %})
 {: .notice--success}
 
-[Spring Exceptions](https://nitinkc.github.io/microservices/spring-exceptions/)
+[Spring Exceptions]({% post_url /microservices/crud/2023-09-15-spring-exceptions %})
 {: .notice--success}
 
-Use `@ControllerAdvice` or `@RestControllerAdvice` for Global exception
-handling.
+> Use `@ControllerAdvice` or `@RestControllerAdvice` for Global exception handling.
 
 ### Difference between `@ControllerAdvice` & `@RestControllerAdvice`
-
 The primary difference is in the **type of responses** they handle.
-
-* @RestControllerAdvice is geared toward RESTful services, where responses are
-  typically data-centric (e.g., JSON or
-  XML),
-* while @ControllerAdvice is used in
-  traditional web applications, where responses often include both views and
-  data.
+* @RestControllerAdvice is geared toward RESTful services, where responses are typically data-centric (e.g., JSON or XML),
+* while @ControllerAdvice is used in traditional web applications, where responses often include both views and data.
 
 ### HikariCP
-
 HikariCP, often referred to simply as Hikari, is a popular and high-performance
 connection pool library for Java applications.
 
@@ -659,32 +543,26 @@ spring.datasource.url=jdbc:postgresql://postgres:5432/mydb?currentSchema=test
 ```
 
 # Read Environment properties
+- Use the Environment dependency
+    ```java
+    @Autowired 
+    private Environment environment;
+    int portNumber = Integer.parseInt(environment.getProperty("server.port"));
+    ```
 
-Use the Environment dependency
-
-```java
-@Autowired 
-private Environment environment;
-
-int portNumber = Integer.parseInt(environment.getProperty("server.port"));
-
-```
-
-Another method by @Value Annotation
-
-```java
-@Value("${custom.value}")
-private String customVal;
-```
+- Another method by @Value Annotation
+    ```java
+    @Value("${custom.value}")
+    private String customVal;
+    ```
 
 # Rest Template
-
 Refer the following page for details
-[Rest Template](https://nitinkc.github.io/microservices/rest-template/)
+[Rest Template]({% post_url /microservices/2024-03-06-rest-template %})
 
 # CommandLineRunner
 
-[https://nitinkc.github.io/spring/microservices/CommandLineRunner/](https://nitinkc.github.io/spring/microservices/CommandLineRunner/)
+[https://nitinkc.github.io/spring/microservices/CommandLineRunner/]({% post_url /microservices/2024-07-15-CommandLineRunner %})
 
 ```java
 @Component
@@ -706,20 +584,21 @@ public class RutWhileBooting implements CommandLineRunner {
 
 # Scheduling a Job
 
-[spring-scheduler](https://nitinkc.github.io/microservices/spring-scheduler/)
+[spring-scheduler]({% post_url /microservices/2024-03-13-spring-scheduler %})
 use `@EnableScheduling` on the application main class
 
 ```java
 @Component
 @AllArgsConstructor
 public class DailyTaskScheduler {
-    private final MyService myService;
+  private final MyService myService;
 
-    @Scheduled(cron = "0 0 0 * * *") // Executes at midnight every day
-    //@Scheduled(fixedRate = 5000) // Executes every 5 seconds (5000 milliseconds) for testing
-    public void runDailyTask() {
-        myService.runJob();
-    }
+  @Scheduled(cron = "0 0 0 * * *") // Executes at midnight every day
+  // @Scheduled(fixedRate = 5000) // Executes every 5 seconds (5000 milliseconds) for testing
+  public void runDailyTask() {
+    myService.runJob();
+  }
+}
 ```
 
 # Spring Boot Actuator
@@ -744,13 +623,66 @@ public class DailyTaskScheduler {
 # Aspect Oriented Programming - AOP
 
 [spring-aop/](https://nitinkc.github.io/microservices/spring-aop/)
+[Prometheus and micrometer]({% post_url /microservices/2024-07-18-Prometheus-micrometer %})
 
-# Bean Scope
-[https://nitinkc.github.io/microservices/spring-beans/#bean-scope](https://nitinkc.github.io/microservices/spring-beans/#bean-scope)
+# Resilience and Fault Tolerance
+
+[Resilience with Resilience4J]({% post_url /microservices/2025-09-22-resilience4j-spring-boot %})
+{: .notice--success}
+
+In distributed systems, services can fail. Resilience patterns help your application gracefully handle such failures.
+Resilience4J is a lightweight, easy-to-use fault tolerance library inspired by Netflix Hystrix.
+
+## Key Patterns
+
+- **Circuit Breaker**: Prevents repeated calls to a failing service. After a certain number of failures, the circuit "opens," and all subsequent calls fail immediately (or are redirected to a fallback) for a configured duration. This gives the failing service time to recover.
+  - **States**: `CLOSED` (calls allowed), `OPEN` (calls fail-fast), `HALF_OPEN` (limited calls to check recovery).
+- **Retry**: Automatically re-invokes a failed operation. Useful for transient errors like temporary network glitches.
+- **Bulkhead**: Limits the number of concurrent calls to a specific service, preventing one slow service from exhausting all resources and causing cascading failures.
+- **Rate Limiter**: Controls the rate of requests to a service (e.g., 100 requests per second).
+- **Time Limiter**: Sets a timeout for asynchronous operations.
+
+## Example with Circuit Breaker
+
+1.  **Dependencies**: Add `spring-cloud-starter-circuitbreaker-resilience4j`.
+2.  **Configuration** (`application.yml`):
+    ```yaml
+    resilience4j.circuitbreaker:
+      instances:
+        myApiService:
+          registerHealthIndicator: true
+          slidingWindowSize: 10
+          minimumNumberOfCalls: 5
+          permittedNumberOfCallsInHalfOpenState: 3
+          automaticTransitionFromOpenToHalfOpenEnabled: true
+          waitDurationInOpenState: 5s
+          failureRateThreshold: 50
+          eventConsumerBufferSize: 10
+    ```
+3.  **Usage in Code**:
+    ```java
+    @Service
+    public class MyApiService {
+
+        @CircuitBreaker(name = "myApiService", fallbackMethod = "fallback")
+        public String fetchData() {
+            // Call to an external, potentially failing service
+            return restTemplate.getForObject("http://external-api/data", String.class);
+        }
+
+        public String fallback(Throwable t) {
+            // Return a default value or a cached response
+            return "Fallback data";
+        }
+    }
+    ```
+
+# Spring Transaction Management
+[Prometheus and micrometer]({% post_url /microservices/2024-07-18-Prometheus-micrometer %})
 
 # Spring Security
 
-[Spring Security](https://nitinkc.github.io/microservices/spring-security-concepts/)
+[Spring Security]({% post_url /microservices/2025-09-22-spring-security-concepts %})
 {: .notice--success}
 
 Spring Security is a powerful and highly customizable authentication and access-control framework. It is the de-facto standard for securing Spring-based applications.
@@ -818,7 +750,7 @@ In this example:
 
 # Reactive Programming (Spring WebFlux)
 
-[Reactive Programming with Spring WebFlux](https://nitinkc.github.io/microservices/spring-webflux-reactive/)
+[Reactive Programming with Spring WebFlux]({% post_url /microservices/2025-09-22-spring-webflux-reactive %})
 {: .notice--success}
 
 Spring WebFlux is a fully non-blocking, reactive web framework for building modern, scalable applications. It is an alternative to Spring MVC and is built on top of Project Reactor.
@@ -840,9 +772,68 @@ Spring WebFlux is a fully non-blocking, reactive web framework for building mode
 | **Dependencies**  | `spring-boot-starter-web`                           | `spring-boot-starter-webflux`                             |
 | **API Style**     | Imperative, synchronous (`User`, `List<User>`)      | Functional, reactive (`Mono<User>`, `Flux<User>`)          |
 
+# Containerization & Cloud-Native
+
+[Containerizing Spring Boot with Docker]({% post_url /microservices/2025-09-22-docker-spring-boot %})
+{: .notice--success}
+
+Containerization, particularly with Docker, is the standard for packaging and deploying modern applications. Cloud-native practices enable applications to be scalable, resilient, and manageable in dynamic environments like Kubernetes.
+
+## Docker
+
+Docker allows you to package your application and its dependencies into a standardized unit called a container.
+
+### Dockerfile
+
+A `Dockerfile` is a script containing instructions to build a Docker image.
+
+```dockerfile
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:17-jdk-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the fat jar into the container at /app
+COPY target/my-app-0.0.1-SNAPSHOT.jar app.jar
+
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
+
+# Run the jar file
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+### Multi-Stage Builds
+
+A multi-stage build is a best practice that helps keep your final image small and secure by separating the build environment from the runtime environment.
+
+```dockerfile
+# --- Build Stage ---
+FROM maven:3.8.5-openjdk-17 AS build
+WORKDIR /source
+COPY . .
+RUN mvn clean package -DskipTests
+
+# --- Runtime Stage ---
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /source/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+## Cloud-Native Best Practices
+
+- **Configuration Management**: Externalize configuration using ConfigMaps in Kubernetes or a dedicated config server (like Spring Cloud Config) instead of baking it into the image.
+- **Health Checks**: Implement liveness and readiness probes (`/actuator/health/liveness`, `/actuator/health/readiness`). Kubernetes uses these to know if your application is running correctly and ready to receive traffic.
+- **Graceful Shutdown**: Ensure your application handles `SIGTERM` signals to shut down gracefully, finishing in-flight requests and releasing resources. Spring Boot does this by default.
+- **Stateless Services**: Design your services to be stateless. State should be stored in an external database or cache (like Redis or a distributed database). This allows you to scale your application horizontally with ease.
+- **Distributed Tracing**: Use tools like Zipkin or Jaeger to trace requests as they travel across multiple microservices, which is essential for debugging in a distributed system.
+
 # Advanced Testing
 
-[Advanced Testing in Spring Boot](https://nitinkc.github.io/microservices/spring-advanced-testing/)
+[Advanced Testing in Spring Boot]({% post_url /microservices/2025-09-22-spring-advanced-testing %})
 {: .notice--success}
 
 Spring Boot provides a rich set of testing utilities to write comprehensive unit, integration, and end-to-end tests.
@@ -924,60 +915,9 @@ Testcontainers is a Java library that provides lightweight, throwaway instances 
   }
   ```
 
-# Resilience and Fault Tolerance
-
-[Resilience with Resilience4J]({% post_url /microservices/2025-09-22-resilience4j-spring-boot %})
-{: .notice--success}
-
-In distributed systems, services can fail. Resilience patterns help your application gracefully handle such failures. Resilience4J is a lightweight, easy-to-use fault tolerance library inspired by Netflix Hystrix.
-
-## Key Patterns
-
-- **Circuit Breaker**: Prevents repeated calls to a failing service. After a certain number of failures, the circuit "opens," and all subsequent calls fail immediately (or are redirected to a fallback) for a configured duration. This gives the failing service time to recover.
-  - **States**: `CLOSED` (calls allowed), `OPEN` (calls fail-fast), `HALF_OPEN` (limited calls to check recovery).
-- **Retry**: Automatically re-invokes a failed operation. Useful for transient errors like temporary network glitches.
-- **Bulkhead**: Limits the number of concurrent calls to a specific service, preventing one slow service from exhausting all resources and causing cascading failures.
-- **Rate Limiter**: Controls the rate of requests to a service (e.g., 100 requests per second).
-- **Time Limiter**: Sets a timeout for asynchronous operations.
-
-## Example with Circuit Breaker
-
-1.  **Dependencies**: Add `spring-cloud-starter-circuitbreaker-resilience4j`.
-2.  **Configuration** (`application.yml`):
-    ```yaml
-    resilience4j.circuitbreaker:
-      instances:
-        myApiService:
-          registerHealthIndicator: true
-          slidingWindowSize: 10
-          minimumNumberOfCalls: 5
-          permittedNumberOfCallsInHalfOpenState: 3
-          automaticTransitionFromOpenToHalfOpenEnabled: true
-          waitDurationInOpenState: 5s
-          failureRateThreshold: 50
-          eventConsumerBufferSize: 10
-    ```
-3.  **Usage in Code**:
-    ```java
-    @Service
-    public class MyApiService {
-
-        @CircuitBreaker(name = "myApiService", fallbackMethod = "fallback")
-        public String fetchData() {
-            // Call to an external, potentially failing service
-            return restTemplate.getForObject("http://external-api/data", String.class);
-        }
-
-        public String fallback(Throwable t) {
-            // Return a default value or a cached response
-            return "Fallback data";
-        }
-    }
-    ```
-
 # Database Migration
 
-[Database Migration with Flyway](https://nitinkc.github.io/microservices/flyway-database-migration/)
+[Database Migration with Flyway]({% post_url /microservices/2025-09-22-flyway-database-migration %})
 {: .notice--success}
 
 Database migration tools like Flyway and Liquibase help you version-control your database schema, making it easy to evolve your database structure in a consistent and automated way.
@@ -1017,72 +957,55 @@ Liquibase is another powerful migration tool that uses XML, YAML, or JSON change
 - **Changelog File**: You define changesets in a master changelog file.
 - **Changesets**: Each changeset is an atomic unit of change, identified by an `id` and `author`.
 
-# Containerization & Cloud-Native
+# Config
 
-[Containerizing Spring Boot with Docker]({% post_url /microservices/2025-09-22-docker-spring-boot %})
-{: .notice--success}
+Set a desired Port
 
-Containerization, particularly with Docker, is the standard for packaging and deploying modern applications. Cloud-native practices enable applications to be scalable, resilient, and manageable in dynamic environments like Kubernetes.
-
-## Docker
-
-Docker allows you to package your application and its dependencies into a standardized unit called a container.
-
-### Dockerfile
-
-A `Dockerfile` is a script containing instructions to build a Docker image.
-
-```dockerfile
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-slim
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the fat jar into the container at /app
-COPY target/my-app-0.0.1-SNAPSHOT.jar app.jar
-
-# Make port 8080 available to the world outside this container
-EXPOSE 8080
-
-# Run the jar file
-ENTRYPOINT ["java", "-jar", "app.jar"]
+```shell
+server.port=8089
 ```
 
-### Multi-Stage Builds
+### Application Yaml settings
 
-A multi-stage build is a best practice that helps keep your final image small and secure by separating the build environment from the runtime environment.
+{% gist nitinkc/5dd5f552cc1033347f2868ea6e6b7ad7 %}
 
-```dockerfile
-# --- Build Stage ---
-FROM maven:3.8.5-openjdk-17 AS build
-WORKDIR /source
-COPY . .
-RUN mvn clean package -DskipTests
+> Good Practice : Design application configuration using
+`@ConfigurationProperties` to ensure Type Safety
 
-# --- Runtime Stage ---
-FROM openjdk:17-jdk-slim
-WORKDIR /app
-COPY --from=build /source/target/*.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+```yaml
+myConfig:
+  flag: true
+  message: "From YAML"
+  number: 100
 ```
 
-## Cloud-Native Best Practices
+Type Safety can be ensured with this
 
-- **Configuration Management**: Externalize configuration using ConfigMaps in Kubernetes or a dedicated config server (like Spring Cloud Config) instead of baking it into the image.
-- **Health Checks**: Implement liveness and readiness probes (`/actuator/health/liveness`, `/actuator/health/readiness`). Kubernetes uses these to know if your application is running correctly and ready to receive traffic.
-- **Graceful Shutdown**: Ensure your application handles `SIGTERM` signals to shut down gracefully, finishing in-flight requests and releasing resources. Spring Boot does this by default.
-- **Stateless Services**: Design your services to be stateless. State should be stored in an external database or cache (like Redis or a distributed database). This allows you to scale your application horizontally with ease.
-- **Distributed Tracing**: Use tools like Zipkin or Jaeger to trace requests as they travel across multiple microservices, which is essential for debugging in a distributed system.
-- **Changesets**: Each changeset is an atomic unit of change, identified by an `id` and `author`.
-            return "Fallback data";
-        }
-    }
-    ```
-          // Your integration test logic here
-      }
-  }
-  ```
-| **API Style**     | Imperative, synchronous (`User`, `List<User>`)      | Functional, reactive (`Mono<User>`, `Flux<User>`)          |
-- **`@Secured`**: A simpler annotation for role-based security. For example, `@Secured("ROLE_ADMIN")`.
+```java
+@Component
+@ConfigurationProperties("myConfig")
+public class MyConfiguration {
+  private boolean flag;
+  private String message;
+  private int number;
+}
+```
+
+# Banner
+For Ascii banner, put the ASCII Art in banner.txt and it will be taken
+
+to turn off the banner
+```yaml
+spring:
+  main:
+    banner-mode: "off"
+```
+
+For image banner, put the logo.png file and
+
+```yaml
+spring:
+  banner:
+    image:
+      location: logo.png
+```
