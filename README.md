@@ -166,6 +166,5 @@ curl -L -o assets/vendor/fontawesome/js/all.js https://use.fontawesome.com/relea
 - [Google Sitemap Documentation](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
 
 ## Scripts
-
 Helper scripts are available in `scripts/`:
 - `setup-local-mac.sh` - Automated setup for macOS
