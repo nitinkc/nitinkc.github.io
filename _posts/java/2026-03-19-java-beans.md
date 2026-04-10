@@ -54,6 +54,96 @@ public class OrderService {
 }
 ```
 
+# @Bean Annotation
+
+The `@Bean` annotation is used on **methods/constructor** (not classes) to explicitly declare a bean and register it with the Spring container.
+
+## Why Use `@Bean` on a Method?
+
+While `@Component` (and its stereotypes like `@Service`, `@Repository`) are used on **classes** to let Spring auto-detect and register beans via component scanning,
+`@Bean` is used when:
+
+1. **You don't own the class** - The class comes from a third-party library, so you can't add `@Component` to it.
+2. **You need custom instantiation logic** - The bean requires specific constructor arguments or configuration.
+3. **You want explicit control** - You prefer programmatic bean definition over auto-detection.
+
+## How It Works
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+    @Bean
+    public ObjectMapper objectMapper() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        return mapper;
+    }
+}
+```
+
+- The **method name** (`restTemplate`, `objectMapper`) becomes the **bean name** by default.
+- The **return type** is the bean type that Spring will manage.
+- Spring calls this method and registers the returned object as a bean in the ApplicationContext.
+
+## @Bean vs @Component
+
+| Aspect          | `@Bean`                                   | `@Component`                              |
+|:----------------|:------------------------------------------|:------------------------------------------|
+| **Applied to**  | Methods (inside `@Configuration` class)   | Classes                                   |
+| **Use case**    | Third-party classes, custom instantiation | Your own classes                          |
+| **Discovery**   | Explicit declaration                      | Auto-detected via component scan          |
+| **Flexibility** | Full control over instantiation           | Limited to default/autowired constructors |
+
+## Example: Third-Party Library Bean
+
+You cannot modify `RestTemplate` source code to add `@Component`, so you use `@Bean`:
+
+```java
+@Configuration
+public class HttpClientConfig {
+
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder
+            .setConnectTimeout(Duration.ofSeconds(5))
+            .setReadTimeout(Duration.ofSeconds(10))
+            .build();
+    }
+}
+```
+
+## Bean Naming
+
+```java
+@Bean // Bean name: "myService" (method name)
+public MyService myService() { ... }
+
+@Bean("customName") // Bean name: "customName"
+public MyService myService() { ... }
+
+@Bean(name = {"name1", "alias1"}) // Multiple names/aliases
+public MyService myService() { ... }
+```
+
+## Dependency Injection in @Bean Methods
+
+Spring automatically injects dependencies as method parameters:
+
+```java
+@Bean
+public UserService userService(UserRepository userRepository, EmailService emailService) {
+    return new UserService(userRepository, emailService);
+}
+```
+
+Spring resolves `UserRepository` and `EmailService` from the container and passes them to the method.
+
 ## Why Register Beans in Spring?
 Registration tells Spring: **"This object exists, manage it for me."**
 
@@ -134,7 +224,7 @@ public class UserService {
     ```xml
     <bean id="emailService" class="com.example.EmailService" />
     ```
-   
+
 ## Bean Scopes: Why They Matter
 
 **Scope** determines how many **instances** of a bean exist and how long they live.

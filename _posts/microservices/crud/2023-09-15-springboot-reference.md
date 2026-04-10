@@ -682,7 +682,7 @@ Resilience4J is a lightweight, easy-to-use fault tolerance library inspired by N
 [Spring Transactions]({% post_url /microservices/2022-02-10-spring-transactions %})
 {: .notice--success}
 
-[DB Transaction Isolation Levels]({% post_url /microservices/2024-01-20-Transaction-Isolation-levels %})
+[DB Transaction Isolation Levels]({% post_url /systems_design/db/2024-01-20-Transaction-Isolation-levels %})
 {: .notice--success}
 
 # Spring Security
