@@ -1,5 +1,5 @@
 ---
-title: Transaction Isolation Levels
+title: DB Transaction Isolation Levels
 date: 2024-01-20 12:15:00
 categories:
 - System Design

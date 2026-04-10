@@ -678,21 +678,26 @@ Resilience4J is a lightweight, easy-to-use fault tolerance library inspired by N
     ```
 
 # Spring Transaction Management
-[Prometheus and micrometer]({% post_url /microservices/2024-07-18-Prometheus-micrometer %})
+
+[Spring Transactions]({% post_url /microservices/2022-02-10-spring-transactions %})
+{: .notice--success}
+
+[DB Transaction Isolation Levels]({% post_url /microservices/2024-01-20-Transaction-Isolation-levels %})
+{: .notice--success}
 
 # Spring Security
 
-[Spring Security]({% post_url /microservices/2025-09-22-spring-security-concepts %})
+[Spring Security]({% post_url /microservices/2025-09-22-spring-security %})
 {: .notice--success}
 
 Spring Security is a powerful and highly customizable authentication and access-control framework. It is the de-facto standard for securing Spring-based applications.
 
 ## Key Concepts
 
-- **Authentication**: The process of verifying the identity of a user, device, or system. It answers the question, "Who are you?".
-- **Authorization**: The process of determining whether an authenticated user has permission to access a specific resource or perform a particular action. It answers the question, "What are you allowed to do?".
-- **Principal**: The currently authenticated user. It can be represented as an object within Spring Security's `SecurityContext`.
-- **GrantedAuthority**: Represents a permission granted to the principal. It is typically expressed as a role (e.g., `ROLE_ADMIN`, `ROLE_USER`).
+- **Authentication**: The process of verifying the identity of a user, device, or system. It answers the question, **"Who are you?"**.
+- **Authorization**: The process of determining whether an authenticated user has permission to access a specific resource or perform a particular action. It answers the question, **"What are you allowed to do?"**.
+- **Principal**: The **currently authenticated user**. It can be represented as an object within Spring Security's `SecurityContext`.
+- **GrantedAuthority**: Represents **a permission granted** to the principal. It is typically expressed as a role (e.g., `ROLE_ADMIN`, `ROLE_USER`).
 - **SecurityContextHolder**: Provides access to the `SecurityContext`, which holds the `Authentication` object and other security-related information.
 
 ## Configuration
