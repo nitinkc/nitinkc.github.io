@@ -11,6 +11,8 @@ tags:
 
 {% include toc title="Index" %}
 
+[Learning Site & Project](https://nitinkc.github.io/CassandraLearning/)
+
 Apache Cassandra is a distributed, wide-column store designed for high availability and linear scalability.
 Cassandra is designed for **high write throughput**, predictable low-latency reads, and scalable distribution across many nodes. To achieve this:
 - You model your tables around the queries your application needs to run (query-first).
@@ -192,14 +194,3 @@ INSERT INTO ks.users (id, name, email) VALUES (uuid(), 'Bob', 'bob@example.com')
 INSERT INTO ks.users (id, email) VALUES (uuid(), 'x@x.com') IF NOT EXISTS;
 ```
 
-# Further reading and tools
-- Apache Cassandra documentation: https://cassandra.apache.org/
-- cqlsh: interactive CQL shell
-- Reaper / Netflix Priam: repair and management tools
-
----
-
-If you'd like, I can also:
-- Rename the file to `2025-07-31-MongoDb.md` if you prefer the existing MongoDB content to live in a correctly named file (note: I didn't rename files to avoid changing URLs).
-- Create a short redirect page if you want to preserve the old filename but serve a different title.
-- Add diagrams or a small example app (CQL scripts) under `scripts/` for the modeling walkthrough.

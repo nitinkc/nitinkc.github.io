@@ -601,14 +601,70 @@ public class DailyTaskScheduler {
 }
 ```
 
-# Spring Boot Actuator
+# Monitoring
 
-## Monitoring
+Once deployed, you need to know if the application is healthy.
+
+### Three Pillars of Observability & Tools
+
+| Pillar         | What it measures                           | Example Tools                                                                                                            | Best for Spring Boot                        |
+|:---------------|:-------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------|
+| **Metrics**    | CPU, memory, request rate, latency, errors | Prometheus (time-series DB) + Grafana (visualization) (free) / CloudWatch (AWS) / Azure Monitor / Cloud Monitoring (GCP) | Spring Boot Actuator `/actuator/prometheus` |
+| **Logs**       | Application and system events              | ELK Stack (free) / CloudWatch Logs (AWS) / Log Analytics (Azure) / Cloud Logging (GCP)                                   | Spring Boot Logback + SLF4J                 |
+| **Traces**     | Request path through microservices         | Jaeger (free) / Zipkin (free) / Datadog / Dynatrace                                                                      | Spring Cloud Sleuth or OpenTelemetry        |
+| **All-in-one** | Metrics + Logs + Traces together           | Datadog / Dynatrace / New Relic / Splunk (paid)                                                                          | Automatic instrumentation via agents        |
+
 
 - /env, /metrics, /trace, /dump
 - /beans, / autoconfig, /configprops, /mappings
 
-## Metric logging - Prometheus and micrometer
+**Sample log output:**
+```
+2026-04-11 11:45:23.123 INFO  OrderController - Creating order: customerId=CUST001, amount=99.99
+2026-04-11 11:45:23.456 INFO  OrderController - Order created: orderId=12345, status=PENDING
+2026-04-11 11:45:25.789 DEBUG OrderController - Fetching order details: 12345
+2026-04-11 11:45:25.901 INFO  OrderController - Order retrieved: 12345
+```
+
+**Sample Metrics Endpoint Output**
+
+Access your metrics at: [http://localhost:8080/actuator/prometheus](http://localhost:8080/actuator/prometheus)
+
+```prometheus
+# HELP http_requests_total Total number of HTTP requests
+# TYPE http_requests_total counter
+http_requests_total{service="license",environment="prod"} 1247.0
+
+# HELP active_users Number of currently active users  
+# TYPE active_users gauge
+active_users{service="user_management"} 15.0
+
+# HELP http_response_sizes Distribution of HTTP response sizes
+# TYPE http_response_sizes summary
+http_response_sizes_count{service="api",version="v1"} 1
+http_response_sizes_sum{service="api",version="v1"} 364.0
+
+# HELP http_request_duration HTTP request duration
+# TYPE http_request_duration histogram
+http_request_duration_bucket{service="api",method="GET",le="0.1"} 45
+
+
+# HELP jvm_memory_used_bytes Used JVM memory in bytes
+# TYPE jvm_memory_used_bytes gauge  
+jvm_memory_used_bytes{area="heap",id="PS Eden Space"} 134217728.0
+jvm_memory_used_bytes{area="heap",id="PS Old Gen"} 67108864.0
+jvm_memory_used_bytes{area="nonheap",id="Metaspace"} 33554432.0
+
+# HELP license_days_remaining Days remaining until License expiration
+# TYPE license_days_remaining gauge
+license_days_remaining{license_type="enterprise"} 173.0
+
+# HELP system_health_score Overall system health score
+# TYPE system_health_score gauge
+system_health_score{component="overall",environment="production"} 87.5
+```
+
+### Metric logging—Prometheus and micrometer
 
 [Prometheus and micrometer]({% post_url /microservices/2024-07-18-Prometheus-micrometer %})
 

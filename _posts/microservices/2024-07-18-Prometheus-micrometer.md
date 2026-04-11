@@ -1,5 +1,5 @@
 ---
-title: 'Complete Guide to Prometheus & Micrometer: Metrics, Monitoring & Observability'
+title: 'rometheus & Micrometer: Metrics, Monitoring & Observability'
 date: 2024-07-18 17:00:00
 categories:
 - Microservices

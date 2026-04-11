@@ -17,9 +17,7 @@ Spring Security is a framework focused on providing authentication, authorizatio
 - Integration with OAuth2 for Single Sign-On (SSO).
 - Security for REST APIs, including stateless authentication mechanisms like JWT.
 
-## Dependencies
-
-`pom.xml`
+**Dependencies**
 
 ```xml
 <dependency>
@@ -40,21 +38,23 @@ resource or perform a particular action. It answers the question, "What are you 
 - **Principal**: The currently authenticated user. It can be represented as an object within Spring Security's `SecurityContext`.
 
 ## SecurityContextHolder, SecurityContext, and Authentication
-
--   **`SecurityContextHolder`**: This is the heart of Spring Security's authentication mechanism. 
-It's where the framework stores the details of the currently authenticated principal. By default, it uses a `ThreadLocal` 
+**`SecurityContextHolder`**: This is the heart of Spring Security's authentication mechanism. 
+It's where the framework stores the details of the **currently authenticated principal**. By default, it uses a `ThreadLocal` 
 to store these details, making the security context available throughout a single thread of execution.
--   **`SecurityContext`**: Held by the `SecurityContextHolder`, this contains the `Authentication` object.
--   **`Authentication`**: This interface represents the token for an authentication request. It contains:
-    -   `getPrincipal()`: The identity of the principal being authenticated.
-    -   `getCredentials()`: The credentials that prove the principal's identity (e.g., a password).
-    -   `getAuthorities()`: The permissions granted to the principal (e.g., roles).
+
+**`SecurityContext`**: Held by the `SecurityContextHolder`, this contains the `Authentication` object.
+
+**`Authentication`**: This interface represents the token for an authentication request. It contains:
+- `getPrincipal()`: The identity of the principal being authenticated.
+- `getCredentials()`: The credentials that prove the principal's identity (e.g., a password).
+- `getAuthorities()`: The permissions granted to the principal (e.g., roles).
 
 ## UserDetails and UserDetailsService
 
--   **`UserDetails`**: Provides core user information. It's a contract for a user's details, including username, password,
+**`UserDetails`**: Provides core user information. It's a contract for a user's details, including username, password,
 authorities, and account status (e.g., enabled, locked).
--   **`UserDetailsService`**: An interface used to load user-specific data. It has a single method, `loadUserByUsername(String username)`, 
+
+**`UserDetailsService`**: An interface used to load user-specific data. It has a single method, `loadUserByUsername(String username)`, 
 which is responsible for locating the user from a persistent store (like a database) and returning a `UserDetails` object.
 
 ## GrantedAuthority
@@ -62,7 +62,6 @@ which is responsible for locating the user from a persistent store (like a datab
 This interface represents a permission granted to the principal. These are typically roles (e.g., `ROLE_USER`, `ROLE_ADMIN`).
 
 ## PasswordEncoder
-
 -   Used for encoding passwords before storing them.
 -   Spring Security requires a `PasswordEncoder` to be configured. `BCryptPasswordEncoder` is a common and secure choice.
 
