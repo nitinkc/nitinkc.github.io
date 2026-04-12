@@ -7,6 +7,9 @@ tags:
 - Real-time
 ---
 
+## Detailed tutorials
+[https://nitinkc.github.io/Kafka-Learning/](https://nitinkc.github.io/Kafka-Learning/)
+
 Kafka can be used in both messaging and event-driven architectures, but the
 terminology and concepts fit both scenarios
 

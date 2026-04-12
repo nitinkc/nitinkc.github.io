@@ -15,6 +15,9 @@ tags:
 
 {% include toc title="Index" %}
 
+## Detailed tutorials
+[https://nitinkc.github.io/GatlingLearning/](https://nitinkc.github.io/GatlingLearning/)
+
 ## Introduction to Load Testing
 
 Load testing is a critical aspect of performance engineering that simulates real-world user behavior

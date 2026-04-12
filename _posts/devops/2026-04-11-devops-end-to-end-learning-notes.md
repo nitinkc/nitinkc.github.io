@@ -10,11 +10,12 @@ tags:
 - Infrastructure
 - Automation
 - Monitoring
-toc: true
-toc_label: "Index"
 ---
 
 {% include toc title="Index" %}
+
+## Detailed tutorials
+[https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/)
 
 # The Big Picture — Full Pipeline at a Glance
 
@@ -47,7 +48,6 @@ These three tools answer three different questions:
 | Where does the app run?               | Terraform                            |
 | How is the app packaged and deployed? | Helm                                 |
 | Who triggers the deployment?          | Jenkins (push) or Flux (pull/GitOps) |
-
 
 # Step 1 — Code Changes and Version Control
 
@@ -217,7 +217,6 @@ resource "google_container_cluster" "primary" {
 | **How often**       | Once at setup; re-run when infra changes     | Every app release / config change                  |
 | **Triggered by**    | Infra team PR merged to infra repo           | App CI/CD pipeline                                 |
 | **State stored in** | Remote state (GCS bucket, Terraform Cloud)   | Kubernetes secrets (in-cluster)                    |
-
 
 # Step 4 — Application Deployment with Helm
 

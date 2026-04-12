@@ -61,17 +61,17 @@ kubectl scale deployment product-service --replicas=3 -n ecommerce --context=wes
 
 ## Pod Operations
 
-| Command | Description |
-|---------|-------------|
-| `k get pods -n ecommerce` | List pods |
-| `k get pods -o wide` | Show node and IP |
-| `k describe pod <name>` | Detailed info |
-| `k logs <pod>` | View logs |
-| `k logs <pod> -f` | Follow logs |
-| `k logs <pod> --previous` | Previous container logs |
-| `k exec -it <pod> -- /bin/sh` | Shell into pod |
-| `k delete pod <name>` | Delete pod |
-| `k delete pod <name> --grace-period=0 --force` | Force delete |
+| Command                                        | Description             |
+|:-----------------------------------------------|:------------------------|
+| `k get pods -n ecommerce`                      | List pods               |
+| `k get pods -o wide`                           | Show node and IP        |
+| `k describe pod <name>`                        | Detailed info           |
+| `k logs <pod>`                                 | View logs               |
+| `k logs <pod> -f`                              | Follow logs             |
+| `k logs <pod> --previous`                      | Previous container logs |
+| `k exec -it <pod> -- /bin/sh`                  | Shell into pod          |
+| `k delete pod <name>`                          | Delete pod              |
+| `k delete pod <name> --grace-period=0 --force` | Force delete            |
 
 ## Deployment Operations
 
