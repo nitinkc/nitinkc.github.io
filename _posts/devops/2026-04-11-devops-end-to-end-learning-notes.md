@@ -223,8 +223,8 @@ resource "google_container_cluster" "primary" {
 
 **Helm** answers: _"How is the application packaged and deployed onto Kubernetes?"_
 
-Think of Helm as `apt` or `brew` for Kubernetes — it packages all the YAML
-manifests your app needs into a single versioned **chart**, and lets you install,
+Think of Helm as `apt` or `brew` for Kubernetes — it packages all the **YAML
+manifests** your app needs into a single versioned **chart**, and lets you install,
 upgrade, and roll back with simple commands.
 
 ## 4.1 What a Helm Chart looks like
