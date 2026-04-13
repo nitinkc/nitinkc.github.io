@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "From XML Hell to Annotations: How Spring Cleaned Up Java Configuration"
 date: 2026-03-22
 categories: [java, spring, backend]
