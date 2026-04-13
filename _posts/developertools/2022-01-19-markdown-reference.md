@@ -60,21 +60,14 @@ Include code as a gist into the Jekyll post. Uses jekyll-gist plugin.
 
 ### Markdown hyperlinks syntax
 
-If you're building your pages with Markdown, use the following examples to
-generate internal links.
+If you're building your pages with Markdown, use the following examples to generate internal links.
 
-- [Link title]({{ site.baseurl }}{% link index.html %})
+- With base URL [Link title]({{ site.baseurl }}{% post_url /developertools/2016-04-04-jekyll-blog-GitHub-hosting %})
   {% raw %}
-  `[Link title]({{ site.baseurl }}{% link index.html %})`
+  ```[Link title]({{ site.baseurl }}{% post_url /developertools/2016-04-04-jekyll-blog-GitHub-hosting %})```
   {% endraw %}
 
-- [Link title]({{ site.baseurl }}{% post_url
-  /developertools/2016-04-04-jekyll-blog-GitHub-hosting %})
-  {% raw %}
-  `[Link title]({{ site.baseurl }}{% post_url /developertools/2016-04-04-jekyll-blog-GitHub-hosting %})`
-  {% endraw %}
-
-- skipping `site.baseurl` 
+- skipping `site.baseurl` (prefer this method for internal links)
   {% raw %}
   ```
   [Link title without site.baseurl]({% post_url /developertools/2021-02-01-terminal-config %})

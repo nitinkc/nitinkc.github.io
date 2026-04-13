@@ -15,23 +15,23 @@ tags:
 
 ## Context Switching
 
-| Command | Description |
-|---------|-------------|
-| `kubectx` | List all contexts |
-| `kubectx east` | Switch to east cluster |
-| `kubectx -` | Switch to previous context |
-| `kubectx -c` | Show current context |
-| `kubectl config get-contexts` | List contexts with details |
-| `kubectl config current-context` | Show current context |
+| Command                          | Description                |
+|:---------------------------------|:---------------------------|
+| `kubectx`                        | List all contexts          |
+| `kubectx east`                   | Switch to east cluster     |
+| `kubectx -`                      | Switch to previous context |
+| `kubectx -c`                     | Show current context       |
+| `kubectl config get-contexts`    | List contexts with details |
+| `kubectl config current-context` | Show current context       |
 
 ## Namespace Operations
 
-| Command | Description |
-|---------|-------------|
-| `kubens` | List namespaces |
-| `kubens ecommerce` | Switch to namespace |
-| `kubens -` | Switch to previous namespace |
-| `kubectl config set-context --current --namespace=ecommerce` | Set default namespace |
+| Command                                                      | Description                  |
+|:-------------------------------------------------------------|:-----------------------------|
+| `kubens`                                                     | List namespaces              |
+| `kubens ecommerce`                                           | Switch to namespace          |
+| `kubens -`                                                   | Switch to previous namespace |
+| `kubectl config set-context --current --namespace=ecommerce` | Set default namespace        |
 
 ## Multi-Cluster Operations
 
@@ -75,24 +75,24 @@ kubectl scale deployment product-service --replicas=3 -n ecommerce --context=wes
 
 ## Deployment Operations
 
-| Command | Description |
-|---------|-------------|
-| `k get deploy` | List deployments |
-| `k describe deploy <name>` | Deployment details |
-| `k scale deploy <name> --replicas=5` | Scale deployment |
-| `k set image deploy/<name> container=image:tag` | Update image |
-| `k rollout status deploy/<name>` | Check rollout status |
-| `k rollout history deploy/<name>` | View rollout history |
-| `k rollout undo deploy/<name>` | Rollback deployment |
-| `k rollout restart deploy/<name>` | Restart all pods |
+| Command                                         | Description          |
+|:------------------------------------------------|:---------------------|
+| `k get deploy`                                  | List deployments     |
+| `k describe deploy <name>`                      | Deployment details   |
+| `k scale deploy <name> --replicas=5`            | Scale deployment     |
+| `k set image deploy/<name> container=image:tag` | Update image         |
+| `k rollout status deploy/<name>`                | Check rollout status |
+| `k rollout history deploy/<name>`               | View rollout history |
+| `k rollout undo deploy/<name>`                  | Rollback deployment  |
+| `k rollout restart deploy/<name>`               | Restart all pods     |
 
 ## Service Operations
 
-| Command | Description |
-|---------|-------------|
-| `k get svc` | List services |
-| `k describe svc <name>` | Service details |
-| `k get endpoints <name>` | Show endpoints |
+| Command                             | Description          |
+|:------------------------------------|:---------------------|
+| `k get svc`                         | List services        |
+| `k describe svc <name>`             | Service details      |
+| `k get endpoints <name>`            | Show endpoints       |
 | `k port-forward svc/<name> 8080:80` | Port forward service |
 
 # Debugging Commands

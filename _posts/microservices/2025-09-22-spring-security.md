@@ -11,6 +11,7 @@ tags:
 
 {% include toc title="Index" %}
 
+[https://nitinkc.github.io/spring-security-reference/](https://nitinkc.github.io/spring-security-reference/)
 Spring Security is a framework focused on providing authentication, authorization, and other security features for Java applications.
 - Comprehensive support for authentication and authorization.
 - Protection against common vulnerabilities (e.g., CSRF, session fixation).
