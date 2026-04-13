@@ -1,5 +1,5 @@
 ---
-title: Tutorials & Notes
+title: Notes Tutorials & Revisions
 date: 2026-04-12 10:00:00
 tags: [Notes, Tutorials]
 ---
