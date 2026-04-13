@@ -10,6 +10,8 @@ tags:
 
 {% include toc title="Index" %}
 
+**Architecture Reference**: [https://nitinkc.github.io/Microservices-Design-Architecture/](https://nitinkc.github.io/Microservices-Design-Architecture/){:target="_blank"}
+
 # Design Patterns vs Software Architecture Patterns
 
 [Gang of 4 Book](https://www.google.com/books/edition/Design_Patterns/6oHuKQe3TjQC?hl=en&gbpv=0)
