@@ -11,6 +11,9 @@ tags:
 
 {% include toc title="Index" %}
 
+# Kubernetes Games
+[https://k8sgames.com/](https://k8sgames.com/)
+
 Automates
 - Deployment of containers
 - Scaling of containers

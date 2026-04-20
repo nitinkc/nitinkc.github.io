@@ -80,3 +80,13 @@ tags:
 
     + cmp returns first occurrence of difference
     + diff returns all differences
+
+# Bandit Linux Games - Linux command Games
+[https://overthewire.org/wargames/bandit/bandit0.html](https://overthewire.org/wargames/bandit/bandit0.html)
+
+# SSH
+
+login with user bandit0 and password bandit0
+```shell
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+```
