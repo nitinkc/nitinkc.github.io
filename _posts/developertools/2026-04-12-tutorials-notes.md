@@ -16,7 +16,7 @@ tags: [Notes, Tutorials]
 - Performance Engineering & Load Testing Gatling Load Testing Tutorial:  [https://nitinkc.github.io/GatlingLearning/](https://nitinkc.github.io/GatlingLearning/){:target="_blank"}
 
 - DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
- - Additional DevOps reference: [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
+  - Additional DevOps reference: [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
 
 - Cassandra Learning Hub: [https://nitinkc.github.io/CassandraLearning/](https://nitinkc.github.io/CassandraLearning/){:target="_blank"}
 
