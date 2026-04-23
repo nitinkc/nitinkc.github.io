@@ -164,5 +164,6 @@ graph TD
 | ^                                              | The corrections needed are straightforward—add an empty line before any list              |
 | ^                                              | (whether bulleted -, numbered 1., or checkbox - [ ]) that directly follows text content.  |
 
-|
+## Workflow
+Please create deploy-docs.yml workflow as per the files attached.
 

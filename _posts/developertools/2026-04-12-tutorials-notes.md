@@ -10,9 +10,12 @@ tags: [Notes, Tutorials]
 - Architecture and System Design:  [https://nitinkc.github.io/Microservices-Design-Architecture/](https://nitinkc.github.io/Microservices-Design-Architecture/){:target="_blank"}
 
 - **BitVelocity**: [https://nitinkc.github.io/BitVelocity-Docs/](https://nitinkc.github.io/BitVelocity-Docs/){:target="_blank"}
+
 - Messaging & Streaming - Apache Kafka Learning Hub: [https://nitinkc.github.io/Kafka-Learning/](https://nitinkc.github.io/Kafka-Learning/){:target="_blank"}
 
 - Performance Engineering & Gatling Load Testing Tutorial:  [https://nitinkc.github.io/GatlingLearning/](https://nitinkc.github.io/GatlingLearning/){:target="_blank"}
+
+- Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
 
 ## Machine Learning
 - AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
@@ -23,10 +26,10 @@ tags: [Notes, Tutorials]
 - Additional DevOps reference: [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
 
 ## Databases
-
 - Cassandra Learning Hub: [https://nitinkc.github.io/CassandraLearning/](https://nitinkc.github.io/CassandraLearning/){:target="_blank"}
 - MongoDB Learning Resource: [https://nitinkc.github.io/MongoDBLeaning/](https://nitinkc.github.io/MongoDBLeaning/){:target="_blank"}
 - SQL - 
+- Data warehouse : [https://nitinkc.github.io/DataWarehouseLearnings/](https://nitinkc.github.io/DataWarehouseLearnings/)
 
 ## Spring
 
@@ -40,11 +43,11 @@ tags: [Notes, Tutorials]
 ### Java
 **Java Multithreading Advanced References**
 
-- Multithreading Learnings :
+- Multithreading Learnings : [https://nitinkc.github.io/MultithreadingLearningHub/](https://nitinkc.github.io/MultithreadingLearningHub/){:target="_blank"}
 - [Multithreading](https://nitinkc.github.io/java/multithreading/concurrency/series-overview/){:target="_blank"}
 - [Java Compilation Optimization](https://nitinkc.github.io/java/compiler-code-optimization/){:target="_blank"}
 
-### GoLang
+### Go Programming Language
 [https://github.com/nitinkc/GoLangLearning](https://github.com/nitinkc/GoLangLearning){:target="_blank"}
 
 

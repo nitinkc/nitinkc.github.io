@@ -168,3 +168,14 @@ curl -L -o assets/vendor/fontawesome/js/all.js https://use.fontawesome.com/relea
 ## Scripts
 Helper scripts are available in `scripts/`:
 - `setup-local-mac.sh` - Automated setup for macOS
+
+
+## All the links can be found at
+[https://nitinkc.github.io/sitemap.xml](https://nitinkc.github.io/sitemap.xml)
+
+
+## Recommended Quickest Path for Link Checking
+- Go to deadlinkchecker.com
+- Enter https://nitinkc.github.io
+
+It will crawl the whole site and report broken links — no sitemap URL neede
