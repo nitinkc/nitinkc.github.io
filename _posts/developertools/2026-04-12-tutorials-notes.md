@@ -20,6 +20,7 @@ tags: [Notes, Tutorials]
 ## Machine Learning
 - AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
 - Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
+- Copilot Agents : [https://nitinkc.github.io/copilot-agents-hub/](https://nitinkc.github.io/copilot-agents-hub/){:target="_blank"}
 
 ## Infrastructure
 - DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
