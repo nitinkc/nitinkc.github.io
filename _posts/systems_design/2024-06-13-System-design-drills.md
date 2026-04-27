@@ -13,6 +13,13 @@ tags:
 Engineering is all about Trade-off's
 {: .notice--primary}
 
+**Related Articles**:
+- [System Design Fundamentals]({% post_url /systems_design/2024-06-13-System-design-fundamentals %}) - Core concepts & metrics
+- [Data Structures for System Design]({% post_url /systems_design/2024-06-13-System-design-data-structures %}) - Bloom filters, LSM trees, etc.
+- [Scalability Patterns]({% post_url /systems_design/2024-06-13-Scalability-patterns %}) - Consensus, replication, patterns
+- [System Design Cheatsheet]({% post_url /systems_design/2024-06-13-System-design-cheatsheet %}) - Quick interview reference
+{: .notice--info}
+
 **Latency** -> 1ms (speed of transfer)
 
 - refers to the time it takes for a single unit of data to travel from its

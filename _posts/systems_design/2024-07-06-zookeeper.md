@@ -9,7 +9,7 @@ tags:
 
 {% include toc title="Index" %}
 
-# ZooKeeper - Key Features
+# ZooKeeper – Key Features
 
 **Configuration Management**: Provides a centralized configuration repository
 accessible to all nodes.

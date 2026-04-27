@@ -2,19 +2,71 @@
 
 Personal Jekyll site built on Minimal Mistakes theme.
 
-## Quick Start
-```shell
-rm -rf ./_site && bundle exec jekyll serve
+## Quick Reference
+
+### Most Common Commands
+
+```bash
+# Start developing (clean & serve with live reload)
+rm -rf ./_site && bundle exec jekyll serve --livereload
 ```
 
-### Prerequisites
-- Ruby (3.0+)
-- Bundler
-- macOS with Homebrew (for local setup without sudo)
+Open [http://localhost:4000](http://localhost:4000) in your browser.
 
-### Minimal Setup (macOS)
+### Other Frequent Commands
 
-1. **Install rbenv and Ruby** (one-time setup)
+```bash
+# Build the site
+bundle exec jekyll build
+
+# Build for production
+JEKYLL_ENV=production bundle exec jekyll build
+
+# Clean generated files
+rm -rf _site
+
+# Kill process on port 4000 if it's stuck
+lsof -P | grep ':4000' | awk '{print $2}' | xargs kill -9
+```
+
+---
+
+## Setup (Choose Your Path)
+
+**First time?** Pick one setup method below:
+
+| Method               | Best For                            | Requirements        | Time      |
+|:---------------------|:------------------------------------|:--------------------|:----------|
+| **Automated Script** | Everyone                            | Homebrew + macOS    | 5-10 min  |
+| **rbenv + Homebrew** | Users with admin access or Homebrew | Homebrew, Xcode CLT | 10-15 min |
+| **User Gems**        | Users without admin access          | System Ruby 2.6+    | 5-10 min  |
+
+### Option 1: Automated Setup (Recommended)
+
+Run the provided setup script—handles everything:
+
+```bash
+./scripts/setup-local-mac.sh
+```
+
+Then start developing:
+```bash
+bundle exec jekyll serve --livereload
+```
+
+**Features:**
+- Installs rbenv and Ruby (if needed)
+- Configures gems locally in `vendor/bundle`
+- Works with `zsh` and auto-initializes your shell
+- Supports `--dry-run` flag to preview changes
+
+**When to use:** You have Homebrew installed and want a hands-off setup.
+
+### Option 2: rbenv + Homebrew (Manual)
+
+For step-by-step control or if the script encounters issues:
+
+1. **Install rbenv and Ruby**
    ```bash
    brew install rbenv ruby-build
    echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
@@ -23,40 +75,60 @@ rm -rf ./_site && bundle exec jekyll serve
    rbenv local 3.2.2
    ```
 
-2. **Install dependencies**
+2. **Install project dependencies**
    ```bash
    gem install bundler
    bundle config set path 'vendor/bundle'
    bundle install
    ```
 
-3. **Serve the site**
+3. **Start developing**
    ```bash
    bundle exec jekyll serve --livereload
    ```
-   
-   Open http://localhost:4000
 
-### Common Commands
+**When to use:** You prefer manual setup, have Homebrew, or need to debug the process.
 
-```bash
-# Clean generated files
-rm -rf _site
-bundle exec jekyll clean
+### Option 3: User Gems (No Admin Access)
 
-# Build site
-bundle exec jekyll build
+For Macs without Homebrew or admin access—uses your system Ruby:
 
-# Build for production
-JEKYLL_ENV=production bundle exec jekyll build
+1. **Add user gem directory to your PATH**
+   ```bash
+   export PATH="$(ruby -r rubygems -e 'print Gem.user_dir')/bin:$PATH"
+   echo 'export PATH="$(ruby -r rubygems -e "print Gem.user_dir")/bin:$PATH"' >> ~/.zshrc
+   source ~/.zshrc
+   ```
 
-# Kill process on port 4000
-lsof -P | grep ':4000' | awk '{print $2}' | xargs kill -9
-```
+2. **Verify system Ruby version** (must be 2.6 or higher)
+   ```bash
+   ruby --version
+   ```
 
-### Troubleshooting
+3. **Install gems for your user account**
+   ```bash
+   gem install --user-install bundler jekyll
+   bundle config set path 'vendor/bundle'
+   bundle install
+   ```
 
-**Bundle install fails with native extension errors:**
+4. **Start developing**
+   ```bash
+   bundle exec jekyll serve --livereload
+   ```
+
+**When to use:** You don't have admin access, Homebrew is unavailable, or you prefer using system Ruby.
+
+**Note:** System Ruby on macOS is typically older (2.6–2.7). If you need Ruby 3.0+, use Option 1 or 2.
+
+---
+
+## Troubleshooting
+
+### Bundle install fails with native extension errors
+
+Install Xcode command-line tools and dependencies:
+
 ```bash
 xcode-select --install
 brew install libxml2 libxslt
@@ -65,37 +137,87 @@ export CPPFLAGS="-I$(brew --prefix libxml2)/include -I$(brew --prefix libxslt)/i
 bundle install
 ```
 
-**Package.json not found:**
+**Applies to:** rbenv + Homebrew (Option 2)
+
+### "bundle: command not found"
+
+If you used Option 3 (User Gems), ensure your PATH was updated and sourced:
+
+```bash
+source ~/.zshrc
+which bundle
+```
+
+If still not found, reinstall bundler:
+```bash
+gem install --user-install bundler
+gem install --user-install jekyll
+```
+
+### Package.json not found or build errors
+
+Clean and rebuild:
+
 ```bash
 rm -rf _site
 bundle exec jekyll clean
 bundle install
 ```
 
-## Advanced Setup
+### Port 4000 already in use
 
-### Alternative: User Gem Installation (without rbenv)
-
-If you prefer not to use rbenv:
-
+Kill the existing process:
 ```bash
-# Ensure user gem bin is on PATH
-export PATH="$(ruby -r rubygems -e 'print Gem.user_dir')/bin:$PATH"
-echo 'export PATH="$(ruby -r rubygems -e "print Gem.user_dir")/bin:$PATH"' >> ~/.zshrc
-
-# Install Jekyll
-gem install --user-install jekyll bundler
-
-# Run
-jekyll serve --livereload
+lsof -P | grep ':4000' | awk '{print $2}' | xargs kill -9
 ```
 
-### Automated Setup Script
+---
 
-Run the provided setup script for automated installation:
+## Setup Details & Advanced Options
+
+### Setup Script Details (`scripts/setup-local-mac.sh`)
+
+The automated setup script provides:
+- **Idempotent execution** — Safe to run multiple times; skips already-installed items
+- **Dry-run mode** — Preview changes before applying: `./scripts/setup-local-mac.sh --dry-run`
+- **Homebrew integration** — Requires Homebrew; fails gracefully if unavailable
+- **Shell initialization** — Automatically updates `~/.zshrc` with rbenv paths
+- **Local rbenv configuration** — Sets `.rbenv-version` in the repo so each machine can use a different Ruby if needed
+
+See [scripts/setup-local-mac.sh](scripts/setup-local-mac.sh) for full source.
+
+### Alternative Setup: bash shell
+
+If you use `bash` instead of `zsh`, adjust the shell init lines:
+
+**With rbenv/brew:**
 ```bash
-./scripts/setup-local-mac.sh
+echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
 ```
+
+**With user gems:**
+```bash
+echo 'export PATH="$(ruby -r rubygems -e 'print Gem.user_dir')/bin:$PATH"' >> ~/.bashrc
+```
+
+Then:
+```bash
+source ~/.bashrc
+```
+
+### Vendor Directory & Bundle Configuration
+
+Gems are installed locally to `vendor/bundle` (not system-wide) to avoid:
+- Needing elevated privileges
+- Conflicts with other projects
+- Cluttering your system Ruby
+
+View or modify bundle settings:
+```bash
+bundle config list
+```
+
+---
 
 ## Site Customization
 
@@ -159,23 +281,25 @@ mkdir -p assets/vendor/fontawesome/js
 curl -L -o assets/vendor/fontawesome/js/all.js https://use.fontawesome.com/releases/v5.0.2/js/all.js
 ```
 
+---
+
 ## Resources
 
 - [Markdown Reference](_posts/developertools/2022-01-19-markdown-reference.md)
 - [Text Symbols Generator](https://fsymbols.com/generators/encool/)
 - [Google Sitemap Documentation](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
 
-## Scripts
-Helper scripts are available in `scripts/`:
-- `setup-local-mac.sh` - Automated setup for macOS
+---
 
+## Link Checking
 
-## All the links can be found at
-[https://nitinkc.github.io/sitemap.xml](https://nitinkc.github.io/sitemap.xml)
+### Quick Link Check
 
+Visit [https://nitinkc.github.io/sitemap.xml](https://nitinkc.github.io/sitemap.xml) to see all published links.
 
-## Recommended Quickest Path for Link Checking
-- Go to deadlinkchecker.com
-- Enter https://nitinkc.github.io
+**Comprehensive broken link check:**
+1. Go to [deadlinkchecker.com](https://deadlinkchecker.com)
+2. Enter `https://nitinkc.github.io`
+3. Wait for crawl results
 
-It will crawl the whole site and report broken links — no sitemap URL neede
+This tool will find all broken links on the site without needing the sitemap URL.

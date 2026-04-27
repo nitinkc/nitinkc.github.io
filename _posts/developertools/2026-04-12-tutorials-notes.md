@@ -17,7 +17,12 @@ tags: [Notes, Tutorials]
 
 - Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
 
-## Machine Learning
+## Algo Interviews
+- System Design Interview Preparation: [https://nitinkc.github.io/SystemDesign-Revision/](https://nitinkc.github.io/SystemDesign-Revision/){:target="_blank"}
+
+
+
+## AI & Machine Learning
 - AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
 - Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
 - Copilot Agents : [https://nitinkc.github.io/copilot-agents-hub/](https://nitinkc.github.io/copilot-agents-hub/){:target="_blank"}
@@ -35,7 +40,6 @@ tags: [Notes, Tutorials]
 ## Spring
 
 - Springboot Reference : [https://nitinkc.github.io/microservices/springboot-reference/](https://nitinkc.github.io/microservices/springboot-reference/)
-- 
 - Spring Security Reference: [https://nitinkc.github.io/spring-security-reference/](https://nitinkc.github.io/spring-security-reference/){:target="_blank"}
 
 
@@ -49,7 +53,8 @@ tags: [Notes, Tutorials]
 - [Java Compilation Optimization](https://nitinkc.github.io/java/compiler-code-optimization/){:target="_blank"}
 
 ### Go Programming Language
-[https://github.com/nitinkc/GoLangLearning](https://github.com/nitinkc/GoLangLearning){:target="_blank"}
+
+- [https://github.com/nitinkc/GoLangLearning](https://github.com/nitinkc/GoLangLearning){:target="_blank"}
 
 
 ### Node

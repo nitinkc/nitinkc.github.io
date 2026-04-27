@@ -32,8 +32,8 @@ run_cmd() {
     echo "+ $*"
   else
     echo "+ $*"
-    # Use bash -lc to execute the command string safely (preserves whitespace)
-    bash -lc "$*"
+    # Execute in current shell context to preserve rbenv environment
+    eval "$*"
   fi
 }
 
@@ -78,8 +78,8 @@ else
 fi
 
 # Apply rbenv to current shell (note: this affects this script's process only)
-run_cmd export PATH="$HOME/.rbenv/bin:$PATH"
-run_cmd eval "$(rbenv init - zsh)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
 # 4) Determine Ruby version: use .ruby-version if present, else default
 DEFAULT_RUBY="3.2.2"
