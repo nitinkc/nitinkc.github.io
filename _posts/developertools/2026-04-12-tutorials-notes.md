@@ -21,7 +21,6 @@ tags: [Notes, Tutorials]
 - System Design Interview Preparation: [https://nitinkc.github.io/SystemDesign-Revision/](https://nitinkc.github.io/SystemDesign-Revision/){:target="_blank"}
 
 
-
 ## AI & Machine Learning
 - AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
 - Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
@@ -41,7 +40,7 @@ tags: [Notes, Tutorials]
 
 - Springboot Reference : [https://nitinkc.github.io/microservices/springboot-reference/](https://nitinkc.github.io/microservices/springboot-reference/)
 - Spring Security Reference: [https://nitinkc.github.io/spring-security-reference/](https://nitinkc.github.io/spring-security-reference/){:target="_blank"}
-
+- Springboot AI : [https://nitinkc.github.io/SpringBootAI/](https://nitinkc.github.io/SpringBootAI/){:target="_blank"}
 
 ## Back-end Programming Languages
 
