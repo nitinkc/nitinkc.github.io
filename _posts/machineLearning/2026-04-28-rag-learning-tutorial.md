@@ -1,6 +1,6 @@
 ---
 title: "RAG Learning Tutorial - From First Principles to Production"
-date: 2026-04-28 10:00:00
+date: 2026-04-28 01:00:00
 categories:
 - Machine Learning
 tags:
