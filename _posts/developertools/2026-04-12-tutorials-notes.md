@@ -6,20 +6,20 @@ tags: [Notes, Tutorials]
 
 {% include toc title="Index" %}
 
+## Career Path
+- Cto Career path : [https://nitinkc.github.io/careerPath/](https://nitinkc.github.io/careerPath/){:target="_blank"}
+- Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
+
 ## Architecture
 - Architecture and System Design:  [https://nitinkc.github.io/Microservices-Design-Architecture/](https://nitinkc.github.io/Microservices-Design-Architecture/){:target="_blank"}
-
 - **BitVelocity**: [https://nitinkc.github.io/BitVelocity-Docs/](https://nitinkc.github.io/BitVelocity-Docs/){:target="_blank"}
-
 - Messaging & Streaming - Apache Kafka Learning Hub: [https://nitinkc.github.io/Kafka-Learning/](https://nitinkc.github.io/Kafka-Learning/){:target="_blank"}
-
 - Performance Engineering & Gatling Load Testing Tutorial:  [https://nitinkc.github.io/GatlingLearning/](https://nitinkc.github.io/GatlingLearning/){:target="_blank"}
 
-- Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
 
 ## Algo Interviews
 - System Design Interview Preparation: [https://nitinkc.github.io/SystemDesign-Revision/](https://nitinkc.github.io/SystemDesign-Revision/){:target="_blank"}
-
+- DS Algo : 
 
 ## AI & Machine Learning
 - AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
@@ -32,15 +32,15 @@ tags: [Notes, Tutorials]
 - Additional DevOps reference: [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
 
 ## Databases
-- DB Theory : 
+- DB Theory : [https://nitinkc.github.io/database-theory/](https://nitinkc.github.io/database-theory/){:target="_blank"}
 - Cassandra Learning Hub: [https://nitinkc.github.io/CassandraLearning/](https://nitinkc.github.io/CassandraLearning/){:target="_blank"}
 - MongoDB Learning Resource: [https://nitinkc.github.io/MongoDBLeaning/](https://nitinkc.github.io/MongoDBLeaning/){:target="_blank"}
 - SQL - 
-- Data warehouse : [https://nitinkc.github.io/DataWarehouseLearnings/](https://nitinkc.github.io/DataWarehouseLearnings/)
+- Data warehouse : [https://nitinkc.github.io/DataWarehouseLearnings/](https://nitinkc.github.io/DataWarehouseLearnings/){:target="_blank"}
 
 ## Spring
 
-- Springboot Reference : [https://nitinkc.github.io/microservices/springboot-reference/](https://nitinkc.github.io/microservices/springboot-reference/)
+- Springboot Reference : [https://nitinkc.github.io/microservices/springboot-reference/](https://nitinkc.github.io/microservices/springboot-reference/){:target="_blank"}
 - Spring Security Reference: [https://nitinkc.github.io/spring-security-reference/](https://nitinkc.github.io/spring-security-reference/){:target="_blank"}
 - Springboot AI : [https://nitinkc.github.io/SpringBootAI/](https://nitinkc.github.io/SpringBootAI/){:target="_blank"}
 
