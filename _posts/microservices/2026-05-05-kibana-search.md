@@ -1,4 +1,9 @@
-
+---
+title: "Kibana Search"
+date: 2026-05-06
+categories: [Kibana, Elasticsearch]
+tags: [kibana, search, queries, filters]
+---
 
 
 
