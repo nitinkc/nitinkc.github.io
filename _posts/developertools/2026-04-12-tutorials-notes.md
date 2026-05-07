@@ -16,6 +16,12 @@ tags: [Notes, Tutorials]
 - Messaging & Streaming - Apache Kafka Learning Hub: [https://nitinkc.github.io/Kafka-Learning/](https://nitinkc.github.io/Kafka-Learning/){:target="_blank"}
 - Performance Engineering & Gatling Load Testing Tutorial:  [https://nitinkc.github.io/GatlingLearning/](https://nitinkc.github.io/GatlingLearning/){:target="_blank"}
 
+## AI & Machine Learning
+- RAG : [https://nitinkc.github.io/RAG-LearningTutorial/](https://nitinkc.github.io/RAG-LearningTutorial/){:target="_blank"}
+- Copilot Agents : [https://nitinkc.github.io/copilot-agents-hub/](https://nitinkc.github.io/copilot-agents-hub/){:target="_blank"}
+- AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
+- Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
+
 ## Microservices
 - Microservices Interview : [https://nitinkc.github.io/microservices-interview/](https://nitinkc.github.io/microservices-interview/){:target="_blank"}
 - Springboot Reference : [https://nitinkc.github.io/microservices/springboot-reference/](https://nitinkc.github.io/microservices/springboot-reference/){:target="_blank"}
@@ -30,12 +36,6 @@ tags: [Notes, Tutorials]
 ## Algo Interviews
 - System Design Interview Preparation: [https://nitinkc.github.io/SystemDesign-Revision/](https://nitinkc.github.io/SystemDesign-Revision/){:target="_blank"}
 - DS Algo :
-
-## AI & Machine Learning
-- AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
-- Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
-- Copilot Agents : [https://nitinkc.github.io/copilot-agents-hub/](https://nitinkc.github.io/copilot-agents-hub/){:target="_blank"}
-- RAG : [https://nitinkc.github.io/RAG-LearningTutorial/](https://nitinkc.github.io/RAG-LearningTutorial/){:target="_blank"}
 
 ## Databases
 - DB Theory : [https://nitinkc.github.io/database-theory/](https://nitinkc.github.io/database-theory/){:target="_blank"}

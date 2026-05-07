@@ -267,5 +267,4 @@ git config --global alias.fpush push --force-with-lease
 
 # Git Maintenance
 
-[Git Maintenance]({{ site.baseurl }}{% post_url
-/git/2023-11-14-git-maintenance %}
+[Git Maintenance]({% post_url git/2023-11-14-git-maintenance %})

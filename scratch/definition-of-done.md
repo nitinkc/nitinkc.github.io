@@ -16,7 +16,7 @@
 
 - [ ] Development ("doing") is complete
 - [ ] Code reviewed by **at least two peers** before merge
-- [ ] Code merged into main branch
+- [ ] Code merged into develop/release branch
 - [ ] Coding style guidelines followed
 - [ ] Unit test coverage for new code is **≥ 80%**
 - [ ] Accumulative unit tests written and passing

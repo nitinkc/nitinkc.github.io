@@ -7,6 +7,8 @@ tags: [java, threads, concurrency, tutorial, comprehensive]
 
 This series consolidates all knowledge into a systematic, revision-worthy guide.
 
+Details : [https://nitinkc.github.io/MultithreadingLearningHub/](https://nitinkc.github.io/MultithreadingLearningHub/){:target="_blank"}
+
 ## Blog Series Index
 
 | Part                                                                            | Title                                      | Key Topics                                                               |

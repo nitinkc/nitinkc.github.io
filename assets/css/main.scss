@@ -216,6 +216,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #9fb8c2;
 }
 
+:root[data-theme="dark"] .toc .active > a,
+:root[data-theme="dark"] .toc .active a {
+  color: #ffffff;
+  background-color: #313844;
+  box-shadow: inset 3px 0 0 #9bd0ff;
+}
+
+:root[data-theme="dark"] .toc__menu a:hover {
+  color: #ffffff;
+}
+
 :root[data-theme="dark"] .notice--primary {
   background-color: #232323;
   border-color: #5b5b5b;
@@ -228,6 +239,87 @@ h1, h2, h3, h4, h5, h6 {
 
 :root[data-theme="dark"] .notice--primary a:visited {
   color: #c7a6ff;
+}
+
+// Improve readability on dark surfaces across common Minimal Mistakes components.
+:root[data-theme="dark"] .page,
+:root[data-theme="dark"] .page__content,
+:root[data-theme="dark"] .archive,
+:root[data-theme="dark"] .archive__item-excerpt,
+:root[data-theme="dark"] .sidebar,
+:root[data-theme="dark"] .author__content,
+:root[data-theme="dark"] .greedy-nav {
+  color: #e6e9ec;
+}
+
+:root[data-theme="dark"] .page__title,
+:root[data-theme="dark"] .archive__item-title a,
+:root[data-theme="dark"] .author__name,
+:root[data-theme="dark"] h1,
+:root[data-theme="dark"] h2,
+:root[data-theme="dark"] h3,
+:root[data-theme="dark"] h4,
+:root[data-theme="dark"] h5,
+:root[data-theme="dark"] h6 {
+  color: #f3f5f7;
+}
+
+:root[data-theme="dark"] .page__meta,
+:root[data-theme="dark"] .archive__subtitle,
+:root[data-theme="dark"] .page__taxonomy,
+:root[data-theme="dark"] .page__date,
+:root[data-theme="dark"] .author__bio {
+  color: #c7d0d8;
+}
+
+:root[data-theme="dark"] .page__content p > code,
+:root[data-theme="dark"] .page__content a > code,
+:root[data-theme="dark"] .page__content li > code,
+:root[data-theme="dark"] .page__content figcaption > code,
+:root[data-theme="dark"] .page__content td > code {
+  color: #ffd7e7;
+  background-color: #30343a;
+}
+
+:root[data-theme="dark"] .page__content pre,
+:root[data-theme="dark"] .highlight {
+  background-color: #181b20;
+  border: 1px solid #343b44;
+}
+
+:root[data-theme="dark"] .page__content table {
+  background-color: #20242b;
+  color: #e6e9ec;
+}
+
+:root[data-theme="dark"] .page__content th,
+:root[data-theme="dark"] .page__content td {
+  border-color: #3c4450;
+}
+
+:root[data-theme="dark"] .page__content thead th,
+:root[data-theme="dark"] .page__content th {
+  background-color: #2b313a;
+  color: #f4f7fb;
+}
+
+:root[data-theme="dark"] .page__content blockquote {
+  color: #d5dde5;
+  border-left-color: #7f8b99;
+}
+
+:root[data-theme="dark"] .pagination--pager,
+:root[data-theme="dark"] .btn,
+:root[data-theme="dark"] .btn--inverse {
+  color: #f3f5f7;
+  border-color: #596473;
+}
+
+:root[data-theme="dark"] .pagination--pager:hover,
+:root[data-theme="dark"] .btn:hover,
+:root[data-theme="dark"] .btn--inverse:hover {
+  color: #ffffff;
+  border-color: #8592a3;
 }
 
 //Taxonomy div is on the home page when Post_by_category or Post_by_Tag is clicked
