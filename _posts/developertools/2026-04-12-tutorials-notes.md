@@ -6,10 +6,6 @@ tags: [Notes, Tutorials]
 
 {% include toc title="Index" %}
 
-## Career Path
-- Cto Career path : [https://nitinkc.github.io/careerPath/](https://nitinkc.github.io/careerPath/){:target="_blank"}
-- Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
-
 ## Architecture
 - Architecture and System Design:  [https://nitinkc.github.io/Microservices-Design-Architecture/](https://nitinkc.github.io/Microservices-Design-Architecture/){:target="_blank"}
 - **BitVelocity**: [https://nitinkc.github.io/BitVelocity-Docs/](https://nitinkc.github.io/BitVelocity-Docs/){:target="_blank"}
@@ -45,6 +41,9 @@ tags: [Notes, Tutorials]
 - SQL - 
 - Data warehouse : [https://nitinkc.github.io/DataWarehouseLearnings/](https://nitinkc.github.io/DataWarehouseLearnings/){:target="_blank"}
 
+## Career Path
+- Cto Career path : [https://nitinkc.github.io/careerPath/](https://nitinkc.github.io/careerPath/){:target="_blank"}
+- Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
 
 ## Back-end Programming Languages
 
