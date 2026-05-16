@@ -17,6 +17,7 @@ tags: [Notes, Tutorials]
 - RAG : [https://nitinkc.github.io/RAG-LearningTutorial/](https://nitinkc.github.io/RAG-LearningTutorial/){:target="_blank"}
 - Copilot Agents : [https://nitinkc.github.io/copilot-agents-hub/](https://nitinkc.github.io/copilot-agents-hub/){:target="_blank"}
 - AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
+- MCP Servers - [https://nitinkc.github.io/MCP-server-learning/](https://nitinkc.github.io/MCP-server-learning/)
 - Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
 
 ## Microservices
