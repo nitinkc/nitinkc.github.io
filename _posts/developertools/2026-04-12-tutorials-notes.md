@@ -15,9 +15,13 @@ tags: [Notes, Tutorials]
 ## AI & Machine Learning
 - Copilot Agents : [https://nitinkc.github.io/copilot-agents-hub/](https://nitinkc.github.io/copilot-agents-hub/){:target="_blank"}
 - RAG : [https://nitinkc.github.io/RAG-LearningTutorial/](https://nitinkc.github.io/RAG-LearningTutorial/){:target="_blank"}
+
 - MCP Servers - [https://nitinkc.github.io/MCP-server-learning/](https://nitinkc.github.io/MCP-server-learning/){:target="_blank"}
 - MCP My Toolhub[https://nitinkc.github.io/mcp-toolhub/](https://nitinkc.github.io/mcp-toolhub/){:target="_blank"}
 
+- AI Parameters Playbook : [https://nitinkc.github.io/AI-parameter-playbook/](https://nitinkc.github.io/AI-parameter-playbook/){:target="_blank"}
+- AI Math : [https://nitinkc.github.io/AI-ML-math-foundations/](https://nitinkc.github.io/AI-ML-math-foundations/){:target="_blank"}
+    
 - AI Interview Preparation : [https://nitinkc.github.io/AI-Engineering-Learning/](https://nitinkc.github.io/AI-Engineering-Learning/){:target="_blank"}
 - AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
 

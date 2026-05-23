@@ -9,6 +9,26 @@ tags:
 - Configuration
 ---
 
+# Terminal, system-wide: duti
+
+duti is a command-line tool specifically for setting macOS default apps by file type/UTI.
+
+```shell
+brew install duti
+```
+
+### Make Sublime Text the default editor for all text files:
+
+```shell
+SUBLIME_ID=$(osascript -e 'id of app "Sublime Text"')
+echo "$SUBLIME_ID"
+
+duti -s "$SUBLIME_ID" public.plain-text all
+duti -s "$SUBLIME_ID" public.data all
+duti -s "$SUBLIME_ID" public.unix-executable all
+
+
+```
 # Necessary UI Settings
 
 All
