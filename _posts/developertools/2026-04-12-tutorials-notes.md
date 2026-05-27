@@ -17,7 +17,7 @@ tags: [Notes, Tutorials]
 - RAG : [https://nitinkc.github.io/RAG-LearningTutorial/](https://nitinkc.github.io/RAG-LearningTutorial/){:target="_blank"}
 
 - MCP Servers - [https://nitinkc.github.io/MCP-server-learning/](https://nitinkc.github.io/MCP-server-learning/){:target="_blank"}
-- MCP My Toolhub[https://nitinkc.github.io/mcp-toolhub/](https://nitinkc.github.io/mcp-toolhub/){:target="_blank"}
+- My MCP Toolhub - [https://nitinkc.github.io/mcp-toolhub/](https://nitinkc.github.io/mcp-toolhub/){:target="_blank"}
 
 - AI Parameters Playbook : [https://nitinkc.github.io/AI-parameter-playbook/](https://nitinkc.github.io/AI-parameter-playbook/){:target="_blank"}
 - AI Math : [https://nitinkc.github.io/AI-ML-math-foundations/](https://nitinkc.github.io/AI-ML-math-foundations/){:target="_blank"}
