@@ -236,3 +236,24 @@ Ultimately, the choice between them often comes down to team preference.
 - **Strong Collaboration Required**: BDD fails if teams work in silos. It requires active engagement from business, dev, and QA.
 - **Writing Good Scenarios**: It takes practice to write scenarios that are clear, concise, and focused on behavior rather than UI details.
 - **Maintenance**: As the system grows, maintaining a large suite of BDD tests can be challenging.
+
+
+## 🛣️ Other Key Testing Paths
+
+* The Angry Path: A deliberate attempt by a malicious actor or hacker to break the system or find vulnerabilities.
+* The Scary Path: High-risk scenarios where a failure causes catastrophic data loss, security breaches, or system crashes.
+* The Boring Path: Routine background operations that happen without direct user interaction, like data backups or nightly syncs.
+* The Long Path: Multi-step workflows that require a long time to finish, such as onboarding, multi-page forms, or multi-day approval chains.
+* The Confused Path: Scenarios where a user gets lost, clicks random buttons, backs out of pages, or inputs illogical data.
+
+------------------------------
+## 📊 Path Comparison Matrix
+
+| Path Name       | User Intent         | Focus Area                | Critical Outcome                |
+|:----------------|:--------------------|:--------------------------|:--------------------------------|
+| Happy           | Perfect & Standard  | Core functionality        | User goal achieved instantly    |
+| Rainy / Unhappy | Accidental Error    | Error handling & recovery | Clear error messages            |
+| Angry           | Malicious Attack    | Security & penetration    | System blocks threat            |
+| Scary           | Extreme / Edge Case | Risk mitigation           | Zero data loss or total crashes |
+| Boring          | No User Action      | Automation & stability    | Seamless backend operations     |
+
