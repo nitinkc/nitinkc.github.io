@@ -47,7 +47,7 @@ brew install kubectl kind helm kubectx k9s stern
          │ Frontend│                    │ Frontend│
          │ Product │                    │ Product │
          │ Order   │                    │ Order   │
-         │ Inventory                   │ Inventory
+         │ Inventory                    │Inventory|
          └─────────┘                    └─────────┘
 ```
 
