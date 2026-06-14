@@ -49,6 +49,8 @@ All commands are run from the root of the project, from a terminal:
 Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
 
 ## Everyday run
+[https://starlight.astro.build/getting-started/](https://starlight.astro.build/getting-started/)
+
 ```shell
 npx @astrojs/upgrade
 
