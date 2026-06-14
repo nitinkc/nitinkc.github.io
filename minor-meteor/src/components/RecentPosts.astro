@@ -1,0 +1,66 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+interface Props {
+	limit?: number;
+	title?: string;
+}
+
+const { limit = 10, title = 'Recent Posts' } = Astro.props;
+
+type DocsEntry = CollectionEntry<'docs'>;
+
+const entryPath = (entry: DocsEntry): string => {
+	const rawPath = entry.slug ?? entry.id ?? '';
+	return rawPath.replace(/\/index$/, '');
+};
+
+const parseDate = (entry: DocsEntry): Date | null => {
+	const maybeDate = (entry.data as { date?: string | Date }).date;
+	if (maybeDate) {
+		const parsed = new Date(maybeDate);
+		if (!Number.isNaN(parsed.getTime())) return parsed;
+	}
+
+	// Fallback for Jekyll-style filenames like 2026-02-03-my-post.md.
+	const slugMatch = entryPath(entry).match(/(\d{4}-\d{2}-\d{2})/);
+	if (!slugMatch) return null;
+
+	const parsed = new Date(`${slugMatch[1]}T00:00:00`);
+	return Number.isNaN(parsed.getTime()) ? null : parsed;
+};
+
+const allDocs = await getCollection('docs');
+
+const recentPosts = allDocs
+	.filter((entry) => {
+		const path = entryPath(entry);
+		return path !== '' && path !== 'index';
+	})
+	.map((entry) => ({ entry, date: parseDate(entry) }))
+	.filter((item): item is { entry: DocsEntry; date: Date } => item.date !== null)
+	.sort((a, b) => b.date.getTime() - a.date.getTime())
+	.slice(0, limit);
+
+const formatDate = (date: Date) =>
+	new Intl.DateTimeFormat('en-US', {
+		year: 'numeric',
+		month: 'short',
+		day: '2-digit',
+	}).format(date);
+---
+
+<h3>{title}</h3>
+
+{recentPosts.length === 0 ? (
+	<p>No posts found yet.</p>
+) : (
+	<ul>
+		{recentPosts.map(({ entry, date }) => (
+			<li>
+				<a href={`/${entryPath(entry)}/`}>{entry.data.title ?? entryPath(entry)}</a> <small>({formatDate(date)})</small>
+			</li>
+		))}
+	</ul>
+)}
+
