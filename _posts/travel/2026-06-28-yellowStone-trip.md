@@ -7,7 +7,7 @@ tags: [yellowstone, grand-teton, seattle, road-trip, budget-travel, pacific-nort
 
 There's a road trip that starts in Seattle, cuts east across Washington and Montana, drops into one of the most geologically wild places on earth, swings south into the Tetons, and loops back home — all without breaking the bank. This is that plan.
 
-**Trip at a glance:**
+## Quick reference: drive times
 
 | Detail              | Info                                              |
 |:--------------------|:--------------------------------------------------|
@@ -19,6 +19,26 @@ There's a road trip that starts in Seattle, cuts east across Washington and Mont
 | Start day           | Any day — the plan adapts to weekdays or weekends |
 
 [https://www.nps.gov/yell/planyourvisit/conditions.htm](https://www.nps.gov/yell/planyourvisit/conditions.htm)
+
+| Segment                                         | Drive time |
+|:------------------------------------------------|:-----------|
+| Seattle → Spokane                               | 4h 10min   |
+| Spokane → Missoula                              | 3h 10min   |
+| Missoula → Bozeman                              | 3h         |
+| Bozeman → Gardiner                              | 1h 20min   |
+| Gardiner → Lamar Valley                         | 53min      |
+| Gardiner → Canyon Village                       | 1h 5min    |
+| Canyon → West Yellowstone                       | 57min      |
+| West Yellowstone → Old Faithful                 | 47min      |
+| West Yellowstone → Grand Prismatic              | 40min      |
+| West Yellowstone → South Entrance (Grand Teton) | ~45min     |
+| South Entrance → Jackson                        | ~30min     |
+| Jackson → Bozeman                               | 4h 10min   |
+| Bozeman → Spokane                               | ~5h        |
+| Spokane → Seattle                               | 4h         |
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m76!1m12!1m3!1d1516383.8915568772!2d-114.05484136422407!3d44.91054216500523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m61!3e0!4m5!1s0x535dcc2a50f367cb%3A0xe9e31277ca94802e!2sMissoula%2C%20Montana!3m2!1d46.8721284!2d-113.9940314!4m5!1s0x534fb7c3542df5d1%3A0xadd9126b7382951f!2sGardiner%2C%20Montana%2059030!3m2!1d45.031880199999996!2d-110.7057663!4m5!1s0x534e48bb4206d1a3%3A0xfc20369cbc9c786f!2sLamar%20Valley%2C%20NE%20Entrance%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.868520499999995!2d-110.17464319999999!4m5!1s0x534e241055a133cf%3A0x325aadb6e0fa6709!2sCanyon%20Village%2C%20Wyoming%2082190!3m2!1d44.733826799999996!2d-110.4899255!4m5!1s0x5351b9c07a322b03%3A0xdd639df748902010!2sWest%20Yellowstone%2C%20Montana%2059758!3m2!1d44.662149299999996!2d-111.1041092!4m5!1s0x5351ed1b81592e5f%3A0x83b7c275a6822a1!2sOld%20Faithful%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.4604788!2d-110.8281377!4m5!1s0x5351ebbea155a649%3A0xdff59dcdc8fb8761!2sGrand%20Prismatic%20Spring%2C%20Wyoming%2082190!3m2!1d44.5250346!2d-110.8381793!4m5!1s0x53523d239f169863%3A0xe5254ceaeb137e6a!2sSouth%20Entrance%2C%20S%20Entrance%20Rd%2C%20Moran%2C%20WY%2083013!3m2!1d44.135771399999996!2d-110.66682069999999!4m5!1s0x53531a58fccf7f4b%3A0x3d1c01cbb13a835c!2sJackson%2C%20Wyoming!3m2!1d43.4799291!2d-110.76242819999999!4m5!1s0x5345444c4fba8813%3A0x63f5d064f73b60aa!2sBozeman%2C%20Montana!3m2!1d45.679311899999995!2d-111.03725899999999!5e0!3m2!1sen!2sus!4v1782700302957!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 ---
 
@@ -344,29 +364,6 @@ If traveling in late May, check road openings the morning of any major park driv
 
 **Gas inside the park:** Available at Fishing Bridge, Canyon, and Grant Village. Prices are significantly higher than gateway towns. Fill in Gardiner or West Yellowstone when possible.
 
----
-
-## Quick reference: drive times
-
-| Segment                                         | Drive time |
-|:------------------------------------------------|:-----------|
-| Seattle → Spokane                               | 4h 10min   |
-| Spokane → Missoula                              | 3h 10min   |
-| Missoula → Bozeman                              | 3h         |
-| Bozeman → Gardiner                              | 1h 20min   |
-| Gardiner → Lamar Valley                         | 53min      |
-| Gardiner → Canyon Village                       | 1h 5min    |
-| Canyon → West Yellowstone                       | 57min      |
-| West Yellowstone → Old Faithful                 | 47min      |
-| West Yellowstone → Grand Prismatic              | 40min      |
-| West Yellowstone → South Entrance (Grand Teton) | ~45min     |
-| South Entrance → Jackson                        | ~30min     |
-| Jackson → Bozeman                               | 4h 10min   |
-| Bozeman → Spokane                               | ~5h        |
-| Spokane → Seattle                               | 4h         |
-
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m76!1m12!1m3!1d1516383.8915568772!2d-114.05484136422407!3d44.91054216500523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m61!3e0!4m5!1s0x535dcc2a50f367cb%3A0xe9e31277ca94802e!2sMissoula%2C%20Montana!3m2!1d46.8721284!2d-113.9940314!4m5!1s0x534fb7c3542df5d1%3A0xadd9126b7382951f!2sGardiner%2C%20Montana%2059030!3m2!1d45.031880199999996!2d-110.7057663!4m5!1s0x534e48bb4206d1a3%3A0xfc20369cbc9c786f!2sLamar%20Valley%2C%20NE%20Entrance%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.868520499999995!2d-110.17464319999999!4m5!1s0x534e241055a133cf%3A0x325aadb6e0fa6709!2sCanyon%20Village%2C%20Wyoming%2082190!3m2!1d44.733826799999996!2d-110.4899255!4m5!1s0x5351b9c07a322b03%3A0xdd639df748902010!2sWest%20Yellowstone%2C%20Montana%2059758!3m2!1d44.662149299999996!2d-111.1041092!4m5!1s0x5351ed1b81592e5f%3A0x83b7c275a6822a1!2sOld%20Faithful%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.4604788!2d-110.8281377!4m5!1s0x5351ebbea155a649%3A0xdff59dcdc8fb8761!2sGrand%20Prismatic%20Spring%2C%20Wyoming%2082190!3m2!1d44.5250346!2d-110.8381793!4m5!1s0x53523d239f169863%3A0xe5254ceaeb137e6a!2sSouth%20Entrance%2C%20S%20Entrance%20Rd%2C%20Moran%2C%20WY%2083013!3m2!1d44.135771399999996!2d-110.66682069999999!4m5!1s0x53531a58fccf7f4b%3A0x3d1c01cbb13a835c!2sJackson%2C%20Wyoming!3m2!1d43.4799291!2d-110.76242819999999!4m5!1s0x5345444c4fba8813%3A0x63f5d064f73b60aa!2sBozeman%2C%20Montana!3m2!1d45.679311899999995!2d-111.03725899999999!5e0!3m2!1sen!2sus!4v1782700302957!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 ---
 
 ## The entrances the main plan skips — and whether they're worth it
