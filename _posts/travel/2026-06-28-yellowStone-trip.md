@@ -5,6 +5,9 @@ categories: [travel, road-trip, national-parks]
 tags: [yellowstone, grand-teton, seattle, road-trip, budget-travel, pacific-northwest]
 ---
 
+{% include toc title="Index" %}
+
+
 There's a road trip that starts in Seattle, cuts east across Washington and Montana, drops into one of the most geologically wild places on earth, swings south into the Tetons, and loops back home — all without breaking the bank. This is that plan.
 
 ## Quick reference: drive times
@@ -20,21 +23,21 @@ There's a road trip that starts in Seattle, cuts east across Washington and Mont
 
 [https://www.nps.gov/yell/planyourvisit/conditions.htm](https://www.nps.gov/yell/planyourvisit/conditions.htm)
 
-| Segment                                           | Drive time |
-|:--------------------------------------------------|:-----------|
-| Seattle → Spokane                                 | 4h 10min   |
-| Spokane → Missoula                                | 3h 10min   |
-| Missoula → Bozeman                                | 3h         |
-| Bozeman → Gardiner                                | 1h 20min   |
-| Gardiner → Lamar Valley                           | 53min      |
-| Gardiner → Canyon Village                         | 1h 5min    |
-| Canyon → West Yellowstone                         | 57min      |
-| West Yellowstone → Old Faithful                   | 47min      |
-| West Yellowstone → Grand Prismatic                | 40min      |
-| West Yellowstone → South Entrance (Grand Teton)   | ~45min     |
-| South Entrance → Jackson                          | ~30min     |
-| Jackson → Bozeman                                 | 4h 10min   |
-| Bozeman → Spokane                                 |
+| Segment                                         | Drive time |
+|:------------------------------------------------|:-----------|
+| (Day 1) Seattle → Spokane                       | 4h 10min   |
+| (Day 2) Spokane → Missoula                      | 3h 10min   |
+| (Day 2) Missoula → Bozeman                      | 3h         |
+| (Day 2) Bozeman → Gardiner                      | 1h 20min   |
+| Gardiner → Lamar Valley                         | 53min      |
+| Gardiner → Canyon Village                       | 1h 5min    |
+| Canyon → West Yellowstone                       | 57min      |
+| West Yellowstone → Old Faithful                 | 47min      |
+| West Yellowstone → Grand Prismatic              | 40min      |
+| West Yellowstone → South Entrance (Grand Teton) | ~45min     |
+| South Entrance → Jackson                        | ~30min     |
+| Jackson → Bozeman                               | 4h 10min   |
+| Bozeman → Spokane                               |
 
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m76!1m12!1m3!1d1516383.8915568772!2d-114.05484136422407!3d44.91054216500523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m61!3e0!4m5!1s0x535dcc2a50f367cb%3A0xe9e31277ca94802e!2sMissoula%2C%20Montana!3m2!1d46.8721284!2d-113.9940314!4m5!1s0x534fb7c3542df5d1%3A0xadd9126b7382951f!2sGardiner%2C%20Montana%2059030!3m2!1d45.031880199999996!2d-110.7057663!4m5!1s0x534e48bb4206d1a3%3A0xfc20369cbc9c786f!2sLamar%20Valley%2C%20NE%20Entrance%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.868520499999995!2d-110.17464319999999!4m5!1s0x534e241055a133cf%3A0x325aadb6e0fa6709!2sCanyon%20Village%2C%20Wyoming%2082190!3m2!1d44.733826799999996!2d-110.4899255!4m5!1s0x5351b9c07a322b03%3A0xdd639df748902010!2sWest%20Yellowstone%2C%20Montana%2059758!3m2!1d44.662149299999996!2d-111.1041092!4m5!1s0x5351ed1b81592e5f%3A0x83b7c275a6822a1!2sOld%20Faithful%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.4604788!2d-110.8281377!4m5!1s0x5351ebbea155a649%3A0xdff59dcdc8fb8761!2sGrand%20Prismatic%20Spring%2C%20Wyoming%2082190!3m2!1d44.5250346!2d-110.8381793!4m5!1s0x53523d239f169863%3A0xe5254ceaeb137e6a!2sSouth%20Entrance%2C%20S%20Entrance%20Rd%2C%20Moran%2C%20WY%2083013!3m2!1d44.135771399999996!2d-110.66682069999999!4m5!1s0x53531a58fccf7f4b%3A0x3d1c01cbb13a835c!2sJackson%2C%20Wyoming!3m2!1d43.4799291!2d-110.76242819999999!4m5!1s0x5345444c4fba8813%3A0x63f5d064f73b60aa!2sBozeman%2C%20Montana!3m2!1d45.679311899999995!2d-111.03725899999999!5e0!3m2!1sen!2sus!4v1782700302957!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -43,7 +46,8 @@ There's a road trip that starts in Seattle, cuts east across Washington and Mont
 
 ## The route
 
-The single biggest mistake people make on a Yellowstone trip is trying to do it as an out-and-back from one base. That forces long backtracks and means you're constantly re-driving the same roads.
+The single biggest mistake people make on a Yellowstone trip is trying to do it as an out-and-back
+from one base. That forces long backtracks and means you're constantly re-driving the same roads.
 
 This plan forms a **geographic loop**:
 
@@ -55,13 +59,7 @@ Seattle → Spokane → Gardiner, MT → West Yellowstone → Jackson, WY → Bo
 
 Each stop serves a specific purpose. You never backtrack. Every drive leads to the next major sight.
 
----
-
-## Accomodation strategy
-
-The goal here is simple: **spend money on food and experiences, not on hotel rooms you'll barely use.**
-
-### Accommodation
+## Accommodation 
 
 | Stop             | Type                      | Estimated nightly cost  |
 |:-----------------|:--------------------------|:------------------------|
@@ -70,7 +68,9 @@ The goal here is simple: **spend money on food and experiences, not on hotel roo
 | West Yellowstone | Budget motel              | $95–130/night           |
 | Jackson, WY      | Budget motel (town side)  | $110–150/night          |
 
-**Where to splurge (if anywhere):** If you're going to spend extra on one night of accommodation, make it the **Old Faithful Inn** inside Yellowstone. 
+**Where to splurge (if anywhere):** If you're going to spend extra on one night of accommodation, 
+make it the **Old Faithful Inn** inside Yellowstone. 
+
 Waking up 200 yards from Old Faithful and catching an eruption at dawn with almost no one around is a genuinely different experience.
 
 Book far in advance at [yellowstonenationalparklodges.com](https://www.yellowstonenationalparklodges.com).
@@ -84,7 +84,8 @@ Roughly $180–220 total for the full loop in a mid-size car averaging 30 mpg.
 
 ### Food
 
-Pack a **cooler for in-park lunches** — sandwiches, snacks, and drinks you can pull over and eat at a pullout. Save your dinner budget for sit-down meals in the gateway towns:
+Pack a **cooler for in-park lunches** — sandwiches, snacks, and drinks you can pull over and eat at a pullout.
+Save your dinner budget for sit-down meals in the gateway towns:
 
 - **Bozeman** has some of Montana's best food per dollar
 - **Jackson, WY** has excellent restaurants (it's a resort town, so expect resort prices, but there are solid mid-range spots)
@@ -106,7 +107,10 @@ Pack a **cooler for in-park lunches** — sandwiches, snacks, and drinks you can
 
 **Drive:** ~4h 10min, ~280 miles via I-90 East
 
-This is your low-pressure opening move. Leave after work and let I-90 carry you east across the Cascades. Spokane is a proper city with good food options and budget motels — it's a far better first-night option than trying to push further east on a Friday.
+This is your low-pressure opening move. Leave after work and let I-90 carry you east across the Cascades.
+
+Spokane is a proper city with good food options and budget motels — it's a far better first-night option
+than trying to push further east on a Friday.
 
 - **Eat:** Spokane's Perry District or downtown for a good meal on arrival
 - **Sleep:** Spokane — budget motels from ~$70/night
@@ -117,13 +121,14 @@ This is your low-pressure opening move. Leave after work and let I-90 carry you 
 
 **Drive:** ~7.5h total across three segments
 
-| Segment | Time |
-|---------|------|
+| Segment            | Time      |
+|:-------------------|:----------|
 | Spokane → Missoula | ~3h 10min |
-| Missoula → Bozeman | ~3h |
+| Missoula → Bozeman | ~3h       |
 | Bozeman → Gardiner | ~1h 20min |
 
-This is your biggest driving day, and the right one for it — it comes before any park fatigue, and the scenery earns its keep. I-90 through western Montana is beautiful, not a grind.
+This is your biggest driving day, and the right one for it — it comes before any park fatigue, 
+and the scenery earns its keep. I-90 through western Montana is beautiful, not a grind.
 
 **Break in Bozeman.** It's worth 30–45 minutes. Get coffee, stretch, grab lunch if you need it. Bozeman is a genuinely enjoyable mountain city.
 
@@ -131,21 +136,30 @@ This is your biggest driving day, and the right one for it — it comes before a
 
 - **Stay:** Gardiner — motels and cabins from ~$90/night
 
+<iframe src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d11372461.891598793!2d-124.53157174220318!3d45.901713157326846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e0!4m5!1s0x549e185c30bbe7e5%3A0xddfcc9d60b84d9b1!2sSpokane%2C%20Washington!3m2!1d47.6579711!2d-117.42353179999999!4m5!1s0x535dcc2a50f367cb%3A0xe9e31277ca94802e!2sMissoula%2C%20Montana!3m2!1d46.8721284!2d-113.9940314!4m5!1s0x5345444c4fba8813%3A0x63f5d064f73b60aa!2sBozeman%2C%20Montana!3m2!1d45.679311899999995!2d-111.03725899999999!4m5!1s0x534fb7c3542df5d1%3A0xadd9126b7382951f!2sGardiner%2C%20Montana%2059030!3m2!1d45.031880199999996!2d-110.7057663!5e0!3m2!1sen!2sus!4v1782705747612!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
 ---
 
 ### Day 2 — North Yellowstone: Mammoth + Lamar Valley
 
-**Base:** Gardiner (no hotel change today)
+> **Base:** Gardiner (no hotel change today)
 
-This is one of the best days of the entire trip, and one of the least hectic. You're driving out of Gardiner into the park and back — no hotel change, no time pressure.
+This is one of the **best days of the entire trip**, and one of the least hectic. 
+You're driving out of Gardiner into the park and back — no hotel change, no time pressure.
 
-**Morning: Mammoth Hot Springs**
+##### Morning: Mammoth Hot Springs
 
-The travertine terraces at Mammoth are unlike any other thermal area in Yellowstone — or anywhere in the world. Mineral-rich water cascades down limestone shelves, building white and orange formations that look more like a frozen waterfall than rock. Walk the upper and lower boardwalk loops. Give yourself 60–90 minutes here.
+The **travertine terraces** at Mammoth are unlike any other thermal area in Yellowstone — or anywhere in the world. 
+Mineral-rich water cascades down limestone shelves, building white and orange formations that look
+more like a frozen waterfall than rock. 
 
-**Late morning / afternoon: Lamar Valley**
+> Walk the upper and lower boardwalk loops. Give yourself 60–90 minutes here.
 
-Drive east from Mammoth toward Lamar Valley (~53 minutes from Gardiner). This is Yellowstone's premier wildlife corridor — often called America's Serengeti. Pull over at every turnout. Watch the valley with binoculars.
+##### Late morning / afternoon: Lamar Valley
+
+Drive east from Mammoth toward Lamar Valley (~53 minutes from Gardiner). 
+This is Yellowstone's **premier wildlife corridor** — often called America's Serengeti. 
+Pull over at every turnout. Watch the valley with **binoculars**.
 
 What you might see:
 - Bison herds (almost certain)
@@ -156,8 +170,10 @@ What you might see:
 **Optional stops on the way:**
 - **Undine Falls** — quick roadside waterfall stop
 - **Wraith Falls** — 0.8 mile round trip, easy
-
+- **Drive towards NorthEast Entrance**
 - **Sleep:** Gardiner again — staying twice means your best wildlife day is completely unhurried
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d252546.2734786192!2d-110.23437132659092!3d44.986426661930516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e0!4m5!1s0x534fb7c3542df5d1%3A0xadd9126b7382951f!2sGardiner%2C%20Montana%2059030!3m2!1d45.031880199999996!2d-110.7057663!4m5!1s0x534fd46b17a99cef%3A0xcf7e4635a57fc33e!2sMammoth%20Hot%20Springs%2C%20Mammoth%2C%20WY%2082190!3m2!1d44.9705623!2d-110.70337289999999!4m5!1s0x534fd34043ca5cdf%3A0x790ff86e81899f93!2sUndine%20Falls%2C%20Wyoming%2082190!3m2!1d44.9439357!2d-110.6399953!4m5!1s0x534fd330cf8786fb%3A0x8eece8874e20133d!2sWraith%20Falls%2C%20Wyoming%2082190!3m2!1d44.9371583!2d-110.62354049999999!4m5!1s0x534e48bb4206d1a3%3A0xfc20369cbc9c786f!2sLamar%20Valley%2C%20NE%20Entrance%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.868520499999995!2d-110.17464319999999!4m5!1s0x534e5489cd6c9045%3A0xe1a470e7f7d82c37!2sNE%20Entrance%2C%20212%2C%20Northeast%20Entrance%2C%20US-212%2C%20Cooke%20City%2C%20MT%2059081!3m2!1d45.004578699999996!2d-110.0104564!4m5!1s0x534fb7c3542df5d1%3A0xadd9126b7382951f!2sGardiner%2C%20Montana%2059030!3m2!1d45.031880199999996!2d-110.7057663!5e0!3m2!1sen!2sus!4v1782709710924!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 ---
 
@@ -165,49 +181,76 @@ What you might see:
 
 **Drive through:** Gardiner south to West Yellowstone via Canyon Village
 
-This is the smartest travel day in the whole plan. You're repositioning from Gardiner to West Yellowstone — but instead of taking a highway around the park, you drive *through* it and stop at three of Yellowstone's biggest interior sights along the way.
+This is the smartest travel day in the whole plan. You're repositioning from Gardiner to 
+West Yellowstone — but instead of taking a highway around the park, you drive *through* it and stop 
+at three of Yellowstone's biggest interior sights along the way.
 
-**Norris Geyser Basin**
+##### Norris Geyser Basin
 
-Yellowstone's oldest, hottest, and most unpredictable thermal area. Steamboat Geyser — the tallest active geyser in the world — lives here. Even when it's not erupting, the basin is dramatic: acidic, constantly shifting, with features that didn't exist a decade ago. Allow 60–90 minutes.
+Yellowstone's oldest, hottest, and most unpredictable thermal area. Steamboat Geyser — the tallest
+active geyser in the world — lives here. Even when it's not erupting, the basin is 
+dramatic: acidic, constantly shifting, with features that didn't exist a decade ago. 
 
-**Grand Canyon of the Yellowstone + Artist Point**
+> Allow 60–90 minutes.
 
-The canyon is 1,000 feet deep and vividly colored — yellows and oranges from hydrothermal alteration. The Lower Falls plunge **308 feet**, nearly twice the height of Niagara. Artist Point is the classic overlook. This is one of Yellowstone's defining images and it earns that status in person. Allow 45–60 minutes.
+##### Grand Canyon of the Yellowstone + Artist Point
 
-**Hayden Valley**
+The canyon is 1,000 feet deep and vividly colored — yellows and oranges from hydrothermal alteration. 
+The Lower Falls plunge **308 feet**, nearly twice the height of Niagara. Artist Point is the classic overlook. 
 
-Between Canyon and the park's interior, Hayden Valley is another excellent wildlife zone — especially for bison and sometimes grizzlies near the Yellowstone River. You'll likely slow down for bison traffic here, which is fine.
+This is one of Yellowstone's defining images and it earns that status in person. 
+
+> Allow 45–60 minutes.
+
+## Hayden Valley
+
+Between Canyon and the park's interior, Hayden Valley is another excellent wildlife zone — especially 
+for bison and sometimes grizzlies near the Yellowstone River. 
+You'll likely slow down for bison traffic here, which is fine.
 
 - **Gardiner to Canyon Village:** ~1h 5min
 - **Canyon to West Yellowstone:** ~57min
 - **Sleep:** West Yellowstone — motels from ~$95/night
+  - [https://www.priceline.com/home/?city-id=3000012761&action=home&AppDL=True&cityname=West%20Yellowstone&cityID=3000012761&match=e&kw=west%20yellowstone&adp=&refid=PLGOOGLECPC&refclickid=d:cALL16844010740g48410781280011757370767kwd-138980860|9033288|&gad_source=1&gad_campaignid=11757370767&gbraid=0AAAAAD-_E2YcuTntZ13aWljWL9ivo3CiO&gclid=Cj0KCQjwjIPSBhCCARIsABGyK7vQu9A4p034dOXj-a9sHenAfaJdoJcUbFhlnYDvLB4ZLi5cBcUPedsaAoHDEALw_wcB&slingshot=2007](https://www.priceline.com/home/?city-id=3000012761&action=home&AppDL=True&cityname=West%20Yellowstone&cityID=3000012761&match=e&kw=west%20yellowstone&adp=&refid=PLGOOGLECPC&refclickid=d:cALL16844010740g48410781280011757370767kwd-138980860|9033288|&gad_source=1&gad_campaignid=11757370767&gbraid=0AAAAAD-_E2YcuTntZ13aWljWL9ivo3CiO&gclid=Cj0KCQjwjIPSBhCCARIsABGyK7vQu9A4p034dOXj-a9sHenAfaJdoJcUbFhlnYDvLB4ZLi5cBcUPedsaAoHDEALw_wcB&slingshot=2007)
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m52!1m12!1m3!1d724343.534305037!2d-111.434274567608!3d44.83242347953396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m37!3e0!4m5!1s0x534fb7c3542df5d1%3A0xadd9126b7382951f!2sGardiner%2C%20Montana%2059030!3m2!1d45.031880199999996!2d-110.7057663!4m5!1s0x5351d998c7645db1%3A0xbc4781021f463d55!2sNorris%20Geyser%20Basin%2C%20Wyoming%2082190!3m2!1d44.7262352!2d-110.7042812!4m5!1s0x534e231e753ad155%3A0x5a1638b6ec5cdda8!2sGrand%20Canyon%20Of%20The%20Yellowstone%2C%20N%20Rim%20Dr%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.719799599999995!2d-110.4853072!4m5!1s0x534e23f6fa3de58f%3A0x85ad9e5405434281!2sArtist%20Point%2C%20Wyoming%2082190!3m2!1d44.7210494!2d-110.4793696!4m5!1s0x534e1f5a89dcc757%3A0x678dd1ebdec42901!2sHayden%20Valley%2C%20Wyoming%2082190!3m2!1d44.6438286!2d-110.4554805!4m5!1s0x5351b9c07a322b03%3A0xdd639df748902010!2sWest%20Yellowstone%2C%20Montana%2059758!3m2!1d44.662149299999996!2d-111.1041092!5e0!3m2!1sen!2sus!4v1782710120141!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 ---
 
 ### Day 4 — Geyser Day: Old Faithful + Grand Prismatic + West Thumb
 
-**Base:** West Yellowstone
+> **Base:** West Yellowstone
 
-This is the day most people picture when they think of Yellowstone. If you're working remotely on a weekday, this is an ideal "morning work block, afternoon park" day — West Yellowstone is only 40–50 minutes from Old Faithful and Grand Prismatic.
+This is the day most people picture when they think of Yellowstone. 
+If you're working remotely on a weekday, this is an ideal "morning work block, afternoon park" day 
 
-**Old Faithful + Upper Geyser Basin**
+— West Yellowstone is only 40–50 minutes from Old Faithful and Grand Prismatic.
+
+##### Old Faithful + Upper Geyser Basin
 
 Old Faithful erupts roughly every 90 minutes. The **NPS Yellowstone app** shows the predicted next eruption time — use it. But don't just watch Old Faithful and leave. The **Upper Geyser Basin** surrounding it contains the highest concentration of geysers anywhere on earth. Walk the boardwalks for at least 60–90 minutes. You'll see Castle Geyser, Grand Geyser, Riverside Geyser, and dozens of smaller features.
 
-**Grand Prismatic Spring**
+##### Grand Prismatic Spring
 
-Yellowstone's largest hot spring and its most visually iconic. The vivid rings of color — deep blue center, turquoise, green, yellow, orange — come from thermophile bacteria living in bands at different temperatures.
+Yellowstone's largest hot spring and its most visually iconic. The vivid rings of color — deep blue
+center, turquoise, green, yellow, orange — come from thermophile bacteria living in bands at 
+different temperatures.
 
-> **Key tip:** The boardwalk view from the ground level is good but doesn't show the full scale. Walk the **Grand Prismatic Overlook Trail** (~0.6 miles, moderate) for the aerial perspective. The overlook view is the one in every photograph.
+> **Key tip:** The boardwalk view from the ground level is good but doesn't show the full scale. 
+> Walk the **Grand Prismatic Overlook Trail** (~0.6 miles, moderate) for the aerial perspective. 
+> The overlook view is the one in every photograph.
 
-> **Parking tip:** Grand Prismatic parking is brutally crowded between 10am and 6pm. Go before 9am or after 6pm. The Fairy Falls trailhead overflow lot a quarter mile north is often less crowded.
+> **Parking tip:** Grand Prismatic parking is brutally crowded between 10am and 6pm. 
+> Go before 9am or after 6pm. The Fairy Falls trailhead overflow lot a quarter mile north is often less crowded.
 
 **Optional: West Thumb Geyser Basin**
 
-If you have energy in the evening, West Thumb is where hydrothermal features sit directly on the shore of Yellowstone Lake. It's uncrowded compared to the geyser basins and serene in evening light.
+If you have energy in the evening, West Thumb is where hydrothermal features sit directly on the shore of Yellowstone Lake.
+It's uncrowded compared to the geyser basins and serene in evening light.
 
-- **Sleep:** West Yellowstone again, or Old Faithful Inn if you've booked it
+- **Sleep:** West Yellowstone again, or **Old Faithful Inn** if you've booked it
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d728000.151629458!2d-111.49658697498876!3d44.54073905298695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e0!4m5!1s0x5351b9c07a322b03%3A0xdd639df748902010!2sWest%20Yellowstone%2C%20Montana%2059758!3m2!1d44.662149299999996!2d-111.1041092!4m5!1s0x5351ebbea155a649%3A0xdff59dcdc8fb8761!2sGrand%20Prismatic%20Spring%2C%20Wyoming%2082190!3m2!1d44.5250346!2d-110.8381793!4m5!1s0x5351ed1b81592e5f%3A0x83b7c275a6822a1!2sOld%20Faithful%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.4604788!2d-110.8281377!4m5!1s0x5351ed1b8eb7743f%3A0x88f78d2d0d2e822b!2sUpper%20Geyser%20Basin%2C%20Wyoming%2082190!3m2!1d44.460035999999995!2d-110.82921979999999!4m5!1s0x5351fa47410f51e5%3A0xf97718a86bf80641!2sWest%20Thumb%20Geyser%20Basin%2C%20Wyoming%2082190!3m2!1d44.4185508!2d-110.5729846!5e0!3m2!1sen!2sus!4v1782710772614!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 ---
 
@@ -217,24 +260,29 @@ If you have energy in the evening, West Thumb is where hydrothermal features sit
 
 The Yellowstone South Entrance connects directly to Grand Teton National Park — no highway detour. Drive south from West Thumb, through the South Entrance, and you're in the Tetons within 20 minutes.
 
-The Tetons are a completely different visual experience from Yellowstone. Where Yellowstone is about what's underneath the ground, Grand Teton is about what's above it: a wall of granite peaks rising abruptly from the valley floor with almost no foothills to reduce the drama.
+The Tetons are **a completely different visual experience** from Yellowstone. 
+
+Where Yellowstone is about _what's underneath the ground_, Grand Teton is about _what's above it_:
+a wall of granite peaks rising abruptly from the valley floor with almost no foothills to reduce the drama.
 
 **Afternoon scenic stops (take these at a relaxed pace):**
 
-**Oxbow Bend**
+##### Oxbow Bend
+
 One of the most photographed spots in Grand Teton. The slow bend of the Snake River creates a mirror reflection of Mount Moran on calm mornings. Also excellent for moose, beaver, osprey, and trumpeter swans. Don't skip this one.
 
-**Snake River Overlook**
+##### Snake River Overlook
 Ansel Adams made this view famous in 1942 and it hasn't changed. Pull off, look south, take the photograph.
 
-**Mormon Row**
+##### Mormon Row
 Two historic homestead barns in front of the Teton range. Sunrise here is spectacular — worth setting an alarm for Day 6 if you're staying nearby.
 
-**Schwabacher Landing**
+##### Schwabacher Landing
 A short dirt road leads to a beaver pond with Teton reflections. Moose are regularly spotted here morning and evening.
 
 - **Sleep:** Jackson or Moose area — budget motels in Jackson from ~$110/night
 
+<iframe src="https://www.google.com/maps/embed?pb=!1m52!1m12!1m3!1d733815.6447687246!2d-111.4651079577459!3d44.07370616139354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m37!3e0!4m5!1s0x5351b9c07a322b03%3A0xdd639df748902010!2sWest%20Yellowstone%2C%20Montana%2059758!3m2!1d44.662149299999996!2d-111.1041092!4m5!1s0x53525b49304b6f9f%3A0xcb32b074a90732a8!2sOxbow%20Bend%2C%20Wyoming%2083013!3m2!1d43.862719!2d-110.5488182!4m5!1s0x535256e59bea1933%3A0x8913ee718fa2f087!2sSnake%20River%20Overlook%2C%20Moose%2C%20WY%2083012!3m2!1d43.75365!2d-110.62412499999999!4m5!1s0x5352558615c92031%3A0x49efc9e404ac7d87!2sSchwabacher%20Landing%2C%20US-191%2C%20Moose%2C%20WY%2083012!3m2!1d43.711565199999995!2d-110.6703898!4m5!1s0x5352ffaf1fd264f3%3A0xf565a4471e70a447!2sMormon%20Row%2C%20Moose%2C%20WY%2083012!3m2!1d43.6654858!2d-110.66450929999999!4m5!1s0x53531a58fccf7f4b%3A0x3d1c01cbb13a835c!2sJackson%2C%20Wyoming!3m2!1d43.4799291!2d-110.76242819999999!5e0!3m2!1sen!2sus!4v1782710976311!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 ---
 
 ### Day 6 — Grand Teton: Jenny Lake Day
@@ -243,7 +291,7 @@ A short dirt road leads to a beaver pond with Teton reflections. Moose are regul
 
 Your most relaxed, most photogenic day of the whole trip.
 
-**Jenny Lake**
+##### Jenny Lake
 
 Jenny Lake sits at the base of the central Teton peaks — Teewinot, Mount Owen, and the Grand Teton itself rising directly behind it. The water is impossibly clear. This is the heart of Grand Teton National Park.
 
@@ -257,11 +305,13 @@ Jenny Lake sits at the base of the central Teton peaks — Teewinot, Mount Owen,
 
 Allow 3–5 hours for Hidden Falls + Inspiration Point at a comfortable pace.
 
-**Evening: golden hour photography**
+##### Evening: golden hour photography
 
 Return to **Schwabacher Landing** or **Oxbow Bend** in the last 90 minutes of daylight. The reflection light on the Tetons at golden hour is the image you came for.
 
 - **Sleep:** Jackson/Moose one more night, or reposition to Bozeman if you want an earlier return
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d369382.448597528!2d-110.96514803764153!3d43.67312127319573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e0!4m5!1s0x53531a58fccf7f4b%3A0x3d1c01cbb13a835c!2sJackson%2C%20Wyoming!3m2!1d43.4799291!2d-110.76242819999999!4m5!1s0x5352547d90b1deff%3A0x99126bffbd5681a7!2sJenny%20Lake%20Visitor%20Center%2C%20Moose%2C%20WY%2083012!3m2!1d43.751481299999995!2d-110.72234209999999!4m5!1s0x5352536907737881%3A0x3dd31893092961f8!2sHidden%20Falls%2C%20Wyoming%2083414!3m2!1d43.7655514!2d-110.7508814!4m5!1s0x5352536fb73a73bd%3A0x7c826d058829b46a!2sInspiration%20Point%2C%20Wyoming%2083414!3m2!1d43.767154999999995!2d-110.74854619999999!4m5!1s0x5352537ab3be1413%3A0xb3224403ba475107!2sCascade%20Canyon%2C%20Wyoming%2083414!3m2!1d43.7652108!2d-110.74465719999999!4m5!1s0x5352558615c92031%3A0x49efc9e404ac7d87!2sSchwabacher%20Landing%2C%20US-191%2C%20Moose%2C%20WY%2083012!3m2!1d43.711565199999995!2d-110.6703898!4m5!1s0x53525b49304b6f9f%3A0xcb32b074a90732a8!2sOxbow%20Bend%2C%20Wyoming%2083013!3m2!1d43.862719!2d-110.5488182!5e0!3m2!1sen!2sus!4v1782711251819!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 ---
 
@@ -269,13 +319,17 @@ Return to **Schwabacher Landing** or **Oxbow Bend** in the last 90 minutes of da
 
 **Total drive (split recommended):**
 
-| Segment | Time |
-|---------|------|
-| Jackson → Bozeman | ~4h 10min |
-| Bozeman → Spokane | ~5h (via I-90) |
+| Segment           | Time               |
+|:------------------|:-------------------|
+| Jackson → Bozeman | ~4h 10min          |
+| Bozeman → Spokane | ~5h (via I-90)     |
 | Spokane → Seattle | ~4h (next morning) |
 
-**The case for splitting:** Don't try to drive Jackson to Seattle in one day. It's 13+ hours and you'll arrive exhausted having watched beautiful scenery disappear in the dark. Bozeman to Spokane in the afternoon, then Spokane to Seattle fresh the next morning, is the far better call — and a Spokane motel is ~$70.
+**The case for splitting:** Don't try to drive Jackson to Seattle in one day. It's 13+ hours and 
+you'll arrive exhausted having watched beautiful scenery disappear in the dark. 
+
+Bozeman to Spokane in the afternoon, then Spokane to Seattle fresh the next morning, is the far 
+better call — and a Spokane motel is ~$70.
 
 If you have time in Bozeman, it's worth stopping for a meal. Downtown Bozeman has excellent food.
 
@@ -293,16 +347,16 @@ Clean, easy, scenic drive over the Cascades. You're home by early afternoon.
 
 ### Yellowstone
 
-| Sight | Why it matters |
-|-------|----------------|
-| Old Faithful + Upper Geyser Basin | World's highest concentration of geysers |
-| Grand Prismatic Spring overlook | The iconic rainbow hot spring — overlook view only |
-| Grand Canyon of the Yellowstone + Artist Point | 308-foot waterfall in a 1,000-ft colored canyon |
-| Lamar Valley | Best wildlife viewing in the lower 48 |
-| Mammoth Hot Springs terraces | Alien travertine formations unlike anything else |
-| Norris Geyser Basin | Hottest, most dynamic thermal area in the park |
-| Hayden Valley | Bison, grizzlies, the Yellowstone River |
-| West Thumb Geyser Basin | Geysers on Yellowstone Lake shore — usually quiet |
+| Sight                                          | Why it matters                                     |
+|:-----------------------------------------------|:---------------------------------------------------|
+| Old Faithful + Upper Geyser Basin              | World's highest concentration of geysers           |
+| Grand Prismatic Spring overlook                | The iconic rainbow hot spring — overlook view only |
+| Grand Canyon of the Yellowstone + Artist Point | 308-foot waterfall in a 1,000-ft colored canyon    |
+| Lamar Valley                                   | Best wildlife viewing in the lower 48              |
+| Mammoth Hot Springs terraces                   | Alien travertine formations unlike anything else   |
+| Norris Geyser Basin                            | Hottest, most dynamic thermal area in the park     |
+| Hayden Valley                                  | Bison, grizzlies, the Yellowstone River            |
+| West Thumb Geyser Basin                        | Geysers on Yellowstone Lake shore — usually quiet  |
 
 ### Grand Teton
 
