@@ -9,22 +9,16 @@ There's a road trip that starts in Seattle, cuts east across Washington and Mont
 
 **Trip at a glance:**
 
-| Detail | Info |
-|--------|------|
-| Total length | 8 days (flexible) |
-| Total loop distance | ~1,800 miles |
-| Parks covered | Yellowstone + Grand Teton |
-| Park entry | $80 America the Beautiful pass (covers both) |
-| Best season | Late May through September |
-| Start day | Any day — the plan adapts to weekdays or weekends |
+| Detail              | Info                                              |
+|:--------------------|:--------------------------------------------------|
+| Total length        | 8 days (flexible)                                 |
+| Total loop distance | ~1,800 miles                                      |
+| Parks covered       | Yellowstone + Grand Teton                         |
+| Park entry          | $80 America the Beautiful pass (covers both)      |
+| Best season         | Late May through September                        |
+| Start day           | Any day — the plan adapts to weekdays or weekends |
 
----
-
-## Before you leave Seattle: the one purchase that changes everything
-
-Buy the **America the Beautiful annual pass ($80)** before you leave. Yellowstone charges $35 per car per week. Grand Teton charges $35. The pass covers both — plus every other federal park you visit for a full year. It pays for itself on this trip alone.
-
-Pick one up at [store.usgs.gov](https://store.usgs.gov/pass) or at any park entrance.
+[https://www.nps.gov/yell/planyourvisit/conditions.htm](https://www.nps.gov/yell/planyourvisit/conditions.htm)
 
 ---
 
@@ -38,32 +32,36 @@ This plan forms a **geographic loop**:
 Seattle → Spokane → Gardiner, MT → West Yellowstone → Jackson, WY → Bozeman → Spokane → Seattle
 ```
 
-Each stop serves a specific purpose. You never backtrack. Every drive leads to the next major sight.
-
 <iframe src="https://www.google.com/maps/embed?pb=!1m52!1m12!1m3!1d2690.027344421789!2d-122.3327128027894!3d47.60615797272791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m37!3e0!4m5!1s0x5490102c93e83355%3A0x102565466944d59a!2sSeattle%2C%20Washington!3m2!1d47.6061389!2d-122.33284809999999!4m5!1s0x549e185c30bbe7e5%3A0xddfcc9d60b84d9b1!2sSpokane%2C%20Washington!3m2!1d47.6579711!2d-117.42353179999999!4m5!1s0x534fb7c3542df5d1%3A0xadd9126b7382951f!2sGardiner%2C%20Montana%2059030!3m2!1d45.031880199999996!2d-110.7057663!4m5!1s0x5351b9c07a322b03%3A0xdd639df748902010!2sWest%20Yellowstone%2C%20Montana%2059758!3m2!1d44.662149299999996!2d-111.1041092!4m5!1s0x53531a58fccf7f4b%3A0x3d1c01cbb13a835c!2sJackson%2C%20Wyoming!3m2!1d43.4799291!2d-110.76242819999999!4m5!1s0x5345444c4fba8813%3A0x63f5d064f73b60aa!2sBozeman%2C%20Montana!3m2!1d45.679311899999995!2d-111.03725899999999!5e0!3m2!1sen!2sus!4v1782674277068!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+Each stop serves a specific purpose. You never backtrack. Every drive leads to the next major sight.
 
 ---
 
-## Budget strategy
+## Accomodation strategy
 
 The goal here is simple: **spend money on food and experiences, not on hotel rooms you'll barely use.**
 
 ### Accommodation
 
-| Stop | Type | Estimated nightly cost |
-|------|------|------------------------|
-| Spokane | Budget motel (Days 0 & 7) | $65–85/night |
-| Gardiner, MT | Motel or cabin | $90–120/night |
-| West Yellowstone | Budget motel | $95–130/night |
-| Jackson, WY | Budget motel (town side) | $110–150/night |
+| Stop             | Type                      | Estimated nightly cost  |
+|:-----------------|:--------------------------|:------------------------|
+| Spokane          | Budget motel (Days 0 & 7) | $65–85/night            |
+| Gardiner, MT     | Motel or cabin            | $90–120/night           |
+| West Yellowstone | Budget motel              | $95–130/night           |
+| Jackson, WY      | Budget motel (town side)  | $110–150/night          |
 
-**Where to splurge (if anywhere):** If you're going to spend extra on one night of accommodation, make it the **Old Faithful Inn** inside Yellowstone. Waking up 200 yards from Old Faithful and catching an eruption at dawn with almost no one around is a genuinely different experience. Book far in advance at [yellowstonenationalparklodges.com](https://www.yellowstonenationalparklodges.com).
+**Where to splurge (if anywhere):** If you're going to spend extra on one night of accommodation, make it the **Old Faithful Inn** inside Yellowstone. 
+Waking up 200 yards from Old Faithful and catching an eruption at dawn with almost no one around is a genuinely different experience.
+
+Book far in advance at [yellowstonenationalparklodges.com](https://www.yellowstonenationalparklodges.com).
 
 ### Fuel
 
 Roughly $180–220 total for the full loop in a mid-size car averaging 30 mpg.
 
-> **Important:** Fuel inside Yellowstone is expensive and often limited. Fill up in **Gardiner** before entering from the north, or in **West Yellowstone** before entering from the west. Don't rely on finding cheap gas inside the park.
+> **Important:** Fuel inside Yellowstone is expensive and often limited. Fill up in **Gardiner** before entering from the north,
+> or in **West Yellowstone** before entering from the west. Don't rely on finding cheap gas inside the park.
 
 ### Food
 
@@ -75,11 +73,11 @@ Pack a **cooler for in-park lunches** — sandwiches, snacks, and drinks you can
 
 ### Park fees
 
-| Fee | Cost |
-|-----|------|
-| America the Beautiful pass | $80/year — covers all parks |
-| Jenny Lake shuttle boat (Grand Teton) | ~$20 roundtrip per person |
-| Bear spray rental | ~$10–15/day in Gardiner or West Yellowstone |
+| Fee                                   | Cost                                        |
+|:--------------------------------------|:--------------------------------------------|
+| America the Beautiful pass            | $80/year — covers all parks                 |
+| Jenny Lake shuttle boat (Grand Teton) | ~$20 roundtrip per person                   |
+| Bear spray rental                     | ~$10–15/day in Gardiner or West Yellowstone |
 
 ---
 
@@ -350,23 +348,121 @@ If traveling in late May, check road openings the morning of any major park driv
 
 ## Quick reference: drive times
 
-| Segment | Drive time |
-|---------|-----------|
-| Seattle → Spokane | 4h 10min |
-| Spokane → Missoula | 3h 10min |
-| Missoula → Bozeman | 3h |
-| Bozeman → Gardiner | 1h 20min |
-| Gardiner → Lamar Valley | 53min |
-| Gardiner → Canyon Village | 1h 5min |
-| Canyon → West Yellowstone | 57min |
-| West Yellowstone → Old Faithful | 47min |
-| West Yellowstone → Grand Prismatic | 40min |
-| West Yellowstone → South Entrance (Grand Teton) | ~45min |
-| South Entrance → Jackson | ~30min |
-| Jackson → Bozeman | 4h 10min |
-| Bozeman → Spokane | ~5h |
-| Spokane → Seattle | 4h |
+| Segment                                         | Drive time |
+|:------------------------------------------------|:-----------|
+| Seattle → Spokane                               | 4h 10min   |
+| Spokane → Missoula                              | 3h 10min   |
+| Missoula → Bozeman                              | 3h         |
+| Bozeman → Gardiner                              | 1h 20min   |
+| Gardiner → Lamar Valley                         | 53min      |
+| Gardiner → Canyon Village                       | 1h 5min    |
+| Canyon → West Yellowstone                       | 57min      |
+| West Yellowstone → Old Faithful                 | 47min      |
+| West Yellowstone → Grand Prismatic              | 40min      |
+| West Yellowstone → South Entrance (Grand Teton) | ~45min     |
+| South Entrance → Jackson                        | ~30min     |
+| Jackson → Bozeman                               | 4h 10min   |
+| Bozeman → Spokane                               | ~5h        |
+| Spokane → Seattle                               | 4h         |
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m76!1m12!1m3!1d1516383.8915568772!2d-114.05484136422407!3d44.91054216500523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m61!3e0!4m5!1s0x535dcc2a50f367cb%3A0xe9e31277ca94802e!2sMissoula%2C%20Montana!3m2!1d46.8721284!2d-113.9940314!4m5!1s0x534fb7c3542df5d1%3A0xadd9126b7382951f!2sGardiner%2C%20Montana%2059030!3m2!1d45.031880199999996!2d-110.7057663!4m5!1s0x534e48bb4206d1a3%3A0xfc20369cbc9c786f!2sLamar%20Valley%2C%20NE%20Entrance%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.868520499999995!2d-110.17464319999999!4m5!1s0x534e241055a133cf%3A0x325aadb6e0fa6709!2sCanyon%20Village%2C%20Wyoming%2082190!3m2!1d44.733826799999996!2d-110.4899255!4m5!1s0x5351b9c07a322b03%3A0xdd639df748902010!2sWest%20Yellowstone%2C%20Montana%2059758!3m2!1d44.662149299999996!2d-111.1041092!4m5!1s0x5351ed1b81592e5f%3A0x83b7c275a6822a1!2sOld%20Faithful%2C%20Yellowstone%20National%20Park%2C%20WY%2082190!3m2!1d44.4604788!2d-110.8281377!4m5!1s0x5351ebbea155a649%3A0xdff59dcdc8fb8761!2sGrand%20Prismatic%20Spring%2C%20Wyoming%2082190!3m2!1d44.5250346!2d-110.8381793!4m5!1s0x53523d239f169863%3A0xe5254ceaeb137e6a!2sSouth%20Entrance%2C%20S%20Entrance%20Rd%2C%20Moran%2C%20WY%2083013!3m2!1d44.135771399999996!2d-110.66682069999999!4m5!1s0x53531a58fccf7f4b%3A0x3d1c01cbb13a835c!2sJackson%2C%20Wyoming!3m2!1d43.4799291!2d-110.76242819999999!4m5!1s0x5345444c4fba8813%3A0x63f5d064f73b60aa!2sBozeman%2C%20Montana!3m2!1d45.679311899999995!2d-111.03725899999999!5e0!3m2!1sen!2sus!4v1782700302957!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+---
+
+## The entrances the main plan skips — and whether they're worth it
+
+Yellowstone has five entrances. The core itinerary above uses three: North (Gardiner), West (West Yellowstone), and South (into Grand Teton). Here's an honest look at the other two — the Northeast and East entrances — so you have the full picture and can decide whether to add them.
 
 ---
 
-*Last updated for late May / summer travel. Road opening dates for Yellowstone vary year to year — always verify at nps.gov before your trip.*
+### Northeast Entrance — Cooke City & Silver Gate
+
+**Verdict: Already in your plan. You're driving this road on Day 2.**
+
+The Northeast Entrance sits at the far end of the Lamar Valley road, right where it exits the park into the tiny towns of Silver Gate and Cooke City, Montana. If you drive Lamar Valley from Gardiner, you're essentially driving toward this entrance the whole time.
+
+**What's here:**
+
+- The Lamar Valley wildlife corridor (covered in Day 2)
+- **Cooke City** — a genuinely charming one-street mountain town with a couple of good diners and a backcountry gear shop. Worth a stop for coffee or lunch if you've driven all the way out
+- **Silver Gate** — even smaller, a few cabins and lodges right at the park boundary
+- **Barronette Peak** — a dramatic ridge visible from the road, often with mountain goats on its face
+
+**Is it worth going all the way to the entrance sign?**
+
+If you're already doing Lamar Valley properly, yes — you may as well drive to the end of the road, poke your head into Cooke City for 20 minutes, and turn around. It adds maybe an hour to the day. It's not a separate day or a significant detour; it's just the logical end of your Lamar drive.
+
+**What you won't find here:** Major thermal features, developed visitor infrastructure, or anything that competes with the park's interior sights. The Northeast Entrance is a wildlife and scenery corridor, not a destination unto itself.
+
+**Must do vs. good to do:**
+
+| | Verdict |
+|--|---------|
+| Lamar Valley wildlife drive | **Must do** — already in the plan |
+| Driving to the actual Northeast Entrance / Cooke City | Good to do — tack it on if you're already out there |
+| Sleeping in Cooke City or Silver Gate | Skip — Gardiner is a far better base |
+
+---
+
+### East Entrance — Cody, Wyoming
+
+**Verdict: Skip on a first trip. Worth it as a dedicated extra day if you have one to spare.**
+
+The East Entrance is the one this itinerary genuinely omits, and deliberately so. It comes from **Cody, Wyoming** — a 52-mile drive east of the park on US-20 — and leads into Yellowstone through **Sylvan Pass** (8,530 ft) to **Fishing Bridge** and the north shore of **Yellowstone Lake**.
+
+It's beautiful. It's also not on the way to anything else on this route.
+
+**What's here that you can't get from the main plan:**
+
+**Sylvan Pass and the East Entrance road**
+The drive in from Cody through Sylvan Pass is arguably the most dramatic entrance road in the park — steep canyon walls, a high mountain pass, very little traffic compared to the West or North entrances. If you care about the drive itself as an experience, this one is special.
+
+**Fishing Bridge area**
+Where the Yellowstone River exits Yellowstone Lake. Good bird watching (white pelicans, osprey), an RV park, and a visitor center with a natural history museum focusing on the lake ecosystem. It's pleasant but not essential — most of what Fishing Bridge offers overlaps with what you see at West Thumb and Hayden Valley.
+
+**Cody, Wyoming**
+A proper western town with real history. The **Buffalo Bill Center of the West** is a genuinely excellent museum complex — five museums under one roof covering Plains Indian culture, western art, firearms history, natural history, and Buffalo Bill himself. If you're interested in the history of the American West at all, this is worth half a day on its own. Cody also has good restaurants and better motel prices than Jackson.
+
+**Is the East Entrance worth an extra day?**
+
+Honestly: **only if Cody itself interests you**, or if you specifically want to drive Sylvan Pass. The sights accessible from the East Entrance — Fishing Bridge, Yellowstone Lake's north shore — are good but not dramatically different from what you already see at West Thumb and Hayden Valley. You're not missing a must-see thermal basin or a unique landscape type by skipping it.
+
+If you do add it, the cleanest way to work it in is:
+
+**Option A — Add it between West Yellowstone and Grand Teton (extends trip by 1 day)**
+
+After your geyser day (Day 4), instead of heading straight south to Grand Teton:
+1. Drive east from West Yellowstone through the park interior to Fishing Bridge (~1h)
+2. Exit via the East Entrance and drive to Cody (~52min)
+3. Spend the afternoon / evening in Cody — Buffalo Bill Center of the West, dinner
+4. Sleep in Cody (~$90–110/night, better value than Jackson)
+5. Next morning, drive south from Cody to Grand Teton via US-20 and US-89 (~2.5h)
+
+This adds one night and ~200 miles but keeps the loop clean and gives you Cody as a genuine stop rather than a detour.
+
+**Option B — Out-and-back from West Yellowstone (no extra night)**
+
+Drive from West Yellowstone to Fishing Bridge via the park interior (~1h), continue to the East Entrance and a quick look at Sylvan Pass, then turn around and come back. This works but you're spending 3+ hours driving a road you've partially seen before. Only worth it if Sylvan Pass specifically is on your list.
+
+**Must do vs. good to do:**
+
+| Sight                                  | Verdict                                                                |
+|:---------------------------------------|:-----------------------------------------------------------------------|
+| Sylvan Pass scenic drive               | Good to do — the best reason to use this entrance                      |
+| Fishing Bridge area                    | Good to do — pleasant, not essential                                   |
+| Yellowstone Lake north shore           | Good to do — similar feel to West Thumb which you already see          |
+| Buffalo Bill Center of the West (Cody) | **Must do if you go to Cody at all** — genuinely excellent             |
+| Cody overall as a stop                 | Good to do — underrated western town, better value than Jackson        |
+| East Entrance as a primary route       | Skip on a first trip — adds driving without adding new landscape types |
+
+---
+
+### Summary: entrances by priority
+
+| Entrance                | Used in main plan             | Verdict                                                                                                 |
+|:------------------------|:------------------------------|:--------------------------------------------------------------------------------------------------------|
+| North (Gardiner)        | Yes — Days 1–3                | Essential. Best base for wildlife and terraces.                                                         |
+| West (West Yellowstone) | Yes — Days 3–5                | Essential. Best base for geysers.                                                                       |
+| South (Grand Teton)     | Yes — Day 5 exit              | Essential for the loop.                                                                                 |
+| Northeast (Cooke City)  | Partially — Day 2 Lamar drive | Already in the plan. Drive to the end if you're out there.                                              |
+| East (Cody)             | No                            | Worth it as a dedicated extra day only if Cody / Sylvan Pass appeals to you. Skip on a tight itinerary. |
