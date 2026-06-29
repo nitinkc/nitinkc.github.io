@@ -202,7 +202,7 @@ This is one of Yellowstone's defining images and it earns that status in person.
 
 > Allow 45–60 minutes.
 
-## Hayden Valley
+##### Hayden Valley
 
 Between Canyon and the park's interior, Hayden Valley is another excellent wildlife zone — especially 
 for bison and sometimes grizzlies near the Yellowstone River. 
