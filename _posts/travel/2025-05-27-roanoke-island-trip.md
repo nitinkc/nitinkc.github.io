@@ -10,7 +10,7 @@ tags:
 [Roanoke Island](https://en.wikipedia.org/wiki/Roanoke_Island) and [The Cape Point Campground](https://www.recreation.gov/camping/campgrounds/251945)
 trips marks the coast-to-coast journey for the year 2025 during the Memorial Day Weekend from Nashville
 
-## Points of intrest 
+## Points of interest 
 
 - Cape Point Campground
 

@@ -1,7 +1,7 @@
 ---
 title: "Seattle to Yellowstone & Grand Teton: The Road Trip Plan"
 date: 2026-06-28 11:00:00
-categories: [travel, road-trip, national-parks]
+categories: [Travel]
 tags: [yellowstone, grand-teton, seattle, road-trip, budget-travel, pacific-northwest]
 ---
 
@@ -9,6 +9,9 @@ tags: [yellowstone, grand-teton, seattle, road-trip, budget-travel, pacific-nort
 
 
 There's a road trip that starts in Seattle, cuts east across Washington and Montana, drops into one of the most geologically wild places on earth, swings south into the Tetons, and loops back home — all without breaking the bank. This is that plan.
+
+- [https://www.nps.gov/yell/index.htm](https://www.nps.gov/yell/index.htm)
+- [Park conditions](https://www.nps.gov/yell/planyourvisit/conditions.htm) 
 
 ## Quick reference: drive times
 
@@ -21,7 +24,6 @@ There's a road trip that starts in Seattle, cuts east across Washington and Mont
 | Best season         | Late May through September                        |
 | Start day           | Any day — the plan adapts to weekdays or weekends |
 
-[https://www.nps.gov/yell/planyourvisit/conditions.htm](https://www.nps.gov/yell/planyourvisit/conditions.htm)
 
 | Segment                                         | Drive time |
 |:------------------------------------------------|:-----------|
@@ -29,9 +31,9 @@ There's a road trip that starts in Seattle, cuts east across Washington and Mont
 | (Day 2) Spokane → Missoula                      | 3h 10min   |
 | (Day 2) Missoula → Bozeman                      | 3h         |
 | (Day 2) Bozeman → Gardiner                      | 1h 20min   |
-| Gardiner → Lamar Valley                         | 53min      |
-| Gardiner → Canyon Village                       | 1h 5min    |
-| Canyon → West Yellowstone                       | 57min      |
+| (Day 3) Gardiner → Lamar Valley                 | 53min      |
+| (Day 3) Gardiner → Canyon Village               | 1h 5min    |
+| (Day 3) Canyon → West Yellowstone               | 57min      |
 | West Yellowstone → Old Faithful                 | 47min      |
 | West Yellowstone → Grand Prismatic              | 40min      |
 | West Yellowstone → South Entrance (Grand Teton) | ~45min     |
