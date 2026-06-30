@@ -1,10 +1,12 @@
 ---
-title: "Seattle to Crater Lake: The Complete Budget Weekend Road Trip Plan"
+title: "Seattle to Crater Laken"
 date: 2026-06-28
 categories: [Travel]
-tags: [crater-lake, oregon, seattle, road-trip, budget-travel, pacific-northwest, weekend-trip]
-description: "A complete weekend road trip plan from Seattle to Crater Lake National Park — budget-first, start-any-Friday, with honest must-do vs. good-to-do breakdowns for every sight."
+tags: [crater-lake, oregon, seattle, road-trip, pacific-northwest, weekend-trip]
 ---
+
+{% include toc title="Index" %}
+
 
 Crater Lake shouldn't work. A volcano collapsed 7,700 years ago, left behind a 1,943-foot-deep (592.2 meters) 
 caldera , and it filled entirely with rain and snowmelt — no rivers in, no rivers out. 
@@ -73,11 +75,19 @@ Seattle → Tacoma → Olympia → Portland → Salem → Eugene → Roseburg �
 | Roseburg → Crater Lake (via Hwy 138) | ~1h 45min      |
 | **Total**                            | **~7h 30min**  |
 
-The Hwy 138 stretch from Roseburg into the park through Umpqua National Forest is genuinely beautiful — tall Douglas fir, waterfalls accessible right off the road, and very little traffic. This is not a boring freeway slog the whole way.
+The Hwy 138 stretch from Roseburg into the park through **Umpqua National Forest** is genuinely 
+beautiful — tall Douglas fir, waterfalls accessible right off the road, and very little traffic. 
+
+This is not a boring freeway slog the whole way.
 
 **Worth a stop on this route: Toketee Falls**
 
-About 60 miles east of Roseburg on Hwy 138, a 0.4-mile trail leads to Toketee Falls — a two-tiered, 120-foot waterfall framed by columnar basalt. It's 15 minutes off the highway, takes 20 minutes round trip, and is one of the best roadside waterfall stops in Oregon. Don't skip it if you're on this route.
+About 60 miles east of Roseburg on Hwy 138, a 0.4-mile trail leads to Toketee Falls — a two-tiered, 
+120-foot waterfall framed by columnar basalt. It's 15 minutes off the highway, takes 20 minutes 
+round trip, and is one of the best roadside waterfall stops in Oregon. Don't skip it if you're on this route.
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m52!1m12!1m3!1d2875027.815295016!2d-125.3782985710189!3d45.2751995926934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m37!3e0!4m5!1s0x54900cad2000ee23%3A0x5e0390eac5d804f2!2sRedmond%2C%20Washington!3m2!1d47.673988099999995!2d-122.121512!4m5!1s0x54950b0b7da97427%3A0x1c36b9e6f6d18591!2sPortland%2C%20Oregon!3m2!1d45.515232!2d-122.67838529999999!4m5!1s0x54c119b0ac501919%3A0x57ec61894a43894d!2sEugene%2C%20Oregon!3m2!1d44.052121!2d-123.0896705!4m5!1s0x54c422c54b5959cd%3A0x5fa45e16d7c2fd91!2sRoseburg%2C%20Oregon!3m2!1d43.213510899999996!2d-123.3412843!4m5!1s0x54c6f6671e87c9a9%3A0x2c1a712b2dd37b56!2sToketee%20Falls%2C%20Idleyld%20Park%2C%20OR%2097447!3m2!1d43.2633418!2d-122.43371119999999!4m5!1s0x54c6170840e5e339%3A0x902bf2e1452fe3a3!2sCrater%20Lake%20National%20Park%2C%20Oregon!3m2!1d42.929476199999996!2d-122.12793939999999!5e0!3m2!1sen!2sus!4v1782718124951!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
 
 ### Option B — Scenic via Columbia River Gorge and Bend
 
@@ -94,25 +104,35 @@ Seattle → Portland → Hood River → Bend → Klamath Falls → Crater Lake
 | Bend → Crater Lake (via US-97 South)            | ~2h           |
 | **Total**                                       | **~7h 45min** |
 
-This route takes you past **Mount Hood**, through the Columbia River Gorge (one of the most scenic drives in the Pacific Northwest), and through **Bend** — a genuinely excellent food and craft beer stop. If you have flexibility in timing, this is the more memorable drive.
+This route takes you past **Mount Hood**, through the Columbia River Gorge (one of the most scenic 
+drives in the Pacific Northwest), and through **Bend** — a genuinely excellent food and craft 
+beer stop. If you have flexibility in timing, this is the more memorable drive.
 
 **Worth a stop on this route: Multnomah Falls**
 
-A 611-foot waterfall right off I-84, 30 minutes east of Portland. One of the most visited natural sites in Oregon — for good reason. If you take the gorge route, this is a 20-minute stop you won't regret.
+A 611-foot waterfall right off I-84, 30 minutes east of Portland. One of the most visited natural 
+sites in Oregon — for good reason. If you take the gorge route, this is a 20-minute stop you won't regret.
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m70!1m12!1m3!1d1438298.8542080421!2d-124.5186321409017!3d43.13340281185374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m55!3e0!4m5!1s0x54900cad2000ee23%3A0x5e0390eac5d804f2!2sRedmond%2C%20Washington!3m2!1d47.673988099999995!2d-122.121512!4m5!1s0x54950b0b7da97427%3A0x1c36b9e6f6d18591!2sPortland%2C%20Oregon!3m2!1d45.515232!2d-122.67838529999999!4m5!1s0x5495eb1e945a5877%3A0x1eeaf88627083bc6!2sMultnomah%20Falls%2C%20Oregon%2097014!3m2!1d45.5761597!2d-122.11577559999999!4m5!1s0x54960e614c1c0fe7%3A0x56f6cf7e4d7d985c!2sHood%20River%2C%20Oregon%2097031!3m2!1d45.708856999999995!2d-121.5122706!4m5!1s0x54b8c0ffa5d3d251%3A0x1088e7acc720d1b4!2sBend%2C%20Oregon!3m2!1d44.0581728!2d-121.31530959999999!4m5!1s0x54c8d45968f20ee3%3A0xf48d7ff528b99726!2sKlamath%20Falls%2C%20Oregon!3m2!1d42.224866999999996!2d-121.7816704!4m5!1s0x54c6170840e5e339%3A0x902bf2e1452fe3a3!2sCrater%20Lake%20National%20Park%2C%20Oregon!3m2!1d42.929476199999996!2d-122.12793939999999!4m5!1s0x54c6f6671e87c9a9%3A0x2c1a712b2dd37b56!2sToketee%20Falls%2C%20Idleyld%20Park%2C%20OR%2097447!3m2!1d43.2633418!2d-122.43371119999999!4m5!1s0x54c119b0ac501919%3A0x57ec61894a43894d!2sEugene%2C%20Oregon!3m2!1d44.052121!2d-123.0896705!5e0!3m2!1sen!2sus!4v1782718437335!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 ---
 
 ## The weekend plan
 
-This plan is structured for a **Friday evening departure from Seattle**. It works for any departure day with the same logic: driving day, park day 1, park day 2, drive home.
+This plan is structured for a **Friday evening departure from Seattle**. It works for any departure
+day with the same logic: driving day, park day 1, park day 2, drive home.
 
 ---
 
 ### Day 0 (Friday evening) — Seattle to Bend or Roseburg
 
-Don't try to drive to Crater Lake in one Friday shot. It's 7.5 hours, and you'll arrive exhausted after dark having seen nothing. Break the drive at **Bend** (5.5h from Seattle via the gorge route) or **Roseburg** (5.5h via I-5).
+Don't try to drive to Crater Lake in one Friday shot. It's 7.5 hours, and you'll arrive exhausted 
+after dark having seen nothing. Break the drive at **Bend** (5.5h from Seattle via the gorge route)
+or **Roseburg** (5.5h via I-5).
 
-**Bend** is the better overnight stop. It's a great mountain town with excellent restaurants, craft breweries, and budget-friendly motels. You'll be relaxed, fed, and 2 hours from the park for a fresh morning start.
+**Bend** is the better overnight stop. It's a great mountain town with excellent restaurants,
+craft breweries, and budget-friendly motels. You'll be relaxed, fed, and 2 hours from the park 
+for a fresh morning start.
 
 - **If taking Option A (I-5):** Sleep in Roseburg or Eugene — functional stops, not exciting, but cheap (~$75–90/night)
 - **If taking Option B (Gorge route):** Sleep in Bend — far more enjoyable, worth the slightly longer first-day drive (~$100–130/night)
@@ -130,7 +150,8 @@ Don't try to drive to Crater Lake in one Friday shot. It's 7.5 hours, and you'll
 
 #### Morning: Rim Village orientation
 
-Your first view of the lake will likely be from Rim Village, and it will stop you in your tracks. The water is that blue. Spend your first 30–45 minutes just orienting:
+Your first view of the lake will likely be from Rim Village, and it will stop you in your tracks. 
+The water is that blue. Spend your first 30–45 minutes just orienting:
 
 - **Sinnott Memorial Overlook** — a stone observation deck built 50 feet below the rim in 1931. Panoramic view of the lake, Wizard Island, and the caldera walls. Free exhibits on the park's geology. This is where to get your "how did this happen" context. **Must do.**
 - **Rim Village Visitor Center** — check current trail conditions, Rim Drive open sections, and ranger program schedule. Quick stop, worth it.
@@ -138,21 +159,21 @@ Your first view of the lake will likely be from Rim Village, and it will stop yo
 
 #### Midday: The full Rim Drive — 33 miles, 30+ overlooks
 
-<invoke name="tool_search">The Rim Drive is Crater Lake's signature experience. Do it **clockwise** starting from Rim Village — the afternoon light hits the east side of the caldera most beautifully in this direction.
+The Rim Drive is Crater Lake's signature experience. Do it **clockwise** starting from Rim Village — the afternoon light hits the east side of the caldera most beautifully in this direction.
 
 **Budget 3–4 hours** to do it properly. The speed limit is 35 mph and the road is narrow; it's not a fast drive. Pull over at everything that looks good.
 
 The overlooks worth getting out of the car for:
 
-| Overlook | What you see | Verdict |
-|----------|-------------|---------|
-| **Discovery Point** | First views of Wizard Island from the west rim | Must do |
-| **Watchman Overlook** | Best view of Wizard Island from above | Must do |
-| **Pumice Castle Overlook** | Orange pumice formation in the caldera wall | Good to do |
-| **Phantom Ship Overlook** | View of the small jagged rock island | Good to do |
-| **Sun Notch Trail** | Better angle on Phantom Ship, short 0.8mi walk | Must do (if doing Phantom Ship) |
-| **Cloudcap Overlook** | Highest road point in the park (7,865 ft) | Must do — views are spectacular |
-| **Kerr Notch** | Dramatic caldera wall view | Good to do |
+| Overlook                   | What you see                                   | Verdict                         |
+|:---------------------------|:-----------------------------------------------|:--------------------------------|
+| **Discovery Point**        | First views of Wizard Island from the west rim | Must do                         |
+| **Watchman Overlook**      | Best view of Wizard Island from above          | Must do                         |
+| **Pumice Castle Overlook** | Orange pumice formation in the caldera wall    | Good to do                      |
+| **Phantom Ship Overlook**  | View of the small jagged rock island           | Good to do                      |
+| **Sun Notch Trail**        | Better angle on Phantom Ship, short 0.8mi walk | Must do (if doing Phantom Ship) |
+| **Cloudcap Overlook**      | Highest road point in the park (7,865 ft)      | Must do — views are spectacular |
+| **Kerr Notch**             | Dramatic caldera wall view                     | Good to do                      |
 
 **On Wizard Island:** Wizard Island is a 763-foot cinder cone rising from the lake — it's a young volcano growing inside the caldera of an older one. Normally accessible by boat from Cleetwood Cove, the trail and boat tours are closed 2025–2028 for major renovation. Check [nps.gov/crla](https://www.nps.gov/crla/planyourvisit/wizardisland.htm) for current status.
 
@@ -169,6 +190,8 @@ The Watchman Peak trail climbs from the rim road to a historic fire lookout at 8
 **Parking note:** Watchman Overlook parking is small and fills early on weekends. Arrive by 5pm if doing a summer sunset.
 
 - **Sleep:** Mazama Village Campground (inside park, ~$35–55/night) or Crater Lake Lodge if booked far in advance (~$200+/night). Budget option: drive 30 minutes south to Fort Klamath or Chiloquin for motels from ~$80/night.
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m76!1m12!1m3!1d116443.915737268!2d-122.07587276881836!3d42.92550166821222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m61!3e0!4m5!1s0x54c63df6d25d537b%3A0x62edcf18057bd69!2sRim%20Visitr%20Ctr%2C%20Crater%20Lake%20National%20Park%2C%20Rim%20Village%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9111511!2d-122.1434685!4m5!1s0x54c63e0397979a1f%3A0x5cafe915dc5f18f!2sDiscovery%20Point%2C%20Oregon%2097604!3m2!1d42.9248506!2d-122.162251!4m5!1s0x87b781ec0ab42ea5%3A0xe09a9f2b1cedda65!2sThe%20Watchman%20Observation%20Station%2C%20Crater%20Lake%20National%20Park%2C%20Rim%20Dr%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9429774!2d-122.1724067!4m5!1s0x54c63f00982a9255%3A0xde05c04943c6e37e!2sMerriam%20Point%2C%20Crater%20Lake%20National%20Park%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9649108!2d-122.1499973!4m5!1s0x54c63c0ac705125f%3A0x4b981fc5cd347c00!2sCloudcap%20Overlook%2C%20Crater%20Lake%20National%20Park%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9349989!2d-122.04852559999999!4m5!1s0x54c63c6d7400b3d7%3A0x1f453aa5352f467b!2sPumice%20Castle%2C%20Oregon%2097604!3m2!1d42.929018899999996!2d-122.05752629999999!4m5!1s0x54c63c5083905ce1%3A0xeba92000880652ee!2sPhantom%20Ship%20Overlook%2C%20Crater%20Lake%20National%20Park%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9141158!2d-122.0713509!4m5!1s0x54c63c50ce41b8a7%3A0x53bd07fff2e4fad8!2sKerr%20Notch%2C%20Oregon%2097604!3m2!1d42.9131298!2d-122.0723823!4m5!1s0x54c63d5c76c1c32f%3A0x14e1dd30413fda99!2sSun%20Notch%20Trailhead%2C%20Volcanic%20Legacy%20Scenic%20Byway%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9001593!2d-122.0957699!4m5!1s0x54c63d6f4541ead1%3A0x790d7b76abd6e98b!2sVidae%20Falls%2C%20Crater%20Lake%20National%20Park%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.884244699999996!2d-122.0995535!5e0!3m2!1sen!2sus!4v1782755595237!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 ---
 
@@ -240,35 +263,35 @@ If taking Hwy 58 back through Eugene, Salt Creek Falls is 2 minutes off the high
 
 ### Non-negotiable musts
 
-| Sight / Activity | Why |
-|-----------------|-----|
+| Sight / Activity                  | Why                                                               |
+|:----------------------------------|:------------------------------------------------------------------|
 | **Rim Drive — full 33-mile loop** | The defining Crater Lake experience. Every overlook is different. |
-| **Sinnott Memorial Overlook** | Best first view. Geology context. Easy access from Rim Village. |
-| **Garfield Peak Trail** | Best panoramic hike in the park. Summit views are exceptional. |
-| **Watchman Peak Trail at sunset** | Best sunset spot. Short hike, massive payoff. |
-| **Cloudcap Overlook** | Highest road point, best aerial caldera perspective. |
-| **Discovery Point** | First west-rim Wizard Island view from the road. |
+| **Sinnott Memorial Overlook**     | Best first view. Geology context. Easy access from Rim Village.   |
+| **Garfield Peak Trail**           | Best panoramic hike in the park. Summit views are exceptional.    |
+| **Watchman Peak Trail at sunset** | Best sunset spot. Short hike, massive payoff.                     |
+| **Cloudcap Overlook**             | Highest road point, best aerial caldera perspective.              |
+| **Discovery Point**               | First west-rim Wizard Island view from the road.                  |
 
 ### Worth doing if you have time
 
-| Sight / Activity | Why |
-|-----------------|-----|
-| **Sun Notch Trail** | Best Phantom Ship viewing angle. Short and easy. |
-| **Annie Creek Canyon Trail** | Geology + waterfall + solitude. Underrated. |
-| **Castle Crest Wildflower Trail** | Peak bloom mid-July to August. Very easy. |
-| **The Pinnacles** | Volcanic spires, barely any crowds. Flat trail. |
-| **Plaikni Falls Trail** | Easy, pretty, uncrowded. Good afternoon walk. |
-| **Crater Lake Lodge porch** | Historic lodge. Great coffee stop with the view. |
-| **Ranger programs** | Geology talks are genuinely engaging. Free, no reservation needed. |
-| **Toketee Falls (on Hwy 138)** | Best waterfall stop on the drive in/out. 20 minutes from car. |
+| Sight / Activity                  | Why                                                                |
+|:----------------------------------|:-------------------------------------------------------------------|
+| **Sun Notch Trail**               | Best Phantom Ship viewing angle. Short and easy.                   |
+| **Annie Creek Canyon Trail**      | Geology + waterfall + solitude. Underrated.                        |
+| **Castle Crest Wildflower Trail** | Peak bloom mid-July to August. Very easy.                          |
+| **The Pinnacles**                 | Volcanic spires, barely any crowds. Flat trail.                    |
+| **Plaikni Falls Trail**           | Easy, pretty, uncrowded. Good afternoon walk.                      |
+| **Crater Lake Lodge porch**       | Historic lodge. Great coffee stop with the view.                   |
+| **Ranger programs**               | Geology talks are genuinely engaging. Free, no reservation needed. |
+| **Toketee Falls (on Hwy 138)**    | Best waterfall stop on the drive in/out. 20 minutes from car.      |
 
 ### Skip (or check current status first)
 
-| Sight / Activity | Why |
-|-----------------|-----|
-| **Cleetwood Cove Trail** | Closed 2025–2028 for major renovation. Verify before planning. |
-| **Wizard Island boat tours** | Closed 2025–2028 along with Cleetwood. Check nps.gov for updates. |
-| **Mount Scott Trail** | Excellent hike (highest point in the park) but far from other sights. Only worth it if you have a third day or are a dedicated hiker. |
+| Sight / Activity             | Why                                                                                                                                   |
+|:-----------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|
+| **Cleetwood Cove Trail**     | Closed 2025–2028 for major renovation. Verify before planning.                                                                        |
+| **Wizard Island boat tours** | Closed 2025–2028 along with Cleetwood. Check nps.gov for updates.                                                                     |
+| **Mount Scott Trail**        | Excellent hike (highest point in the park) but far from other sights. Only worth it if you have a third day or are a dedicated hiker. |
 
 ---
 
@@ -314,17 +337,17 @@ For a summer trip, all three are generally open. For a late May or early June tr
 
 ## Quick reference: drive times
 
-| Segment | Time |
-|---------|------|
-| Seattle → Portland | ~3h |
-| Portland → Bend (via Gorge) | ~2h 30min |
-| Bend → Crater Lake | ~2h |
-| Seattle → Roseburg (via I-5) | ~5h 30min |
-| Roseburg → Crater Lake (via Hwy 138) | ~1h 45min |
-| Seattle → Crater Lake direct | ~7h 30min |
-| Crater Lake Rim Village → Mazama Village | ~10min |
-| Rim Village → Pinnacles Trailhead | ~25min |
-| Rim Village → Cloudcap Overlook (east rim) | ~45min |
+| Segment                                    | Time      |
+|:-------------------------------------------|:----------|
+| Seattle → Portland                         | ~3h       |
+| Portland → Bend (via Gorge)                | ~2h 30min |
+| Bend → Crater Lake                         | ~2h       |
+| Seattle → Roseburg (via I-5)               | ~5h 30min |
+| Roseburg → Crater Lake (via Hwy 138)       | ~1h 45min |
+| Seattle → Crater Lake direct               | ~7h 30min |
+| Crater Lake Rim Village → Mazama Village   | ~10min    |
+| Rim Village → Pinnacles Trailhead          | ~25min    |
+| Rim Village → Cloudcap Overlook (east rim) | ~45min    |
 
 ---
 
