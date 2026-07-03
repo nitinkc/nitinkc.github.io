@@ -1,5 +1,5 @@
 ---
-title: "Seattle to Crater Laken"
+title: "Seattle to Crater Lake"
 date: 2026-06-28
 categories: [Travel]
 tags: [crater-lake, oregon, seattle, road-trip, pacific-northwest, weekend-trip]
@@ -7,8 +7,7 @@ tags: [crater-lake, oregon, seattle, road-trip, pacific-northwest, weekend-trip]
 
 {% include toc title="Index" %}
 
-
-Crater Lake shouldn't work. A volcano collapsed 7,700 years ago, left behind a 1,943-foot-deep (592.2 meters) 
+A volcano collapsed 7,700 years ago, left behind a 1,943-foot-deep (592.2 meters) 
 caldera , and it filled entirely with rain and snowmelt — no rivers in, no rivers out. 
 The result is the deepest lake in the United States, and water so blue and so clear it looks like 
 someone digitally enhanced it. It hasn't been enhanced. It really looks like that.
@@ -86,6 +85,8 @@ About 60 miles east of Roseburg on Hwy 138, a 0.4-mile trail leads to Toketee Fa
 120-foot waterfall framed by columnar basalt. It's 15 minutes off the highway, takes 20 minutes 
 round trip, and is one of the best roadside waterfall stops in Oregon. Don't skip it if you're on this route.
 
+<iframe src="https://www.google.com/maps/embed?pb=!1m52!1m12!1m3!1d93384.95137933311!2d-122.18704613551158!3d42.99344400957818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m37!3e0!4m5!1s0x54c64613cb03bd7d%3A0x56e640b8fa9964b3!2sNorth%20Entrance%20Station%2C%2090945%20N%20Umpqua%20Hwy%2C%20Chemult%2C%20OR%2097731!3m2!1d43.0777095!2d-122.1179358!4m5!1s0x54c63f00982a9255%3A0xde05c04943c6e37e!2sMerriam%20Point%2C%20Crater%20Lake%20National%20Park%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9649108!2d-122.1499973!4m5!1s0x54c639256fbeeff5%3A0x40f0ac04d104344b!2sCleetwood%20Cove%2C%20Oregon%2097604!3m2!1d42.9752966!2d-122.078206!4m5!1s0x54c63c0ac705125f%3A0x4b981fc5cd347c00!2sCloudcap%20Overlook%2C%20Crater%20Lake%20National%20Park%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9349989!2d-122.04852559999999!4m5!1s0x54c63c5083905ce1%3A0xeba92000880652ee!2sPhantom%20Ship%20Overlook%2C%20Crater%20Lake%20National%20Park%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9141158!2d-122.0713509!4m5!1s0x54c63df6d25d537b%3A0x62edcf18057bd69!2sRim%20Visitr%20Ctr%2C%20Crater%20Lake%20National%20Park%2C%20Rim%20Village%2C%20CRATER%20LAKE%2C%20OR%2097604!3m2!1d42.9111511!2d-122.1434685!5e0!3m2!1sen!2sus!4v1783064590865!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
 <iframe src="https://www.google.com/maps/embed?pb=!1m52!1m12!1m3!1d2875027.815295016!2d-125.3782985710189!3d45.2751995926934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m37!3e0!4m5!1s0x54900cad2000ee23%3A0x5e0390eac5d804f2!2sRedmond%2C%20Washington!3m2!1d47.673988099999995!2d-122.121512!4m5!1s0x54950b0b7da97427%3A0x1c36b9e6f6d18591!2sPortland%2C%20Oregon!3m2!1d45.515232!2d-122.67838529999999!4m5!1s0x54c119b0ac501919%3A0x57ec61894a43894d!2sEugene%2C%20Oregon!3m2!1d44.052121!2d-123.0896705!4m5!1s0x54c422c54b5959cd%3A0x5fa45e16d7c2fd91!2sRoseburg%2C%20Oregon!3m2!1d43.213510899999996!2d-123.3412843!4m5!1s0x54c6f6671e87c9a9%3A0x2c1a712b2dd37b56!2sToketee%20Falls%2C%20Idleyld%20Park%2C%20OR%2097447!3m2!1d43.2633418!2d-122.43371119999999!4m5!1s0x54c6170840e5e339%3A0x902bf2e1452fe3a3!2sCrater%20Lake%20National%20Park%2C%20Oregon!3m2!1d42.929476199999996!2d-122.12793939999999!5e0!3m2!1sen!2sus!4v1782718124951!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 
@@ -110,7 +111,7 @@ beer stop. If you have flexibility in timing, this is the more memorable drive.
 
 **Worth a stop on this route: Multnomah Falls**
 
-A 611-foot waterfall right off I-84, 30 minutes east of Portland. One of the most visited natural 
+A 611-foot waterfall right off **I-84**, 30 minutes east of Portland. One of the most visited natural 
 sites in Oregon — for good reason. If you take the gorge route, this is a 20-minute stop you won't regret.
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m70!1m12!1m3!1d1438298.8542080421!2d-124.5186321409017!3d43.13340281185374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m55!3e0!4m5!1s0x54900cad2000ee23%3A0x5e0390eac5d804f2!2sRedmond%2C%20Washington!3m2!1d47.673988099999995!2d-122.121512!4m5!1s0x54950b0b7da97427%3A0x1c36b9e6f6d18591!2sPortland%2C%20Oregon!3m2!1d45.515232!2d-122.67838529999999!4m5!1s0x5495eb1e945a5877%3A0x1eeaf88627083bc6!2sMultnomah%20Falls%2C%20Oregon%2097014!3m2!1d45.5761597!2d-122.11577559999999!4m5!1s0x54960e614c1c0fe7%3A0x56f6cf7e4d7d985c!2sHood%20River%2C%20Oregon%2097031!3m2!1d45.708856999999995!2d-121.5122706!4m5!1s0x54b8c0ffa5d3d251%3A0x1088e7acc720d1b4!2sBend%2C%20Oregon!3m2!1d44.0581728!2d-121.31530959999999!4m5!1s0x54c8d45968f20ee3%3A0xf48d7ff528b99726!2sKlamath%20Falls%2C%20Oregon!3m2!1d42.224866999999996!2d-121.7816704!4m5!1s0x54c6170840e5e339%3A0x902bf2e1452fe3a3!2sCrater%20Lake%20National%20Park%2C%20Oregon!3m2!1d42.929476199999996!2d-122.12793939999999!4m5!1s0x54c6f6671e87c9a9%3A0x2c1a712b2dd37b56!2sToketee%20Falls%2C%20Idleyld%20Park%2C%20OR%2097447!3m2!1d43.2633418!2d-122.43371119999999!4m5!1s0x54c119b0ac501919%3A0x57ec61894a43894d!2sEugene%2C%20Oregon!3m2!1d44.052121!2d-123.0896705!5e0!3m2!1sen!2sus!4v1782718437335!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
