@@ -277,3 +277,67 @@ dockerhub-username/image-name:new-tag
 ```shell
 kubectl scale deployment hello-capgemini-service --replicas=5
 ```
+
+----
+
+GKE 
+
+```shell
+gcloud beta container \
+    --project \
+"my-devops-journey-502420" clusters create "standard-public-cluster-1" \
+    --region \
+"us-central1" \
+    --no-enable-basic-auth \
+    --cluster-version \
+"1.36.0-gke.4447000" \
+    --release-channel \
+"rapid" \
+    --machine-type \
+"e2-small" \
+    --image-type \
+"COS_CONTAINERD" \
+    --disk-type \
+"pd-balanced" \
+    --disk-size \
+"20" \
+    --metadata \
+disable-legacy-endpoints=true \
+    --service-account \
+"default" \
+    --scopes \
+"https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/trace.append" \
+    --max-pods-per-node \
+"110" \
+    --num-nodes \
+"1" \
+    --logging=SYSTEM,WORKLOAD \
+    --monitoring=SYSTEM,STORAGE,HPA,POD,DAEMONSET,DEPLOYMENT,STATEFULSET,CADVISOR,KUBELET,DCGM,JOBSET \
+    --enable-ip-alias \
+    --network \
+"projects/my-devops-journey-502420/global/networks/default" \
+    --subnetwork \
+"projects/my-devops-journey-502420/regions/us-central1/subnetworks/default" \
+    --enable-intra-node-visibility \
+    --default-max-pods-per-node \
+"110" \
+    --enable-ip-access \
+    --security-posture=standard \
+    --workload-vulnerability-scanning=disabled \
+    --no-enable-google-cloud-access \
+    --addons \
+HorizontalPodAutoscaling,HttpLoadBalancing,NodeLocalDNS,GcePersistentDiskCsiDriver \
+    --enable-autoupgrade \
+    --enable-autorepair \
+    --max-surge-upgrade \
+1 \
+    --max-unavailable-upgrade \
+0 \
+    --binauthz-evaluation-mode=DISABLED \
+    --enable-managed-prometheus \
+    --enable-shielded-nodes \
+    --shielded-integrity-monitoring \
+    --no-shielded-secure-boot \
+    --node-locations \
+"us-central1-a","us-central1-b","us-central1-c"
+```
