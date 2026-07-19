@@ -25,7 +25,8 @@ tags: [Notes, Tutorials]
 - AI Interview Preparation : [https://nitinkc.github.io/AI-Engineering-Learning/](https://nitinkc.github.io/AI-Engineering-Learning/){:target="_blank"}
 - AI Dev Guide - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
 - Agentic AI - [https://nitinkc.github.io/agentic-ai/](https://nitinkc.github.io/agentic-ai/){:target="_blank"}
-- Forward Deployed Engineer: 
+- Forward Deployed Engineer: [https://nitinkc.github.io/forward-deployed-engineer-gcp/](https://nitinkc.github.io/forward-deployed-engineer-gcp/)
+{:target="_blank"}
 
 - Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
 
