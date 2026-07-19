@@ -23,7 +23,9 @@ tags: [Notes, Tutorials]
 - AI Math : [https://nitinkc.github.io/AI-ML-math-foundations/](https://nitinkc.github.io/AI-ML-math-foundations/){:target="_blank"}
     
 - AI Interview Preparation : [https://nitinkc.github.io/AI-Engineering-Learning/](https://nitinkc.github.io/AI-Engineering-Learning/){:target="_blank"}
-- AI Dev - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
+- AI Dev Guide - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
+- Agentic AI - [https://nitinkc.github.io/agentic-ai/](https://nitinkc.github.io/agentic-ai/){:target="_blank"}
+- Forward Deployed Engineer: 
 
 - Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
 
