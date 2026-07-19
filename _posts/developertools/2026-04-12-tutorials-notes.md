@@ -8,7 +8,7 @@ tags: [Notes, Tutorials]
 
 ## Algo Interviews
 - System Design Interview Preparation: [https://nitinkc.github.io/SystemDesign-Revision/](https://nitinkc.github.io/SystemDesign-Revision/){:target="_blank"}
-- DS Algo :
+- DS Algo : [https://nitinkc.github.io/CodingInterviewPreps/](https://nitinkc.github.io/CodingInterviewPreps/)
 
 
 ## Architecture
