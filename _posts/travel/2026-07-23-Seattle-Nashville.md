@@ -6,8 +6,36 @@ categories: [travel, road-trip, national-parks, washington]
 tags: [olympic-national-park, olympic-peninsula, seattle, road-trip, budget-travel, pacific-northwest, hoh-rainforest, hurricane-ridge, rialto-beach]
 description: "A complete weekend road trip plan from Seattle to Olympic National Park — budget-first, covering all three ecosystems: mountains, rainforest, and wild Pacific coastline."
 ---
+
+Logged. Here's today's entry for the blog:
+
 ---
 
+**Day 2 — Spokane to Gardiner, MT**
+*July 29, 2026*
+
+Chapter closed, engine started. July 28 wasn't just a departure date — it was the day I clocked out of Capgemini and the Comcast project for the last time and pointed the car east instead of toward another Tuesday standup. Left around 6 PM, chased the sunset into Washington, and called it a night in Spokane.
+
+This morning started slow and green — a walk through Riverfront Park, coffee in hand, watching the Spokane River do its thing before the real driving began. Then the road opened up: I-90 through Idaho's panhandle, into Montana, past Missoula and Bozeman, with the Rockies starting to show off. Rolled into Gardiner, MT tonight — the north gate of Yellowstone — ready for the park tomorrow.
+
+Two days in, one job behind me, one park ahead. Seattle to Nashville, no rush.
+
+
+---
+
+**Day 3 — Yellowstone, North Gate to Northeast Entrance**
+*July 30, 2026*
+
+Woke up in Gardiner, MT at the Antlers Lodge — small-town, big-mountain energy, and about as close to Yellowstone's doorstep as you can get. From there it was straight through the North Entrance, that iconic Roosevelt Arch marking the crossing from "regular world" to "geothermal wonderland."
+
+Spent the day working across the park toward the Northeast Entrance, and two stops stood out. First, Mammoth Hot Springs — those otherworldly white travertine terraces that look like frozen waterfalls, steaming quietly in the morning light. Then Lamar Valley, Yellowstone's so-called "Serengeti of America" — wide open grassland, and the best shot yet at spotting bison and wolves roaming free.
+
+Three days down. Job: quit. Miles: piling up. Nashville: still a long way off, and that's exactly the point.
+
+
+---
+---
+# Plans
 One-way, ~12 driving/sightseeing days (2 buffer days built into a 2-week window), hitting Missoula, Yellowstone, Salt Lake City, Mount Rushmore, Badlands, and Chicago before landing in Nashville for good.
 
 ## Quick reference: drive times
