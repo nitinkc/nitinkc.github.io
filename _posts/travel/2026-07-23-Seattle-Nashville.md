@@ -4,10 +4,7 @@ title: "Seattle to Nashville: The Relocation Road Trip Plan"
 date: 2025-01-01
 categories: [travel, road-trip, national-parks, washington]
 tags: [olympic-national-park, olympic-peninsula, seattle, road-trip, budget-travel, pacific-northwest, hoh-rainforest, hurricane-ridge, rialto-beach]
-description: "A complete weekend road trip plan from Seattle to Olympic National Park — budget-first, covering all three ecosystems: mountains, rainforest, and wild Pacific coastline."
----
-
-Logged. Here's today's entry for the blog:
+description: "A complete weekend road trip plan from Seattle to Olympic National Park — budget-first, covering all three ecosystems: mountains, rainforest, and wild Pacific coastline.
 
 ---
 
@@ -32,9 +29,21 @@ Spent the day working across the park toward the Northeast Entrance, and two sto
 
 Three days down. Job: quit. Miles: piling up. Nashville: still a long way off, and that's exactly the point.
 
+---
+**Day 4 — Gardiner to West Thumb**
+*July 31, 2026*
 
+Checked out of the Antlers Lodge and dove deeper into the park — today was all about the geothermal drama and the canyon views. First stop, Roaring Mountain, a hillside so alive with steam vents it genuinely looks like it's breathing. Then Norris Geyser Basin, walking the trail through the oldest and hottest thermal area in the park, all bleached ground and hissing vents.
+
+From there, Canyon Village and the big show: hiked down to the Brink of Lower Falls for an up-close, spray-in-your-face view, then back up to the South Rim for the Upper Falls viewpoint and Artist Point — the classic postcard shot of the canyon in yellows and oranges that gave the park its name.
+
+Afternoon turned into a slow cruise alongside the Yellowstone River, past Mud Volcano and Sulphur Cauldron — bubbling, sulfurous, and looking like the earth's stomach acting up. Capped the day with the Gull Point Drive along Yellowstone Lake before rolling into West Thumb for the night.
+
+Four days in. One canyon, one basin, one very active planet.
+
+staying in West Yellowstone 
 ---
----
+
 # Plans
 One-way, ~12 driving/sightseeing days (2 buffer days built into a 2-week window), hitting Missoula, Yellowstone, Salt Lake City, Mount Rushmore, Badlands, and Chicago before landing in Nashville for good.
 
