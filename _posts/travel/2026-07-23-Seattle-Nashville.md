@@ -4,7 +4,7 @@ title: "Seattle to Nashville: The Relocation Road Trip Plan"
 date: 2025-01-01
 categories: [travel, road-trip, national-parks, washington]
 tags: [olympic-national-park, olympic-peninsula, seattle, road-trip, budget-travel, pacific-northwest, hoh-rainforest, hurricane-ridge, rialto-beach]
-description: "A complete weekend road trip plan from Seattle to Olympic National Park — budget-first, covering all three ecosystems: mountains, rainforest, and wild Pacific coastline.
+description: "A road trip to remember"
 
 ---
 
