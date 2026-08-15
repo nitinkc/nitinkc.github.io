@@ -1,5 +1,5 @@
 ---
-title: Python Internals for Java Developers: A Tour Under the Hood
+title: Python Internals for Java Developers - A Tour Under the Hood
 date: 2026-06-29 11:15:28
 categories:
 - Python
