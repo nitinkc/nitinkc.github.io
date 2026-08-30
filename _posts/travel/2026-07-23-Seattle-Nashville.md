@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Seattle to Nashville: The Relocation Road Trip Plan"
-date: 2025-01-01
+date: 2026-07-28
 categories: [travel, road-trip, national-parks, washington]
 tags: [olympic-national-park, olympic-peninsula, seattle, road-trip, budget-travel, pacific-northwest, hoh-rainforest, hurricane-ridge, rialto-beach]
 description: "A road trip to remember"

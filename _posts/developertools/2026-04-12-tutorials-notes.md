@@ -44,6 +44,7 @@ tags: [Notes, Tutorials]
 
 ## Infrastructure
 - DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
+- Terraform: [https://nitinkc.github.io/terraform-concepts/](https://nitinkc.github.io/terraform-concepts/){:target="_blank"}
 - Additional DevOps reference: [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
 
 ## Databases
@@ -71,6 +72,6 @@ tags: [Notes, Tutorials]
 - Node
 
 ## Frontend
-- Vue js static site - [https://nitinkc.github.io/thinkorama/](https://nitinkc.github.io/thinkorama/)
-- Angular
+- Vue js static site - [https://nitinkc.github.io/thinkorama/](https://nitinkc.github.io/thinkorama/){:target="_blank"}
+- Angular - [](){:target="_blank"}
 - React

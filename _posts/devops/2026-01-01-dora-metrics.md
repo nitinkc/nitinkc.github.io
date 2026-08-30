@@ -15,7 +15,11 @@ tags:
 
 # What are DORA Metrics?
 
-**DORA** stands for **DevOps Research and Assessment**, a research program that identified four key metrics that indicate the performance of software development teams. These metrics were developed by Dr. Nicole Forsgren, Jez Humble, and Gene Kim through years of research documented in the book "Accelerate: The Science of Lean Software and DevOps."
+**DORA** stands for **DevOps Research and Assessment**, a research program that identified four key metrics that 
+indicate the performance of software development teams. 
+
+These metrics were developed by Dr. Nicole Forsgren, Jez Humble, and Gene Kim through years of research documented 
+in the book "Accelerate: The Science of Lean Software and DevOps."
 
 The four DORA metrics are considered the gold standard for measuring software delivery performance and operational efficiency.
 

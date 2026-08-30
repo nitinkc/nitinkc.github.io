@@ -11,6 +11,12 @@ tags:
 
 # Create Multiple config for GCP Accounts
 
+## Check all available configs 
+
+```shell
+gcloud config configurations list
+```
+
 Inorder to create a new profile, always use `gcloud init` and follow the
 prompts.
 select the project, by either providing the number given or by provifing the

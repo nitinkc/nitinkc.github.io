@@ -25,6 +25,7 @@ CI/CD
 - github actions
 - circleCI
 - jenkins
+- [Harness](https://app.harness.io/auth/#/signin) for AI driven Devops (option for gitops)
 
 API
 

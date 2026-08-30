@@ -83,16 +83,16 @@ Regular attribute and method access (`obj.method()`) is a different and slower p
 
 ## Summary Table
 
-| Concept | Java/JVM | CPython |
-|---|---|---|
-| Compilation | AOT to bytecode, JIT at runtime | Bytecode compiled lazily, mostly interpreted |
-| Primitives | Unboxed by default | Everything boxed (`PyObject*`) |
-| Memory reclamation | Tracing GC (generational) | Refcounting, primary; tracing GC for cycles only |
-| Object destruction | Non-deterministic (`finalize`/Cleaner) | Deterministic (`__del__` on refcount 0) |
-| Threading | Real parallelism, JMM, `volatile`/locks | GIL serializes bytecode execution (until free-threaded builds) |
+| Concept               | Java/JVM | CPython |
+|:----------------------|---|---|
+| Compilation           | AOT to bytecode, JIT at runtime | Bytecode compiled lazily, mostly interpreted |
+| Primitives            | Unboxed by default | Everything boxed (`PyObject*`) |
+| Memory reclamation    | Tracing GC (generational) | Refcounting, primary; tracing GC for cycles only |
+| Object destruction    | Non-deterministic (`finalize`/Cleaner) | Deterministic (`__del__` on refcount 0) |
+| Threading             | Real parallelism, JMM, `volatile`/locks | GIL serializes bytecode execution (until free-threaded builds) |
 | CPU-bound parallelism | Threads | Processes (or free-threaded 3.13+) |
-| Method dispatch | Vtable, class-based, fast | Type-level slots (operators) or dict+MRO walk (general) |
-| Multiple inheritance | Not allowed (interfaces only) | Allowed, resolved via C3 linearization |
+| Method dispatch       | Vtable, class-based, fast | Type-level slots (operators) or dict+MRO walk (general) |
+| Multiple inheritance  | Not allowed (interfaces only) | Allowed, resolved via C3 linearization |
 
 ## Where to Look Next
 
