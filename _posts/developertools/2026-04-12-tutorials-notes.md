@@ -73,5 +73,5 @@ tags: [Notes, Tutorials]
 
 ## Frontend
 - Vue js static site - [https://nitinkc.github.io/thinkorama/](https://nitinkc.github.io/thinkorama/){:target="_blank"}
-- Angular - [](){:target="_blank"}
+- Angular - [https://angular.dev/tutorials/learn-angular](https://angular.dev/tutorials/learn-angular){:target="_blank"}
 - React
