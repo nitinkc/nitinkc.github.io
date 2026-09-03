@@ -1,5 +1,5 @@
 ---
-title: Handling Multiple GCP Configs
+title: Multiple config for GCP Accounts
 date: 2021-04-08 02:15:00
 categories:
 - GCP
@@ -9,67 +9,76 @@ tags:
 
 {% include toc title="Index" %}
 
-# Create Multiple config for GCP Accounts
-
 ## Check all available configs 
 
 ```shell
 gcloud config configurations list
 ```
 
-Inorder to create a new profile, always use `gcloud init` and follow the
-prompts.
-select the project, by either providing the number given or by provifing the
-exact project ID.
+- To check the GCP properties of the active user use
+    ```shell
+    gcloud config list
+    ```
+  
+- To change from one existing profile to another existing profile
+    ```shell
+    gcloud config configurations activate [CONFIG_NAME]
+    ```
 
-To change from one profile to another
+    ```shell
+    alias gcpLocal='gcloud config configurations activate local'
+    alias gcpNitin='gcloud config configurations activate learn'
+    ```
+
+- After Switching. change the account with the corrosponding profile
+    ```shell
+    gcloud config set account ACCOUNT
+    ```
+
+- If your current project is [abc] and you want to change this setting by running:
+    ```shell
+    # View the Currently Active Project
+    gcloud config get project
+    
+    # List All GCP Projects You Have Access To
+    gcloud projects list
+    
+    # Switch to a Different Project within same GCloud account
+    gcloud config set project PROJECT_ID
+    ```
+
+- Check all the users and the active user will have an asterisk
+    ```shell
+    gcloud auth list
+    ```
+  
+### Login
 
 ```shell
-alias gcpLocal='gcloud config configurations activate local'
-alias gcpNitin='gcloud config configurations activate learn'
-```
+# For CLI
+gcloud auth login
 
-Check all the users and the active user will have an asterisk
-
-```shell
-gcloud auth list
-```
-
-After Switching. change the account with the correspoding profile
-
-```shell
-gcloud config set account ACCOUNT
-```
-
-Ensure that the default login is set
-
-```shell
-gcloud auth application-default login
+# For code
+gcloud auth application-default login 
 
 # Check Token
 gcloud auth application-default print-access-token
 ```
 
-Follow this
-link https://stackoverflow.com/questions/53306131/difference-between-gcloud-auth-application-default-login-and-gcloud-auth-logi
+#### Summary of GCP gcloud Authentication Methods
 
-### Check all the config available on the system
+| Capability          | `gcloud auth login`                        | `gcloud auth application-default login`                                   |
+|:--------------------|:-----------------------------------------|:------------------------------------------------------------------------|
+| Primary Target      | The gcloud CLI itself.                   | Code and SDKs running locally.                                          |
+| Ideal Use Case      | Running `gcloud` commands from terminal. | Testing code locally that will eventually run on a server.              |
+| Credential Location | ~/.config/gcloud/                        | `~/.config/gcloud/application_default_credentials.json`                 |
+| SDK Accessibility   | ❌ No.                                   | Yes. Automatically picked up by Application Default Credentials (ADC).  |
 
-```shell
-gcloud config configurations list
-```
 
-### Switch to a different profile
+## Create a new config
+In order to create a new profile, always use `gcloud init` and follow the  prompts.
 
-```shell
-gcloud config configurations activate [CONFIG_NAME]
-```
-
-### Set another project within same GCloud account
-
-```shell
-gcloud config set project <PROJECT ID>
-```
+select the project, by either providing the number given or by providing the exact project ID.
 
 ### Add new GCP Account
 
@@ -82,13 +91,13 @@ gcloud config configurations create [CONFIG_NAME]
 gcloud init
 ```
 
-Select re-initialize the config just created and login as a new user and get
-redirected into web Browser for GCP Console login
+Select re-initialize the config just created and login as a new user and get redirected into web Browser for GCP Console login
 
-To check the GCP properties of the active user use
+
+## Delete a configuration
 
 ```shell
-gcloud config list
+gcloud config configurations delete <CONFIG_NAME>>
 ```
 
 ```shell
@@ -96,11 +105,6 @@ gcloud config list
 gcloud auth revoke
 ```
 
-## Delete a configuration
-
-```shell
-gcloud config configurations delete <CONFIG_NAME>>
-```
 
 ### See listings
 
@@ -114,6 +118,7 @@ gcloud spanner instance-configs list
 ## Switching to Learning profile from work profile
 
 ```shell
+# if profile not initiated
 gcloud init
 
 # Create new configuration 'learn'
@@ -123,7 +128,7 @@ gcloud init
 
 project name : tat-twam-asi
 
-#Ensure that the current user is credentiated
+# Ensure that the current user is credentiated
 gcloud auth application-default login
 
 # Create Spanner Instance
