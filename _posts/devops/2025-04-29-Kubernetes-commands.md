@@ -1,5 +1,5 @@
 ---
-title: Kubernetes Commands
+title: GCP, GKE, Kubernetes, and Helm Operations Runbook Commands
 date: 2025-04-29 05:00:00
 categories:
 - DevOps
@@ -46,487 +46,926 @@ Dashboard
 minikube dashboard
 ```
 
-# Create a namespace
-```shell
-kubectl create ns non-prod
-```
+## 1. Prerequisites and Safety
 
-# Shell redirection to connect to a Pod
-```shell
-kubectl exec -it new-nginx -- /bin/bash
-```
+### Required tools
 
-### Access from Another Pod
-use a temporary pod to check if the application is reachable from within the
-cluster
-- `-i -t` flag Allows us to provide input to the container
-```shell
-kubectl run -it --rm --restart=Never busybox --image=busybox -- sh
-```
-
-Then, inside the busybox shell, try to curl your application:
-```shell
-wget -qO- http://<your-pod-ip>:<port-number>/actuator/health
-
-wget -qO- http://10.109.198.72:5000/actuator/health
-```
-
-# Debugs & Checks 
-use autocomplete (for GCP Cloud shell)
-```shell
-source <(kubectl completion bash)
-```
-
-### Pod related commands
-```shell
-# Get podname, status
-kubectl get pods # podname from minikube dashboard can also be used
-export my_pod=[your_pod_name]
-
-#Get details like IP addres, status
-kubectl describe pod $my_pod
-
-# Services - #IpAddress, port, clusterId etc
-kubectl get service nginx
-```
-
-### Deployment related
-```shell
-# Deployment related
-kubectl get deployments
-
-# the rollout history of the deployment:
-kubectl rollout history deployment nginx-deployment
-```
-
-### Check Resource Usage
-```shell
-# to view the resource usage across the nodes of the cluster
-kubectl top node
-
-# view the resources being used by the Pod:
-kubectl top pods
-
-# Check particular pod
-kubectl top pod <pod-name>
-kubectl top pod todo-service-app-todo-app-7b45c8749b-ltmfw
-```
-
-### Check Application logs
+Confirm that the following tools are installed and available in `PATH`:
 
 ```shell
-kubectl logs <pod-name>
-kubectl logs todo-service-app-todo-app-7b45c8749b-ltmfw
-
-# Running log
-kubectl logs -f todo-service-app-todo-app-7b45c8749b-ltmfw
+command -v gcloud
+command -v kubectl
+command -v helm
+command -v jq
 ```
 
-### Cluster config
+You may also need:
+
+- An authorized GCP identity or corporate account
+- Access to the target GCP project and GKE cluster
+- Corporate VPN or network connectivity
+- Permission to access the target Kubernetes namespace
+- `watch`, `curl`, or equivalent command-line utilities
+
+Enable Kubernetes shell completion
+- For Zsh, add the following to `~/.zshrc` if completion is configured for your environment:
+
+```shell
+# Kubernetes completion for Zsh
+autoload -Uz compinit
+compinit
+source <(kubectl completion zsh)
+```
+
+### Safety rules
+
+1. Do not assume that the current terminal is connected to the intended GCP project or Kubernetes cluster.
+2. Before every mutating operation, verify the active account, project, context, cluster, and namespace.
+3. Prefer explicit `--project`, `--region`/`--zone`, `--context`, and `--namespace`/`-n` flags for important commands.
+4. Treat `delete`, `uninstall`, `scale`, `rollback`, `restart`, `apply`, `label`, and `annotate` commands as state-changing operations.
+5. Treat `--force`, `--grace-period=0`, bulk operations, and secret decoding as high-risk operations.
+6. Never paste secret values, tokens, private keys, or decoded secret output into tickets, chat, or shared documents.
+7. Do not use a local Terraform apply to repair an infrastructure-managed Helm release unless the owning process explicitly requires it. Use the approved CI/CD or infrastructure workflow.
+
+---
+
+## 2. Core Concepts
+
+These terms are related but are not interchangeable:
+
+| Term                 | Meaning                                                                          | Typical command                   |
+|:---------------------|:---------------------------------------------------------------------------------|:----------------------------------|
+| GCP account          | The authenticated Google identity used by `gcloud`                               | `gcloud auth list`                |
+| GCP project          | The Google Cloud project containing the GKE cluster                              | `gcloud config get-value project` |
+| GKE cluster          | The managed Kubernetes cluster in a GCP project                                  | `gcloud container clusters list`  |
+| Kubernetes context   | A local kubeconfig entry that identifies a cluster, user, and optional namespace | `kubectl config current-context`  |
+| Kubernetes namespace | A logical boundary for Kubernetes resources                                      | `kubectl get namespaces`          |
+| Helm release         | An installed instance of a Helm chart in a namespace                             | `helm list -n <NAMESPACE>`        |
+
+> **Important:** `kubectl config use-context` changes the active local Kubernetes context. It does **not** change the active GCP account or the default GCP project. Likewise, `gcloud config set project` changes the default for `gcloud`; it does not switch the active Kubernetes context.
+
+---
+
+## 3. Quick Reference: Account and Cluster Switching
+
+Use this sequence whenever switching between GCP projects or GKE clusters.
+
+### 3.1 Authenticate and inspect the active GCP identity
+
+```shell
+# Sign in if needed
+gcloud auth login
+
+# Show authenticated accounts
+gcloud auth list
+
+# Select an already-authenticated account
+gcloud config set account <ACCOUNT_EMAIL>
+
+# Show the active account
+gcloud config get-value account
+
+# Show the default gcloud project
+gcloud config get-value project
+```
+
+If the target account is not listed, authenticate it first with `gcloud auth login` or your organization's approved credential flow. Complete any required corporate identity or VPN steps before continuing.
+
+### 3.2 Select the target GCP project
+
+```shell
+# Optional: change the default project for subsequent gcloud commands
+gcloud config set project <PROJECT_ID>
+
+# Confirm the selected project
+gcloud config get-value project
+```
+
+For one-off operations, prefer an explicit project flag instead of changing the default:
+
+```shell
+gcloud container clusters list --project <PROJECT_ID>
+```
+
+### 3.3 Fetch GKE credentials
+
+If the cluster is not already present in kubeconfig, fetch its credentials:
+
+```shell
+# Regional cluster
+gcloud container clusters get-credentials <CLUSTER_NAME> \
+  --region <REGION> \
+  --project <PROJECT_ID>
+
+# Zonal cluster
+gcloud container clusters get-credentials <CLUSTER_NAME> \
+  --zone <ZONE> \
+  --project <PROJECT_ID>
+```
+
+Do not use both `--region` and `--zone`. Use the location type configured for the cluster.
+
+### 3.4 Select and verify the Kubernetes context
+
+```shell
+# List available contexts
+kubectl config get-contexts
+
+# Select the intended context
+kubectl config use-context <CONTEXT>
+
+# Confirm the selected context
+kubectl config current-context
+
+# Confirm cluster connectivity
+kubectl cluster-info
+```
+
+Inspect the current kubeconfig when troubleshooting context or credential problems:
+
 ```shell
 kubectl config view
-kubectl cluster-info
+kubectl config get-clusters
+```
+
+### 3.5 Set or specify a namespace
+
+Set a default namespace for the current context:
+
+```shell
+kubectl config set-context --current --namespace=<NAMESPACE>
+```
+
+For safer one-off commands, specify the namespace directly:
+
+```shell
+kubectl get pods -n <NAMESPACE> --context <CONTEXT>
+```
+
+---
+
+## 4. Pre-Change Verification
+
+Run this checklist before deleting, uninstalling, scaling, restarting, rolling back, applying, or editing resources.
+
+```shell
+# Confirm GCP identity and default project
+gcloud auth list
+gcloud config get-value account
+gcloud config get-value project
+
+# Confirm Kubernetes context and connectivity
 kubectl config current-context
-kubectl config get-contexts
+kubectl cluster-info
 
-#  command to change the active context:
-kubectl config use-context gke_${DEVSHELL_PROJECT_ID}_Region_autopilot-cluster-1
-source <(kubectl completion bash)
+# Confirm the intended namespace
+kubectl get namespace <NAMESPACE>
+
+# Confirm the resources you are about to affect
+kubectl get pods -n <NAMESPACE>
+kubectl get deployments -n <NAMESPACE>
+helm list -n <NAMESPACE>
 ```
 
+If any result is unexpected, stop and correct the account, project, context, or namespace before continuing.
+
+---
+
+## 5. Kubernetes Basics
+
+### 5.1 Namespaces
 
 ```shell
-kubectl get networkpolicy
+# List namespaces
+kubectl get namespaces
+
+# Create a namespace
+kubectl create namespace <NAMESPACE>
+
+# Inspect a namespace
+kubectl describe namespace <NAMESPACE>
 ```
 
-# Advanced Debugging Commands
+### 5.2 Pods
 
-### Debug Pod Issues
 ```shell
-# Describe pod with full event history
-kubectl describe pod <pod-name> -n ecommerce
+# List pods in the current namespace
+kubectl get pods
 
-# Get pod events sorted by timestamp
-kubectl get events -n ecommerce --sort-by='.lastTimestamp'
+# List pods in a specific namespace
+kubectl get pods -n <NAMESPACE>
 
-# Check pod status with wide output (shows node, IP)
-kubectl get pods -n ecommerce -o wide
+# Show node and IP information
+kubectl get pods -n <NAMESPACE> -o wide
 
-# Get pod YAML to see full configuration
-kubectl get pod <pod-name> -n ecommerce -o yaml
+# Store a pod name for repeated commands
+export POD_NAME=<POD_NAME>
 
-# Check previous container logs (if pod crashed)
-kubectl logs <pod-name> -n ecommerce --previous
+# Show detailed pod configuration and events
+kubectl describe pod "$POD_NAME" -n <NAMESPACE>
 
-# Stream logs from all containers in a pod
-kubectl logs <pod-name> -n ecommerce --all-containers=true -f
+# Show the complete pod definition
+kubectl get pod "$POD_NAME" -n <NAMESPACE> -o yaml
 
-# Check specific container in multi-container pod
-kubectl logs <pod-name> -c <container-name> -n ecommerce
+# Watch pod status changes
+kubectl get pods -n <NAMESPACE> --watch
 ```
 
-### Interactive Debugging
+### 5.3 Services and endpoints
+
 ```shell
-# Debug with ephemeral container (K8s 1.23+)
-kubectl debug <pod-name> -n ecommerce -it --image=busybox --target=<container-name>
+# List services
+kubectl get services -n <NAMESPACE>
 
-# Create debug pod with node's filesystem mounted
-kubectl debug node/<node-name> -it --image=ubuntu
+# Inspect a service
+kubectl get service <SERVICE_NAME> -n <NAMESPACE>
+kubectl describe service <SERVICE_NAME> -n <NAMESPACE>
 
-# Copy files from pod
-kubectl cp <pod-name>:/path/to/file /local/path -n ecommerce
-
-# Copy files to pod
-kubectl cp /local/file <pod-name>:/path/in/pod -n ecommerce
-
-# Execute commands in pod
-kubectl exec <pod-name> -n ecommerce -- env
-kubectl exec <pod-name> -n ecommerce -- ps aux
-kubectl exec <pod-name> -n ecommerce -- netstat -tulpn
+# Check the service's selected endpoints
+kubectl get endpoints <SERVICE_NAME> -n <NAMESPACE>
+kubectl describe endpoints <SERVICE_NAME> -n <NAMESPACE>
 ```
 
-### Network Debugging
+### 5.4 Deployments
+
 ```shell
-# Test DNS resolution from pod
-kubectl run -it --rm debug --image=busybox --restart=Never -- nslookup kubernetes.default
+# List deployments
+kubectl get deployments -n <NAMESPACE>
 
-# Test service connectivity
-kubectl run -it --rm debug --image=nicolaka/netshoot --restart=Never -- bash
-# Then inside the pod:
-# curl http://product-service.ecommerce.svc.cluster.local:8080
-# nslookup product-service.ecommerce.svc.cluster.local
-# traceroute product-service.ecommerce.svc.cluster.local
+# Inspect a deployment
+kubectl describe deployment <DEPLOYMENT_NAME> -n <NAMESPACE>
 
-# Port forward to access pod directly
-kubectl port-forward pod/<pod-name> 8080:8080 -n ecommerce
-
-# Port forward to service
-kubectl port-forward svc/product-service 8080:8080 -n ecommerce
-
-# Check service endpoints
-kubectl get endpoints product-service -n ecommerce
-kubectl describe endpoints product-service -n ecommerce
-
-# Test with curl pod
-kubectl run curl --image=curlimages/curl -it --rm --restart=Never -- \
-  curl http://product-service.ecommerce.svc.cluster.local:8080/actuator/health
+# Show the rollout history
+kubectl rollout history deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
 ```
 
-### Resource Monitoring
-```shell
-# Top pods by CPU/Memory
-kubectl top pods -n ecommerce --sort-by=cpu
-kubectl top pods -n ecommerce --sort-by=memory
+### 5.5 Execute commands in a pod
 
-# Top nodes
+Use `/bin/sh` unless the image is known to contain Bash:
+
+```shell
+kubectl exec -it <POD_NAME> -n <NAMESPACE> -- /bin/sh
+kubectl exec -it <POD_NAME> -n <NAMESPACE> -- /bin/bash
+```
+
+For a multi-container pod:
+
+```shell
+kubectl exec -it <POD_NAME> -c <CONTAINER_NAME> -n <NAMESPACE> -- /bin/sh
+```
+
+Run a non-interactive command:
+
+```shell
+kubectl exec <POD_NAME> -n <NAMESPACE> -- env
+kubectl exec <POD_NAME> -n <NAMESPACE> -- ps aux
+kubectl exec <POD_NAME> -n <NAMESPACE> -- netstat -tulpn
+```
+
+### 5.6 Test connectivity from inside the cluster
+
+Start a temporary BusyBox pod:
+
+```shell
+kubectl run debug-shell \
+  --image=busybox \
+  --restart=Never \
+  -it \
+  --rm \
+  -n <NAMESPACE> \
+  -- sh
+```
+
+Inside the temporary shell:
+
+```shell
+wget -qO- http://<POD_IP>:<PORT>/actuator/health
+wget -qO- http://<SERVICE_NAME>:<PORT>/actuator/health
+```
+
+Test DNS resolution:
+
+```shell
+kubectl run dns-debug \
+  --image=busybox \
+  --restart=Never \
+  -it \
+  --rm \
+  -n <NAMESPACE> \
+  -- nslookup kubernetes.default
+```
+
+For more network tools:
+
+```shell
+kubectl run network-debug \
+  --image=nicolaka/netshoot \
+  --restart=Never \
+  -it \
+  --rm \
+  -n <NAMESPACE> \
+  -- bash
+```
+
+Inside the network debugging pod:
+
+```shell
+curl -v http://<SERVICE_NAME>.<NAMESPACE>.svc.cluster.local:<PORT>
+nslookup <SERVICE_NAME>.<NAMESPACE>.svc.cluster.local
+traceroute <SERVICE_NAME>.<NAMESPACE>.svc.cluster.local
+```
+
+### 5.7 Port forwarding
+
+```shell
+# Forward directly to a pod
+kubectl port-forward pod/<POD_NAME> <LOCAL_PORT>:<POD_PORT> -n <NAMESPACE>
+
+# Forward to a service
+kubectl port-forward service/<SERVICE_NAME> <LOCAL_PORT>:<SERVICE_PORT> -n <NAMESPACE>
+```
+
+From another terminal:
+
+```shell
+curl http://localhost:<LOCAL_PORT>/actuator/health
+```
+
+---
+
+## 6. Helm Release Operations
+
+### 6.1 List and inspect releases
+
+```shell
+# List releases in a namespace
+helm list -n <NAMESPACE>
+
+# Include releases in all namespaces
+helm list --all-namespaces
+
+# Show release status
+helm status <RELEASE_NAME> -n <NAMESPACE>
+
+# Show release history
+helm history <RELEASE_NAME> -n <NAMESPACE>
+
+# Show values supplied to the release
+helm get values <RELEASE_NAME> -n <NAMESPACE>
+
+# Show all computed values
+helm get values <RELEASE_NAME> -n <NAMESPACE> --all
+
+# Show rendered Kubernetes resources
+helm get manifest <RELEASE_NAME> -n <NAMESPACE>
+```
+
+Before acting on a release, confirm:
+
+- The release name is exact.
+- The namespace is exact.
+- The active Kubernetes context points to the intended cluster.
+- The release is not managed by another deployment or infrastructure workflow.
+
+### 6.2 Install or upgrade a Helm release
+
+> **STATE-CHANGING:** Review the chart, values, target context, namespace, and rendered output before installing or upgrading a release.
+
+Render and inspect the manifests first when possible:
+
+```shell
+helm template <RELEASE_NAME> <CHART_REFERENCE> \
+  --namespace <NAMESPACE> \
+  --values <VALUES_FILE>
+```
+
+Install a new release or upgrade an existing release:
+
+```shell
+helm upgrade --install <RELEASE_NAME> <CHART_REFERENCE> \
+  --namespace <NAMESPACE> \
+  --create-namespace \
+  --values <VALUES_FILE> \
+  --wait \
+  --timeout <TIMEOUT>
+```
+
+Verify the deployment:
+
+```shell
+helm status <RELEASE_NAME> -n <NAMESPACE>
+kubectl get pods -n <NAMESPACE>
+kubectl get deployments -n <NAMESPACE>
+```
+
+### 6.3 Remove a Helm release
+
+> **DESTRUCTIVE:** Uninstalling a release removes the resources managed by that release. Confirm the target context, namespace, release name, change approval, and rollback/recovery plan before running this command.
+
+```shell
+# Inspect the target first
+kubectl config current-context
+kubectl get namespace <NAMESPACE>
+helm list -n <NAMESPACE>
+helm status <RELEASE_NAME> -n <NAMESPACE>
+
+# Only after confirmation
+helm uninstall <RELEASE_NAME> -n <NAMESPACE>
+
+# Verify the release is gone
+helm list -n <NAMESPACE>
+```
+
+Inspect remaining namespaced resources if needed:
+
+```shell
+kubectl get all -n <NAMESPACE>
+kubectl get configmaps,secrets,serviceaccounts,pvc -n <NAMESPACE>
+```
+
+If Terraform or another reconciler defines the release, it may be recreated on the next CI apply or reconciliation cycle. Remove or change the owning configuration through the approved workflow rather than relying on a local uninstall.
+
+---
+
+## 7. Application Logs and Pod Inspection
+
+### 7.1 Logs
+
+```shell
+# Current logs
+kubectl logs <POD_NAME> -n <NAMESPACE>
+
+# Follow logs in real time
+kubectl logs --follow <POD_NAME> -n <NAMESPACE>
+
+# Logs from the previous container instance
+kubectl logs <POD_NAME> -n <NAMESPACE> --previous
+
+# Logs from a specific container
+kubectl logs <POD_NAME> -c <CONTAINER_NAME> -n <NAMESPACE>
+
+# Logs from all containers in a pod
+kubectl logs <POD_NAME> --all-containers=true -n <NAMESPACE>
+
+# Logs for a deployment, when supported by labels
+kubectl logs deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+```
+
+### 7.2 Copy files
+
+```shell
+# Copy from a pod to the local machine
+kubectl cp <NAMESPACE>/<POD_NAME>:/path/in/pod /local/path
+
+# Copy from the local machine to a pod
+kubectl cp /local/path <NAMESPACE>/<POD_NAME>:/path/in/pod
+```
+
+### 7.3 Events
+
+```shell
+# List events
+kubectl get events -n <NAMESPACE>
+
+# Sort events by the last observed timestamp
+kubectl get events -n <NAMESPACE> --sort-by='.lastTimestamp'
+```
+
+---
+
+## 8. Troubleshooting Runbook
+
+### 8.1 Pod is in `CrashLoopBackOff`
+
+```shell
+kubectl get pod <POD_NAME> -n <NAMESPACE>
+kubectl describe pod <POD_NAME> -n <NAMESPACE>
+kubectl logs <POD_NAME> -n <NAMESPACE> --previous
+kubectl get events -n <NAMESPACE> --sort-by='.lastTimestamp'
+```
+
+Check liveness and readiness probes in the describe output:
+
+```shell
+kubectl describe pod <POD_NAME> -n <NAMESPACE> | grep -A 5 -E 'Liveness|Readiness'
+```
+
+Common areas to investigate:
+
+- Application startup errors
+- Missing configuration or secrets
+- Failed dependency connections
+- Incorrect command or entrypoint
+- Liveness probe failures
+- Memory limits and out-of-memory kills
+
+### 8.2 Pod is `Pending`
+
+```shell
+kubectl describe pod <POD_NAME> -n <NAMESPACE>
+kubectl get events -n <NAMESPACE> --sort-by='.lastTimestamp'
+kubectl get nodes
+kubectl describe nodes
+kubectl get pvc -n <NAMESPACE>
+```
+
+For scheduling capacity:
+
+```shell
+kubectl describe nodes | grep -A 5 'Allocated resources'
+```
+
+Check node selectors, taints/tolerations, affinity rules, resource requests, and unbound PVCs.
+
+### 8.3 Service is not accessible
+
+```shell
+# Confirm the service and its selector
+kubectl describe service <SERVICE_NAME> -n <NAMESPACE>
+
+# Confirm that pods have matching labels
+kubectl get pods -n <NAMESPACE> --show-labels
+
+# Confirm that endpoints exist
+kubectl get endpoints <SERVICE_NAME> -n <NAMESPACE>
+kubectl describe endpoints <SERVICE_NAME> -n <NAMESPACE>
+```
+
+Test from within the cluster:
+
+```shell
+kubectl run curl-debug \
+  --image=curlimages/curl \
+  --restart=Never \
+  -it \
+  --rm \
+  -n <NAMESPACE> \
+  -- curl -v http://<SERVICE_NAME>.<NAMESPACE>.svc.cluster.local:<PORT>
+```
+
+Check the service port, target port, selector labels, readiness state, network policies, and application listener address.
+
+### 8.4 Rollout is failing or stuck
+
+```shell
+kubectl rollout status deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+kubectl describe deployment <DEPLOYMENT_NAME> -n <NAMESPACE>
+kubectl get replicasets -n <NAMESPACE>
+kubectl get events -n <NAMESPACE> --sort-by='.lastTimestamp'
+```
+
+Inspect the rollout history before considering a rollback:
+
+```shell
+kubectl rollout history deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+kubectl rollout history deployment/<DEPLOYMENT_NAME> --revision=<REVISION> -n <NAMESPACE>
+```
+
+### 8.5 High CPU or memory usage
+
+```shell
+kubectl top pods -n <NAMESPACE> --sort-by=cpu
+kubectl top pods -n <NAMESPACE> --sort-by=memory
 kubectl top nodes --sort-by=cpu
 kubectl top nodes --sort-by=memory
-
-# Get pod resource requests and limits
-kubectl get pods -n ecommerce -o=jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.containers[*].resources}{"\n"}{end}'
-
-# Get all pods with their QoS class
-kubectl get pods -n ecommerce -o custom-columns=NAME:.metadata.name,QOS:.status.qosClass
-
-# Watch pod status changes in real-time
-kubectl get pods -n ecommerce -w
-
-# Get resource usage across all namespaces
-kubectl top pods --all-namespaces
 ```
 
-### Persistent Volume Debugging
+Check requests, limits, and QoS class:
+
 ```shell
-# List PVCs
-kubectl get pvc -n ecommerce
+kubectl get pods -n <NAMESPACE> -o=jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.containers[*].resources}{"\n"}{end}'
+kubectl get pods -n <NAMESPACE> -o custom-columns=NAME:.metadata.name,QOS:.status.qosClass
+```
 
-# Describe PVC
-kubectl describe pvc <pvc-name> -n ecommerce
+### 8.6 Persistent volume or PVC issue
 
-# List PVs
+```shell
+kubectl get pvc -n <NAMESPACE>
+kubectl describe pvc <PVC_NAME> -n <NAMESPACE>
 kubectl get pv
-
-# Check PV status and claims
-kubectl get pv -o custom-columns=NAME:.metadata.name,STATUS:.status.phase,CLAIM:.spec.claimRef.name,STORAGECLASS:.spec.storageClassName,SIZE:.spec.capacity.storage
+kubectl get pv -o custom-columns=NAME:.metadata.name,STATUS:.status.phase,CLAIM:.spec.claimRef.name,STORAGECLASS:.spec.storageClassName,SIZE:.status.capacity.storage
 ```
 
-### Multi-Container Pod Debugging
+Review storage class, access mode, capacity, node constraints, and events associated with the claim.
+
+### 8.7 Network policy or DNS issue
+
 ```shell
-# Get logs from specific container
-kubectl logs <pod-name> -c <container-name> -n ecommerce
-
-# Exec into specific container
-kubectl exec -it <pod-name> -c <container-name> -n ecommerce -- /bin/sh
-
-# Get logs from init container
-kubectl logs <pod-name> -c <init-container-name> -n ecommerce
-
-# Get logs from all containers
-kubectl logs <pod-name> --all-containers=true -n ecommerce
+kubectl get networkpolicy -n <NAMESPACE>
+kubectl describe networkpolicy <NETWORK_POLICY_NAME> -n <NAMESPACE>
 ```
 
-# Performance and Scaling
+Then use the temporary DNS or network debugging pods described in [Kubernetes Basics](#57-test-connectivity-from-inside-the-cluster).
 
-### Horizontal Pod Autoscaler (HPA)
+### 8.8 Interactive debugging
+
+Use ephemeral containers only when supported by the cluster and when authorized:
+
 ```shell
-# Create HPA
-kubectl autoscale deployment product-service --cpu-percent=70 --min=3 --max=10 -n ecommerce
-
-# Get HPA status
-kubectl get hpa -n ecommerce
-
-# Describe HPA with detailed metrics
-kubectl describe hpa product-service -n ecommerce
-
-# Watch HPA in real-time
-kubectl get hpa -n ecommerce -w
-
-# Delete HPA
-kubectl delete hpa product-service -n ecommerce
+kubectl debug <POD_NAME> -n <NAMESPACE> -it \
+  --image=busybox \
+  --target=<CONTAINER_NAME>
 ```
 
-### Manual Scaling
+Debug a node:
+
 ```shell
-# Scale deployment
-kubectl scale deployment product-service --replicas=5 -n ecommerce
-
-# Scale statefulset
-kubectl scale statefulset order-service --replicas=3 -n ecommerce
-
-# Scale with timeout
-kubectl scale deployment product-service --replicas=10 -n ecommerce --timeout=5m
-
-# Get current replica count
-kubectl get deployment product-service -n ecommerce -o=jsonpath='{.spec.replicas}'
+kubectl debug node/<NODE_NAME> -it --image=ubuntu
 ```
 
-### Rollout Management
+---
+
+## 9. Performance, Scaling, and Rollouts
+
+### 9.1 HPA
+
 ```shell
-# Check rollout status
-kubectl rollout status deployment/product-service -n ecommerce
+# Create an HPA — state-changing
+kubectl autoscale deployment <DEPLOYMENT_NAME> \
+  --cpu-percent=70 \
+  --min=3 \
+  --max=10 \
+  -n <NAMESPACE>
 
-# View rollout history
-kubectl rollout history deployment/product-service -n ecommerce
+kubectl get hpa -n <NAMESPACE>
+kubectl describe hpa <HPA_NAME> -n <NAMESPACE>
+kubectl get hpa -n <NAMESPACE> --watch
 
-# View specific revision
-kubectl rollout history deployment/product-service --revision=2 -n ecommerce
-
-# Rollback to previous version
-kubectl rollout undo deployment/product-service -n ecommerce
-
-# Rollback to specific revision
-kubectl rollout undo deployment/product-service --to-revision=2 -n ecommerce
-
-# Pause rollout
-kubectl rollout pause deployment/product-service -n ecommerce
-
-# Resume rollout
-kubectl rollout resume deployment/product-service -n ecommerce
-
-# Restart deployment (recreate all pods)
-kubectl rollout restart deployment/product-service -n ecommerce
+# Delete an HPA — state-changing
+kubectl delete hpa <HPA_NAME> -n <NAMESPACE>
 ```
 
-# Security and RBAC
+### 9.2 Manual scaling
 
-### Check Permissions
+> **STATE-CHANGING:** Scaling manually may conflict with an HPA or GitOps/infrastructure reconciliation.
+
 ```shell
-# Check if you can perform action
-kubectl auth can-i create deployments -n ecommerce
-kubectl auth can-i delete pods -n ecommerce
+kubectl scale deployment <DEPLOYMENT_NAME> --replicas=<COUNT> -n <NAMESPACE>
+kubectl scale statefulset <STATEFULSET_NAME> --replicas=<COUNT> -n <NAMESPACE>
+kubectl scale deployment <DEPLOYMENT_NAME> --replicas=<COUNT> --timeout=5m -n <NAMESPACE>
+
+kubectl get deployment <DEPLOYMENT_NAME> -n <NAMESPACE> \
+  -o=jsonpath='{.spec.replicas}{"\n"}'
+```
+
+### 9.3 Rollout management
+
+```shell
+kubectl rollout status deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+kubectl rollout history deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+kubectl rollout history deployment/<DEPLOYMENT_NAME> --revision=<REVISION> -n <NAMESPACE>
+```
+
+The following commands change workload state:
+
+```shell
+# Roll back to the previous revision
+kubectl rollout undo deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+
+# Roll back to a specific revision
+kubectl rollout undo deployment/<DEPLOYMENT_NAME> \
+  --to-revision=<REVISION> \
+  -n <NAMESPACE>
+
+# Pause or resume a rollout
+kubectl rollout pause deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+kubectl rollout resume deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+
+# Restart all pods managed by a deployment
+kubectl rollout restart deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+```
+
+After any rollout change, verify status and inspect events:
+
+```shell
+kubectl rollout status deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+kubectl get pods -n <NAMESPACE>
+kubectl get events -n <NAMESPACE> --sort-by='.lastTimestamp'
+```
+
+---
+
+## 10. Security, RBAC, and Secrets
+
+### 10.1 Check permissions
+
+```shell
+kubectl auth can-i create deployments -n <NAMESPACE>
+kubectl auth can-i delete pods -n <NAMESPACE>
 kubectl auth can-i '*' '*' --all-namespaces
 
-# Check permissions as different user
-kubectl auth can-i get pods --as=system:serviceaccount:ecommerce:product-service-sa -n ecommerce
+# Check as a service account
+kubectl auth can-i get pods \
+  --as=system:serviceaccount:<NAMESPACE>:<SERVICE_ACCOUNT_NAME> \
+  -n <NAMESPACE>
 
-# List all permissions for service account
-kubectl auth can-i --list --as=system:serviceaccount:ecommerce:product-service-sa -n ecommerce
+kubectl auth can-i --list \
+  --as=system:serviceaccount:<NAMESPACE>:<SERVICE_ACCOUNT_NAME> \
+  -n <NAMESPACE>
 ```
 
-### Secrets Management
+### 10.2 Service accounts
+
 ```shell
-# Create secret from literal
-kubectl create secret generic api-key --from-literal=key=my-secret-key -n ecommerce
+kubectl get serviceaccounts -n <NAMESPACE>
+kubectl describe serviceaccount <SERVICE_ACCOUNT_NAME> -n <NAMESPACE>
 
-# Create secret from file
-kubectl create secret generic ssh-key --from-file=ssh-privatekey=/path/to/.ssh/id_rsa -n ecommerce
+# Create a service account — state-changing
+kubectl create serviceaccount <SERVICE_ACCOUNT_NAME> -n <NAMESPACE>
 
-# Create TLS secret
-kubectl create secret tls tls-secret --cert=/path/to/cert.crt --key=/path/to/cert.key -n ecommerce
-
-# Get secret (base64 encoded)
-kubectl get secret api-key -n ecommerce -o yaml
-
-# Decode secret
-kubectl get secret api-key -n ecommerce -o jsonpath='{.data.key}' | base64 -d
-
-# Edit secret
-kubectl edit secret api-key -n ecommerce
-
-# Delete secret
-kubectl delete secret api-key -n ecommerce
+# Create a short-lived token where supported
+kubectl create token <SERVICE_ACCOUNT_NAME> \
+  -n <NAMESPACE> \
+  --duration=<DURATION>
 ```
 
-### Service Accounts
+Avoid printing tokens unless strictly necessary. Treat generated tokens as credentials.
+
+### 10.3 Secrets
+
+> **SENSITIVE:** Secret values must not be displayed or shared unnecessarily. Prefer references to an approved secret-management system.
+
 ```shell
-# Create service account
-kubectl create serviceaccount product-service-sa -n ecommerce
+# Create from a literal — do not place real secrets in shell history
+kubectl create secret generic <SECRET_NAME> \
+  --from-literal=<KEY>=<SECRET_VALUE> \
+  -n <NAMESPACE>
 
-# Get service account token
-kubectl get serviceaccount product-service-sa -n ecommerce -o yaml
+# Create from a file
+kubectl create secret generic <SECRET_NAME> \
+  --from-file=<KEY>=<FILE_PATH> \
+  -n <NAMESPACE>
 
-# Create token for service account (K8s 1.24+)
-kubectl create token product-service-sa -n ecommerce --duration=8760h
+# Create a TLS secret
+kubectl create secret tls <SECRET_NAME> \
+  --cert=<CERT_PATH> \
+  --key=<KEY_PATH> \
+  -n <NAMESPACE>
+
+# Inspect metadata and encoded data only when authorized
+kubectl get secret <SECRET_NAME> -n <NAMESPACE> -o yaml
+
+# Decode one value only when necessary and handle output securely
+kubectl get secret <SECRET_NAME> -n <NAMESPACE> \
+  -o jsonpath='{.data.<KEY>}' | base64 --decode
+
+# Edit a secret — state-changing
+kubectl edit secret <SECRET_NAME> -n <NAMESPACE>
+
+# Delete a secret — destructive
+kubectl delete secret <SECRET_NAME> -n <NAMESPACE>
 ```
 
-# Multi-Cluster Commands
+---
 
-### Context Management
+## 11. Multi-Cluster Operations
+
+### 11.1 Context management
+
 ```shell
-# List all contexts
 kubectl config get-contexts
-
-# Switch context
-kubectl config use-context <context-name>
-
-# Get current context
 kubectl config current-context
-
-# Set namespace for context
-kubectl config set-context --current --namespace=ecommerce
-
-# Create new context
-kubectl config set-context east-cluster --cluster=east --user=east-admin --namespace=ecommerce
-
-# Delete context
-kubectl config delete-context <context-name>
+kubectl config use-context <CONTEXT>
+kubectl config set-context --current --namespace=<NAMESPACE>
 ```
 
-### Cross-Cluster Operations
+Create a context from existing kubeconfig entries:
+
 ```shell
-# Apply to multiple clusters
-for ctx in east west; do
-  kubectl apply -f deployment.yaml --context=$ctx
+kubectl config set-context <CONTEXT> \
+  --cluster=<CLUSTER_ENTRY> \
+  --user=<USER_ENTRY> \
+  --namespace=<NAMESPACE>
+```
+
+Delete an unused context only after confirming it is not needed:
+
+```shell
+kubectl config delete-context <CONTEXT>
+```
+
+### 11.2 Read-only checks across clusters
+
+Use explicit contexts so the active context does not determine the target accidentally:
+
+```shell
+for context in <CONTEXT_A> <CONTEXT_B>; do
+  echo "=== Context: $context ==="
+  kubectl get pods -n <NAMESPACE> --context="$context"
 done
+```
 
-# Get pods from all clusters
-for ctx in $(kubectl config get-contexts -o name); do
-  echo "=== Context: $ctx ==="
-  kubectl get pods -n ecommerce --context=$ctx
+Compare resource definitions:
+
+```shell
+diff \
+  <(kubectl get pods -n <NAMESPACE> --context=<CONTEXT_A> -o yaml) \
+  <(kubectl get pods -n <NAMESPACE> --context=<CONTEXT_B> -o yaml)
+```
+
+### 11.3 Multi-cluster mutations
+
+> **HIGH RISK:** Applying changes in a loop can affect multiple clusters. Use only with an approved change, explicit context list, and a tested manifest.
+
+```shell
+for context in <CONTEXT_A> <CONTEXT_B>; do
+  kubectl apply \
+    --context="$context" \
+    -n <NAMESPACE> \
+    -f <MANIFEST_PATH>
 done
-
-# Compare resources across clusters
-diff <(kubectl get pods -n ecommerce --context=east -o yaml) \
-     <(kubectl get pods -n ecommerce --context=west -o yaml)
 ```
 
-# Advanced Queries with JSONPath
+Prefer a dry run or read-only inspection first:
 
 ```shell
-# Get pod IPs
-kubectl get pods -n ecommerce -o jsonpath='{.items[*].status.podIP}'
-
-# Get pod names and their nodes
-kubectl get pods -n ecommerce -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.nodeName}{"\n"}{end}'
-
-# Get all container images
-kubectl get pods -n ecommerce -o jsonpath='{.items[*].spec.containers[*].image}' | tr -s '[[:space:]]' '\n' | sort | uniq
-
-# Get pods with their restart count
-kubectl get pods -n ecommerce -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.containerStatuses[*].restartCount}{"\n"}{end}'
-
-# Get all pods not in Running state
-kubectl get pods -n ecommerce -o json | jq -r '.items[] | select(.status.phase != "Running") | .metadata.name'
-
-# Get resource requests for all pods
-kubectl get pods -n ecommerce -o json | jq -r '.items[] | "\(.metadata.name): CPU=\(.spec.containers[0].resources.requests.cpu) Memory=\(.spec.containers[0].resources.requests.memory)"'
+kubectl apply \
+  --context=<CONTEXT> \
+  -n <NAMESPACE> \
+  --dry-run=server \
+  -f <MANIFEST_PATH>
 ```
 
-# Batch Operations
+---
+
+## 12. Advanced Queries
 
 ```shell
-# Delete all failed pods
-kubectl delete pods --field-selector status.phase=Failed -n ecommerce
+# Pod IPs
+kubectl get pods -n <NAMESPACE> \
+  -o jsonpath='{.items[*].status.podIP}'
 
-# Delete all completed pods
-kubectl delete pods --field-selector status.phase=Succeeded -n ecommerce
+# Pod names and nodes
+kubectl get pods -n <NAMESPACE> \
+  -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.nodeName}{"\n"}{end}'
 
-# Force delete stuck pod
-kubectl delete pod <pod-name> -n ecommerce --grace-period=0 --force
+# All container images
+kubectl get pods -n <NAMESPACE> \
+  -o jsonpath='{.items[*].spec.containers[*].image}' \
+  | tr -s '[[:space:]]' '\n' | sort | uniq
 
-# Restart all pods in deployment
-kubectl rollout restart deployment --all -n ecommerce
+# Pod restart counts
+kubectl get pods -n <NAMESPACE> \
+  -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.containerStatuses[*].restartCount}{"\n"}{end}'
 
-# Label all pods
-kubectl label pods --all environment=production -n ecommerce
+# Pods not in Running state
+kubectl get pods -n <NAMESPACE> -o json \
+  | jq -r '.items[] | select(.status.phase != "Running") | .metadata.name'
 
-# Annotate multiple resources
-kubectl annotate pods --all description="Managed by Kubernetes" -n ecommerce
+# Resource requests for all pods
+kubectl get pods -n <NAMESPACE> -o json \
+  | jq -r '.items[] | "\(.metadata.name): CPU=\(.spec.containers[0].resources.requests.cpu // "unset") Memory=\(.spec.containers[0].resources.requests.memory // "unset")"'
 ```
 
-# Troubleshooting Scenarios
+---
 
-### Pod in CrashLoopBackOff
+## 13. Batch Operations
+
+> **CAUTION:** Review the selector and namespace before running any batch command. Prefer listing the affected resources first.
+
 ```shell
-# Check logs
-kubectl logs <pod-name> -n ecommerce --previous
+# Preview failed pods
+kubectl get pods -n <NAMESPACE> --field-selector=status.phase=Failed
 
-# Check events
-kubectl describe pod <pod-name> -n ecommerce | grep -A 10 Events
+# Delete failed pods — state-changing
+kubectl delete pods -n <NAMESPACE> --field-selector=status.phase=Failed
 
-# Check liveness/readiness probes
-kubectl describe pod <pod-name> -n ecommerce | grep -A 5 "Liveness\|Readiness"
+# Preview completed pods
+kubectl get pods -n <NAMESPACE> --field-selector=status.phase=Succeeded
+
+# Delete completed pods — state-changing
+kubectl delete pods -n <NAMESPACE> --field-selector=status.phase=Succeeded
+
+# Restart all deployments in a namespace — state-changing
+kubectl rollout restart deployment --all -n <NAMESPACE>
+
+# Label all pods — state-changing
+kubectl label pods --all <KEY>=<VALUE> -n <NAMESPACE>
+
+# Annotate all pods — state-changing
+kubectl annotate pods --all <KEY>=<VALUE> -n <NAMESPACE>
 ```
 
-### Pod Pending
+Force deletion should be a last resort because it can bypass graceful shutdown and leave dependent systems in an unexpected state:
+
 ```shell
-# Check events for scheduling issues
-kubectl describe pod <pod-name> -n ecommerce | grep -A 10 Events
-
-# Check node resources
-kubectl describe nodes | grep -A 5 "Allocated resources"
-
-# Check PVC binding
-kubectl get pvc -n ecommerce
+# FORCE DELETE — use only with explicit approval
+kubectl delete pod <POD_NAME> \
+  -n <NAMESPACE> \
+  --grace-period=0 \
+  --force
 ```
 
-### Service Not Accessible
+---
+
+## 14. Useful Aliases
+
+Add only aliases that fit your shell and working practices to `~/.zshrc` or `~/.bashrc`:
+
 ```shell
-# Verify endpoints exist
-kubectl get endpoints <service-name> -n ecommerce
-
-# Check service selector matches pod labels
-kubectl describe service <service-name> -n ecommerce
-kubectl get pods -n ecommerce --show-labels
-
-# Test from within cluster
-kubectl run debug --image=curlimages/curl -it --rm --restart=Never -- \
-  curl -v http://<service-name>.<namespace>.svc.cluster.local:<port>
-```
-
-### High CPU/Memory Usage
-```shell
-# Identify resource-hungry pods
-kubectl top pods -n ecommerce --sort-by=cpu
-kubectl top pods -n ecommerce --sort-by=memory
-
-# Check if HPA is working
-kubectl get hpa -n ecommerce
-kubectl describe hpa <hpa-name> -n ecommerce
-
-# Increase resources
-kubectl set resources deployment <deployment-name> -n ecommerce \
-  --limits=cpu=2,memory=2Gi --requests=cpu=1,memory=1Gi
-```
-
-# Useful Aliases
-
-Add these to your `~/.zshrc`:
-```shell
-# Add to ~/.zshrc
 alias k='kubectl'
 alias kgp='kubectl get pods'
-alias kgs='kubectl get svc'
+alias kgs='kubectl get services'
 alias kgd='kubectl get deployments'
 alias kdp='kubectl describe pod'
 alias kds='kubectl describe service'
@@ -536,6 +975,56 @@ alias kex='kubectl exec -it'
 alias kctx='kubectl config use-context'
 alias kns='kubectl config set-context --current --namespace'
 alias kwatch='watch -n 2 kubectl get pods'
-
-# Apply changes: source ~/.zshrc
 ```
+
+Apply the changes:
+
+```shell
+source ~/.zshrc
+# or
+source ~/.bashrc
+```
+
+Remember that aliases can hide the namespace or context being used. For destructive operations, use the full command with explicit flags instead of relying on an alias.
+
+---
+
+## 15. Post-Change Verification
+
+After a deployment, rollback, restart, scale operation, Helm change, or deletion:
+
+```shell
+# Confirm the target context and namespace again
+kubectl config current-context
+kubectl get namespace <NAMESPACE>
+
+# Confirm workload state
+kubectl get pods -n <NAMESPACE> -o wide
+kubectl get deployments -n <NAMESPACE>
+kubectl rollout status deployment/<DEPLOYMENT_NAME> -n <NAMESPACE>
+
+# Confirm service routing
+kubectl get services -n <NAMESPACE>
+kubectl get endpoints <SERVICE_NAME> -n <NAMESPACE>
+
+# Review recent events
+kubectl get events -n <NAMESPACE> --sort-by='.lastTimestamp'
+
+# Review Helm state when applicable
+helm list -n <NAMESPACE>
+helm status <RELEASE_NAME> -n <NAMESPACE>
+```
+
+For an application health check, use a port-forward or an in-cluster test:
+
+```shell
+kubectl port-forward service/<SERVICE_NAME> <LOCAL_PORT>:<SERVICE_PORT> -n <NAMESPACE>
+```
+
+Then, from another terminal:
+
+```shell
+curl -fsS http://localhost:<LOCAL_PORT>/actuator/health
+```
+
+Document the final context, namespace, release revision, change performed, verification result, and any follow-up action in the approved operational record.
