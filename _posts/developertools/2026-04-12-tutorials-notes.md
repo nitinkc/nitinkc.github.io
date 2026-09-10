@@ -45,8 +45,8 @@ tags: [Notes, Tutorials]
 ## Infrastructure
 - DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
 - Terraform: [https://nitinkc.github.io/terraform-concepts/](https://nitinkc.github.io/terraform-concepts/){:target="_blank"}
-- Additional DevOps reference: [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
-
+- Help charts & Flux release : [https://nitinkc.github.io/HelmCharts/](https://nitinkc.github.io/HelmCharts/)
+  -  [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
 ## Databases
 - DB Theory : [https://nitinkc.github.io/database-theory/](https://nitinkc.github.io/database-theory/){:target="_blank"}
 - Cassandra Learning Hub: [https://nitinkc.github.io/CassandraLearning/](https://nitinkc.github.io/CassandraLearning/){:target="_blank"}
@@ -73,5 +73,5 @@ tags: [Notes, Tutorials]
 
 ## Frontend
 - Vue js static site - [https://nitinkc.github.io/thinkorama/](https://nitinkc.github.io/thinkorama/){:target="_blank"}
-- Angular - [https://angular.dev/tutorials/learn-angular](https://angular.dev/tutorials/learn-angular){:target="_blank"}
-- React
+- Angular - [https://nitinkc.github.io/AngularUI-concepts/docs/](https://nitinkc.github.io/AngularUI-concepts/docs/){:target="_blank"}
+- React - [https://nitinkc.github.io/react_vite_tutorial/docs/](https://nitinkc.github.io/react_vite_tutorial/docs/){:target="_blank"}
