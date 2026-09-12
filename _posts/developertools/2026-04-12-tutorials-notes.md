@@ -10,7 +10,6 @@ tags: [Notes, Tutorials]
 - System Design Interview Preparation: [https://nitinkc.github.io/SystemDesign-Revision/](https://nitinkc.github.io/SystemDesign-Revision/){:target="_blank"}
 - DS Algo : [https://nitinkc.github.io/CodingInterviewPreps/](https://nitinkc.github.io/CodingInterviewPreps/)
 
-
 ## Architecture
 - Architecture and System Design:  [https://nitinkc.github.io/Microservices-Design-Architecture/](https://nitinkc.github.io/Microservices-Design-Architecture/){:target="_blank"}
 - **BitVelocity**: [https://nitinkc.github.io/BitVelocity-Docs/](https://nitinkc.github.io/BitVelocity-Docs/){:target="_blank"}
@@ -30,8 +29,7 @@ tags: [Notes, Tutorials]
 - AI Interview Preparation : [https://nitinkc.github.io/AI-Engineering-Learning/](https://nitinkc.github.io/AI-Engineering-Learning/){:target="_blank"}
 - AI Dev Guide - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
 - Agentic AI - [https://nitinkc.github.io/agentic-ai/](https://nitinkc.github.io/agentic-ai/){:target="_blank"}
-- Forward Deployed Engineer: [https://nitinkc.github.io/forward-deployed-engineer-gcp/](https://nitinkc.github.io/forward-deployed-engineer-gcp/)
-{:target="_blank"}
+- Forward Deployed Engineer: [https://nitinkc.github.io/forward-deployed-engineer-gcp/](https://nitinkc.github.io/forward-deployed-engineer-gcp/){:target="_blank"}
 
 - Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
 
@@ -61,16 +59,15 @@ tags: [Notes, Tutorials]
 
 ## Back-end Programming Languages
 
-**Java Multithreading Advanced References**
-
-- Multithreading Learnings : [https://nitinkc.github.io/MultithreadingLearningHub/](https://nitinkc.github.io/MultithreadingLearningHub/){:target="_blank"}
-- [Multithreading](https://nitinkc.github.io/java/multithreading/concurrency/series-overview/){:target="_blank"}
-- [Java Compilation Optimization](https://nitinkc.github.io/java/compiler-code-optimization/){:target="_blank"}
-
-
+- Java : 
+- Java Multithreading : [https://nitinkc.github.io/MultithreadingLearningHub/](https://nitinkc.github.io/MultithreadingLearningHub/){:target="_blank"}
+  - [Multithreading](https://nitinkc.github.io/java/multithreading/concurrency/series-overview/){:target="_blank"}
+- Java Compilation : [Java Compilation Optimization](https://nitinkc.github.io/java/compiler-code-optimization/){:target="_blank"}
 - Go Programming Language : [https://github.com/nitinkc/GoLangLearning](https://github.com/nitinkc/GoLangLearning){:target="_blank"}
+- Python : [https://nitinkc.github.io/PythonConcepts/](https://nitinkc.github.io/PythonConcepts/){:target="_blank"}
+- Typescript: [https://nitinkc.github.io/typescript-learninig/](https://nitinkc.github.io/typescript-learninig/){:target="_blank"}
+- sdc
 
-- Node
 
 ## Frontend
 - Vue js static site - [https://nitinkc.github.io/thinkorama/](https://nitinkc.github.io/thinkorama/){:target="_blank"}
