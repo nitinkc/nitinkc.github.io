@@ -59,9 +59,9 @@ tags: [Notes, Tutorials]
 
 ## Back-end Programming Languages
 
-- Java : [https://nitinkc.github.io/JavaConcepts/](https://nitinkc.github.io/JavaConcepts/)
+- Java : [https://nitinkc.github.io/JavaConcepts/](https://nitinkc.github.io/JavaConcepts/){:target="_blank"}
 - Java Multithreading : [https://nitinkc.github.io/MultithreadingLearningHub/](https://nitinkc.github.io/MultithreadingLearningHub/){:target="_blank"}
-  - [Multithreading](https://nitinkc.github.io/java/multithreading/concurrency/series-overview/){:target="_blank"}
+  - Multithreading blog : [Multithreading](https://nitinkc.github.io/java/multithreading/concurrency/series-overview/){:target="_blank"}
 - Java Compilation : [Java Compilation Optimization](https://nitinkc.github.io/java/compiler-code-optimization/){:target="_blank"}
 - Go Programming Language : [https://github.com/nitinkc/GoLangLearning](https://github.com/nitinkc/GoLangLearning){:target="_blank"}
 - Python : [https://nitinkc.github.io/PythonConcepts/](https://nitinkc.github.io/PythonConcepts/){:target="_blank"}
