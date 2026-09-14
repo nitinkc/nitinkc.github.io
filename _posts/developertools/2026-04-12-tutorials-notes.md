@@ -41,7 +41,7 @@ tags: [Notes, Tutorials]
 
 ## Security
 - Spring Security Reference: [https://nitinkc.github.io/spring-security-reference/](https://nitinkc.github.io/spring-security-reference/){:target="_blank"}
-
+- Enterprise Security for Forward Deployed Engineers -(https://nitinkc.github.io/Enterprise-security-FDE/)[https://nitinkc.github.io/Enterprise-security-FDE/]
 ## Infrastructure
 - DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
 - Terraform: [https://nitinkc.github.io/terraform-concepts/](https://nitinkc.github.io/terraform-concepts/){:target="_blank"}
