@@ -36,9 +36,11 @@ tags: [Notes, Tutorials]
 ## Microservices
 - Microservices Interview : [https://nitinkc.github.io/microservices-interview/](https://nitinkc.github.io/microservices-interview/){:target="_blank"}
 - Springboot Reference : [https://nitinkc.github.io/microservices/springboot-reference/](https://nitinkc.github.io/microservices/springboot-reference/){:target="_blank"}
-- Spring Security Reference: [https://nitinkc.github.io/spring-security-reference/](https://nitinkc.github.io/spring-security-reference/){:target="_blank"}
 - Springboot AI : [https://nitinkc.github.io/SpringBootAI/](https://nitinkc.github.io/SpringBootAI/){:target="_blank"}
 - PCF Learning : [https://nitinkc.github.io/PCF-Learning/](https://nitinkc.github.io/PCF-Learning/){:target="_blank"}
+
+## Security
+- Spring Security Reference: [https://nitinkc.github.io/spring-security-reference/](https://nitinkc.github.io/spring-security-reference/){:target="_blank"}
 
 ## Infrastructure
 - DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
@@ -48,9 +50,9 @@ tags: [Notes, Tutorials]
 
 ## Databases
 - DB Theory : [https://nitinkc.github.io/database-theory/](https://nitinkc.github.io/database-theory/){:target="_blank"}
+- SQL Query Optimization - https://nitinkc.github.io/SQL-QueryOptimization-tutorials/
 - Cassandra Learning Hub: [https://nitinkc.github.io/CassandraLearning/](https://nitinkc.github.io/CassandraLearning/){:target="_blank"}
 - MongoDB Learning Resource: [https://nitinkc.github.io/MongoDBLeaning/](https://nitinkc.github.io/MongoDBLeaning/){:target="_blank"}
-- SQL - 
 - Data warehouse : [https://nitinkc.github.io/DataWarehouseLearnings/](https://nitinkc.github.io/DataWarehouseLearnings/){:target="_blank"}
 
 ## Career Path
@@ -58,7 +60,6 @@ tags: [Notes, Tutorials]
 - Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
 
 ## Back-end Programming Languages
-
 - Java : [https://nitinkc.github.io/JavaConcepts/](https://nitinkc.github.io/JavaConcepts/){:target="_blank"}
 - Java Multithreading : [https://nitinkc.github.io/MultithreadingLearningHub/](https://nitinkc.github.io/MultithreadingLearningHub/){:target="_blank"}
   - Multithreading blog : [Multithreading](https://nitinkc.github.io/java/multithreading/concurrency/series-overview/){:target="_blank"}
