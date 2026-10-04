@@ -44,11 +44,10 @@ tags: [Notes, Tutorials]
 - Enterprise Security for Forward Deployed Engineers: [https://nitinkc.github.io/Enterprise-security-FDE/](https://nitinkc.github.io/Enterprise-security-FDE/){:target="_blank"}
 
 ## Infrastructure
-- Networks & Terraform : [https://nitinkc.github.io/Networks-Terraform-Basics/](https://nitinkc.github.io/Networks-Terraform-Basics/){:target="_blank"}
-- DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
+- Network Basics & Terraform : [https://nitinkc.github.io/Networks-Terraform-Basics/](https://nitinkc.github.io/Networks-Terraform-Basics/){:target="_blank"}
 - Terraform: [https://nitinkc.github.io/terraform-concepts/](https://nitinkc.github.io/terraform-concepts/){:target="_blank"}
-- Help charts & Flux release : [https://nitinkc.github.io/HelmCharts/](https://nitinkc.github.io/HelmCharts/)
-  -  [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
+- DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
+- Help charts & Flux release : [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
 
 ## Databases
 - DB Theory : [https://nitinkc.github.io/database-theory/](https://nitinkc.github.io/database-theory/){:target="_blank"}
@@ -66,7 +65,7 @@ tags: [Notes, Tutorials]
 - Java Multithreading : [https://nitinkc.github.io/MultithreadingLearningHub/](https://nitinkc.github.io/MultithreadingLearningHub/){:target="_blank"}
   - Multithreading blog : [Multithreading](https://nitinkc.github.io/java/multithreading/concurrency/series-overview/){:target="_blank"}
 - Java Compilation : [Java Compilation Optimization](https://nitinkc.github.io/java/compiler-code-optimization/){:target="_blank"}
-- Go Programming Language : [https://github.com/nitinkc/GoLangLearning](https://github.com/nitinkc/GoLangLearning){:target="_blank"}
+- Go Programming Language : [https://nitinkc.github.io/GoConcepts/](https://nitinkc.github.io/GoConcepts/){:target="_blank"}
 - Python : [https://nitinkc.github.io/PythonConcepts/](https://nitinkc.github.io/PythonConcepts/){:target="_blank"}
 - Typescript: [https://nitinkc.github.io/typescript-learninig/](https://nitinkc.github.io/typescript-learninig/){:target="_blank"}
 - sdc
