@@ -68,7 +68,6 @@ tags: [Notes, Tutorials]
 - Go Programming Language : [https://nitinkc.github.io/GoConcepts/](https://nitinkc.github.io/GoConcepts/){:target="_blank"}
 - Python : [https://nitinkc.github.io/PythonConcepts/](https://nitinkc.github.io/PythonConcepts/){:target="_blank"}
 - Typescript: [https://nitinkc.github.io/typescript-learninig/](https://nitinkc.github.io/typescript-learninig/){:target="_blank"}
-- sdc
 
 
 ## Frontend
