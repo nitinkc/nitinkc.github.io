@@ -253,3 +253,10 @@ find . -name "*.java" -print0 | xargs -0 -J % cp % destinationFolder
 * sudo ("superuser do") - execute a command with 'root' privileges
 * su ("switch user") - start a new shell using a different user account
 * man ("manual") - to display detailed information about a command.
+
+
+```shell
+sudo lsof -PiTCP -sTCP:LISTEN   
+
+sudo lsof -PiTCP -sTCP:LISTEN | grep 'localhost:63' | awk '{print $2}' | xargs kill -9
+```
