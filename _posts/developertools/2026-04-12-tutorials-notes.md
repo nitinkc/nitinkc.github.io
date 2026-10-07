@@ -40,6 +40,7 @@ tags: [Notes, Tutorials]
 - PCF Learning : [https://nitinkc.github.io/PCF-Learning/](https://nitinkc.github.io/PCF-Learning/){:target="_blank"}
 
 ## Security
+- Security Fundamentals: [https://nitinkc.github.io/system%20design/Security/](https://nitinkc.github.io/system%20design/Security/){:target="_blank"}
 - Spring Security Reference: [https://nitinkc.github.io/spring-security-reference/](https://nitinkc.github.io/spring-security-reference/){:target="_blank"}
 - Enterprise Security for Forward Deployed Engineers: [https://nitinkc.github.io/Enterprise-security-FDE/](https://nitinkc.github.io/Enterprise-security-FDE/){:target="_blank"}
 
