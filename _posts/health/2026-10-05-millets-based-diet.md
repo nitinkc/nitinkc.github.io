@@ -26,6 +26,7 @@ tags:
 
 ## Barnyard Idli/Dosai
 - Barnyard Rava (Soaked for atleast 2 hours) - 1 cup
+  - if using unpolished barnyard millet, soak for 8 hours - 1 cup
 - Urad Dal (Soaked for 8 hours) - 2 cups
 - Grid togather and ferment with Yoghurt Settings in Instapot
 
@@ -36,7 +37,7 @@ tags:
 - add 1 cup of Raagi, and cover with lid, on low flame, WITHOUT DISTURBING
 - after sometime, mix well and let it steam for somemore time
 
-## Baajra Roti
+## Baajra (Pearl Millet) Roti
 - 2 cups of water with salt to rolling boil
 - Sim, and add 2 cups of Baajra flour, DO NOT DISTURB
 - cook for sometime adn close

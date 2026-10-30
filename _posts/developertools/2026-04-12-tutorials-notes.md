@@ -47,6 +47,8 @@ tags: [Notes, Tutorials]
 ## Infrastructure
 - Network Basics & Terraform : [https://nitinkc.github.io/Networks-Terraform-Basics/](https://nitinkc.github.io/Networks-Terraform-Basics/){:target="_blank"}
 - Terraform: [https://nitinkc.github.io/terraform-concepts/](https://nitinkc.github.io/terraform-concepts/){:target="_blank"}
+- Docker: [](){:target="_blank"}
+- Kubernetes: [https://nitinkc.github.io/KubernetesConcepts/](https://nitinkc.github.io/KubernetesConcepts/){:target="_blank"}
 - DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
 - Help charts & Flux release : [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
 
@@ -75,3 +77,6 @@ tags: [Notes, Tutorials]
 - Vue js static site - [https://nitinkc.github.io/thinkorama/](https://nitinkc.github.io/thinkorama/){:target="_blank"}
 - Angular - [https://nitinkc.github.io/AngularUI-concepts/docs/](https://nitinkc.github.io/AngularUI-concepts/docs/){:target="_blank"}
 - React - [https://nitinkc.github.io/react_vite_tutorial/docs/](https://nitinkc.github.io/react_vite_tutorial/docs/){:target="_blank"}
+
+
+Chekov - Policy as code [https://www.checkov.io/1.Welcome/Quick%20Start.html](https://www.checkov.io/1.Welcome/Quick%20Start.html)

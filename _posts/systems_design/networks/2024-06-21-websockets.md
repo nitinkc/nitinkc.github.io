@@ -29,6 +29,8 @@ just unidirectional connection from server to the client
 
 good for instagram lives, notification systems broadcasrting
 
+[https://bytebytego.com/guides/shortlong-polling-sse-websocket/](https://bytebytego.com/guides/shortlong-polling-sse-websocket/)
+
 # Websockets
 
 - persistent, low latency bi-directional full duplex data exchange

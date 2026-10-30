@@ -33,7 +33,7 @@ glab auth login --hostname gitlab.gcp.corp.com
 ### Clone all projects under a gitlab directory
 
 ```shell
-glab config set host gitlab.gcp.davita.com
+glab config set host gitlab.gcp.my-org.com
 
 # cd into the fresh directory where the cloning is needed
 glab repo clone \

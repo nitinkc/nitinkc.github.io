@@ -69,3 +69,29 @@ Character.isDigit(c);//True
 c = 'S';
 Character.isLetter(c).//True
 ```
+
+
+###
+
+- Works only with Small character letters
+```java
+int sChar[] = new int[26];
+int tChar[] = new int[26];
+
+for(int i = 0; i < s.length(); i++){
+    sChar[(int) s.charAt(i) - 'a']++;//Explicit conversion
+    tChar[t.charAt(i) - 'a']++;
+}
+```
+
+- Works with all characters including  Capitalized characters
+```java
+int sChar[] = new int[128];
+int tChar[] = new int[128];
+
+for(int i = 0; i < s.length(); i++){
+    sChar[(int) s.charAt(i)]++;
+    tChar[t.charAt(i)]++;//Auto conversion happens
+}
+
+```

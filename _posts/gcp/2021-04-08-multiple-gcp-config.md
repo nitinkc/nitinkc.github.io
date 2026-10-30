@@ -9,6 +9,50 @@ tags:
 
 {% include toc title="Index" %}
 
+
+```shell
+gcloud config configurations list
+# Switch Profile
+gcloud config configurations activate local
+
+### Login
+
+# For CLI
+gcloud auth login
+
+# For code
+gcloud auth application-default login 
+
+# Check Token
+gcloud auth application-default print-access-token
+```
+
+#### GCP gcloud Authentication Methods
+
+| Capability          | `gcloud auth login`                        | `gcloud auth application-default login`                                   |
+|:--------------------|:-----------------------------------------|:------------------------------------------------------------------------|
+| Primary Target      | The gcloud CLI itself.                   | Code and SDKs running locally.                                          |
+| Ideal Use Case      | Running `gcloud` commands from terminal. | Testing code locally that will eventually run on a server.              |
+| Credential Location | ~/.config/gcloud/                        | `~/.config/gcloud/application_default_credentials.json`                 |
+| SDK Accessibility   | ❌ No.                                   | Yes. Automatically picked up by Application Default Credentials (ADC).  |
+
+
+## Create a new config
+In order to create a new profile, always use `gcloud init` and follow the  prompts.
+
+### Add new GCP Account
+
+In case a new GCP Account is to be added, use following to create a new
+configuration and initialize
+
+```shell
+gcloud config configurations create [CONFIG_NAME]
+
+gcloud init
+```
+
+Select re-initialize the config just created and login as a new user and get redirected into web Browser for GCP Console login
+
 ## Check all available configs 
 
 ```shell
@@ -19,16 +63,11 @@ gcloud config configurations list
     ```shell
     gcloud config list
     ```
-  
-- To change from one existing profile to another existing profile
-    ```shell
-    gcloud config configurations activate [CONFIG_NAME]
-    ```
 
-    ```shell
-    alias gcpLocal='gcloud config configurations activate local'
-    alias gcpNitin='gcloud config configurations activate learn'
-    ```
+```shell
+alias gcpLocal='gcloud config configurations activate local'
+alias gcpNitin='gcloud config configurations activate learn'
+```
 
 - After Switching. change the account with the corrosponding profile
     ```shell
@@ -51,48 +90,6 @@ gcloud config configurations list
     ```shell
     gcloud auth list
     ```
-  
-### Login
-
-```shell
-# For CLI
-gcloud auth login
-
-# For code
-gcloud auth application-default login 
-
-# Check Token
-gcloud auth application-default print-access-token
-```
-
-#### Summary of GCP gcloud Authentication Methods
-
-| Capability          | `gcloud auth login`                        | `gcloud auth application-default login`                                   |
-|:--------------------|:-----------------------------------------|:------------------------------------------------------------------------|
-| Primary Target      | The gcloud CLI itself.                   | Code and SDKs running locally.                                          |
-| Ideal Use Case      | Running `gcloud` commands from terminal. | Testing code locally that will eventually run on a server.              |
-| Credential Location | ~/.config/gcloud/                        | `~/.config/gcloud/application_default_credentials.json`                 |
-| SDK Accessibility   | ❌ No.                                   | Yes. Automatically picked up by Application Default Credentials (ADC).  |
-
-
-## Create a new config
-In order to create a new profile, always use `gcloud init` and follow the  prompts.
-
-select the project, by either providing the number given or by providing the exact project ID.
-
-### Add new GCP Account
-
-In case a new GCP Account is to be added, use following to create a new
-configuration and initialize
-
-```shell
-gcloud config configurations create [CONFIG_NAME]
-
-gcloud init
-```
-
-Select re-initialize the config just created and login as a new user and get redirected into web Browser for GCP Console login
-
 
 ## Delete a configuration
 

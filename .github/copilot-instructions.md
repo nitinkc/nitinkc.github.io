@@ -42,7 +42,7 @@ This repository is a personal Jekyll site built on the "Minimal Mistakes" theme.
 
 ## Helpful in-repo reference
 - Markdown reference: `_posts/developertools/2022-01-19-markdown-reference.md` — useful for examples of front-matter, classes (e.g., `wide`), and common Markdown/Liquid patterns used across posts.
-- image related post: `_posts/developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings.md`
+- image related post: `../_posts/developertools/IDEs`
 - table related:
   - All tables should be left aligned by default.
 - code related :
