@@ -27,7 +27,7 @@ development
 - Profile Settings   [Set Local profile, alias etc.]({% post_url
   /developertools/2023-07-12-profile-settings %})
 - IntelliJ Settings  [Configuring IntelliJ]({% post_url
-  /developertools/intelliJ/2021-02-07-inteliJ-Idea-CE-settings %})
+  /developertools/IDEs/2021-02-07-inteliJ-Idea-CE-settings %})
 - Git config         [Configuring global git congig]({% post_url
   /git/2024-06-18-git-config %})
 - Sublime              [Configuring Sublime Editor]({% post_url
