@@ -6,9 +6,13 @@ tags: [Notes, Tutorials]
 
 {% include toc title="Index" %}
 
+
+- Forward Deployed Engineer: [https://nitinkc.github.io/forward-deployed-engineer-gcp/](https://nitinkc.github.io/forward-deployed-engineer-gcp/){:target="_blank"}
+
+
 ## Algo Interviews
 - System Design Interview Preparation: [https://nitinkc.github.io/SystemDesign-Revision/](https://nitinkc.github.io/SystemDesign-Revision/){:target="_blank"}
-- DS Algo : [https://nitinkc.github.io/CodingInterviewPreps/](https://nitinkc.github.io/CodingInterviewPreps/)
+- DS Algo : [https://nitinkc.github.io/CodingInterviewPreps/](https://nitinkc.github.io/CodingInterviewPreps/){:target="_blank"}
 
 ## Architecture
 - Architecture and System Design:  [https://nitinkc.github.io/Microservices-Design-Architecture/](https://nitinkc.github.io/Microservices-Design-Architecture/){:target="_blank"}
@@ -29,7 +33,6 @@ tags: [Notes, Tutorials]
 - AI Interview Preparation : [https://nitinkc.github.io/AI-Engineering-Learning/](https://nitinkc.github.io/AI-Engineering-Learning/){:target="_blank"}
 - AI Dev Guide - [https://nitinkc.github.io/AI-Dev-Guide/](https://nitinkc.github.io/AI-Dev-Guide/){:target="_blank"}
 - Agentic AI - [https://nitinkc.github.io/agentic-ai/](https://nitinkc.github.io/agentic-ai/){:target="_blank"}
-- Forward Deployed Engineer: [https://nitinkc.github.io/forward-deployed-engineer-gcp/](https://nitinkc.github.io/forward-deployed-engineer-gcp/){:target="_blank"}
 
 - Machine Learning : [https://nitinkc.github.io/MachineLearning-Guide/](https://nitinkc.github.io/MachineLearning-Guide/){:target="_blank"}
 
@@ -38,27 +41,39 @@ tags: [Notes, Tutorials]
 - Springboot Reference : [https://nitinkc.github.io/microservices/springboot-reference/](https://nitinkc.github.io/microservices/springboot-reference/){:target="_blank"}
 - Springboot AI : [https://nitinkc.github.io/SpringBootAI/](https://nitinkc.github.io/SpringBootAI/){:target="_blank"}
 - PCF Learning : [https://nitinkc.github.io/PCF-Learning/](https://nitinkc.github.io/PCF-Learning/){:target="_blank"}
+- WebSockets : [https://nitinkc.github.io/websockets/](https://nitinkc.github.io/websockets/){:target="_blank"}
+- Webhooks  : [https://nitinkc.github.io/webhooks/](https://nitinkc.github.io/webhooks/){:target="_blank"}
+- Server-sent Events sse : [https://nitinkc.github.io/sse-ServerSentEvents/](https://nitinkc.github.io/sse-ServerSentEvents/){:target="_blank"}
+- gRPC : [https://nitinkc.github.io/gRPC/](https://nitinkc.github.io/gRPC/){:target="_blank"}
+- apigee : [https://nitinkc.github.io/apigee/](https://nitinkc.github.io/apigee/){:target="_blank"}
+- api security : [https://nitinkc.github.io/api-security/](https://nitinkc.github.io/api-security/){:target="_blank"}
 
 ## Security
 - Security Fundamentals: [https://nitinkc.github.io/system%20design/Security/](https://nitinkc.github.io/system%20design/Security/){:target="_blank"}
+- API Security: [https://nitinkc.github.io/api-security/](https://nitinkc.github.io/api-security/){:target="_blank"}
 - Spring Security Reference: [https://nitinkc.github.io/spring-security-reference/](https://nitinkc.github.io/spring-security-reference/){:target="_blank"}
 - Enterprise Security for Forward Deployed Engineers: [https://nitinkc.github.io/Enterprise-security-FDE/](https://nitinkc.github.io/Enterprise-security-FDE/){:target="_blank"}
+- AI and LLM Security Agent System: [https://nitinkc.github.io/AI-LLM-Security-Agent-Systems/](https://nitinkc.github.io/AI-LLM-Security-Agent-Systems/)
+
 
 ## Infrastructure
-- Network Basics & Terraform : [https://nitinkc.github.io/Networks-Terraform-Basics/](https://nitinkc.github.io/Networks-Terraform-Basics/){:target="_blank"}
+- Network Basics, F5 cloud & Terraform : [https://nitinkc.github.io/Networks-Terraform-Basics/](https://nitinkc.github.io/Networks-Terraform-Basics/){:target="_blank"}
 - Docker: [https://nitinkc.github.io/DockerConcepts/](https://nitinkc.github.io/DockerConcepts/){:target="_blank"}
 - Kubernetes: [https://nitinkc.github.io/KubernetesConcepts/](https://nitinkc.github.io/KubernetesConcepts/){:target="_blank"}
 - Terraform: [https://nitinkc.github.io/terraform-concepts/](https://nitinkc.github.io/terraform-concepts/){:target="_blank"}
 - DevOps & Infrastructure End-to-End Learning Hub:  [https://nitinkc.github.io/DevOpsLearning/](https://nitinkc.github.io/DevOpsLearning/){:target="_blank"}
-- Help charts & Flux release : [Helm Charts Repository](https://nitinkc.github.io/HelmCharts){:target="_blank"}
+- Helm charts : [https://nitinkc.github.io/HelmCharts/](https://nitinkc.github.io/HelmCharts){:target="_blank"}
+- Flux GitLab : [https://gitlab-spring-app-flux-f770cf.gitlab.io/](https://gitlab-spring-app-flux-f770cf.gitlab.io/){:target="_blank"}
+  - Flux GitHub : [https://nitinkc.github.io/flux-learning/](https://nitinkc.github.io/flux-learning/){:target="_blank"}
 
 ## Databases
 - DB Theory : [https://nitinkc.github.io/database-theory/](https://nitinkc.github.io/database-theory/){:target="_blank"}
+- Sharding & Partitioning : [https://nitinkc.github.io/db-sharding/](https://nitinkc.github.io/db-sharding/){:target="_blank"}
 - SQL Query Optimization - https://nitinkc.github.io/SQL-QueryOptimization-tutorials/
 - Cassandra Learning Hub: [https://nitinkc.github.io/CassandraLearning/](https://nitinkc.github.io/CassandraLearning/){:target="_blank"}
 - MongoDB Learning Resource: [https://nitinkc.github.io/MongoDBLeaning/](https://nitinkc.github.io/MongoDBLeaning/){:target="_blank"}
 - Data warehouse : [https://nitinkc.github.io/DataWarehouseLearnings/](https://nitinkc.github.io/DataWarehouseLearnings/){:target="_blank"}
-
+- Redis : [https://nitinkc.github.io/redis/](https://nitinkc.github.io/redis/){:target="_blank"}
 ## Career Path
 - Cto Career path : [https://nitinkc.github.io/careerPath/](https://nitinkc.github.io/careerPath/){:target="_blank"}
 - Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}

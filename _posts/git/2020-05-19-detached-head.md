@@ -98,6 +98,12 @@ See [git-submodule-demo](https://github.com/nitinkc/git-submodule-demo/blob/mast
 ```sh
 git log --graph --decorate --pretty=oneline --abbrev-commit master origin/master
 git log -n 2
+
+git reflog --date=local | head -40
+git show 04505a17bc9e101344b6c8e8cb819a90d2c078c3 --stat
+git cherry-pick 04505a17bc9e101344b6c8e8cb819a90d2c078c3
+
+# OR
 git checkout 957833d728b3249d22a3b3160f3a48b72c576d91
 git checkout -b temp
 git checkout master
@@ -108,8 +114,17 @@ git branch -d temp  # delete temp branch
 # Removing a Submodule
 
 ```shell
-git submodule deinit -f -- my-project
-git rm --cached my-project                                        
+# 1. Unregister the submodule from .git/config
+git submodule deinit -f <submodule-name>
+
+# 2. Remove the submodule directory and its entry in .gitmodules
+git rm -f <submodule-name>
+
+# 3. Remove the internal Git metadata cache for the submodule
+rm -rf .git/modules/<submodule-name>
+
+# 4. Commit the removal to the parent repository
+git commit -m "Remove submodule <submodule-name>"                                      
 ```
 
 Then:

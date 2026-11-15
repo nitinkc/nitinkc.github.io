@@ -4,12 +4,13 @@ date: 2026-07-24 09:45:00
 categories:
 - Health
 tags:
-- drinks
+- japanese
 ---
 
 {% include toc title="Index" %}
 
-Philosophical foundations behind minimalism — useful for understanding *why* a decluttered space feels calm, not just empty.
+Philosophical foundations behind minimalism — useful for understanding *why* a decluttered space feels calm, not just
+empty.
 
 ## 断捨離 — Danshari
 **"Refuse, discard, separate"**
@@ -38,7 +39,7 @@ replace often" — instead: buy well, maintain it, use it until it's truly done.
 **Beauty in imperfection and impermanence**
 
 Finding beauty in things that are aged, worn, or imperfect — a chipped bowl, a scratched table.
-This is why minimalist Japanese spaces feel warm, not sterile: a few well-loved objects instead of]
+This is why minimalist Japanese spaces feel warm, not sterile: a few well-loved objects instead of
 a showroom of new ones.
 
 *Example: keep the chipped mug you love instead of replacing it with a matching new set.*
@@ -82,19 +83,29 @@ Not flashy — quality that reveals itself the longer you look at or use it. A p
 
 ---
 
-## How They Work Together
+## 急がば回れ - Isogaba maware
 
-| Concept | Role in Minimalism |
-|---|---|
-| Danshari | The *action* — what to remove and why |
-| Mottainai | The *restraint* — don't waste, use fully |
-| Wabi-sabi | The *feeling* — imperfection is allowed, even beautiful |
-| Ma | The *space* — emptiness has purpose |
-| Kanso | The *design principle* — simplicity by removing excess |
-| Seijaku | The *result* — inner calm |
-| Shizen | The *check* — does it feel natural, or forced? |
-| Shibumi | The *quality bar* — understated over flashy |
+"if you are in a hurry, go around" or "take the long way around"
 
 ---
 
-*A practical starting exercise: pick 3 "wabi-sabi keepers" in your home — imperfect, well-used things you genuinely love — then apply danshari (why am I attached?) and mottainai (am I using this fully?) to everything else.*
+## How They Work Together
+
+| Concept   | Role in Minimalism                                      |
+|:----------|:--------------------------------------------------------|
+| Danshari  | The *action* — what to remove and why                   |
+| Mottainai | The *restraint* — don't waste, use fully                |
+| Wabi-sabi | The *feeling* — imperfection is allowed, even beautiful |
+| Ma        | The *space* — emptiness has purpose                     |
+| Kanso     | The *design principle* — simplicity by removing excess  |
+| Seijaku   | The *result* — inner calm                               |
+| Shizen    | The *check* — does it feel natural, or forced?          |
+| Shibumi   | The *quality bar* — understated over flashy             |
+
+---
+
+A practical starting exercise: pick 3 "wabi-sabi keepers" in your home 
+
+— imperfect, well-used things you genuinely love 
+— then apply danshari (why am I attached?) and 
+- mottainai (am I using this fully?) to everything else.
