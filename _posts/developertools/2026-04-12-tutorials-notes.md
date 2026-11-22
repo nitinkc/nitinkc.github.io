@@ -6,9 +6,10 @@ tags: [Notes, Tutorials]
 
 {% include toc title="Index" %}
 
-
-- Forward Deployed Engineer: [https://nitinkc.github.io/forward-deployed-engineer-gcp/](https://nitinkc.github.io/forward-deployed-engineer-gcp/){:target="_blank"}
-
+## Career Path
+- Forward Deployed Engineer: [https://nitinkc.github.io/FDE-bootcamp/](https://nitinkc.github.io/FDE-bootcamp/){:target="_blank"}
+- Cto Career path : [https://nitinkc.github.io/careerPath/](https://nitinkc.github.io/careerPath/){:target="_blank"}
+- Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
 
 ## Algo Interviews
 - System Design Interview Preparation: [https://nitinkc.github.io/SystemDesign-Revision/](https://nitinkc.github.io/SystemDesign-Revision/){:target="_blank"}
@@ -55,7 +56,6 @@ tags: [Notes, Tutorials]
 - Enterprise Security for Forward Deployed Engineers: [https://nitinkc.github.io/Enterprise-security-FDE/](https://nitinkc.github.io/Enterprise-security-FDE/){:target="_blank"}
 - AI and LLM Security Agent System: [https://nitinkc.github.io/AI-LLM-Security-Agent-Systems/](https://nitinkc.github.io/AI-LLM-Security-Agent-Systems/)
 
-
 ## Infrastructure
 - Network Basics, F5 cloud & Terraform : [https://nitinkc.github.io/Networks-Terraform-Basics/](https://nitinkc.github.io/Networks-Terraform-Basics/){:target="_blank"}
 - Docker: [https://nitinkc.github.io/DockerConcepts/](https://nitinkc.github.io/DockerConcepts/){:target="_blank"}
@@ -74,10 +74,6 @@ tags: [Notes, Tutorials]
 - MongoDB Learning Resource: [https://nitinkc.github.io/MongoDBLeaning/](https://nitinkc.github.io/MongoDBLeaning/){:target="_blank"}
 - Data warehouse : [https://nitinkc.github.io/DataWarehouseLearnings/](https://nitinkc.github.io/DataWarehouseLearnings/){:target="_blank"}
 - Redis : [https://nitinkc.github.io/redis/](https://nitinkc.github.io/redis/){:target="_blank"}
-
-## Career Path
-- Cto Career path : [https://nitinkc.github.io/careerPath/](https://nitinkc.github.io/careerPath/){:target="_blank"}
-- Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
 
 ## Back-end Programming Languages
 - Java : [https://nitinkc.github.io/JavaConcepts/](https://nitinkc.github.io/JavaConcepts/){:target="_blank"}
