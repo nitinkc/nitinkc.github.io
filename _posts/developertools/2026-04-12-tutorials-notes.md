@@ -69,11 +69,12 @@ tags: [Notes, Tutorials]
 ## Databases
 - DB Theory : [https://nitinkc.github.io/database-theory/](https://nitinkc.github.io/database-theory/){:target="_blank"}
 - Sharding & Partitioning : [https://nitinkc.github.io/db-sharding/](https://nitinkc.github.io/db-sharding/){:target="_blank"}
-- SQL Query Optimization - https://nitinkc.github.io/SQL-QueryOptimization-tutorials/
+- SQL Query Optimization - [https://nitinkc.github.io/db-QueryOptimization/](https://nitinkc.github.io/db-QueryOptimization/){:target="_blank"}
 - Cassandra Learning Hub: [https://nitinkc.github.io/CassandraLearning/](https://nitinkc.github.io/CassandraLearning/){:target="_blank"}
 - MongoDB Learning Resource: [https://nitinkc.github.io/MongoDBLeaning/](https://nitinkc.github.io/MongoDBLeaning/){:target="_blank"}
 - Data warehouse : [https://nitinkc.github.io/DataWarehouseLearnings/](https://nitinkc.github.io/DataWarehouseLearnings/){:target="_blank"}
 - Redis : [https://nitinkc.github.io/redis/](https://nitinkc.github.io/redis/){:target="_blank"}
+
 ## Career Path
 - Cto Career path : [https://nitinkc.github.io/careerPath/](https://nitinkc.github.io/careerPath/){:target="_blank"}
 - Principal Engineer Interview Preparation: [https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/](https://nitinkc.github.io/PrincipalEngineer_InterviewGuide/){:target="_blank"}
@@ -86,7 +87,7 @@ tags: [Notes, Tutorials]
 - Go Programming Language : [https://nitinkc.github.io/GoConcepts/](https://nitinkc.github.io/GoConcepts/){:target="_blank"}
 - Python : [https://nitinkc.github.io/PythonConcepts/](https://nitinkc.github.io/PythonConcepts/){:target="_blank"}
 - Typescript: [https://nitinkc.github.io/typescript-learninig/](https://nitinkc.github.io/typescript-learninig/){:target="_blank"}
-
+- Polyglot monitor: [https://nitinkc.github.io/polyglot-health-monitor/](https://nitinkc.github.io/polyglot-health-monitor/){:target="_blank"}
 
 ## Frontend
 - Vue js static site - [https://nitinkc.github.io/thinkorama/](https://nitinkc.github.io/thinkorama/){:target="_blank"}
