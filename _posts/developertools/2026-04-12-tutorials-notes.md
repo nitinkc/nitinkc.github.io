@@ -19,7 +19,11 @@ tags: [Notes, Tutorials]
 - Architecture and System Design:  [https://nitinkc.github.io/Microservices-Design-Architecture/](https://nitinkc.github.io/Microservices-Design-Architecture/){:target="_blank"}
 - **BitVelocity**: [https://nitinkc.github.io/BitVelocity-Docs/](https://nitinkc.github.io/BitVelocity-Docs/){:target="_blank"}
 - Messaging & Streaming - Apache Kafka Learning Hub: [https://nitinkc.github.io/Kafka-Learning/](https://nitinkc.github.io/Kafka-Learning/){:target="_blank"}
+
+## Testing and QA
+- BDD - Gatling and Testing Types: [https://nitinkc.github.io/springboot-jBehave-BDD/](https://nitinkc.github.io/springboot-jBehave-BDD/)
 - Performance Engineering & Gatling Load Testing Tutorial:  [https://nitinkc.github.io/GatlingLearning/](https://nitinkc.github.io/GatlingLearning/){:target="_blank"}
+  - [https://github.com/nitinkc/Gatling-PerformaceTesting](https://github.com/nitinkc/Gatling-PerformaceTesting)
 
 ## AI & Machine Learning
 - Copilot Agents : [https://nitinkc.github.io/copilot-agents-hub/](https://nitinkc.github.io/copilot-agents-hub/){:target="_blank"}
